@@ -1,0 +1,3 @@
+[submodule "zmk-helpers"] 
+  path = zmk-helpers 
+  url = git@github.com/zmk-helpers.git
