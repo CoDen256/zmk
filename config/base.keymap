@@ -225,7 +225,7 @@ ZMK_MACRO(win_sleep,
 
 
 
-ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYSSYSSYSnvSYSSYSSYSSYSEEEEEERTERTERTERTERTERTERTRainainain))erer==erererer=er===ererer====))))))))irt;;://///ebeb''''''''zd++zdzd++üüüüüüüüü)))))
+ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  
 
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                                                                                                            ╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮
