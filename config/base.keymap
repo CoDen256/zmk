@@ -60,8 +60,8 @@
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
-    )
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
+    )hella lell ll R R inini nir iiir inini niR ininin iR irirRRRinirinirinirinirinirinriririrRRRiriririr
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMsinininininNininininginginggininginginginginginginingingginignririririririririnringininginginginlinglinglinglignlginlginliniririririinininininginNRRieTRD
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
@@ -171,6 +171,7 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
 // tap: qmark | shift + tap: excl
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
+SIMPLE_MORPH(quote, SFT, &kp LS(SINGLE_QUOTE), &kp SINGLE_QUOTE)
 
 // tap: left/right parenthesis | shft + tap: less-than/greater-than
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
@@ -219,7 +220,10 @@ ZMK_MACRO(win_sleep,
 #define DSK_MGR     &kp LA(GRAVE)            // desktop manager
 #define VOL_DOWN    &hmr RSHFT C_VOL_DN
 
-/* Keymap */                             
+/* Keymap */   
+
+
+
 
 ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYSSYSSYSnvSYSSYSSYSSYSEEEEEERTERTERTERTERTERTERTRainainain))erer==erererer=er===ererer====))))))))irt;;://///ebeb''''''''zd++zdzd++üüüüüüüüü)))))
 
@@ -229,15 +233,15 @@ ZMK_LAYER(base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───────────╮                                                                                 ╭──────────────┼─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤
      &kp EQUAL      &kp N1        &kp N2       &kp K         &kp N4        &kp N5                                                                                       &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &kp MINUS                
 //╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴───────────╯                                                                                 ╰──────────────┴─────────────┴─────────────┴─────────────┴──────────────┴─────────────╯
-
+         
 //╭─────────────┬──────────────┬─────────────┬─────────────┬─────────────┬────────────╮                                                                               ╭─────────────┬─────────────┬─────────────┬─────────────┬──────────────┬──────────────╮
-    &kp TAB        &none         &kp G         &kp H         &kp C          ___                                                                                          ___           &kp V         &kp L         &kp B         &kp SQT       &kp BACKSLASH  
+    &none        &kp ESC         &kp G         &kp H         &kp C          &kp Z                                                                                          ___           &kp V         &kp L         &kp B         &kp SQT       &none  
 //├─────────────┤──────────────┼─────────────┼─────────────┼─────────────┼────────────┤                                                                               ├─────────────┼─────────────┼─────────────┼─────────────┼──────────────┼──────────────┤
-    &kp ESC        &hml LGUI O   &hml LALT A   &hml LSHFT I  &hml LCTRL N   ___                                                                                          ___           &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E   &hmr LGUI S   &none  
+    &none        &hml LGUI O   &hml LALT A   &hml LSHFT I  &hml LCTRL N     &qexcl                                                                                         ___           &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E   &hmr LGUI S       &none  
 //├─────────────┤──────────────┼─────────────┼─────────────┼─────────────┼────────────┤ ╭──────────────┬─────────────┬───────╮╭────────┬──────────────┬─────────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼──────────────┼──────────────┤
-    &none          &kp J         &kp F         &kp U         &kp P          ___            &lt_spc NAV 0   &lt FN RET   &none    &none     SMART_NUM     &smart_shft     ___           &kp M         &kp D         &kp Y         &kp X         &none  
+    &none          &kp J         &kp F         &kp U         &kp P          ___            &to NAV       &lt FN RET    &none    &none     &none         &to NUM           ___            &kp M         &kp D         &kp Y         &kp X            &none  
 //├─────────────┼──────────────┤─────────────┼─────────────┤─────────────┼────────────╯ ├──────────────┼─────────────┼───────┤├────────┼──────────────┼─────────────┤ ╰─────────────┼─────────────┼─────────────┤─────────────┼──────────────┤──────────────┤
-    &none          &none         &none         &kp DOWN      &kp Q                         &kp SPACE       &lt FN RET   &none    &none     SMART_NUM     &smart_shft                   &kp W         &kp DOWN      &none         &kp Z         &none
+    &none          &kp SHIFT     &comma_morph  &quote        &kp Q                         &kp SPACE     &kp BACKSPACE &none    &none     &none         &kp TAB                          &kp W         &kp RET      &dot_morph    &kp SHIFT      &none
 //╰─────────────┴──────────────┴─────────────┴─────────────┴─────────────╯              ╰──────────────┴─────────────┴───────╯╰────────┴──────────────┴─────────────╯               ╰─────────────┴─────────────┴─────────────┴──────────────┴──────────────╯                                           
 )
     
