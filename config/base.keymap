@@ -220,12 +220,10 @@ ZMK_MACRO(win_sleep,
 #define DSK_MGR     &kp LA(GRAVE)            // desktop manager
 #define VOL_DOWN    &hmr RSHFT C_VOL_DN
 
-/* Keymap */   
+/* Keymap */                             
 
+ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYSSYSSYSnvSYSSYSSYSSYSEEEEEERTERTERTERTERTERTERTRainainain))erer==erererer=er===ererer====))))))))irt;;://///ebeb''''''''zd++zdzd++üüüüüüüüü)))))
 
-
-
-ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  
 
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                                                                                                            ╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮
