@@ -60,7 +60,7 @@
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
-    )hella lell ll R R inini nir iiir inini niR ininin iR irirRRRinirinirinirinirinirinriririrRRRiriririr
+    )
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMsinininininNininininginginggininginginginginginginingingginignririririririririnringininginginginlinglinglinglignlginlginliniririririinininininginNRRieTRD
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
