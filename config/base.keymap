@@ -61,7 +61,7 @@
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
     )
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMsinininininNininininginginggininginginginginginginingingginignririririririririnringininginginginlinglinglinglignlginlginliniririririinininininginNRRieTRD
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
@@ -222,7 +222,7 @@ ZMK_MACRO(win_sleep,
 
 /* Keymap */                             
 
-ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYSSYSSYSnvSYSSYSSYSSYSEEEEEERTERTERTERTERTERTERTRainainain))erer==erererer=er===ererer====))))))))irt;;://///ebeb''''''''zd++zdzd++üüüüüüüüü)))))
+ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> 
 
 
 ZMK_LAYER(base,
