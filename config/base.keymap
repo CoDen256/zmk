@@ -11,13 +11,11 @@
 #include "zmk-helpers/unicode-chars/greek.dtsi"
 #include "zmk-helpers/unicode-chars/german.dtsi"
 
-#define DEF 0
-#define NAV 1
-#define FN 2
-#define NUM 3
-#define SYS 4
-#define UC 5
-#define MOUSE 6
+#define Layer_DEF 0
+#define Layer_NAV 1
+#define Layer_FN 2
+#define Layer_NUM 3
+#define Layer_SYS 4
 
 #include "combos.dtsi"  // requires layer aliases
 #include "mouse.dtsi"
@@ -222,9 +220,6 @@ ZMK_MACRO(win_sleep,
 
 /* Keymap */                             
 
-ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> 
-
-
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -253,7 +248,8 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM -->
 / {
     keymap {
         compatible = "zmk,keymap";
-                layer_NAV {                   
+                layer_NAV {      
+                    bindings = <             
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
     X_LT     ___           ___           &kp LS(TAB)   &swapper      ___             X_MT     &kp PG_UP     NAV_BSPC      NAV_UP        NAV_DEL       ___             X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
@@ -272,6 +268,7 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM -->
     keymap {
         compatible = "zmk,keymap";
                 layer_FUN {   
+                    bindings = <
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
     X_LT     &kp F12       &kp F7        &kp F8        &kp F9        ___             X_MT     ___           &kp C_PREV    &kp C_VOL_UP  &kp C_NEXT    &win_sleep      X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
@@ -290,6 +287,7 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM -->
     keymap {
         compatible = "zmk,keymap";
                 layer_NUM {  
+                    bindings = <
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
     X_LT     ___           &kp N7        &kp N8        &kp N9        ___             X_MT     ___           ___           ___           ___           ___             X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
@@ -308,6 +306,7 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM -->
     keymap {
         compatible = "zmk,keymap";
                 layer_SYS {  
+                    bindings = <
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
     X_LT                                _BT_SEL_KEYS_                                X_MT     ___           ___           ___           ___           ___             X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
