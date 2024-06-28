@@ -1,11 +1,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#if CONFIG_WIRELESS
-    #include <dt-bindings/zmk/bt.h>
-    #define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
-#else
-    #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
-#endif
+
+#include <dt-bindings/zmk/bt.h>
+#define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/unicode-chars/greek.dtsi"
@@ -20,9 +17,6 @@
 #include "combos.dtsi"  // requires layer aliases
 #include "mouse.dtsi"
 #include "extra_keys.h"
-
-#define XXX &none
-#define ___ &trans
 
 /* Global settings */
 
@@ -232,11 +226,11 @@ ZMK_MACRO(win_sleep,
 //╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴───────────╯                                                                                 ╰──────────────┴─────────────┴─────────────┴─────────────┴──────────────┴─────────────╯
          
 //╭─────────────┬──────────────┬─────────────┬─────────────┬─────────────┬────────────╮                                                                               ╭─────────────┬─────────────┬─────────────┬─────────────┬──────────────┬──────────────╮
-    &none        &kp ESC         &kp G         &kp H         &kp C          &kp Z                                                                                          ___           &kp V         &kp L         &kp B         &kp SQT       &none  
+    &none        &kp ESC         &kp G         &kp H         &kp C          &kp Z                                                                                          &trans           &kp V         &kp L         &kp B         &kp SQT       &none  
 //├─────────────┤──────────────┼─────────────┼─────────────┼─────────────┼────────────┤                                                                               ├─────────────┼─────────────┼─────────────┼─────────────┼──────────────┼──────────────┤
-    &none        &hml LGUI O   &hml LALT A   &hml LSHFT I  &hml LCTRL N     &qexcl                                                                                         ___           &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E   &hmr LGUI S       &none  
+    &none        &hml LGUI O   &hml LALT A   &hml LSHFT I  &hml LCTRL N     &qexcl                                                                                         &trans           &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E   &hmr LGUI S       &none  
 //├─────────────┤──────────────┼─────────────┼─────────────┼─────────────┼────────────┤ ╭──────────────┬─────────────┬───────╮╭────────┬──────────────┬─────────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼──────────────┼──────────────┤
-    &kp LSHFT          &kp J         &kp F         &kp U         &kp P          ___            &mo NAV       &lt FN RET    &none    &none     &mo SYS       &mo NUM           ___            &kp M         &kp D         &kp Y         &kp X            &kp RSHFT  
+    &kp LSHFT          &kp J         &kp F         &kp U         &kp P          &trans            &mo NAV       &lt FN RET    &none    &none     &mo SYS       &mo NUM           &trans            &kp M         &kp D         &kp Y         &kp X            &kp RSHFT  
 //├─────────────┼──────────────┤─────────────┼─────────────┤─────────────┼────────────╯ ├──────────────┼─────────────┼───────┤├────────┼──────────────┼─────────────┤ ╰─────────────┼─────────────┼─────────────┤─────────────┼──────────────┤──────────────┤
     &none          &none      &comma_morph  &quote        &kp Q                         &kp SPACE     &kp BACKSPACE &none    &none     &none         &kp TAB                          &kp W         &kp RET      &dot_morph     &none     &none
 //╰─────────────┴──────────────┴─────────────┴─────────────┴─────────────╯              ╰──────────────┴─────────────┴───────╯╰────────┴──────────────┴─────────────╯               ╰─────────────┴─────────────┴─────────────┴──────────────┴──────────────╯                                           
@@ -251,13 +245,13 @@ ZMK_MACRO(win_sleep,
                 layer_NAV {      
                     bindings = <             
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-    X_LT     ___           ___           &kp LS(TAB)   &swapper      ___             X_MT     &kp PG_UP     NAV_BSPC      NAV_UP        NAV_DEL       ___             X_RT
+    X_LT     &trans           &trans           &kp LS(TAB)   &swapper      &trans             X_MT     &kp PG_UP     NAV_BSPC      NAV_UP        NAV_DEL       &trans             X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LM     &sk LGUI      &sk LALT      &sk LSHFT     &sk LCTRL     ___             X_MM     &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp RET         X_RM
+    X_LM     &sk LGUI      &sk LALT      &sk LSHFT     &sk LCTRL     &trans             X_MM     &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp RET         X_RM
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LB     ___           ___           ___           ___           ___             X_MB     &kp INS       &kp TAB       &kp LT        &kp GT        ___             X_RB
+    X_LB     &trans           &trans           &trans           &trans           &trans             X_MB     &kp INS       &kp TAB       &kp LT        &kp GT        &trans             X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-    X_LH                                               &to DEF           ___             X_MH     ___           CANCEL                                                    X_RH
+    X_LH                                               &to DEF           &trans             X_MH     &trans           CANCEL                                                    X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 >;
         };
@@ -270,13 +264,13 @@ ZMK_MACRO(win_sleep,
                 layer_FUN {   
                     bindings = <
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-    X_LT     &kp F12       &kp F7        &kp F8        &kp F9        ___             X_MT     ___           &kp C_PREV    &kp C_VOL_UP  &kp C_NEXT    &win_sleep      X_RT
+    X_LT     &kp F12       &kp F7        &kp F8        &kp F9        &trans             X_MT     &trans           &kp C_PREV    &kp C_VOL_UP  &kp C_NEXT    &win_sleep      X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LM     &hml LGUI F11 &hml LALT F4  &hml LSHFT F5 &hml LCTRL F6 ___             X_MM     ___           DSK_PREV      VOL_DOWN      DSK_NEXT      ___             X_RM
+    X_LM     &hml LGUI F11 &hml LALT F4  &hml LSHFT F5 &hml LCTRL F6 &trans             X_MM     &trans           DSK_PREV      VOL_DOWN      DSK_NEXT      &trans             X_RM
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LB     &kp F10       &kp F1        &kp F2        &kp F3        ___             X_MB     PIN_APP       PIN_WIN       DSK_MGR       ___           ___             X_RB
+    X_LB     &kp F10       &kp F1        &kp F2        &kp F3        &trans             X_MB     PIN_APP       PIN_WIN       DSK_MGR       &trans           &trans             X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-    X_LH                                               &to DEF           ___             X_MH     &kp C_MUTE    &kp C_PP                                                  X_RH
+    X_LH                                               &to DEF           &trans             X_MH     &kp C_MUTE    &kp C_PP                                                  X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 >;
         };
@@ -289,13 +283,13 @@ ZMK_MACRO(win_sleep,
                 layer_NUM {  
                     bindings = <
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-    X_LT     ___           &kp N7        &kp N8        &kp N9        ___             X_MT     ___           ___           ___           ___           ___             X_RT
+    X_LT     &trans           &kp N7        &kp N8        &kp N9        &trans             X_MT     &trans           &trans           &trans           &trans           &trans             X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LM     &hml LGUI N0  &hml LALT N4  &hml LSHFT N5 &hml LCTRL N6 ___             X_MM     ___           ___           ___           ___           ___             X_RM
+    X_LM     &hml LGUI N0  &hml LALT N4  &hml LSHFT N5 &hml LCTRL N6 &trans             X_MM     &trans           &trans           &trans           &trans           &trans             X_RM
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LB     ___           &kp N1        &kp N2        &kp N3        ___             X_MB     ___           ___           ___           ___           ___             X_RB
+    X_LB     &trans           &kp N1        &kp N2        &kp N3        &trans             X_MB     &trans           &trans           &trans           &trans           &trans             X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-    X_LH                                               &to DEF           ___             X_MH     ___           ___                                                       X_RH
+    X_LH                                               &to DEF           &trans             X_MH     &trans           &trans                                                       X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 >;
         };
@@ -308,13 +302,13 @@ ZMK_MACRO(win_sleep,
                 layer_SYS {  
                     bindings = <
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-    X_LT                                _BT_SEL_KEYS_                                X_MT     ___           ___           ___           ___           ___             X_RT
+    X_LT                                _BT_SEL_KEYS_                                X_MT     &trans           &trans           &trans           &trans           &trans             X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LM     ___           ___           ___           ___           &bootloader     X_MM     &bootloader   ___           ___           ___           ___             X_RM
+    X_LM     &trans           &trans           &trans           &trans           &bootloader     X_MM     &bootloader   &trans           &trans           &trans           &trans             X_RM
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LB     ___           ___           ___           ___           &sys_reset      X_MB     &sys_reset    ___           ___           ___           ___             X_RB
+    X_LB     &trans           &trans           &trans           &trans           &sys_reset      X_MB     &sys_reset    &trans           &trans           &trans           &trans             X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-    X_LH                                               &to DEF           ___             X_MH     ___           ___                                                       X_RH
+    X_LH                                               &to DEF           &trans             X_MH     &trans           &trans                                                       X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 >;
         };
@@ -324,13 +318,13 @@ ZMK_MACRO(win_sleep,
 
 // ZMK_LAYER(mouse,
 // //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-//     X_LT     ___           ___           ___           ___           ___             X_MT     U_WH_L        U_WH_D        U_MS_U         U_WH_U       U_WH_R          X_RT
+//     X_LT     &trans           &trans           &trans           &trans           &trans             X_MT     U_WH_L        U_WH_D        U_MS_U         U_WH_U       U_WH_R          X_RT
 // //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//     X_LM     ___           ___           ___           ___           ___             X_MM     ___           U_MS_L        U_MS_D         U_MS_R       ___             X_RM
+//     X_LM     &trans           &trans           &trans           &trans           &trans             X_MM     &trans           U_MS_L        U_MS_D         U_MS_R       &trans             X_RM
 // //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//     X_LB     ___           ___           ___           ___           ___             X_MB     ___           &mkp MB4      &mkp MCLK      &mkp MB5     ___             X_RB
+//     X_LB     &trans           &trans           &trans           &trans           &trans             X_MB     &trans           &mkp MB4      &mkp MCLK      &mkp MB5     &trans             X_RB
 // //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-//     X_LH                                               &to DEF           ___             X_MH     &mkp LCLK     &mkp RCLK                                                 X_RH
+//     X_LH                                               &to DEF           &trans             X_MH     &mkp LCLK     &mkp RCLK                                                 X_RH
 // //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 // )
 
