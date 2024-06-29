@@ -13,6 +13,28 @@
 * edit it directly.
 */
 
+//
+// Glove80 key positions index for positional hold-tap
+// - https://discord.com/channels/877392805654306816/937645688244826154/1066713913351221248
+// - https://media.discordapp.net/attachments/937645688244826154/1066713913133121556/image.png
+//
+// |------------------------|------------------------|
+// | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
+// |                        |                        |
+// |  0  1  2  3  4         |          5  6  7  8  9 |
+// | 10 11 12 13 14 15      |      16 17 18 19 20 21 |
+// | 22 23 24 25 26 27      |      28 29 30 31 32 33 |
+// | 34 35 36 37 38 39      |      40 41 42 43 44 45 |
+// | 46 47 48 49 50 51      |      58 59 60 61 62 63 |
+// | 64 65 66 67 68         |         75 76 77 78 79 |
+// |                69 52   |   57 74                |
+// |                 70 53  |  56 73                 |
+// |                  71 54 | 55 72                  |
+// |------------------------|------------------------|
+//
+
+
+
 #include <behaviors.dtsi>
 /* Include all behavior includes needed */
 #include <dt-bindings/zmk/outputs.h>
@@ -171,6 +193,8 @@
 #endif
 };
 
+&mt { flavor = "tap-preferred"; tapping-term-ms = <220>; quick-tap-ms = <220>; hold-trigger-key-positions = <0>; };
+
 / {
 	behaviors {
 		magic: magic {
@@ -181,192 +205,81 @@
 			tapping-term-ms = <200>;
 			bindings = <&mo>, <&rgb_ug_status_macro>;
 		};
+	hml: hml { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <350>; bindings = <&kp>, <&kp>; hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>; hold-trigger-on-release; };
+	hmr: hmr { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <350>; bindings = <&kp>, <&kp>; hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>; hold-trigger-on-release; };
+		
+	hml_repeat: hml_repeat { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <350>; bindings = <&kp>, <&key_repeat>; hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>; hold-trigger-on-release; };
+	hmr_lpar_lt: hmr_lpar_lt { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <350>; bindings = <&kp>, <&lpar_lt>; hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>; hold-trigger-on-release; };
+	hmr_rpar_gt: hmr_rpar_gt { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <350>; bindings = <&kp>, <&rpar_gt>; hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>; hold-trigger-on-release; };
+		
+	mt_home: mt_home { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&masked_home>, <&kp>; flavor = "tap-preferred"; tapping-term-ms = <220>; quick-tap-ms = <220>; hold-trigger-key-positions = <0>; };
+	mt_end: mt_end { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&masked_end>, <&kp>; flavor = "tap-preferred"; tapping-term-ms = <220>; quick-tap-ms = <220>; hold-trigger-key-positions = <0>; };
+	masked_home: masked_home { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HOME>, <&kp HOME>; mods = <(MOD_LCTL)>; };
+	masked_end: masked_end { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp END>, <&kp END>; mods = <(MOD_LCTL)>; };
+		
+	smart_shft: smart_shft { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&sk LSHFT>, <&caps_word>; mods = <(MOD_LSFT)>; };
+		
+		// &caps_word {
+		// /delete-property/ ignore-modifiers;
+		// };
+		
+	smart_num: smart_num { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <175>; bindings = <&mo>, <&num_dance>; };
+		
+	num_dance: num_dance { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&num_word>, <&sl Layer_NUM>; };
+		
+		// &num_word {
+		// layers = <Layer_NUM>;
+		// continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+		// };
+		
+	smart_mouse: smart_mouse { compatible = "zmk,behavior-tri-state"; #binding-cells = <0>; bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>; ignored-key-positions = <26 24 28 29 30 31 32 41 42 43 59 60 61 72 73>; ignored-layers = <MOUSE>; };
+	swapper: swapper { compatible = "zmk,behavior-tri-state"; #binding-cells = <0>; bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>; ignored-key-positions = <25>; };
+		
+	sls: sls { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; release-after-ms = <1000>; bindings = <&uc_shift>; ignore-modifiers; };
+		
+	uc_shift: uc_shift { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <0>; tap-ms = <1>; bindings = <&macro_press &mo UC &kp LSHFT> , <&macro_pause_for_release> , <&macro_release &mo UC &kp LSHFT>; };
+	comma_morph: comma_morph { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp COMMA>, <&comma_inner_morph>; };
+	comma_inner_morph: comma_inner_morph { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LCTL|MOD_RCTL)>; bindings = <&kp SEMICOLON>, <&kp LESS_THAN>; };
+		
+	dot_morph: dot_morph { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp DOT>, <&dot_inner_morph>; };
+	dot_inner_morph: dot_inner_morph { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LCTL|MOD_RCTL)>; bindings = <&kp COLON>, <&kp GREATER_THAN>; };
+		
+	qexcl: qexcl { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp QMARK>, <&kp EXCL>; };
+	quote: quote { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(SINGLE_QUOTE)>, <&kp SINGLE_QUOTE>; };
+		
+	lpar_lt: lpar_lt { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LPAR>, <&kp LT>; };
+	rpar_gt: rpar_gt { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp RPAR>, <&kp GT>; };
+		
+	lt_spc: lt_spc { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <175>; bindings = <&mo>, <&spc_morph>; };
+		
+	spc_morph: spc_morph { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp SPACE>, <&dot_spc>; };
+	dot_spc: dot_spc { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <0>; tap-ms = <5>; bindings = <&kp DOT &kp SPACE &sk LSHFT>; };
+		
+	bs_del: bs_del { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <MOD_RSFT>; };
+		
+	copy_cut: copy_cut { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp LC(INS)>, <&kp LC(X)>; };
+		
+	win_sleep: win_sleep { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <500>; tap-ms = <50>; bindings = <&kp LG(X) &kp U &kp S>; };
+		
+	func_arrow: function_arrow { compatible = "zmk,behavior-macro"; label = "FUNCTION_ARROW"; #binding-cells = <0>; tap-ms = <0>; wait-ms = <0>; bindings = <&macro_tap &kp MINUS &kp GREATER_THAN>;};
+		
+	and_short: and_short{ compatible = "zmk,behavior-macro"; label = "AND_SHORT"; #binding-cells = <0>; tap-ms = <0>; wait-ms = <0>; bindings = <&macro_tap &kp AMPERSAND &kp AMPERSAND> ;};
+		
+	or_short: or_short{  compatible = "zmk,behavior-macro";  label = "OR_SHORT";  #binding-cells = <0>;  tap-ms = <0>;  wait-ms = <0>;  bindings  = <&macro_tap &kp PIPE &kp PIPE>  ;};
+		
+	neq_short: neq_short{compatible = "zmk,behavior-macro";label = "NEQ_SHORT";#binding-cells = <0>;tap-ms = <0>;wait-ms = <0>;bindings= <&macro_tap &kp EXCLAMATION &kp EQUAL>;};
+		
+	eq_short: eq_short{compatible = "zmk,behavior-macro";label = "EQ_SHORT";#binding-cells = <0>;tap-ms = <0>;wait-ms = <0>;bindings= <&macro_tap &kp EQUAL &kp EQUAL>;};
+		
 	};
 };
 
-/* #define for key positions */
-#define POS_LH_T1 52
-#define POS_LH_T2 53
-#define POS_LH_T3 54
-#define POS_LH_T4 69
-#define POS_LH_T5 70
-#define POS_LH_T6 71
-#define POS_LH_C1R2 15
-#define POS_LH_C1R3 27
-#define POS_LH_C1R4 39
-#define POS_LH_C1R5 51
-#define POS_LH_C2R1 4
-#define POS_LH_C2R2 14
-#define POS_LH_C2R3 26
-#define POS_LH_C2R4 38
-#define POS_LH_C2R5 50
-#define POS_LH_C2R6 68
-#define POS_LH_C3R1 3
-#define POS_LH_C3R2 13
-#define POS_LH_C3R3 25
-#define POS_LH_C3R4 37
-#define POS_LH_C3R5 49
-#define POS_LH_C3R6 67
-#define POS_LH_C4R1 2
-#define POS_LH_C4R2 12
-#define POS_LH_C4R3 24
-#define POS_LH_C4R4 36
-#define POS_LH_C4R5 48
-#define POS_LH_C4R6 66
-#define POS_LH_C5R1 1
-#define POS_LH_C5R2 11
-#define POS_LH_C5R3 23
-#define POS_LH_C5R4 35
-#define POS_LH_C5R5 47
-#define POS_LH_C5R6 65
-#define POS_LH_C6R1 0
-#define POS_LH_C6R2 10
-#define POS_LH_C6R3 22
-#define POS_LH_C6R4 34
-#define POS_LH_C6R5 46
-#define POS_LH_C6R6 64
-#define POS_RH_T1 57
-#define POS_RH_T2 56
-#define POS_RH_T3 55
-#define POS_RH_T4 74
-#define POS_RH_T5 73
-#define POS_RH_T6 72
-#define POS_RH_C1R2 16
-#define POS_RH_C1R3 28
-#define POS_RH_C1R4 40
-#define POS_RH_C1R5 58
-#define POS_RH_C2R1 5
-#define POS_RH_C2R2 17
-#define POS_RH_C2R3 29
-#define POS_RH_C2R4 41
-#define POS_RH_C2R5 59
-#define POS_RH_C2R6 75
-#define POS_RH_C3R1 6
-#define POS_RH_C3R2 18
-#define POS_RH_C3R3 30
-#define POS_RH_C3R4 42
-#define POS_RH_C3R5 60
-#define POS_RH_C3R6 76
-#define POS_RH_C4R1 7
-#define POS_RH_C4R2 19
-#define POS_RH_C4R3 31
-#define POS_RH_C4R4 43
-#define POS_RH_C4R5 61
-#define POS_RH_C4R6 77
-#define POS_RH_C5R1 8
-#define POS_RH_C5R2 20
-#define POS_RH_C5R3 32
-#define POS_RH_C5R4 44
-#define POS_RH_C5R5 62
-#define POS_RH_C5R6 78
-#define POS_RH_C6R1 9
-#define POS_RH_C6R2 21
-#define POS_RH_C6R3 33
-#define POS_RH_C6R4 45
-#define POS_RH_C6R5 63
-#define POS_RH_C6R6 79
 
 /* Custom Defined Behaviors */
 / {
-	
-	
 	behaviors {
-		bhm: balanced_homerow_mods {
-			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <2>;
-			tapping-term-ms = <200>;// <---[[moderate duration]]
-			quick-tap-ms = <0>;
-			flavor = "balanced";
-			bindings = <&kp>, <&kp>;
-		};
+		
 	};
-	
-	
-	//
-	// Glove80 key positions index for positional hold-tap
-	// - https://discord.com/channels/877392805654306816/937645688244826154/1066713913351221248
-	// - https://media.discordapp.net/attachments/937645688244826154/1066713913133121556/image.png
-	//
-	// |------------------------|------------------------|
-	// | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
-	// |                        |                        |
-	// |  0  1  2  3  4         |          5  6  7  8  9 |
-	// | 10 11 12 13 14 15      |      16 17 18 19 20 21 |
-	// | 22 23 24 25 26 27      |      28 29 30 31 32 33 |
-	// | 34 35 36 37 38 39      |      40 41 42 43 44 45 |
-	// | 46 47 48 49 50 51      |      58 59 60 61 62 63 |
-	// | 64 65 66 67 68         |         75 76 77 78 79 |
-	// |                69 52   |   57 74                |
-	// |                 70 53  |  56 73                 |
-	// |                  71 54 | 55 72                  |
-	// |------------------------|------------------------|
-	//
-	
-	macros {
-		
-		// Function arrow: ->
-		func_arrow: function_arrow {
-			compatible = "zmk,behavior-macro";
-			label = "FUNCTION_ARROW";
-			#binding-cells = <0>;
-			tap-ms = <0>;
-			wait-ms = <0>;
-			bindings
-			= <&macro_tap &kp MINUS &kp GREATER_THAN>
-			;
-		};
-		
-		and_short: and_short{
-			compatible = "zmk,behavior-macro";
-			label = "AND_SHORT";
-			#binding-cells = <0>;
-			tap-ms = <0>;
-			wait-ms = <0>;
-			bindings
-			= <&macro_tap &kp AMPERSAND &kp AMPERSAND>
-			;
-		};
-		
-		or_short: or_short{
-			compatible = "zmk,behavior-macro";
-			label = "OR_SHORT";
-			#binding-cells = <0>;
-			tap-ms = <0>;
-			wait-ms = <0>;
-			bindings
-			= <&macro_tap &kp PIPE &kp PIPE>
-			;
-		};
-		
-		neq_short: neq_short{
-			compatible = "zmk,behavior-macro";
-			label = "NEQ_SHORT";
-			#binding-cells = <0>;
-			tap-ms = <0>;
-			wait-ms = <0>;
-			bindings
-			= <&macro_tap &kp EXCLAMATION &kp EQUAL>
-			;
-		};
-		
-		eq_short: eq_short{
-			compatible = "zmk,behavior-macro";
-			label = "EQ_SHORT";
-			#binding-cells = <0>;
-			tap-ms = <0>;
-			wait-ms = <0>;
-			bindings
-			= <&macro_tap &kp EQUAL &kp EQUAL>
-			;
-		};
-	};
-	
-	
-	
-	combos {
-		compatible = "zmk,combos";
-	};
-	
 };
 
 /* Automatically generated macro definitions */
