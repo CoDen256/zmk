@@ -180,7 +180,7 @@
 &lt {  // layer-tap config
     flavor = "balanced";
     tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
+    quick-tap-ms = <175>;
 };
 
 / {
@@ -343,6 +343,17 @@ bs_del: bs_del { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bi
 copy_cut: copy_cut { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp LC(INS)>, <&kp LC(X)>; };
 
 win_sleep: win_sleep { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <500>; tap-ms = <50>; bindings = <&kp LG(X) &kp U &kp S>; };
+
+  // Function arrow: ->
+func_arrow: function_arrow { compatible = "zmk,behavior-macro"; label = "FUNCTION_ARROW"; #binding-cells = <0>; tap-ms = <0>; wait-ms = <0>; bindings = <&macro_tap &kp MINUS &kp GREATER_THAN>;};
+
+and_short: and_short{ compatible = "zmk,behavior-macro"; label = "AND_SHORT"; #binding-cells = <0>; tap-ms = <0>; wait-ms = <0>; bindings = <&macro_tap &kp AMPERSAND &kp AMPERSAND> ;};
+
+or_short: or_short{  compatible = "zmk,behavior-macro";  label = "OR_SHORT";  #binding-cells = <0>;  tap-ms = <0>;  wait-ms = <0>;  bindings  = <&macro_tap &kp PIPE &kp PIPE>  ;};
+
+neq_short: neq_short{compatible = "zmk,behavior-macro";label = "NEQ_SHORT";#binding-cells = <0>;tap-ms = <0>;wait-ms = <0>;bindings= <&macro_tap &kp EXCLAMATION &kp EQUAL>;};
+
+eq_short: eq_short{compatible = "zmk,behavior-macro";label = "EQ_SHORT";#binding-cells = <0>;tap-ms = <0>;wait-ms = <0>;bindings= <&macro_tap &kp EQUAL &kp EQUAL>;};
 };
 
 
@@ -372,61 +383,6 @@ macros {
 
 
 
-  // Function arrow: ->
-  func_arrow: function_arrow {
-    compatible = "zmk,behavior-macro";
-    label = "FUNCTION_ARROW";
-    #binding-cells = <0>;
-    tap-ms = <0>;
-    wait-ms = <0>;
-    bindings
-    = <&macro_tap &kp MINUS &kp GREATER_THAN>
-    ;
-  };
-
-  and_short: and_short{
-    compatible = "zmk,behavior-macro";
-    label = "AND_SHORT";
-    #binding-cells = <0>;
-    tap-ms = <0>;
-    wait-ms = <0>;
-    bindings
-    = <&macro_tap &kp AMPERSAND &kp AMPERSAND>
-    ;
-  };
-
-  or_short: or_short{
-    compatible = "zmk,behavior-macro";
-    label = "OR_SHORT";
-    #binding-cells = <0>;
-    tap-ms = <0>;
-    wait-ms = <0>;
-    bindings
-    = <&macro_tap &kp PIPE &kp PIPE>
-    ;
-  };
-
-  neq_short: neq_short{
-    compatible = "zmk,behavior-macro";
-    label = "NEQ_SHORT";
-    #binding-cells = <0>;
-    tap-ms = <0>;
-    wait-ms = <0>;
-    bindings
-    = <&macro_tap &kp EXCLAMATION &kp EQUAL>
-    ;
-  };
-
-  eq_short: eq_short{
-      compatible = "zmk,behavior-macro";
-      label = "EQ_SHORT";
-      #binding-cells = <0>;
-      tap-ms = <0>;
-      wait-ms = <0>;
-      bindings
-      = <&macro_tap &kp EQUAL &kp EQUAL>
-      ;
-    };
 };
 combos {
     compatible = "zmk,combos";
