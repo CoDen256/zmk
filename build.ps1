@@ -1,0 +1,1 @@
+docker run --rm -v "${PWD}:/config" -e BRANCH="main" -e UID="1000" -e GID="1000" glove80
