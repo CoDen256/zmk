@@ -215,12 +215,9 @@ layers:
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
   - Gui+Ctl+Sft+ A
   - Gui+Ctl+Sft+ Q
-  - Alt+ `
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
@@ -230,13 +227,19 @@ layers:
   - Ctl+ A
   - Q
   - {t: Main, h: toggle}
-  - {type: held}
+  - {t: ▽, type: trans}
   - ''
   - ''
-  - MUTE
+  - {t: MUTE, type: held}
   - PP
   - B
   - DOWN
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - ''

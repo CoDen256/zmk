@@ -152,12 +152,6 @@
     quick-tap-ms = <175>;
 };
 
-#define DSK_PREV    &hmr LCTRL LG(LC(LEFT))   // previous desktop
-#define DSK_NEXT    &hmr LALT LG(LC(RIGHT)) // next     desktop
-#define PIN_WIN     &kp LG(LC(LS(Q)))        // pin window across desktops
-#define PIN_APP     &kp LG(LC(LS(A)))        // pin application across desktops
-#define DSK_MGR     &kp LA(GRAVE)            // desktop manager
-#define VOL_DOWN    &hmr RSHFT C_VOL_DN
 
 / {
     behaviors {
@@ -644,8 +638,8 @@
 &kp EQUAL  &kp N1         &kp N2        &kp NUMBER_3   &kp N4         &kp N5                                                                           &kp N6              &kp N7     &kp N8       &kp N9      &kp N0     &kp MINUS
 &kp TAB    &kp F12        &kp F7        &kp F8         &kp F9         &trans                                                                           &kp LC(LS(ESCAPE))  &kp F9     &kp LA(TAB)  &kp C_NEXT  &none      &kp BACKSLASH
 &kp ESC    &hml LGUI F11  &hml LALT F4  &hml LSHFT F5  &hml LCTRL F6  &trans                                                                           &kp LC(LA(DEL))     &kp LC(S)  &kp LC(C)    &kp LC(V)   &kp LC(X)  &kp F1
-&kp F2     &kp F3         &trans        &none          &none          &none   &none  &none     &none PIN_APP PIN_WIN DSK_MGR    &trans  &trans  &none  &none               &kp LC(Z)  &kp LC(Y)    &kp LC(A)   &kp Q      &to 0
-&trans     &none          &none         &kp C_MUTE     &kp C_PP               &kp B  &kp DOWN  &none                            &none   &none   &none  &none &none
+&kp F2     &kp F3         &trans        &none          &none          &none   &kp LG(LC(LS(A)))  &kp LG(LC(LS(Q))) &none    &trans  &trans  &none  &none               &kp LC(Z)  &kp LC(Y)    &kp LC(A)   &kp Q      &to 0
+&trans     &none          &none         &kp C_MUTE     &kp C_PP               &kp B  &kp DOWN  &none                            &none   &none   &none                     &none       &none         &none    &none         &none
             >;
         };
 
