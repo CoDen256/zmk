@@ -33,5 +33,5 @@ if __name__ == '__main__':
     save_parsed(updated, origin)
     print("Drawing")
 
-    # subprocess.call(f"keymap.exe -c {config} draw {parsed} -o {out_parsed}")
+    subprocess.call(f"keymap.exe -c {config} draw {parsed} -o {out_parsed}")
     subprocess.call(f"keymap.exe -c {config} draw {updated} -o {out}")

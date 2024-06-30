@@ -40,8 +40,8 @@ layers:
   - {t: A, h: LALT}
   - {t: I, h: LSHFT}
   - {t: N, h: LCTRL}
-  - {t: '=', s: '&eq_short'}
-  - {t: ▽, type: trans}
+  - {t: ^, s: '~'}
+  - $
   - {t: T, h: LCTRL}
   - {t: R, h: RSHFT}
   - {t: E, h: LALT}
@@ -52,7 +52,7 @@ layers:
   - F
   - U
   - P
-  - {t: ▽, type: trans}
+  - ''
   - ''
   - ''
   - {t: '&rgb_ug_status_macro', h: Magic}
@@ -419,7 +419,7 @@ combos:
 - p: [59, 42]
   k: /
 - p: [50, 37]
-  k: \
+  k: '*'
 - p: [49, 48]
   k: {t: '=', s: '&eq_short'}
 - p: [29, 30]
@@ -428,3 +428,27 @@ combos:
   k: '}'
 - p: [42, 43]
   k: NUM
+- p: [61, 42]
+  k: \
+- p: [24, 25]
+  k: <
+- p: [25, 26]
+  k: '>'
+- p: [26, 37]
+  k: '-'
+- p: [48, 37]
+  k: +
+- p: [38, 25]
+  k: '&func_arrow'
+- p: [42, 29]
+  k: {t: '&and_short', s: '&'}
+- p: [41, 30]
+  k: {t: '&or_short', s: '|'}
+- p: [30, 43]
+  k: {t: '&code_block', s: '`'}
+- p: [36, 25]
+  k: {t: '#', s: '&comment'}
+- p: [41, 60]
+  k: _
+- p: [24, 37]
+  k: '%'
