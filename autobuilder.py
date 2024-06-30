@@ -43,7 +43,6 @@ def check_file_update(file_path, dir):
     last_modified_time = None
 
     while True:
-        print("\nChecking file...")
         try:
             # Check the current modification time of the file
             current_modified_time = os.path.getmtime(file_path)
@@ -58,7 +57,7 @@ def check_file_update(file_path, dir):
             # Update the last modification time
             last_modified_time = current_modified_time
 
-        print("\nWaiting...")
+            print("Sleeping...")
         # Wait for 10 seconds before checking again
         time.sleep(5)
 
