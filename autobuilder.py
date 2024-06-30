@@ -2,41 +2,48 @@ import os
 import time
 import subprocess
 import sys
+import docker
+import time
 
-def run_powershell_script(script_path):
+def run_powershell_script(dir):
     # Start the PowerShell process
-    process = subprocess.Popen(
-        ['docker', 'run', '--rm', '-v ${PWD}:/config', '-e BRANCH="main"', '-e UID="1000"', '-e GID="1000"', 'glove80'],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True
-    )
+    cmd = f'docker run --rm -v "{dir}:/config" -e BRANCH="main" -e UID="1000" -e GID="1000" glove80'
+    print(cmd)
+    subprocess.call(cmd, shell=True, stdout=sys.stdout, stderr=sys.stderr)
 
-    print("Opened process")
+def run(dir):
+    client = docker.from_env()
+    container = client.containers.run("glove80",  detach=True, auto_remove=True, 
+                                      volumes=[f"{dir}:/config"],
+                                      environment={
+                                          "BRANCH": "main",
+                                          "UID": "1000",
+                                          "GID": "1000",
+                                      }
+                                      )
 
-    try:
-        # Read the process output in real-time
-        for c in iter(lambda: process.stdout.read(1), ""):
-            sys.stdout.write(c)
-        
-        # Capture any errors
-        error = process.stderr.read()
-        if error:
-            print(f"Error: {error.strip()}")
-    except KeyboardInterrupt:
-        # Handle the user interrupt (Ctrl+C)
-        process.terminate()
-        print("\nProcess terminated by user")
-    finally:
-        process.stdout.close()
-        process.stderr.close()
-        process.wait()
+    logs = []
+    # you can even stream your output like this:
+    for line in container.logs(stream=True):
+        log = line.decode("utf-8")
+        print(log.strip())
+        logs.append(log.strip())
+    result = container.wait()
+    if (int(result['StatusCode'])) != 0:
+        error = list(filter(lambda x: x.startswith("devicetree error"), logs))
+        if not error:
+            error = "Unknown error, see logs"
+        else: 
+            error = error[0]
+        print(f"\n\033[1;91m{error}\033[0m")
+    else:
+        print("\n\033[1;92mSUCCESS:\033[0m glove80.uf2 is built!")
 
-def check_file_update(file_path, powershell_script):
+def check_file_update(file_path, dir):
     last_modified_time = None
 
     while True:
-        print("Checking file...")
+        print("\nChecking file...")
         try:
             # Check the current modification time of the file
             current_modified_time = os.path.getmtime(file_path)
@@ -46,16 +53,16 @@ def check_file_update(file_path, powershell_script):
 
         # If the modification time has changed, run the PowerShell script
         if current_modified_time != last_modified_time:
-            print(f"File {file_path} has been updated. Executing PowerShell script {powershell_script}...")
-            run_powershell_script(powershell_script)
+            print(f"File {file_path} has been updated. Executing docker glove80 image...")
+            run(dir)
             # Update the last modification time
             last_modified_time = current_modified_time
 
-        print("Waiting...")
+        print("\nWaiting...")
         # Wait for 10 seconds before checking again
-        time.sleep(10)
+        time.sleep(5)
 
 if __name__ == "__main__":
     file_path = "config/glove80.keymap"
-    powershell_script = "./build.ps1"
-    check_file_update(file_path, powershell_script)
+    dir = "C:\\dev\\zmk-config"
+    check_file_update(file_path, dir)
