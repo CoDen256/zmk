@@ -152,11 +152,6 @@
     quick-tap-ms = <175>;
 };
 
-// &num_word {
-//     layers = <Layer_NUM>;
-//     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-// };
-
 #define DSK_PREV    &hmr LCTRL LG(LC(LEFT))   // previous desktop
 #define DSK_NEXT    &hmr LALT LG(LC(RIGHT)) // next     desktop
 #define PIN_WIN     &kp LG(LC(LS(Q)))        // pin window across desktops
@@ -174,6 +169,30 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
+
+        // num_word: num_word {
+        //     compatible = "zmk,behavior-num-word";
+        //     #binding-cells = <0>;
+        //     layers = <Layer_NUM>; // to be specified in user config using "&num_word { layers = <xx>; };"
+        //     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR EQUAL>;
+        //     ignore-numbers;
+        // };
+
+        // num_dance: num_dance {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <200>;
+        //     bindings = <&num_word>, <&sl Layer_NUM>;
+        // };
+
+        // smart_num: smart_num {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     flavor = "balanced";
+        //     tapping-term-ms = <200>;
+        //     quick-tap-ms = <175>;
+        //     bindings = <&mo>, <&num_dance>;
+        // };
 
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
@@ -626,18 +645,18 @@
 &kp TAB    &kp F12        &kp F7        &kp F8         &kp F9         &trans                                                                           &kp LC(LS(ESCAPE))  &kp F9     &kp LA(TAB)  &kp C_NEXT  &none      &kp BACKSLASH
 &kp ESC    &hml LGUI F11  &hml LALT F4  &hml LSHFT F5  &hml LCTRL F6  &trans                                                                           &kp LC(LA(DEL))     &kp LC(S)  &kp LC(C)    &kp LC(V)   &kp LC(X)  &kp F1
 &kp F2     &kp F3         &trans        &none          &none          &none   &none  &none     &none PIN_APP PIN_WIN DSK_MGR    &trans  &trans  &none  &none               &kp LC(Z)  &kp LC(Y)    &kp LC(A)   &kp Q      &to 0
-&trans     &none          &none         &kp C_MUTE     &kp C_PP               &kp B  &kp DOWN  &none                            &none   &none
+&trans     &none          &none         &kp C_MUTE     &kp C_PP               &kp B  &kp DOWN  &none                            &none   &none   &none  &none &none
             >;
         };
 
         layer_NUM {
             bindings = <
 &kp F1     &kp F2        &kp F3        &kp F4         &kp F5                                                                        &kp F6  &kp F7    &kp F8  &kp F9  &kp F10
-&kp EQUAL  &kp N1        &kp N2        &kp K          &kp N4         &kp N5                                                 &kp N6  &kp N7  &kp N8    &kp N9  &kp N0  &kp MINUS
+&kp EQUAL  &kp N1        &kp ASTERISK  &kp BSLH       &kp PERCENT    &kp N5                                                 &kp N6  &kp N7  &kp N8    &kp N9  &kp N0  &kp MINUS
 &kp TAB    &trans        &kp N7        &kp N8         &kp N9         &trans                                                 &trans  &trans  &trans    &trans  &trans  &kp BACKSLASH
 &kp ESC    &hml LGUI N0  &hml LALT N4  &hml LSHFT N5  &hml LCTRL N6  &trans                                                 &trans  &trans  &trans    &trans  &trans  &none
 &none      &trans        &kp N1        &kp N2         &kp N3         &trans  &none  &none   &none    &none  &none   &none   &trans  &trans  &trans    &trans  &trans  &none
-&none      &none         &none         &kp LEFT       &none                  &to 0  &trans  &none    &none  &trans  &trans          &none   &kp DOWN  &none   &none   &none
+&none      &none         &kp PLUS      &kp MINUS      &kp EQUAL              &to 0  &trans  &none    &none  &trans  &trans          &none   &kp DOWN  &none   &none   &none
             >;
         };
 
