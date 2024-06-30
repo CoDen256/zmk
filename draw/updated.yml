@@ -716,7 +716,7 @@ combos:
 - p:
   - 30
   - 42
-  k: B
+  k: '*'
   l:
   - Main
   - NAV

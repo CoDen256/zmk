@@ -39,6 +39,7 @@ def run(dir):
     else:
         print("\n\033[1;92mSUCCESS:\033[0m glove80.uf2 is built!")
         subprocess.call("python ./draw/drawer.py")
+        print("\nDrawing keymap...")
 
 def check_file_update(file_path, dir):
     last_modified_time = None

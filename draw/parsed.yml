@@ -488,7 +488,7 @@ combos:
   k: +
   l: [Main, NAV, NUM]
 - p: [30, 42]
-  k: B
+  k: '*'
   l: [Main, NAV, NUM]
 - p: [31, 43]
   k: '&'

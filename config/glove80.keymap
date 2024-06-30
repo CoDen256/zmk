@@ -703,7 +703,7 @@
 
         combo_star {
             timeout-ms = <30>;
-            bindings = <&kp B>;
+            bindings = <&kp ASTERISK>;
             key-positions = <30 42>;
             layers = <Layer_Main Layer_NAV Layer_NUM>;
             require-prior-idle-ms = <50>;
