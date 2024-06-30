@@ -22,16 +22,16 @@ if __name__ == '__main__':
 
     updated = "./draw/updated.yml"
     out = "./draw/keymap.svg"
+    out_parsed = "./draw/keymap-parsed.svg"
     
+    print("Parsing")
     subprocess.call(f"keymap.exe -c {config} parse -z {keymap} -o {parsed}")
 
-    combos_only = False
-    if len(sys.argv) > 1 and sys.argv[1] == 'c':
-        combos_only = True
 
     origin = load_parsed(parsed)
-    if combos_only:
-        remove_keys(origin)
+    remove_keys(origin)
     save_parsed(updated, origin)
+    print("Drawing")
 
+    subprocess.call(f"keymap.exe -c {config} draw {parsed} -o {out_parsed}")
     subprocess.call(f"keymap.exe -c {config} draw {updated} -o {out}")
