@@ -406,266 +406,93 @@ layers:
   - ''
   - ''
   - ''
+  '5':
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
 combos:
 - p:
-  - 24
-  - 25
-  k: ESC
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 25
-  - 26
-  k: RETURN
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 36
-  - 37
-  k:
-    t: TAB
-    h: Sft+ LALT
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 37
-  - 38
-  k:
-    t: '&key_repeat'
-    h: Sft+ LCTRL
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 48
-  - 50
-  k: Ctl+ X
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 48
-  - 49
-  k: Ctl+ INS
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 49
-  - 50
-  k: Sft+ INS
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 29
-  - 30
-  k: BSPC
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 30
-  - 31
-  k: DEL
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
   - 41
   - 42
-  k:
-    t: (
-    h: Sft+ LCTRL
-    s: <
-  l:
-  - Main
-  - NUM
-- p:
-  - 42
-  - 43
-  k:
-    t: )
-    h: Sft+ LALT
-    s: '>'
-  l:
-  - Main
-  - NUM
-- p:
-  - 41
-  - 42
-  k: <
-  l:
-  - NAV
-- p:
-  - 42
-  - 43
-  k: '>'
-  l:
-  - NAV
-- p:
-  - 59
-  - 60
-  k: '['
-  l:
-  - Main
-  - NUM
-- p:
-  - 60
-  - 61
-  k: ']'
-  l:
-  - Main
-  - NUM
-- p:
-  - 59
-  - 60
-  k: '{'
-  l:
-  - NAV
-- p:
-  - 60
-  - 61
-  k: '}'
-  l:
-  - NAV
-- p:
-  - 24
-  - 36
-  k: '@'
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 25
-  - 37
-  k: '#'
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 26
-  - 38
-  k: $
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 27
-  - 39
-  k: '%'
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 36
-  - 48
-  k: '`'
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 37
-  - 49
-  k: \
-  l:
-  - Main
-  - NAV
-  - NUM
+  k: ESCAPE
 - p:
   - 38
-  - 50
-  k: '='
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 39
-  - 51
-  k: '~'
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 28
-  - 40
-  k: ^
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 29
-  - 41
-  k: +
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 30
-  - 42
-  k: '*'
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 31
-  - 43
-  k: '&'
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 40
-  - 58
-  k: _
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 41
-  - 59
-  k: '-'
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 42
-  - 60
-  k: /
-  l:
-  - Main
-  - NAV
-  - NUM
-- p:
-  - 43
-  - 61
-  k: '|'
-  l:
-  - Main
-  - NAV
-  - NUM
+  - 37
+  k: TAB

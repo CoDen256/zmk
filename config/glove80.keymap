@@ -455,6 +455,30 @@
             wait-ms = <0>;
             bindings = <&macro_tap>, <&kp EQUAL &kp EQUAL>;
         };
+
+        select_word: select_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&select_word_right>, <&select_word_left>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        select_word_right: select_word_right {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <100>;
+            tap-ms = <100>;
+            #binding-cells = <0>;
+            bindings = <&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>;
+        };
+
+        select_word_left: select_word_left {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <100>;
+            tap-ms = <100>;
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>;
+        };
     };
 
     //
@@ -480,274 +504,20 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
-            timeout-ms = <18>;
-            bindings = <&kp ESC>;
-            key-positions = <24 25>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_ret {
-            timeout-ms = <18>;
-            bindings = <&kp RETURN>;
-            key-positions = <25 26>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
         // combo_mouse { timeout-ms = <18>; bindings = <&smart_mouse>; key-positions = <24 26>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
 
-        combo_tab {
-            timeout-ms = <18>;
-            bindings = <&hml LS(LALT) TAB>;
-            key-positions = <36 37>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_repeat {
-            timeout-ms = <18>;
-            bindings = <&hml_repeat LS(LCTRL) 0>;
-            key-positions = <37 38>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_cut {
-            timeout-ms = <18>;
-            bindings = <&kp LC(X)>;
-            key-positions = <48 50>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_copy {
-            timeout-ms = <18>;
-            bindings = <&kp LC(INS)>;
-            key-positions = <48 49>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_paste {
-            timeout-ms = <18>;
-            bindings = <&kp LS(INS)>;
-            key-positions = <49 50>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_bspc {
-            timeout-ms = <18>;
-            bindings = <&kp BSPC>;
-            key-positions = <29 30>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_del {
-            timeout-ms = <18>;
-            bindings = <&kp DEL>;
-            key-positions = <30 31>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_lpar {
-            timeout-ms = <18>;
-            bindings = <&hmr_lpar_lt RS(LCTRL) 0>;
+        RT_COMBO {
+            bindings = <&kp ESCAPE>;
             key-positions = <41 42>;
-            layers = <Layer_Main Layer_NUM>;
-            require-prior-idle-ms = <150>;
         };
 
-        combo_rpar {
-            timeout-ms = <18>;
-            bindings = <&hmr_rpar_gt RS(LALT) 0>;
-            key-positions = <42 43>;
-            layers = <Layer_Main Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_lt {
-            timeout-ms = <18>;
-            bindings = <&kp LT>;
-            key-positions = <41 42>;
-            layers = <Layer_NAV>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_gt {
-            timeout-ms = <18>;
-            bindings = <&kp GT>;
-            key-positions = <42 43>;
-            layers = <Layer_NAV>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_lbkt {
-            timeout-ms = <18>;
-            bindings = <&kp LBKT>;
-            key-positions = <59 60>;
-            layers = <Layer_Main Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_rbkt {
-            timeout-ms = <18>;
-            bindings = <&kp RBKT>;
-            key-positions = <60 61>;
-            layers = <Layer_Main Layer_NUM>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_lbrc {
-            timeout-ms = <18>;
-            bindings = <&kp LBRC>;
-            key-positions = <59 60>;
-            layers = <Layer_NAV>;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_rbrc {
-            timeout-ms = <18>;
-            bindings = <&kp RBRC>;
-            key-positions = <60 61>;
-            layers = <Layer_NAV>;
-            require-prior-idle-ms = <150>;
+        IN_COMBO {
+            bindings = <&kp TAB>;
+            key-positions = <38 37>;
         };
 
         //  combo_grk { timeout-ms = <18>; bindings = <&sl UC>; key-positions = <29 31>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
         // combo_cpgrk { timeout-ms = <18>; bindings = <&sls 0>; key-positions = <29 30 31>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
-
-        combo_at {
-            timeout-ms = <30>;
-            bindings = <&kp AT>;
-            key-positions = <24 36>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_hash {
-            timeout-ms = <30>;
-            bindings = <&kp HASH>;
-            key-positions = <25 37>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_dllr {
-            timeout-ms = <30>;
-            bindings = <&kp DLLR>;
-            key-positions = <26 38>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_prcnt {
-            timeout-ms = <30>;
-            bindings = <&kp PRCNT>;
-            key-positions = <27 39>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_grave {
-            timeout-ms = <30>;
-            bindings = <&kp GRAVE>;
-            key-positions = <36 48>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_bslh {
-            timeout-ms = <30>;
-            bindings = <&kp BSLH>;
-            key-positions = <37 49>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_equal {
-            timeout-ms = <30>;
-            bindings = <&kp EQUAL>;
-            key-positions = <38 50>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_tilde {
-            timeout-ms = <30>;
-            bindings = <&kp TILDE>;
-            key-positions = <39 51>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_caret {
-            timeout-ms = <30>;
-            bindings = <&kp CARET>;
-            key-positions = <28 40>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_plus {
-            timeout-ms = <30>;
-            bindings = <&kp PLUS>;
-            key-positions = <29 41>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_star {
-            timeout-ms = <30>;
-            bindings = <&kp ASTERISK>;
-            key-positions = <30 42>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_amps {
-            timeout-ms = <30>;
-            bindings = <&kp AMPS>;
-            key-positions = <31 43>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_under {
-            timeout-ms = <30>;
-            bindings = <&kp UNDER>;
-            key-positions = <40 58>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_minus {
-            timeout-ms = <30>;
-            bindings = <&kp MINUS>;
-            key-positions = <41 59>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_fslh {
-            timeout-ms = <30>;
-            bindings = <&kp FSLH>;
-            key-positions = <42 60>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
-
-        combo_pipe {
-            timeout-ms = <30>;
-            bindings = <&kp PIPE>;
-            key-positions = <43 61>;
-            layers = <Layer_Main Layer_NAV Layer_NUM>;
-            require-prior-idle-ms = <50>;
-        };
     };
 };
 
@@ -755,6 +525,7 @@
 
 / {
     macros {
+
     };
 };
 
@@ -766,24 +537,24 @@
 
         layer_Main {
             bindings = <
-&kp F1     &kp F2       &kp F3       &kp F4        &kp F5                                                                                                          &kp F6        &kp F7        &kp F8       &kp F9       &kp F10
-&kp EQUAL  &kp N1       &kp N2       &kp K         &kp N4        &kp N5                                                                                    &kp N6  &kp N7        &kp N8        &kp N9       &kp N0       &kp MINUS
-&none      &kp ESC      &kp G        &kp H         &kp C         &kp W                                                                                     &trans  &kp V         &kp L         &kp B        &kp SQT      &none
-&none      &hml LGUI O  &hml LALT A  &hml LSHFT I  &hml LCTRL N  &qexcl                                                                                    &trans  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmr LGUI S  &none
-&kp LSHFT  &kp Q        &kp F        &kp U         &kp P         &trans  &mo Layer_NAV  &lt Layer_FUN RET  &magic 0 0    &magic 0 0  &none  &mo Layer_NUM  &trans  &kp M         &kp D         &kp Y        &kp X        &kp RSHFT
-&none      &none        &kp J        &quote        &none                 &kp SPACE      &kp BACKSPACE      &none         &none       &none  &smart_shft            &none         &kp RET       &kp Z        &none        &none
-            >;
+&kp F1  &kp F2       &kp F3       &kp F4        &kp F5                                                                                         &kp F6        &kp F7        &kp F8       &kp F9       &kp F10
+&none   &kp N1       &kp N2       &kp K         &kp N4         &kp N5                                                                  &kp N6  &kp N7        &kp N8        &kp N9       &kp N0       &kp MINUS
+&none   &none        &kp G        &kp H         &kp C          &kp W                                                                   &trans  &kp V         &kp L         &kp B        &kp SQT      &none
+&none   &hml LGUI O  &hml LALT A  &hml LSHFT I  &hml LCTRL N   &qexcl                                                                  &trans  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmr LGUI S  &none
+&none   &kp Q        &kp F        &kp U         &kp P          &trans  &none      &none  &magic 4 0    &magic 4 0  &none  &none        &trans  &kp M         &kp D         &kp Y        &kp X        &none
+&none   &none        &kp J        &mo 2         &kp BACKSPACE          &kp SPACE  &none  &none         &none       &none  &smart_shft          &kp RET       &mo 1         &kp Z        &none        &none
+>;
         };
 
         layer_NAV {
             bindings = <
-&kp F1     &kp F2    &kp F3    &kp F4       &kp F5                                                                                &kp F6             &kp F7            &kp F8           &kp F9   &kp F10
-&kp EQUAL  &kp N1    &kp N2    &kp K        &kp N4     &kp N5                                                          &kp N6     &kp N7             &kp N8            &kp N9           &kp N0   &kp MINUS
-&kp TAB    &trans    &trans    &kp LS(TAB)  &none      &trans                                                          &kp PG_UP  &mt LC(BSPC) BSPC  &mt LC(HOME) UP   &mt LC(DEL) DEL  &trans   &kp BACKSLASH
-&kp ESC    &sk LGUI  &sk LALT  &sk LSHFT    &sk LCTRL  &trans                                                          &kp PG_DN  &mt_home 0 LEFT    &mt LC(END) DOWN  &mt_end 0 RIGHT  &kp RET  &none
-&none      &trans    &trans    &trans       &trans     &trans  &none           &none   &none    &none  &none  &none    &kp INS    &kp TAB            &kp LT            &kp GT           &trans   &none
-&none      &none     &none     &kp LEFT     &kp Q              &to Layer_Main  &trans  &none    &none  &none  &kp ESC             &kp B              &kp DOWN          &none            &none    &none
-            >;
+&kp F1     &kp F2        &kp F3          &kp F4              &kp F5                                                                                         &kp F6          &kp F7  &kp F8            &kp F9        &kp F10
+&kp EQUAL  &kp N1        &kp N2          &kp NUMBER_3        &kp N4               &kp N5                                                            &kp N6  &kp N7          &kp N8  &kp N9            &kp N0        &kp MINUS
+&none      &none         &none           &kp LC(LEFT_ARROW)  &kp LC(RIGHT_ARROW)  &select_word                                                      &none   &none           &none   &none             &trans        &none
+&none      &kp UP_ARROW  &kp DOWN_ARROW  &kp LEFT_ARROW      &kp RIGHT            &none                                                             &none   &none           &none   &none             &none         &none
+&none      &kp PG_UP     &kp PAGE_DOWN   &kp HOME            &kp END              &trans        &none         &none   &none    &none  &none  &none  &none   &none           &none   &none             &none         &none
+&none      &none         &kp LC(X)       &kp LC(C)           &kp LC(V)                          &kp LEFT_ALT  &trans  &none    &none  &none  &none          &kp LEFT_SHIFT  &none   &kp LEFT_CONTROL  &kp LEFT_GUI  &none
+>;
         };
 
         layer_FUN {
@@ -794,7 +565,7 @@
 &kp ESC    &hml LGUI F11  &hml LALT F4  &hml LSHFT F5  &hml LCTRL F6  &trans                                                                           &trans DSK_PREV VOL_DOWN DSK_NEXT  &trans      &none         &none       &kp F10     &kp F1
 &kp F2     &kp F3         &trans        &none          &none          &none   &none  &none     &none PIN_APP PIN_WIN DSK_MGR    &trans  &trans  &none  &none                              &none       &none         &kp LEFT    &kp Q       &to Layer_Main
 &trans     &none          &none         &kp C_MUTE     &kp C_PP               &kp B  &kp DOWN  &none                            &none   &none
-            >;
+>;
         };
 
         layer_NUM {
@@ -804,8 +575,8 @@
 &kp TAB    &trans        &kp N7        &kp N8         &kp N9         &trans                                                          &trans  &trans  &trans    &trans  &trans  &kp BACKSLASH
 &kp ESC    &hml LGUI N0  &hml LALT N4  &hml LSHFT N5  &hml LCTRL N6  &trans                                                          &trans  &trans  &trans    &trans  &trans  &none
 &none      &trans        &kp N1        &kp N2         &kp N3         &trans  &none           &none   &none    &none  &none   &none   &trans  &trans  &trans    &trans  &trans  &none
-&none      &none         &none         &kp LEFT       &kp Q                  &to Layer_Main  &trans  &none    &none  &trans  &trans          &kp B   &kp DOWN  &none   &none   &none
-            >;
+&none      &none         &none         &kp LEFT       &none                  &to Layer_Main  &trans  &none    &none  &trans  &trans          &none   &kp DOWN  &none   &none   &none
+>;
         };
 
         layer_Magic {
@@ -816,7 +587,18 @@
 &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                     &none  &none  &none  &none  &none  &bootloader
 &sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none           &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
 &none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB    &none  &none  &none         &none  &none  &none  &none  &none
-            >;
+>;
+        };
+
+        layer_5 {
+            bindings = <
+&kp F1     &kp F2    &kp F3    &kp F4       &kp F5                                                                                &kp F6             &kp F7            &kp F8           &kp F9   &kp F10
+&kp EQUAL  &kp N1    &kp N2    &kp K        &kp N4     &kp N5                                                          &kp N6     &kp N7             &kp N8            &kp N9           &kp N0   &kp MINUS
+&kp TAB    &trans    &trans    &kp LS(TAB)  &none      &trans                                                          &kp PG_UP  &mt LC(BSPC) BSPC  &mt LC(HOME) UP   &mt LC(DEL) DEL  &trans   &kp BACKSLASH
+&kp ESC    &sk LGUI  &sk LALT  &sk LSHFT    &sk LCTRL  &trans                                                          &kp PG_DN  &mt_home 0 LEFT    &mt LC(END) DOWN  &mt_end 0 RIGHT  &kp RET  &none
+&none      &trans    &trans    &trans       &trans     &trans  &none           &none   &none    &none  &none  &none    &kp INS    &kp TAB            &kp LT            &kp GT           &trans   &none
+&none      &none     &none     &kp LEFT     &kp Q              &to Layer_Main  &trans  &none    &none  &none  &kp ESC             &kp B              &kp DOWN          &none            &none    &none
+>;
         };
     };
 };
