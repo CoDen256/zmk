@@ -38,7 +38,7 @@ def run(dir):
         print(f"\n\033[1;91m{error}\033[0m")
     else:
         print("\n\033[1;92mSUCCESS:\033[0m glove80.uf2 is built!")
-        subprocess.call("./draw/draw.ps1")
+        subprocess.call("python ./draw/drawer.py")
 
 def check_file_update(file_path, dir):
     last_modified_time = None
