@@ -8,9 +8,9 @@ layers:
   - F5
   - F6
   - F7
-  - F8
-  - F9
-  - F10
+  - MUTE
+  - VOL DN
+  - VOLUME UP
   - ''
   - '1'
   - '2'
@@ -29,24 +29,24 @@ layers:
   - H
   - C
   - W
-  - {t: ▽, type: trans}
+  - {t: '?', s: '!'}
   - V
   - L
   - B
-  - ''''
   - ''
   - ''
+  - {t: ., s: ':'}
   - {t: O, h: LGUI}
   - {t: A, h: LALT}
   - {t: I, h: LSHFT}
   - {t: N, h: LCTRL}
-  - {t: '?', s: '!'}
+  - {t: '=', s: '&eq_short'}
   - {t: ▽, type: trans}
   - {t: T, h: LCTRL}
   - {t: R, h: RSHFT}
   - {t: E, h: LALT}
   - {t: S, h: LGUI}
-  - ''
+  - {t: ',', s: ;}
   - ''
   - Q
   - F
@@ -73,7 +73,7 @@ layers:
   - SPACE
   - ''
   - ''
-  - ''
+  - '&win_sleep'
   - ''
   - {t: LSHFT, h: sticky, s: '&caps_word'}
   - RET
@@ -92,18 +92,18 @@ layers:
   - F8
   - F9
   - F10
-  - '='
+  - ''
   - '1'
   - '2'
-  - '3'
-  - '4'
+  - Ctl+ Z
+  - Ctl+ Y
   - '5'
   - '6'
   - '7'
   - '8'
   - '9'
   - '0'
-  - '-'
+  - ''
   - ''
   - ''
   - ''
@@ -156,7 +156,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - ESCAPE
   - LEFT SHIFT
   - {type: held}
   - LEFT CONTROL
@@ -176,7 +176,7 @@ layers:
   - '='
   - '1'
   - '2'
-  - K
+  - '3'
   - '4'
   - '5'
   - '6'
@@ -191,11 +191,11 @@ layers:
   - F8
   - F9
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - PREV
-  - VOL UP
+  - Ctl+Sft+ ESCAPE
+  - F9
+  - Alt+ TAB
   - NEXT
-  - '&win_sleep'
+  - ''
   - \
   - ESC
   - {t: F11, h: LGUI}
@@ -203,14 +203,11 @@ layers:
   - {t: F5, h: LSHFT}
   - {t: F6, h: LCTRL}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: Gui+Ctl+ LEFT, h: LCTRL}
-  - {t: VOL DN, h: RSHFT}
-  - {t: Gui+Ctl+ RIGHT, h: LALT}
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - F10
+  - Ctl+Alt+ DEL
+  - Ctl+ S
+  - Ctl+ C
+  - Ctl+ V
+  - Ctl+ X
   - F1
   - F2
   - F3
@@ -228,12 +225,12 @@ layers:
   - {t: ▽, type: trans}
   - ''
   - ''
-  - ''
-  - ''
-  - {t: LEFT, type: held}
+  - Ctl+ Z
+  - Ctl+ Y
+  - Ctl+ A
   - Q
   - {t: Main, h: toggle}
-  - {t: ▽, type: trans}
+  - {type: held}
   - ''
   - ''
   - MUTE
@@ -286,8 +283,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   - ''
   - ''
@@ -405,89 +402,26 @@ layers:
   - ''
   - ''
   - ''
-  '5':
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
-  - '='
-  - '1'
-  - '2'
-  - K
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - '-'
-  - TAB
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Sft+ TAB
-  - ''
-  - {t: ▽, type: trans}
-  - PG UP
-  - {t: BSPC, h: Ctl+ BSPC}
-  - {t: UP, h: Ctl+ HOME}
-  - {t: DEL, h: Ctl+ DEL}
-  - {t: ▽, type: trans}
-  - \
-  - ESC
-  - {t: LGUI, h: sticky}
-  - {t: LALT, h: sticky}
-  - {t: LSHFT, h: sticky}
-  - {t: LCTRL, h: sticky}
-  - {t: ▽, type: trans}
-  - PG DN
-  - {t: LEFT, h: HOME}
-  - {t: DOWN, h: Ctl+ END}
-  - {t: RIGHT, h: END}
-  - RET
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - INS
-  - TAB
-  - <
-  - '>'
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - LEFT
-  - Q
-  - {t: Main, h: toggle}
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ESC
-  - B
-  - DOWN
-  - ''
-  - ''
-  - ''
 combos:
 - p: [41, 42]
   k: ESCAPE
 - p: [38, 37]
   k: TAB
+- p: [59, 60]
+  k: (
+- p: [60, 61]
+  k: )
+- p: [49, 50]
+  k: {t: Sft+ ', s: ''''}
+- p: [59, 42]
+  k: /
+- p: [50, 37]
+  k: \
+- p: [49, 48]
+  k: {t: '=', s: '&eq_short'}
+- p: [29, 30]
+  k: '{'
+- p: [30, 31]
+  k: '}'
+- p: [42, 43]
+  k: NUM
