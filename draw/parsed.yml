@@ -1,0 +1,507 @@
+layout: {qmk_keyboard: glove80}
+layers:
+  Main:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '='
+  - '1'
+  - '2'
+  - K
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - ''
+  - ESC
+  - G
+  - H
+  - C
+  - W
+  - {t: ▽, type: trans}
+  - V
+  - L
+  - B
+  - ''''
+  - ''
+  - ''
+  - {t: O, h: LGUI}
+  - {t: A, h: LALT}
+  - {t: I, h: LSHFT}
+  - {t: N, h: LCTRL}
+  - {t: '?', s: '!'}
+  - {t: ▽, type: trans}
+  - {t: T, h: LCTRL}
+  - {t: R, h: RSHFT}
+  - {t: E, h: LALT}
+  - {t: S, h: LGUI}
+  - ''
+  - LSHFT
+  - Q
+  - F
+  - U
+  - P
+  - {t: ▽, type: trans}
+  - NAV
+  - {t: RET, h: FUN}
+  - {t: '&rgb_ug_status_macro', h: Main}
+  - {t: '&rgb_ug_status_macro', h: Main}
+  - ''
+  - NUM
+  - {t: ▽, type: trans}
+  - M
+  - D
+  - Y
+  - X
+  - RSHFT
+  - ''
+  - ''
+  - J
+  - {t: Sft+ ', s: ''''}
+  - ''
+  - SPACE
+  - BACKSPACE
+  - ''
+  - ''
+  - ''
+  - {t: LSHFT, h: sticky, s: '&caps_word'}
+  - ''
+  - RET
+  - Z
+  - ''
+  - ''
+  NAV:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '='
+  - '1'
+  - '2'
+  - K
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+ TAB
+  - ''
+  - {t: ▽, type: trans}
+  - PG UP
+  - {t: BSPC, h: Ctl+ BSPC}
+  - {t: UP, h: Ctl+ HOME}
+  - {t: DEL, h: Ctl+ DEL}
+  - {t: ▽, type: trans}
+  - \
+  - ESC
+  - {t: LGUI, h: sticky}
+  - {t: LALT, h: sticky}
+  - {t: LSHFT, h: sticky}
+  - {t: LCTRL, h: sticky}
+  - {t: ▽, type: trans}
+  - PG DN
+  - {t: LEFT, h: HOME}
+  - {t: DOWN, h: Ctl+ END}
+  - {t: RIGHT, h: END}
+  - RET
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - INS
+  - TAB
+  - <
+  - '>'
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - LEFT
+  - Q
+  - {t: Main, h: toggle}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ESC
+  - B
+  - DOWN
+  - ''
+  - ''
+  - ''
+  FUN:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '='
+  - '1'
+  - '2'
+  - K
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - F12
+  - F7
+  - F8
+  - F9
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PREV
+  - VOL UP
+  - NEXT
+  - '&win_sleep'
+  - \
+  - ESC
+  - {t: F11, h: LGUI}
+  - {t: F4, h: LALT}
+  - {t: F5, h: LSHFT}
+  - {t: F6, h: LCTRL}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Gui+Ctl+ LEFT, h: LCTRL}
+  - {t: VOL DN, h: RSHFT}
+  - {t: Gui+Ctl+ RIGHT, h: LALT}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - F10
+  - F1
+  - F2
+  - F3
+  - {t: ▽, type: trans}
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - Gui+Ctl+Sft+ A
+  - Gui+Ctl+Sft+ Q
+  - Alt+ `
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - LEFT
+  - Q
+  - {t: Main, h: toggle}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - MUTE
+  - PP
+  - B
+  - DOWN
+  - ''
+  - ''
+  - ''
+  NUM:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '='
+  - '1'
+  - '2'
+  - K
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - {t: ▽, type: trans}
+  - '7'
+  - '8'
+  - '9'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - \
+  - ESC
+  - {t: '0', h: LGUI}
+  - {t: '4', h: LALT}
+  - {t: '5', h: LSHFT}
+  - {t: '6', h: LCTRL}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - LEFT
+  - Q
+  - {t: Main, h: toggle}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - B
+  - DOWN
+  - ''
+  - ''
+  - ''
+  Magic:
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BT CLR ALL
+  - {t: Main, h: toggle}
+  - {t: NAV, h: toggle}
+  - {t: FUN, h: toggle}
+  - {t: NUM, h: toggle}
+  - {t: Magic, h: toggle}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - RGB SPI
+  - RGB SAI
+  - RGB HUI
+  - RGB BRI
+  - RGB TOG
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bootloader'
+  - RGB SPD
+  - RGB SAD
+  - RGB HUD
+  - RGB BRD
+  - RGB EFF
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bootloader'
+  - '&sys_reset'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bt_2'
+  - '&bt_3'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&sys_reset'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bt_0'
+  - '&bt_1'
+  - OUT USB
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+combos:
+- p: [24, 25]
+  k: ESC
+  l: [Main, NAV, NUM]
+- p: [25, 26]
+  k: RETURN
+  l: [Main, NAV, NUM]
+- p: [36, 37]
+  k: {t: TAB, h: Sft+ LALT}
+  l: [Main, NAV, NUM]
+- p: [37, 38]
+  k: {t: '&key_repeat', h: Sft+ LCTRL}
+  l: [Main, NAV, NUM]
+- p: [48, 50]
+  k: Ctl+ X
+  l: [Main, NAV, NUM]
+- p: [48, 49]
+  k: Ctl+ INS
+  l: [Main, NAV, NUM]
+- p: [49, 50]
+  k: Sft+ INS
+  l: [Main, NAV, NUM]
+- p: [29, 30]
+  k: BSPC
+  l: [Main, NAV, NUM]
+- p: [30, 31]
+  k: DEL
+  l: [Main, NAV, NUM]
+- p: [41, 42]
+  k: {t: (, h: Sft+ LCTRL, s: <}
+  l: [Main, NUM]
+- p: [42, 43]
+  k: {t: ), h: Sft+ LALT, s: '>'}
+  l: [Main, NUM]
+- p: [41, 42]
+  k: <
+  l: [NAV]
+- p: [42, 43]
+  k: '>'
+  l: [NAV]
+- p: [59, 60]
+  k: '['
+  l: [Main, NUM]
+- p: [60, 61]
+  k: ']'
+  l: [Main, NUM]
+- p: [59, 60]
+  k: '{'
+  l: [NAV]
+- p: [60, 61]
+  k: '}'
+  l: [NAV]
+- p: [24, 36]
+  k: '@'
+  l: [Main, NAV, NUM]
+- p: [25, 37]
+  k: '#'
+  l: [Main, NAV, NUM]
+- p: [26, 38]
+  k: $
+  l: [Main, NAV, NUM]
+- p: [27, 39]
+  k: '%'
+  l: [Main, NAV, NUM]
+- p: [36, 48]
+  k: '`'
+  l: [Main, NAV, NUM]
+- p: [37, 49]
+  k: \
+  l: [Main, NAV, NUM]
+- p: [38, 50]
+  k: '='
+  l: [Main, NAV, NUM]
+- p: [39, 51]
+  k: '~'
+  l: [Main, NAV, NUM]
+- p: [28, 40]
+  k: ^
+  l: [Main, NAV, NUM]
+- p: [29, 41]
+  k: +
+  l: [Main, NAV, NUM]
+- p: [30, 42]
+  k: B
+  l: [Main, NAV, NUM]
+- p: [31, 43]
+  k: '&'
+  l: [Main, NAV, NUM]
+- p: [40, 58]
+  k: _
+  l: [Main, NAV, NUM]
+- p: [41, 59]
+  k: '-'
+  l: [Main, NAV, NUM]
+- p: [42, 60]
+  k: /
+  l: [Main, NAV, NUM]
+- p: [43, 61]
+  k: '|'
+  l: [Main, NAV, NUM]
