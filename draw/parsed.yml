@@ -48,7 +48,7 @@ layers:
   - {t: S, h: LGUI}
   - {t: ',', s: ;}
   - ''
-  - Q
+  - J
   - F
   - U
   - P
@@ -67,7 +67,7 @@ layers:
   - ''
   - ''
   - ''
-  - J
+  - Q
   - FUN
   - BACKSPACE
   - SPACE
@@ -94,7 +94,7 @@ layers:
   - F10
   - ''
   - '1'
-  - '2'
+  - Ctl+ A
   - Ctl+ Z
   - Ctl+ Y
   - '5'
@@ -147,7 +147,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - '&duplicate_line'
   - Ctl+ X
   - Ctl+ C
   - Ctl+ V
@@ -191,14 +191,14 @@ layers:
   - F8
   - F9
   - {t: ▽, type: trans}
-  - Ctl+Sft+ ESCAPE
-  - F9
+  - Ctl+ F6
+  - Ctl+Sft+ ESC
   - Alt+ TAB
-  - NEXT
+  - F9
   - ''
   - \
   - ESC
-  - {t: F11, h: LGUI}
+  - Ctl+ Y
   - {t: F4, h: LALT}
   - {t: F5, h: LSHFT}
   - {t: F6, h: LCTRL}
@@ -210,10 +210,10 @@ layers:
   - Ctl+ X
   - F1
   - F2
-  - F3
-  - {t: ▽, type: trans}
+  - Ctl+ Z
+  - Ctl+ X
   - ''
-  - ''
+  - Ctl+ S
   - ''
   - Gui+Ctl+Sft+ A
   - Gui+Ctl+Sft+ Q
@@ -225,13 +225,13 @@ layers:
   - Ctl+ Z
   - Ctl+ Y
   - Ctl+ A
-  - Q
+  - Ctl+ F
   - {t: Main, h: toggle}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - {t: MUTE, type: held}
-  - PP
+  - Ctl+ A
+  - Ctl+ C
+  - {type: held}
+  - Ctl+ V
   - B
   - DOWN
   - ''
