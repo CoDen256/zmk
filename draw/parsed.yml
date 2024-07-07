@@ -1,87 +1,249 @@
 layout: {qmk_keyboard: glove80}
 layers:
-  Main:
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
-  - F6
-  - F7
-  - MUTE
-  - VOL DN
-  - VOLUME UP
-  - ''
-  - '1'
-  - '2'
-  - K
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - '-'
-  - ''
-  - ''
-  - G
-  - H
-  - C
-  - W
-  - {t: '?', s: '!'}
-  - V
-  - L
-  - B
-  - ''
-  - ''
-  - {t: ., s: ':'}
-  - {t: O, h: LGUI}
-  - {t: A, h: LALT}
-  - {t: I, h: LSHFT}
-  - {t: N, h: LCTRL}
-  - {t: ^, s: '~'}
-  - $
-  - {t: T, h: LCTRL}
-  - {t: R, h: RSHFT}
-  - {t: E, h: LALT}
-  - {t: S, h: LGUI}
-  - {t: ',', s: ;}
-  - ''
-  - J
-  - F
-  - U
-  - P
+  magic:
+  - BT CLR
   - ''
   - ''
   - ''
-  - {t: '&rgb_ug_status_macro', h: Magic}
-  - {t: '&rgb_ug_status_macro', h: Magic}
   - ''
   - ''
+  - ''
+  - ''
+  - ''
+  - BT CLR ALL
+  - {t: magic, h: toggle}
+  - {t: fun, h: toggle}
+  - {t: vim, h: toggle}
+  - {t: fun, h: toggle}
+  - {t: fun, h: toggle}
+  - {t: fun, h: toggle}
+  - {t: vim_search, h: toggle}
+  - {t: vim_search, h: toggle}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - RGB SPI
+  - RGB SAI
+  - RGB HUI
+  - RGB BRI
+  - RGB TOG
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bootloader'
+  - RGB SPD
+  - RGB SAD
+  - RGB HUD
+  - RGB BRD
+  - RGB EFF
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bootloader'
+  - '&sys_reset'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bt_2'
+  - '&bt_3'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&sys_reset'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bt_0'
+  - '&bt_1'
+  - OUT USB
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  vim_search:
   - {t: ▽, type: trans}
-  - M
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&kp_to ENTER 2'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  vim:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '*'
+  - U
+  - '#'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - (
+  - '%'
+  - '"'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - X
+  - G
+  - D
+  - C
+  - R
+  - '{'
+  - V
+  - '&kp_to O 1'
+  - '&kp_to A 1'
+  - {t: vim_search, h: toggle}
+  - {t: ▽, type: trans}
+  - .
+  - J
+  - K
+  - H
+  - L
+  - Z
+  - ''''
+  - B
+  - W
+  - E
+  - '&kp_to I 1'
+  - {t: ',', s: ;}
+  - {t: ▽, type: trans}
+  - N
   - D
   - Y
-  - X
+  - P
+  - M
+  - '&kp_to SLASH 1'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&kp_to LS(SLASH) 1'
+  - {t: ▽, type: trans}
+  - '0'
+  - $
+  - '&kp_sl T 0'
+  - '&kp_sl F 0'
   - ''
+  - {t: ▽, type: trans}
+  - '9'
+  - '7'
+  - '5'
+  - '3'
+  - LEFT SHIFT
+  - '1'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ':'
+  - LCTRL
+  - '2'
+  - '4'
+  - '6'
+  - '8'
   - ''
-  - ''
-  - Q
-  - FUN
-  - BACKSPACE
-  - SPACE
-  - ''
-  - ''
-  - '&win_sleep'
-  - ''
-  - {t: LSHFT, h: sticky, s: '&caps_word'}
-  - RET
-  - NAV
-  - Z
-  - ''
-  - ''
-  NAV:
+  nav:
   - F1
   - F2
   - F3
@@ -134,10 +296,10 @@ layers:
   - HOME
   - END
   - {t: ▽, type: trans}
+  - {t: vim_search, h: toggle}
   - ''
-  - ''
-  - ''
-  - ''
+  - {t: '&rgb_ug_status_macro', h: vim_search}
+  - {t: '&rgb_ug_status_macro', h: vim_search}
   - ''
   - ''
   - ''
@@ -158,11 +320,11 @@ layers:
   - ''
   - ESCAPE
   - LEFT SHIFT
-  - {type: held}
+  - ''
   - LEFT CONTROL
   - LEFT GUI
   - ''
-  FUN:
+  fun:
   - F1
   - F2
   - F3
@@ -200,8 +362,8 @@ layers:
   - ESC
   - Ctl+ Y
   - {t: F4, h: LALT}
-  - {t: F5, h: LSHFT}
-  - {t: F6, h: LCTRL}
+  - {t: F5, h: LSHFT, type: held}
+  - {t: F6, h: LCTRL, type: held}
   - {t: ▽, type: trans}
   - Ctl+Alt+ DEL
   - Ctl+ S
@@ -223,14 +385,14 @@ layers:
   - ''
   - ''
   - Ctl+ Z
-  - Ctl+ Y
+  - F9
   - Ctl+ A
   - Ctl+ F
-  - {t: Main, h: toggle}
+  - {t: vim_search, h: toggle}
   - {t: ▽, type: trans}
   - Ctl+ A
   - Ctl+ C
-  - {type: held}
+  - ''
   - Ctl+ V
   - B
   - DOWN
@@ -238,12 +400,12 @@ layers:
   - ''
   - ''
   - ''
+  - Ctl+ Y
   - ''
   - ''
   - ''
   - ''
-  - ''
-  NUM:
+  num:
   - F1
   - F2
   - F3
@@ -286,8 +448,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
   - ''
@@ -313,7 +475,7 @@ layers:
   - +
   - '-'
   - '='
-  - {t: Main, h: toggle}
+  - {t: vim_search, h: toggle}
   - {t: ▽, type: trans}
   - ''
   - ''
@@ -324,92 +486,173 @@ layers:
   - ''
   - ''
   - ''
-  Magic:
-  - BT CLR
+  main:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - ''
+  - MUTE
+  - VOL DN
+  - VOLUME UP
+  - ''
+  - '1'
+  - '2'
+  - K
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '&kp_tog ESC 2'
+  - '9'
+  - '0'
+  - '-'
+  - ''
+  - ''
+  - G
+  - H
+  - C
+  - W
+  - {t: '?', s: '!'}
+  - V
+  - L
+  - B
+  - ''
+  - ''
+  - {t: ., s: ':'}
+  - {t: O, h: LGUI}
+  - {t: A, h: LALT}
+  - {t: I, h: LSHFT}
+  - {t: N, h: LCTRL}
+  - {t: ^, s: '~'}
+  - $
+  - {t: T, h: LCTRL}
+  - {t: R, h: RSHFT}
+  - {t: E, h: LALT}
+  - {t: S, h: LGUI}
+  - {t: ',', s: ;}
+  - ''
+  - J
+  - F
+  - U
+  - P
+  - ''
+  - {t: LSHFT, h: sticky, s: '&caps_word'}
+  - ''
+  - {t: '&rgb_ug_status_macro', h: nav}
+  - {t: '&rgb_ug_status_macro', h: nav}
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - M
+  - D
+  - Y
+  - X
   - ''
   - ''
   - ''
+  - Q
+  - fun
+  - TAB
+  - SPACE
   - ''
   - ''
+  - '&win_sleep'
+  - ''
+  - BACKSPACE
+  - RET
+  - {t: fun, h: toggle}
+  - Z
   - ''
   - ''
-  - ''
-  - BT CLR ALL
-  - {t: Main, h: toggle}
-  - {t: NAV, h: toggle}
-  - {t: FUN, h: toggle}
-  - {t: NUM, h: toggle}
-  - {t: Magic, h: toggle}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - RGB SPI
-  - RGB SAI
-  - RGB HUI
-  - RGB BRI
-  - RGB TOG
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&bootloader'
-  - RGB SPD
-  - RGB SAD
-  - RGB HUD
-  - RGB BRD
-  - RGB EFF
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&bootloader'
-  - '&sys_reset'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&bt_2'
-  - '&bt_3'
-  - {type: held}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&sys_reset'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&bt_0'
-  - '&bt_1'
-  - OUT USB
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  browser:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+Sft+ TAB
+  - Ctl+ TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
 combos:
 - p: [41, 42]
   k: ESCAPE
 - p: [38, 37]
-  k: TAB
+  k: fun
 - p: [59, 60]
   k: (
 - p: [60, 61]
@@ -427,7 +670,7 @@ combos:
 - p: [30, 31]
   k: '}'
 - p: [42, 43]
-  k: NUM
+  k: vim_search
 - p: [61, 42]
   k: \
 - p: [24, 25]
