@@ -576,7 +576,28 @@
       
          #binding-cells = <2>;
          bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &sl MACRO_PLACEHOLDER>;
-         label = "KP_SL";};
+         label = "KP_SL";};select_line: select_line {
+        compatible = "zmk,behavior-macro";
+      
+         wait-ms = <0>;
+         tap-ms = <100>;
+         #binding-cells = <0>;
+         bindings = <&kp HOME &kp LS(END)>;
+         label = "SELECT_LINE";};delete_word: delete_word {
+        compatible = "zmk,behavior-macro";
+      
+         wait-ms = <0>;
+         tap-ms = <100>;
+         #binding-cells = <0>;
+         bindings = <&select_word &kp BACKSPACE>;
+         label = "DELETE_WORD";};delete_line: delete_line {
+        compatible = "zmk,behavior-macro";
+      
+         wait-ms = <0>;
+         tap-ms = <100>;
+         #binding-cells = <0>;
+         bindings = <&select_line &kp BACKSPACE>;
+         label = "DELETE_LINE";};
     };
 
     //
@@ -883,6 +904,48 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
         compatible = "zmk,keymap";
 
@@ -906,12 +969,12 @@ browser {
 >;};
 vim {
          bindings = <
-&trans      &trans  &trans        &trans  &trans                                                                                                                 &trans                &trans        &trans             &trans       &trans
-&trans      &trans  &kp ASTERISK  &kp U   &kp HASH      &trans                                                                                   &trans          &kp LEFT_PARENTHESIS  &kp PERCENT   &kp DOUBLE_QUOTES  &trans       &trans
-&trans      &kp X   &kp G         &kp D   &kp C         &kp R                                                                                    &kp LEFT_BRACE  &kp V                 &kp_tog O 2   &kp_tog A 2        &none        &trans
-&dot_morph  &kp J   &kp K         &kp H   &kp L         &kp Z                                                                                    &kp SQT         &kp B                 &kp W         &kp E              &kp_tog I 2  &comma_morph
-&none       &kp N   &kp D         &kp Y   &kp P         &kp M   &kp_tog SLASH 3  &trans        &trans    &trans  &trans     &kp_tog LS(SLASH) 3  &trans          &kp N0                &kp DOLLAR    &kp_sl T 3         &kp_sl F 3   &trans
-&none       &none   &kp N7        &kp N5  &kp NUMBER_3          &kp LEFT_SHIFT   &kp NUMBER_1  &trans    &trans  &kp COLON  &kp LCTRL                            &kp NUMBER_2          &kp NUMBER_4  &kp NUMBER_6       &kp N8       &trans
+&trans      &trans  &trans        &trans     &trans                                                                                                                     &trans                &trans        &trans             &trans       &trans
+&trans      &trans  &kp ASTERISK  &kp LC(R)  &kp HASH      &trans                                                                                       &trans          &kp LEFT_PARENTHESIS  &kp PERCENT   &kp DOUBLE_QUOTES  &trans       &trans
+&trans      &kp X   &kp D         &kp U      &kp C         &kp_sl R 3                                                                                   &kp LEFT_BRACE  &kp V                 &kp_tog O 2   &kp_tog A 2        &none        &trans
+&dot_morph  &kp J   &kp K         &kp H      &kp L         &kp Z                                                                                        &kp SQT         &kp B                 &kp W         &kp E              &kp_tog I 2  &comma_morph
+&none       &kp N   &kp G         &kp Y      &kp P         &kp M       &kp_tog SLASH 3  &trans        &trans    &trans  &trans     &kp_tog LS(SLASH) 3  &trans          &kp N0                &kp DOLLAR    &kp_sl T 3         &kp_sl F 3   &trans
+&none       &none   &kp N7        &kp N5     &kp NUMBER_3              &kp LEFT_SHIFT   &kp NUMBER_1  &trans    &trans  &kp COLON  &kp LCTRL                            &kp NUMBER_2          &kp NUMBER_4  &kp NUMBER_6       &kp N8       &trans
 >;};
 typing {
          bindings = <
@@ -934,22 +997,22 @@ num {
         };
 nav {
             bindings = <
-&none   &none            &trans          &trans              &trans                                                                                                                  &trans     &trans     &trans     &trans    &trans
-&trans  &trans           &none           &kp LC(A)           &none                &trans                                                                                     &trans  &trans     &trans     &trans     &trans    &trans
-&trans  &trans           &kp LEFT_SHIFT  &kp LC(LEFT_ARROW)  &kp LC(RIGHT_ARROW)  &select_word                                                                               &trans  &kp LC(Z)  &kp LC(Y)  &trans     &trans    &trans
-&trans  &kp UP_ARROW     &kp DOWN_ARROW  &kp LEFT_ARROW      &kp RIGHT            &trans                                                                                     &trans  &kp RCTRL  &kp RSHFT  &kp RALT   &kp RGUI  &trans
-&trans  &kp PG_UP        &kp PAGE_DOWN   &kp HOME            &kp END              &trans        &trans     &trans   &trans         &trans  &trans             &trans         &trans  &kp LC(C)  &kp LC(V)  &kp LC(X)  &trans    &trans
-&trans  &duplicate_line  &none           &none               &none                              &kp SPACE  &kp DEL  &kp LC(DEL)    &trans  &kp LC(BACKSPACE)  &kp BACKSPACE          &kp ENTER  &tog 5     &trans     &trans    &trans
+&none   &none         &trans          &trans           &trans                                                                                                     &trans              &trans          &trans        &trans         &trans
+&trans  &trans        &delete_line    &kp LC(Y)        &none         &trans                                                                               &trans  &trans              &trans          &trans        &trans         &trans
+&trans  &trans        &kp LC(X)       &kp LC(Z)        &delete_word  &none                                                                                &trans  &kp UP_ARROW        &kp DOWN_ARROW  &trans        &select_line   &trans
+&trans  &kp UP_ARROW  &kp DOWN_ARROW  &kp LEFT_ARROW   &kp RIGHT     &trans                                                                               &trans  &kp LC(LEFT_ARROW)  &kp LC(RIGHT)   &select_word  &kp RGUI       &trans
+&trans  &kp PG_UP     &kp PAGE_DOWN   &kp LC(C)        &kp LC(V)     &trans  &kp LC(F)  &trans   &trans         &trans  &trans             &trans         &trans  &kp HOME            &kp END         &kp RCTRL     &kp RSHFT      &trans
+&trans  &none         &none           &duplicate_line  &kp TAB               &kp SPACE  &kp DEL  &kp LC(DEL)    &trans  &kp LC(BACKSPACE)  &kp BACKSPACE          &kp ENTER           &tog 5          &trans        &kp RIGHT_ALT  &trans
 >;
         };
 fun {
             bindings = <
-&trans     &trans     &trans        &trans         &trans                                                                                                        &trans           &trans       &trans     &trans     &trans
-&kp EQUAL  &kp N1     &kp N2        &kp NUMBER_3   &kp N4         &kp N5                                                                        &kp N6           &kp N7           &kp N8       &kp N9     &kp N0     &kp MINUS
-&kp TAB    &kp F12    &kp F7        &kp F8         &kp F9         &trans                                                                        &kp LC(F6)       &kp LC(LS(ESC))  &kp LA(TAB)  &kp F9     &none      &kp BACKSLASH
-&kp ESC    &kp LC(Y)  &hml LALT F4  &hml LSHFT F5  &hml LCTRL F6  &trans                                                                        &kp LC(LA(DEL))  &kp LC(S)        &kp LC(C)    &kp LC(V)  &kp LC(X)  &kp F1
-&kp F2     &kp LC(Z)  &kp LC(X)     &none          &kp LC(S)      &none   &kp LG(LC(LS(A)))  &kp LG(LC(LS(Q)))  &none    &trans  &trans  &none  &none            &kp LC(Z)        &kp F9       &kp LC(A)  &kp LC(F)  &to 6
-&trans     &kp LC(A)  &kp LC(C)     &none          &kp LC(V)              &kp B              &kp DOWN           &none    &none   &none   &none                   &kp LC(Y)        &none        &none      &none      &none
+&trans           &trans           &trans       &trans     &trans                                                                                                   &trans     &trans     &trans  &trans     &trans
+&kp N6           &kp N7           &kp N8       &kp N9     &kp N0     &kp MINUS                                                                             &trans  &trans     &trans     &trans  &trans     &trans
+&kp LC(F6)       &kp LC(LS(ESC))  &kp LA(TAB)  &kp F9     &none      &kp BACKSLASH                                                                         &trans  &trans     &trans     &trans  &trans     &trans
+&kp LC(LA(DEL))  &kp LC(S)        &kp LC(C)    &kp LC(V)  &kp LC(X)  &kp F1                                                                                &trans  &kp LC(Y)  &trans     &trans  &trans     &trans
+&none            &kp LC(Z)        &kp F9       &kp LC(A)  &kp LC(F)  &to 6          &kp LG(LC(LS(A)))  &kp LG(LC(LS(Q)))  &none    &trans  &trans  &none   &trans  &kp LC(Z)  &kp LC(X)  &none   &kp LC(S)  &none
+&kp LC(Y)        &none            &none        &none      &none                     &kp B              &kp DOWN           &none    &trans  &trans  &trans          &trans     &trans     &trans  &kp LC(A)  &kp LC(C)
 >;
         };
 magic {

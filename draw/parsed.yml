@@ -176,7 +176,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '*'
-  - U
+  - Ctl+ R
   - '#'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -187,10 +187,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - X
-  - G
   - D
+  - U
   - C
-  - R
+  - '&kp_sl R 3'
   - '{'
   - V
   - '&kp_tog O 2'
@@ -211,7 +211,7 @@ layers:
   - {t: ',', s: ;}
   - ''
   - N
-  - D
+  - G
   - Y
   - P
   - M
@@ -418,27 +418,27 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - Ctl+ A
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LEFT SHIFT
-  - Ctl+ LEFT ARROW
-  - Ctl+ RIGHT ARROW
-  - {t: '&select_word_right', s: '&select_word_left'}
-  - {t: ▽, type: trans}
-  - Ctl+ Z
+  - '&delete_line'
   - Ctl+ Y
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+ X
+  - Ctl+ Z
+  - '&delete_word'
+  - ''
+  - {t: ▽, type: trans}
+  - UP ARROW
+  - DOWN ARROW
+  - {t: ▽, type: trans}
+  - '&select_line'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - UP ARROW
@@ -447,34 +447,34 @@ layers:
   - RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RCTRL
-  - RSHFT
-  - RALT
+  - Ctl+ LEFT ARROW
+  - Ctl+ RIGHT
+  - {t: '&select_word_right', s: '&select_word_left'}
   - RGUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - PG UP
   - PAGE DOWN
-  - HOME
-  - END
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - Ctl+ C
   - Ctl+ V
-  - Ctl+ X
+  - {t: ▽, type: trans}
+  - Ctl+ F
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - HOME
+  - END
+  - RCTRL
+  - RSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
   - '&duplicate_line'
-  - ''
-  - ''
-  - ''
+  - TAB
   - SPACE
   - DEL
   - Ctl+ DEL
@@ -484,7 +484,7 @@ layers:
   - ENTER
   - {t: nav, h: toggle}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RIGHT ALT
   - {t: ▽, type: trans}
   fun:
   - {t: ▽, type: trans}
@@ -497,23 +497,17 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '='
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
   - '6'
   - '7'
   - '8'
   - '9'
   - '0'
   - '-'
-  - TAB
-  - F12
-  - F7
-  - F8
-  - F9
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+ F6
   - Ctl+Sft+ ESC
@@ -521,52 +515,58 @@ layers:
   - F9
   - ''
   - \
-  - ESC
-  - Ctl+ Y
-  - {t: F4, h: LALT}
-  - {t: F5, h: LSHFT, type: held}
-  - {t: F6, h: LCTRL, type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+Alt+ DEL
   - Ctl+ S
   - Ctl+ C
-  - Ctl+ V
-  - Ctl+ X
+  - {t: Ctl+ V, type: held}
+  - {t: Ctl+ X, type: held}
   - F1
-  - F2
-  - Ctl+ Z
-  - Ctl+ X
-  - ''
-  - Ctl+ S
-  - ''
-  - Gui+Ctl+Sft+ A
-  - Gui+Ctl+Sft+ Q
-  - ''
+  - {t: ▽, type: trans}
+  - Ctl+ Y
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - ''
   - Ctl+ Z
   - F9
   - Ctl+ A
   - Ctl+ F
   - {t: fun, h: toggle}
+  - Gui+Ctl+Sft+ A
+  - Gui+Ctl+Sft+ Q
+  - ''
   - {t: ▽, type: trans}
-  - Ctl+ A
-  - Ctl+ C
+  - {t: ▽, type: trans}
   - ''
-  - Ctl+ V
-  - B
-  - DOWN
+  - {t: ▽, type: trans}
+  - Ctl+ Z
+  - Ctl+ X
   - ''
-  - ''
-  - ''
+  - Ctl+ S
   - ''
   - Ctl+ Y
   - ''
   - ''
   - ''
   - ''
+  - B
+  - DOWN
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+ A
+  - Ctl+ C
   magic:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
