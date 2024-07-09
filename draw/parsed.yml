@@ -72,7 +72,7 @@ layers:
   - TAB
   - SPACE
   - ''
-  - ''
+  - '&win_sleep'
   - ''
   - ''
   - BACKSPACE
@@ -119,8 +119,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+Sft+ TAB
-  - Ctl+ TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -228,7 +228,7 @@ layers:
   - '&kp_sl T 4'
   - {t: ▽, type: trans}
   - ''
-  - ''
+  - '9'
   - '7'
   - '5'
   - '3'
@@ -540,11 +540,11 @@ layers:
   - Ctl+ V
   - {t: ▽, type: trans}
   - '&kp_tog LC(F) 6'
+  - Ctl+ DELETE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+ BACKSPACE
   - {t: ▽, type: trans}
   - DOWN ARROW
   - UP ARROW
@@ -558,9 +558,9 @@ layers:
   - TAB
   - SPACE
   - DEL
-  - Ctl+ DEL
+  - ''
   - {t: ▽, type: trans}
-  - Ctl+ BACKSPACE
+  - ''
   - BACKSPACE
   - ENTER
   - {t: nav, h: toggle}

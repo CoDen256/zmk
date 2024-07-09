@@ -494,37 +494,49 @@
             bindings = <&kp EQUAL>, <&neq_short>;
 
             label = "NEQ_MORPH";
-        };and_morph: and_morph {
+        };
+        
+        and_morph: and_morph {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
          mods = <(MOD_LSFT|MOD_RSFT)>;
          bindings = <&and_short>, <&kp AMPERSAND>;
-         label = "AND_MORPH";};or_morph: or_morph {
+         label = "AND_MORPH";};
+         
+         or_morph: or_morph {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
          mods = <(MOD_LSFT|MOD_RSFT)>;
          bindings = <&or_short>, <&kp PIPE>;
-         label = "OR_MORPH";};grave_morpph: grave_morpph {
+         label = "OR_MORPH";};
+         
+         grave_morpph: grave_morpph {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
          mods = <(MOD_LSFT|MOD_RSFT)>;
          bindings = <&code_block>, <&kp GRAVE>;
-         label = "GRAVE_MORPPH";};comment_morph: comment_morph {
+         label = "GRAVE_MORPPH";};
+         
+         comment_morph: comment_morph {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
          mods = <(MOD_LSFT|MOD_RSFT)>;
          bindings = <&kp HASH>, <&comment>;
-         label = "COMMENT_MORPH";};caret_morph:caret_morph {
+         label = "COMMENT_MORPH";};
+         
+         caret_morph:caret_morph {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
          mods = <(MOD_LSFT|MOD_RSFT)>;
          bindings = <&kp CARET>, <&kp TILDE>;
-         label = "CARET_MORPH";};star_hash_morph: star_hash_morph {
+         label = "CARET_MORPH";};
+         
+         star_hash_morph: star_hash_morph {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
@@ -546,7 +558,9 @@
             tap-ms = <100>;
             #binding-cells = <0>;
             bindings = <&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>;
-        };code_block: code_block {
+        };
+        
+        code_block: code_block {
         compatible = "zmk,behavior-macro";
       
          label = "CODE_BLOCK";
@@ -560,68 +574,88 @@
          tap-ms = <100>;
          #binding-cells = <0>;
          bindings = <&kp SLASH &kp SLASH>;
-         label = "COMMENT";};duplicate_line: duplicate_line {
+         label = "COMMENT";};
+         
+         duplicate_line: duplicate_line {
         compatible = "zmk,behavior-macro";
       
          wait-ms = <0>;
          tap-ms = <100>;
          #binding-cells = <0>;
          bindings = <&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT &kp ENTER &kp LC(V)>;
-         label = "DUPLICATE_LINE";};kp_to:new_macro {
+         label = "DUPLICATE_LINE";};
+         
+         kp_to:kp_to {
         compatible = "zmk,behavior-macro-two-param";
       
          #binding-cells = <2>;
          bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &to MACRO_PLACEHOLDER>;
-         label = "NEW_MACRO";};kp_tog:kp_to {
+         label = "KP_TO";};
+         
+         kp_tog:kp_tog {
         compatible = "zmk,behavior-macro-two-param";
       
          #binding-cells = <2>;
          bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &tog MACRO_PLACEHOLDER>;
-         label = "KP_TO";};kp_sl: kp_sl {
+         label = "KP_TOG";};
+         
+         kp_sl: kp_sl {
         compatible = "zmk,behavior-macro-two-param";
       
          #binding-cells = <2>;
          bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &sl MACRO_PLACEHOLDER>;
-         label = "KP_SL";};select_line: select_line {
+         label = "KP_SL";};
+         
+         select_line: select_line {
         compatible = "zmk,behavior-macro";
       
          wait-ms = <0>;
          tap-ms = <100>;
          #binding-cells = <0>;
          bindings = <&kp HOME &kp LS(END)>;
-         label = "SELECT_LINE";};delete_word: delete_word {
+         label = "SELECT_LINE";};
+         
+         delete_word: delete_word {
         compatible = "zmk,behavior-macro";
       
          wait-ms = <0>;
          tap-ms = <100>;
          #binding-cells = <0>;
          bindings = <&select_word &kp BACKSPACE>;
-         label = "DELETE_WORD";};delete_line: delete_line {
+         label = "DELETE_WORD";};
+         
+         delete_line: delete_line {
         compatible = "zmk,behavior-macro";
       
          wait-ms = <0>;
          tap-ms = <100>;
          #binding-cells = <0>;
          bindings = <&select_line &kp BACKSPACE>;
-         label = "DELETE_LINE";};copy_line: copy_line {
+         label = "DELETE_LINE";};
+         
+         copy_line: copy_line {
         compatible = "zmk,behavior-macro";
       
          wait-ms = <0>;
          tap-ms = <100>;
          #binding-cells = <0>;
          bindings = <&kp HOME &kp LS(END) &kp LC(C) &kp LC(RIGHT)>;
-         label = "COPY_LINE";};trans_tog: trans_tog {
+         label = "COPY_LINE";};
+         
+         trans_tog: trans_tog {
         compatible = "zmk,behavior-macro-one-param";
       
          #binding-cells = <1>;
          bindings = <&trans &macro_param_1to1 &tog MACRO_PLACEHOLDER>;
-         label = "TRANS_TOG";};trans_to: trans_to {
+         label = "TRANS_TOG";};
+         
+         trans_to: trans_to {
         compatible = "zmk,behavior-macro-one-param";
       
          #binding-cells = <1>;
          bindings = <&trans &macro_param_1to1 &to MACRO_PLACEHOLDER>;
     };
-
+    };
     //
     // Glove80 key positions index for positional hold-tap
     // - https://discord.com/channels/877392805654306816/937645688244826154/1066713913351221248
