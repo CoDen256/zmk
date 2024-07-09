@@ -68,7 +68,7 @@ layers:
   - ''
   - ''
   - Q
-  - {t: num, h: toggle}
+  - fun
   - TAB
   - SPACE
   - ''
@@ -100,7 +100,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+ F6
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -175,9 +175,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '*'
+  - {t: '*', s: '#'}
   - Ctl+ R
-  - '#'
+  - '&kp_tog S 2'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - (
@@ -189,8 +189,8 @@ layers:
   - X
   - D
   - U
-  - C
-  - '&kp_sl R 3'
+  - '&kp_tog C 3'
+  - '&kp_sl R 4'
   - '{'
   - V
   - '&kp_tog O 2'
@@ -215,17 +215,17 @@ layers:
   - Y
   - P
   - M
-  - '&kp_tog SLASH 3'
+  - '&kp_tog SLASH 4'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&kp_tog LS(SLASH) 3'
+  - '&kp_tog LS(SLASH) 4'
   - {t: ▽, type: trans}
   - '0'
   - $
-  - '&kp_sl T 3'
-  - '&kp_sl F 3'
+  - '&kp_sl F 4'
+  - '&kp_sl T 4'
   - {t: ▽, type: trans}
   - ''
   - ''
@@ -236,7 +236,88 @@ layers:
   - '1'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ':'
+  - '&kp_tog COLON 4'
+  - LCTRL
+  - '2'
+  - '4'
+  - '6'
+  - '8'
+  - {t: ▽, type: trans}
+  vim_change0:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '*', s: '#'}
+  - '&kp_tog LC(R) 3'
+  - '&kp_to S 0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&kp_to LEFT_PARENTHESIS 0'
+  - '&kp_to PERCENT 0'
+  - '&kp_to DOUBLE_QUOTES 0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&kp_tog X 3'
+  - '&kp_tog D 3'
+  - '&kp_tog U 3'
+  - '&kp_to C 0'
+  - '&kp_sl R 3'
+  - '&kp_to LEFT_BRACE 0'
+  - '&kp_tog V 3'
+  - '&kp_to O 3'
+  - A
+  - ''
+  - {t: ▽, type: trans}
+  - '&kp_tog COMMA 3'
+  - '&kp_tog J 3'
+  - '&kp_tog K 3'
+  - '&kp_tog H 3'
+  - '&kp_tog L 3'
+  - '&kp_tog Z 3'
+  - '&kp_to SQT 0'
+  - '&kp_to B 0'
+  - '&kp_to W 0'
+  - '&kp_to E 0'
+  - I
+  - '&kp_tog DOT 3'
+  - ''
+  - '&kp_tog N 3'
+  - '&kp_tog G 3'
+  - '&kp_tog Y 3'
+  - '&kp_to P 0'
+  - '&kp_tog M 3'
+  - '&kp_tog SLASH 4'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&kp_tog LS(SLASH) 4'
+  - {t: ▽, type: trans}
+  - '&kp_to N0 0'
+  - '&kp_to DOLLAR 0'
+  - '&kp_tog F 3'
+  - '&kp_to T 0'
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - '7'
+  - '5'
+  - '3'
+  - LEFT SHIFT
+  - '1'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&kp_tog COLON 4'
   - LCTRL
   - '2'
   - '4'
@@ -311,7 +392,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Q
-  - {t: num, h: toggle}
+  - {t: fun, h: toggle}
   - TAB
   - SPACE
   - {t: ▽, type: trans}
@@ -319,7 +400,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BACKSPACE
-  - '&kp_tog RET 3'
+  - '&kp_tog RET 4'
   - {t: nav, h: toggle}
   - Z
   - {t: ▽, type: trans}
@@ -392,7 +473,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - +
-  - {t: num, h: toggle}
+  - {t: fun, h: toggle}
   - '-'
   - SPACE
   - {t: ▽, type: trans}
@@ -433,16 +514,16 @@ layers:
   - Ctl+ X
   - Ctl+ Z
   - '&delete_word'
-  - ''
+  - '&delete_line'
   - {t: ▽, type: trans}
-  - UP ARROW
-  - DOWN ARROW
-  - {t: ▽, type: trans}
+  - HOME
+  - END
+  - Ctl+ A
   - '&select_line'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - UP ARROW
   - DOWN ARROW
+  - UP ARROW
   - LEFT ARROW
   - RIGHT
   - {t: ▽, type: trans}
@@ -450,30 +531,30 @@ layers:
   - Ctl+ LEFT ARROW
   - Ctl+ RIGHT
   - {t: '&select_word_right', s: '&select_word_left'}
-  - RGUI
-  - {t: ▽, type: trans}
+  - RIGHT SHIFT
+  - Ctl+ S
   - {t: ▽, type: trans}
   - PG UP
   - PAGE DOWN
   - Ctl+ C
   - Ctl+ V
   - {t: ▽, type: trans}
-  - Ctl+ F
+  - '&kp_tog LC(F) 6'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
-  - END
+  - DOWN ARROW
+  - UP ARROW
   - RCTRL
-  - RSHFT
+  - RIGHT ALT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
   - ''
   - '&duplicate_line'
+  - '&copy_line'
   - TAB
   - SPACE
   - DEL
@@ -483,8 +564,8 @@ layers:
   - BACKSPACE
   - ENTER
   - {t: nav, h: toggle}
-  - {t: ▽, type: trans}
-  - RIGHT ALT
+  - RIGHT WIN
+  - ''
   - {t: ▽, type: trans}
   fun:
   - {t: ▽, type: trans}
@@ -497,76 +578,76 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - '-'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+ F6
-  - Ctl+Sft+ ESC
-  - Alt+ TAB
+  - {t: ▽, type: trans}
+  - F10
+  - F11
+  - F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - ''
+  - {t: ▽, type: trans}
+  - F7
+  - F8
   - F9
-  - ''
-  - \
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Ctl+Alt+ DEL
-  - Ctl+ S
-  - Ctl+ C
-  - {t: Ctl+ V, type: held}
-  - {t: Ctl+ X, type: held}
-  - F1
-  - {t: ▽, type: trans}
-  - Ctl+ Y
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
-  - Ctl+ Z
-  - F9
-  - Ctl+ A
-  - Ctl+ F
-  - {t: fun, h: toggle}
-  - Gui+Ctl+Sft+ A
-  - Gui+Ctl+Sft+ Q
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ''
-  - {t: ▽, type: trans}
-  - Ctl+ Z
+  - ''
   - Ctl+ X
   - ''
+  - {t: ▽, type: trans}
+  - F4
+  - F5
+  - F6
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+ Y
+  - Ctl+ Z
+  - ''
   - Ctl+ S
   - ''
-  - Ctl+ Y
-  - ''
-  - ''
-  - ''
-  - ''
-  - B
-  - DOWN
-  - ''
+  - Gui+Ctl+Sft+ A
+  - Gui+Ctl+Sft+ Q
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+ A
   - Ctl+ C
+  - {type: held}
+  - Ctl+ V
+  - F9
+  - Alt+ TAB
+  - Ctl+Alt+ DELETE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
   magic:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -579,10 +660,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: main, h: toggle}
-  - {t: vim, h: toggle}
   - {t: browser, h: toggle}
+  - {t: vim, h: toggle}
   - {t: typing, h: toggle}
-  - {t: main, h: toggle}
+  - {t: num, h: toggle}
   - {t: num, h: toggle}
   - {t: nav, h: toggle}
   - {t: fun, h: toggle}
@@ -652,7 +733,7 @@ combos:
 - p: [41, 42]
   k: ESCAPE
 - p: [38, 37]
-  k: fun
+  k: {t: num, h: toggle}
 - p: [59, 60]
   k: (
 - p: [60, 61]
