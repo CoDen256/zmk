@@ -420,7 +420,7 @@
             #binding-cells = <0>;
             wait-ms = <500>;
             tap-ms = <50>;
-            bindings = <&kp LG(L)>;
+            bindings = <&kp LG(X) &kp U &kp S>;
         };
 
         // Function arrow: ->
@@ -1165,7 +1165,7 @@ nav {
 &trans  &trans          &kp LC(X)        &kp LC(Z)       &delete_word  &delete_line                                                                                &trans  &kp HOME            &kp END        &kp LC(A)      &select_line     &trans
 &trans  &kp DOWN_ARROW  &kp UP_ARROW     &kp LEFT_ARROW  &kp RIGHT     &trans                                                                                      &trans  &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &select_word   &kp RIGHT_SHIFT  &kp LC(S)
 &trans  &kp PG_UP       &kp PAGE_DOWN    &kp LC(C)       &kp LC(V)     &trans        &kp_tog LC(F) 6  &kp LC(DELETE)  &trans    &trans  &trans  &kp LC(BACKSPACE)  &trans  &kp DOWN_ARROW      &kp UP_ARROW   &kp RCTRL      &kp RIGHT_ALT    &trans
-&trans  &none           &duplicate_line  &copy_line      &kp TAB                     &kp SPACE        &kp DEL         &none     &trans  &none   &kp BACKSPACE              &kp ENTER           &tog 6         &kp RIGHT_WIN  &none            &trans
+&trans  &none           &duplicate_line  &copy_line      &kp TAB                     &kp SPACE        &kp DEL         &none     &trans  &kp LC(BACKSPACE)   &kp BACKSPACE              &kp ENTER           &tog 6         &kp RIGHT_WIN  &none            &trans
 >;
         };
 fun {

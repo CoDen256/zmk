@@ -560,7 +560,7 @@ layers:
   - DEL
   - ''
   - {t: ▽, type: trans}
-  - ''
+  - Ctl+ BACKSPACE
   - BACKSPACE
   - ENTER
   - {t: nav, h: toggle}
