@@ -686,7 +686,7 @@
             key-positions = <41 42>;
         };
         RE {
-            bindings = <&kp ENTER>;
+            bindings = <&kp BACKSPACE>;
             key-positions = <42 43>;
         };
         IN {
@@ -695,188 +695,188 @@
         };
 
         AI {
-            bindings = <&kp BACKSPACE>;
+            bindings = <&kp ENTER>;
             key-positions = <37 36>;
         };
 
         MD {
-            bindings = <&kp LEFT>;
+            bindings = <&kp LC(LEFT)>;
             key-positions = <59 60>;
         };
 
         DY {
-            bindings = <&kp RIGHT>;
+            bindings = <&kp LC(RIGHT)>;
             key-positions = <60 61>;
         };
 
         PU {
-            bindings = <&kp UP_ARROW>;
+            bindings = <&kp RIGHT>;
             key-positions = <49 50>;
         };
 
         FU {
-            bindings = <&kp DOWN_ARROW>;
+            bindings = <&kp LEFT_ARROW>;
             key-positions = <48 49>;
         };
 
         MR {
-            bindings = <&kp ESCAPE>;
+            bindings = <&kp DOT>;
             key-positions = <59 42>;
         };
 
         TD {
-            bindings = <&kp TAB>;
+            bindings = <&kp COMMA>;
             key-positions = <41 60>;
         };
 
         RY {
-            bindings = <&kp LEFT_BRACE>;
+            bindings = <&kp LC(BACKSPACE)>;
             key-positions = <42 61>;
         };
 
         DE {
-            bindings = <&kp RIGHT_BRACE>;
+            bindings = <&kp LC(DELETE)>;
             key-positions = <60 43>;
         };
 
 
         TE {
-         bindings = <&kp NON_US_BACKSLASH>;
+         bindings = <&mo 5>;
          key-positions = <41 43>;};TL {
-         bindings = <&kp LESS_THAN>;
+         bindings = <&kp COLON>;
          key-positions = <41 30>;};EL {
-         bindings = <&kp GREATER_THAN>;
+         bindings = <&kp SEMICOLON>;
          key-positions = <30 43>;};VR {
-         bindings = <&kp MINUS>;
+         bindings = <&kp LEFT_BRACE>;
          key-positions = <29 42>;};LE {
-         bindings = <&kp PLUS>;
-         key-positions = <30 43>;};IP {
-         bindings = <&func_arrow>;
+         bindings = <&kp RIGHT_PARENTHESIS>;
+         key-positions = <42 31>;};IP {
+         bindings = <&kp DOWN_ARROW>;
          key-positions = <37 50>;};UN {
-         bindings = <&and_morph>;
+         bindings = <&kp UP_ARROW>;
          key-positions = <38 49>;};UA {
-         bindings = <&or_morph>;
+         bindings = <&kp END>;
          key-positions = <49 36>;};FI {
-         bindings = <&grave_morpph>;
+         bindings = <&kp HOME>;
          key-positions = <48 37>;};AN {
-         bindings = <&comment_morph>;
+         bindings = <&kp TAB>;
          key-positions = <36 38>;};NH {
-         bindings = <&kp UNDER>;
-         key-positions = <41 43 38 25>;};IC {
-         bindings = <&kp PERCENT>;
+         bindings = <&kp ESC>;
+         key-positions = <38 25>;};IC {
+         bindings = <&kp ASTERISK>;
          key-positions = <37 26>;};
 
          GI {
-         bindings = <&kp PERCENT>;
+         bindings = <&kp PLUS>;
          key-positions = <37 24>;};
 
          AH {
-         bindings = <&kp PERCENT>;
+         bindings = <&kp MINUS>;
          key-positions = <36 25>;};
 
          MY {
-         bindings = <&kp PERCENT>;
+         bindings = <&select_word>;
          key-positions = <59 61>;};
 
          FP {
-         bindings = <&kp PERCENT>;
+         bindings = <&kp EQUAL>;
          key-positions = <48 50>;};
 
          VB {
-         bindings = <&kp PERCENT>;
+         bindings = <&select_line>;
          key-positions = <29 31>;};
 
          CG {
-         bindings = <&kp PERCENT>;
+         bindings = <&kp DOUBLE_QUOTES>;
          key-positions = <26 24>;};
 
          VE {
-         bindings = <&kp PERCENT>;
+         bindings = <&duplicate_line>;
          key-positions = <29 43>;};
 
          TB {
-         bindings = <&kp PERCENT>;
+         bindings = <&kp LESS_THAN>;
          key-positions = <31 41>;};YT {
-         bindings = <&kp PERCENT>;
+         bindings = <&and_short>;
          key-positions = <41 61>;};ME {
-         bindings = <&kp PERCENT>;
+         bindings = <&or_short>;
          key-positions = <59 43>;};
 
 
 
 
          NG {
-         bindings = <&kp PERCENT>;
-         key-positions = <38 24>;}
+         bindings = <&kp LC(X)>;
+         key-positions = <38 24>;};
 
          AC {
-         bindings = <&kp PERCENT>;
-         key-positions = <41 61 36 26>;}
+         bindings = <&kp LC(F)>;
+         key-positions = <36 26>;};
 
 
          PA {
-         bindings = <&kp PERCENT>;
-         key-positions = <41 61 50 36>;}
+         bindings = <&kp LC(A)>;
+         key-positions = <50 36>;};
 
          FN {
-         bindings = <&kp PERCENT>;
-         key-positions = <48 38>;}
+         bindings = <&kp LC(S)>;
+         key-positions = <48 38>;};
 
          SE {
          bindings = <&mo 8>;
-         key-positions = <44 43>;}
+         key-positions = <44 43>;};
 
          SR {
-         bindings = <&kp PERCENT>;
-         key-positions = <44 42>;}
+         bindings = <&kp DELETE>;
+         key-positions = <44 42>;};
 
          ST {
-         bindings = <&kp PERCENT>;
-         key-positions = <44 41>;}
+         bindings = <&mo 7>;
+         key-positions = <44 41>;};
 
          OA {
          bindings = <&mo 8>;
-         key-positions = <35 36>;}
+         key-positions = <35 36>;};
 
          OI {
-         bindings = <&kp PERCENT>;
-         key-positions = <35 37>;}
+         bindings = <&kp LC(C)>;
+         key-positions = <35 37>;};
 
          ON {
-         bindings = <&kp PERCENT>;
-         key-positions = <35 38>;}
+         bindings = <&kp LC(V)>;
+         key-positions = <35 38>;};
 
          MRIGHT {
-         bindings = <&kp PERCENT>;
-         key-positions = <59 76>;}
+         bindings = <&kp EXCLAMATION>;
+         key-positions = <59 76>;};
 
          DLEFT {
-         bindings = <&kp PERCENT>;
-         key-positions = <75 60>;}
+         bindings = <&kp QUESTION>;
+         key-positions = <75 60>;};
 
          IRIGHT {
-         bindings = <&kp PERCENT>;
-         key-positions = <49 68>;}
+         bindings = <&kp PG_DN>;
+         key-positions = <49 68>;};
 
          PLEFT {
-         bindings = <&kp PERCENT>;
-         key-positions = <67 50>;}
+         bindings = <&kp PG_UP>;
+         key-positions = <67 50>;};
 
          R_MIDDLEL {
-         bindings = <&kp PERCENT>;
-         key-positions = <76 75>;}
+         bindings = <&kp HASH>;
+         key-positions = <76 75>;};
 
          R_MIDDLER {
          bindings = <&kp PERCENT>;
-         key-positions = <68 67 77 76>;}
+         key-positions = <77 76>;};
 
          L_MIDDLER {
-         bindings = <&kp PERCENT>;
-         key-positions = <67 68>;}
+         bindings = <&kp UNDERSCORE>;
+         key-positions = <68 67>;};
 
          L_MIDDLEL {
-         bindings = <&kp PERCENT>;
-         key-positions = <67 66>;}
+         bindings = <&func_arrow>;
+         key-positions = <67 66>;};
 
          
 
@@ -1241,17 +1241,33 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
         compatible = "zmk,keymap";
 
 main {
          bindings = <
-&tog 0      &tog 1       &tog 2       &kp_tog ESCAPE 2  &tog 4                                                                                                       &tog 6        &tog 7        &kp C_MUTE   &kp C_VOL_DN  &kp C_VOLUME_UP
-&to 0       &to 1        &to 2        &kp K             &to 4         &tog 5                                                                             &to 5       &to 6         &to 7         &none        &none         &none
-&none       &none        &kp G        &kp H             &kp C         &kp W                                                                              &qexcl      &kp V         &kp L         &kp B        &kp F4        &kp F1
-&dot_morph  &hml LGUI O  &hml LALT A  &hml LSHFT I      &hml LCTRL N  &caret_morph                                                                       &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmr LGUI S   &comma_morph
-&none       &kp J        &kp F        &kp U             &kp P         &none         &smart_shft  &tog 9  &magic 9 0    &magic 9 0  &to 9  &none          &none       &kp M         &kp D         &kp Y        &kp X         &none
-&none       &none        &kp Q        &mo 7             &kp TAB                     &kp SPACE    &none   &win_sleep    &none       &none  &kp BACKSPACE              &kp RET       &tog 6        &kp Z        &none         &none
+&tog 0      &tog 1       &tog 2       &kp_tog ESCAPE 2  &tog 4                                                                                                          &tog 6        &tog 7        &kp C_MUTE   &kp C_VOL_DN  &kp C_VOLUME_UP
+&to 0       &to 1        &to 2        &kp K             &to 4         &tog 5                                                                                &to 5       &to 6         &to 7         &none        &none         &none
+&none       &none        &kp G        &kp H             &kp C         &kp W                                                                                 &qexcl      &kp V         &kp L         &kp B        &kp F4        &kp F1
+&dot_morph  &hml LGUI O  &hml LALT A  &hml LSHFT I      &hml LCTRL N  &caret_morph                                                                          &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmr LGUI S   &comma_morph
+&none       &kp J        &kp F        &kp U             &kp P         &none         &smart_shft  &tog 9  &magic 9 0    &magic 9 0  &to 9  &tog 2            &none       &kp M         &kp D         &kp Y        &kp X         &none
+&none       &none        &kp Q        &mo 7             &kp TAB                     &kp SPACE    &none   &win_sleep    &none       &none  &kp_tog ESCAPE 2              &kp RET       &tog 6        &kp Z        &none         &none
 >;};
 browser {
          bindings = <
@@ -1321,12 +1337,12 @@ fun {
         };
 over {
          bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans        &trans       &trans                                                                        &trans                 &trans            &trans              &trans         &trans
+&trans  &trans     &trans        &kp AT_SIGN  &trans      &trans                                                    &trans  &trans                 &trans            &trans              &trans         &trans
+&trans  &trans     &kp GRAVE     &kp PERCENT  &kp TILDE   &trans                                                    &trans  &comment               &kp LEFT_BRACKET  &kp RIGHT_BRACKET   &delete_line   &trans
+&trans  &kp PIPE   &kp SQT       &neq_short   &eq_short   &trans                                                    &trans  &kp LS(HOME)           &copy_line        &kp LS(END)         &kp AMPERSAND  &trans
+&trans  &kp CARET  &kp LC(HOME)  &kp LC(END)  &kp DOLLAR  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &select_word_left      &delete_word      &select_word_right  &code_block    &trans
+&trans  &trans     &trans        &trans       &trans              &trans  &trans  &trans    &trans  &trans  &trans          &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp GREATER_THAN    &trans         &trans
 >;};
 magic {
             bindings = <
