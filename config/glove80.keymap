@@ -679,90 +679,209 @@
     combos {
         compatible = "zmk,combos";
 
-        // combo_mouse { timeout-ms = <18>; bindings = <&smart_mouse>; key-positions = <24 26>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
+        // combo_mouse { timeout-ms = <18>; bindings = <&smart_mouse>; key-possitions = <24 26>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
 
-        RT_COMBO {
-            bindings = <&kp ESCAPE>;
+        RT {
+            bindings = <&smart_shft>;
             key-positions = <41 42>;
         };
+        RE {
+            bindings = <&kp ENTER>;
+            key-positions = <42 43>;
+        };
+        IN {
+            bindings = <&smart_shft>;
+            key-positions = <37 38>;
+        };
 
-        IN_COMBO {
-            bindings = <&tog 5>;
-            key-positions = <38 37>;
+        AI {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <37 36>;
         };
 
         MD {
-            bindings = <&kp LEFT_PARENTHESIS>;
+            bindings = <&kp LEFT>;
             key-positions = <59 60>;
         };
 
         DY {
-            bindings = <&kp RIGHT_PARENTHESIS>;
+            bindings = <&kp RIGHT>;
             key-positions = <60 61>;
         };
 
-        PU_COMBO {
-            bindings = <&quote>;
+        PU {
+            bindings = <&kp UP_ARROW>;
             key-positions = <49 50>;
         };
 
-        RM_COMBO {
-            bindings = <&kp SLASH>;
+        FU {
+            bindings = <&kp DOWN_ARROW>;
+            key-positions = <48 49>;
+        };
+
+        MR {
+            bindings = <&kp ESCAPE>;
             key-positions = <59 42>;
         };
 
-        PI {
-            bindings = <&kp ASTERISK>;
-            key-positions = <50 37>;
+        TD {
+            bindings = <&kp TAB>;
+            key-positions = <41 60>;
         };
 
-        FU {
-            bindings = <&eq_morph>;
-            key-positions = <49 48>;
-        };
-
-        VL {
+        RY {
             bindings = <&kp LEFT_BRACE>;
-            key-positions = <29 30>;
+            key-positions = <42 61>;
         };
 
-        LB {
+        DE {
             bindings = <&kp RIGHT_BRACE>;
-            key-positions = <30 31>;
+            key-positions = <60 43>;
         };
 
 
-        RE {
-            bindings = <&mo 5>;
-            key-positions = <42 43>;
-        };YR {
+        TE {
          bindings = <&kp NON_US_BACKSLASH>;
-         key-positions = <61 42>;};GH {
+         key-positions = <41 43>;};TL {
          bindings = <&kp LESS_THAN>;
-         key-positions = <24 25>;};CH {
+         key-positions = <41 30>;};EL {
          bindings = <&kp GREATER_THAN>;
-         key-positions = <25 26>;};IC {
+         key-positions = <30 43>;};VR {
          bindings = <&kp MINUS>;
-         key-positions = <26 37>;};FI {
+         key-positions = <29 42>;};LE {
          bindings = <&kp PLUS>;
-         key-positions = <48 37>;};NH {
+         key-positions = <30 43>;};IP {
          bindings = <&func_arrow>;
-         key-positions = <38 25>;};VR {
+         key-positions = <37 50>;};UN {
          bindings = <&and_morph>;
-         key-positions = <42 29>;};TL {
+         key-positions = <38 49>;};UA {
          bindings = <&or_morph>;
-         key-positions = <41 30>;};LE {
+         key-positions = <49 36>;};FI {
          bindings = <&grave_morpph>;
-         key-positions = <30 43>;};AH {
+         key-positions = <48 37>;};AN {
          bindings = <&comment_morph>;
-         key-positions = <36 25>;};MR {
+         key-positions = <36 38>;};NH {
          bindings = <&kp UNDER>;
-         key-positions = <41 60>;};GI {
+         key-positions = <41 43 38 25>;};IC {
          bindings = <&kp PERCENT>;
-         key-positions = <24 37>;};
+         key-positions = <37 26>;};
 
-        //  combo_grk { timeout-ms = <18>; bindings = <&sl UC>; key-positions = <29 31>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
-        // combo_cpgrk { timeout-ms = <18>; bindings = <&sls 0>; key-positions = <29 30 31>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
+         GI {
+         bindings = <&kp PERCENT>;
+         key-positions = <37 24>;};
+
+         AH {
+         bindings = <&kp PERCENT>;
+         key-positions = <36 25>;};
+
+         MY {
+         bindings = <&kp PERCENT>;
+         key-positions = <59 61>;};
+
+         FP {
+         bindings = <&kp PERCENT>;
+         key-positions = <48 50>;};
+
+         VB {
+         bindings = <&kp PERCENT>;
+         key-positions = <29 31>;};
+
+         CG {
+         bindings = <&kp PERCENT>;
+         key-positions = <26 24>;};
+
+         VE {
+         bindings = <&kp PERCENT>;
+         key-positions = <29 43>;};
+
+         TB {
+         bindings = <&kp PERCENT>;
+         key-positions = <31 41>;};YT {
+         bindings = <&kp PERCENT>;
+         key-positions = <41 61>;};ME {
+         bindings = <&kp PERCENT>;
+         key-positions = <59 43>;};
+
+
+
+
+         NG {
+         bindings = <&kp PERCENT>;
+         key-positions = <38 24>;}
+
+         AC {
+         bindings = <&kp PERCENT>;
+         key-positions = <41 61 36 26>;}
+
+
+         PA {
+         bindings = <&kp PERCENT>;
+         key-positions = <41 61 50 36>;}
+
+         FN {
+         bindings = <&kp PERCENT>;
+         key-positions = <48 38>;}
+
+         SE {
+         bindings = <&mo 8>;
+         key-positions = <44 43>;}
+
+         SR {
+         bindings = <&kp PERCENT>;
+         key-positions = <44 42>;}
+
+         ST {
+         bindings = <&kp PERCENT>;
+         key-positions = <44 41>;}
+
+         OA {
+         bindings = <&mo 8>;
+         key-positions = <35 36>;}
+
+         OI {
+         bindings = <&kp PERCENT>;
+         key-positions = <35 37>;}
+
+         ON {
+         bindings = <&kp PERCENT>;
+         key-positions = <35 38>;}
+
+         MRIGHT {
+         bindings = <&kp PERCENT>;
+         key-positions = <59 76>;}
+
+         DLEFT {
+         bindings = <&kp PERCENT>;
+         key-positions = <75 60>;}
+
+         IRIGHT {
+         bindings = <&kp PERCENT>;
+         key-positions = <49 68>;}
+
+         PLEFT {
+         bindings = <&kp PERCENT>;
+         key-positions = <67 50>;}
+
+         R_MIDDLEL {
+         bindings = <&kp PERCENT>;
+         key-positions = <76 75>;}
+
+         R_MIDDLER {
+         bindings = <&kp PERCENT>;
+         key-positions = <68 67 77 76>;}
+
+         L_MIDDLER {
+         bindings = <&kp PERCENT>;
+         key-positions = <67 68>;}
+
+         L_MIDDLEL {
+         bindings = <&kp PERCENT>;
+         key-positions = <67 66>;}
+
+         
+
+        //  combo_grk { timeout-ms = <18>; bindings = <&sl UC>; key-fpositions = <29 31>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
+        // combo_cpgrk { timeout-ms = <18>; bindings = <&sls 0>; keyfdgdf-positions = <29 30 31>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
     };
 };
 
@@ -1100,6 +1219,28 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
         compatible = "zmk,keymap";
 
@@ -1109,7 +1250,7 @@ main {
 &to 0       &to 1        &to 2        &kp K             &to 4         &tog 5                                                                             &to 5       &to 6         &to 7         &none        &none         &none
 &none       &none        &kp G        &kp H             &kp C         &kp W                                                                              &qexcl      &kp V         &kp L         &kp B        &kp F4        &kp F1
 &dot_morph  &hml LGUI O  &hml LALT A  &hml LSHFT I      &hml LCTRL N  &caret_morph                                                                       &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmr LGUI S   &comma_morph
-&none       &kp J        &kp F        &kp U             &kp P         &none         &smart_shft  &tog 8  &magic 8 0    &magic 8 0  &to 8  &none          &none       &kp M         &kp D         &kp Y        &kp X         &none
+&none       &kp J        &kp F        &kp U             &kp P         &none         &smart_shft  &tog 9  &magic 9 0    &magic 9 0  &to 9  &none          &none       &kp M         &kp D         &kp Y        &kp X         &none
 &none       &none        &kp Q        &mo 7             &kp TAB                     &kp SPACE    &none   &win_sleep    &none       &none  &kp BACKSPACE              &kp RET       &tog 6        &kp Z        &none         &none
 >;};
 browser {
@@ -1160,12 +1301,12 @@ num {
         };
 nav {
             bindings = <
-&none   &none           &trans           &trans          &trans                                                                                                            &trans              &trans         &trans         &trans           &trans
-&trans  &trans          &delete_line     &kp LC(Y)       &none         &trans                                                                                      &trans  &trans              &trans         &trans         &trans           &trans
-&trans  &trans          &kp LC(X)        &kp LC(Z)       &delete_word  &delete_line                                                                                &trans  &kp HOME            &kp END        &kp LC(A)      &select_line     &trans
-&trans  &kp DOWN_ARROW  &kp UP_ARROW     &kp LEFT_ARROW  &kp RIGHT     &trans                                                                                      &trans  &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &select_word   &kp RIGHT_SHIFT  &kp LC(S)
-&trans  &kp PG_UP       &kp PAGE_DOWN    &kp LC(C)       &kp LC(V)     &trans        &kp_tog LC(F) 6  &kp LC(DELETE)  &trans    &trans  &trans  &kp LC(BACKSPACE)  &trans  &kp DOWN_ARROW      &kp UP_ARROW   &kp RCTRL      &kp RIGHT_ALT    &trans
-&trans  &none           &duplicate_line  &copy_line      &kp TAB                     &kp SPACE        &kp DEL         &none     &trans  &kp LC(BACKSPACE)   &kp BACKSPACE              &kp ENTER           &tog 6         &kp RIGHT_WIN  &none            &trans
+&none   &none           &trans           &trans          &trans                                                                                                                       &trans              &trans         &trans         &trans           &trans
+&trans  &trans          &delete_line     &kp LC(Y)       &none         &trans                                                                                                 &trans  &trans              &trans         &trans         &trans           &trans
+&trans  &trans          &kp LC(X)        &kp LC(Z)       &delete_word  &delete_line                                                                                           &trans  &kp HOME            &kp END        &kp LC(A)      &select_line     &trans
+&trans  &kp DOWN_ARROW  &kp UP_ARROW     &kp LEFT_ARROW  &kp RIGHT     &trans                                                                                                 &trans  &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &select_word   &kp RIGHT_SHIFT  &kp LC(S)
+&trans  &kp PG_UP       &kp PAGE_DOWN    &kp LC(C)       &kp LC(V)     &trans        &kp_tog LC(F) 6  &kp LC(DELETE)  &trans    &trans  &trans             &kp LC(BACKSPACE)  &trans  &kp DOWN_ARROW      &kp UP_ARROW   &kp RCTRL      &kp RIGHT_ALT    &trans
+&trans  &none           &duplicate_line  &copy_line      &kp TAB                     &kp SPACE        &kp DEL         &none     &trans  &kp LC(BACKSPACE)  &kp BACKSPACE              &kp ENTER           &tog 6         &kp RIGHT_WIN  &none            &trans
 >;
         };
 fun {
@@ -1178,10 +1319,19 @@ fun {
 &trans  &kp LC(A)  &kp LC(C)  &trans  &kp LC(V)          &kp F9             &kp LA(TAB)        &kp LC(LA(DELETE))    &trans  &trans  &trans          &trans   &trans   &trans   &none   &none
 >;
         };
+over {
+         bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+>;};
 magic {
             bindings = <
 &trans      &trans           &trans           &trans           &trans                                                                                                  &trans  &trans  &trans  &trans  &trans
-&to 0       &to 1            &to 2            &to 4            &to 5            &to 5                                                                           &to 6  &to 7   &to 8   &none   &none   &none
+&to 0       &to 1            &to 2            &to 4            &to 5            &to 5                                                                           &to 6  &to 7   &to 9   &none   &none   &none
 &none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                 &none  &none   &none   &none   &none   &none
 &none       &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                 &none  &none   &none   &none   &none   &none
 &sys_reset  &none            &none            &none            &none            &none            &none  &bootloader  &none           &none  &bootloader  &none  &none  &none   &none   &none   &none   &sys_reset
