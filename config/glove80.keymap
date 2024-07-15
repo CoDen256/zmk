@@ -682,7 +682,7 @@
         // combo_mouse { timeout-ms = <18>; bindings = <&smart_mouse>; key-possitions = <24 26>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
 
         RT {
-            bindings = <&smart_shft>;
+            bindings = <&kp RIGHT_SHIFT>;
             key-positions = <41 42>;
         };
         RE {
@@ -690,7 +690,7 @@
             key-positions = <42 43>;
         };
         IN {
-            bindings = <&smart_shft>;
+            bindings = <&kp LEFT_SHIFT>;
             key-positions = <37 38>;
         };
 
@@ -896,6 +896,8 @@
 
 / {
     
+behaviors {};
+
 behaviors {};
 
 behaviors {};

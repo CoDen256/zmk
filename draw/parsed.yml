@@ -812,11 +812,11 @@ layers:
   - BT CLR ALL
 combos:
 - p: [41, 42]
-  k: {t: LSHFT, h: sticky, s: '&caps_word'}
+  k: RIGHT SHIFT
 - p: [42, 43]
   k: BACKSPACE
 - p: [37, 38]
-  k: {t: LSHFT, h: sticky, s: '&caps_word'}
+  k: LEFT SHIFT
 - p: [37, 36]
   k: ENTER
 - p: [59, 60]
