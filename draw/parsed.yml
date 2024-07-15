@@ -824,9 +824,9 @@ combos:
 - p: [60, 61]
   k: Ctl+ RIGHT
 - p: [49, 50]
-  k: RIGHT
+  k: UP ARROW
 - p: [48, 49]
-  k: LEFT ARROW
+  k: DOWN
 - p: [59, 42]
   k: .
 - p: [41, 60]
@@ -844,11 +844,11 @@ combos:
 - p: [29, 42]
   k: '{'
 - p: [42, 31]
-  k: )
+  k: (
 - p: [37, 50]
-  k: DOWN ARROW
+  k: RIGHT
 - p: [38, 49]
-  k: UP ARROW
+  k: LEFT ARROW
 - p: [49, 36]
   k: END
 - p: [48, 37]
@@ -893,7 +893,7 @@ combos:
   k: DELETE
 - p: [44, 41]
   k: fun
-- p: [35, 36]
+- p: [39, 36]
   k: over
 - p: [35, 37]
   k: Ctl+ C

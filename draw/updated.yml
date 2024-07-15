@@ -839,11 +839,11 @@ combos:
 - p:
   - 49
   - 50
-  k: RIGHT
+  k: UP ARROW
 - p:
   - 48
   - 49
-  k: LEFT ARROW
+  k: DOWN
 - p:
   - 59
   - 42
@@ -879,15 +879,15 @@ combos:
 - p:
   - 42
   - 31
-  k: )
+  k: (
 - p:
   - 37
   - 50
-  k: DOWN ARROW
+  k: RIGHT
 - p:
   - 38
   - 49
-  k: UP ARROW
+  k: LEFT ARROW
 - p:
   - 49
   - 36
@@ -979,7 +979,7 @@ combos:
   - 41
   k: fun
 - p:
-  - 35
+  - 39
   - 36
   k: over
 - p:

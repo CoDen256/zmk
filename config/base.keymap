@@ -11,7 +11,6 @@
 #define Layer_DEF 0
 #define Layer_NAV 1
 #define Layer_FN 2
-#define Layer_NUM 3
 #define Layer_SYS 4
 
 #include "combos.dtsi"  // requires layer aliases
