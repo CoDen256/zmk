@@ -440,7 +440,7 @@ release-after-ms = <5000>;};
 			#binding-cells = <0>;
 			tap-ms = <0>;
 			wait-ms = <0>;
-			bindings = <&macro_tap>,<&kp LS(NUMBER_6) &kp LS(N6)>;
+			bindings = <&macro_tap>,<&kp LS(N7) &kp LS(N7)>;
 		};
 		
 		or_short: or_short {
@@ -630,7 +630,7 @@ release-after-ms = <5000>;};
 			wait-ms = <0>;
 			tap-ms = <100>;
 			#binding-cells = <0>;
-			bindings = <&select_line &kp BACKSPACE>;
+			bindings = <&select_line &kp BACKSPACE &kp BACKSPACE>;
 		label = "DELETE_LINE";};
 		
 		copy_line: copy_line {
@@ -654,7 +654,22 @@ release-after-ms = <5000>;};
 			
 			#binding-cells = <1>;
 			bindings = <&trans &macro_param_1to1 &to MACRO_PLACEHOLDER>;
-		};
+		};cut_line: cut_line {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&select_line &kp K_CUT &kp DELETE>;
+         label = "CUT_LINE";};move_down: move_down {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&cut_line &kp DOWN &kp K_PASTE>;
+         label = "MOVE_DOWN";};move_up: move_up {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&cut_line &kp UP_ARROW &kp K_PASTE>;
+         label = "MOVE_UP";};
 	};
 	//
 	// Glove80 key positions index for positional hold-tap
@@ -837,7 +852,7 @@ release-after-ms = <5000>;};
 		key-positions = <44 41>;};
 		OA {
 			bindings = <&mo 8>;
-		key-positions = <39 36>;};
+		key-positions = <36 35>;};
 		
 		OI {
 			bindings = <&kp LC(C)>;
@@ -875,7 +890,11 @@ release-after-ms = <5000>;};
 		
 		L_MIDDLEL {
 			bindings = <&func_arrow>;
-		key-positions = <67 66>;};
+		key-positions = <67 66>;};NT {
+         bindings = <&kp SLASH>;
+         key-positions = <41 38>;};IR {
+         bindings = <&kp BACKSLASH>;
+         key-positions = <37 42>;};
 		
 		
 		
@@ -1260,17 +1279,25 @@ behaviors {};
 behaviors {};
 	
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 		
 		main {
 			bindings = <
-&tog 0      &tog 1       &tog 2       &kp_tog ESCAPE 2  &tog 4                                                                                                          &tog 6        &tog 7        &kp C_MUTE   &kp C_VOL_DN  &kp C_VOLUME_UP
-&to 0       &to 1        &to 2        &kp K             &to 4         &tog 5                                                                                &to 5       &to 6         &to 7         &none        &none         &none
-&none       &none        &kp G        &kp H             &kp C         &kp W                                                                                 &qexcl      &kp V         &kp L         &kp B        &kp F4        &kp F1
-&dot_morph  &hml LGUI O  &hml LALT A  &hml LSHFT I      &hml LCTRL N  &caret_morph                                                                          &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmr LGUI S   &comma_morph
-&none       &kp J        &kp F        &kp U             &kp P         &none         &smart_shft  &tog 9  &magic 9 0    &magic 9 0  &to 9  &tog 2            &none       &kp M         &kp D         &kp Y        &kp X         &none
-&none       &none        &kp Q        &mo 7             &kp TAB                     &kp SPACE    &none   &win_sleep    &none       &none  &kp_tog ESCAPE 2              &kp RET       &tog 6        &kp Z        &none         &none
+&tog 0      &tog 1       &tog 2       &kp_tog ESCAPE 2  &tog 4                                                                                                    &tog 6        &tog 7        &kp C_MUTE   &kp C_VOL_DN  &kp C_VOLUME_UP
+&to 0       &to 1        &to 2        &kp K             &to 4         &tog 5                                                                          &to 5       &to 6         &to 7         &none        &none         &none
+&none       &kp TILDE    &kp G        &kp H             &kp C         &kp W                                                                           &qexcl      &kp V         &kp L         &kp B        &kp F4        &kp F1
+&dot_morph  &hml LGUI O  &hml LALT A  &hml LSHFT I      &hml LCTRL N  &caret_morph                                                                    &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmr LGUI S   &comma_morph
+&none       &kp J        &kp F        &kp U             &kp P         &kp AT        &smart_shft  &tog 9  &magic 9 0    &magic 9 0  &to 9  &tog 2      &none       &kp M         &kp D         &kp Y        &kp X         &none
+&none       &none        &kp Q        &mo 7             &kp TAB                     &kp SPACE    &none   &win_sleep    &none       &none  &kp ESCAPE              &kp RET       &tog 6        &kp Z        &none         &none
 >;};
 		browser {
 			bindings = <

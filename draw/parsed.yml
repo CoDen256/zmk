@@ -24,7 +24,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - '~'
   - G
   - H
   - C
@@ -52,7 +52,7 @@ layers:
   - F
   - U
   - P
-  - ''
+  - '@'
   - {t: LSHFT, h: sticky, s: '&caps_word'}
   - {t: magic, h: toggle}
   - {t: '&rgb_ug_status_macro', h: magic}
@@ -75,7 +75,7 @@ layers:
   - '&win_sleep'
   - ''
   - ''
-  - '&kp_tog ESCAPE 2'
+  - ESCAPE
   - RET
   - {t: nav, h: toggle}
   - Z
@@ -893,7 +893,7 @@ combos:
   k: DELETE
 - p: [44, 41]
   k: fun
-- p: [39, 36]
+- p: [36, 35]
   k: over
 - p: [35, 37]
   k: Ctl+ C
@@ -915,3 +915,7 @@ combos:
   k: _
 - p: [67, 66]
   k: '&func_arrow'
+- p: [41, 38]
+  k: /
+- p: [37, 42]
+  k: \
