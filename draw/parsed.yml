@@ -2,23 +2,23 @@ layout: {qmk_keyboard: glove80}
 layers:
   main:
   - {t: main, h: toggle}
-  - {t: browser, h: toggle}
-  - {t: vim, h: toggle}
-  - '&kp_tog ESCAPE 2'
-  - {t: typing, h: toggle}
-  - {t: nav, h: toggle}
+  - {t: main, h: toggle}
+  - {t: main, h: toggle}
+  - '&kp_tog ESCAPE 0'
+  - {t: main, h: toggle}
+  - {t: main, h: toggle}
   - {t: fun, h: toggle}
   - MUTE
   - VOL DN
   - VOLUME UP
   - {t: main, h: toggle}
-  - {t: browser, h: toggle}
-  - {t: vim, h: toggle}
+  - {t: main, h: toggle}
+  - {t: main, h: toggle}
   - K
-  - {t: typing, h: toggle}
+  - {t: main, h: toggle}
   - {t: num, h: toggle}
   - {t: num, h: toggle}
-  - {t: nav, h: toggle}
+  - {t: main, h: toggle}
   - {t: fun, h: toggle}
   - ''
   - ''
@@ -35,8 +35,8 @@ layers:
   - B
   - F4
   - F1
-  - {t: LEFT SHIFT, h: sticky}
-  - {t: O, h: Alt+ LGUI}
+  - fun
+  - {t: O, h: Sft+ LGUI}
   - {t: A, h: LALT}
   - {t: I, h: LSHFT}
   - {t: N, h: LCTRL}
@@ -45,8 +45,8 @@ layers:
   - {t: T, h: LCTRL}
   - {t: R, h: RSHFT}
   - {t: E, h: LALT}
-  - {t: S, h: Alt+ LGUI}
-  - {t: LEFT SHIFT, h: sticky}
+  - {t: S, h: Sft+ LGUI}
+  - {t: num, h: toggle}
   - ''
   - J
   - F
@@ -58,7 +58,7 @@ layers:
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: magic, h: toggle}
-  - {t: vim, h: toggle}
+  - {t: main, h: toggle}
   - ''
   - M
   - D
@@ -68,343 +68,19 @@ layers:
   - ''
   - ''
   - Q
-  - fun
-  - TAB
+  - DOWN
+  - BACKSPACE
   - SPACE
   - {t: LEFT SHIFT, h: sticky}
   - '&win_sleep'
   - ''
   - ''
   - {t: LSHFT, h: sticky}
-  - RET
-  - {t: nav, h: toggle}
+  - DELETE
+  - UP ARROW
   - Z
   - ''
   - ''
-  browser:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Ctl+ F6
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  vim:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: '*', s: '#'}
-  - Ctl+ R
-  - '&kp_tog S 2'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - (
-  - '%'
-  - '"'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - X
-  - D
-  - U
-  - '&kp_tog C 3'
-  - '&kp_sl R 4'
-  - '{'
-  - V
-  - '&kp_tog O 2'
-  - '&kp_tog A 2'
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ., s: ':'}
-  - J
-  - K
-  - H
-  - L
-  - Z
-  - ''''
-  - B
-  - W
-  - E
-  - '&kp_tog I 2'
-  - {t: ',', s: ;}
-  - ''
-  - N
-  - G
-  - Y
-  - P
-  - M
-  - '&kp_tog SLASH 4'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&kp_tog LS(SLASH) 4'
-  - {t: ▽, type: trans}
-  - '0'
-  - $
-  - '&kp_sl F 4'
-  - '&kp_sl T 4'
-  - {t: ▽, type: trans}
-  - ''
-  - '9'
-  - '7'
-  - '5'
-  - '3'
-  - LEFT SHIFT
-  - '1'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&kp_tog COLON 4'
-  - LCTRL
-  - '2'
-  - '4'
-  - '6'
-  - '8'
-  - {t: ▽, type: trans}
-  vim_change0:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: '*', s: '#'}
-  - '&kp_tog LC(R) 3'
-  - '&kp_to S 0'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&kp_to LEFT_PARENTHESIS 0'
-  - '&kp_to PERCENT 0'
-  - '&kp_to DOUBLE_QUOTES 0'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&kp_tog X 3'
-  - '&kp_tog D 3'
-  - '&kp_tog U 3'
-  - '&kp_to C 0'
-  - '&kp_sl R 3'
-  - '&kp_to LEFT_BRACE 0'
-  - '&kp_tog V 3'
-  - '&kp_to O 3'
-  - A
-  - ''
-  - {t: ▽, type: trans}
-  - '&kp_tog COMMA 3'
-  - '&kp_tog J 3'
-  - '&kp_tog K 3'
-  - '&kp_tog H 3'
-  - '&kp_tog L 3'
-  - '&kp_tog Z 3'
-  - '&kp_to SQT 0'
-  - '&kp_to B 0'
-  - '&kp_to W 0'
-  - '&kp_to E 0'
-  - I
-  - '&kp_tog DOT 3'
-  - ''
-  - '&kp_tog N 3'
-  - '&kp_tog G 3'
-  - '&kp_tog Y 3'
-  - '&kp_to P 0'
-  - '&kp_tog M 3'
-  - '&kp_tog SLASH 4'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&kp_tog LS(SLASH) 4'
-  - {t: ▽, type: trans}
-  - '&kp_to N0 0'
-  - '&kp_to DOLLAR 0'
-  - '&kp_tog F 3'
-  - '&kp_to T 0'
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - '7'
-  - '5'
-  - '3'
-  - LEFT SHIFT
-  - '1'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&kp_tog COLON 4'
-  - LCTRL
-  - '2'
-  - '4'
-  - '6'
-  - '8'
-  - {t: ▽, type: trans}
-  typing:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - G
-  - H
-  - C
-  - W
-  - {t: '?', s: '!'}
-  - V
-  - L
-  - B
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ., s: ':'}
-  - {t: O, h: LGUI}
-  - {t: A, h: LALT}
-  - {t: I, h: LSHFT}
-  - {t: N, h: LCTRL}
-  - {t: ^, s: '~'}
-  - $
-  - {t: T, h: LCTRL}
-  - {t: R, h: RSHFT}
-  - {t: E, h: LALT}
-  - {t: S, h: LGUI}
-  - {t: ',', s: ;}
-  - {t: ▽, type: trans}
-  - J
-  - F
-  - U
-  - P
-  - {t: ▽, type: trans}
-  - {t: LSHFT, h: sticky, s: '&caps_word'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - M
-  - D
-  - Y
-  - X
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Q
-  - {t: fun, h: toggle}
-  - TAB
-  - SPACE
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - BACKSPACE
-  - '&kp_tog RET 4'
-  - {t: nav, h: toggle}
-  - Z
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   num:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -418,9 +94,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '*'
-  - \
-  - '%'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -440,23 +116,18 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: '0', h: LGUI}
-  - {t: '4', h: LALT}
-  - {t: '5', h: LSHFT}
-  - {t: '6', h: LCTRL}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: RCTRL, type: held}
-  - RIGHT SHIFT
-  - {t: RIGHT ALT, type: held}
-  - RIGHT WIN
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '='
+  - '8'
+  - '9'
+  - '0'
   - '1'
   - '2'
-  - '3'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '3', type: held}
+  - '4'
+  - {t: '5', type: held}
+  - '6'
+  - '7'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -469,103 +140,27 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - +
-  - {t: fun, h: toggle}
-  - '-'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - SPACE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BACKSPACE
-  - ENTER
-  - {t: nav, h: toggle}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  nav:
-  - ''
-  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&delete_line'
-  - Ctl+ Y
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Ctl+ X
-  - Ctl+ Z
-  - '&delete_word'
-  - '&delete_line'
-  - {t: ▽, type: trans}
-  - HOME
-  - END
-  - Ctl+ A
-  - '&select_line'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - DOWN ARROW
-  - UP ARROW
-  - LEFT ARROW
-  - RIGHT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Ctl+ LEFT ARROW
-  - Ctl+ RIGHT
-  - {t: '&select_word_right', s: '&select_word_left'}
-  - RIGHT SHIFT
-  - Ctl+ S
-  - {t: ▽, type: trans}
-  - PG UP
-  - PAGE DOWN
-  - Ctl+ C
-  - Ctl+ V
-  - {t: ▽, type: trans}
-  - '&kp_tog LC(F) 6'
-  - Ctl+ DELETE
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Ctl+ BACKSPACE
-  - {t: ▽, type: trans}
-  - DOWN ARROW
-  - UP ARROW
-  - RCTRL
-  - RIGHT ALT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - '&duplicate_line'
-  - '&copy_line'
-  - TAB
-  - SPACE
-  - DEL
-  - ''
-  - {t: ▽, type: trans}
-  - Ctl+ BACKSPACE
-  - BACKSPACE
-  - ENTER
-  - {t: nav, h: toggle}
-  - RIGHT WIN
-  - ''
   - {t: ▽, type: trans}
   fun:
   - {t: ▽, type: trans}
@@ -602,7 +197,7 @@ layers:
   - F9
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
+  - {type: held}
   - ''
   - ''
   - ''
@@ -635,7 +230,7 @@ layers:
   - {t: ▽, type: trans}
   - Ctl+ A
   - Ctl+ C
-  - {type: held}
+  - {t: ▽, type: trans}
   - Ctl+ V
   - F9
   - Alt+ TAB
@@ -741,12 +336,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: main, h: toggle}
-  - {t: browser, h: toggle}
-  - {t: vim, h: toggle}
-  - {t: typing, h: toggle}
+  - {t: main, h: toggle}
+  - {t: main, h: toggle}
+  - {t: main, h: toggle}
   - {t: num, h: toggle}
   - {t: num, h: toggle}
-  - {t: nav, h: toggle}
+  - {t: main, h: toggle}
   - {t: fun, h: toggle}
   - {t: magic, h: toggle}
   - ''
@@ -814,23 +409,28 @@ combos:
 - p: [41, 42]
   k: {t: LEFT SHIFT, h: sticky}
 - p: [42, 43]
-  k: BACKSPACE
+  k: TAB
 - p: [37, 38]
   k: {t: LEFT SHIFT, h: sticky}
 - p: [37, 36]
-  k: ENTER
+  k: '&kp_to ENTER 0'
+  l: [fun, over, main, magic]
 - p: [59, 60]
-  k: Ctl+ LEFT
-- p: [60, 61]
   k: Ctl+ RIGHT
+- p: [60, 61]
+  k: RIGHT
 - p: [49, 50]
-  k: UP ARROW
-- p: [48, 49]
+  k: Ctl+ LEFT ARROW
+- p: [49, 48]
+  k: LEFT ARROW
+- p: [31, 30]
+  k: ''
+- p: [25, 24]
   k: DOWN
 - p: [59, 42]
-  k: .
-- p: [41, 60]
   k: ','
+- p: [41, 60]
+  k: .
 - p: [42, 61]
   k: Ctl+ BACKSPACE
 - p: [60, 43]
@@ -864,9 +464,9 @@ combos:
 - p: [36, 25]
   k: '-'
 - p: [59, 61]
-  k: {t: '&select_word_right', s: '&select_word_left'}
+  k: END
 - p: [48, 50]
-  k: '='
+  k: HOME
 - p: [29, 31]
   k: '&select_line'
 - p: [26, 24]
@@ -889,8 +489,6 @@ combos:
   k: Ctl+ S
 - p: [44, 43]
   k: over
-- p: [44, 42]
-  k: DELETE
 - p: [44, 41]
   k: fun
 - p: [36, 35]
@@ -900,22 +498,28 @@ combos:
 - p: [35, 38]
   k: Ctl+ V
 - p: [59, 76]
-  k: '!'
+  k: '&delete_word'
 - p: [75, 60]
-  k: '?'
+  k: '&select_word_right'
 - p: [49, 68]
-  k: PG DN
+  k: '&select_word_left'
 - p: [67, 50]
-  k: PG UP
+  k: {t: '&select_word_right', s: '&select_word_left'}
 - p: [76, 75]
-  k: '#'
+  k: Ctl+ DELETE
 - p: [77, 76]
-  k: '%'
+  k: PAGE UP
 - p: [68, 67]
-  k: _
+  k: Ctl+ BACKSPACE
 - p: [67, 66]
-  k: '&func_arrow'
+  k: PAGE DOWN
 - p: [41, 38]
   k: /
 - p: [37, 42]
   k: \
+- p: [50, 59]
+  k: '&select_line'
+- p: [49, 60]
+  k: '&delete_line'
+- p: [48, 61]
+  k: '&duplicate_line'
