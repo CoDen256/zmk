@@ -815,7 +815,9 @@ combos:
 - p:
   - 41
   - 42
-  k: RIGHT SHIFT
+  k:
+    t: LEFT SHIFT
+    h: sticky
 - p:
   - 42
   - 43
@@ -823,7 +825,9 @@ combos:
 - p:
   - 37
   - 38
-  k: LEFT SHIFT
+  k:
+    t: LEFT SHIFT
+    h: sticky
 - p:
   - 37
   - 36

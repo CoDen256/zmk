@@ -35,8 +35,8 @@ layers:
   - B
   - F4
   - F1
-  - {t: ., s: ':'}
-  - {t: O, h: LGUI}
+  - {t: LEFT SHIFT, h: sticky}
+  - {t: O, h: Alt+ LGUI}
   - {t: A, h: LALT}
   - {t: I, h: LSHFT}
   - {t: N, h: LCTRL}
@@ -45,15 +45,15 @@ layers:
   - {t: T, h: LCTRL}
   - {t: R, h: RSHFT}
   - {t: E, h: LALT}
-  - {t: S, h: LGUI}
-  - {t: ',', s: ;}
+  - {t: S, h: Alt+ LGUI}
+  - {t: LEFT SHIFT, h: sticky}
   - ''
   - J
   - F
   - U
   - P
   - '@'
-  - {t: LSHFT, h: sticky, s: '&caps_word'}
+  - {t: LEFT SHIFT, h: sticky}
   - {t: magic, h: toggle}
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: '&rgb_ug_status_macro', h: magic}
@@ -71,11 +71,11 @@ layers:
   - fun
   - TAB
   - SPACE
-  - ''
+  - {t: LEFT SHIFT, h: sticky}
   - '&win_sleep'
   - ''
   - ''
-  - ESCAPE
+  - {t: LSHFT, h: sticky}
   - RET
   - {t: nav, h: toggle}
   - Z
@@ -812,11 +812,11 @@ layers:
   - BT CLR ALL
 combos:
 - p: [41, 42]
-  k: RIGHT SHIFT
+  k: {t: LEFT SHIFT, h: sticky}
 - p: [42, 43]
   k: BACKSPACE
 - p: [37, 38]
-  k: LEFT SHIFT
+  k: {t: LEFT SHIFT, h: sticky}
 - p: [37, 36]
   k: ENTER
 - p: [59, 60]

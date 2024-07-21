@@ -698,7 +698,7 @@ release-after-ms = <5000>;};
 
 
 		RT {
-			bindings = <&kp RIGHT_SHIFT>;
+			bindings = <&sk LEFT_SHIFT>;
 			key-positions = <41 42>;
 		};
 		RE {
@@ -706,7 +706,7 @@ release-after-ms = <5000>;};
 			key-positions = <42 43>;
 		};
 		IN {
-			bindings = <&kp LEFT_SHIFT>;
+			bindings = <&sk LEFT_SHIFT>;
 			key-positions = <37 38>;
 		};
 		
@@ -758,7 +758,7 @@ release-after-ms = <5000>;};
 		
 		
 		TE {
-			bindings = <&mo 5>;
+			bindings = <&mo 1>;
 		key-positions = <41 43>;};TL {
 			bindings = <&kp COLON>;
 		key-positions = <41 30>;};EL {
@@ -840,7 +840,7 @@ release-after-ms = <5000>;};
 		key-positions = <48 38>;};
 		
 		SE {
-			bindings = <&mo 8>;
+			bindings = <&mo 3>;
 		key-positions = <44 43>;};
 		
 		SR {
@@ -848,10 +848,10 @@ release-after-ms = <5000>;};
 		key-positions = <44 42>;};
 				
 		ST {
-			bindings = <&mo 7>;
+			bindings = <&mo 2>;
 		key-positions = <44 41>;};
 		OA {
-			bindings = <&mo 8>;
+			bindings = <&mo 3>;
 		key-positions = <36 35>;};
 		
 		OI {
@@ -894,7 +894,9 @@ release-after-ms = <5000>;};
          bindings = <&kp SLASH>;
          key-positions = <41 38>;};IR {
          bindings = <&kp BACKSLASH>;
-         key-positions = <37 42>;};
+         key-positions = <37 42>;};GH {
+         bindings = <&none>;
+         key-positions = <24 25>;};
 		
 		
 		
@@ -1287,53 +1289,31 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 		
 		main {
 			bindings = <
-&tog 0      &tog 1       &tog 2       &kp_tog ESCAPE 2  &tog 4                                                                                                    &tog 6        &tog 7        &kp C_MUTE   &kp C_VOL_DN  &kp C_VOLUME_UP
-&to 0       &to 1        &to 2        &kp K             &to 4         &tog 5                                                                          &to 5       &to 6         &to 7         &none        &none         &none
-&none       &kp TILDE    &kp G        &kp H             &kp C         &kp W                                                                           &qexcl      &kp V         &kp L         &kp B        &kp F4        &kp F1
-&dot_morph  &hml LGUI O  &hml LALT A  &hml LSHFT I      &hml LCTRL N  &caret_morph                                                                    &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmr LGUI S   &comma_morph
-&none       &kp J        &kp F        &kp U             &kp P         &kp AT        &smart_shft  &tog 9  &magic 9 0    &magic 9 0  &to 9  &tog 2      &none       &kp M         &kp D         &kp Y        &kp X         &none
-&none       &none        &kp Q        &mo 7             &kp TAB                     &kp SPACE    &none   &win_sleep    &none       &none  &kp ESCAPE              &kp RET       &tog 6        &kp Z        &none         &none
->;};
-		browser {
-			bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &kp LC(F6)  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans
->;};
-		vim {
-			bindings = <
-&trans      &trans  &trans            &trans     &trans                                                                                                                           &trans                &trans        &trans             &trans       &trans
-&trans      &trans  &star_hash_morph  &kp LC(R)  &kp_tog S 2   &trans                                                                                             &trans          &kp LEFT_PARENTHESIS  &kp PERCENT   &kp DOUBLE_QUOTES  &trans       &trans
-&trans      &kp X   &kp D             &kp U      &kp_tog C 3   &kp_sl R 4                                                                                         &kp LEFT_BRACE  &kp V                 &kp_tog O 2   &kp_tog A 2        &none        &trans
-&dot_morph  &kp J   &kp K             &kp H      &kp L         &kp Z                                                                                              &kp SQT         &kp B                 &kp W         &kp E              &kp_tog I 2  &comma_morph
-&none       &kp N   &kp G             &kp Y      &kp P         &kp M       &kp_tog SLASH 4  &trans        &trans    &trans  &trans           &kp_tog LS(SLASH) 4  &trans          &kp N0                &kp DOLLAR    &kp_sl F 4         &kp_sl T 4   &trans
-&none       &kp N9  &kp N7            &kp N5     &kp NUMBER_3              &kp LEFT_SHIFT   &kp NUMBER_1  &trans    &trans  &kp_tog COLON 4  &kp LCTRL                            &kp NUMBER_2          &kp NUMBER_4  &kp NUMBER_6       &kp N8       &trans
->;};
-		vim_change0 {
-			bindings = <
-&trans           &trans       &trans            &trans           &trans                                                                                                                                 &trans                     &trans            &trans                  &trans      &trans
-&trans           &trans       &star_hash_morph  &kp_tog LC(R) 3  &kp_to S 0    &trans                                                                                              &trans               &kp_to LEFT_PARENTHESIS 0  &kp_to PERCENT 0  &kp_to DOUBLE_QUOTES 0  &trans      &trans
-&trans           &kp_tog X 3  &kp_tog D 3       &kp_tog U 3      &kp_to C 0    &kp_sl R 3                                                                                          &kp_to LEFT_BRACE 0  &kp_tog V 3                &kp_to O 3        &kp A                   &none       &trans
-&kp_tog COMMA 3  &kp_tog J 3  &kp_tog K 3       &kp_tog H 3      &kp_tog L 3   &kp_tog Z 3                                                                                         &kp_to SQT 0         &kp_to B 0                 &kp_to W 0        &kp_to E 0              &kp I       &kp_tog DOT 3
-&none            &kp_tog N 3  &kp_tog G 3       &kp_tog Y 3      &kp_to P 0    &kp_tog M 3  &kp_tog SLASH 4  &trans        &trans    &trans  &trans           &kp_tog LS(SLASH) 4  &trans               &kp_to N0 0                &kp_to DOLLAR 0   &kp_tog F 3             &kp_to T 0  &trans
-&none            &none        &kp N7            &kp N5           &kp NUMBER_3               &kp LEFT_SHIFT   &kp NUMBER_1  &trans    &trans  &kp_tog COLON 4  &kp LCTRL                                 &kp NUMBER_2               &kp NUMBER_4      &kp NUMBER_6            &kp N8      &trans
->;};
-		typing {
-			bindings = <
-&trans      &trans       &trans       &trans        &trans                                                                                                &trans         &trans        &trans       &trans       &trans
-&trans      &trans       &trans       &trans        &trans        &trans                                                                      &trans      &trans         &trans        &trans       &trans       &trans
-&trans      &trans       &kp G        &kp H         &kp C         &kp W                                                                       &qexcl      &kp V          &kp L         &kp B        &trans       &trans
-&dot_morph  &hml LGUI O  &hml LALT A  &hml LSHFT I  &hml LCTRL N  &caret_morph                                                                &kp DOLLAR  &hmr LCTRL T   &hmr RSHFT R  &hmr LALT E  &hmr LGUI S  &comma_morph
-&trans      &kp J        &kp F        &kp U         &kp P         &trans        &smart_shft  &trans  &trans    &trans  &trans  &trans         &trans      &kp M          &kp D         &kp Y        &kp X        &trans
-&trans      &trans       &kp Q        &tog 7        &kp TAB                     &kp SPACE    &trans  &trans    &trans  &trans  &kp BACKSPACE              &kp_tog RET 4  &tog 6        &kp Z        &trans       &trans
+&tog 0          &tog 0           &tog 0       &kp_tog ESCAPE 0  &tog 0                                                                                                              &tog 0        &tog 2        &kp C_MUTE   &kp C_VOL_DN     &kp C_VOLUME_UP
+&to 0           &to 0            &to 0        &kp K             &to 0         &tog 1                                                                                    &to 1       &to 0         &to 2         &none        &none            &none
+&none           &kp TILDE        &kp G        &kp H             &kp C         &kp W                                                                                     &qexcl      &kp V         &kp L         &kp B        &kp F4           &kp F1
+&sk LEFT_SHIFT  &hml LA(LGUI) O  &hml LALT A  &hml LSHFT I      &hml LCTRL N  &caret_morph                                                                              &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmr LA(LGUI) S  &sk LEFT_SHIFT
+&none           &kp J            &kp F        &kp U             &kp P         &kp AT        &sk LEFT_SHIFT  &tog 4          &magic 4 0    &magic 4 0  &to 4  &tog 0     &none       &kp M         &kp D         &kp Y        &kp X            &none
+&none           &none            &kp Q        &mo 2             &kp TAB                     &kp SPACE       &sk LEFT_SHIFT  &win_sleep    &none       &none  &sk LSHFT              &kp RET       &tog 0        &kp Z        &none            &none
 >;};
 		num {
 			bindings = <
@@ -1342,17 +1322,7 @@ keymap {
 &trans  &trans        &kp N7        &kp N8         &kp N9         &trans                                                              &trans  &trans     &trans           &trans         &trans         &trans
 &trans  &hml LGUI N0  &hml LALT N4  &hml LSHFT N5  &hml LCTRL N6  &trans                                                              &trans  &kp RCTRL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
 &trans  &kp EQUAL     &kp N1        &kp N2         &kp N3         &trans  &trans     &trans  &trans    &trans  &trans  &trans         &trans  &trans     &trans           &trans         &trans         &trans
-&trans  &trans        &kp PLUS      &tog 7         &kp MINUS              &kp SPACE  &trans  &trans    &trans  &trans  &kp BACKSPACE          &kp ENTER  &tog 6           &trans         &trans         &trans
->;
-		};
-		nav {
-			bindings = <
-&none   &none           &trans           &trans          &trans                                                                                                                       &trans              &trans         &trans         &trans           &trans
-&trans  &trans          &delete_line     &kp LC(Y)       &none         &trans                                                                                                 &trans  &trans              &trans         &trans         &trans           &trans
-&trans  &trans          &kp LC(X)        &kp LC(Z)       &delete_word  &delete_line                                                                                           &trans  &kp HOME            &kp END        &kp LC(A)      &select_line     &trans
-&trans  &kp DOWN_ARROW  &kp UP_ARROW     &kp LEFT_ARROW  &kp RIGHT     &trans                                                                                                 &trans  &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &select_word   &kp RIGHT_SHIFT  &kp LC(S)
-&trans  &kp PG_UP       &kp PAGE_DOWN    &kp LC(C)       &kp LC(V)     &trans        &kp_tog LC(F) 6  &kp LC(DELETE)  &trans    &trans  &trans             &kp LC(BACKSPACE)  &trans  &kp DOWN_ARROW      &kp UP_ARROW   &kp RCTRL      &kp RIGHT_ALT    &trans
-&trans  &none           &duplicate_line  &copy_line      &kp TAB                     &kp SPACE        &kp DEL         &none     &trans  &kp LC(BACKSPACE)  &kp BACKSPACE              &kp ENTER           &tog 6         &kp RIGHT_WIN  &none            &trans
+&trans  &trans        &kp PLUS      &tog 2         &kp MINUS              &kp SPACE  &trans  &trans    &trans  &trans  &kp BACKSPACE          &kp ENTER  &tog 0           &trans         &trans         &trans
 >;
 		};
 		fun {
@@ -1377,7 +1347,7 @@ keymap {
 		magic {
 			bindings = <
 &trans      &trans           &trans           &trans           &trans                                                                                                  &trans  &trans  &trans  &trans  &trans
-&to 0       &to 1            &to 2            &to 4            &to 5            &to 5                                                                           &to 6  &to 7   &to 9   &none   &none   &none
+&to 0       &to 0            &to 0            &to 0            &to 1            &to 1                                                                           &to 0  &to 2   &to 4   &none   &none   &none
 &none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                 &none  &none   &none   &none   &none   &none
 &none       &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                 &none  &none   &none   &none   &none   &none
 &sys_reset  &none            &none            &none            &none            &none            &none  &bootloader  &none           &none  &bootloader  &none  &none  &none   &none   &none   &none   &sys_reset
