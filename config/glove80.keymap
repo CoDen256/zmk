@@ -1053,17 +1053,27 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 		
 		main {
 			bindings = <
-&tog 0  &tog 0               &tog 0       &kp_tog ESCAPE 0  &tog 0                                                                                                               &tog 0        &tog 2        &kp C_MUTE   &kp C_VOL_DN      &kp C_VOLUME_UP
-&to 0   &to 0                &to 0        &kp K             &to 0          &tog 0                                                                                    &to 0       &to 0         &to 2         &none        &none             &none
-&none   &kp TILDE            &kp G        &kp H             &kp C          &kp W                                                                                     &qexcl      &kp V         &kp L         &kp B        &kp F4            &kp F1
-&tog 1  &hmllt 2 O           &hml LALT A  &hml LSHFT I      &hml LCTRL N   &caret_morph                                                                              &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmrlt 3 S        &none
-&none   &hml LS(LEFT_GUI) J  &kp F        &kp U             &kp P          &kp AT        &sk LEFT_SHIFT  &tog 4          &magic 4 0    &magic 4 0  &to 4  &tog 0     &none       &kp M         &kp D         &kp Y        &hmr RS(RMETA) X  &none
-&none   &none                &kp Q        &kp DOWN          &kp BACKSPACE                &kp SPACE       &sk LEFT_SHIFT  &win_sleep    &none       &none  &sk LSHFT              &kp DELETE    &kp UP_ARROW  &kp Z        &none             &none
+&tog 0        &tog 0               &tog 0       &kp_tog ESCAPE 0  &tog 0                                                                                                               &tog 0        &tog 2        &kp C_MUTE   &kp C_VOL_DN      &kp C_VOLUME_UP
+&to 0         &to 0                &to 0        &kp K             &to 0          &tog 0                                                                                    &to 0       &to 0         &to 2         &none        &none             &none
+&none         &none                &kp G        &kp H             &kp C          &kp W                                                                                     &qexcl      &kp V         &kp L         &kp B        &none             &none
+&tog 1        &hmllt 2 O           &hml LALT A  &hml LSHFT I      &hml LCTRL N   &caret_morph                                                                              &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmrlt 3 S        &none
+&kp LEFT_GUI  &hml LS(LEFT_GUI) J  &kp F        &kp U             &kp P          &kp AT        &sk LEFT_SHIFT  &tog 4          &magic 6 0    &magic 6 0  &to 4  &tog 0     &none       &kp M         &kp D         &kp Y        &hmr RS(RMETA) X  &kp RIGHT_GUI
+&none         &kp COMMA            &kp Q        &kp DOWN          &kp BACKSPACE                &kp SPACE       &sk LEFT_SHIFT  &win_sleep    &none       &none  &sk LSHFT              &kp DELETE    &kp UP_ARROW  &kp Z        &kp DOT           &none
 >;};
 num {
          bindings = <
@@ -1076,12 +1086,12 @@ num {
 >;};
 fun {
 			bindings = <
-&trans  &trans  &trans     &trans     &trans                                                                                                         &trans   &trans     &trans         &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans                                                                                      &trans  &kp F10  &kp F11    &kp F12        &trans  &trans
-&none   &none   &kp LC(Y)  &kp LC(Z)  &kp LC(X)  &none                                                                                       &trans  &kp F7   &kp F8     &kp F9         &trans  &trans
-&none   &none   &kp F9     &kp LC(S)  &kp LC(C)  &none                                                                                       &trans  &none    &kp RSHFT  &kp RIGHT_ALT  &trans  &trans
-&trans  &none   &kp LC(F)  &kp LC(A)  &kp LC(V)  &none   &kp LG(LC(LS(A)))  &kp LG(LC(LS(Q)))  &trans                &trans  &trans  &trans  &trans  &kp F1   &kp F2     &kp F3         &none   &trans
-&trans  &none   &none      &trans     &none              &kp F9             &none              &kp LC(LA(DELETE))    &trans  &trans  &trans          &kp F4   &kp F5     &kp F6         &none   &none
+&trans  &trans  &trans     &trans     &trans                                                                                                                    &trans     &trans     &trans         &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans                                                                                                 &trans  &kp F10    &kp F11    &kp F12        &trans  &trans
+&none   &none   &kp LC(Y)  &kp LC(Z)  &kp LC(X)  &none                                                                                                  &trans  &kp F7     &kp F8     &kp F9         &trans  &trans
+&none   &none   &kp F9     &kp LC(S)  &kp LC(C)  &none                                                                                                  &trans  &kp LCTRL  &kp RSHFT  &kp RIGHT_ALT  &trans  &trans
+&trans  &none   &kp LC(F)  &kp LC(A)  &kp LC(V)  &none   &kp LG(LC(LS(A)))  &kp LG(LC(LS(Q)))  &trans                &trans      &trans      &trans     &trans  &kp F1     &kp F2     &kp F3         &none   &trans
+&trans  &none   &none      &trans     &none              &kp F9             &kp LG(X)          &kp LC(LA(DELETE))    &kp LS(F6)  &kp LA(F4)  &kp LG(B)          &kp F4     &kp F5     &kp F6         &none   &none
 >;
 		};
 nav {
@@ -1093,10 +1103,28 @@ nav {
 &trans  &kp PG_DN  &kp PG_UP     &kp HOME        &kp END          &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &none      &none           &none         &none   &trans
 &trans  &trans     &trans        &kp TAB         &kp ENTER                &trans  &trans  &trans    &trans  &trans  &trans          &none      &none           &none         &trans  &trans
 >;};
+vim {
+         bindings = <
+&trans      &trans  &trans            &trans     &trans                                                                                                                           &trans                &trans        &trans             &trans       &trans
+&trans      &trans  &star_hash_morph  &kp LC(R)  &kp_tog S 2   &trans                                                                                             &trans          &kp LEFT_PARENTHESIS  &kp PERCENT   &kp DOUBLE_QUOTES  &trans       &trans
+&trans      &kp X   &kp D             &kp U      &kp_tog C 3   &kp_sl R 4                                                                                         &kp LEFT_BRACE  &kp V                 &kp_tog O 2   &kp_tog A 2        &none        &trans
+&dot_morph  &kp J   &kp K             &kp H      &kp L         &kp Z                                                                                              &kp SQT         &kp B                 &kp W         &kp E              &kp_tog I 2  &comma_morph
+&none       &kp N   &kp G             &kp Y      &kp P         &kp M       &kp_tog SLASH 4  &trans        &trans    &trans  &trans           &kp_tog LS(SLASH) 4  &trans          &kp N0                &kp DOLLAR    &kp_sl F 4         &kp_sl T 4   &trans
+&none       &kp N9  &kp N7            &kp N5     &kp NUMBER_3              &kp LEFT_SHIFT   &kp NUMBER_1  &trans    &trans  &kp_tog COLON 4  &kp LCTRL                            &kp NUMBER_2          &kp NUMBER_4  &kp NUMBER_6       &kp N8       &trans
+>;};
+qwerty {
+         bindings = <
+&kp F1     &kp F2    &kp F3   &kp F4    &kp F5                                                                                       &kp F6  &kp F7     &kp F8    &kp F9    &kp F10
+&kp EQUAL  &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                    &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB    &kp Q     &kp W    &kp E     &kp R      &kp T                                                                     &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&kp ESC    &kp A     &kp S    &kp D     &kp F      &kp G                                                                     &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp APOS
+&kp GRAVE  &kp Z     &kp X    &kp C     &kp V      &kp B   &kp LSHFT  &kp LCTRL  &trans      &trans    &kp LCTRL  &kp LSHFT  &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
+&trans     &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp SPACE  &kp ENTER  &kp LALT    &kp RALT  &kp DEL    &kp BSPC           &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
+>;};
 magic {
 			bindings = <
 &trans      &trans           &trans           &trans           &trans                                                                                                  &trans  &trans  &trans  &trans  &trans
-&to 0       &to 0            &to 0            &to 0            &to 0            &to 0                                                                           &to 0  &to 2   &to 4   &none   &none   &none
+&to 0       &to 1            &to 2            &to 3            &to 4            &to 5                                                                           &to 0  &to 2   &to 4   &none   &none   &none
 &none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                 &none  &none   &none   &none   &none   &none
 &none       &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                 &none  &none   &none   &none   &none   &none
 &sys_reset  &none            &none            &none            &none            &none            &none  &bootloader  &none           &none  &bootloader  &none  &none  &none   &none   &none   &none   &sys_reset
