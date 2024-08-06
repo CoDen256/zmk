@@ -1,5 +1,4 @@
 import os
-import time
 import subprocess
 import sys
 import docker
@@ -41,29 +40,8 @@ def run(dir):
         subprocess.call("python ./draw/drawer.py")
         print("\nDrawing keymap...")
 
-def check_file_update(file_path, dir):
-    last_modified_time = None
-
-    while True:
-        try:
-            # Check the current modification time of the file
-            current_modified_time = os.path.getmtime(file_path)
-        except FileNotFoundError:
-            print(f"The file {file_path} does not exist.")
-            return
-
-        # If the modification time has changed, run the PowerShell script
-        if current_modified_time != last_modified_time:
-            print(f"File {file_path} has been updated. Executing docker glove80 image...")
-            run(dir)
-            # Update the last modification time
-            last_modified_time = current_modified_time
-
-            print("Sleeping...")
-        # Wait for 10 seconds before checking again
-        time.sleep(5)
 
 if __name__ == "__main__":
-    file_path = "config/glove80.keymap"
-    dir = "C:\\dev\\zmk-config"
+    file_path = "../config/glove80.keymap"
+    dir = "/"
     check_file_update(file_path, dir)
