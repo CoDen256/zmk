@@ -18,8 +18,8 @@ layers:
   - {t: main, h: toggle}
   - {t: main, h: toggle}
   - {t: main, h: toggle}
-  - {t: main, h: toggle}
-  - {t: fun, h: toggle}
+  - Sft+ TAB
+  - TAB
   - ''
   - ''
   - ''
@@ -54,10 +54,10 @@ layers:
   - P
   - '@'
   - {t: LEFT SHIFT, h: sticky}
-  - {t: vim, h: toggle}
+  - {t: fun, h: toggle}
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: '&rgb_ug_status_macro', h: magic}
-  - {t: vim, h: toggle}
+  - {t: nav, h: toggle}
   - {t: main, h: toggle}
   - ''
   - M
@@ -601,7 +601,7 @@ combos:
 - p: [60, 43]
   k: )
 - p: [41, 43]
-  k: +
+  k: KP PLUS
 - p: [41, 30]
   k: /
 - p: [30, 43]
@@ -619,7 +619,7 @@ combos:
 - p: [48, 37]
   k: '{'
 - p: [36, 38]
-  k: '-'
+  k: KP SUBTRACT
 - p: [38, 25]
   k: \
 - p: [37, 26]

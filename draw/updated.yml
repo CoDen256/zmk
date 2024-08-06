@@ -644,7 +644,7 @@ combos:
 - p:
   - 41
   - 43
-  k: +
+  k: KP PLUS
 - p:
   - 41
   - 30
@@ -680,7 +680,7 @@ combos:
 - p:
   - 36
   - 38
-  k: '-'
+  k: KP SUBTRACT
 - p:
   - 38
   - 25

@@ -801,7 +801,7 @@ release-after-ms = <5000>;};
 		
 		
 		TE {
-			bindings = <&kp PLUS>;
+			bindings = <&kp KP_PLUS>;
 		key-positions = <41 43>;};TL {
 			bindings = <&kp SLASH>;
 		key-positions = <41 30>;};EL {
@@ -819,7 +819,7 @@ release-after-ms = <5000>;};
 		key-positions = <49 36>;};FI {
 			bindings = <&kp LEFT_BRACE>;
 		key-positions = <48 37>;};AN {
-			bindings = <&kp MINUS>;
+			bindings = <&kp KP_SUBTRACT>;
 		key-positions = <36 38>;};NH {
 			bindings = <&kp BACKSLASH>;
 		key-positions = <38 25>;};IC {
@@ -1063,17 +1063,23 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 		
 		main {
 			bindings = <
-&tog 0        &tog 0               &tog 0       &kp_tog ESCAPE 0  &tog 0                                                                                                               &tog 0        &tog 2        &kp C_MUTE   &kp C_VOL_DN      &kp C_VOLUME_UP
-&to 0         &to 0                &to 0        &kp K             &to 0          &tog 0                                                                                    &to 0       &to 0         &to 2         &none        &none             &none
-&none         &none                &kp G        &kp H             &kp C          &kp W                                                                                     &qexcl      &kp V         &kp L         &kp B        &none             &none
-&tog 1        &hmllt 2 O           &hml LALT A  &hml LSHFT I      &hml LCTRL N   &caret_morph                                                                              &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmrlt 3 S        &none
-&kp LEFT_GUI  &hml LS(LEFT_GUI) J  &kp F        &kp U             &kp P          &kp AT        &sk LEFT_SHIFT  &tog 4          &magic 6 0    &magic 6 0  &to 4  &tog 0     &none       &kp M         &kp D         &kp Y        &hmr RS(RMETA) X  &kp RIGHT_GUI
-&none         &kp COMMA            &kp Q        &kp DOWN          &kp BACKSPACE                &kp SPACE       &sk LEFT_SHIFT  &win_sleep    &none       &none  &sk LSHFT              &kp DELETE    &kp UP_ARROW  &kp Z        &kp DOT           &none
+&tog 0        &tog 0               &tog 0       &kp_tog ESCAPE 0  &tog 0                                                                                                                &tog 0        &tog 2        &kp C_MUTE   &kp C_VOL_DN      &kp C_VOLUME_UP
+&to 0         &to 0                &to 0        &kp K             &to 0          &tog 0                                                                                     &to 0       &kp LS(TAB)   &kp TAB       &none        &none             &none
+&none         &none                &kp G        &kp H             &kp C          &kp W                                                                                      &qexcl      &kp V         &kp L         &kp B        &none             &none
+&tog 1        &hmllt 2 O           &hml LALT A  &hml LSHFT I      &hml LCTRL N   &caret_morph                                                                               &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmrlt 3 S        &none
+&kp LEFT_GUI  &hml LS(LEFT_GUI) J  &kp F        &kp U             &kp P          &kp AT        &sk LEFT_SHIFT  &tog 2          &magic 6 0    &magic 6 0  &tog 3  &tog 0     &none       &kp M         &kp D         &kp Y        &hmr RS(RMETA) X  &kp RIGHT_GUI
+&none         &kp COMMA            &kp Q        &kp DOWN          &kp BACKSPACE                &kp SPACE       &sk LEFT_SHIFT  &win_sleep    &none       &none   &sk LSHFT              &kp DELETE    &kp UP_ARROW  &kp Z        &kp DOT           &none
 >;};
 num {
          bindings = <
