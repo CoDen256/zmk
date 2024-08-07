@@ -96,11 +96,10 @@ def write(target, data):
 
   print(f"CSV file '{target}' has been created.")
 
-def parse(origin, target):
+def transform(origin, target):
 
-
-#default = parse("C:\\dev\\zmk\\shortcut\\$default.xml")
-keymap = parse_xml("C:\\Users\\denbl\\AppData\\Roaming\\JetBrains\\IntelliJIdea2024.1\\keymaps\\new.xml")
-# print(set(list((map(lambda x: (x[0],x[1]), data)))))
-# print(set(list(itertools.chain.from_iterable((map(lambda x: re.split("\s*(OR|\\+|>)\s*", x[1]), data))))))
-write("shortcut/load/idea.csv", keymap)
+    #default = parse("C:\\dev\\zmk\\shortcut\\$default.xml")
+    keymap = parse_xml(origin)
+    # print(set(list((map(lambda x: (x[0],x[1]), data)))))
+    # print(set(list(itertools.chain.from_iterable((map(lambda x: re.split("\s*(OR|\\+|>)\s*", x[1]), data))))))
+    write(target, keymap)

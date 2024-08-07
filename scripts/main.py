@@ -6,6 +6,7 @@ import time
 import builder
 import drawer
 import deployer
+import keycombiner
 
 def check_file_update(name, file_path, script, *args):
     print(f"[{name}] started")
@@ -36,7 +37,8 @@ def check_file_update(name, file_path, script, *args):
 def run(name, file_path, script, *args):
     threading.Thread(target=check_file_update,
                      args=(name, file_path, script, *args)).start()
-
+def rund(*args):
+    pass
 def run_shell(script):
     subprocess.call(script, shell=True, stdout=sys.stdout, stderr=sys.stderr)
     time.sleep(12)
@@ -45,35 +47,40 @@ if __name__ == "__main__":
     # file_path = "../config/glove80.keymap"
     # dir = "/"
     # check_file_update(file_path, dir)
-    run_shell("C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
+    # run_shell("C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
     base = "C:\\dev\\zmk-config"
-    run("builder",
+    rund("builder",
         f"{base}\\config\\glove80.keymap",
         builder.build,
         base,
         )
-    run("drawer",
+    rund("drawer",
         f"{base}\\glove80.uf2",
         drawer.draw,
         base,
         )
-    watched_folder = 'C:\\dev\\zmk-config'  # replace with the path to the folder you want to watch
-    target_disk_second = 'E:\\'
-
-    run(
+    rund(
         "deployer-1",
         'D:\\',
         deployer.deploy,
-        'C:\\dev\\zmk-config',
+        base,
         'D:\\',
     )
 
-    run(
+    rund(
         "deployer-2",
         'E:\\',
         deployer.deploy,
-        'C:\\dev\\zmk-config',
+        base,
         'E:\\',
+    )
+
+    run(
+        "keycombiner",
+        f"{base}\\shortcuts\\keymap.xml",
+        keycombiner.transform,
+        f"{base}\\shortcuts\\keymap.xml",
+        f"{base}\\shortcuts\\keymap.csv",
     )
 
         # Keep the main thread running
