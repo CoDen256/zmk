@@ -1,7 +1,10 @@
 import os
+import subprocess
+import sys
 import threading
 import time
-import autobuilder
+import builder
+import drawer
 
 def check_file_update(name, file_path, script, *args):
     print(f"[{name}] started")
@@ -14,7 +17,7 @@ def check_file_update(name, file_path, script, *args):
             except FileNotFoundError:
                 # print(f"The file {file_path} does not exist.")
                 current_modified_time = last_modified_time = None
-            print(f"{name} {last_modified_time} -> {current_modified_time}")
+            # print(f"{name} {last_modified_time} -> {current_modified_time}")
             # If the modification time has changed, run the PowerShell script
             if current_modified_time and current_modified_time != last_modified_time:
                 print(f"[{name}] File {file_path} has been updated")
@@ -33,12 +36,26 @@ def run(name, file_path, script, *args):
     threading.Thread(target=check_file_update,
                      args=(name, file_path, script, *args)).start()
 
+def run_shell(script):
+    subprocess.call(script, shell=True, stdout=sys.stdout, stderr=sys.stderr)
+    time.sleep(12)
 
 if __name__ == "__main__":
     # file_path = "../config/glove80.keymap"
     # dir = "/"
     # check_file_update(file_path, dir)
-    run()
+    run_shell("C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
+    base = "C:\\dev\\zmk-config"
+    run("builder",
+        f"{base}\\config\\glove80.keymap",
+        builder.build,
+        base,
+        )
+    run("drawer",
+        f"{base}\\glove80.uf2",
+        drawer.draw,
+        base,
+        )
+
         # Keep the main thread running
-    while True:
-        time.sleep(5)
+    input()

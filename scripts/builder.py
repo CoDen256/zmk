@@ -1,18 +1,9 @@
-import os
-import subprocess
-import sys
 import docker
-import time
 
-def run_powershell_script(dir):
-    # Start the PowerShell process
-    cmd = f'docker run --rm -v "{dir}:/config" -e BRANCH="main" -e UID="1000" -e GID="1000" glove80'
-    print(cmd)
-    subprocess.call(cmd, shell=True, stdout=sys.stdout, stderr=sys.stderr)
 
-def run(dir):
+def build(dir):
     client = docker.from_env()
-    container = client.containers.run("glove80",  detach=True, auto_remove=True, 
+    container = client.containers.run("glove80",  detach=True, auto_remove=True,
                                       volumes=[f"{dir}:/config"],
                                       environment={
                                           "BRANCH": "main",
@@ -37,11 +28,5 @@ def run(dir):
         print(f"\n\033[1;91m{error}\033[0m")
     else:
         print("\n\033[1;92mSUCCESS:\033[0m glove80.uf2 is built!")
-        subprocess.call("python ./draw/drawer.py")
-        print("\nDrawing keymap...")
 
 
-if __name__ == "__main__":
-    file_path = "../config/glove80.keymap"
-    dir = "/"
-    check_file_update(file_path, dir)
