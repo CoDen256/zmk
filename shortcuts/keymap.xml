@@ -155,6 +155,9 @@
   <action id="EditPropertyValue" />
   <action id="EditSource" />
   <action id="EditorAddCaretPerSelectedLine" />
+  <action id="EditorBackSpace">
+    <keyboard-shortcut first-keystroke="back_space" />
+  </action>
   <action id="EditorCloneCaretAbove">
     <keyboard-shortcut first-keystroke="alt page_up" />
   </action>
