@@ -1,0 +1,1 @@
+New-Item -ItemType SymbolicLink -Path "c:\dev\zmk-config\shortcuts\new.xml" -Target "C:\Users\denbl\AppData\Roaming\JetBrains\IntelliJIdea2024.1\keymaps\new.xml"
