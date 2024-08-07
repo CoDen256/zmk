@@ -5,6 +5,7 @@ import threading
 import time
 import builder
 import drawer
+import deployer
 
 def check_file_update(name, file_path, script, *args):
     print(f"[{name}] started")
@@ -56,6 +57,24 @@ if __name__ == "__main__":
         drawer.draw,
         base,
         )
+    watched_folder = 'C:\\dev\\zmk-config'  # replace with the path to the folder you want to watch
+    target_disk_second = 'E:\\'
+
+    run(
+        "deployer-1",
+        'D:\\',
+        deployer.deploy,
+        'C:\\dev\\zmk-config',
+        'D:\\',
+    )
+
+    run(
+        "deployer-2",
+        'E:\\',
+        deployer.deploy,
+        'C:\\dev\\zmk-config',
+        'E:\\',
+    )
 
         # Keep the main thread running
     input()
