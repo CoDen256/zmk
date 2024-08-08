@@ -85,6 +85,7 @@ def write(target, data):
   # Define CSV file header
   csv_header = ["Description","Keys","Context","Category","Conf.","Actions"]
 
+  done = []
   with open(target, mode='w', newline='') as file:
       writer = csv.writer(file, quoting=csv.QUOTE_ALL)
       writer.writerow(csv_header)
@@ -92,6 +93,8 @@ def write(target, data):
         desription, context = key
         if not val or "++" in val or "+-" in val or "click" in val or "button" in val: 
            continue
+        if val in done: continue
+        done.append(val)
         writer.writerow([desription, val, context, "General", "0", ""])
 
   print(f"CSV file '{target}' has been created.")

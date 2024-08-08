@@ -119,12 +119,8 @@
   <action id="Console.Jdbc.BrowseHistory" />
   <action id="Console.TableResult.CloneColumn" />
   <action id="Console.TableResult.EditFilterCriteria" />
-  <action id="Console.TableResult.EditValueMaximized">
-    <keyboard-shortcut first-keystroke="shift alt enter" />
-  </action>
-  <action id="Console.TableResult.HideEditMaximized">
-    <keyboard-shortcut first-keystroke="shift escape" />
-  </action>
+  <action id="Console.TableResult.EditValueMaximized" />
+  <action id="Console.TableResult.HideEditMaximized" />
   <action id="Console.TableResult.Reload" />
   <action id="ContextHelp" />
   <action id="CopyAsPlainText" />
