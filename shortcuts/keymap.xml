@@ -79,6 +79,9 @@
   <action id="ChooseRunConfiguration">
     <keyboard-shortcut first-keystroke="shift ctrl alt r" />
   </action>
+  <action id="CloseActiveTab">
+    <keyboard-shortcut first-keystroke="shift meta x" />
+  </action>
   <action id="CloseContent" />
   <action id="CodeCleanup" />
   <action id="CodeInspection.OnEditor" />
@@ -152,7 +155,9 @@
     <keyboard-shortcut first-keystroke="shift meta alt down" />
   </action>
   <action id="DeviceAndSnapshotComboBox" />
-  <action id="Diff.ShowDiff" />
+  <action id="Diff.ShowDiff">
+    <keyboard-shortcut first-keystroke="alt g" />
+  </action>
   <action id="EditPropertyValue" />
   <action id="EditSource" />
   <action id="EditorAddCaretPerSelectedLine" />
@@ -396,6 +401,9 @@
   <action id="NewScratchFile">
     <keyboard-shortcut first-keystroke="shift ctrl alt insert" />
   </action>
+  <action id="NextDiff">
+    <keyboard-shortcut first-keystroke="ctrl alt u" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="shift meta n" />
   </action>
@@ -413,6 +421,9 @@
     <keyboard-shortcut first-keystroke="shift ctrl v" />
   </action>
   <action id="Pause" />
+  <action id="PreviousDiff">
+    <keyboard-shortcut first-keystroke="ctrl alt h" />
+  </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift meta i" />
   </action>
@@ -599,6 +610,12 @@
   </action>
   <action id="Vcs.ShowMessageHistory" />
   <action id="Vcs.UpdateProject" />
+  <action id="VcsShowNextChangeMarker">
+    <keyboard-shortcut first-keystroke="ctrl alt u" />
+  </action>
+  <action id="VcsShowPrevChangeMarker">
+    <keyboard-shortcut first-keystroke="ctrl alt h" />
+  </action>
   <action id="ViewBreakpoints" />
   <action id="WD.UploadCurrentRemoteFileAction" />
   <action id="WelcomeScreen.Plugins">
