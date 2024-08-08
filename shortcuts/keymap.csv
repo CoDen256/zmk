@@ -126,6 +126,6 @@
 "Vcs Show Next Change Marker","ctrl+alt+u","Main","General","0",""
 "Vcs Show Prev Change Marker","ctrl+alt+h","Main","General","0",""
 "Plugins","shift+meta+alt+p","Welcome Screen","General","0",""
-"Mute Breakpoints","shift+alt+/","XDebugger","General","0",""
+"Mute Breakpoints","shift+ctrl+alt+s","XDebugger","General","0",""
 "Set Value","f2","XDebugger","General","0",""
 "jetbrains python console Run Python Or Debug Console Action","shift+meta+alt+j","com","General","0",""

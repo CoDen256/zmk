@@ -94,7 +94,7 @@ if __name__ == "__main__":
         "keycombiner-updater",
         f"{base}\\shortcuts\\keymap.csv",
         updater.update,
-        f"{base}\\shortcuts\\keymap.xml",
+        f"{base}\\shortcuts\\keymap.csv",
         f"{base}\\scripts\\pass",
         33922
     )
