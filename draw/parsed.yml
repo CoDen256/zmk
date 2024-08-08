@@ -81,6 +81,87 @@ layers:
   - Z
   - .
   - ''
+  cyrillic:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - R
+  - X
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Z
+  - U
+  - '['
+  - W
+  - O
+  - {t: ▽, type: trans}
+  - D
+  - K
+  - ','
+  - ''''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - J
+  - F
+  - B
+  - Y
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - N
+  - H
+  - T
+  - C
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ;
+  - A
+  - E
+  - G
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - V
+  - L
+  - Q
+  - I
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ']'
+  - .
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - P
+  - M
+  - {t: ▽, type: trans}
   num:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -339,7 +420,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: '*', s: '#'}
   - Ctl+ R
-  - '&kp_tog S 2'
+  - '&kp_tog S 3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - (
@@ -351,12 +432,12 @@ layers:
   - X
   - D
   - U
-  - '&kp_tog C 3'
-  - '&kp_sl R 4'
+  - '&kp_tog C 4'
+  - '&kp_sl R 5'
   - '{'
   - V
-  - '&kp_tog O 2'
-  - '&kp_tog A 2'
+  - '&kp_tog O 3'
+  - '&kp_tog A 3'
   - ''
   - {t: ▽, type: trans}
   - {t: ., s: ':'}
@@ -369,7 +450,7 @@ layers:
   - B
   - W
   - E
-  - '&kp_tog I 2'
+  - '&kp_tog I 3'
   - {t: ',', s: ;}
   - ''
   - N
@@ -377,17 +458,17 @@ layers:
   - Y
   - P
   - M
-  - '&kp_tog SLASH 4'
+  - '&kp_tog SLASH 5'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&kp_tog LS(SLASH) 4'
+  - '&kp_tog LS(SLASH) 5'
   - {t: ▽, type: trans}
   - '0'
   - $
-  - '&kp_sl F 4'
-  - '&kp_sl T 4'
+  - '&kp_sl F 5'
+  - '&kp_sl T 5'
   - {t: ▽, type: trans}
   - ''
   - '9'
@@ -398,7 +479,7 @@ layers:
   - '1'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&kp_tog COLON 4'
+  - '&kp_tog COLON 5'
   - LCTRL
   - '2'
   - '4'

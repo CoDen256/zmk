@@ -8,4 +8,7 @@
     <orderEntry type="jdk" jdkName="Python 3.11 (scripts)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="C:\dev\zmk-config\scripts\requirements.txt" />
+  </component>
 </module>

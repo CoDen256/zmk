@@ -151,9 +151,6 @@
   <action id="Debugger.EditArrayFilter">
     <keyboard-shortcut first-keystroke="f2" />
   </action>
-  <action id="DecrementWindowHeight">
-    <keyboard-shortcut first-keystroke="shift meta alt down" />
-  </action>
   <action id="DeviceAndSnapshotComboBox" />
   <action id="Diff.ShowDiff">
     <keyboard-shortcut first-keystroke="alt g" />
@@ -324,9 +321,6 @@
   <action id="ImplementMethods">
     <keyboard-shortcut first-keystroke="ctrl g" />
   </action>
-  <action id="IncrementWindowHeight">
-    <keyboard-shortcut first-keystroke="shift meta alt up" />
-  </action>
   <action id="Inline" />
   <action id="InsertLiveTemplate" />
   <action id="InspectCode" />
@@ -468,7 +462,7 @@
   </action>
   <action id="Rerun" />
   <action id="ResizeToolWindowDown">
-    <keyboard-shortcut first-keystroke="shift ctrl alt down" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta down" />
   </action>
   <action id="ResizeToolWindowLeft">
     <keyboard-shortcut first-keystroke="shift ctrl alt left" />
@@ -477,7 +471,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt right" />
   </action>
   <action id="ResizeToolWindowUp">
-    <keyboard-shortcut first-keystroke="shift ctrl alt up" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta up" />
   </action>
   <action id="RestartIde" />
   <action id="RiderBackendAction-ExtractClass" />
@@ -632,6 +626,9 @@
   <action id="android.deploy.CodeSwap" />
   <action id="com.github.jk1.ytplugin.issues.actions.EditorCreateIssueAction" />
   <action id="com.github.jk1.ytplugin.timeTracker.actions.ShowAllSavedTimeTrackingItems" />
+  <action id="com.jetbrains.python.console.RunPythonOrDebugConsoleAction">
+    <keyboard-shortcut first-keystroke="shift meta alt j" />
+  </action>
   <action id="context.clear" />
   <action id="context.load" />
   <action id="context.save" />

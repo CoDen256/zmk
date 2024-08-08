@@ -7,6 +7,8 @@ import builder
 import drawer
 import deployer
 import keycombiner
+import updater
+
 
 def check_file_update(name, file_path, script, *args):
     print(f"[{name}] started")
@@ -37,11 +39,16 @@ def check_file_update(name, file_path, script, *args):
 def run(name, file_path, script, *args):
     threading.Thread(target=check_file_update,
                      args=(name, file_path, script, *args)).start()
+
+
 def rund(*args):
     pass
+
+
 def run_shell(script):
     subprocess.call(script, shell=True, stdout=sys.stdout, stderr=sys.stderr)
     time.sleep(12)
+
 
 if __name__ == "__main__":
     # file_path = "../config/glove80.keymap"
@@ -83,5 +90,14 @@ if __name__ == "__main__":
         f"{base}\\shortcuts\\keymap.csv",
     )
 
-        # Keep the main thread running
+    run(
+        "keycombiner-updater",
+        f"{base}\\shortcuts\\keymap.csv",
+        updater.update,
+        f"{base}\\shortcuts\\keymap.xml",
+        f"{base}\\scripts\\pass",
+        33922
+    )
+
+    # Keep the main thread running
     input()
