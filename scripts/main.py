@@ -47,19 +47,19 @@ if __name__ == "__main__":
     # file_path = "../config/glove80.keymap"
     # dir = "/"
     # check_file_update(file_path, dir)
-    # run_shell("C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
+    run_shell("C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
     base = "C:\\dev\\zmk-config"
-    rund("builder",
+    run("builder",
         f"{base}\\config\\glove80.keymap",
         builder.build,
         base,
         )
-    rund("drawer",
+    run("drawer",
         f"{base}\\glove80.uf2",
         drawer.draw,
         base,
         )
-    rund(
+    run(
         "deployer-1",
         'D:\\',
         deployer.deploy,
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         'D:\\',
     )
 
-    rund(
+    run(
         "deployer-2",
         'E:\\',
         deployer.deploy,

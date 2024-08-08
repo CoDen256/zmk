@@ -1,9 +1,7 @@
 <keymap version="1" name="new" parent="Mnemonic Keymap">
   <action id="ActivateAntToolWindow" />
   <action id="ActivateBookmarksToolWindow" />
-  <action id="ActivateBuildToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta i" />
-  </action>
+  <action id="ActivateBuildToolWindow" />
   <action id="ActivateCommitToolWindow">
     <keyboard-shortcut first-keystroke="shift meta b" />
   </action>
@@ -20,7 +18,7 @@
   <action id="ActivateInspectorToolWindow" />
   <action id="ActivateLearnToolWindow" />
   <action id="ActivateMavenToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta n" />
+    <keyboard-shortcut first-keystroke="shift meta q" />
   </action>
   <action id="ActivateNotificationsToolWindow" />
   <action id="ActivateNuGetToolWindow" />
@@ -34,9 +32,7 @@
   <action id="ActivatePythonConsoleToolWindow">
     <keyboard-shortcut first-keystroke="shift meta k" />
   </action>
-  <action id="ActivateRunToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta u" />
-  </action>
+  <action id="ActivateRunToolWindow" />
   <action id="ActivateServicesToolWindow" />
   <action id="ActivateStructureToolWindow">
     <keyboard-shortcut first-keystroke="shift meta y" />
@@ -155,9 +151,6 @@
   <action id="EditPropertyValue" />
   <action id="EditSource" />
   <action id="EditorAddCaretPerSelectedLine" />
-  <action id="EditorBackSpace">
-    <keyboard-shortcut first-keystroke="back_space" />
-  </action>
   <action id="EditorCloneCaretAbove">
     <keyboard-shortcut first-keystroke="alt page_up" />
   </action>
@@ -392,6 +385,9 @@
   <action id="NewScratchFile">
     <keyboard-shortcut first-keystroke="shift ctrl alt insert" />
   </action>
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="shift meta n" />
+  </action>
   <action id="OpenInRightSplit">
     <mouse-shortcut keystroke="alt button1 doubleClick" />
   </action>
@@ -406,6 +402,9 @@
     <keyboard-shortcut first-keystroke="shift ctrl v" />
   </action>
   <action id="Pause" />
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="shift meta i" />
+  </action>
   <action id="QuickChangeScheme" />
   <action id="QuickEvaluateExpression">
     <mouse-shortcut keystroke="alt button1" />
@@ -592,8 +591,11 @@
   <action id="ViewBreakpoints" />
   <action id="WD.UploadCurrentRemoteFileAction" />
   <action id="XDebugger.AttachToProcess" />
+  <action id="XDebugger.MuteBreakpoints">
+    <keyboard-shortcut first-keystroke="shift alt slash" />
+  </action>
   <action id="XDebugger.SetValue">
-    <keyboard-shortcut first-keystroke="f8" />
+    <keyboard-shortcut first-keystroke="f2" />
   </action>
   <action id="android.deploy.ApplyChanges" />
   <action id="android.deploy.CodeSwap" />
