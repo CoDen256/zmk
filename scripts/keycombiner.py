@@ -3,6 +3,32 @@ import xml.etree.ElementTree as ET
 import csv
 import re
 
+reserved = [
+    ("<win reserved action>", "ctrl+c"),
+    ("<win reserved action>", "ctrl+v"),
+    ("<win reserved action>", "ctrl+x"),
+    ("<win reserved action>", "ctrl+f"),
+    ("<win reserved action>", "ctrl+a"),
+    ("<win reserved action>", "ctrl+z"),
+    ("<win reserved action>", "ctrl+y"),
+    ("<win reserved action>", "ctrl+shift+g"),
+    ("<win reserved action>", "ctrl+shift+c"),
+    ("<win reserved action>", "ctrl+shift+u"),
+    ("<win reserved action>", "ctrl+shift+j"),
+    ("<win reserved action>", "ctrl+shift+s"),
+    ("<win reserved action>", "ctrl+shift+e"),
+    ("<win reserved action>", "ctrl+shift+m"),
+    ("<win reserved action>", "ctrl+shift+l"),
+    ("<win reserved action>", "meta+shift+c"),
+    ("<win reserved action>", "meta+shift+p"),
+    ("<win reserved action>", "meta+shift+w"),
+    ("<win reserved action>", "meta+shift+s"),
+    ("<win reserved action>", "meta+shift+m"),
+    ("<win reserved action>", "meta+shift+r"),
+    ("<win reserved action>", "meta+shift+t"),
+    ("<win reserved action>", "meta+shift+v"),
+]
+
 ascii = {
     'add': '+',
       'closebracket': ']',
@@ -89,11 +115,15 @@ def write(target, data):
   with open(target, mode='w', newline='') as file:
       writer = csv.writer(file, quoting=csv.QUOTE_ALL)
       writer.writerow(csv_header)
+      for desc, val in reserved:
+        done.append(val)
+        writer.writerow([desc, val, "RESERVED", "General", "0", ""])
       for key, val in data.items():
         desription, context = key
         if not val or "++" in val or "+-" in val or "click" in val or "button" in val: 
            continue
-        if val in done:pass
+        if val in done:continue
+
         done.append(val)
         writer.writerow([desription, val, context, "General", "0", ""])
 

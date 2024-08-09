@@ -1,4 +1,8 @@
 <keymap version="1" name="new" parent="Mnemonic Keymap">
+  <action id="$Redo">
+    <keyboard-shortcut first-keystroke="shift ctrl z" />
+    <keyboard-shortcut first-keystroke="shift alt back_space" />
+  </action>
   <action id="ActivateAntToolWindow" />
   <action id="ActivateBookmarksToolWindow" />
   <action id="ActivateBuildToolWindow" />
@@ -49,6 +53,7 @@
   </action>
   <action id="AnalyzeActionsPopup" />
   <action id="Android.ChooseProfileConfiguration" />
+  <action id="AutoIndentLines" />
   <action id="Back">
     <keyboard-shortcut first-keystroke="alt h" />
   </action>
@@ -90,10 +95,7 @@
   <action id="CloseContent" />
   <action id="CodeCleanup" />
   <action id="CodeInspection.OnEditor" />
-  <action id="CodeMenu">
-    <keyboard-shortcut first-keystroke="ctrl l" second-keystroke="0" />
-    <keyboard-shortcut first-keystroke="ctrl l" second-keystroke="ctrl 0" />
-  </action>
+  <action id="CodeMenu" />
   <action id="CollapseAll">
     <keyboard-shortcut first-keystroke="ctrl subtract" />
   </action>
@@ -128,6 +130,7 @@
   <action id="Console.TableResult.CloneColumn" />
   <action id="Console.TableResult.CloneRow" />
   <action id="Console.TableResult.CompareCells" />
+  <action id="Console.TableResult.DeleteRows" />
   <action id="Console.TableResult.EditFilterCriteria" />
   <action id="Console.TableResult.EditValueMaximized" />
   <action id="Console.TableResult.GotoReferencingResult" />
@@ -166,6 +169,7 @@
   <action id="Debugger.EditArrayFilter">
     <keyboard-shortcut first-keystroke="f2" />
   </action>
+  <action id="Debugger.MarkObject" />
   <action id="DeviceAndSnapshotComboBox" />
   <action id="Diagram.DeselectAll" />
   <action id="Diff.ShowDiff" />
@@ -190,16 +194,24 @@
   <action id="EditorCodeBlockStartWithSelection">
     <keyboard-shortcut first-keystroke="shift alt home" />
   </action>
-  <action id="EditorDuplicate" />
+  <action id="EditorDeleteLine" />
+  <action id="EditorDuplicate">
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
+  <action id="EditorJoinLines" />
   <action id="EditorMatchBrace">
     <keyboard-shortcut first-keystroke="ctrl alt b" />
   </action>
   <action id="EditorPasteSimple" />
+  <action id="EditorReverseLines" />
   <action id="EditorSelectWord">
     <keyboard-shortcut first-keystroke="ctrl e" />
   </action>
+  <action id="EditorSortLines" />
   <action id="EditorStartNewLine" />
   <action id="EditorToggleCase" />
+  <action id="EditorToggleShowLineNumbers" />
+  <action id="EditorToggleUseSoftWraps" />
   <action id="EditorUnSelectWord">
     <keyboard-shortcut first-keystroke="ctrl alt e" />
   </action>
@@ -254,7 +266,7 @@
     <keyboard-shortcut first-keystroke="shift alt f" />
   </action>
   <action id="FindPrevious" />
-  <action id="FindUsages">
+  <action id="FindUsages"> 
     <keyboard-shortcut first-keystroke="ctrl alt a" />
   </action>
   <action id="FindWordAtCaret">
@@ -305,6 +317,7 @@
   <action id="GotoImplementation">
     <keyboard-shortcut first-keystroke="ctrl q" />
   </action>
+  <action id="GotoLine" />
   <action id="GotoNextBookmark" />
   <action id="GotoNextError">
     <keyboard-shortcut first-keystroke="ctrl w" />
@@ -316,6 +329,7 @@
   <action id="GotoRelated">
     <keyboard-shortcut first-keystroke="ctrl alt home" />
   </action>
+  <action id="GotoRow" />
   <action id="GotoSuperMethod">
     <keyboard-shortcut first-keystroke="shift ctrl q" />
   </action>
@@ -609,6 +623,7 @@
   </action>
   <action id="Synchronize" />
   <action id="TableResult.UnselectPreviousOccurrence" />
+  <action id="Terminal.ClearBuffer" />
   <action id="Terminal.CloseSession" />
   <action id="Terminal.CloseTab" />
   <action id="Terminal.DeletePreviousWord" />
@@ -619,8 +634,10 @@
   <action id="TodoViewGroupByFlattenPackage" />
   <action id="TodoViewGroupByShowModules" />
   <action id="TodoViewGroupByShowPackages" />
+  <action id="ToggleBookmark" />
   <action id="ToggleBookmark3" />
   <action id="ToggleBookmark9" />
+  <action id="ToggleBookmarkWithMnemonic" />
   <action id="ToggleBreakpointEnabled" />
   <action id="ToggleDistractionFreeMode" />
   <action id="ToggleFindInSelection">
@@ -666,6 +683,7 @@
   <action id="UsageView.Rerun">
     <keyboard-shortcut first-keystroke="shift alt r" />
   </action>
+  <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Log.ShowAllAffected" />
   <action id="Vcs.Log.ShowTooltip">
     <mouse-shortcut keystroke="alt button2" />
@@ -682,10 +700,10 @@
   <action id="Vcs.UpdateProject" />
   <action id="VcsHistory.ShowAllAffected" />
   <action id="VcsShowNextChangeMarker">
-    <keyboard-shortcut first-keystroke="ctrl alt h" />
+    <keyboard-shortcut first-keystroke="ctrl alt c" />
   </action>
   <action id="VcsShowPrevChangeMarker">
-    <keyboard-shortcut first-keystroke="ctrl alt c" />
+    <keyboard-shortcut first-keystroke="ctrl alt h" />
   </action>
   <action id="ViewBreakpoints" />
   <action id="WD.UploadCurrentRemoteFileAction" />
