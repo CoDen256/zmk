@@ -21,8 +21,8 @@ def check_file_update(name, file_path, script, *args):
     except FileNotFoundError:
         # print(f"The file {file_path} does not exist.")
         last_modified_time = None
-    try:
-        while True:
+    while True:
+        try:
             try:
                 # Check the current modification time of the file
                 current_modified_time = os.path.getmtime(file_path)
@@ -40,8 +40,11 @@ def check_file_update(name, file_path, script, *args):
                 # print("Sleeping...")
             # Wait for 10 seconds before checking again
             time.sleep(5)
-    except Exception as e:
-        print(f"[{name}] failed ", e)
+        except Exception as e:
+            print(f"[{name}] failed ", e)
+            time.sleep(30)
+
+
 def reload(module, file):
     name = module.__name__
     print(f"[reloader-{name}] reloading {module.__file__}")

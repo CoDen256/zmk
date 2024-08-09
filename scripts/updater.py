@@ -73,4 +73,4 @@ def run(file,passw,collnum):
     print("[updater] imported", result)
 
     print("[updater] done")
-    time.sleep(15)
+    time.sleep(30)
