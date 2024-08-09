@@ -15,7 +15,7 @@ def remove_keys(origin):
         for key in range(len(keys)):
             keys[key] = ''
 
-def draw(base):
+def run(base):
     config = f"{base}/draw/config.yaml"
     keymap = f"{base}/config/glove80.keymap"
     parsed = f"{base}/draw/parsed.yml"

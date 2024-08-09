@@ -1,8 +1,11 @@
+import importlib
 import os
 import subprocess
 import sys
 import threading
 import time
+from pathlib import Path
+
 import builder
 import drawer
 import deployer
@@ -12,7 +15,12 @@ import updater
 
 def check_file_update(name, file_path, script, *args):
     print(f"[{name}] started")
-    last_modified_time = None
+    try:
+        # Check the current modification time of the file
+        last_modified_time = os.path.getmtime(file_path)
+    except FileNotFoundError:
+        # print(f"The file {file_path} does not exist.")
+        last_modified_time = None
     try:
         while True:
             try:
@@ -34,10 +42,20 @@ def check_file_update(name, file_path, script, *args):
             time.sleep(5)
     except Exception as e:
         print(f"[{name}] failed ", e)
-# def relo
+def reload(module, file):
+    name = module.__name__
+    print(f"[reloader-{name}] reloading {module.__file__}")
+    importlib.reload(module)
+    print(f"[reloader-{name}] done")
+    Path(file).touch()
+
 def run(name, file_path, script, *args):
+
     threading.Thread(target=check_file_update,
-                     args=(name, file_path, script, *args)).start()
+                     args=(f"reloader-{name}", script.__file__, reload, script, file_path)).start()
+
+    threading.Thread(target=check_file_update,
+                     args=(name, file_path, script.run, *args)).start()
 
 
 def rund(*args):
@@ -48,8 +66,8 @@ def run_shell(script):
     subprocess.call(script, shell=True, stdout=sys.stdout, stderr=sys.stderr)
     time.sleep(12)
 
-print(keycombiner.trans.__file__)
-if __name__ == "__main__" and None:
+
+if __name__ == "__main__":
     # file_path = "../config/glove80.keymap"
     # dir = "/"
     # check_file_update(file_path, dir)
@@ -57,18 +75,18 @@ if __name__ == "__main__" and None:
     base = "C:\\dev\\zmk-config"
     run("builder",
         f"{base}\\config\\glove80.keymap",
-        builder.build,
+        builder,
         base,
         )
     run("drawer",
         f"{base}\\glove80.uf2",
-        drawer.draw,
+        drawer,
         base,
         )
     run(
-        "deployer-1",
+        "deployer-D",
         'D:\\',
-        deployer.deploy,
+        deployer,
         base,
         'D:\\',
     )
@@ -76,7 +94,7 @@ if __name__ == "__main__" and None:
     run(
         "deployer-2",
         'E:\\',
-        deployer.deploy,
+        deployer,
         base,
         'E:\\',
     )
@@ -84,7 +102,7 @@ if __name__ == "__main__" and None:
     run(
         "keycombiner",
         f"{base}\\shortcuts\\keymap.xml",
-        keycombiner.transform,
+        keycombiner,
         f"{base}\\shortcuts\\keymap.xml",
         f"{base}\\shortcuts\\keymap.csv",
     )
@@ -92,7 +110,7 @@ if __name__ == "__main__" and None:
     run(
         "keycombiner-updater",
         f"{base}\\shortcuts\\keymap.csv",
-        updater.update,
+        updater,
         f"{base}\\shortcuts\\keymap.csv",
         f"{base}\\scripts\\pass",
         33922

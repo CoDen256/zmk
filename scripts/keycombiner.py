@@ -93,13 +93,13 @@ def write(target, data):
         desription, context = key
         if not val or "++" in val or "+-" in val or "click" in val or "button" in val: 
            continue
-        if val in done: pass
+        if val in done:pass
         done.append(val)
         writer.writerow([desription, val, context, "General", "0", ""])
 
   print(f"CSV file '{target}' has been created.")
 
-def transform(origin, target):
+def run(origin, target):
 
     #default = parse("C:\\dev\\zmk\\shortcut\\$default.xml")
     keymap = parse_xml(origin)

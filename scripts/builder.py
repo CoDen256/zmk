@@ -1,7 +1,7 @@
 import docker
 
 
-def build(dir):
+def run(dir):
     client = docker.from_env()
     container = client.containers.run("glove80",  detach=True, auto_remove=True,
                                       volumes=[f"{dir}:/config"],

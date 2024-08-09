@@ -11,7 +11,7 @@ list_url = lambda c: f"https://keycombiner.com/collecting/api/collection/{c}/lis
 del_url = "https://keycombiner.com/collecting/combinations/remove_from_personal/"
 
 
-def update(file,passw,collnum):
+def run(file,passw,collnum):
 
     s = requests.session()
     u = s.get(login_url)
