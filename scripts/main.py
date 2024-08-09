@@ -34,8 +34,7 @@ def check_file_update(name, file_path, script, *args):
             time.sleep(5)
     except Exception as e:
         print(f"[{name}] failed ", e)
-
-
+# def relo
 def run(name, file_path, script, *args):
     threading.Thread(target=check_file_update,
                      args=(name, file_path, script, *args)).start()
@@ -49,8 +48,8 @@ def run_shell(script):
     subprocess.call(script, shell=True, stdout=sys.stdout, stderr=sys.stderr)
     time.sleep(12)
 
-
-if __name__ == "__main__":
+print(keycombiner.trans.__file__)
+if __name__ == "__main__" and None:
     # file_path = "../config/glove80.keymap"
     # dir = "/"
     # check_file_update(file_path, dir)

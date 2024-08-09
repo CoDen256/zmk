@@ -93,7 +93,7 @@ def write(target, data):
         desription, context = key
         if not val or "++" in val or "+-" in val or "click" in val or "button" in val: 
            continue
-        if val in done: continue
+        if val in done: pass
         done.append(val)
         writer.writerow([desription, val, context, "General", "0", ""])
 

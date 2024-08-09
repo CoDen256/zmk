@@ -19,13 +19,13 @@ layers:
   - {t: main, h: toggle}
   - {t: main, h: toggle}
   - Sft+ TAB
-  - TAB
+  - ENTER
   - ''
   - ''
   - ''
+  - '&lm 4 LCTRL'
   - ''
-  - ''
-  - G
+  - {t: G, h: nav}
   - H
   - C
   - W
@@ -49,16 +49,16 @@ layers:
   - ''
   - LEFT GUI
   - {t: J, h: Sft+ LEFT GUI}
-  - F
+  - {t: F, h: nav}
   - U
   - P
   - '@'
-  - {t: LEFT SHIFT, h: sticky}
+  - BACKSPACE
   - {t: fun, h: toggle}
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: nav, h: toggle}
-  - {t: main, h: toggle}
+  - DELETE
   - ''
   - M
   - D
@@ -69,14 +69,14 @@ layers:
   - ','
   - Q
   - DOWN
-  - BACKSPACE
+  - ENTER
   - SPACE
   - {t: LEFT SHIFT, h: sticky}
   - '&win_sleep'
   - ''
   - ''
   - {t: LSHFT, h: sticky}
-  - DELETE
+  - TAB
   - UP ARROW
   - Z
   - .
@@ -349,43 +349,43 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ESCAPE
+  - {type: held}
   - BACKSPACE
   - DELETE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
+  - LCTRL
+  - RIGHT SHIFT
   - ''
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - DOWN
-  - UP ARROW
+  - ''
   - LEFT ARROW
   - RIGHT ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - RCTRL
   - LEFT SHIFT
-  - LEFT ALT
-  - {type: held}
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - PG DN
-  - PG UP
-  - HOME
-  - END
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ''
-  - ''
+  - UP ARROW
+  - DOWN
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LCTRL
+  - RIGHT SHIFT
   - ''
   - ''
   - {t: ▽, type: trans}
@@ -579,11 +579,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: main, h: toggle}
+  - {t: cyrillic, h: toggle}
   - {t: num, h: toggle}
   - {t: fun, h: toggle}
   - {t: nav, h: toggle}
   - {t: vim, h: toggle}
-  - {t: qwerty, h: toggle}
   - {t: main, h: toggle}
   - {t: fun, h: toggle}
   - {t: vim, h: toggle}

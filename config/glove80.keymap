@@ -1071,17 +1071,29 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 		
 		main {
 			bindings = <
-&tog 0        &tog 0               &tog 0       &kp_tog ESCAPE 0  &tog 0                                                                                                                &tog 0        &tog 3        &kp C_MUTE   &kp C_VOL_DN      &kp C_VOLUME_UP
-&to 0         &to 0                &to 0        &kp K             &to 0          &tog 0                                                                                     &to 0       &kp LS(TAB)   &kp TAB       &none        &none             &none
-&none         &none                &kp G        &kp H             &kp C          &kp W                                                                                      &qexcl      &kp V         &kp L         &kp B        &none             &none
-&tog 2        &hmllt 3 O           &hml LALT A  &hml LSHFT I      &hml LCTRL N   &caret_morph                                                                               &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmrlt 4 S        &none
-&kp LEFT_GUI  &hml LS(LEFT_GUI) J  &kp F        &kp U             &kp P          &kp AT        &sk LEFT_SHIFT  &tog 3          &magic 7 0    &magic 7 0  &tog 4  &tog 0     &none       &kp M         &kp D         &kp Y        &hmr RS(RMETA) X  &kp RIGHT_GUI
-&none         &kp COMMA            &kp Q        &kp DOWN          &kp BACKSPACE                &kp SPACE       &sk LEFT_SHIFT  &win_sleep    &none       &none   &sk LSHFT              &kp DELETE    &kp UP_ARROW  &kp Z        &kp DOT           &none
+&tog 0        &tog 0               &tog 0       &kp_tog ESCAPE 0  &tog 0                                                                                                               &tog 0        &tog 3        &kp C_MUTE   &kp C_VOL_DN      &kp C_VOLUME_UP
+&to 0         &to 0                &to 0        &kp K             &to 0         &tog 0                                                                                     &to 0       &kp LS(TAB)   &kp ENTER     &none        &none             &none
+&lm 4 LCTRL   &none                &hmllt 4 G   &kp H             &kp C         &kp W                                                                                      &qexcl      &kp V         &kp L         &kp B        &none             &none
+&tog 2        &hmllt 3 O           &hml LALT A  &hml LSHFT I      &hml LCTRL N  &caret_morph                                                                               &kp DOLLAR  &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E  &hmrlt 4 S        &none
+&kp LEFT_GUI  &hml LS(LEFT_GUI) J  &hmllt 4 F   &kp U             &kp P         &kp AT        &kp BACKSPACE  &tog 3          &magic 7 0    &magic 7 0  &tog 4  &kp DELETE  &none       &kp M         &kp D         &kp Y        &hmr RS(RMETA) X  &kp RIGHT_GUI
+&none         &kp COMMA            &kp Q        &kp DOWN          &kp ENTER                   &kp SPACE      &sk LEFT_SHIFT  &win_sleep    &none       &none   &sk LSHFT               &kp TAB       &kp UP_ARROW  &kp Z        &kp DOT           &none
 >;};
 cyrillic {
          bindings = <
@@ -1113,12 +1125,12 @@ fun {
 		};
 nav {
 			bindings = <
-&trans  &trans     &trans        &trans          &trans                                                                             &trans     &trans          &trans        &trans  &trans
-&trans  &trans     &trans        &kp AT_SIGN     &trans           &trans                                                    &trans  &trans     &trans          &trans        &trans  &trans
-&trans  &trans     &kp ESCAPE    &kp BACKSPACE   &kp DELETE       &trans                                                    &trans  &none      &none           &none         &none   &trans
-&trans  &kp DOWN   &kp UP_ARROW  &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans                                                    &trans  &kp RCTRL  &kp LEFT_SHIFT  &kp LEFT_ALT  &none   &trans
-&trans  &kp PG_DN  &kp PG_UP     &kp HOME        &kp END          &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &none      &none           &none         &none   &trans
-&trans  &trans     &trans        &kp TAB         &kp ENTER                &trans  &trans  &trans    &trans  &trans  &trans          &none      &none           &none         &trans  &trans
+&trans  &trans     &trans  &trans          &trans                                                                             &trans     &trans           &trans  &trans  &trans
+&trans  &trans     &trans  &kp AT_SIGN     &trans           &trans                                                    &trans  &trans     &trans           &trans  &trans  &trans
+&trans  &trans     &none   &kp BACKSPACE   &kp DELETE       &trans                                                    &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
+&trans  &kp DOWN   &none   &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans                                                    &trans  &kp RCTRL  &kp LEFT_SHIFT   &none   &none   &trans
+&trans  &kp PG_DN  &none   &kp UP_ARROW    &kp DOWN         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
+&trans  &trans     &trans  &kp TAB         &kp ENTER                &trans  &trans  &trans    &trans  &trans  &trans          &none      &none            &none   &trans  &trans
 >;};
 vim {
          bindings = <
@@ -1141,7 +1153,7 @@ qwerty {
 magic {
 			bindings = <
 &trans      &trans           &trans           &trans           &trans                                                                                                  &trans  &trans  &trans  &trans  &trans
-&to 0       &to 2            &to 3            &to 4            &to 5            &to 6                                                                           &to 0  &to 3   &to 5   &none   &none   &none
+&to 0       &to 1            &to 2            &to 3            &to 4            &to 5                                                                           &to 0  &to 3   &to 5   &none   &none   &none
 &none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                 &none  &none   &none   &none   &none   &none
 &none       &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                 &none  &none   &none   &none   &none   &none
 &sys_reset  &none            &none            &none            &none            &none            &none  &bootloader  &none           &none  &bootloader  &none  &none  &none   &none   &none   &none   &sys_reset
