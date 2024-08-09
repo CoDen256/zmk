@@ -82,10 +82,10 @@
     <keyboard-shortcut first-keystroke="alt m" />
   </action>
   <action id="ChooseDebugConfiguration">
-    <keyboard-shortcut first-keystroke="shift ctrl alt d" />
+    <keyboard-shortcut first-keystroke="ctrl alt d" />
   </action>
   <action id="ChooseRunConfiguration">
-    <keyboard-shortcut first-keystroke="shift ctrl alt r" />
+    <keyboard-shortcut first-keystroke="ctrl alt r" />
   </action>
   <action id="CleanSolutionAction" />
   <action id="ClickLink" />
@@ -138,6 +138,7 @@
   <action id="Console.TableResult.NavigateExportedAction" />
   <action id="Console.TableResult.NavigateForeignAction" />
   <action id="Console.TableResult.Reload" />
+  <action id="Console.TableResult.SetDefault" />
   <action id="ContextHelp" />
   <action id="CopyAsPlainText" />
   <action id="CopyElement" />
@@ -266,7 +267,7 @@
     <keyboard-shortcut first-keystroke="shift alt f" />
   </action>
   <action id="FindPrevious" />
-  <action id="FindUsages"> 
+  <action id="FindUsages">
     <keyboard-shortcut first-keystroke="ctrl alt a" />
   </action>
   <action id="FindWordAtCaret">
@@ -390,6 +391,7 @@
   <action id="Maven.ExpandAll">
     <keyboard-shortcut first-keystroke="ctrl add" />
   </action>
+  <action id="MavenHelper.QuickRunMavenGoal" />
   <action id="MavenHelper.QuickRunRootMavenGoal" />
   <action id="MaximizeToolWindow" />
   <action id="MemberPushDown" />
@@ -465,8 +467,9 @@
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift meta i" />
   </action>
-  <action id="PyExecuteCellAction">
-    <keyboard-shortcut first-keystroke="shift ctrl meta r" />
+  <action id="PyExecuteCellAction" />
+  <action id="PyRunFileInConsole">
+    <keyboard-shortcut first-keystroke="shift alt r" />
   </action>
   <action id="QuickChangeScheme" />
   <action id="QuickEvaluateExpression">
@@ -548,6 +551,9 @@
   <action id="Run">
     <keyboard-shortcut first-keystroke="ctrl r" />
   </action>
+  <action id="RunAnything">
+    <keyboard-shortcut first-keystroke="alt r" />
+  </action>
   <action id="RunClass">
     <keyboard-shortcut first-keystroke="shift ctrl r" />
   </action>
@@ -555,9 +561,6 @@
   <action id="RunInspection" />
   <action id="RunTargetAction" />
   <action id="RunToCursor" />
-  <action id="RunToolbarRerunAction">
-    <keyboard-shortcut first-keystroke="shift alt r" />
-  </action>
   <action id="SafeDelete">
     <keyboard-shortcut first-keystroke="alt delete" />
   </action>
@@ -676,13 +679,12 @@
   <action id="UsageFiltering.ReadAccess" />
   <action id="UsageFiltering.WriteAccess" />
   <action id="UsageGrouping.Directory" />
+  <action id="UsageGrouping.DirectoryStructure" />
   <action id="UsageGrouping.FileStructure" />
   <action id="UsageGrouping.FlattenModules" />
   <action id="UsageGrouping.Module" />
   <action id="UsageGrouping.Package" />
-  <action id="UsageView.Rerun">
-    <keyboard-shortcut first-keystroke="shift alt r" />
-  </action>
+  <action id="UsageView.Rerun" />
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Log.ShowAllAffected" />
   <action id="Vcs.Log.ShowTooltip">
@@ -710,7 +712,9 @@
   <action id="WelcomeScreen.Plugins">
     <keyboard-shortcut first-keystroke="shift meta alt p" />
   </action>
-  <action id="XDebugger.AttachToProcess" />
+  <action id="XDebugger.AttachToProcess">
+    <keyboard-shortcut first-keystroke="shift alt d" />
+  </action>
   <action id="XDebugger.CopyWatch" />
   <action id="XDebugger.MuteBreakpoints">
     <keyboard-shortcut first-keystroke="shift ctrl alt s" />
@@ -724,13 +728,12 @@
   <action id="com.github.jk1.ytplugin.issues.actions.EditorCreateIssueAction" />
   <action id="com.github.jk1.ytplugin.timeTracker.actions.PauseTrackerAction" />
   <action id="com.github.jk1.ytplugin.timeTracker.actions.ShowAllSavedTimeTrackingItems" />
-  <action id="com.jetbrains.python.console.RunPythonOrDebugConsoleAction">
-    <keyboard-shortcut first-keystroke="shift meta alt j" />
-  </action>
   <action id="context.clear" />
   <action id="context.load" />
   <action id="context.save" />
-  <action id="editRunConfigurations" />
+  <action id="editRunConfigurations">
+    <keyboard-shortcut first-keystroke="shift ctrl alt r" />
+  </action>
   <action id="hg4idea.QFold" />
   <action id="hg4idea.QGotoFromPatches" />
   <action id="hg4idea.QPushAction" />
