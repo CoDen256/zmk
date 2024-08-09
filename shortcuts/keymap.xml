@@ -17,7 +17,9 @@
   <action id="ActivateEventLogToolWindow" />
   <action id="ActivateFindToolWindow" />
   <action id="ActivateGradleToolWindow" />
-  <action id="ActivateHierarchyToolWindow" />
+  <action id="ActivateHierarchyToolWindow">
+    <keyboard-shortcut first-keystroke="shift meta h" />
+  </action>
   <action id="ActivateILViewerToolWindow" />
   <action id="ActivateInspectorToolWindow" />
   <action id="ActivateLearnToolWindow" />
@@ -141,6 +143,12 @@
   <action id="ContextHelp" />
   <action id="CopyAsPlainText" />
   <action id="CopyElement" />
+  <action id="CopyFileName">
+    <keyboard-shortcut first-keystroke="shift ctrl alt c" />
+  </action>
+  <action id="CopyPaths">
+    <keyboard-shortcut first-keystroke="shift ctrl c" />
+  </action>
   <action id="CopyReferencePopupGroup" />
   <action id="Coverage" />
   <action id="CppIncludesHierarchy" />
@@ -266,7 +274,7 @@
   </action>
   <action id="FindNext" />
   <action id="FindPrevWordAtCaret">
-    <keyboard-shortcut first-keystroke="shift alt f" />
+    <keyboard-shortcut first-keystroke="shift ctrl i" />
   </action>
   <action id="FindPrevious" />
   <action id="FindUsages" />
@@ -274,7 +282,7 @@
     <keyboard-shortcut first-keystroke="ctrl alt n" />
   </action>
   <action id="FindWordAtCaret">
-    <keyboard-shortcut first-keystroke="alt f" />
+    <keyboard-shortcut first-keystroke="shift ctrl n" />
   </action>
   <action id="FoldingGroup" />
   <action id="ForceOthersToFollowAction" />
@@ -488,14 +496,16 @@
   <action id="QuickJavaDoc">
     <keyboard-shortcut first-keystroke="alt i" />
   </action>
-  <action id="QuickTypeDefinition" />
+  <action id="QuickTypeDefinition">
+    <keyboard-shortcut first-keystroke="ctrl alt i" />
+  </action>
   <action id="ReSharperGotoImplementation" />
   <action id="ReSharperNavigateTo" />
   <action id="RearrangeCode" />
   <action id="RebuildSolutionAction" />
   <action id="RecentChangedFiles" />
   <action id="RecentChanges">
-    <keyboard-shortcut first-keystroke="shift ctrl alt c" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt h" />
   </action>
   <action id="RecentFiles">
     <keyboard-shortcut first-keystroke="ctrl h" />
@@ -511,10 +521,10 @@
   <action id="RenameElement" />
   <action id="RenameFile" />
   <action id="Replace">
-    <keyboard-shortcut first-keystroke="ctrl o" />
+    <keyboard-shortcut first-keystroke="alt f" />
   </action>
   <action id="ReplaceInPath">
-    <keyboard-shortcut first-keystroke="shift ctrl o" />
+    <keyboard-shortcut first-keystroke="shift alt f" />
   </action>
   <action id="Rerun" />
   <action id="RerunFailedTests">
@@ -651,7 +661,7 @@
   <action id="ToggleBreakpointEnabled" />
   <action id="ToggleDistractionFreeMode" />
   <action id="ToggleFindInSelection">
-    <keyboard-shortcut first-keystroke="alt o" />
+    <keyboard-shortcut first-keystroke="ctrl alt f" />
   </action>
   <action id="ToggleFullScreen" />
   <action id="ToggleLineBreakpoint">
@@ -733,7 +743,9 @@
   <action id="android.deploy.CodeSwap" />
   <action id="build" />
   <action id="com.github.jk1.ytplugin.issues.actions.EditorCreateIssueAction" />
+  <action id="com.github.jk1.ytplugin.timeTracker.actions.ManualEntryAction" />
   <action id="com.github.jk1.ytplugin.timeTracker.actions.PauseTrackerAction" />
+  <action id="com.github.jk1.ytplugin.timeTracker.actions.ResetTrackerAction" />
   <action id="com.github.jk1.ytplugin.timeTracker.actions.ShowAllSavedTimeTrackingItems" />
   <action id="context.clear" />
   <action id="context.load" />
