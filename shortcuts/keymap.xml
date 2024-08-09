@@ -53,6 +53,8 @@
   </action>
   <action id="AnalyzeActionsPopup" />
   <action id="Android.ChooseProfileConfiguration" />
+  <action id="Arrangement.Alias.Rule.Add" />
+  <action id="Arrangement.Rule.Add" />
   <action id="AutoIndentLines" />
   <action id="Back">
     <keyboard-shortcut first-keystroke="alt h" />
@@ -66,7 +68,9 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt n" />
   </action>
   <action id="CancelBuildAction" />
-  <action id="ChangeSignature" />
+  <action id="ChangeSignature">
+    <keyboard-shortcut first-keystroke="shift alt s" />
+  </action>
   <action id="ChangesView.AddUnversioned">
     <keyboard-shortcut first-keystroke="shift ctrl meta m" />
   </action>
@@ -211,12 +215,12 @@
   </action>
   <action id="EditorJoinLines" />
   <action id="EditorMatchBrace">
-    <keyboard-shortcut first-keystroke="ctrl alt b" />
+    <keyboard-shortcut first-keystroke="alt l" />
   </action>
   <action id="EditorPasteSimple" />
   <action id="EditorReverseLines" />
   <action id="EditorSelectWord">
-    <keyboard-shortcut first-keystroke="ctrl e" />
+    <keyboard-shortcut first-keystroke="alt e" />
   </action>
   <action id="EditorSortLines" />
   <action id="EditorStartNewLine" />
@@ -224,7 +228,7 @@
   <action id="EditorToggleShowLineNumbers" />
   <action id="EditorToggleUseSoftWraps" />
   <action id="EditorUnSelectWord">
-    <keyboard-shortcut first-keystroke="ctrl alt e" />
+    <keyboard-shortcut first-keystroke="shift alt e" />
   </action>
   <action id="EvaluateExpression" />
   <action id="ExecuteInPyConsoleAction" />
@@ -251,17 +255,14 @@
     <keyboard-shortcut first-keystroke="ctrl add" />
   </action>
   <action id="ExternalSystem.OpenConfig" />
-  <action id="ExternalSystem.ProjectRefreshAction">
-    <keyboard-shortcut first-keystroke="alt l" />
-  </action>
   <action id="ExtractFunction" />
   <action id="ExtractInterface" />
-  <action id="ExtractMethod" />
+  <action id="ExtractMethod">
+    <keyboard-shortcut first-keystroke="ctrl b" />
+  </action>
   <action id="ExtractSuperclass" />
   <action id="FileChooser.GotoDesktop" />
-  <action id="FileChooser.NewFolder">
-    <keyboard-shortcut first-keystroke="alt insert" />
-  </action>
+  <action id="FileChooser.NewFolder" />
   <action id="FileChooser.TogglePathBar" />
   <action id="FileStructurePopup">
     <keyboard-shortcut first-keystroke="alt o" />
@@ -290,7 +291,9 @@
   <action id="Forward">
     <keyboard-shortcut first-keystroke="alt c" />
   </action>
-  <action id="Generate" />
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="alt y" />
+  </action>
   <action id="Git.Branches" />
   <action id="Git.Commit.And.Push.Executor">
     <keyboard-shortcut first-keystroke="shift ctrl alt m" />
@@ -368,16 +371,26 @@
     <keyboard-shortcut first-keystroke="ctrl subtract" />
   </action>
   <action id="ImplementMethods" />
-  <action id="Inline" />
+  <action id="Inline">
+    <keyboard-shortcut first-keystroke="ctrl e" />
+  </action>
   <action id="InsertLiveTemplate" />
   <action id="InspectCode" />
   <action id="InspectThis" />
-  <action id="IntroduceConstant" />
-  <action id="IntroduceField" />
+  <action id="IntroduceConstant">
+    <keyboard-shortcut first-keystroke="ctrl alt b" />
+  </action>
+  <action id="IntroduceField">
+    <keyboard-shortcut first-keystroke="shift ctrl b" />
+  </action>
   <action id="IntroduceFunctionalParameter" />
-  <action id="IntroduceParameter" />
+  <action id="IntroduceParameter">
+    <keyboard-shortcut first-keystroke="shift alt b" />
+  </action>
   <action id="IntroduceProperty" />
-  <action id="IntroduceVariable" />
+  <action id="IntroduceVariable">
+    <keyboard-shortcut first-keystroke="alt b" />
+  </action>
   <action id="Jdbc.OpenConsole.New" />
   <action id="Jdbc.OpenConsole.New.Generate" />
   <action id="Jdbc.OpenEditor.DDL" />
@@ -447,7 +460,7 @@
   <action id="MoveTabRight" />
   <action id="NavigateToImmediateWindow" />
   <action id="NewElement">
-    <keyboard-shortcut first-keystroke="alt y" />
+    <keyboard-shortcut first-keystroke="shift alt y" />
   </action>
   <action id="NewScratchFile" />
   <action id="NextDiff">
@@ -509,12 +522,14 @@
   <action id="RecentLocations">
     <keyboard-shortcut first-keystroke="shift ctrl h" />
   </action>
-  <action id="Refactorings.QuickListPopupAction" />
-  <action id="ReformatCode">
-    <keyboard-shortcut first-keystroke="alt b" />
+  <action id="Refactorings.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="ctrl alt s" />
   </action>
+  <action id="ReformatCode" />
   <action id="Refresh" />
-  <action id="RenameElement" />
+  <action id="RenameElement">
+    <keyboard-shortcut first-keystroke="alt s" />
+  </action>
   <action id="RenameFile" />
   <action id="Replace">
     <keyboard-shortcut first-keystroke="alt f" />
@@ -593,6 +608,7 @@
   </action>
   <action id="SelectVirtualTemplateElement" />
   <action id="SendEOF" />
+  <action id="ServiceView.AddService" />
   <action id="ServiceView.ShowServices" />
   <action id="ShowBookmarks" />
   <action id="ShowErrorDescription" />
@@ -622,6 +638,7 @@
     <keyboard-shortcut first-keystroke="shift alt n" />
   </action>
   <action id="SilentCodeCleanup" />
+  <action id="SmartSelect" />
   <action id="Sql.EditParameter" />
   <action id="Stop">
     <keyboard-shortcut first-keystroke="ctrl m" />
@@ -630,7 +647,9 @@
   <action id="StretchSplitToLeft" />
   <action id="StretchSplitToRight" />
   <action id="StretchSplitToTop" />
-  <action id="SurroundWith" />
+  <action id="SurroundWith">
+    <keyboard-shortcut first-keystroke="alt x" />
+  </action>
   <action id="SwitchCoverage" />
   <action id="SwitchHeaderSource" />
   <action id="Switcher">
@@ -638,6 +657,8 @@
     <keyboard-shortcut first-keystroke="shift ctrl meta tab" />
   </action>
   <action id="Synchronize" />
+  <action id="TableResult.GrowSelection" />
+  <action id="TableResult.SelectColumn" />
   <action id="TableResult.UnselectPreviousOccurrence" />
   <action id="Terminal.ClearBuffer" />
   <action id="Terminal.CloseSession" />
@@ -681,6 +702,7 @@
   </action>
   <action id="TypeHierarchyBase.BaseOnThisType" />
   <action id="UML.ShowChanges" />
+  <action id="Uml.NewElement" />
   <action id="Uml.ShowDiff" />
   <action id="Unscramble" />
   <action id="UnselectPreviousOccurrence">
