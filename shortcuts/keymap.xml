@@ -302,9 +302,7 @@
   <action id="Generate">
     <keyboard-shortcut first-keystroke="alt y" />
   </action>
-  <action id="Git.Branches">
-    <keyboard-shortcut first-keystroke="ctrl o" />
-  </action>
+  <action id="Git.Branches" />
   <action id="Git.Commit.And.Push.Executor" />
   <action id="Git.Commit.Stage">
     <keyboard-shortcut first-keystroke="alt m" />
@@ -399,6 +397,9 @@
   <action id="IntroduceVariable">
     <keyboard-shortcut first-keystroke="alt b" />
   </action>
+  <action id="JShell.Console">
+    <keyboard-shortcut first-keystroke="shift meta alt j" />
+  </action>
   <action id="Jdbc.OpenConsole.New" />
   <action id="Jdbc.OpenConsole.New.Generate" />
   <action id="Jdbc.OpenEditor.DDL" />
@@ -412,6 +413,9 @@
   </action>
   <action id="JumpToStatement" />
   <action id="Kotlin.RunScratch" />
+  <action id="KotlinConsoleREPL">
+    <keyboard-shortcut first-keystroke="shift ctrl meta j" />
+  </action>
   <action id="LocalHistory" />
   <action id="LocateInSolutionView" />
   <action id="Markdown.Styling.CreateLink" />
@@ -614,7 +618,7 @@
     <keyboard-shortcut first-keystroke="ctrl q" />
   </action>
   <action id="SelectIn">
-    <keyboard-shortcut first-keystroke="ctrl alt w" />
+    <keyboard-shortcut first-keystroke="ctrl o" />
   </action>
   <action id="SelectInProjectView" />
   <action id="SelectNextOccurrence">
@@ -628,9 +632,7 @@
   <action id="ShowErrorDescription" />
   <action id="ShowExecutionPoint" />
   <action id="ShowFilePath" />
-  <action id="ShowNavBar">
-    <keyboard-shortcut first-keystroke="alt w" second-keystroke="q" />
-  </action>
+  <action id="ShowNavBar" />
   <action id="ShowPopupMenu">
     <keyboard-shortcut first-keystroke="shift enter" />
   </action>
@@ -794,6 +796,9 @@
   <action id="context.save" />
   <action id="editRunConfigurations">
     <keyboard-shortcut first-keystroke="shift ctrl alt r" />
+  </action>
+  <action id="git.branches.popup.filter.by.action">
+    <keyboard-shortcut first-keystroke="alt w" />
   </action>
   <action id="hg4idea.QFold" />
   <action id="hg4idea.QGotoFromPatches" />
