@@ -6,19 +6,17 @@
   <action id="ActivateAntToolWindow" />
   <action id="ActivateBookmarksToolWindow" />
   <action id="ActivateBuildToolWindow" />
-  <action id="ActivateCommitToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta b" />
-  </action>
+  <action id="ActivateCommitToolWindow" />
   <action id="ActivateDatabaseToolWindow" />
   <action id="ActivateDebugToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta d" />
+    <keyboard-shortcut first-keystroke="shift meta alt d" />
   </action>
   <action id="ActivateEndpointsToolWindow" />
   <action id="ActivateEventLogToolWindow" />
   <action id="ActivateFindToolWindow" />
   <action id="ActivateGradleToolWindow" />
   <action id="ActivateHierarchyToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta h" />
+    <keyboard-shortcut first-keystroke="shift meta alt h" />
   </action>
   <action id="ActivateILViewerToolWindow" />
   <action id="ActivateInspectorToolWindow" />
@@ -29,27 +27,29 @@
   <action id="ActivateNotificationsToolWindow" />
   <action id="ActivateNuGetToolWindow" />
   <action id="ActivateProblemsViewToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta z" />
+    <keyboard-shortcut first-keystroke="shift meta alt q" />
   </action>
   <action id="ActivateProfilerToolWindow" />
   <action id="ActivateProjectToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta e" />
+    <keyboard-shortcut first-keystroke="shift meta alt e" />
   </action>
   <action id="ActivatePythonConsoleToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta j" />
+    <keyboard-shortcut first-keystroke="shift meta alt b" />
   </action>
   <action id="ActivateRunToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta u" />
+    <keyboard-shortcut first-keystroke="shift meta alt r" />
   </action>
   <action id="ActivateServicesToolWindow" />
-  <action id="ActivateStructureToolWindow" />
+  <action id="ActivateStructureToolWindow">
+    <keyboard-shortcut first-keystroke="shift meta alt f" />
+  </action>
   <action id="ActivateTODOToolWindow" />
   <action id="ActivateTerminalToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta l" />
+    <keyboard-shortcut first-keystroke="shift meta alt l" />
   </action>
   <action id="ActivateUnitTestsToolWindow" />
   <action id="ActivateVersionControlToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta g" />
+    <keyboard-shortcut first-keystroke="shift meta alt m" />
   </action>
   <action id="AnalyzeActionsPopup" />
   <action id="Android.ChooseProfileConfiguration" />
@@ -94,7 +94,7 @@
   <action id="CleanSolutionAction" />
   <action id="ClickLink" />
   <action id="CloseActiveTab">
-    <keyboard-shortcut first-keystroke="shift meta x" />
+    <keyboard-shortcut first-keystroke="shift meta alt x" />
   </action>
   <action id="CloseContent" />
   <action id="CodeCleanup" />
@@ -311,6 +311,9 @@
   <action id="Git.Ignore.File">
     <keyboard-shortcut first-keystroke="shift alt m" />
   </action>
+  <action id="Git.Log">
+    <keyboard-shortcut first-keystroke="shift meta alt v" />
+  </action>
   <action id="Git.New.Branch.In.Log" />
   <action id="Git.Pull" />
   <action id="Git.Stage.Add" />
@@ -321,7 +324,7 @@
   </action>
   <action id="GoToMenu" />
   <action id="GoToProject">
-    <keyboard-shortcut first-keystroke="shift meta f" />
+    <keyboard-shortcut first-keystroke="shift meta alt w" />
   </action>
   <action id="GotoAction">
     <keyboard-shortcut first-keystroke="alt a" />
@@ -479,15 +482,16 @@
     <keyboard-shortcut first-keystroke="alt c" />
   </action>
   <action id="NextTab">
-    <keyboard-shortcut first-keystroke="shift meta n" />
+    <keyboard-shortcut first-keystroke="shift meta alt n" />
   </action>
   <action id="OpenFile" />
   <action id="OpenInRightSplit">
     <mouse-shortcut keystroke="alt button1 doubleClick" />
   </action>
   <action id="OpenKeymapPanel">
-    <keyboard-shortcut first-keystroke="shift meta k" />
+    <keyboard-shortcut first-keystroke="shift meta alt k" />
   </action>
+  <action id="OpenKeymapSettings" />
   <action id="OpenModuleSettings" />
   <action id="OptimizeImports">
     <keyboard-shortcut first-keystroke="shift alt j" />
@@ -505,7 +509,7 @@
     <keyboard-shortcut first-keystroke="alt h" />
   </action>
   <action id="PreviousTab">
-    <keyboard-shortcut first-keystroke="shift meta i" />
+    <keyboard-shortcut first-keystroke="shift meta alt i" />
   </action>
   <action id="PyExecuteCellAction" />
   <action id="PyRunFileInConsole">
@@ -563,7 +567,7 @@
     <keyboard-shortcut first-keystroke="ctrl t" />
   </action>
   <action id="ResizeToolWindowDown">
-    <keyboard-shortcut first-keystroke="shift ctrl meta down" />
+    <keyboard-shortcut first-keystroke="shift meta alt p" />
   </action>
   <action id="ResizeToolWindowLeft">
     <keyboard-shortcut first-keystroke="shift ctrl alt left" />
@@ -572,7 +576,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt right" />
   </action>
   <action id="ResizeToolWindowUp">
-    <keyboard-shortcut first-keystroke="shift ctrl meta up" />
+    <keyboard-shortcut first-keystroke="shift meta alt u" />
   </action>
   <action id="RestartIde" />
   <action id="RiderBackendAction-ExtractClass" />
@@ -637,7 +641,7 @@
     <keyboard-shortcut first-keystroke="shift enter" />
   </action>
   <action id="ShowProjectStructureSettings">
-    <keyboard-shortcut first-keystroke="shift meta o" />
+    <keyboard-shortcut first-keystroke="shift meta alt o" />
   </action>
   <action id="ShowRecentTests">
     <keyboard-shortcut first-keystroke="shift alt t" />
@@ -647,7 +651,7 @@
     <keyboard-shortcut first-keystroke="alt p" />
   </action>
   <action id="ShowSettings">
-    <keyboard-shortcut first-keystroke="shift meta a" />
+    <keyboard-shortcut first-keystroke="shift meta alt a" />
   </action>
   <action id="ShowSettingsAndFindUsages" />
   <action id="ShowUsages">
@@ -682,7 +686,7 @@
   <action id="Terminal.DeletePreviousWord" />
   <action id="Terminal.NewTab" />
   <action id="Terminal.OpenInTerminal">
-    <keyboard-shortcut first-keystroke="shift meta alt l" />
+    <keyboard-shortcut first-keystroke="shift meta l" />
   </action>
   <action id="Terminal.SearchInCommandHistory" />
   <action id="TextSearchAction">
@@ -756,6 +760,9 @@
     <keyboard-shortcut first-keystroke="ctrl alt z" />
   </action>
   <action id="Vcs.ShowMessageHistory" />
+  <action id="Vcs.ShowTabbedFileHistory">
+    <keyboard-shortcut first-keystroke="shift meta alt c" />
+  </action>
   <action id="Vcs.UpdateProject" />
   <action id="VcsHistory.ShowAllAffected" />
   <action id="VcsShowNextChangeMarker">
@@ -765,11 +772,11 @@
     <keyboard-shortcut first-keystroke="ctrl alt h" />
   </action>
   <action id="ViewBreakpoints">
-    <keyboard-shortcut first-keystroke="shift meta alt d" />
+    <keyboard-shortcut first-keystroke="shift meta alt y" />
   </action>
   <action id="WD.UploadCurrentRemoteFileAction" />
   <action id="WelcomeScreen.Plugins">
-    <keyboard-shortcut first-keystroke="shift meta alt p" />
+    <keyboard-shortcut first-keystroke="shift meta alt g" />
   </action>
   <action id="XDebugger.AttachToProcess">
     <keyboard-shortcut first-keystroke="shift ctrl alt d" />

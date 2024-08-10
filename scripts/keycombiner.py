@@ -19,6 +19,7 @@ reserved = [
     ("<win reserved action>", "meta+shift+r"),
     ("<win reserved action>", "meta+shift+t"),
     ("<win reserved action>", "meta+shift+v"),
+    ("<win reserved action>", "meta+alt+shift+ctrl+v"),
 ]
 
 ascii = {
