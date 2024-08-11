@@ -22,7 +22,7 @@
   <action id="ActivateInspectorToolWindow" />
   <action id="ActivateLearnToolWindow" />
   <action id="ActivateMavenToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta q" />
+    <keyboard-shortcut first-keystroke="shift meta alt v" />
   </action>
   <action id="ActivateNotificationsToolWindow" />
   <action id="ActivateNuGetToolWindow" />
@@ -157,6 +157,9 @@
   <action id="CopyReferencePopupGroup" />
   <action id="Coverage" />
   <action id="CppIncludesHierarchy" />
+  <action id="DSM.OpenInEditor">
+    <keyboard-shortcut first-keystroke="shift meta d" />
+  </action>
   <action id="DSM.ZoomIn">
     <keyboard-shortcut first-keystroke="ctrl add" />
   </action>
@@ -189,7 +192,9 @@
     <keyboard-shortcut first-keystroke="alt k" />
   </action>
   <action id="EditPropertyValue" />
-  <action id="EditSource" />
+  <action id="EditSource">
+    <keyboard-shortcut first-keystroke="shift meta d" />
+  </action>
   <action id="Editor Redo">
     <keyboard-shortcut first-keystroke="ctrl y" />
   </action>
@@ -270,6 +275,9 @@
   </action>
   <action id="ExtractSuperclass" />
   <action id="FileChooser.GotoDesktop" />
+  <action id="FileChooser.LightEditGotoOpenedFile">
+    <keyboard-shortcut first-keystroke="shift meta e" />
+  </action>
   <action id="FileChooser.NewFolder" />
   <action id="FileChooser.TogglePathBar" />
   <action id="FileStructurePopup">
@@ -310,9 +318,6 @@
   <action id="Git.Fetch" />
   <action id="Git.Ignore.File">
     <keyboard-shortcut first-keystroke="shift alt m" />
-  </action>
-  <action id="Git.Log">
-    <keyboard-shortcut first-keystroke="shift meta alt v" />
   </action>
   <action id="Git.New.Branch.In.Log" />
   <action id="Git.Pull" />
@@ -417,9 +422,12 @@
   <action id="JumpToStatement" />
   <action id="Kotlin.RunScratch" />
   <action id="KotlinConsoleREPL">
-    <keyboard-shortcut first-keystroke="shift ctrl meta j" />
+    <keyboard-shortcut first-keystroke="shift meta alt z" />
   </action>
   <action id="LocalHistory" />
+  <action id="LocalHistory.ShowSelectionHistory">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt c" />
+  </action>
   <action id="LocateInSolutionView" />
   <action id="Markdown.Styling.CreateLink" />
   <action id="Maven.CollapseAll">
@@ -427,6 +435,9 @@
   </action>
   <action id="Maven.ExpandAll">
     <keyboard-shortcut first-keystroke="ctrl add" />
+  </action>
+  <action id="MavenHelper.OpenTerminalAction">
+    <keyboard-shortcut first-keystroke="shift meta b" />
   </action>
   <action id="MavenHelper.QuickRunMavenGoal" />
   <action id="MavenHelper.QuickRunRootMavenGoal" />
@@ -624,7 +635,9 @@
   <action id="SelectIn">
     <keyboard-shortcut first-keystroke="ctrl o" />
   </action>
-  <action id="SelectInProjectView" />
+  <action id="SelectInProjectView">
+    <keyboard-shortcut first-keystroke="shift meta e" />
+  </action>
   <action id="SelectNextOccurrence">
     <keyboard-shortcut first-keystroke="ctrl alt o" />
   </action>
@@ -635,7 +648,9 @@
   <action id="ShowBookmarks" />
   <action id="ShowErrorDescription" />
   <action id="ShowExecutionPoint" />
-  <action id="ShowFilePath" />
+  <action id="ShowFilePath">
+    <keyboard-shortcut first-keystroke="shift meta f" />
+  </action>
   <action id="ShowNavBar" />
   <action id="ShowPopupMenu">
     <keyboard-shortcut first-keystroke="shift enter" />
@@ -674,7 +689,6 @@
   <action id="SwitchHeaderSource" />
   <action id="Switcher">
     <keyboard-shortcut first-keystroke="shift meta tab" />
-    <keyboard-shortcut first-keystroke="shift ctrl meta tab" />
   </action>
   <action id="Synchronize" />
   <action id="TableResult.GrowSelection" />

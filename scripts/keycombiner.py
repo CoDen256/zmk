@@ -2,7 +2,6 @@ import itertools
 import xml.etree.ElementTree as ET
 import csv
 import re
-
 reserved = [
     ("<win reserved action>", "ctrl+c"),
     ("<win reserved action>", "ctrl+v"),
@@ -19,8 +18,37 @@ reserved = [
     ("<win reserved action>", "meta+shift+r"),
     ("<win reserved action>", "meta+shift+t"),
     ("<win reserved action>", "meta+shift+v"),
+    ("<win reserved action>", "meta+ctrl+v"),
+    ("<win reserved action>", "meta+ctrl+l"),
+    ("<win reserved action>", "meta+ctrl+t"),
+    ("<win reserved action>", "meta+ctrl+e"),
+    ("<win reserved action>", "meta+ctrl+m"),
+    ("<win reserved action>", "meta+ctrl+d"),
+    ("<win reserved action>", "meta+ctrl+s"),
+    ("<win reserved action>", "meta+ctrl+f"),
+    ("<win reserved action>", "meta+ctrl+o"),
+    ("<win reserved action>", "meta+ctrl+p"),
+    ("<win reserved action>", "meta+ctrl+n"),
+    ("<win reserved action>", "meta+ctrl+c"),
+    ("<win reserved action>", "meta+ctrl+q"),
+    ("<win reserved action>", "meta+alt+f"),
+    ("<win reserved action>", "meta+alt+g"),
+    ("<win reserved action>", "meta+alt+c"),
+    ("<win reserved action>", "meta+alt+r"),
+    ("<win reserved action>", "meta+alt+t"),
+    ("<win reserved action>", "meta+alt+b"),
+    ("<win reserved action>", "meta+alt+m"),
+    ("<win reserved action>", "meta+alt+d"),
+    ("<win reserved action>", "meta+alt+y"),
+    ("<win reserved action>", "meta+alt+w"),
+    ("<win reserved action>", "meta+ctrl+shift+v"),
+    ("<win reserved action>", "meta+ctrl+shift+b"),
+    ("<win reserved action>", "meta+ctrl+shift+t"),
+    ("<win reserved action>", "meta+ctrl+shift+r"),
+    ("<win reserved action>", "meta+ctrl+ctrl+v"),
     ("<win reserved action>", "meta+alt+shift+ctrl+v"),
 ]
+
 
 ascii = {
     'add': '+',
