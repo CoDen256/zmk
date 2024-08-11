@@ -193,7 +193,7 @@
   <action id="Diagram.DeselectAll" />
   <action id="Diff.FocusOppositePane" />
   <action id="Diff.ShowDiff">
-    <keyboard-shortcut first-keystroke="ctrl f16" />
+    <keyboard-shortcut first-keystroke="ctrl f17" />
   </action>
   <action id="EditPropertyValue" />
   <action id="EditSource">
@@ -240,7 +240,7 @@
     <keyboard-shortcut first-keystroke="f6" />
   </action>
   <action id="EditorJoinLines">
-    <keyboard-shortcut first-keystroke="f7" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
   </action>
   <action id="EditorKillRingSave">
     <keyboard-shortcut first-keystroke="f8" />
@@ -249,7 +249,7 @@
     <keyboard-shortcut first-keystroke="f10" />
   </action>
   <action id="EditorMatchBrace">
-    <keyboard-shortcut first-keystroke="alt z" />
+    <keyboard-shortcut first-keystroke="alt x" />
   </action>
   <action id="EditorPasteSimple" />
   <action id="EditorReverseLines">
@@ -266,8 +266,7 @@
   </action>
   <action id="EditorSortLines" />
   <action id="EditorSplitLine">
-    <keyboard-shortcut first-keystroke="ctrl enter" />
-    <keyboard-shortcut first-keystroke="ctrl f2" />
+    <keyboard-shortcut first-keystroke="alt j" />
   </action>
   <action id="EditorStartNewLine" />
   <action id="EditorSwapSelectionBoundaries">
@@ -357,7 +356,7 @@
     <keyboard-shortcut first-keystroke="alt y" />
   </action>
   <action id="Git.Branches">
-    <keyboard-shortcut first-keystroke="alt x" />
+    <keyboard-shortcut first-keystroke="alt z" />
   </action>
   <action id="Git.Commit.And.Push.Executor" />
   <action id="Git.Commit.Stage">
@@ -738,7 +737,7 @@
   <action id="StretchSplitToRight" />
   <action id="StretchSplitToTop" />
   <action id="SurroundWith">
-    <keyboard-shortcut first-keystroke="ctrl f17" />
+    <keyboard-shortcut first-keystroke="ctrl f16" />
   </action>
   <action id="SwitchCoverage" />
   <action id="SwitchHeaderSource" />
