@@ -27,10 +27,10 @@ layers:
   - ''
   - {t: G, h: '&lnav LCTRL'}
   - {t: H, h: '&lswitcher LEFT_ALT'}
-  - C
+  - {t: C, s: Ctl+ F13}
   - W
   - ''
-  - V
+  - {t: V, s: Ctl+ F19}
   - L
   - {t: B, h: '&lnav RIGHT_ALT'}
   - ''
@@ -63,7 +63,7 @@ layers:
   - {t: M, h: num}
   - D
   - {t: Y, h: nav}
-  - X
+  - {t: X, s: Ctl+ F16}
   - ''
   - Gui+ L
   - ''
@@ -78,7 +78,7 @@ layers:
   - {t: LSHFT, h: sticky}
   - TAB
   - UP ARROW
-  - Z
+  - {t: Z, s: Ctl+ F17}
   - ''
   - ''
   de:
