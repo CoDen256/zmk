@@ -15,9 +15,7 @@
   <action id="ActivateEventLogToolWindow" />
   <action id="ActivateFindToolWindow" />
   <action id="ActivateGradleToolWindow" />
-  <action id="ActivateHierarchyToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta alt h" />
-  </action>
+  <action id="ActivateHierarchyToolWindow" />
   <action id="ActivateILViewerToolWindow" />
   <action id="ActivateInspectorToolWindow" />
   <action id="ActivateLearnToolWindow" />
@@ -172,9 +170,6 @@
   </action>
   <action id="DatabaseView.Ddl.AlterObject" />
   <action id="DatabaseView.FullTextSearch" />
-  <action id="DatabaseView.LinkedDataSource.Navigate">
-    <keyboard-shortcut first-keystroke="alt v" />
-  </action>
   <action id="DatabaseView.PropertiesAction" />
   <action id="DatabaseView.SqlGenerator" />
   <action id="DatabaseView.Tools.RevertChanges" />
@@ -374,7 +369,9 @@
   <action id="GitPushBranchAction">
     <keyboard-shortcut first-keystroke="ctrl alt m" />
   </action>
-  <action id="GoToMenu" />
+  <action id="GoToMenu">
+    <keyboard-shortcut first-keystroke="alt v" />
+  </action>
   <action id="GoToProject">
     <keyboard-shortcut first-keystroke="shift meta alt w" />
   </action>
@@ -461,7 +458,9 @@
   <action id="JumpToLastChange">
     <keyboard-shortcut first-keystroke="shift alt h" />
   </action>
-  <action id="JumpToLastWindow" />
+  <action id="JumpToLastWindow">
+    <keyboard-shortcut first-keystroke="shift meta alt h" />
+  </action>
   <action id="JumpToNextChange">
     <keyboard-shortcut first-keystroke="shift alt c" />
   </action>
