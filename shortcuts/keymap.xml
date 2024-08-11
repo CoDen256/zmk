@@ -188,6 +188,7 @@
   <action id="Debugger.MarkObject" />
   <action id="DeviceAndSnapshotComboBox" />
   <action id="Diagram.DeselectAll" />
+  <action id="Diff.FocusOppositePane" />
   <action id="Diff.ShowDiff">
     <keyboard-shortcut first-keystroke="alt k" />
   </action>
@@ -198,7 +199,12 @@
   <action id="Editor Redo">
     <keyboard-shortcut first-keystroke="ctrl y" />
   </action>
-  <action id="EditorAddCaretPerSelectedLine" />
+  <action id="EditorAddCaretPerSelectedLine">
+    <keyboard-shortcut first-keystroke="ctrl f8" />
+  </action>
+  <action id="EditorChooseLookupItemDot">
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
   <action id="EditorCloneCaretAbove">
     <keyboard-shortcut first-keystroke="shift alt u" />
   </action>
@@ -217,12 +223,27 @@
   <action id="EditorCodeBlockStartWithSelection">
     <keyboard-shortcut first-keystroke="shift alt home" />
   </action>
+  <action id="EditorCutLineBackward">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
   <action id="EditorDeleteLine" />
+  <action id="EditorDeleteToLineStart">
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
   <action id="EditorDuplicate">
     <keyboard-shortcut first-keystroke="ctrl l" />
   </action>
+  <action id="EditorDuplicateLines">
+    <keyboard-shortcut first-keystroke="f6" />
+  </action>
   <action id="EditorJoinLines">
-    <keyboard-shortcut first-keystroke="ctrl alt l" />
+    <keyboard-shortcut first-keystroke="f7" />
+  </action>
+  <action id="EditorKillRingSave">
+    <keyboard-shortcut first-keystroke="f8" />
+  </action>
+  <action id="EditorKillToWordEnd">
+    <keyboard-shortcut first-keystroke="f10" />
   </action>
   <action id="EditorMatchBrace">
     <keyboard-shortcut first-keystroke="alt l" />
@@ -231,17 +252,36 @@
   <action id="EditorReverseLines">
     <keyboard-shortcut first-keystroke="shift alt l" />
   </action>
+  <action id="EditorSelectLine">
+    <keyboard-shortcut first-keystroke="f11" />
+  </action>
+  <action id="EditorSelectSingleLineAtCaret">
+    <keyboard-shortcut first-keystroke="f12" />
+  </action>
   <action id="EditorSelectWord">
     <keyboard-shortcut first-keystroke="alt e" />
   </action>
   <action id="EditorSortLines" />
+  <action id="EditorSplitLine">
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+    <keyboard-shortcut first-keystroke="ctrl f2" />
+  </action>
   <action id="EditorStartNewLine" />
-  <action id="EditorToggleCase" />
+  <action id="EditorSwapSelectionBoundaries">
+    <keyboard-shortcut first-keystroke="ctrl f3" />
+  </action>
+  <action id="EditorToggleCase">
+    <keyboard-shortcut first-keystroke="ctrl f6" />
+  </action>
   <action id="EditorToggleShowLineNumbers" />
+  <action id="EditorToggleStickySelection">
+    <keyboard-shortcut first-keystroke="ctrl f7" />
+  </action>
   <action id="EditorToggleUseSoftWraps" />
   <action id="EditorUnSelectWord">
     <keyboard-shortcut first-keystroke="shift alt e" />
   </action>
+  <action id="EmmetNextEditPoint" />
   <action id="EvaluateExpression" />
   <action id="ExecuteInPyConsoleAction" />
   <action id="ExpandAll">
@@ -282,6 +322,9 @@
   <action id="FileChooser.TogglePathBar" />
   <action id="FileStructurePopup">
     <keyboard-shortcut first-keystroke="alt o" />
+  </action>
+  <action id="FillParagraph">
+    <keyboard-shortcut first-keystroke="f1" />
   </action>
   <action id="Find">
     <keyboard-shortcut first-keystroke="ctrl f" />
@@ -369,6 +412,7 @@
   <action id="GotoTypeDeclaration">
     <keyboard-shortcut first-keystroke="ctrl alt q" />
   </action>
+  <action id="Graph.RouteEdges" />
   <action id="GuiDesigner.Duplicate" />
   <action id="HelpTopics" />
   <action id="HideActiveWindow">
@@ -429,6 +473,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl meta alt c" />
   </action>
   <action id="LocateInSolutionView" />
+  <action id="Log.JumpToSource" />
   <action id="Markdown.Styling.CreateLink" />
   <action id="Maven.CollapseAll">
     <keyboard-shortcut first-keystroke="ctrl subtract" />
@@ -590,6 +635,7 @@
     <keyboard-shortcut first-keystroke="shift meta alt u" />
   </action>
   <action id="RestartIde" />
+  <action id="Resume" />
   <action id="RiderBackendAction-ExtractClass" />
   <action id="RiderCollapseToDefinitions" />
   <action id="RiderDebuggerApplyEncChagnes" />
@@ -675,6 +721,8 @@
   <action id="SilentCodeCleanup" />
   <action id="SmartSelect" />
   <action id="Sql.EditParameter" />
+  <action id="StepInto" />
+  <action id="StepOut" />
   <action id="Stop">
     <keyboard-shortcut first-keystroke="ctrl m" />
   </action>
@@ -688,7 +736,8 @@
   <action id="SwitchCoverage" />
   <action id="SwitchHeaderSource" />
   <action id="Switcher">
-    <keyboard-shortcut first-keystroke="shift meta tab" />
+    <keyboard-shortcut first-keystroke="ctrl tab" />
+    <keyboard-shortcut first-keystroke="shift ctrl tab" />
   </action>
   <action id="Synchronize" />
   <action id="TableResult.GrowSelection" />

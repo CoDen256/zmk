@@ -2,14 +2,24 @@ import itertools
 import xml.etree.ElementTree as ET
 import csv
 import re
+
+
+reserved_map = {
+    "ctrl+F13" : "ctrl+c",
+    "ctrl+F19" : "ctrl+v",
+    "ctrl+F16" : "ctrl+x",
+    "ctrl+F17" : "ctrl+z",
+}
+
 reserved = [
     ("<win reserved action>", "ctrl+c"),
     ("<win reserved action>", "ctrl+v"),
     ("<win reserved action>", "ctrl+x"),
-    ("<win reserved action>", "ctrl+s"),
-    ("<win reserved action>", "ctrl+f"),
-    ("<win reserved action>", "ctrl+a"),
     ("<win reserved action>", "ctrl+z"),
+    ("<win reserved action>", "ctrl+s"),
+    ("<win reserved action>", "ctrl+a"),
+    # ("<win reserved action>", "ctrl+y"),
+    # ("<win reserved action>", "ctrl+f"),
     ("<win reserved action>", "meta+shift+c"),
     ("<win reserved action>", "meta+shift+p"),
     ("<win reserved action>", "meta+shift+w"),
@@ -45,7 +55,7 @@ reserved = [
     ("<win reserved action>", "meta+ctrl+shift+b"),
     ("<win reserved action>", "meta+ctrl+shift+t"),
     ("<win reserved action>", "meta+ctrl+shift+r"),
-    ("<win reserved action>", "meta+ctrl+ctrl+v"),
+    ("<win reserved action>", "meta+ctrl+alt+v"),
     ("<win reserved action>", "meta+alt+shift+ctrl+v"),
 ]
 
@@ -128,6 +138,15 @@ def parse_xml(file):
       result[(description, context)] = keys_combined
   return result
 
+
+def replace_fun(val):
+    for (r,s) in reserved_map.items():
+        if r in val:
+            return val.replace(r, s)
+
+    return val
+
+
 def write(target, data):
   # Define CSV file header
   csv_header = ["Description","Keys","Context","Category","Conf.","Actions"]
@@ -137,13 +156,17 @@ def write(target, data):
       writer = csv.writer(file, quoting=csv.QUOTE_ALL)
       writer.writerow(csv_header)
       for desc, val in reserved:
+        if val in reserved_map.values(): continue
         done.append(val)
+        if "meta" in val: pass
         writer.writerow([desc, val, "RESERVED", "General", "0", ""])
       for key, val in data.items():
+        val = replace_fun(val)
         desription, context = key
         if not val or "++" in val or "+-" in val or "click" in val or "button" in val: 
            continue
         if val in done:continue
+        if "meta" in val: pass
 
         done.append(val)
         writer.writerow([desription, val, context, "General", "0", ""])

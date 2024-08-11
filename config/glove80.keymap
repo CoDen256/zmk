@@ -646,7 +646,84 @@ release-after-ms = <5000>;};
          #binding-cells = <0>;
          bindings = <&ulower>, <&Uupper>;
          label = "UUM";
-         mods = <(MOD_LSFT|MOD_RSFT)>;};
+         mods = <(MOD_LSFT|MOD_RSFT)>;};CF13: CF13 {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp C>, <&F13C>;
+         label = "CF13";
+         mods = <(MOD_LCTL|MOD_RCTL)>;};AF14: AF14 {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp A>, <&F14A>;
+         label = "AF14";
+         mods = <(MOD_LCTL|MOD_RCTL)>;};SF15: SF15 {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp S>, <&kp LC(F15)>;
+         label = "SF15";
+         mods = <(MOD_LCTL|MOD_RCTL)>;};XF16: XF16 {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp X>, <&F16X>;
+         label = "XF16";
+         mods = <(MOD_LCTL|MOD_RCTL)>;};ZF17: ZF17 {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp Z>, <&F17Z>;
+         label = "ZF17";
+         mods = <(MOD_LCTL|MOD_RCTL)>;};YF18: YF18 {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp Y>, <&kp LC(F18)>;
+         label = "YF18";
+         mods = <(MOD_LCTL|MOD_RCTL)>;};VF19: VF19 {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp V>, <&F19V>;
+         label = "VF19";
+         mods = <(MOD_LCTL|MOD_RCTL)>;};F13C:F13C {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp LC(F13)>, <&kp C>;
+         label = "F13C";
+         mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
+         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};F14A: F14A {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp LC(F14)>, <&kp A>;
+         label = "F14A";
+         mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
+         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};F19V: F19V {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp LC(F19)>, <&kp V>;
+         label = "F19V";
+         mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
+         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};F17Z: F17Z {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp LC(F17)>, <&kp Z>;
+         label = "F17Z";
+         mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
+         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};F16X: F16X {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp LC(F16)>, <&kp X>;
+         label = "F16X";
+         mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
+         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};
 		
 		select_word_right: select_word_right {
 			compatible = "zmk,behavior-macro";
@@ -1360,6 +1437,16 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 		
@@ -1367,10 +1454,10 @@ keymap {
 			bindings = <
 &kp F1             &kp F2                     &kp F3             &kp F4                 &kp F5                                                                                                             &kp F6        &kp F7        &kp F8                 &kp F9                &kp F10
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &kp K                  &none         &kp LG(F10)                                                                       &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                 &none
-&kp C_MUTE         &none                      &hml_lnav LCTRL G  &hml_lswit LEFT_ALT H  &kp C         &kp W                                                                             &none              &kp V         &kp L         &hmr_lnav RIGHT_ALT B  &none                 &none
+&kp C_MUTE         &none                      &hml_lnav LCTRL G  &hml_lswit LEFT_ALT H  &CF13         &kp W                                                                             &none              &VF19         &kp L         &hmr_lnav RIGHT_ALT B  &none                 &none
 &kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &hml LALT A        &hml LSHFT I           &hml LCTRL N  &alower                                                                           &none              &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E            &hml RG(LA(RSHFT)) S  &kp RMETA
-&none              &kp J                      &hml_lt 5 F        &kp U                  &hml_lt 4 P   &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &hmr_lt 5 Y            &kp X                 &none
-&kp LG(L)          &none                      &kp Q              &kp DOWN               &kp ENTER                  &kp SPACE      &sl 1   &win_sleep    &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &kp Z                  &none                 &none
+&none              &kp J                      &hml_lt 5 F        &kp U                  &hml_lt 4 P   &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &hmr_lt 5 Y            &XF16                 &none
+&kp LG(L)          &none                      &kp Q              &kp DOWN               &kp ENTER                  &kp SPACE      &sl 1   &win_sleep    &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &ZF17                  &none                 &none
 >;};
 de {
          bindings = <
