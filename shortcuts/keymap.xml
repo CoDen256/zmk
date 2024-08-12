@@ -55,6 +55,7 @@
   <action id="AutoIndentLines" />
   <action id="Back">
     <keyboard-shortcut first-keystroke="alt h" />
+    <mouse-shortcut keystroke="button4" />
   </action>
   <action id="BuildSolutionAction" />
   <action id="CIDR.Lang.Cpp.GenerateDefinitions" />
@@ -122,7 +123,9 @@
   </action>
   <action id="Compare.SameVersion" />
   <action id="CompareClipboardWithSelection" />
-  <action id="CompareTwoFiles" />
+  <action id="CompareTwoFiles">
+    <keyboard-shortcut first-keystroke="shift ctrl z" />
+  </action>
   <action id="Compile" />
   <action id="CompileDirty" />
   <action id="CompileFile" />
@@ -185,7 +188,19 @@
   <action id="Debugger.MarkObject" />
   <action id="DeviceAndSnapshotComboBox" />
   <action id="Diagram.DeselectAll" />
+  <action id="Diff.ApplyLeftSide">
+    <keyboard-shortcut first-keystroke="shift i" />
+  </action>
+  <action id="Diff.ApplyRightSide">
+    <keyboard-shortcut first-keystroke="shift n" />
+  </action>
   <action id="Diff.FocusOppositePane" />
+  <action id="Diff.NextChange">
+    <keyboard-shortcut first-keystroke="shift ctrl c" />
+  </action>
+  <action id="Diff.PrevChange">
+    <keyboard-shortcut first-keystroke="shift ctrl h" />
+  </action>
   <action id="Diff.ShowDiff">
     <keyboard-shortcut first-keystroke="ctrl f17" />
   </action>
@@ -231,7 +246,7 @@
     <keyboard-shortcut first-keystroke="ctrl l" />
   </action>
   <action id="EditorDuplicateLines">
-    <keyboard-shortcut first-keystroke="f6" />
+    <keyboard-shortcut first-keystroke="shift ctrl l" />
   </action>
   <action id="EditorJoinLines">
     <keyboard-shortcut first-keystroke="ctrl j" />
@@ -343,6 +358,7 @@
   <action id="ForceRunToCursor" />
   <action id="Forward">
     <keyboard-shortcut first-keystroke="alt c" />
+    <mouse-shortcut keystroke="button5" />
   </action>
   <action id="Generate">
     <keyboard-shortcut first-keystroke="alt y" />
@@ -381,12 +397,13 @@
   </action>
   <action id="GotoDeclaration">
     <keyboard-shortcut first-keystroke="alt n" />
+    <mouse-shortcut keystroke="button2" />
   </action>
   <action id="GotoFile">
     <keyboard-shortcut first-keystroke="shift ctrl g" />
   </action>
   <action id="GotoImplementation">
-    <keyboard-shortcut first-keystroke="shift ctrl p" />
+    <keyboard-shortcut first-keystroke="ctrl alt p" />
   </action>
   <action id="GotoLine" />
   <action id="GotoNextBookmark" />
@@ -402,7 +419,7 @@
   </action>
   <action id="GotoRow" />
   <action id="GotoSuperMethod">
-    <keyboard-shortcut first-keystroke="shift ctrl u" />
+    <keyboard-shortcut first-keystroke="ctrl alt u" />
   </action>
   <action id="GotoSymbol">
     <keyboard-shortcut first-keystroke="ctrl alt g" />
@@ -525,16 +542,16 @@
     <keyboard-shortcut first-keystroke="ctrl n" />
   </action>
   <action id="MoveLineDown">
-    <keyboard-shortcut first-keystroke="ctrl p" />
+    <keyboard-shortcut first-keystroke="shift ctrl p" />
   </action>
   <action id="MoveLineUp">
-    <keyboard-shortcut first-keystroke="ctrl u" />
+    <keyboard-shortcut first-keystroke="shift ctrl u" />
   </action>
   <action id="MoveStatementDown">
-    <keyboard-shortcut first-keystroke="ctrl alt p" />
+    <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
   <action id="MoveStatementUp">
-    <keyboard-shortcut first-keystroke="ctrl alt u" />
+    <keyboard-shortcut first-keystroke="ctrl u" />
   </action>
   <action id="MoveTabDown" />
   <action id="MoveTabRight" />
@@ -544,7 +561,7 @@
   </action>
   <action id="NewScratchFile" />
   <action id="NextDiff">
-    <keyboard-shortcut first-keystroke="alt c" />
+    <keyboard-shortcut first-keystroke="shift c" />
   </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="shift meta alt n" />
@@ -571,7 +588,7 @@
   </action>
   <action id="Pause" />
   <action id="PreviousDiff">
-    <keyboard-shortcut first-keystroke="alt h" />
+    <keyboard-shortcut first-keystroke="shift h" />
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift meta alt i" />
@@ -613,7 +630,9 @@
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="alt w" />
   </action>
-  <action id="Refresh" />
+  <action id="Refresh">
+    <keyboard-shortcut first-keystroke="ctrl t" />
+  </action>
   <action id="RenameElement">
     <keyboard-shortcut first-keystroke="ctrl o" />
   </action>
@@ -628,9 +647,7 @@
   <action id="RerunFailedTests">
     <keyboard-shortcut first-keystroke="shift ctrl t" />
   </action>
-  <action id="RerunTests">
-    <keyboard-shortcut first-keystroke="ctrl t" />
-  </action>
+  <action id="RerunTests" />
   <action id="ResizeToolWindowDown">
     <keyboard-shortcut first-keystroke="shift meta alt p" />
   </action>
@@ -677,6 +694,9 @@
   <action id="RunInspection" />
   <action id="RunTargetAction" />
   <action id="RunToCursor" />
+  <action id="RunToolbarRerunAction">
+    <keyboard-shortcut first-keystroke="ctrl alt t" />
+  </action>
   <action id="SafeDelete">
     <keyboard-shortcut first-keystroke="alt delete" />
   </action>
@@ -699,6 +719,7 @@
   <action id="SelectVirtualTemplateElement" />
   <action id="SendEOF" />
   <action id="ServiceView.AddService" />
+  <action id="ServiceView.GroupByContributor" />
   <action id="ServiceView.ShowServices" />
   <action id="ShowBookmarks" />
   <action id="ShowErrorDescription" />
@@ -816,6 +837,7 @@
   <action id="UsageGrouping.FlattenModules" />
   <action id="UsageGrouping.Module" />
   <action id="UsageGrouping.Package" />
+  <action id="UsageGrouping.UsageType" />
   <action id="UsageView.Rerun" />
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Log.ShowAllAffected" />
@@ -871,6 +893,7 @@
   <action id="com.github.jk1.ytplugin.timeTracker.actions.ResetTrackerAction" />
   <action id="com.github.jk1.ytplugin.timeTracker.actions.ShowAllSavedTimeTrackingItems" />
   <action id="com.github.jk1.ytplugin.timeTracker.actions.StartTrackerAction" />
+  <action id="com.github.jk1.ytplugin.timeTracker.actions.StopTrackerAction" />
   <action id="context.clear" />
   <action id="context.load" />
   <action id="context.save" />
