@@ -159,6 +159,7 @@
   <action id="CopyReferencePopupGroup" />
   <action id="Coverage" />
   <action id="CppIncludesHierarchy" />
+  <action id="CurrentLeadUnfollowAction" />
   <action id="DSM.OpenInEditor">
     <keyboard-shortcut first-keystroke="shift meta d" />
   </action>
@@ -377,6 +378,7 @@
   <action id="Git.New.Branch.In.Log" />
   <action id="Git.Pull" />
   <action id="Git.Stage.Add" />
+  <action id="GitLab.Merge.Request.List.Refresh" />
   <action id="GitLab.Merge.Request.Refresh" />
   <action id="GitNewBranchAction" />
   <action id="GitPushBranchAction">
@@ -630,9 +632,7 @@
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="alt w" />
   </action>
-  <action id="Refresh">
-    <keyboard-shortcut first-keystroke="ctrl t" />
-  </action>
+  <action id="Refresh" />
   <action id="RenameElement">
     <keyboard-shortcut first-keystroke="ctrl o" />
   </action>
@@ -643,11 +643,15 @@
   <action id="ReplaceInPath">
     <keyboard-shortcut first-keystroke="shift alt f" />
   </action>
-  <action id="Rerun" />
-  <action id="RerunFailedTests">
-    <keyboard-shortcut first-keystroke="shift ctrl t" />
+  <action id="Rerun">
+    <keyboard-shortcut first-keystroke="ctrl alt t" />
   </action>
-  <action id="RerunTests" />
+  <action id="RerunFailedTests">
+    <keyboard-shortcut first-keystroke="ctrl t" />
+  </action>
+  <action id="RerunTests">
+    <keyboard-shortcut first-keystroke="shift ctrl alt l" />
+  </action>
   <action id="ResizeToolWindowDown">
     <keyboard-shortcut first-keystroke="shift meta alt p" />
   </action>
@@ -695,7 +699,7 @@
   <action id="RunTargetAction" />
   <action id="RunToCursor" />
   <action id="RunToolbarRerunAction">
-    <keyboard-shortcut first-keystroke="ctrl alt t" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt t" />
   </action>
   <action id="SafeDelete">
     <keyboard-shortcut first-keystroke="alt delete" />
@@ -751,6 +755,7 @@
     <keyboard-shortcut first-keystroke="shift alt n" />
   </action>
   <action id="SilentCodeCleanup" />
+  <action id="SingleUserFollowAction" />
   <action id="SmartSelect" />
   <action id="Space.Review.CreateDiffComment" />
   <action id="Sql.EditParameter" />
@@ -838,8 +843,11 @@
   <action id="UsageGrouping.Module" />
   <action id="UsageGrouping.Package" />
   <action id="UsageGrouping.UsageType" />
-  <action id="UsageView.Rerun" />
+  <action id="UsageView.Rerun">
+    <keyboard-shortcut first-keystroke="shift ctrl alt e" />
+  </action>
   <action id="Vcs.Log.FocusTextFilter" />
+  <action id="Vcs.Log.Refresh" />
   <action id="Vcs.Log.ShowAllAffected" />
   <action id="Vcs.Log.ShowTooltip">
     <mouse-shortcut keystroke="alt button2" />
@@ -851,6 +859,7 @@
   <action id="Vcs.QuickListPopupAction">
     <keyboard-shortcut first-keystroke="alt s" />
   </action>
+  <action id="Vcs.RefreshFileHistory" />
   <action id="Vcs.RollbackChangedLines">
     <keyboard-shortcut first-keystroke="ctrl alt z" />
   </action>
