@@ -156,7 +156,7 @@ def write(target, data):
         for desc, val in reserved:
             if val in reserved_map.values(): continue
             done.append(val)
-            if "meta" in val: pass
+            if "meta" in val: continue
             writer.writerow([desc, val, "RESERVED", "General", "0", ""])
         for key, val in data.items():
             val = replace_fun(val)
@@ -164,7 +164,7 @@ def write(target, data):
             if not val or "++" in val or "+-" in val or "click" in val or "button" in val:
                 continue
             if val in done: continue
-            if "meta" in val: pass
+            if "meta" in val: continue
 
             done.append(val)
 

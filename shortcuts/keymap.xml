@@ -1,6 +1,5 @@
 <keymap version="1" name="new" parent="Mnemonic Keymap">
   <action id="$Redo">
-    <keyboard-shortcut first-keystroke="shift alt back_space" />
     <keyboard-shortcut first-keystroke="ctrl y" />
   </action>
   <action id="ActivateAntToolWindow" />
@@ -67,7 +66,7 @@
   </action>
   <action id="CancelBuildAction" />
   <action id="ChangeSignature">
-    <keyboard-shortcut first-keystroke="shift alt s" />
+    <keyboard-shortcut first-keystroke="shift ctrl o" />
   </action>
   <action id="ChangesView.AddUnversioned">
     <keyboard-shortcut first-keystroke="shift ctrl alt m" />
@@ -145,7 +144,9 @@
   <action id="Console.TableResult.SetNull" />
   <action id="ContextHelp" />
   <action id="CopyAsPlainText" />
-  <action id="CopyElement" />
+  <action id="CopyElement">
+    <keyboard-shortcut first-keystroke="shift ctrl alt o" />
+  </action>
   <action id="CopyFileName">
     <keyboard-shortcut first-keystroke="shift ctrl alt c" />
   </action>
@@ -165,9 +166,7 @@
     <keyboard-shortcut first-keystroke="ctrl subtract" />
   </action>
   <action id="DatabaseView.CopyAction" />
-  <action id="DatabaseView.CopyDdlAction">
-    <keyboard-shortcut first-keystroke="shift ctrl alt g" />
-  </action>
+  <action id="DatabaseView.CopyDdlAction" />
   <action id="DatabaseView.Ddl.AlterObject" />
   <action id="DatabaseView.FullTextSearch" />
   <action id="DatabaseView.PropertiesAction" />
@@ -270,10 +269,8 @@
   <action id="EditorToggleCase">
     <keyboard-shortcut first-keystroke="ctrl f6" />
   </action>
+  <action id="EditorToggleColumnMode" />
   <action id="EditorToggleShowLineNumbers" />
-  <action id="EditorToggleStickySelection">
-    <keyboard-shortcut first-keystroke="ctrl f7" />
-  </action>
   <action id="EditorToggleUseSoftWraps" />
   <action id="EditorUnSelectWord">
     <keyboard-shortcut first-keystroke="shift alt e" />
@@ -369,6 +366,7 @@
   <action id="GitPushBranchAction">
     <keyboard-shortcut first-keystroke="ctrl alt m" />
   </action>
+  <action id="Github.PullRequest.Diff.Comment.Create" />
   <action id="GoToMenu">
     <keyboard-shortcut first-keystroke="alt v" />
   </action>
@@ -387,7 +385,9 @@
   <action id="GotoFile">
     <keyboard-shortcut first-keystroke="shift ctrl g" />
   </action>
-  <action id="GotoImplementation" />
+  <action id="GotoImplementation">
+    <keyboard-shortcut first-keystroke="shift ctrl p" />
+  </action>
   <action id="GotoLine" />
   <action id="GotoNextBookmark" />
   <action id="GotoNextError">
@@ -402,7 +402,7 @@
   </action>
   <action id="GotoRow" />
   <action id="GotoSuperMethod">
-    <keyboard-shortcut first-keystroke="shift ctrl q" />
+    <keyboard-shortcut first-keystroke="shift ctrl u" />
   </action>
   <action id="GotoSymbol">
     <keyboard-shortcut first-keystroke="ctrl alt g" />
@@ -490,13 +490,17 @@
   </action>
   <action id="MavenHelper.QuickRunRootMavenGoal" />
   <action id="MaximizeToolWindow" />
-  <action id="MemberPushDown" />
-  <action id="MembersPullUp" />
+  <action id="MemberPushDown">
+    <keyboard-shortcut first-keystroke="shift ctrl alt p" />
+  </action>
+  <action id="MembersPullUp">
+    <keyboard-shortcut first-keystroke="shift ctrl alt u" />
+  </action>
   <action id="MethodDown">
     <keyboard-shortcut first-keystroke="alt p" />
   </action>
   <action id="MethodHierarchy">
-    <keyboard-shortcut first-keystroke="shift ctrl alt p" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt i" />
   </action>
   <action id="MethodHierarchy.BaseOnThisMethod" />
   <action id="MethodHierarchy.ImplementMethodAction" />
@@ -511,7 +515,9 @@
     <keyboard-shortcut first-keystroke="alt u" />
   </action>
   <action id="ModifyObject" />
-  <action id="Move" />
+  <action id="Move">
+    <keyboard-shortcut first-keystroke="ctrl alt o" />
+  </action>
   <action id="MoveElementLeft">
     <keyboard-shortcut first-keystroke="ctrl i" />
   </action>
@@ -602,7 +608,7 @@
     <keyboard-shortcut first-keystroke="ctrl f13" />
   </action>
   <action id="Refactorings.QuickListPopupAction">
-    <keyboard-shortcut first-keystroke="ctrl alt s" />
+    <keyboard-shortcut first-keystroke="shift alt o" />
   </action>
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="alt w" />
@@ -688,7 +694,7 @@
     <keyboard-shortcut first-keystroke="shift meta e" />
   </action>
   <action id="SelectNextOccurrence">
-    <keyboard-shortcut first-keystroke="ctrl alt o" />
+    <keyboard-shortcut first-keystroke="shift ctrl q" />
   </action>
   <action id="SelectVirtualTemplateElement" />
   <action id="SendEOF" />
@@ -725,6 +731,7 @@
   </action>
   <action id="SilentCodeCleanup" />
   <action id="SmartSelect" />
+  <action id="Space.Review.CreateDiffComment" />
   <action id="Sql.EditParameter" />
   <action id="StepInto" />
   <action id="StepOut" />
@@ -787,19 +794,17 @@
   <action id="Tree-selectPreviousSibling">
     <keyboard-shortcut first-keystroke="ctrl up" />
   </action>
-  <action id="TypeHierarchy">
-    <keyboard-shortcut first-keystroke="shift ctrl alt q" />
-  </action>
+  <action id="TypeHierarchy" />
   <action id="TypeHierarchyBase.BaseOnThisType" />
   <action id="UML.ShowChanges" />
   <action id="Uml.NewElement" />
   <action id="Uml.ShowDiff" />
   <action id="Unscramble" />
   <action id="UnselectPreviousOccurrence">
-    <keyboard-shortcut first-keystroke="shift ctrl alt o" />
+    <keyboard-shortcut first-keystroke="shift alt q" />
   </action>
   <action id="Unwrap">
-    <keyboard-shortcut first-keystroke="shift alt x" />
+    <keyboard-shortcut first-keystroke="shift ctrl x" />
   </action>
   <action id="UpdateRunningApplication" />
   <action id="UsageFiltering.Imports" />
