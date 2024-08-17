@@ -37,7 +37,7 @@ layers:
   - ''
   - LEFT WIN
   - {t: O, h: Gui+Alt+ LEFT SHIFT}
-  - {t: A, h: LALT}
+  - ''
   - {t: I, h: LSHFT}
   - {t: N, h: LCTRL}
   - '&mkp LCLK'
@@ -419,8 +419,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - {t: ▽, type: trans}
+  - BACKSPACE
+  - DELETE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
