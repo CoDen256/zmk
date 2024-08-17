@@ -27,7 +27,7 @@ layers:
   - ''
   - {t: G, h: '&lnav LCTRL'}
   - {t: H, h: '&lswitcher LEFT_ALT'}
-  - {t: C, s: Ctl+ F13}
+  - {t: C, s: F13}
   - W
   - ''
   - {t: V, s: Ctl+ F19}
@@ -37,21 +37,21 @@ layers:
   - ''
   - LEFT WIN
   - {t: O, h: Gui+Alt+ LEFT SHIFT}
-  - {t: A, h: LEFT ALT}
+  - {t: A, h: LEFT ALT, s: F14}
   - {t: I, h: LSHFT}
   - {t: N, h: LCTRL}
   - '&mkp LCLK'
   - '&mkp LCLK'
-  - {t: T, h: LCTRL}
+  - {t: T, h: RCTRL}
   - {t: R, h: RSHFT}
-  - {t: E, h: LALT}
+  - {t: E, h: RIGHT ALT}
   - {t: S, h: Gui+Alt+ RSHFT}
   - RMETA
   - ''
   - J
   - {t: F, h: nav}
   - U
-  - {t: P, h: fun}
+  - P
   - ''
   - BACKSPACE
   - {t: fun, h: toggle}
@@ -375,7 +375,7 @@ layers:
   - ''
   - Ctl+ C
   - Ctl+ S
-  - {type: held}
+  - ''
   - ''
   - Ctl+Alt+ DELETE
   - Gui+Ctl+Sft+ A

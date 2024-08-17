@@ -629,31 +629,32 @@ release-after-ms = <5000>;};
          hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
          hold-trigger-on-release;
          label = "HML_LFUN";
-         bindings = <&lfun>, <&kp>;};aum: aum {
+         bindings = <&lfun>, <&kp>;};Aumlaut:Aumlaut {
       compatible = "zmk,behavior-mod-morph";
 
          #binding-cells = <0>;
          bindings = <&alower>, <&Aupper>;
-         label = "AUM";
-         mods = <(MOD_LSFT|MOD_RSFT)>;};oum: oum {
+         label = "AUMLAUT";
+         mods = <(MOD_LSFT|MOD_RSFT)>;};Oumlaut:Oumlaut {
       compatible = "zmk,behavior-mod-morph";
 
          #binding-cells = <0>;
          bindings = <&olower>, <&Oupper>;
-         label = "OUM";
-         mods = <(MOD_LSFT|MOD_RSFT)>;};uum: uum {
+         label = "OUMLAUT";
+         mods = <(MOD_LSFT|MOD_RSFT)>;};Uumlaut:Uumlaut {
       compatible = "zmk,behavior-mod-morph";
 
          #binding-cells = <0>;
          bindings = <&ulower>, <&Uupper>;
-         label = "UUM";
-         mods = <(MOD_LSFT|MOD_RSFT)>;};CF13: CF13 {
+         label = "UUMLAUT";
+         mods = <(MOD_LSFT|MOD_RSFT)>;};C_key:C_key {
       compatible = "zmk,behavior-mod-morph";
 
          #binding-cells = <0>;
-         bindings = <&kp C>, <&F13C>;
-         label = "CF13";
-         mods = <(MOD_LCTL|MOD_RCTL)>;};AF14: AF14 {
+         bindings = <&kp C>, <&Crctrl>;
+         label = "C_KEY";
+         mods = <(MOD_RCTL)>;
+         keep-mods = <(MOD_RCTL)>;};AF14: AF14 {
       compatible = "zmk,behavior-mod-morph";
 
          #binding-cells = <0>;
@@ -689,14 +690,14 @@ release-after-ms = <5000>;};
          #binding-cells = <0>;
          bindings = <&kp V>, <&F19V>;
          label = "VF19";
-         mods = <(MOD_LCTL|MOD_RCTL)>;};F13C:F13C {
+         mods = <(MOD_LCTL|MOD_RCTL)>;};Crctrl:Crctrl {
       compatible = "zmk,behavior-mod-morph";
 
          #binding-cells = <0>;
-         bindings = <&kp LC(F13)>, <&kp C>;
-         label = "F13C";
-         mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
-         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};F14A: F14A {
+         bindings = <&kp F13>, <&kp C>;
+         label = "CRCTRL";
+         mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI|MOD_LCTL)>;
+         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LCTL)>;};F14A: F14A {
       compatible = "zmk,behavior-mod-morph";
 
          #binding-cells = <0>;
@@ -733,24 +734,38 @@ A_key:A_key {
          tapping-term-ms = <280>;
          quick-tap-ms = <175>;
          require-prior-idle-ms = <350>;
-         bindings = <&kp>, <&kp>;
+         bindings = <&kp>, <&Anomods>;
          hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
          hold-trigger-on-release;
-         label = "A_KEY";};Arctrl: Arctrl {
+         label = "A_KEY";};Anomods:Anomods {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
-         bindings = <&kp A>, <&Arctrlmods>;
-         label = "ARCTRL";
+         bindings = <&Anomods2>, <&Arctrl>;
+         label = "ANOMODS";
          mods = <(MOD_RCTL)>;
-         keep-mods = <(MOD_RCTL)>;};Arctrlmods: Arctrlmods {
+         keep-mods = <(MOD_RCTL)>;};Arctrl:Arctrl {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
          bindings = <&kp F14>, <&kp A>;
-         label = "ARCTRLMODS";
+         label = "ARCTRL";
          mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_LCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
-         keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT|MOD_RGUI)>;};
+         keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT|MOD_RGUI)>;};Alctrl:Alctrl {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp C>, <&kp A>;
+         label = "ALCTRL";
+         mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+         keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};Anomods2: Anomods2 {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp A>, <&Alctrl>;
+         label = "ANOMODS2";
+         mods = <(MOD_LCTL)>;
+         keep-mods = <(MOD_LCTL)>;};
 
 		select_word_right: select_word_right {
 			compatible = "zmk,behavior-macro";
@@ -1496,6 +1511,24 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
@@ -1503,28 +1536,28 @@ keymap {
 			bindings = <
 &kp F1             &kp F2                     &kp F3             &kp F4                 &kp F5                                                                                                             &kp F6        &kp F7        &kp F8                 &kp F9                &kp F10
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &kp K                  &none         &kp LG(F10)                                                                       &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                 &none
-&kp C_MUTE         &none                      &hml_lnav LCTRL G  &hml_lswit LEFT_ALT H  &CF13         &kp W                                                                             &none              &VF19         &kp L         &hmr_lnav RIGHT_ALT B  &none                 &none
-&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &hml LSHFT I           &hml LCTRL N  &mkp LCLK                                                                         &mkp LCLK          &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E            &hml RG(LA(RSHFT)) S  &kp RMETA
-&none              &kp J                      &hml_lt 5 F        &kp U                  &hml_lt 4 P   &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &hmr_lt 5 Y            &XF16                 &none
+&kp C_MUTE         &none                      &hml_lnav LCTRL G  &hml_lswit LEFT_ALT H  &C_key        &kp W                                                                             &none              &VF19         &kp L         &hmr_lnav RIGHT_ALT B  &none                 &none
+&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &hml LSHFT I           &hml LCTRL N  &mkp LCLK                                                                         &mkp LCLK          &hmr RCTRL T  &hmr RSHFT R  &hmr RIGHT_ALT E       &hml RG(LA(RSHFT)) S  &kp RMETA
+&none              &kp J                      &hml_lt 5 F        &kp U                  &kp P         &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &hmr_lt 5 Y            &XF16                 &none
 &kp LG(L)          &none                      &kp Q              &kp DOWN               &kp ENTER                  &kp SPACE      &sl 1   &win_sleep    &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &ZF17                  &none                 &none
 >;};
 de {
          bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &oum    &aum    &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &eszet  &trans
-&trans  &trans  &trans  &uum    &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans    &trans    &trans                                                                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans    &trans    &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans    &trans    &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &Oumlaut  &Aumlaut  &trans    &trans  &trans                                                    &trans  &trans  &trans  &trans  &eszet  &trans
+&trans  &trans    &trans    &Uumlaut  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans    &trans    &trans          &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
 >;};
 cyrillic {
          bindings = <
-&trans  &trans    &trans            &trans    &trans                                                                               &trans             &trans  &trans     &trans   &trans
-&trans  &trans    &kp LEFT_BRACKET  &kp R     &kp X   &kp_tog LG(F10) 2                                                    &trans  &kp_tog LG(F12) 2  &trans  &kp M      &trans   &trans
-&trans  &kp Z     &kp U             &kp LBKT  &kp W   &kp O                                                                &trans  &kp D              &kp K   &kp COMMA  &kp SQT  &trans
-&trans  &kp J     &kp F             &kp B     &kp Y   &trans                                                               &trans  &kp N              &kp H   &kp T      &kp C    &trans
-&trans  &kp SEMI  &kp A             &kp E     &kp G   &trans             &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp V              &kp L   &kp Q      &kp I    &trans
-&trans  &none     &kp DOT           &trans    &trans                     &trans  &trans  &trans    &trans  &trans  &trans          &trans             &trans  &kp P      &none    &trans
+&trans  &trans    &trans            &trans    &trans                                                                                    &trans             &trans  &trans     &trans   &trans
+&trans  &trans    &kp LEFT_BRACKET  &kp R     &kp X   &kp_tog LG(F10) 2                                                    &kp LG(F11)  &kp_tog LG(F12) 2  &trans  &kp M      &trans   &trans
+&trans  &kp Z     &kp U             &kp LBKT  &kp W   &kp O                                                                &trans       &kp D              &kp K   &kp COMMA  &kp SQT  &trans
+&trans  &kp J     &kp F             &kp B     &kp Y   &trans                                                               &trans       &kp N              &kp H   &kp T      &kp C    &trans
+&trans  &kp SEMI  &kp A             &kp E     &kp G   &trans             &trans  &trans  &trans    &trans  &trans  &trans  &trans       &kp V              &kp L   &kp Q      &kp I    &trans
+&trans  &none     &kp DOT           &trans    &trans                     &trans  &trans  &trans    &trans  &trans  &trans               &trans             &trans  &kp P      &none    &trans
 >;};
 num {
          bindings = <
