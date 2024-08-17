@@ -565,6 +565,10 @@
   <action id="NextDiff">
     <keyboard-shortcut first-keystroke="shift c" />
   </action>
+  <action id="NextParameter">
+    <keyboard-shortcut first-keystroke="tab" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt e" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="shift meta alt n" />
   </action>
@@ -843,9 +847,7 @@
   <action id="UsageGrouping.Module" />
   <action id="UsageGrouping.Package" />
   <action id="UsageGrouping.UsageType" />
-  <action id="UsageView.Rerun">
-    <keyboard-shortcut first-keystroke="shift ctrl alt e" />
-  </action>
+  <action id="UsageView.Rerun" />
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Log.Refresh" />
   <action id="Vcs.Log.ShowAllAffected" />

@@ -13,6 +13,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -1447,6 +1448,14 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 		
@@ -1455,7 +1464,7 @@ keymap {
 &kp F1             &kp F2                     &kp F3             &kp F4                 &kp F5                                                                                                             &kp F6        &kp F7        &kp F8                 &kp F9                &kp F10
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &kp K                  &none         &kp LG(F10)                                                                       &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                 &none
 &kp C_MUTE         &none                      &hml_lnav LCTRL G  &hml_lswit LEFT_ALT H  &CF13         &kp W                                                                             &none              &VF19         &kp L         &hmr_lnav RIGHT_ALT B  &none                 &none
-&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &hml LALT A        &hml LSHFT I           &hml LCTRL N  &alower                                                                           &none              &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E            &hml RG(LA(RSHFT)) S  &kp RMETA
+&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &hml LALT A        &hml LSHFT I           &hml LCTRL N  &mmv MOVE_RIGHT                                                                         &mkp LCLK          &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E            &hml RG(LA(RSHFT)) S  &kp RMETA
 &none              &kp J                      &hml_lt 5 F        &kp U                  &hml_lt 4 P   &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &hmr_lt 5 Y            &XF16                 &none
 &kp LG(L)          &none                      &kp Q              &kp DOWN               &kp ENTER                  &kp SPACE      &sl 1   &win_sleep    &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &ZF17                  &none                 &none
 >;};
@@ -1532,6 +1541,14 @@ magic {
 &sys_reset  &none            &none            &none            &none            &none            &bt_2  &bootloader  &none           &none  &bootloader  &none  &none  &none   &none   &none   &none   &sys_reset
 &none       &none            &none            &none            &bt BT_CLR                        &bt_0  &bt_1        &out OUT_USB    &none  &none        &none         &none   &none   &none   &none   &bt BT_CLR_ALL
 >;
-		};
+		};mouse {
+         bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &none   &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+>;};
 	};
 };
