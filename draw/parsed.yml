@@ -37,7 +37,7 @@ layers:
   - ''
   - LEFT WIN
   - {t: O, h: Gui+Alt+ LEFT SHIFT}
-  - {t: A, s: A}
+  - {t: A, h: LEFT ALT}
   - {t: I, h: LSHFT}
   - {t: N, h: LCTRL}
   - '&mkp LCLK'
