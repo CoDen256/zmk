@@ -724,6 +724,13 @@ release-after-ms = <5000>;};
          bindings = <&kp LC(F16)>, <&kp X>;
          label = "F16X";
          mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
+         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};A_ctrl: A_ctrl {
+      compatible = "zmk,behavior-mod-morph";
+    
+         #binding-cells = <0>;
+         bindings = <&kp A>, <&kp A>;
+         label = "A_CTRL";
+         mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
          keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};
 
 		select_word_right: select_word_right {
@@ -1456,6 +1463,10 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
@@ -1464,7 +1475,7 @@ keymap {
 &kp F1             &kp F2                     &kp F3             &kp F4                 &kp F5                                                                                                             &kp F6        &kp F7        &kp F8                 &kp F9                &kp F10
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &kp K                  &none         &kp LG(F10)                                                                       &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                 &none
 &kp C_MUTE         &none                      &hml_lnav LCTRL G  &hml_lswit LEFT_ALT H  &CF13         &kp W                                                                             &none              &VF19         &kp L         &hmr_lnav RIGHT_ALT B  &none                 &none
-&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &none              &hml LSHFT I           &hml LCTRL N  &mkp LCLK                                                                         &mkp LCLK          &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E            &hml RG(LA(RSHFT)) S  &kp RMETA
+&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_ctrl            &hml LSHFT I           &hml LCTRL N  &mkp LCLK                                                                         &mkp LCLK          &hmr LCTRL T  &hmr RSHFT R  &hmr LALT E            &hml RG(LA(RSHFT)) S  &kp RMETA
 &none              &kp J                      &hml_lt 5 F        &kp U                  &hml_lt 4 P   &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &hmr_lt 5 Y            &XF16                 &none
 &kp LG(L)          &none                      &kp Q              &kp DOWN               &kp ENTER                  &kp SPACE      &sl 1   &win_sleep    &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &ZF17                  &none                 &none
 >;};
