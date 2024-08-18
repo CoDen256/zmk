@@ -25,8 +25,8 @@ layers:
   - ''
   - MUTE
   - ''
-  - {t: G, h: '&hml_lnav LCTRL', s: X}
-  - {t: H, h: '&hmr_lswit LEFT_ALT', s: V}
+  - {t: G, h: '&lnav LCTRL', s: X}
+  - {t: H, h: '&lswitcher LEFT_ALT', s: V}
   - {t: C, s: F13}
   - W
   - ''
@@ -40,8 +40,8 @@ layers:
   - {t: A, h: LEFT ALT, s: F14}
   - {t: I, h: LSHFT, s: S}
   - {t: N, h: LCTRL}
-  - '&mkp LCLK'
-  - '&mkp LCLK'
+  - ''
+  - ''
   - {t: T, h: RCTRL}
   - {t: R, h: RSHFT}
   - {t: E, h: RIGHT ALT}
@@ -72,7 +72,7 @@ layers:
   - ENTER
   - SPACE
   - {t: de, h: sticky}
-  - '&win_sleep'
+  - ''
   - ''
   - num
   - {t: LSHFT, h: sticky}
