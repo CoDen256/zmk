@@ -179,7 +179,7 @@ layers:
   - R
   - X
   - '&kp_tog LG(F10) 2'
-  - {t: ▽, type: trans}
+  - Gui+ F11
   - '&kp_tog LG(F12) 2'
   - {t: ▽, type: trans}
   - M
