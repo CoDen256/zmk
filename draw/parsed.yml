@@ -14,7 +14,7 @@ layers:
   - VOLUME DOWN
   - VOLUME UP
   - ''
-  - K
+  - {t: K, s: A}
   - ''
   - Gui+ F10
   - '&kp_tog LG(F11) 2'
@@ -25,12 +25,12 @@ layers:
   - ''
   - MUTE
   - ''
-  - {t: G, h: '&lnav LCTRL'}
-  - {t: H, h: '&lswitcher LEFT_ALT'}
+  - {t: G, h: '&hml_lnav LCTRL', s: X}
+  - {t: H, h: '&hmr_lswit LEFT_ALT', s: V}
   - {t: C, s: F13}
   - W
   - ''
-  - {t: V, s: Ctl+ F19}
+  - {t: V, s: F19}
   - L
   - {t: B, h: '&lnav RIGHT_ALT'}
   - ''
@@ -38,7 +38,7 @@ layers:
   - LEFT WIN
   - {t: O, h: Gui+Alt+ LEFT SHIFT}
   - {t: A, h: LEFT ALT, s: F14}
-  - {t: I, h: LSHFT}
+  - {t: I, h: LSHFT, s: S}
   - {t: N, h: LCTRL}
   - '&mkp LCLK'
   - '&mkp LCLK'
@@ -50,7 +50,7 @@ layers:
   - ''
   - J
   - {t: F, h: nav}
-  - U
+  - {t: U, s: Z}
   - P
   - ''
   - BACKSPACE
@@ -63,12 +63,12 @@ layers:
   - {t: M, h: num}
   - D
   - {t: Y, h: nav}
-  - {t: X, s: Ctl+ F16}
+  - {t: X, s: F16}
   - ''
   - Gui+ L
   - ''
-  - Q
-  - DOWN
+  - {t: Q, s: Y}
+  - ESCAPE
   - ENTER
   - SPACE
   - {t: de, h: sticky}
@@ -78,7 +78,7 @@ layers:
   - {t: LSHFT, h: sticky}
   - TAB
   - UP ARROW
-  - {t: Z, s: Ctl+ F17}
+  - {t: Z, s: F17}
   - ''
   - ''
   de:

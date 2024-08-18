@@ -752,6 +752,164 @@ A_key:A_key {
          mods = <(MOD_LCTL)>;
          keep-mods = <(MOD_LCTL)>;};
 
+
+         G_key:G_key {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;
+             flavor = "balanced";
+             tapping-term-ms = <280>;
+             quick-tap-ms = <175>;
+             require-prior-idle-ms = <350>;
+             bindings = <&hml_lnav>, <&Gnomods>;
+             hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+             hold-trigger-on-release;
+             label = "G_KEY";};
+
+         Gnomods:Gnomods {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp G>, <&Glctrl>;
+         label = "GNOMODS";
+         mods = <(MOD_LCTL)>;
+         keep-mods = <(MOD_LCTL)>;};
+
+         Glctrl:Glctrl {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp X>, <&kp G>;
+         label = "GLCTRL";
+         mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+         keep-mods = <(MOD_RCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT|MOD_RGUI)>;};
+
+
+
+         H_key:H_key {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;
+             flavor = "balanced";
+             tapping-term-ms = <280>;
+             quick-tap-ms = <175>;
+             require-prior-idle-ms = <350>;
+             bindings = <&hmr_lswit>, <&Hnomods>;
+             hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+             hold-trigger-on-release;
+             label = "H_KEY";};
+
+         Hnomods:Hnomods {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp H>, <&Hlctrl>;
+         label = "HNOMODS";
+         mods = <(MOD_LCTL)>;
+         keep-mods = <(MOD_LCTL)>;};
+
+         Hlctrl:Hlctrl {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp V>, <&kp H>;
+         label = "HLCTRL";
+         mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+         keep-mods = <(MOD_RCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT|MOD_RGUI)>;};
+
+
+
+         I_key:I_key {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;
+             flavor = "balanced";
+             tapping-term-ms = <280>;
+             quick-tap-ms = <175>;
+             require-prior-idle-ms = <350>;
+             bindings = <&kp>, <&Inomods>;
+             hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+             hold-trigger-on-release;
+             label = "I_KEY";};
+
+         Inomods:Inomods {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp I>, <&Ilctrl>;
+         label = "INOMODS";
+         mods = <(MOD_LCTL)>;
+         keep-mods = <(MOD_LCTL)>;};
+
+         Ilctrl:Ilctrl {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp S>, <&kp I>;
+         label = "ILCTRL";
+         mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+         keep-mods = <(MOD_RCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT|MOD_RGUI)>;};
+
+         
+
+
+         U_key:U_key {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp U>, <&Ulctrl>;
+         label = "U_KEY";
+         mods = <(MOD_LCTL)>;
+         keep-mods = <(MOD_LCTL)>;};
+
+         Ulctrl:Ulctrl {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp Z>, <&kp U>;
+         label = "ULCTRL";
+         mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+         keep-mods = <(MOD_RCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT|MOD_RGUI)>;};
+
+
+
+
+         K_key:K_key {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp K>, <&Klctrl>;
+         label = "K_KEY";
+         mods = <(MOD_LCTL)>;
+         keep-mods = <(MOD_LCTL)>;};
+
+         Klctrl:Klctrl {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp A>, <&kp K>;
+         label = "KLCTRL";
+         mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+         keep-mods = <(MOD_RCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT|MOD_RGUI)>;};
+
+
+
+
+         Q_key:Q_key {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp Q>, <&Qlctrl>;
+         label = "Q_KEY";
+         mods = <(MOD_LCTL)>;
+         keep-mods = <(MOD_LCTL)>;};
+
+         Qlctrl:Qlctrl {
+             compatible = "zmk,behavior-mod-morph";
+
+         #binding-cells = <0>;
+         bindings = <&kp Y>, <&kp Q>;
+         label = "QLCTRL";
+         mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+         keep-mods = <(MOD_RCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT|MOD_RGUI)>;};
+
 		select_word_right: select_word_right {
 			compatible = "zmk,behavior-macro";
 			wait-ms = <0>;
@@ -1528,17 +1686,23 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
 		main {
 			bindings = <
-&kp F1             &kp F2                     &kp F3             &kp F4                 &kp F5                                                                                                             &kp F6        &kp F7        &kp F8                 &kp F9                &kp F10
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &kp K                  &none         &kp LG(F10)                                                                       &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                 &none
-&kp C_MUTE         &none                      &hml_lnav LCTRL G  &hml_lswit LEFT_ALT H  &C_key        &kp W                                                                             &none              &V_key        &kp L         &hmr_lnav RIGHT_ALT B  &none                 &none
-&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &hml LSHFT I           &hml LCTRL N  &mkp LCLK                                                                         &mkp LCLK          &hmr RCTRL T  &hmr RSHFT R  &hmr RIGHT_ALT E       &hml RG(LA(RSHFT)) S  &kp RMETA
-&none              &kp J                      &hml_lt 5 F        &kp U                  &kp P         &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &hmr_lt 5 Y            &X_key                &none
-&kp LG(L)          &none                      &kp Q              &kp DOWN               &kp ENTER                  &kp SPACE      &sl 1   &win_sleep    &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &Z_key                 &none                 &none
+&kp F1             &kp F2                     &kp F3             &kp F4             &kp F5                                                                                                             &kp F6        &kp F7        &kp F8                 &kp F9                &kp F10
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &K_key             &none         &kp LG(F10)                                                                       &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                 &none
+&kp C_MUTE         &none                      &G_key LCTRL 0     &H_key LEFT_ALT 0  &C_key        &kp W                                                                             &none              &V_key        &kp L         &hmr_lnav RIGHT_ALT B  &none                 &none
+&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &I_key LSHFT 0     &hml LCTRL N  &mkp LCLK                                                                         &mkp LCLK          &hmr RCTRL T  &hmr RSHFT R  &hmr RIGHT_ALT E       &hml RG(LA(RSHFT)) S  &kp RMETA
+&none              &kp J                      &hml_lt 5 F        &U_key             &kp P         &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &hmr_lt 5 Y            &X_key                &none
+&kp LG(L)          &none                      &Q_key             &kp ESCAPE         &kp ENTER                  &kp SPACE      &sl 1   &win_sleep    &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &Z_key                 &none                 &none
 >;};
 de {
          bindings = <
