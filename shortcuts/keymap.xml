@@ -207,7 +207,7 @@
   </action>
   <action id="EditPropertyValue" />
   <action id="EditSource">
-    <keyboard-shortcut first-keystroke="shift meta d" />
+    <keyboard-shortcut first-keystroke="alt c" />
   </action>
   <action id="Editor Redo">
     <keyboard-shortcut first-keystroke="ctrl y" />
