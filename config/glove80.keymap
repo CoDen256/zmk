@@ -1200,7 +1200,7 @@ A_key:A_key {
          tapping-term-ms = <280>;
          quick-tap-ms = <175>;
          require-prior-idle-ms = <350>;
-         bindings = <&kp>, <&kp>;
+         bindings = <&kp>, <&Snomods>;
          hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>;
          hold-trigger-on-release;
          label = "S_KEY";};Snomods: Snomods {
@@ -1859,17 +1859,19 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
 		main {
 			bindings = <
-&kp F1             &kp F2                     &kp F3             &kp F4             &kp F5                                                                                                             &kp F6        &kp F7        &kp F8                 &kp F9                &kp F10
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &K_key             &none         &kp LG(F10)                                                                       &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                 &none
-&kp C_MUTE         &none                      &G_key LCTRL 0     &H_key LEFT_ALT 0  &C_key        &kp W                                                                             &none              &V_key        &kp L         &hmr_lnav RIGHT_ALT B  &none                 &none
-&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &I_key LSHFT 0     &hml LCTRL N  &kp F9                                                                            &none              &hmr RCTRL T  &hmr RSHFT R  &hmr RIGHT_ALT E       &hml RG(LA(RSHFT)) S  &kp RMETA
-&mo 4              &kp J                      &hml_lt 5 F        &U_key             &kp P         &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &Y_key 5 0             &X_key                &none
-&kp LG(L)          &none                      &Q_key             &kp ESCAPE         &kp ENTER                  &kp SPACE      &sl 1   &none         &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &Z_key                 &none                 &none
+&kp F1             &kp F2                     &kp F3             &kp F4             &kp F5                                                                                                             &kp F6        &kp F7        &kp F8                 &kp F9                  &kp F10
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &K_key             &none         &kp LG(F10)                                                                       &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                   &none
+&kp C_MUTE         &none                      &G_key LCTRL 0     &H_key LEFT_ALT 0  &C_key        &kp W                                                                             &none              &V_key        &kp L         &hmr_lnav RIGHT_ALT B  &none                   &none
+&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &I_key LSHFT 0     &hml LCTRL N  &kp F9                                                                            &none              &hmr RCTRL T  &hmr RSHFT R  &hmr RIGHT_ALT E       &S_key RG(LA(RSHFT)) S  &kp RMETA
+&mo 4              &kp J                      &hml_lt 5 F        &U_key             &kp P         &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &Y_key 5 0             &X_key                  &none
+&kp LG(L)          &none                      &Q_key             &kp ESCAPE         &kp ENTER                  &kp SPACE      &sl 1   &none         &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &Z_key                 &none                   &none
 >;};
 de {
          bindings = <

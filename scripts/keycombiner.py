@@ -4,9 +4,11 @@ import xml.etree.ElementTree as ET
 
 reserved_map = {
     "ctrl+f13": "ctrl+c",
-    "ctrl+f19": "ctrl+v",
+    "ctrl+f14": "ctrl+a",
     "ctrl+f16": "ctrl+x",
     "ctrl+f17": "ctrl+z",
+    "ctrl+f18": "ctrl+s",
+    "ctrl+f19": "ctrl+v",
 }
 
 reserved = [
