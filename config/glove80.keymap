@@ -919,32 +919,9 @@ A_key:A_key {
          bindings = <&kp F13>, <&kp Y>;
          label = "YLCTRL";
          mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI|MOD_RCTL)>;
-         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};B_key:B_key {
-      compatible = "zmk,behavior-hold-tap";
-    
-         #binding-cells = <2>;
-         flavor = "balanced";
-         tapping-term-ms = <280>;
-         quick-tap-ms = <175>;
-         require-prior-idle-ms = <350>;
-         bindings = <&lnav>, <&Ynomods>;
-         hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
-         hold-trigger-on-release;
-         label = "B_KEY";};Bnomods: Bnomods {
-      compatible = "zmk,behavior-mod-morph";
-    
-         #binding-cells = <0>;
-         bindings = <&kp B>, <&Blctrl>;
-         label = "BNOMODS";
-         mods = <(MOD_LCTL)>;
-         keep-mods = <(MOD_LCTL)>;};Blctrl: Blctrl {
-      compatible = "zmk,behavior-mod-morph";
-    
-         #binding-cells = <0>;
-         bindings = <&kp F13>, <&kp B>;
-         label = "BLCTRL";
-         mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI|MOD_RCTL)>;
-         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};Y_key: Y_key {
+         keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};
+
+         Y_key: Y_key {
       compatible = "zmk,behavior-hold-tap";
     
          #binding-cells = <2>;
@@ -955,6 +932,8 @@ A_key:A_key {
          bindings = <&mo>, <&Ynomods>;
          hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>;
          hold-trigger-on-release;};
+
+
 
 		select_word_right: select_word_right {
 			compatible = "zmk,behavior-macro";
@@ -1207,7 +1186,7 @@ A_key:A_key {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
-         bindings = <&kp S>, <&Ylctrl>;
+         bindings = <&kp S>, <&Slctrl>;
          label = "SNOMODS";
          mods = <(MOD_LCTL)>;
          keep-mods = <(MOD_LCTL)>;};Slctrl: Slctrl {
@@ -1479,6 +1458,10 @@ A_key:A_key {
 
 behaviors {};
 
+
+behaviors {};
+
+behaviors {};
 
 behaviors {};
 
