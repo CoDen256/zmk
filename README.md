@@ -1,2 +1,1 @@
-<img src="./draw/keymap-parsed.svg">
-stuaffainain
+<img src="./draw/keymap.svg">

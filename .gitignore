@@ -1,3 +1,11 @@
 *~
 *.uf2
 /scripts/pass
+/scripts/venv
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/.gitignore
+/.idea/csv-editor.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/zmk-config.iml
