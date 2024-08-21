@@ -202,9 +202,9 @@ release-after-ms = <5000>;};
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
-			tapping-term-ms = <280>;
+			tapping-term-ms = <380>;
 			quick-tap-ms = <175>;
-			require-prior-idle-ms = <350>;
+			require-prior-idle-ms = <150>;
 			bindings = <&kp>, <&kp>;
 
 			hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
@@ -1498,6 +1498,8 @@ A_key:A_key {
 
 behaviors {};
 
+
+behaviors {};
 
 behaviors {};
 
