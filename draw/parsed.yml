@@ -13,18 +13,18 @@ layers:
   - F10
   - VOLUME DOWN
   - VOLUME UP
-  - ''
+  - ESCAPE
   - {t: K, s: A}
-  - ''
+  - ESCAPE
   - Gui+ F10
-  - '&kp_tog LG(F11) 2'
+  - Gui+ F11
   - Gui+ F12
   - ''
   - ''
   - ''
   - ''
   - MUTE
-  - ''
+  - ^
   - {t: G, h: '&lnav LCTRL', s: X}
   - {t: H, h: '&lswitcher LEFT_ALT', s: V}
   - {t: C, s: F13}
@@ -33,28 +33,28 @@ layers:
   - {t: V, s: F19}
   - L
   - {t: B, h: '&lnav RIGHT_ALT'}
-  - ''
+  - $
   - ''
   - LEFT WIN
   - {t: O, h: Gui+Alt+ LEFT SHIFT}
   - {t: A, h: LEFT ALT, s: F14}
   - {t: I, h: LSHFT, s: S}
   - {t: N, h: LCTRL}
-  - ''
+  - F9
   - ''
   - {t: T, h: RCTRL}
   - {t: R, h: RSHFT}
   - {t: E, h: RIGHT ALT}
-  - {t: S, h: Gui+Alt+ RSHFT}
+  - {t: S, h: Gui+Alt+ RSHFT, s: F18}
   - RMETA
-  - ''
+  - fun
   - J
   - {t: F, h: nav}
   - {t: U, s: Z}
   - P
   - ''
   - BACKSPACE
-  - {t: fun, h: toggle}
+  - num
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: nav, h: toggle}
@@ -62,22 +62,22 @@ layers:
   - ''
   - {t: M, h: num}
   - D
-  - {t: Y, h: nav}
+  - {t: Y, h: nav, s: F13}
   - {t: X, s: F16}
   - ''
   - Gui+ L
   - ''
   - {t: Q, s: Y}
-  - ESCAPE
+  - TAB
   - ENTER
   - SPACE
   - {t: de, h: sticky}
   - ''
   - ''
-  - num
+  - {t: mouse, h: toggle}
   - {t: LSHFT, h: sticky}
+  - ENTER
   - TAB
-  - UP ARROW
   - {t: Z, s: F17}
   - ''
   - ''
@@ -162,87 +162,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  cyrillic:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '['
-  - R
-  - X
-  - '&kp_tog LG(F10) 2'
-  - Gui+ F11
-  - '&kp_tog LG(F12) 2'
-  - {t: ▽, type: trans}
-  - M
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Z
-  - U
-  - '['
-  - W
-  - O
-  - {t: ▽, type: trans}
-  - D
-  - K
-  - ','
-  - ''''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - J
-  - F
-  - B
-  - Y
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - N
-  - H
-  - T
-  - C
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ;
-  - A
-  - E
-  - G
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - V
-  - L
-  - Q
-  - I
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - .
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - P
-  - ''
-  - {t: ▽, type: trans}
   num:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -268,9 +187,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - KP 7
-  - KP 8
-  - KP 9
+  - '7'
+  - '8'
+  - '9'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '%'
@@ -279,10 +198,10 @@ layers:
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - KP 0
-  - KP 4
-  - KP 5
-  - KP 6
+  - '0'
+  - '4'
+  - '5'
+  - '6'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: (, h: LCTRL}
@@ -292,18 +211,18 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - KP 1
-  - KP 2
-  - KP 3
+  - '1'
+  - '2'
+  - '3'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: +, type: held}
+  - +
   - '-'
   - ','
   - {t: ▽, type: trans}
@@ -324,87 +243,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  fun:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F10
-  - F11
-  - F12
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - Ctl+ Y
-  - Ctl+ Z
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - F7
-  - F8
-  - F9
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - Ctl+ X
-  - Ctl+ V
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - LCTRL
-  - RSHFT
-  - RIGHT ALT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - Ctl+ C
-  - Ctl+ S
-  - ''
-  - ''
-  - Ctl+Alt+ DELETE
-  - Gui+Ctl+Sft+ A
-  - Gui+Sft+Ctl+ Q
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Gui+ X
-  - {t: ▽, type: trans}
-  - F1
-  - F2
-  - F3
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - Ctl+ F
-  - Ctl+ A
-  - ''
-  - F9
-  - Sft+ F6
-  - ''
-  - ''
-  - ''
-  - Gui+ B
-  - F4
-  - F5
-  - F6
-  - ''
-  - ''
   nav:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -486,6 +324,87 @@ layers:
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  fun:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F10
+  - F11
+  - F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - Ctl+ Y
+  - Ctl+ Z
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - F7
+  - F8
+  - F9
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - Ctl+ X
+  - Ctl+ V
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - LCTRL
+  - RSHFT
+  - RIGHT ALT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - ''
+  - Ctl+ C
+  - Ctl+ S
+  - ''
+  - ''
+  - Ctl+Alt+ DELETE
+  - Gui+Ctl+Sft+ A
+  - Gui+Sft+Ctl+ Q
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gui+ X
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - Ctl+ F
+  - Ctl+ A
+  - ''
+  - F9
+  - Sft+ F6
+  - ''
+  - ''
+  - ''
+  - Gui+ B
+  - F4
+  - F5
+  - F6
+  - ''
+  - ''
   switcher:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -648,6 +567,87 @@ layers:
   - '['
   - ']'
   - PG DN
+  mouse:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F17
+  - F18
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F13
+  - F14
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F15
+  - F16
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F19
+  - F20
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: mouse, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   magic:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -660,7 +660,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: main, h: toggle}
-  - {t: cyrillic, h: toggle}
+  - {t: main, h: toggle}
   - {t: num, h: toggle}
   - {t: fun, h: toggle}
   - {t: nav, h: toggle}
@@ -729,180 +729,99 @@ layers:
   - ''
   - ''
   - BT CLR ALL
-  mouse:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
 combos:
 - p: [41, 42]
-  k: {t: LEFT SHIFT, h: sticky}
-- p: [42, 43]
-  k: ''
-- p: [37, 38]
-  k: {t: LEFT SHIFT, h: sticky}
-- p: [37, 36]
-  k: ''
-- p: [59, 60]
-  k: Ctl+ RIGHT
-- p: [60, 61]
-  k: RIGHT
-- p: [49, 50]
-  k: Ctl+ LEFT ARROW
-- p: [49, 48]
-  k: LEFT ARROW
-- p: [30, 29]
-  k: {t: '&and_short', s: '&'}
-- p: [25, 26]
-  k: {t: '&or_short', s: '|'}
-- p: [31, 30]
-  k: '='
-- p: [25, 24]
-  k: ESCAPE
-- p: [59, 42]
   k: ','
-- p: [41, 60]
+- p: [42, 43]
   k: ;
-- p: [42, 61]
-  k: '}'
-- p: [60, 43]
-  k: )
-- p: [41, 43]
-  k: KP PLUS
-- p: [41, 30]
-  k: /
-- p: [30, 43]
-  k: '*'
-- p: [29, 42]
-  k: ']'
-- p: [42, 31]
-  k: '>'
-- p: [37, 50]
+- p: [37, 38]
   k: .
-- p: [38, 49]
+- p: [37, 36]
   k: ':'
-- p: [49, 36]
-  k: (
-- p: [48, 37]
-  k: '{'
-- p: [36, 38]
-  k: KP SUBTRACT
-- p: [38, 25]
-  k: \
-- p: [37, 26]
-  k: '['
-- p: [37, 24]
-  k: <
-- p: [36, 25]
-  k: '"'
-- p: [59, 61]
-  k: END
-- p: [48, 50]
-  k: HOME
-- p: [29, 31]
-  k: '&neq_short'
-- p: [26, 24]
-  k: _
-- p: [29, 43]
-  k: {t: '#', s: '&comment'}
-- p: [31, 41]
-  k: '&eq_short'
-- p: [41, 61]
-  k: $
-- p: [59, 43]
-  k: ^
-- p: [38, 24]
-  k: '!'
-- p: [36, 26]
+- p: [59, 60]
+  k: '&curly'
+- p: [60, 61]
+  k: '&brackets'
+- p: [49, 50]
+  k: '&paren'
+- p: [49, 48]
+  k: '&angle'
+- p: [30, 29]
   k: ''''
-- p: [50, 36]
+- p: [25, 26]
+  k: '&or_short'
+- p: [31, 30]
+  k: '"'
+- p: [25, 24]
+  k: '&and_short'
+- p: [59, 42]
   k: '&func_arrow'
-- p: [48, 38]
+- p: [41, 60]
+  k: ''
+- p: [42, 61]
+  k: '@'
+- p: [60, 43]
+  k: ''
+- p: [41, 43]
   k: '?'
-- p: [44, 43]
-  k: num
-- p: [44, 41]
+- p: [41, 30]
+  k: '`'
+- p: [30, 43]
+  k: '&code_block'
+- p: [29, 42]
+  k: ^
+- p: [42, 31]
+  k: $
+- p: [37, 50]
+  k: '='
+- p: [38, 49]
+  k: '*'
+- p: [49, 36]
+  k: +
+- p: [48, 37]
+  k: '&neq_short'
+- p: [36, 38]
+  k: '!'
+- p: [38, 25]
+  k: '-'
+- p: [37, 26]
+  k: '&eq_short'
+- p: [37, 24]
+  k: '&backslash'
+- p: [36, 25]
+  k: /
+- p: [59, 61]
+  k: ''
+- p: [48, 50]
+  k: _
+- p: [29, 31]
   k: '~'
+- p: [26, 24]
+  k: '#'
+- p: [29, 43]
+  k: ''
+- p: [31, 41]
+  k: ''
+- p: [41, 61]
+  k: ''
+- p: [59, 43]
+  k: ''
+- p: [38, 24]
+  k: '%'
+- p: [36, 26]
+  k: '&slash'
+- p: [50, 36]
+  k: ''
+- p: [48, 38]
+  k: ''
+- p: [44, 43]
+  k: ''
+- p: [44, 41]
+  k: ''
 - p: [36, 35]
   k: ''
 - p: [35, 38]
-  k: '`'
+  k: ''
 - p: [59, 76]
   k: '&delete_word'
 - p: [75, 60]
@@ -912,17 +831,17 @@ combos:
 - p: [67, 50]
   k: {t: '&select_word_right', s: '&select_word_left'}
 - p: [76, 75]
-  k: Ctl+ DELETE
+  k: ''
 - p: [77, 76]
-  k: PAGE UP
+  k: ''
 - p: [68, 67]
-  k: Ctl+ BACKSPACE
+  k: ''
 - p: [67, 66]
-  k: PAGE DOWN
+  k: ''
 - p: [41, 38]
-  k: '&code_block'
+  k: ''
 - p: [37, 42]
-  k: '@'
+  k: ''
 - p: [50, 59]
   k: '&select_line'
 - p: [49, 60]
@@ -930,6 +849,6 @@ combos:
 - p: [48, 61]
   k: '&duplicate_line'
 - p: [26, 13]
-  k: '|'
+  k: ''
 - p: [29, 18]
-  k: '&'
+  k: ''

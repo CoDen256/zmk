@@ -2,6 +2,7 @@ import yaml
 import subprocess
 import keymap_drawer
 
+
 def load(file):
     with open(file, 'r', encoding='utf-8') as f:
         return yaml.safe_load(f)
@@ -25,14 +26,17 @@ def run(base):
     out_origin = f"{base}/draw/keymap.svg"
     
     print("[drawer] Parsing")
-    subprocess.call(f"keymap.exe -c {config} parse -z {keymap} -o {parsed}")
-
+    subprocess.call(f"keymap.exe -c {config} parse -z {keymap} -o {parsed}",
+                    creationflags=subprocess.CREATE_NO_WINDOW)
 
     origin = load(parsed)
     remove_keys(origin)
     save(reduced, origin)
     print("[drawer] Drawing")
 
-    subprocess.call(f"keymap.exe -c {config} draw {parsed} -o {out_origin}")
-    subprocess.call(f"keymap.exe -c {config} draw {reduced} -o {out_reduced}")
+
+    subprocess.call(f"keymap.exe -c {config} draw {parsed} -o {out_origin}",
+                    creationflags=subprocess.CREATE_NO_WINDOW)
+    subprocess.call(f"keymap.exe -c {config} draw {reduced} -o {out_reduced}",
+                    creationflags=subprocess.CREATE_NO_WINDOW)
     print("[drawer] Done")
