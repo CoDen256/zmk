@@ -1170,7 +1170,47 @@ A_key:A_key {
          tap-ms = <100>;
          #binding-cells = <0>;
          bindings = <&kp SLASH &kp SLASH>;
-         label = "SLASH";};
+         label = "SLASH";};mleft: mleft {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&kp LS(F13)>;
+         label = "MLEFT";};mright: mright {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&kp LS(F14)>;
+         label = "MRIGHT";};mup: mup {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&kp LS(F15)>;
+         label = "MUP";};mdown: mdown {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&kp LS(F16)>;
+         label = "MDOWN";};mlclick: mlclick {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&kp LS(F17)>;
+         label = "MLCLICK";};mrclick: mrclick {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&kp LS(F18)>;
+         label = "MRCLICK";};mscrollup: mscrollup {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&kp LS(F19)>;
+         label = "MSCROLLUP";};mscrolldown: mscrolldown {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&kp LS(F20)>;
+         label = "MSCROLLDOWN";};
 	};S_key: S_key {
       compatible = "zmk,behavior-hold-tap";
     
@@ -1844,17 +1884,25 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
 		main {
 			bindings = <
-&kp F1             &kp F2                     &kp F3             &kp F4             &kp F5                                                                                                             &kp F6        &kp F7        &kp F8                 &kp F9                  &kp F10
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &K_key             &none         &kp LG(F10)                                                                       &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                   &none
-&kp C_MUTE         &none                      &G_key LCTRL 0     &H_key LEFT_ALT 0  &C_key        &kp W                                                                             &none              &V_key        &kp L         &hmr_lnav RIGHT_ALT B  &none                   &none
-&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &I_key LSHFT 0     &hml LCTRL N  &kp F9                                                                            &none              &hmr RCTRL T  &hmr RSHFT R  &hmr RIGHT_ALT E       &S_key RG(LA(RSHFT)) S  &kp RMETA
-&mo 4              &kp J                      &hml_lt 5 F        &U_key             &kp P         &none        &kp BACKSPACE  &tog 4  &magic 8 0    &magic 8 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &Y_key 5 0             &X_key                  &none
-&kp LG(L)          &none                      &Q_key             &kp ESCAPE         &kp ENTER                  &kp SPACE      &sl 1   &none         &none       &mo 3   &sk LSHFT                      &kp TAB       &kp UP_ARROW  &Z_key                 &none                   &none
+&kp F1             &kp F2                     &kp F3             &kp F4             &kp F5                                                                                                            &kp F6        &kp F7        &kp F8                 &kp F9                  &kp F10
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &none              &K_key             &none         &kp LG(F10)                                                                      &kp_tog LG(F11) 2  &kp LG(F12)   &none         &none                  &none                   &none
+&kp C_MUTE         &none                      &G_key LCTRL 0     &H_key LEFT_ALT 0  &C_key        &kp W                                                                            &none              &V_key        &kp L         &hmr_lnav RIGHT_ALT B  &none                   &none
+&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &I_key LSHFT 0     &hml LCTRL N  &kp F9                                                                           &none              &hmr RCTRL T  &hmr RSHFT R  &hmr RIGHT_ALT E       &S_key RG(LA(RSHFT)) S  &kp RMETA
+&mo 4              &kp J                      &hml_lt 5 F        &U_key             &kp P         &none        &kp BACKSPACE  &mo 3  &magic 9 0    &magic 9 0  &tog 5  &kp DELETE  &none              &hmr_lt 3 M   &kp D         &Y_key 5 0             &X_key                  &none
+&kp LG(L)          &none                      &Q_key             &kp ESCAPE         &kp ENTER                  &kp SPACE      &sl 1  &none         &none       &tog 8  &sk LSHFT                      &kp TAB       &kp UP_ARROW  &Z_key                 &none                   &none
 >;};
 de {
          bindings = <
@@ -1920,6 +1968,15 @@ qwerty {
 &kp GRAVE  &kp Z     &kp X    &kp C     &kp V      &kp B   &kp LSHFT  &kp LCTRL  &trans      &trans    &kp LCTRL  &kp LSHFT  &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
 &trans     &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp SPACE  &kp ENTER  &kp LALT    &kp RALT  &kp DEL    &kp BSPC           &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
 >;};
+mouse {
+         bindings = <
+&trans  &trans  &trans  &trans      &trans                                                                          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans      &trans        &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &mlclick    &mrclick      &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &mleft      &mright       &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &mup        &mdown        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &mscrollup  &mscrolldown          &trans  &trans  &trans    &trans  &tog 8  &trans          &trans  &trans  &trans  &trans  &trans
+>;};
 magic {
 			bindings = <
 &trans      &trans           &trans           &trans           &trans                                                                                                  &trans  &trans  &trans  &trans  &trans
@@ -1929,14 +1986,6 @@ magic {
 &sys_reset  &none            &none            &none            &none            &none            &bt_2  &bootloader  &none           &none  &bootloader  &none  &none  &none   &none   &none   &none   &sys_reset
 &none       &none            &none            &none            &bt BT_CLR                        &bt_0  &bt_1        &out OUT_USB    &none  &none        &none         &none   &none   &none   &none   &bt BT_CLR_ALL
 >;
-		};mouse {
-         bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &none   &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
->;};
+		};
 	};
 };
