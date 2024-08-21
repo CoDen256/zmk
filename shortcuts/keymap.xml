@@ -709,6 +709,9 @@
     <keyboard-shortcut first-keystroke="alt delete" />
   </action>
   <action id="SaveAsTemplate" />
+  <action id="ScrollPane-unitScrollLeft">
+    <keyboard-shortcut first-keystroke="alt left" />
+  </action>
   <action id="SearchEverywhere">
     <keyboard-shortcut first-keystroke="alt g" />
   </action>
