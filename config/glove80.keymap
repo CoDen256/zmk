@@ -729,8 +729,7 @@ A_key:A_key {
          #binding-cells = <0>;
          bindings = <&Anomods2>, <&Arctrl>;
          label = "ANOMODS";
-         mods = <(MOD_RCTL)>;
-         keep-mods = <(MOD_RCTL)>;};Arctrl:Arctrl {
+         mods = <(MOD_RCTL)>;};Arctrl:Arctrl {
       compatible = "zmk,behavior-mod-morph";
     
          #binding-cells = <0>;
@@ -750,7 +749,7 @@ A_key:A_key {
          #binding-cells = <0>;
          bindings = <&kp A>, <&Alctrl>;
          label = "ANOMODS2";
-         mods = <(MOD_LCTL)>;
+         mods = <(MOD_LCTL|MOD_RCTL)>;
          keep-mods = <(MOD_LCTL)>;};
 
 
@@ -1498,6 +1497,8 @@ A_key:A_key {
 
 behaviors {};
 
+
+behaviors {};
 
 behaviors {};
 
