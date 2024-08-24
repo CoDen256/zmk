@@ -52,7 +52,7 @@ layers:
   - {t: F, h: nav}
   - {t: U, s: Z}
   - P
-  - ''
+  - {t: C, s: Ctl+ F14}
   - BACKSPACE
   - num
   - {t: '&rgb_ug_status_macro', h: magic}

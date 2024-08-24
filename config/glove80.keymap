@@ -711,7 +711,43 @@ Vlctrl:Vlctrl {
          label = "XLCTRL";
          mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI|MOD_RCTL)>;
          keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};
-         
+
+C_link_lshift:C_link_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp C>, <&C_sink_lshift>;
+label = "C_LINK_LSHIFT";
+mods = <(MOD_LSFT)>;
+
+};
+
+C_link_rctrl:C_link_rctrl{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&C_link_lshift>, <&C_sink_rctrl>;
+label = "C_LINK_RCTRL";
+mods = <(MOD_RCTL)>;
+
+};
+
+C_sink_lshift:C_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LC(Z)>, <&kp C>;
+label = "C_SINK_LSHIFT";
+mods = <(MOD_RGUI|MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_LGUI)>;
+keep-mods = <(MOD_RGUI|MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_LGUI)>;
+};
+
+C_sink_rctrl:C_sink_rctrl{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp RC(F14)>, <&kp C>;
+label = "C_SINK_RCTRL";
+mods = <(MOD_RGUI|MOD_LCTL|MOD_LALT|MOD_RSFT|MOD_RALT|MOD_LGUI|MOD_LSFT)>;
+keep-mods = <(MOD_RGUI|MOD_LCTL|MOD_LALT|MOD_RSFT|MOD_RALT|MOD_LGUI|MOD_LSFT)>;
+};
+
 A_key:A_key {
       compatible = "zmk,behavior-hold-tap";
     
@@ -1913,17 +1949,19 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
 		main {
 			bindings = <
-&kp F1             &kp F2                     &kp F3             &kp F4             &kp F5                                                                                                      &kp F6        &kp F7        &kp F8                 &kp F9                  &kp F10
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &kp ESCAPE         &K_key             &kp ESCAPE    &kp LG(F10)                                                                      &kp LG(F11)  &kp LG(F12)   &none         &none                  &none                   &none
-&kp C_MUTE         &kp CARET                  &G_key LCTRL 0     &H_key LEFT_ALT 0  &C_key        &kp W                                                                            &none        &V_key        &kp L         &hmr_lnav RIGHT_ALT B  &kp DOLLAR              &none
-&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &I_key LSHFT 0     &hml LCTRL N  &kp F9                                                                           &none        &hmr RCTRL T  &hmr RSHFT R  &hmr RIGHT_ALT E       &S_key RG(LA(RSHFT)) S  &kp RMETA
-&mo 4              &kp J                      &hml_lt 3 F        &U_key             &kp P         &none        &kp BACKSPACE  &mo 2  &magic 8 0    &magic 8 0  &tog 3  &kp DELETE  &none        &hmr_lt 2 M   &kp D         &Y_key 3 0             &X_key                  &none
-&kp LG(L)          &none                      &Q_key             &kp TAB            &kp ENTER                  &kp SPACE      &sl 1  &none         &none       &tog 7  &sk LSHFT                &kp ENTER     &kp TAB       &Z_key                 &none                   &none
+&kp F1             &kp F2                     &kp F3             &kp F4             &kp F5                                                                                                        &kp F6        &kp F7        &kp F8                 &kp F9                  &kp F10
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &kp ESCAPE         &K_key             &kp ESCAPE    &kp LG(F10)                                                                        &kp LG(F11)  &kp LG(F12)   &none         &none                  &none                   &none
+&kp C_MUTE         &kp CARET                  &G_key LCTRL 0     &H_key LEFT_ALT 0  &C_key        &kp W                                                                              &none        &V_key        &kp L         &hmr_lnav RIGHT_ALT B  &kp DOLLAR              &none
+&kp LEFT_WIN       &hml LG(LA(LEFT_SHIFT)) O  &A_key LEFT_ALT A  &I_key LSHFT 0     &hml LCTRL N  &kp F9                                                                             &none        &hmr RCTRL T  &hmr RSHFT R  &hmr RIGHT_ALT E       &S_key RG(LA(RSHFT)) S  &kp RMETA
+&mo 4              &kp J                      &hml_lt 3 F        &U_key             &kp P         &C_link_rctrl  &kp BACKSPACE  &mo 2  &magic 8 0    &magic 8 0  &tog 3  &kp DELETE  &none        &hmr_lt 2 M   &kp D         &Y_key 3 0             &X_key                  &none
+&kp LG(L)          &none                      &Q_key             &kp TAB            &kp ENTER                    &kp SPACE      &sl 1  &none         &none       &tog 7  &sk LSHFT                &kp ENTER     &kp TAB       &Z_key                 &none                   &none
 >;};
 de {
          bindings = <
