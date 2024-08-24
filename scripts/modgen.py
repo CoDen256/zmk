@@ -1,3 +1,4 @@
+import yaml
 
 
 modmap = {
@@ -75,11 +76,25 @@ class Map:
             c += i.compile() + "\n"
         return prev, c
 
-a = Map("C", {"lshift" : "LC(Z)", "rctrl": "RC(F14)"})
-r = a.generate()
-(prev,gen) = a.compile()
-print(gen)
-print(prev)
+# Function to parse the YAML content and create the list of Map objects
+def parse_yaml_to_maps(file):
+    # Parse the YAML content
+    with open(file, "r") as f:
+        data = yaml.safe_load(f.read())
+
+    # Create the list of Map objects
+    maps = [Map(name, mappings) for name, mappings in data['map'].items()]
+
+    return maps
+
+# Example YAML content
+file = "C:\\dev\\zmk-config\\shortcuts\\mods.yaml"
+all = parse_yaml_to_maps(file)
+for a in all:
+    r = a.generate()
+    (prev,gen) = a.compile()
+    print(gen)
+    print(prev)
 
 mapp = {
     "" : "X",

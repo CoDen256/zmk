@@ -1,0 +1,10 @@
+map:
+  C:
+    rctrl: "RC(F14)"
+    lshift: "LC(Z)"
+  H:
+    rctrl: "RC(F14)"
+    lshift: "LC(Z)"
+  G:
+    rctrl: "RC(F14)"
+    lshift: "LC(Z)"

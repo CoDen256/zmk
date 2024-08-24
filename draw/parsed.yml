@@ -41,7 +41,7 @@ layers:
   - {t: I, h: LSHFT, s: S}
   - {t: N, h: LCTRL}
   - F9
-  - ''
+  - {t: H, s: Ctl+ F14}
   - {t: T, h: RCTRL}
   - {t: R, h: RSHFT}
   - {t: E, h: RIGHT ALT}
@@ -59,7 +59,7 @@ layers:
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: nav, h: toggle}
   - DELETE
-  - ''
+  - {t: H, s: Ctl+ Z}
   - {t: M, h: num}
   - D
   - {t: Y, h: nav, s: F13}
