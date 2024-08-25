@@ -6,7 +6,6 @@ map:
   H:
     config:
       tapping_term: 380
-      quick_tap: 300
       prior_idle: 200
     hold: "&lm"
     rctrl: "RC(F14)"

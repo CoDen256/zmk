@@ -17,6 +17,17 @@ positions = {
     "right" : "27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74"
 }
 
+
+keys_pos = {
+    "left" : "kghcwoainjfupq",
+    "right" : "vlbtresmdyxz"
+}
+
+key_to_pos = {}
+for (pos, keys) in keys_pos.items():
+    for k in keys:
+        key_to_pos[k.upper()] = positions[pos]
+
 class Config:
     def __init__(self, tapping_term, quick_tap, prior_idle):
         self.tapping_term = tapping_term
@@ -24,11 +35,11 @@ class Config:
         self.prior_idle = prior_idle
 
 class HoldTap:
-    def __init__(self, config, tap, hold, pos):
+    def __init__(self, config, tap, hold):
         self.tap = tap
         self.hold = hold
         self.config = config
-        self.pos = pos
+        self.pos = key_to_pos[tap.default]
     def compile(self):
         root, generated = self.tap.compile()
         label = self.tap.default + "_key"
@@ -45,7 +56,7 @@ class HoldTap:
         quick-tap-ms = <{self.config.quick_tap}>;
         require-prior-idle-ms = <{self.config.prior_idle}>;
         bindings = <{hold}>, <{tap}>;
-        hold-trigger-key-positions = <{positions[position]}>;
+        hold-trigger-key-positions = <{position}>;
         hold-trigger-on-release;
         label = "{name.upper()}";}};
 '''
@@ -122,9 +133,18 @@ def parse(file):
         data = yaml.safe_load(f.read())
 
     # Create the list of Map objects
-    maps = [Map(name, mappings) for name, mappings in data['map'].items()]
+    mapdata = data['map']
+    configdata = data['config']
+    def_config = Config(**configdata)
+    maps = []
+    for (k, v) in mapdata.items():
+        cfg = def_config if "config" not in v else Config(**(configdata | v["config"]))
+        hold = None if "hold" not in v else v["hold"]
+        v.pop('config', None)
+        v.pop('hold', None)
+        maps.append(HoldTap(cfg, Map(k, v), hold))
 
-    return maps
+    return def_config,maps
 
 def update(target, content):
     print(f"[modder] Start writing to {target}")
@@ -162,4 +182,6 @@ def run(origin, target):
     for m in mappings:
         content += m.compile()[1] + "\n"
     update(target, content)
-run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
+# run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
+
+a = parse("C:\\dev\\zmk-config\\shortcuts\\mods.yaml")
