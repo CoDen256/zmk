@@ -1,4 +1,7 @@
 <keymap version="1" name="new" parent="Mnemonic Keymap">
+  <action id="$Paste">
+    <keyboard-shortcut first-keystroke="ctrl v" />
+  </action>
   <action id="$Redo">
     <keyboard-shortcut first-keystroke="ctrl y" />
   </action>
@@ -75,10 +78,10 @@
   <action id="ChangesView.GroupBy.Module" />
   <action id="ChangesView.Move" />
   <action id="ChangesView.Revert">
-    <keyboard-shortcut first-keystroke="shift ctrl alt z" />
+    <keyboard-shortcut first-keystroke="shift ctrl o" />
   </action>
   <action id="ChangesView.RevertFiles">
-    <keyboard-shortcut first-keystroke="shift alt z" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt o" />
   </action>
   <action id="CheckinProject">
     <keyboard-shortcut first-keystroke="alt m" />
@@ -124,7 +127,7 @@
   <action id="Compare.SameVersion" />
   <action id="CompareClipboardWithSelection" />
   <action id="CompareTwoFiles">
-    <keyboard-shortcut first-keystroke="shift ctrl z" />
+    <keyboard-shortcut first-keystroke="ctrl alt h" />
   </action>
   <action id="Compile" />
   <action id="CompileDirty" />
@@ -148,10 +151,13 @@
   <action id="ContextHelp" />
   <action id="CopyAsPlainText" />
   <action id="CopyElement">
-    <keyboard-shortcut first-keystroke="shift ctrl alt o" />
+    <keyboard-shortcut first-keystroke="ctrl alt l" />
   </action>
   <action id="CopyFileName">
-    <keyboard-shortcut first-keystroke="shift ctrl alt c" />
+    <keyboard-shortcut first-keystroke="shift f14" />
+  </action>
+  <action id="CopyPaths">
+    <keyboard-shortcut first-keystroke="ctrl f14" />
   </action>
   <action id="CopyReferencePopupGroup" />
   <action id="Coverage" />
@@ -278,7 +284,7 @@
   </action>
   <action id="EditorStartNewLine" />
   <action id="EditorSwapSelectionBoundaries">
-    <keyboard-shortcut first-keystroke="shift f6" />
+    <keyboard-shortcut first-keystroke="ctrl q" />
   </action>
   <action id="EditorToggleCase">
     <keyboard-shortcut first-keystroke="ctrl f6" />
@@ -366,6 +372,9 @@
   </action>
   <action id="Generate">
     <keyboard-shortcut first-keystroke="alt y" />
+  </action>
+  <action id="GenerateTestMethod">
+    <keyboard-shortcut first-keystroke="shift ctrl y" />
   </action>
   <action id="Git.Branches">
     <keyboard-shortcut first-keystroke="alt z" />
@@ -492,6 +501,9 @@
   <action id="KotlinConsoleREPL">
     <keyboard-shortcut first-keystroke="shift meta alt z" />
   </action>
+  <action id="KotlinGenerateTestMethod">
+    <keyboard-shortcut first-keystroke="shift ctrl y" />
+  </action>
   <action id="LocalHistory" />
   <action id="LocalHistory.ShowSelectionHistory">
     <keyboard-shortcut first-keystroke="shift ctrl meta alt c" />
@@ -539,7 +551,7 @@
   </action>
   <action id="ModifyObject" />
   <action id="Move">
-    <keyboard-shortcut first-keystroke="ctrl alt o" />
+    <keyboard-shortcut first-keystroke="shift ctrl l" />
   </action>
   <action id="MoveElementLeft">
     <keyboard-shortcut first-keystroke="ctrl i" />
@@ -590,7 +602,7 @@
   <action id="PCFindUsagesAction" />
   <action id="ParameterInfo" />
   <action id="PasteMultiple">
-    <keyboard-shortcut first-keystroke="shift ctrl v" />
+    <keyboard-shortcut first-keystroke="shift alt p" />
   </action>
   <action id="Pause">
     <keyboard-shortcut first-keystroke="shift f22" />
@@ -727,6 +739,9 @@
   <action id="ServiceView.GroupByContributor" />
   <action id="ServiceView.ShowServices" />
   <action id="ShowBookmarks" />
+  <action id="ShowDiscoveredTests">
+    <keyboard-shortcut first-keystroke="shift ctrl alt t" />
+  </action>
   <action id="ShowErrorDescription" />
   <action id="ShowExecutionPoint" />
   <action id="ShowFilePath">
@@ -742,7 +757,7 @@
     <keyboard-shortcut first-keystroke="shift meta alt o" />
   </action>
   <action id="ShowRecentTests">
-    <keyboard-shortcut first-keystroke="shift alt t" />
+    <keyboard-shortcut first-keystroke="shift f17" />
   </action>
   <action id="ShowReformatFileDialog" />
   <action id="ShowSearchHistory">
@@ -859,7 +874,7 @@
   </action>
   <action id="Vcs.RefreshFileHistory" />
   <action id="Vcs.RollbackChangedLines">
-    <keyboard-shortcut first-keystroke="ctrl alt z" />
+    <keyboard-shortcut first-keystroke="shift f6" />
   </action>
   <action id="Vcs.ShowMessageHistory" />
   <action id="Vcs.ShowTabbedFileHistory">
