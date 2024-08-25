@@ -39,7 +39,9 @@ map:
     lshift: "LC(F)"
     rshift: "RS(F11)"
   U:
-    hold.bind: "&kp"
+    hold:
+      bind: "&kp"
+      tapping_term: 480
     rshift: "RS(F12)"
   P:
     lshift: "LC(V)"
@@ -75,7 +77,10 @@ map:
     hold.bind: "&mo"
     lshift: "LS(F21)"
   D:
-    hold.bind: "&kp"
+    hold:
+      bind: "&kp"
+      tapping_term: 480
+
     lshift: "LS(F22)"
   Y:
     hold.bind: "&mo"

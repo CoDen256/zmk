@@ -3,6 +3,8 @@ import csv
 import re
 import xml.etree.ElementTree as ET
 
+from scripts.regsetup import description
+
 modsmap = {
     "LC" : "ctrl+",
     "RC" : "ctrl+",
@@ -184,15 +186,16 @@ def write(target, data):
             writer.writerow([desc, val, "RESERVED", "General", "0", ""])
         for key, val in data.items():
             val = replace_fun(val)
-            desription, context = key
+            description, context = key
             if not val or "++" in val or "+-" in val:
                 continue
             if val in done: continue
             if "meta" in val: continue
+            if "$" in description : continue
 
             done.append(val)
 
-            writer.writerow([desription, val, context, "General", "0", ""])
+            writer.writerow([description, val, context, "General", "0", ""])
 
     print(f"CSV file '{target}' has been created.")
 
@@ -203,5 +206,5 @@ def run(origin, target):
     # print(set(list((map(lambda x: (x[0],x[1]), data)))))
     # print(set(list(itertools.chain.from_iterable((map(lambda x: re.split("\s*(OR|\\+|>)\s*", x[1]), data))))))
     write(target, keymap)
-# base = "C:\\dev\\zmk-config"
-# run(f"{base}\\shortcuts\\keymap.xml",f"{base}\\shortcuts\\keymap.csv")
+base = "C:\\dev\\zmk-config"
+run(f"{base}\\shortcuts\\keymap.xml",f"{base}\\shortcuts\\keymap.csv")
