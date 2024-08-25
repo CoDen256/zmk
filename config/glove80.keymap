@@ -842,12 +842,21 @@ keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
 };
 
 
-O_key:O_key{
+O_link_rshift:O_link_rshift{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
 bindings = <&kp O>, <&O_sink_rshift>;
-label = "O_KEY";
+label = "O_LINK_RSHIFT";
 mods = <(MOD_RSFT)>;
+
+};
+
+O_key:O_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&O_link_rshift>, <&O_sink_lshift>;
+label = "O_KEY";
+mods = <(MOD_LSFT)>;
 
 };
 
@@ -858,6 +867,15 @@ bindings = <&kp RS(F6)>, <&kp O>;
 label = "O_SINK_RSHIFT";
 mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
 keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+};
+
+O_sink_lshift:O_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(F6)>, <&kp O>;
+label = "O_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };
 
 

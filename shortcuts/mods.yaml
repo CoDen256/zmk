@@ -18,6 +18,7 @@ map:
 
   O:
     rshift: "RS(F6)"
+    lshift: "LS(F6)"
   A:
     hold.bind: "&kp"
     lshift: "LC(Z)"
