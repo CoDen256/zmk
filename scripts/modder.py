@@ -12,6 +12,45 @@ modmap = {
     "rshift" : "MOD_RSFT",
 }
 
+positions = {
+    "left" : "28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74",
+    "right" : "27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74"
+}
+
+class Config:
+    def __init__(self, tapping_term, quick_tap, prior_idle):
+        self.tapping_term = tapping_term
+        self.quick_tap = quick_tap
+        self.prior_idle = prior_idle
+
+class HoldTap:
+    def __init__(self, config, tap, hold, pos):
+        self.tap = tap
+        self.hold = hold
+        self.config = config
+        self.pos = pos
+    def compile(self):
+        root, generated = self.tap.compile()
+        label = self.tap.default + "_key"
+        if not self.hold:
+            return generated.replace(root, label)
+        return self.gen_holdtap(label, self.hold, root, self.pos) + "\n" + generated
+    def gen_holdtap(self, name, hold, tap, position):
+        return f'''
+{name}:{name} {{
+      compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <{self.config.tapping_term}>;
+        quick-tap-ms = <{self.config.quick_tap}>;
+        require-prior-idle-ms = <{self.config.prior_idle}>;
+        bindings = <{hold}>, <{tap}>;
+        hold-trigger-key-positions = <{positions[position]}>;
+        hold-trigger-on-release;
+        label = "{name.upper()}";}};
+'''
+
+
 class Morph:
     def __init__(self, parent, prefix, default, mods, modified, keep=False, postfix = ""):
         self.parent = parent
@@ -77,7 +116,7 @@ class Map:
         return prev, c
 
 # Function to parse the YAML content and create the list of Map objects
-def parse_yaml_to_maps(file):
+def parse(file):
     # Parse the YAML content
     with open(file, "r") as f:
         data = yaml.safe_load(f.read())
@@ -117,9 +156,10 @@ def update(target, content):
 
 def run(origin, target):
     print(f"[modder] Reading {origin}")
-    mappings = parse_yaml_to_maps(origin)
+    mappings = parse(origin)
     print(f"[modder] Parsed {len(mappings)} mappings")
     content = ""
     for m in mappings:
         content += m.compile()[1] + "\n"
     update(target, content)
+run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
