@@ -51,7 +51,7 @@ layers:
   - {t: J, s: Sft+ F10}
   - {t: F, h: nav, s: Sft+ F11}
   - {t: U, s: Sft+ F12}
-  - {t: P, s: Ctl+ V}
+  - {t: P, s: Sft+ F13}
   - ''
   - BACKSPACE
   - num
@@ -67,18 +67,18 @@ layers:
   - ''
   - Gui+ L
   - ''
-  - {t: Q, s: Ctl+ Y}
+  - {t: Q, s: Ctl+ ^}
   - TAB
   - ENTER
   - SPACE
   - {t: main_upper, h: sticky}
   - ''
   - ''
-  - {t: qwerty, h: toggle}
+  - {t: mouse, h: toggle}
   - {t: main_upper, h: sticky}
   - ENTER
   - TAB
-  - {t: Z, s: Ctl+ F11}
+  - {t: Z, s: Ctl+ ~}
   - ''
   - ''
   main_upper:
@@ -722,7 +722,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: qwerty, h: toggle}
+  - {t: mouse, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

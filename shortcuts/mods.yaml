@@ -31,7 +31,6 @@ map:
     hold.bind: "&kp"
     lshift: "LC(S)"
     rshift: "RS(F9)"
-
   J:
     rshift: "RS(F10)"
   F:
@@ -45,6 +44,7 @@ map:
     rshift: "RS(F13)"
   Q:
     lshift: "LC(Y)"
+    rshift: "RC(CARET)"
 
 ### right
   V:
@@ -83,8 +83,8 @@ map:
     lshift: "LS(F24)"
     lctrl: "LC(F24)"
   Z:
-    lshift: "LS()"
-    lctrl: "LC(F25)"
+    lshift: "LS(TILDE)"
+    lctrl: "LC(TILDE)"
 
 config:
   tapping_term: 280
