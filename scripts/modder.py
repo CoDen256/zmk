@@ -44,21 +44,21 @@ class HoldTap:
         root, generated = self.tap.compile()
         label = self.tap.default + "_key"
         if not self.hold:
-            return generated.replace(root, label)
+            return generated.replace(root[1:], label).replace(root[1:].upper(), label.upper())
         return self.gen_holdtap(label, self.hold, root, self.pos) + "\n" + generated
     def gen_holdtap(self, name, hold, tap, position):
         return f'''
 {name}:{name} {{
-      compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <{self.config.tapping_term}>;
-        quick-tap-ms = <{self.config.quick_tap}>;
-        require-prior-idle-ms = <{self.config.prior_idle}>;
-        bindings = <{hold}>, <{tap}>;
-        hold-trigger-key-positions = <{position}>;
-        hold-trigger-on-release;
-        label = "{name.upper()}";}};
+compatible = "zmk,behavior-hold-tap";
+#binding-cells = <2>;
+flavor = "balanced";
+tapping-term-ms = <{self.config.tapping_term}>;
+quick-tap-ms = <{self.config.quick_tap}>;
+require-prior-idle-ms = <{self.config.prior_idle}>;
+bindings = <{hold}>, <{tap}>;
+hold-trigger-key-positions = <{position}>;
+hold-trigger-on-release;
+label = "{name.upper()}";}};
 '''
 
 
@@ -138,13 +138,18 @@ def parse(file):
     def_config = Config(**configdata)
     maps = []
     for (k, v) in mapdata.items():
-        cfg = def_config if "config" not in v else Config(**(configdata | v["config"]))
-        hold = None if "hold" not in v else v["hold"]
-        v.pop('config', None)
-        v.pop('hold', None)
+        cfg = def_config
+        hold = None
+        if "hold" in v:
+            hold_cfg = v.pop("hold")
+            hold = hold_cfg.pop("bind")
+            cfg = Config(**(configdata | hold_cfg))
+        if "hold.bind" in v:
+            hold = v.pop("hold.bind")
+
         maps.append(HoldTap(cfg, Map(k, v), hold))
 
-    return def_config,maps
+    return maps
 
 def update(target, content):
     print(f"[modder] Start writing to {target}")
@@ -185,3 +190,4 @@ def run(origin, target):
 # run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
 
 a = parse("C:\\dev\\zmk-config\\shortcuts\\mods.yaml")
+for i in a: print(i.compile())

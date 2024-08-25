@@ -1,13 +1,13 @@
 map:
   C:
-    hold: "&mo"
+    hold.bind: "&mo"
     rctrl: "RC(F14)"
     lshift: "LC(Z)"
   H:
-    config:
+    hold:
+      bind: "&lm"
       tapping_term: 380
       prior_idle: 200
-    hold: "&lm"
     rctrl: "RC(F14)"
     lshift: "LC(Z)"
   G:
