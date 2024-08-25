@@ -17,7 +17,6 @@ map:
     rshift: "RS(F5)"
 
   O:
-    hold.bind: "&kp"
     rshift: "RS(F6)"
   A:
     hold.bind: "&kp"
@@ -38,6 +37,7 @@ map:
     lshift: "LC(F)"
     rshift: "RS(F11)"
   U:
+    hold.bind: "&kp"
     rshift: "RS(F12)"
   P:
     lshift: "LC(V)"
@@ -66,7 +66,6 @@ map:
     hold.bind: "&kp"
     lshift: "LS(F19)"
   S:
-    hold.bind: "&kp"
     lshift: "LS(F20)"
     lctrl: "LC(F20)"
 
@@ -74,6 +73,7 @@ map:
     hold.bind: "&mo"
     lshift: "LS(F21)"
   D:
+    hold.bind: "&kp"
     lshift: "LS(F22)"
   Y:
     hold.bind: "&mo"
