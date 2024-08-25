@@ -1,25 +1,43 @@
+import yaml
 import csv
 import re
 import xml.etree.ElementTree as ET
 
-reserved_map = {
-    "ctrl+f13": "ctrl+c",
-    "ctrl+f14": "ctrl+a",
-    "ctrl+f16": "ctrl+x",
-    "ctrl+f17": "ctrl+z",
-    "ctrl+f18": "ctrl+s",
-    "ctrl+f19": "ctrl+v",
+modsmap = {
+    "LC" : "ctrl+",
+    "RC" : "ctrl+",
+    "rctrl" : "ctrl+",
+    "lctrl" : "ctrl+",
+    "LS" : "shift+",
+    "RS" : "shift+",
+    "rshift" : "shift+",
+    "lshift" : "shift+"
 }
+def clear(mod):
+    for (k,v) in modsmap.items():
+        if k in mod:
+            mod = mod.replace(k,v)
+    return mod.lower().replace("(", "").replace(")", "").replace("tilde", "`").replace("caret", "^")
+def get_reserved(origin):
+    with open(origin, "r") as f:
+        data = yaml.safe_load(f.read())
+
+    reserved_map = {
+    }
+    for (k,v) in data["map"].items():
+        v.pop("hold", None)
+        v.pop("hold.bind", None)
+        v.pop("config", None)
+        for (mod, key) in v.items():
+            m = clear(key)
+            if m in ["ctrl+s","ctrl+x","ctrl+f","ctrl+c","ctrl+a","ctrl+z","ctrl+v","ctrl+y"]:
+                pass
+            else:
+                reserved_map[m] = modsmap[mod] + k.lower()
+
+    return reserved_map
 
 reserved = [
-    ("<win reserved action>", "ctrl+c"),
-    ("<win reserved action>", "ctrl+v"),
-    ("<win reserved action>", "ctrl+x"),
-    ("<win reserved action>", "ctrl+z"),
-    ("<win reserved action>", "ctrl+s"),
-    ("<win reserved action>", "ctrl+a"),
-    # ("<win reserved action>", "ctrl+y"),
-    # ("<win reserved action>", "ctrl+f"),
     ("<win reserved action>", "meta+shift+c"),
     ("<win reserved action>", "meta+shift+p"),
     ("<win reserved action>", "meta+shift+w"),
@@ -140,6 +158,8 @@ def parse_xml(file):
 
 
 def replace_fun(val):
+    reserved_map = get_reserved("C:\\dev\\zmk-config\\shortcuts\\mods.yaml")
+
     for (r, s) in reserved_map.items():
         if r in val:
             return val.replace(r, s)
@@ -150,6 +170,8 @@ def replace_fun(val):
 def write(target, data):
     # Define CSV file header
     csv_header = ["Description", "Keys", "Context", "Category", "Conf.", "Actions"]
+
+    reserved_map = get_reserved("C:\\dev\\zmk-config\\shortcuts\\mods.yaml")
 
     done = []
     with open(target, mode='w', newline='') as file:

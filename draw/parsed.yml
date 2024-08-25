@@ -13,9 +13,9 @@ layers:
   - F10
   - VOLUME DOWN
   - VOLUME UP
-  - ESCAPE
+  - ''
   - {t: K, s: Sft+ F1}
-  - ESCAPE
+  - F9
   - Gui+ F10
   - Gui+ F11
   - Gui+ F12
@@ -40,8 +40,8 @@ layers:
   - {t: A, h: LEFT ALT, s: Sft+ F7}
   - {t: I, h: LSHFT, s: Sft+ F8}
   - {t: N, h: LCTRL, s: Sft+ F9}
-  - F9
-  - ''
+  - ESCAPE
+  - DELETE
   - {t: T, h: RCTRL, s: Sft+ F17}
   - {t: R, h: RSHFT, s: Sft+ F18}
   - {t: E, h: RIGHT ALT, s: Sft+ F19}
@@ -73,7 +73,7 @@ layers:
   - SPACE
   - {t: main_upper, h: sticky}
   - ''
-  - ''
+  - {t: main_upper, h: toggle}
   - {t: mouse, h: toggle}
   - {t: main_upper, h: sticky}
   - ENTER
