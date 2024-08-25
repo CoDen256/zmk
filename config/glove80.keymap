@@ -714,138 +714,495 @@ Vlctrl:Vlctrl {
 
 /*<mods-start>*/
 
-C_key:C_key {
-compatible = "zmk,behavior-hold-tap";
-#binding-cells = <2>;
-flavor = "balanced";
-tapping-term-ms = <280>;
-quick-tap-ms = <175>;
-require-prior-idle-ms = <350>;
-bindings = <&mo>, <&C_link_lshift>;
-hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
-hold-trigger-on-release;
-label = "C_KEY";};
-
-
-C_link_rctrl:C_link_rctrl{
+K_key:K_key{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
-bindings = <&kp C>, <&C_sink_rctrl>;
-label = "C_LINK_RCTRL";
-mods = <(MOD_RCTL)>;
-
-};
-
-C_link_lshift:C_link_lshift{
-compatible = "zmk,behavior-mod-morph";
-#binding-cells = <0>;
-bindings = <&C_link_rctrl>, <&C_sink_lshift>;
-label = "C_LINK_LSHIFT";
+bindings = <&kp K>, <&K_sink_lshift>;
+label = "K_KEY";
 mods = <(MOD_LSFT)>;
 
 };
 
-C_sink_rctrl:C_sink_rctrl{
+K_sink_lshift:K_sink_lshift{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
-bindings = <&kp RC(F14)>, <&kp C>;
-label = "C_SINK_RCTRL";
-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
-keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
-};
-
-C_sink_lshift:C_sink_lshift{
-compatible = "zmk,behavior-mod-morph";
-#binding-cells = <0>;
-bindings = <&kp LC(Z)>, <&kp C>;
-label = "C_SINK_LSHIFT";
+bindings = <&kp LS(K)>, <&kp K>;
+label = "K_SINK_LSHIFT";
 mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };
 
 
-H_key:H_key {
-compatible = "zmk,behavior-hold-tap";
-#binding-cells = <2>;
-flavor = "balanced";
-tapping-term-ms = <380>;
-quick-tap-ms = <175>;
-require-prior-idle-ms = <200>;
-bindings = <&lm>, <&H_link_lshift>;
-hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
-hold-trigger-on-release;
-label = "H_KEY";};
-
-
-H_link_rctrl:H_link_rctrl{
+G_key:G_key{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
-bindings = <&kp H>, <&H_sink_rctrl>;
-label = "H_LINK_RCTRL";
-mods = <(MOD_RCTL)>;
-
-};
-
-H_link_lshift:H_link_lshift{
-compatible = "zmk,behavior-mod-morph";
-#binding-cells = <0>;
-bindings = <&H_link_rctrl>, <&H_sink_lshift>;
-label = "H_LINK_LSHIFT";
+bindings = <&kp G>, <&G_sink_lshift>;
+label = "G_KEY";
 mods = <(MOD_LSFT)>;
 
 };
 
-H_sink_rctrl:H_sink_rctrl{
+G_sink_lshift:G_sink_lshift{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
-bindings = <&kp RC(F14)>, <&kp H>;
-label = "H_SINK_RCTRL";
-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
-keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
+bindings = <&kp LS(K)>, <&kp G>;
+label = "G_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+H_key:H_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp H>, <&H_sink_lshift>;
+label = "H_KEY";
+mods = <(MOD_LSFT)>;
+
 };
 
 H_sink_lshift:H_sink_lshift{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
-bindings = <&kp LC(Z)>, <&kp H>;
+bindings = <&kp LS(K)>, <&kp H>;
 label = "H_SINK_LSHIFT";
 mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };
 
 
-G_link_rctrl:G_link_rctrl{
+C_key:C_key{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
-bindings = <&kp G>, <&G_sink_rctrl>;
-label = "G_LINK_RCTRL";
-mods = <(MOD_RCTL)>;
-
-};
-
-G_key:G_key{
-compatible = "zmk,behavior-mod-morph";
-#binding-cells = <0>;
-bindings = <&G_link_rctrl>, <&G_sink_lshift>;
-label = "G_KEY";
+bindings = <&kp C>, <&C_sink_lshift>;
+label = "C_KEY";
 mods = <(MOD_LSFT)>;
 
 };
 
-G_sink_rctrl:G_sink_rctrl{
+C_sink_lshift:C_sink_lshift{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
-bindings = <&kp RC(F14)>, <&kp G>;
-label = "G_SINK_RCTRL";
-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
-keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
+bindings = <&kp LS(K)>, <&kp C>;
+label = "C_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };
 
-G_sink_lshift:G_sink_lshift{
+
+W_key:W_key{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
-bindings = <&kp LC(Z)>, <&kp G>;
-label = "G_SINK_LSHIFT";
+bindings = <&kp W>, <&W_sink_lshift>;
+label = "W_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+W_sink_lshift:W_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp W>;
+label = "W_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+O_key:O_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp O>, <&O_sink_lshift>;
+label = "O_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+O_sink_lshift:O_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp O>;
+label = "O_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+A_key:A_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp A>, <&A_sink_lshift>;
+label = "A_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+A_sink_lshift:A_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp A>;
+label = "A_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+I_key:I_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp I>, <&I_sink_lshift>;
+label = "I_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+I_sink_lshift:I_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp I>;
+label = "I_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+N_key:N_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp N>, <&N_sink_lshift>;
+label = "N_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+N_sink_lshift:N_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp N>;
+label = "N_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+J_key:J_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp J>, <&J_sink_lshift>;
+label = "J_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+J_sink_lshift:J_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp J>;
+label = "J_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+F_key:F_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp F>, <&F_sink_lshift>;
+label = "F_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+F_sink_lshift:F_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp F>;
+label = "F_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+U_key:U_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp U>, <&U_sink_lshift>;
+label = "U_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+U_sink_lshift:U_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp U>;
+label = "U_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+P_key:P_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp P>, <&P_sink_lshift>;
+label = "P_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+P_sink_lshift:P_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp P>;
+label = "P_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+Q_key:Q_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp Q>, <&Q_sink_lshift>;
+label = "Q_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+Q_sink_lshift:Q_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp Q>;
+label = "Q_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+V_key:V_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp V>, <&V_sink_lshift>;
+label = "V_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+V_sink_lshift:V_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp V>;
+label = "V_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+L_key:L_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp L>, <&L_sink_lshift>;
+label = "L_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+L_sink_lshift:L_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp L>;
+label = "L_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+B_key:B_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp B>, <&B_sink_lshift>;
+label = "B_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+B_sink_lshift:B_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp B>;
+label = "B_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+T_key:T_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp T>, <&T_sink_lshift>;
+label = "T_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+T_sink_lshift:T_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp T>;
+label = "T_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+R_key:R_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp R>, <&R_sink_lshift>;
+label = "R_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+R_sink_lshift:R_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp R>;
+label = "R_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+E_key:E_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp E>, <&E_sink_lshift>;
+label = "E_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+E_sink_lshift:E_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp E>;
+label = "E_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+S_key:S_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp S>, <&S_sink_lshift>;
+label = "S_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+S_sink_lshift:S_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp S>;
+label = "S_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+M_key:M_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp M>, <&M_sink_lshift>;
+label = "M_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+M_sink_lshift:M_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp M>;
+label = "M_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+D_key:D_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp D>, <&D_sink_lshift>;
+label = "D_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+D_sink_lshift:D_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp D>;
+label = "D_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+Y_key:Y_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp Y>, <&Y_sink_lshift>;
+label = "Y_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+Y_sink_lshift:Y_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp Y>;
+label = "Y_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+X_key:X_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp X>, <&X_sink_lshift>;
+label = "X_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+X_sink_lshift:X_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp X>;
+label = "X_SINK_LSHIFT";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+Z_key:Z_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp Z>, <&Z_sink_lshift>;
+label = "Z_KEY";
+mods = <(MOD_LSFT)>;
+
+};
+
+Z_sink_lshift:Z_sink_lshift{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(K)>, <&kp Z>;
+label = "Z_SINK_LSHIFT";
 mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };

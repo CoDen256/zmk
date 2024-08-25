@@ -1,19 +1,63 @@
 map:
-
-  C:
-    hold.bind: "&mo"
-    rctrl: "RC(F14)"
-    lshift: "LC(Z)"
-  H:
-    hold:
-      bind: "&lm"
-      tapping_term: 380
-      prior_idle: 200
-    rctrl: "RC(F14)"
-    lshift: "LC(Z)"
+  K:
+    lshift: "LS(K)"
   G:
-    rctrl: "RC(F14)"
-    lshift: "LC(Z)"
+    lshift: "LS(K)"
+  H:
+    lshift: "LS(K)"
+  C:
+    lshift: "LS(K)"
+  W:
+    lshift: "LS(K)"
+
+  O:
+    lshift: "LS(K)"
+  A:
+    lshift: "LS(K)"
+  I:
+    lshift: "LS(K)"
+  N:
+    lshift: "LS(K)"
+
+  J:
+    lshift: "LS(K)"
+  F:
+    lshift: "LS(K)"
+  U:
+    lshift: "LS(K)"
+  P:
+    lshift: "LS(K)"
+  Q:
+    lshift: "LS(K)"
+
+
+## right
+  V:
+    lshift: "LS(K)"
+  L:
+    lshift: "LS(K)"
+  B:
+    lshift: "LS(K)"
+
+  T:
+    lshift: "LS(K)"
+  R:
+    lshift: "LS(K)"
+  E:
+    lshift: "LS(K)"
+  S:
+    lshift: "LS(K)"
+
+  M:
+    lshift: "LS(K)"
+  D:
+    lshift: "LS(K)"
+  Y:
+    lshift: "LS(K)"
+  X:
+    lshift: "LS(K)"
+  Z:
+    lshift: "LS(K)"
 
 config:
   tapping_term: 280
