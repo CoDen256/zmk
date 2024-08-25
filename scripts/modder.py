@@ -89,8 +89,8 @@ def parse_yaml_to_maps(file):
 
 def update(target, content):
     print(f"Start writing to {target}")
-    start = "/*<mods-start>/*"
-    end = "/*<mods-end>/*"
+    start = "/*<mods-start>*/"
+    end = "/*<mods-end>*/"
     new = []
     target_region = False
     with open(target, "r") as f:
@@ -122,6 +122,7 @@ def run(origin, target):
     content = ""
     for m in mappings:
         content += m.compile()[1] + "\n"
+    content = ""
     update(target, content)
 
 run(file, "C:\\dev\\zmk-config\\config\\glove80.keymap")

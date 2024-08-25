@@ -712,7 +712,7 @@ Vlctrl:Vlctrl {
          mods = <(MOD_RSFT|MOD_RALT|MOD_RGUI|MOD_LALT|MOD_LSFT|MOD_LGUI|MOD_RCTL)>;
          keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;};
 
-/*<mods-start>/*
+/*<mods-start>*/
 
 C_link_rctrl:C_link_rctrl{
 compatible = "zmk,behavior-mod-morph";
@@ -825,7 +825,7 @@ keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };
 
 
-/*<mods-end>/*
+/*<mods-end>*/
 A_key:A_key {
       compatible = "zmk,behavior-hold-tap";
     
