@@ -1,67 +1,67 @@
 map:
   K:
     rshift: "RS(F1)"
-#  G:
-#    rshift: "RS(F2)"
+  G:
+    rshift: "RS(F2)"
   H:
     hold:
       bind: "&lswitcher"
     rshift: "RS(F3)"
-#  C:
-#    rshift: "RS(F4)"
-#  W:
-#    rshift: "RS(F5)"
-#
-#  O:
-#    rshift: "RS(F6)"
-#  A:
-#    rshift: "RS(F7)"
-#  I:
-#    rshift: "RS(F8)"
-#  N:
-#    rshift: "RS(F9)"
-#
-#  J:
-#    rshift: "RS(F10)"
-#  F:
-#    rshift: "RS(F11)"
-#  U:
-#    rshift: "RS(F12)"
-#  P:
-#    rshift: "RS(F13)"
-#  Q:
-#    rshift: "RS(Q)"
-#
-#
+  C:
+    rshift: "RS(F4)"
+  W:
+    rshift: "RS(F5)"
+
+  O:
+    rshift: "RS(F6)"
+  A:
+    rshift: "RS(F7)"
+  I:
+    rshift: "RS(F8)"
+  N:
+    rshift: "RS(F9)"
+
+  J:
+    rshift: "RS(F10)"
+  F:
+    rshift: "RS(F11)"
+  U:
+    rshift: "RS(F12)"
+  P:
+    rshift: "RS(F13)"
+  Q:
+    rshift: "RS(Q)"
+
+
 ### right
-#  V:
-#    rshift: "RS(F14)"
-#  L:
-#    rshift: "RS(F15)"
-#  B:
-#    rshift: "RS(F16)"
-#
-#  T:
-#    rshift: "RS(F17)"
-#  R:
-#    rshift: "RS(F18)"
-#  E:
-#    rshift: "RS(F19)"
-#  S:
-#    rshift: "RS(F20)"
-#
-#  M:
-#    rshift: "RS(F21)"
-#  D:
-#    rshift: "RS(F22)"
+  V:
+    rshift: "RS(F14)"
+  L:
+    rshift: "RS(F15)"
+  B:
+    rshift: "RS(F16)"
+
+  T:
+    rshift: "RS(F17)"
+  R:
+    rshift: "RS(F18)"
+  E:
+    rshift: "RS(F19)"
+  S:
+    rshift: "RS(F20)"
+
+  M:
+    rshift: "RS(F21)"
+  D:
+    rshift: "RS(F22)"
   Y:
     hold:
       bind: "&mo"
     rshift: "RS(F23)"
-#  X:
-#    rshift: "RS(F24)"
-#  Z:
-#    rshift: "RS(Z)"
+  X:
+    rshift: "RS(F24)"
+  Z:
+    rshift: "RS(Z)"
 
 config:
   tapping_term: 280
