@@ -1905,172 +1905,201 @@ keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 		RT {
 			bindings = <&kp COMMA>;
 			key-positions = <41 42>;
-		};
+		
+         timeout-ms = <20>;
+
+         };
 		RE {
 			bindings = <&kp SEMI>;
 			key-positions = <42 43>;
-		};
+
+         timeout-ms = <20>;
+        };
 		IN {
 			bindings = <&kp DOT>;
-			key-positions = <37 38>;
+		 timeout-ms = <20>;
+                	key-positions = <37 38>;
 		};
 
 		AI {
 			bindings = <&kp COLON>;
 			key-positions = <37 36>;
+ timeout-ms = <20>;
 
 		};
 
 		MD {
 			bindings = <&curly>;
-			key-positions = <59 60>;
+		 timeout-ms = <20>;
+                	key-positions = <59 60>;
 		};
 
 		DY {
 			bindings = <&brackets>;
-			key-positions = <60 61>;
+			key-positions = <60 61>; timeout-ms = <20>;
+
 		};
 
 		PU {
 			bindings = <&paren>;
-			key-positions = <49 50>;
+			key-positions = <49 50>; timeout-ms = <20>;
+
 		};
 
 		FU {
          bindings = <&angle>;
-         key-positions = <49 48>;};
+         key-positions = <49 48>; timeout-ms = <20>;
+                                         };
 
 		LV {
          bindings = <&kp SINGLE_QUOTE>;
-         key-positions = <30 29>;};CH {
+         key-positions = <30 29>; timeout-ms = <20>;
+                                         };CH {
          bindings = <&or_short>;
-         key-positions = <25 26>;};
+         key-positions = <25 26>; timeout-ms = <20>;
+                                         };
 		BL {
          bindings = <&kp DOUBLE_QUOTES>;
-         key-positions = <31 30>;};
+         key-positions = <31 30>; timeout-ms = <20>;
+                                         };
 		HG {
 			bindings = <&and_short>;
-			key-positions = <25 24>;
+			key-positions = <25 24>; timeout-ms = <20>;
+
 		};
 
 		MR {
 			bindings = <&func_arrow>;
-			key-positions = <59 42>;
+			key-positions = <59 42>; timeout-ms = <20>;
+
 		};
 
 		TD {
 			bindings = <&none>;
-			key-positions = <41 60>;
+			key-positions = <41 60>; timeout-ms = <20>;
+
 		};
 
 		RY {
 			bindings = <&kp AT>;
-			key-positions = <42 61>;
+			key-positions = <42 61>; timeout-ms = <20>;
+
 		};
 
 		DE {
 			bindings = <&none>;
-			key-positions = <60 43>;
+			key-positions = <60 43>; timeout-ms = <20>;
+
 		};
 
 
 		TE {
 			bindings = <&kp QUESTION>;
-		key-positions = <41 43>;};TL {
+		key-positions = <41 43>; timeout-ms = <20>;
+                                        };TL {
 			bindings = <&kp GRAVE>;
-		key-positions = <41 30>;};EL {
+		key-positions = <41 30>; timeout-ms = <20>;
+                                        };EL {
 			bindings = <&code_block>;
-		key-positions = <30 43>;};VR {
+		key-positions = <30 43>; timeout-ms = <20>;
+                                        };VR {
 			bindings = <&kp CARET>;
-		key-positions = <29 42>;};LE {
+		key-positions = <29 42>; timeout-ms = <20>;
+                                        };LE {
 			bindings = <&kp DOLLAR>;
-		key-positions = <42 31>;};IP {
+		key-positions = <42 31>; timeout-ms = <20>;
+                                        };IP {
 			bindings = <&kp EQUAL>;
-		key-positions = <37 50>;};UN {
+		key-positions = <37 50>; timeout-ms = <20>;
+                                        };UN {
 			bindings = <&kp ASTERISK>;
-		key-positions = <38 49>;};UA {
+		key-positions = <38 49>; timeout-ms = <20>;
+                                        };UA {
 			bindings = <&kp PLUS>;
-		key-positions = <49 36>;};FI {
+		key-positions = <49 36>; timeout-ms = <20>;
+                                        };FI {
 			bindings = <&neq_short>;
-		key-positions = <48 37>;};AN {
+		key-positions = <48 37>; timeout-ms = <20>;
+                                        };AN {
 			bindings = <&kp EXCL>;
-		key-positions = <36 38>;};NH {
+		key-positions = <36 38>; timeout-ms = <20>;
+                                        };NH {
 			bindings = <&kp MINUS>;
-		key-positions = <38 25>;};IC {
+		key-positions = <38 25>; timeout-ms = <20>;
+                                        };IC {
 			bindings = <&eq_short>;
-		key-positions = <37 26>;};
+		key-positions = <37 26>; timeout-ms = <20>;
+                                        };
 
 		GI {
 			bindings = <&backslash>;
-		key-positions = <37 24>;};
+		key-positions = <37 24>; timeout-ms = <20>;
+                                        };
 
 		AH {
 			bindings = <&kp SLASH>;
-		key-positions = <36 25>;};
+		key-positions = <36 25>; timeout-ms = <20>;
+                                        };
 
 		MY {
 			bindings = <&none>;
-		key-positions = <59 61>;};
+		key-positions = <59 61>; timeout-ms = <20>;
+                                        };
 
 		FP {
-			bindings = <&kp UNDERSCORE>;
+			bindings = <&kp UNDERSCORE>; timeout-ms = <20>;
+
 		key-positions = <48 50>;};
 
 		VB {
-			bindings = <&kp TILDE>;
+			bindings = <&kp TILDE>; timeout-ms = <20>;
+
 		key-positions = <29 31>;};
 
 		CG {
-			bindings = <&kp HASH>;
+			bindings = <&kp HASH>; timeout-ms = <20>;
+
 		key-positions = <26 24>;};
 
 		VE {
-			bindings = <&none>;
+			bindings = <&none>; timeout-ms = <20>;
+
 		key-positions = <29 43>;};
 
 		TB {
-			bindings = <&none>;
+			bindings = <&none>; timeout-ms = <20>;
+
 		key-positions = <31 41>;};YT {
-			bindings = <&none>;
+			bindings = <&none>; timeout-ms = <20>;
+
 		key-positions = <41 61>;};ME {
-			bindings = <&none>;
+			bindings = <&none>; timeout-ms = <20>;
+
 		key-positions = <59 43>;};
 
 
 
 
 		NG {
-			bindings = <&kp PERCENT>;
+			bindings = <&kp PERCENT>; timeout-ms = <20>;
+
 		key-positions = <38 24>;};
 
 		AC {
-			bindings = <&slash>;
+			bindings = <&slash>; timeout-ms = <20>;
+
 		key-positions = <36 26>;};
 
 
 		PA {
-			bindings = <&none>;
+			bindings = <&none>; timeout-ms = <20>;
+
 		key-positions = <50 36>;};
 
 		FN {
-			bindings = <&none>;
+			bindings = <&none>; timeout-ms = <20>;
+
 		key-positions = <48 38>;};
-
-		SE {
-			bindings = <&none>;
-		key-positions = <44 43>;};
-
-
-		ST {
-			bindings = <&none>;
-		key-positions = <44 41>;};
-		OA {
-			bindings = <&none>;
-		key-positions = <36 35>;};
-
-		        		ON {
-			bindings = <&none>;
-		key-positions = <35 38>;};
 		MRIGHT {
 			bindings = <&delete_word>;
 		key-positions = <59 76>;};
@@ -2137,6 +2166,8 @@ keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 
 behaviors {};
 
+
+behaviors {};
 
 behaviors {};
 
