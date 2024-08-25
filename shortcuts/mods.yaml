@@ -22,6 +22,7 @@ map:
     hold.bind: "&kp"
     lshift: "LC(Z)"
     rctrl: "RC(F7)"
+    lctrl: "LC(F7)"
     rshift: "RS(F7)"
   I:
     hold.bind: "&kp"
