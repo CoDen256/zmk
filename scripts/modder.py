@@ -88,7 +88,7 @@ def parse_yaml_to_maps(file):
     return maps
 
 def update(target, content):
-    print(f"Start writing to {target}")
+    print(f"[modder] Start writing to {target}")
     start = "/*<mods-start>*/"
     end = "/*<mods-end>*/"
     new = []
@@ -110,19 +110,16 @@ def update(target, content):
             new.append(line)
     with open(target, "w") as f:
         f.writelines(new)
-    print(f"Done writing to {target}")
+    print(f"[modder] Done writing to {target}")
 
-# Example YAML content
-file = "C:\\dev\\zmk-config\\shortcuts\\mods.yaml"
+
+
 
 def run(origin, target):
-    print(f"Reading {origin}")
+    print(f"[modder] Reading {origin}")
     mappings = parse_yaml_to_maps(origin)
-    print(f"Parsed {len(mappings)} mappings")
+    print(f"[modder] Parsed {len(mappings)} mappings")
     content = ""
     for m in mappings:
         content += m.compile()[1] + "\n"
-    content = ""
     update(target, content)
-
-run(file, "C:\\dev\\zmk-config\\config\\glove80.keymap")

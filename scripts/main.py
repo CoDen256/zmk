@@ -11,6 +11,7 @@ import drawer
 import deployer
 import keycombiner
 import updater
+import modder
 
 
 def check_file_update(name, file_path, script, *args):
@@ -117,6 +118,14 @@ if __name__ == "__main__":
         f"{base}\\shortcuts\\keymap.csv",
         f"{base}\\scripts\\pass",
         33922
+    )
+
+    run(
+        "modder",
+        f"{base}\\shortcuts\\mods.yaml",
+        modder,
+        f"{base}\\shortcuts\\mods.yaml",
+        f"{base}\\config\\glove80.keymap",
     )
 
     # Keep the main thread running
