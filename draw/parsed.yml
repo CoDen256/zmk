@@ -14,7 +14,7 @@ layers:
   - VOLUME DOWN
   - VOLUME UP
   - ESCAPE
-  - {t: K, s: A}
+  - {t: K, s: Sft+ F1}
   - ESCAPE
   - Gui+ F10
   - Gui+ F11
@@ -25,49 +25,49 @@ layers:
   - ''
   - MUTE
   - ^
-  - {t: G, h: '&lnav LCTRL', s: X}
-  - {t: H, h: '&lswitcher LEFT_ALT', s: V}
-  - {t: C, s: F13}
+  - G
+  - {t: H, h: '&lswitcher LEFT_ALT', s: Sft+ F3}
+  - C
   - W
   - ''
-  - {t: V, s: F19}
+  - V
   - L
   - {t: B, h: '&lnav RIGHT_ALT'}
   - $
   - ''
   - LEFT WIN
   - {t: O, h: Gui+Alt+ LEFT SHIFT}
-  - {t: A, h: LEFT ALT, s: F14}
-  - {t: I, h: LSHFT, s: S}
+  - A
+  - I
   - {t: N, h: LCTRL}
   - F9
-  - {t: H, s: Ctl+ F14}
+  - ''
   - {t: T, h: RCTRL}
   - {t: R, h: RSHFT}
   - {t: E, h: RIGHT ALT}
-  - {t: S, h: Gui+Alt+ RSHFT, s: F18}
+  - S
   - RMETA
   - fun
   - J
   - {t: F, h: nav}
-  - {t: U, s: Z}
+  - U
   - P
-  - {t: C, s: Ctl+ F14}
+  - ''
   - BACKSPACE
   - num
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: nav, h: toggle}
   - DELETE
-  - {t: H, s: Ctl+ Z}
+  - ''
   - {t: M, h: num}
   - D
-  - {t: Y, h: nav, s: F13}
-  - {t: X, s: F16}
+  - {t: Y, h: nav, s: Sft+ F23}
+  - X
   - ''
   - Gui+ L
   - ''
-  - {t: Q, s: Y}
+  - Q
   - TAB
   - ENTER
   - SPACE
@@ -78,7 +78,7 @@ layers:
   - {t: LSHFT, h: sticky}
   - ENTER
   - TAB
-  - {t: Z, s: F17}
+  - Z
   - ''
   - ''
   de:
