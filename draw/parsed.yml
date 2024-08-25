@@ -25,21 +25,21 @@ layers:
   - ''
   - MUTE
   - ^
-  - G
+  - {t: G, h: '&lnav LCTRL', s: Sft+ F2}
   - {t: H, h: '&lswitcher LEFT_ALT', s: Sft+ F3}
-  - C
-  - W
+  - {t: C, s: Sft+ F4}
+  - {t: W, s: Sft+ F5}
   - ''
-  - V
-  - L
-  - {t: B, h: '&lnav RIGHT_ALT'}
+  - {t: V, s: Sft+ F14}
+  - {t: L, s: Sft+ F15}
+  - {t: B, h: '&lnav RIGHT_ALT', s: Sft+ F16}
   - $
   - ''
   - LEFT WIN
   - {t: O, h: Gui+Alt+ LEFT SHIFT}
-  - A
-  - I
-  - {t: N, h: LCTRL}
+  - {t: A, h: LEFT ALT, s: Sft+ F7}
+  - {t: I, h: RSHFT, s: Sft+ F8}
+  - {t: N, h: LCTRL, s: Sft+ F9}
   - F9
   - ''
   - {t: T, h: RCTRL}
@@ -48,7 +48,7 @@ layers:
   - S
   - RMETA
   - fun
-  - J
+  - {t: J, s: Sft+ F10}
   - {t: F, h: nav}
   - U
   - P

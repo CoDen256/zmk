@@ -2,6 +2,8 @@ map:
   K:
     rshift: "RS(F1)"
   G:
+    hold:
+      bind: "&lnav"
     rshift: "RS(F2)"
   H:
     hold:
@@ -13,17 +15,27 @@ map:
     rshift: "RS(F5)"
 
   O:
+    hold:
+      bind: "&kp"
     rshift: "RS(F6)"
   A:
+    hold:
+      bind: "&kp"
     rshift: "RS(F7)"
   I:
+    hold:
+      bind: "&kp"
     rshift: "RS(F8)"
   N:
+    hold:
+      bind: "&kp"
     rshift: "RS(F9)"
 
   J:
     rshift: "RS(F10)"
   F:
+    hold:
+      bind: "&mo"
     rshift: "RS(F11)"
   U:
     rshift: "RS(F12)"
@@ -39,18 +51,30 @@ map:
   L:
     rshift: "RS(F15)"
   B:
+    hold:
+      bind: "&lnav"
     rshift: "RS(F16)"
 
   T:
+    hold:
+      bind: "&kp"
     rshift: "RS(F17)"
   R:
+    hold:
+      bind: "&kp"
     rshift: "RS(F18)"
   E:
+    hold:
+      bind: "&kp"
     rshift: "RS(F19)"
   S:
+    hold:
+      bind: "&kp"
     rshift: "RS(F20)"
 
   M:
+    hold:
+      bind: "&mo"
     rshift: "RS(F21)"
   D:
     rshift: "RS(F22)"
