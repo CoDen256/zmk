@@ -191,7 +191,7 @@ def write(target, data):
                 continue
             if val in done: continue
             if "meta" in val: continue
-            if "$" in description : continue
+            if "$" in description or "redo" in description.lower() or "undo" in description.lower(): continue
 
             done.append(val)
 
