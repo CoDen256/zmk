@@ -2,96 +2,89 @@ map:
   K:
     rshift: "RS(F1)"
   G:
-    hold:
-      bind: "&lnav"
-    rshift: "LC(X)" #f2
+    hold.bind: "&lnav"
+    lshift: "LC(X)" 
+    rshift: "RS(F2)"
   H:
-    hold:
-      bind: "&lswitcher"
+    hold.bind: "&lswitcher"
     rshift: "RS(F3)"
   C:
-    rshift: "LC(C)" #f4
+    lshift: "LC(C)"
     rctrl: "RC(F4)"
+    rshift: "RS(F4)"
   W:
-    rshift: "LC(A)" #f5
+    lshift: "LC(A)"
+    rshift: "RS(F5)"
 
   O:
-    hold:
-      bind: "&kp"
-    rshift: "RS(F16)"
+    hold.bind: "&kp"
+    rshift: "RS(F6)"
   A:
-    hold:
-      bind: "&kp"
-    rshift: "LC(Z)" #f7
+    hold.bind: "&kp"
+    lshift: "LC(Z)"
     rctrl: "RC(F7)"
+    rshift: "RS(F7)"
   I:
-    hold:
-      bind: "&kp"
+    hold.bind: "&kp"
     rshift: "RS(F8)"
   N:
-    hold:
-      bind: "&kp"
-    rshift: "LC(S)" # f9
+    hold.bind: "&kp"
+    lshift: "LC(S)"
+    rshift: "RS(F9)"
 
   J:
     rshift: "RS(F10)"
   F:
-    hold:
-      bind: "&mo"
-    rshift: "LC(F)"  #f11 is for Z
+    hold.bind: "&mo"
+    lshift: "LC(F)"
+    rshift: "RS(F11)"
   U:
     rshift: "RS(F12)"
   P:
-    rshift: "LC(V)" # f13
+    lshift: "LC(V)"
+    rshift: "RS(F13)"
   Q:
-    rshift: "LC(Y)"
+    lshift: "LC(Y)"
 
 ### right
   V:
-    rshift: "RS(F14)"
+    lshift: "LS(F14)"
     lctrl: "LC(F14)"
   L:
-    rshift: "RS(F15)"
+    lshift: "LS(F15)"
   B:
-    hold:
-      bind: "&lnav"
-    rshift: "RS(F16)"
+    hold.bind: "&lnav"
+    lshift: "LS(F16)"
 
   T:
-    hold:
-      bind: "&kp"
-    rshift: "RS(F17)"
+    hold.bind: "&kp"
+    lshift: "LS(F17)"
   R:
-    hold:
-      bind: "&kp"
-    rshift: "RS(F18)"
+    hold.bind: "&kp"
+    lshift: "LS(F18)"
   E:
-    hold:
-      bind: "&kp"
-    rshift: "RS(F19)"
+    hold.bind: "&kp"
+    lshift: "LS(F19)"
   S:
-    hold:
-      bind: "&kp"
-    rshift: "RS(F20)"
+    hold.bind: "&kp"
+    lshift: "LS(F20)"
     lctrl: "LC(F20)"
 
   M:
-    hold:
-      bind: "&mo"
-    rshift: "RS(F21)"
+    hold.bind: "&mo"
+    lshift: "LS(F21)"
   D:
-    rshift: "RS(F22)"
+    lshift: "LS(F22)"
   Y:
-    hold:
-      bind: "&mo"
-    rshift: "RS(F23)"
+    hold.bind: "&mo"
+    lshift: "LS(F23)"
     lctrl: "LC(F23)"
   X:
-    rshift: "RS(F24)"
+    lshift: "LS(F24)"
     lctrl: "LC(F24)"
   Z:
-    rshift: "RS(F11)"
-    lctrl: "LC(F11)"
+    lshift: "LS()"
+    lctrl: "LC(F25)"
 
 config:
   tapping_term: 280

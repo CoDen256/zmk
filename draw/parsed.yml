@@ -25,10 +25,10 @@ layers:
   - ''
   - MUTE
   - ^
-  - {t: G, h: '&lnav LCTRL', s: Ctl+ X}
+  - {t: G, h: '&lnav LCTRL', s: Sft+ F2}
   - {t: H, h: '&lswitcher LEFT_ALT', s: Sft+ F3}
-  - {t: C, s: Ctl+ F4}
-  - {t: W, s: Ctl+ A}
+  - {t: C, s: Sft+ F4}
+  - {t: W, s: Sft+ F5}
   - ''
   - {t: V, s: Ctl+ F14}
   - {t: L, s: Sft+ F15}
@@ -36,10 +36,10 @@ layers:
   - $
   - ''
   - LEFT WIN
-  - {t: O, h: Alt+Sft+ LEFT GUI, s: Sft+ F16}
-  - {t: A, h: LEFT ALT, s: Ctl+ F7}
-  - {t: I, h: RSHFT, s: Sft+ F8}
-  - {t: N, h: LCTRL, s: Ctl+ S}
+  - {t: O, h: Alt+Sft+ LEFT GUI, s: Sft+ F6}
+  - {t: A, h: LEFT ALT, s: Sft+ F7}
+  - {t: I, h: LSHFT, s: Sft+ F8}
+  - {t: N, h: LCTRL, s: Sft+ F9}
   - F9
   - ''
   - {t: T, h: RCTRL, s: Sft+ F17}
@@ -47,22 +47,22 @@ layers:
   - {t: E, h: RIGHT ALT, s: Sft+ F19}
   - {t: S, h: Sft+AGr+ LEFT GUI, s: Ctl+ F20}
   - RMETA
-  - nav
+  - fun
   - {t: J, s: Sft+ F10}
-  - {t: F, h: num, s: Ctl+ F}
+  - {t: F, h: nav, s: Sft+ F11}
   - {t: U, s: Sft+ F12}
   - {t: P, s: Ctl+ V}
   - ''
   - BACKSPACE
-  - de
-  - {t: '&rgb_ug_status_macro', h: mouse}
-  - {t: '&rgb_ug_status_macro', h: mouse}
+  - num
+  - {t: '&rgb_ug_status_macro', h: magic}
+  - {t: '&rgb_ug_status_macro', h: magic}
   - {t: num, h: toggle}
   - DELETE
   - ''
-  - {t: M, h: de, s: Sft+ F21}
+  - {t: M, h: num, s: Sft+ F21}
   - {t: D, s: Sft+ F22}
-  - {t: Y, h: num, s: Ctl+ F23}
+  - {t: Y, h: nav, s: Ctl+ F23}
   - {t: X, s: Ctl+ F24}
   - ''
   - Gui+ L
@@ -97,71 +97,71 @@ layers:
   - {t: ▽, type: trans}
   - Sft+ K
   - {t: ▽, type: trans}
-  - Gui+ F10
-  - Gui+ F11
-  - Gui+ F12
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+ G
   - Sft+ H
   - Sft+ C
   - Sft+ W
-  - ''
+  - {t: ▽, type: trans}
   - Sft+ V
   - Sft+ L
   - Sft+ B
   - {t: ▽, type: trans}
-  - ''
-  - LEFT WIN
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - Sft+ O
   - Sft+ A
   - Sft+ I
   - Sft+ N
   - {t: ▽, type: trans}
-  - ''
+  - {t: ▽, type: trans}
   - Sft+ T
   - Sft+ R
   - Sft+ E
   - Sft+ S
   - {t: ▽, type: trans}
-  - nav
+  - {t: ▽, type: trans}
   - Sft+ J
   - Sft+ F
   - Sft+ U
   - Sft+ P
-  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - Sft+ M
   - Sft+ D
   - Sft+ Y
   - Sft+ X
-  - ''
-  - Gui+ L
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - Sft+ Q
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - ''
-  - ''
-  - {t: qwerty, h: toggle}
-  - {t: LSHFT, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+ Z
-  - ''
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   de:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -216,7 +216,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -238,6 +237,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: LSHFT, h: sticky}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -292,12 +292,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '1', type: held}
+  - '1'
   - '2'
   - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -371,9 +371,9 @@ layers:
   - ''
   - ''
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - LCTRL
-  - ''
+  - {type: held}
   - UP ARROW
   - DOWN
   - {t: ▽, type: trans}
@@ -452,7 +452,7 @@ layers:
   - RIGHT ALT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - ''
   - Ctl+ C
   - Ctl+ S
@@ -703,7 +703,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -784,7 +784,7 @@ layers:
   - ''
   - '&bt_2'
   - '&bootloader'
-  - ''
+  - {type: held}
   - ''
   - '&bootloader'
   - ''
