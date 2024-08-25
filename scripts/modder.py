@@ -26,7 +26,7 @@ class Morph:
         return f"{self.parent}_{self.prefix}_{self.postfix}"
     def compile(self):
         label = self.name()
-        m = list(map(lambda x: modmap[x], self.mods))
+        m = sorted(list(map(lambda x: modmap[x], self.mods)))
         joined = "|".join(m)
         mods = f"<({joined})>"
         keep_mods = f"keep-mods = {mods};" if self.keep else ""
@@ -87,56 +87,41 @@ def parse_yaml_to_maps(file):
 
     return maps
 
+def update(target, content):
+    print(f"Start writing to {target}")
+    start = "/*<mods-start>/*"
+    end = "/*<mods-end>/*"
+    new = []
+    target_region = False
+    with open(target, "r") as f:
+        for line in f.readlines():
+            if end in line and target_region:
+                for l in content.split("\n"):
+                    new.append(l+"\n")
+                target_region = False
+                new.append(end+"\n")
+                continue
+            if target_region :
+                continue
+            if start in line and not target_region:
+                target_region = True
+                new.append(start+"\n")
+                continue
+            new.append(line)
+    with open(target, "w") as f:
+        f.writelines(new)
+    print(f"Done writing to {target}")
+
 # Example YAML content
 file = "C:\\dev\\zmk-config\\shortcuts\\mods.yaml"
-all = parse_yaml_to_maps(file)
-for a in all:
-    r = a.generate()
-    (prev,gen) = a.compile()
-    print(gen)
-    print(prev)
 
-mapp = {
-    "" : "X",
-    "H" : "V",
-    "I" : "S",
-    "U" : "Z",
-    "K" : "A",
-    "Q" : "Y"
-}
-def gen(key, trg):
+def run(origin, target):
+    print(f"Reading {origin}")
+    mappings = parse_yaml_to_maps(origin)
+    print(f"Parsed {len(mappings)} mappings")
+    content = ""
+    for m in mappings:
+        content += m.compile()[1] + "\n"
+    update(target, content)
 
-    res = f'''
-{key}_key:{key}_key {{
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <350>;
-    bindings = <&kp>, <&{key}nomods>;
-    hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
-    hold-trigger-on-release;
-    label = "{key}_KEY";}};
-
-{key}nomods:{key}nomods {{
-    compatible = "zmk,behavior-mod-morph";
-
-#binding-cells = <0>;
-bindings = <&kp {key}>, <&{key}lctrl>;
-label = "{key}NOMODS";
-mods = <(MOD_LCTL)>;
-keep-mods = <(MOD_LCTL)>;}};
-
-{key}lctrl:{key}lctrl {{
-    compatible = "zmk,behavior-mod-morph";
-
-#binding-cells = <0>;
-bindings = <&kp {trg}>, <&kp {key}>;
-label = "{key}LCTRL";
-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
-keep-mods = <(MOD_RCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT|MOD_RGUI)>;}};
-'''
-    # print(res + "\n")
-# for (k, v) in mapp.items():
-#     gen(k, v)
+run(file, "C:\\dev\\zmk-config\\config\\glove80.keymap")
