@@ -36,22 +36,22 @@ layers:
   - $
   - ''
   - LEFT WIN
-  - {t: O, h: Gui+Alt+ LEFT SHIFT}
+  - {t: O, h: Alt+Sft+ LEFT GUI, s: Sft+ F6}
   - {t: A, h: LEFT ALT, s: Sft+ F7}
   - {t: I, h: RSHFT, s: Sft+ F8}
   - {t: N, h: LCTRL, s: Sft+ F9}
   - F9
   - ''
-  - {t: T, h: RCTRL}
-  - {t: R, h: RSHFT}
-  - {t: E, h: RIGHT ALT}
-  - S
+  - {t: T, h: RCTRL, s: Sft+ F17}
+  - {t: R, h: RSHFT, s: Sft+ F18}
+  - {t: E, h: RIGHT ALT, s: Sft+ F19}
+  - {t: S, h: Sft+AGr+ LEFT GUI, s: Sft+ F20}
   - RMETA
   - fun
   - {t: J, s: Sft+ F10}
-  - {t: F, h: nav}
-  - U
-  - P
+  - {t: F, h: nav, s: Sft+ F11}
+  - {t: U, s: Sft+ F12}
+  - {t: P, s: Sft+ F13}
   - ''
   - BACKSPACE
   - num
@@ -60,14 +60,14 @@ layers:
   - {t: nav, h: toggle}
   - DELETE
   - ''
-  - {t: M, h: num}
-  - D
+  - {t: M, h: num, s: Sft+ F21}
+  - {t: D, s: Sft+ F22}
   - {t: Y, h: nav, s: Sft+ F23}
-  - X
+  - {t: X, s: Sft+ F24}
   - ''
   - Gui+ L
   - ''
-  - Q
+  - {t: Q, s: Sft+ Q}
   - TAB
   - ENTER
   - SPACE
@@ -78,7 +78,7 @@ layers:
   - {t: LSHFT, h: sticky}
   - ENTER
   - TAB
-  - Z
+  - {t: Z, s: Sft+ Z}
   - ''
   - ''
   de:
