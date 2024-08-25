@@ -36,7 +36,7 @@ layers:
   - $
   - ''
   - LEFT WIN
-  - {t: O, h: Alt+Sft+ LEFT GUI, s: Sft+ F6}
+  - {t: O, s: Sft+ F6}
   - {t: A, h: LEFT ALT, s: Sft+ F7}
   - {t: I, h: LSHFT, s: Sft+ F8}
   - {t: N, h: LCTRL, s: Sft+ F9}
@@ -45,12 +45,12 @@ layers:
   - {t: T, h: RCTRL, s: Sft+ F17}
   - {t: R, h: RSHFT, s: Sft+ F18}
   - {t: E, h: RIGHT ALT, s: Sft+ F19}
-  - {t: S, h: Sft+AGr+ LEFT GUI, s: Ctl+ F20}
+  - {t: S, s: Ctl+ F20}
   - RMETA
   - fun
   - {t: J, s: Sft+ F10}
   - {t: F, h: nav, s: Sft+ F11}
-  - {t: U, s: Sft+ F12}
+  - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}
   - {t: P, s: Sft+ F13}
   - ''
   - BACKSPACE
@@ -61,7 +61,7 @@ layers:
   - DELETE
   - ''
   - {t: M, h: num, s: Sft+ F21}
-  - {t: D, s: Sft+ F22}
+  - {t: D, h: Sft+AGr+ LEFT GUI, s: Sft+ F22}
   - {t: Y, h: nav, s: Ctl+ F23}
   - {t: X, s: Ctl+ F24}
   - ''
