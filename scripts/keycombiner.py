@@ -144,9 +144,9 @@ def parse_xml(file):
             else:
                 keys.append(first_keystroke)
 
-        for shortcut in action.findall('mouse-shortcut'):
-            keystroke = "+".join(shortcut.get('keystroke').split(" "))
-            keys.append(keystroke)
+        # for shortcut in action.findall('mouse-shortcut'):
+        #     keystroke = "+".join(shortcut.get('keystroke').split(" "))
+        #     keys.append(keystroke)
 
         if keys:
             keys_combined = " OR ".join(keys)
@@ -161,7 +161,7 @@ def replace_fun(val):
     reserved_map = get_reserved("C:\\dev\\zmk-config\\shortcuts\\mods.yaml")
 
     for (r, s) in reserved_map.items():
-        if r in val:
+        if r == val:
             return val.replace(r, s)
 
     return val
@@ -185,7 +185,7 @@ def write(target, data):
         for key, val in data.items():
             val = replace_fun(val)
             desription, context = key
-            if not val or "++" in val or "+-" in val or "click" in val or "button" in val:
+            if not val or "++" in val or "+-" in val:
                 continue
             if val in done: continue
             if "meta" in val: continue
@@ -203,3 +203,5 @@ def run(origin, target):
     # print(set(list((map(lambda x: (x[0],x[1]), data)))))
     # print(set(list(itertools.chain.from_iterable((map(lambda x: re.split("\s*(OR|\\+|>)\s*", x[1]), data))))))
     write(target, keymap)
+base = "C:\\dev\\zmk-config"
+run(f"{base}\\shortcuts\\keymap.xml",f"{base}\\shortcuts\\keymap.csv")

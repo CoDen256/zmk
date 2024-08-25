@@ -598,7 +598,9 @@
   <action id="PasteMultiple">
     <keyboard-shortcut first-keystroke="shift ctrl v" />
   </action>
-  <action id="Pause" />
+  <action id="Pause">
+    <keyboard-shortcut first-keystroke="shift f22" />
+  </action>
   <action id="PreviousDiff">
     <keyboard-shortcut first-keystroke="shift h" />
   </action>
