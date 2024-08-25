@@ -1,63 +1,63 @@
 map:
   K:
-    lshift: "LS(K)"
+    rshift: "RS(F1)"
   G:
-    lshift: "LS(G)"
+    rshift: "RS(F2)"
   H:
-    lshift: "LS(H)"
+    rshift: "RS(F3)"
   C:
-    lshift: "LS(C)"
+    rshift: "RS(F4)"
   W:
-    lshift: "LS(W)"
+    rshift: "RS(F5)"
 
   O:
-    lshift: "LS(O)"
+    rshift: "RS(F6)"
   A:
-    lshift: "LS(A)"
+    rshift: "RS(F7)"
   I:
-    lshift: "LS(I)"
+    rshift: "RS(F8)"
   N:
-    lshift: "LS(N)"
+    rshift: "RS(F9)"
 
   J:
-    lshift: "LS(J)"
+    rshift: "RS(F10)"
   F:
-    lshift: "LS(F)"
+    rshift: "RS(F11)"
   U:
-    lshift: "LS(U)"
+    rshift: "RS(F12)"
   P:
-    lshift: "LS(P)"
+    rshift: "RS(F13)"
   Q:
-    lshift: "LS(Q)"
+    rshift: "RS(Q)"
 
 
 ## right
   V:
-    lshift: "LS(V)"
+    rshift: "RS(F14)"
   L:
-    lshift: "LS(L)"
+    rshift: "RS(F15)"
   B:
-    lshift: "LS(B)"
+    rshift: "RS(F16)"
 
   T:
-    lshift: "LS(T)"
+    rshift: "RS(F17)"
   R:
-    lshift: "LS(R)"
+    rshift: "RS(F18)"
   E:
-    lshift: "LS(E)"
+    rshift: "RS(F19)"
   S:
-    lshift: "LS(S)"
+    rshift: "RS(F20)"
 
   M:
-    lshift: "LS(M)"
+    rshift: "RS(F21)"
   D:
-    lshift: "LS(D)"
+    rshift: "RS(F22)"
   Y:
-    lshift: "LS(Y)"
+    rshift: "RS(F23)"
   X:
-    lshift: "LS(X)"
+    rshift: "RS(F24)"
   Z:
-    lshift: "LS(Z)"
+    rshift: "RS(Z)"
 
 config:
   tapping_term: 280
