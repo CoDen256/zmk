@@ -2,62 +2,62 @@ map:
   K:
     lshift: "LS(K)"
   G:
-    lshift: "LS(K)"
+    lshift: "LS(G)"
   H:
-    lshift: "LS(K)"
+    lshift: "LS(H)"
   C:
-    lshift: "LS(K)"
+    lshift: "LS(C)"
   W:
-    lshift: "LS(K)"
+    lshift: "LS(W)"
 
   O:
-    lshift: "LS(K)"
+    lshift: "LS(O)"
   A:
-    lshift: "LS(K)"
+    lshift: "LS(A)"
   I:
-    lshift: "LS(K)"
+    lshift: "LS(I)"
   N:
-    lshift: "LS(K)"
+    lshift: "LS(N)"
 
   J:
-    lshift: "LS(K)"
+    lshift: "LS(J)"
   F:
-    lshift: "LS(K)"
+    lshift: "LS(F)"
   U:
-    lshift: "LS(K)"
+    lshift: "LS(U)"
   P:
-    lshift: "LS(K)"
+    lshift: "LS(P)"
   Q:
-    lshift: "LS(K)"
+    lshift: "LS(Q)"
 
 
 ## right
   V:
-    lshift: "LS(K)"
+    lshift: "LS(V)"
   L:
-    lshift: "LS(K)"
+    lshift: "LS(L)"
   B:
-    lshift: "LS(K)"
+    lshift: "LS(B)"
 
   T:
-    lshift: "LS(K)"
+    lshift: "LS(T)"
   R:
-    lshift: "LS(K)"
+    lshift: "LS(R)"
   E:
-    lshift: "LS(K)"
+    lshift: "LS(E)"
   S:
-    lshift: "LS(K)"
+    lshift: "LS(S)"
 
   M:
-    lshift: "LS(K)"
+    lshift: "LS(M)"
   D:
-    lshift: "LS(K)"
+    lshift: "LS(D)"
   Y:
-    lshift: "LS(K)"
+    lshift: "LS(Y)"
   X:
-    lshift: "LS(K)"
+    lshift: "LS(X)"
   Z:
-    lshift: "LS(K)"
+    lshift: "LS(Z)"
 
 config:
   tapping_term: 280
