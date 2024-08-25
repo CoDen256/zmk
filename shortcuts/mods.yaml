@@ -4,24 +4,26 @@ map:
   G:
     hold:
       bind: "&lnav"
-    rshift: "RS(F2)"
+    rshift: "LC(X)" #f2
   H:
     hold:
       bind: "&lswitcher"
     rshift: "RS(F3)"
   C:
-    rshift: "RS(F4)"
+    rshift: "LC(C)" #f4
+    rctrl: "RC(F4)"
   W:
-    rshift: "RS(F5)"
+    rshift: "LC(A)" #f5
 
   O:
     hold:
       bind: "&kp"
-    rshift: "RS(F6)"
+    rshift: "RS(F16)"
   A:
     hold:
       bind: "&kp"
-    rshift: "RS(F7)"
+    rshift: "LC(Z)" #f7
+    rctrl: "RC(F7)"
   I:
     hold:
       bind: "&kp"
@@ -29,25 +31,25 @@ map:
   N:
     hold:
       bind: "&kp"
-    rshift: "RS(F9)"
+    rshift: "LC(S)" # f9
 
   J:
     rshift: "RS(F10)"
   F:
     hold:
       bind: "&mo"
-    rshift: "RS(F11)"
+    rshift: "LC(F)"  #f11 is for Z
   U:
     rshift: "RS(F12)"
   P:
-    rshift: "RS(F13)"
+    rshift: "LC(V)" # f13
   Q:
-    rshift: "RS(Q)"
-
+    rshift: "LC(Y)"
 
 ### right
   V:
     rshift: "RS(F14)"
+    lctrl: "LC(F14)"
   L:
     rshift: "RS(F15)"
   B:
@@ -71,6 +73,7 @@ map:
     hold:
       bind: "&kp"
     rshift: "RS(F20)"
+    lctrl: "LC(F20)"
 
   M:
     hold:
@@ -82,10 +85,13 @@ map:
     hold:
       bind: "&mo"
     rshift: "RS(F23)"
+    lctrl: "LC(F23)"
   X:
     rshift: "RS(F24)"
+    lctrl: "LC(F24)"
   Z:
-    rshift: "RS(Z)"
+    rshift: "RS(F11)"
+    lctrl: "LC(F11)"
 
 config:
   tapping_term: 280

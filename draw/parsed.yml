@@ -25,33 +25,33 @@ layers:
   - ''
   - MUTE
   - ^
-  - {t: G, h: '&lnav LCTRL', s: Sft+ F2}
+  - {t: G, h: '&lnav LCTRL', s: Ctl+ X}
   - {t: H, h: '&lswitcher LEFT_ALT', s: Sft+ F3}
-  - {t: C, s: Sft+ F4}
-  - {t: W, s: Sft+ F5}
+  - {t: C, s: Ctl+ F4}
+  - {t: W, s: Ctl+ A}
   - ''
-  - {t: V, s: Sft+ F14}
+  - {t: V, s: Ctl+ F14}
   - {t: L, s: Sft+ F15}
   - {t: B, h: '&lnav RIGHT_ALT', s: Sft+ F16}
   - $
   - ''
   - LEFT WIN
-  - {t: O, h: Alt+Sft+ LEFT GUI, s: Sft+ F6}
-  - {t: A, h: LEFT ALT, s: Sft+ F7}
+  - {t: O, h: Alt+Sft+ LEFT GUI, s: Sft+ F16}
+  - {t: A, h: LEFT ALT, s: Ctl+ F7}
   - {t: I, h: RSHFT, s: Sft+ F8}
-  - {t: N, h: LCTRL, s: Sft+ F9}
+  - {t: N, h: LCTRL, s: Ctl+ S}
   - F9
   - ''
   - {t: T, h: RCTRL, s: Sft+ F17}
   - {t: R, h: RSHFT, s: Sft+ F18}
   - {t: E, h: RIGHT ALT, s: Sft+ F19}
-  - {t: S, h: Sft+AGr+ LEFT GUI, s: Sft+ F20}
+  - {t: S, h: Sft+AGr+ LEFT GUI, s: Ctl+ F20}
   - RMETA
   - fun
   - {t: J, s: Sft+ F10}
-  - {t: F, h: nav, s: Sft+ F11}
+  - {t: F, h: nav, s: Ctl+ F}
   - {t: U, s: Sft+ F12}
-  - {t: P, s: Sft+ F13}
+  - {t: P, s: Ctl+ V}
   - ''
   - BACKSPACE
   - num
@@ -62,12 +62,12 @@ layers:
   - ''
   - {t: M, h: num, s: Sft+ F21}
   - {t: D, s: Sft+ F22}
-  - {t: Y, h: nav, s: Sft+ F23}
-  - {t: X, s: Sft+ F24}
+  - {t: Y, h: nav, s: Ctl+ F23}
+  - {t: X, s: Ctl+ F24}
   - ''
   - Gui+ L
   - ''
-  - {t: Q, s: Sft+ Q}
+  - {t: Q, s: Ctl+ Y}
   - TAB
   - ENTER
   - SPACE
@@ -78,7 +78,7 @@ layers:
   - {t: LSHFT, h: sticky}
   - ENTER
   - TAB
-  - {t: Z, s: Sft+ Z}
+  - {t: Z, s: Ctl+ F11}
   - ''
   - ''
   de:
