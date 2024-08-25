@@ -185,9 +185,11 @@ def run(origin, target):
     print(f"[modder] Parsed {len(mappings)} mappings")
     content = ""
     for m in mappings:
-        content += m.compile()[1] + "\n"
+        content += m.compile() + "\n"
     update(target, content)
 # run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
 
-a = parse("C:\\dev\\zmk-config\\shortcuts\\mods.yaml")
-for i in a: print(i.compile())
+
+#
+# a = parse("C:\\dev\\zmk-config\\shortcuts\\mods.yaml")
+# for i in a: print(i.compile())
