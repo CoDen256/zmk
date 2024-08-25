@@ -213,16 +213,16 @@
     <keyboard-shortcut first-keystroke="ctrl y" />
   </action>
   <action id="EditorAddCaretPerSelectedLine">
-    <keyboard-shortcut first-keystroke="ctrl alt q" />
+    <keyboard-shortcut first-keystroke="shift f11" />
   </action>
   <action id="EditorChooseLookupItemDot">
     <keyboard-shortcut first-keystroke="f3" />
   </action>
   <action id="EditorCloneCaretAbove">
-    <keyboard-shortcut first-keystroke="shift alt u" />
+    <keyboard-shortcut first-keystroke="shift f12" />
   </action>
   <action id="EditorCloneCaretBelow">
-    <keyboard-shortcut first-keystroke="shift alt p" />
+    <keyboard-shortcut first-keystroke="shift f13" />
   </action>
   <action id="EditorCodeBlockEnd">
     <keyboard-shortcut first-keystroke="alt end" />
@@ -721,7 +721,7 @@
     <keyboard-shortcut first-keystroke="alt g" />
   </action>
   <action id="SelectAllOccurrences">
-    <keyboard-shortcut first-keystroke="ctrl q" />
+    <keyboard-shortcut first-keystroke="ctrl alt f" />
   </action>
   <action id="SelectIn">
     <keyboard-shortcut first-keystroke="shift meta alt s" />
@@ -815,7 +815,7 @@
   <action id="ToggleBreakpointEnabled" />
   <action id="ToggleDistractionFreeMode" />
   <action id="ToggleFindInSelection">
-    <keyboard-shortcut first-keystroke="ctrl alt f" />
+    <keyboard-shortcut first-keystroke="ctrl f" />
   </action>
   <action id="ToggleFullScreen" />
   <action id="ToggleLineBreakpoint">
