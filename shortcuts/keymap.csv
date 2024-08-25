@@ -135,7 +135,7 @@
 "Toggle Line Breakpoint","alt+d","Main","General","0",""
 "Unselect Previous Occurrence","shift+alt+q","Main","General","0",""
 "Unwrap","alt+j","Main","General","0",""
-"Quick List Popup Action","alt+s","Vcs","General","0",""
+"Quick List Popup Action","ctrl+m","Vcs","General","0",""
 "Rollback Changed Lines","ctrl+alt+z","Vcs","General","0",""
 "Attach To Process","shift+ctrl+alt+d","XDebugger","General","0",""
 "Mute Breakpoints","shift+alt+d","XDebugger","General","0",""

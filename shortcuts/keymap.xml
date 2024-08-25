@@ -855,7 +855,7 @@
     <keyboard-shortcut first-keystroke="ctrl alt m" />
   </action>
   <action id="Vcs.QuickListPopupAction">
-    <keyboard-shortcut first-keystroke="alt s" />
+    <keyboard-shortcut first-keystroke="ctrl m" />
   </action>
   <action id="Vcs.RefreshFileHistory" />
   <action id="Vcs.RollbackChangedLines">
