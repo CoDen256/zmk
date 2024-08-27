@@ -62,6 +62,7 @@
 "Generate Test Method","shift+ctrl+y","Main","General","0",""
 "Branches","shift+m","Git","General","0",""
 "Ignore File","shift+alt+m","Git","General","0",""
+"Reset","ctrl+alt+o","Git","General","0",""
 "Git Push Branch Action","ctrl+alt+m","Main","General","0",""
 "Go To Menu","alt+v","Main","General","0",""
 "Goto Action","alt+e","Main","General","0",""

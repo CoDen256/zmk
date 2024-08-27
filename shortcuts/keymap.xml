@@ -396,6 +396,9 @@
   </action>
   <action id="Git.New.Branch.In.Log" />
   <action id="Git.Pull" />
+  <action id="Git.Reset">
+    <keyboard-shortcut first-keystroke="ctrl alt o" />
+  </action>
   <action id="Git.Stage.Add" />
   <action id="GitLab.Merge.Request.List.Refresh" />
   <action id="GitLab.Merge.Request.Refresh" />
