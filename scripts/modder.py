@@ -1,3 +1,5 @@
+from cProfile import label
+
 import yaml
 
 
@@ -39,10 +41,12 @@ class HoldTap:
         self.tap = tap
         self.hold = hold
         self.config = config
-        self.pos = key_to_pos[tap.default]
+        if hold:
+
+            self.pos = key_to_pos[tap.default]
     def compile(self):
         root, generated = self.tap.compile()
-        label = self.tap.default + "_key"
+        label = self.tap.label + "_key"
         if not self.hold:
             return generated.replace(root[1:], label).replace(root[1:].upper(), label.upper())
         return self.gen_holdtap(label, self.hold, root, self.pos) + "\n" + generated
@@ -63,8 +67,8 @@ label = "{name.upper()}";}};
 
 
 class Morph:
-    def __init__(self, parent, prefix, default, mods, modified, keep=False, postfix = ""):
-        self.parent = parent
+    def __init__(self, label, prefix, default, mods, modified, keep=False, postfix =""):
+        self.label = label
         self.prefix = prefix
         self.postfix = postfix if postfix else f"{'_'.join(mods)}"
         self.default = default
@@ -73,7 +77,7 @@ class Morph:
         self.keep = keep
 
     def name(self):
-        return f"{self.parent}_{self.prefix}_{self.postfix}"
+        return f"{self.label}_{self.prefix}_{self.postfix}"
     def compile(self):
         label = self.name()
         m = sorted(list(map(lambda x: modmap[x], self.mods)))
@@ -92,7 +96,8 @@ mods = {mods};
 
 
 class Map:
-    def __init__(self, default, mapping):
+    def __init__(self, label, default, mapping):
+        self.label = label
         self.default = default
         self.mapping = mapping
     def generate(self):
@@ -101,11 +106,11 @@ class Map:
         prev = self.kp(self.default)
         for (key, value) in self.mapping.items():
             mods_complement = set(modmap.keys()) - {key}
-            sink = Morph(self.default, "sink",
+            sink = Morph(self.label, "sink",
                          self.kp(value), mods_complement,
                          self.kp(self.default), True, key)
             sinks.append(sink)
-            link = Morph(self.default, "link",
+            link = Morph(self.label, "link",
                          prev, [key],
                          self.gen_ref(sink))
             links.append(link)
@@ -137,17 +142,19 @@ def parse(file):
     configdata = data['config']
     def_config = Config(**configdata)
     maps = []
-    for (k, v) in mapdata.items():
+    for (label, mapping) in mapdata.items():
         cfg = def_config
         hold = None
-        if "hold" in v:
-            hold_cfg = v.pop("hold")
+        key = label
+        if "hold" in mapping:
+            hold_cfg = mapping.pop("hold")
             hold = hold_cfg.pop("bind")
             cfg = Config(**(configdata | hold_cfg))
-        if "hold.bind" in v:
-            hold = v.pop("hold.bind")
-
-        maps.append(HoldTap(cfg, Map(k, v), hold))
+        if "hold.bind" in mapping:
+            hold = mapping.pop("hold.bind")
+        if "key" in mapping:
+            key = mapping.pop("key")
+        maps.append(HoldTap(cfg, Map(label, key, mapping), hold))
 
     return maps
 

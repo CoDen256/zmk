@@ -206,5 +206,5 @@ def run(origin, target):
     # print(set(list((map(lambda x: (x[0],x[1]), data)))))
     # print(set(list(itertools.chain.from_iterable((map(lambda x: re.split("\s*(OR|\\+|>)\s*", x[1]), data))))))
     write(target, keymap)
-base = "C:\\dev\\zmk-config"
-run(f"{base}\\shortcuts\\keymap.xml",f"{base}\\shortcuts\\keymap.csv")
+# base = "C:\\dev\\zmk-config"
+# run(f"{base}\\shortcuts\\keymap.xml",f"{base}\\shortcuts\\keymap.csv")

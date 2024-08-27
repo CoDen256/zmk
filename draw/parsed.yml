@@ -65,13 +65,13 @@ layers:
   - {t: Y, h: nav, s: Ctl+ F23}
   - {t: X, s: Ctl+ F24}
   - ''
-  - Gui+ L
-  - {t: type, h: toggle}
+  - ''
+  - {t: main, h: toggle}
   - {t: Q, s: Ctl+ ^}
   - TAB
   - ENTER
   - SPACE
-  - {t: main_upper, h: sticky}
+  - {t: de, h: sticky}
   - ''
   - {t: main_upper, h: toggle}
   - {t: mouse, h: toggle}
@@ -79,7 +79,7 @@ layers:
   - ENTER
   - TAB
   - {t: Z, s: Ctl+ ~}
-  - ''
+  - {t: main, h: toggle}
   - ''
   main_upper:
   - {t: ▽, type: trans}
@@ -146,22 +146,22 @@ layers:
   - Sft+ Y
   - Sft+ X
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: main_upper, h: toggle}
   - {t: ▽, type: trans}
   - Sft+ Q
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&caps_word'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - Sft+ Z
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: main_upper, h: toggle}
   de:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -227,13 +227,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: de, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -242,7 +242,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: de, h: toggle}
   num:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -308,6 +308,7 @@ layers:
   - ','
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: num, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -322,8 +323,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: num, h: toggle}
   nav:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -389,7 +389,7 @@ layers:
   - ''
   - ''
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: nav, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - PG UP
@@ -404,7 +404,7 @@ layers:
   - ''
   - ''
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: nav, h: toggle}
   fun:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -522,10 +522,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - F4
+  - {t: Sft+Ctl+ TAB, s: Sft+Ctl+ TAB}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: Ctl+ TAB, s: Ctl+ TAB}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

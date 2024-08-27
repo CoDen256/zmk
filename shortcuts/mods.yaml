@@ -93,6 +93,15 @@ map:
     lshift: "LS(TILDE)"
     lctrl: "LC(TILDE)"
 
+
+  c_tab:
+    key: "LC(TAB)"
+    lalt: "LC(TAB)"
+  sc_tab:
+    key: "LS(LC(TAB))"
+    lalt: "LS(LC(TAB))"
+
+
 config:
   tapping_term: 280
   quick_tap: 175

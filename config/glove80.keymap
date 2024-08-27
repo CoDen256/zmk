@@ -1631,6 +1631,44 @@ keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };
 
 
+c_tab_key:c_tab_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LC(TAB)>, <&c_tab_sink_lalt>;
+label = "C_TAB_KEY";
+mods = <(MOD_LALT)>;
+
+};
+
+c_tab_sink_lalt:c_tab_sink_lalt{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LC(TAB)>, <&kp LC(TAB)>;
+label = "C_TAB_SINK_LALT";
+mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+sc_tab_key:sc_tab_key{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(LC(TAB))>, <&sc_tab_sink_lalt>;
+label = "SC_TAB_KEY";
+mods = <(MOD_LALT)>;
+
+};
+
+sc_tab_sink_lalt:sc_tab_sink_lalt{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LS(LC(TAB))>, <&kp LS(LC(TAB))>;
+label = "SC_TAB_SINK_LALT";
+mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+};
+
+
 /*<mods-end>*/
 
 
@@ -2688,6 +2726,28 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
@@ -2698,17 +2758,17 @@ keymap {
 &kp C_MUTE         &kp CARET        &G_key LCTRL 0     &H_key LEFT_ALT 0      &C_key          &W_key                                                                           &none        &V_key          &L_key                     &B_key RIGHT_ALT 0  &kp DOLLAR  &none
 &kp LEFT_WIN       &O_key           &A_key LEFT_ALT 0  &I_key LSHFT 0         &N_key LCTRL 0  &kp ESCAPE                                                                       &kp DELETE   &T_key RCTRL 0  &R_key RSHFT 0             &E_key RIGHT_ALT 0  &S_key      &kp RMETA
 &mo 5              &J_key           &F_key 4 0         &U_key LS(LA(LGUI)) 0  &P_key          &none        &kp BACKSPACE  &mo 3  &magic 9 0    &magic 9 0  &tog 3  &kp DELETE  &none        &M_key 3 0      &D_key RS(RA(LEFT_GUI)) 0  &Y_key 4 0          &X_key      &none
-&kp LG(L)          &to 10           &Q_key             &kp TAB                &kp ENTER                    &kp SPACE      &sl 1  &none         &tog 1      &tog 8  &sl 1                    &kp ENTER       &kp TAB                    &Z_key              &none       &none
+&none              &to 0            &Q_key             &kp TAB                &kp ENTER                    &kp SPACE      &sl 2  &none         &tog 1      &tog 8  &sl 1                    &kp ENTER       &kp TAB                    &Z_key              &to 0       &none
 >;};
 
 		main_upper {
 			bindings = <
-&trans  &trans     &trans     &trans     &trans                                                                          &trans     &trans     &trans     &trans     &trans
-&trans  &trans     &trans     &kp LS(K)  &trans     &trans                                                       &trans  &trans     &trans     &trans     &trans     &trans
-&trans  &trans     &kp LS(G)  &kp LS(H)  &kp LS(C)  &kp LS(W)                                                    &trans  &kp LS(V)  &kp LS(L)  &kp LS(B)  &trans     &trans
-&trans  &kp LS(O)  &kp LS(A)  &kp LS(I)  &kp LS(N)  &trans                                                       &trans  &kp LS(T)  &kp LS(R)  &kp LS(E)  &kp LS(S)  &trans
-&trans  &kp LS(J)  &kp LS(F)  &kp LS(U)  &kp LS(P)  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LS(M)  &kp LS(D)  &kp LS(Y)  &kp LS(X)  &trans
-&trans  &trans     &kp LS(Q)  &trans     &trans                &trans  &trans  &trans    &trans  &trans  &trans          &trans     &trans     &kp LS(Z)  &trans     &trans
+&trans  &trans     &trans     &trans     &trans                                                                              &trans     &trans     &trans     &trans     &trans
+&trans  &trans     &trans     &kp LS(K)  &trans     &trans                                                           &trans  &trans     &trans     &trans     &trans     &trans
+&trans  &trans     &kp LS(G)  &kp LS(H)  &kp LS(C)  &kp LS(W)                                                        &trans  &kp LS(V)  &kp LS(L)  &kp LS(B)  &trans     &trans
+&trans  &kp LS(O)  &kp LS(A)  &kp LS(I)  &kp LS(N)  &trans                                                           &trans  &kp LS(T)  &kp LS(R)  &kp LS(E)  &kp LS(S)  &trans
+&trans  &kp LS(J)  &kp LS(F)  &kp LS(U)  &kp LS(P)  &trans     &trans  &trans      &trans    &trans  &trans  &trans  &trans  &kp LS(M)  &kp LS(D)  &kp LS(Y)  &kp LS(X)  &trans
+&tog 1  &trans     &kp LS(Q)  &trans     &trans                &trans  &caps_word  &trans    &trans  &trans  &trans          &trans     &trans     &kp LS(Z)  &trans     &tog 1
 >;};
 de {
          bindings = <
@@ -2717,7 +2777,7 @@ de {
 &trans  &trans    &trans    &trans    &trans  &trans                                                       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &Oumlaut  &Aumlaut  &trans    &trans  &trans                                                       &trans  &trans  &trans  &trans  &eszet  &trans
 &trans  &trans    &trans    &Uumlaut  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans    &trans    &trans    &trans          &trans  &trans  &trans    &trans  &trans  &sk LSHFT          &trans  &trans  &trans  &trans  &trans
+&to 2   &trans    &trans    &trans    &trans          &trans  &trans  &trans    &trans  &trans  &sk LSHFT          &trans  &trans  &trans  &trans  &to 2
 >;};
 num {
          bindings = <
@@ -2726,7 +2786,7 @@ num {
 &trans  &trans  &kp N7        &kp N8        &kp N9        &trans                                                    &trans  &kp PERCENT      &kp ASTERISK          &kp SLASH                        &none    &trans
 &trans  &kp N0  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans                                                    &trans  &hmr LCTRL LPAR  &hmr LSHIFT KP_EQUAL  &hmr LEFT_ALT RIGHT_PARENTHESIS  &kp DOT  &trans
 &trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp PLUS         &kp MINUS             &kp COMMA                        &trans   &trans
-&trans  &trans  &trans        &trans        &trans                &trans  &trans  &trans    &trans  &trans  &trans          &trans           &trans                &trans                           &trans   &trans
+&to 3   &trans  &trans        &trans        &trans                &trans  &trans  &trans    &trans  &trans  &trans          &trans           &trans                &trans                           &trans   &to 3
 >;};
 nav {
 			bindings = <
@@ -2735,7 +2795,7 @@ nav {
 &trans  &trans          &none   &kp HOME        &kp END          &trans                                                    &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
 &trans  &kp LEFT_SHIFT  &none   &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans                                                    &trans  &kp RCTRL  &kp LEFT_SHIFT   &none   &none   &trans
 &trans  &kp LCTRL       &none   &kp UP_ARROW    &kp DOWN         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
-&trans  &trans          &trans  &kp PG_UP       &kp PAGE_DOWN            &trans  &trans  &trans    &trans  &trans  &trans          &none      &none            &none   &trans  &trans
+&to 4   &trans          &trans  &kp PG_UP       &kp PAGE_DOWN            &trans  &trans  &trans    &trans  &trans  &trans          &none      &none            &none   &trans  &to 4
 >;};
 fun {
 			bindings = <
@@ -2752,7 +2812,7 @@ switcher {
 &trans  &trans  &trans       &trans  &trans                                                                        &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp F4       &trans  &kp ESCAPE  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LS(TAB)  &none   &kp TAB     &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans       &trans  &trans      &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F4  &sc_tab_key  &trans  &c_tab_key  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans       &trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans       &trans  &trans              &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
 >;};
