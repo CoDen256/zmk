@@ -1,28 +1,25 @@
-from cProfile import label
-
 import yaml
-
+from pydantic import PositiveFloat
 
 modmap = {
-    "lalt" : "MOD_LALT",
-    "ralt" : "MOD_RALT",
-    "lctrl" : "MOD_LCTL",
-    "rctrl" : "MOD_RCTL",
-    "lgui" : "MOD_LGUI",
-    "rgui" : "MOD_RGUI",
-    "lshift" : "MOD_LSFT",
-    "rshift" : "MOD_RSFT",
+    "lalt": "MOD_LALT",
+    "ralt": "MOD_RALT",
+    "lctrl": "MOD_LCTL",
+    "rctrl": "MOD_RCTL",
+    "lgui": "MOD_LGUI",
+    "rgui": "MOD_RGUI",
+    "lshift": "MOD_LSFT",
+    "rshift": "MOD_RSFT",
 }
 
 positions = {
-    "left" : "28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74",
-    "right" : "27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74"
+    "left": "28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74",
+    "right": "27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74"
 }
 
-
 keys_pos = {
-    "left" : "kghcwoainjfupq",
-    "right" : "vlbtresmdyxz"
+    "left": "kghcwoainjfupq",
+    "right": "vlbtresmdyxz"
 }
 
 key_to_pos = {}
@@ -30,27 +27,59 @@ for (pos, keys) in keys_pos.items():
     for k in keys:
         key_to_pos[k.upper()] = positions[pos]
 
+
+class Positioning():
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+        self.keys = left | right
+
+    def lefts(self):
+        return self.left.values()
+
+    def rights(self):
+        return self.right.values()
+
+    def get_side(self, key):
+        if key.isnumeric():
+            return "left" if key in self.lefts() else "right"
+        return "left" if key in self.left.keys() else "right"
+
+    def pos(self, key):
+        return self.keys[key]
+
+    def opposite_side(self, key):
+        return self.rights() if self.get_side(key) == "left" else self.lefts()
+
+    def same_side(self, key):
+        return self.lefts() if self.get_side(key) == "left" else self.rights()
+
+
 class Config:
     def __init__(self, tapping_term, quick_tap, prior_idle):
         self.tapping_term = tapping_term
         self.quick_tap = quick_tap
         self.prior_idle = prior_idle
 
+
 class HoldTap:
-    def __init__(self, config, tap, hold, position):
+    def __init__(self, layout, config, tap, hold, position):
         self.tap = tap
         self.hold = hold
         self.config = config
+        self.layout = layout
         if hold:
+            self.pos = layout.opposite_side(tap.default) if not position else list(map(lambda k: layout.pos(k), position.split(" ")))
 
-            self.pos = key_to_pos[tap.default] if not position else position
     def compile(self):
         root, generated = self.tap.compile()
         label = self.tap.label + "_key"
         if not self.hold:
             return generated.replace(root[1:], label).replace(root[1:].upper(), label.upper())
         return self.gen_holdtap(label, self.hold, root, self.pos) + "\n" + generated
+
     def gen_holdtap(self, name, hold, tap, position):
+        join = ' '.join(map(lambda x: str(x), position))
         return f'''
 {name}:{name} {{
 compatible = "zmk,behavior-hold-tap";
@@ -60,14 +89,14 @@ tapping-term-ms = <{self.config.tapping_term}>;
 quick-tap-ms = <{self.config.quick_tap}>;
 require-prior-idle-ms = <{self.config.prior_idle}>;
 bindings = <{hold}>, <{tap}>;
-hold-trigger-key-positions = <{position}>;
+hold-trigger-key-positions = <{join}>;
 hold-trigger-on-release;
 label = "{name.upper()}";}};
 '''
 
 
 class Morph:
-    def __init__(self, label, prefix, default, mods, modified, keep=False, postfix =""):
+    def __init__(self, label, prefix, default, mods, modified, keep=False, postfix=""):
         self.label = label
         self.prefix = prefix
         self.postfix = postfix if postfix else f"{'_'.join(mods)}"
@@ -78,6 +107,7 @@ class Morph:
 
     def name(self):
         return f"{self.label}_{self.prefix}_{self.postfix}"
+
     def compile(self):
         label = self.name()
         m = sorted(list(map(lambda x: modmap[x], self.mods)))
@@ -100,6 +130,7 @@ class Map:
         self.label = label
         self.default = default
         self.mapping = mapping
+
     def generate(self):
         sinks = []
         links = []
@@ -116,20 +147,21 @@ class Map:
             links.append(link)
             prev = self.gen_ref(link)
 
-        return prev,links+sinks
-
+        return prev, links + sinks
 
     def kp(self, key):
         return f"&kp {key}"
 
     def gen_ref(self, morph):
         return f"&{morph.name()}"
+
     def compile(self):
         c = ""
         prev, r = self.generate()
         for i in r:
             c += i.compile() + "\n"
         return prev, c
+
 
 # Function to parse the YAML content and create the list of Map objects
 def parse(file):
@@ -141,6 +173,7 @@ def parse(file):
     mapdata = data['map']
     configdata = data['config']
     def_config = Config(**configdata)
+    pos = Positioning(**data['keys'])
     maps = []
     for (label, mapping) in mapdata.items():
         cfg = def_config
@@ -152,9 +185,11 @@ def parse(file):
         if "hold.bind" in mapping:
             hold = mapping.pop("hold.bind")
 
-        maps.append(HoldTap(cfg, Map(label, mapping.pop("key", label), mapping), hold, mapping.pop("pos", None)))
+        map = Map(label, mapping.pop("key", label), mapping)
+        maps.append(HoldTap(pos, cfg, map, hold, mapping.pop("pos", None)))
 
     return maps
+
 
 def update(target, content):
     print(f"[modder] Start writing to {target}")
@@ -166,22 +201,20 @@ def update(target, content):
         for line in f.readlines():
             if end in line and target_region:
                 for l in content.split("\n"):
-                    new.append(l+"\n")
+                    new.append(l + "\n")
                 target_region = False
-                new.append(end+"\n")
+                new.append(end + "\n")
                 continue
-            if target_region :
+            if target_region:
                 continue
             if start in line and not target_region:
                 target_region = True
-                new.append(start+"\n")
+                new.append(start + "\n")
                 continue
             new.append(line)
     with open(target, "w") as f:
         f.writelines(new)
     print(f"[modder] Done writing to {target}")
-
-
 
 
 def run(origin, target):

@@ -8,7 +8,7 @@ map:
   H:
     hold.bind: "&lswitcher"
     rshift: "RS(F3)"
-    pos: "26"
+    pos: "C G"
   C:
     lshift: "LC(C)"
     rctrl: "RC(F4)"
@@ -107,3 +107,39 @@ config:
   tapping_term: 280
   quick_tap: 175
   prior_idle: 200
+
+
+keys:
+  left:
+    K: 13
+    G: 24
+    H: 25
+    C: 26
+    W: 27
+    O: 35
+    A: 36
+    I: 37
+    N: 38
+    J: 47
+    F: 48
+    U: 49
+    P: 50
+    Q: 66
+    Tab: 67
+    Enter: 68
+    Escape: 39
+  right:
+    V: 29
+    L: 30
+    B: 31
+    T: 41
+    R: 42
+    E: 43
+    S: 44
+    M: 59
+    D: 60
+    Y: 61
+    X: 62
+    Z: 77
+    Tab: 76
+    Enter: 75

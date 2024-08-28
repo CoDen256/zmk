@@ -676,7 +676,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&lnav>, <&G_link_rshift>;
-hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 76 75>;
 hold-trigger-on-release;
 label = "G_KEY";};
 
@@ -726,7 +726,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&lswitcher>, <&H_link_rshift>;
-hold-trigger-key-positions = <26>;
+hold-trigger-key-positions = <26 24>;
 hold-trigger-on-release;
 label = "H_KEY";};
 
@@ -887,7 +887,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&kp>, <&A_link_rshift>;
-hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 76 75>;
 hold-trigger-on-release;
 label = "A_KEY";};
 
@@ -973,7 +973,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&kp>, <&I_link_rshift>;
-hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 76 75>;
 hold-trigger-on-release;
 label = "I_KEY";};
 
@@ -1005,7 +1005,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&kp>, <&N_link_rshift>;
-hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 76 75>;
 hold-trigger-on-release;
 label = "N_KEY";};
 
@@ -1074,7 +1074,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&mo>, <&F_link_rshift>;
-hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 76 75>;
 hold-trigger-on-release;
 label = "F_KEY";};
 
@@ -1124,7 +1124,7 @@ tapping-term-ms = <480>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&kp>, <&U_link_rshift>;
-hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 76 75>;
 hold-trigger-on-release;
 label = "U_KEY";};
 
@@ -1286,7 +1286,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&lnav>, <&B_link_lshift>;
-hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>;
+hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
 hold-trigger-on-release;
 label = "B_KEY";};
 
@@ -1318,7 +1318,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&kp>, <&T_link_lshift>;
-hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>;
+hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
 hold-trigger-on-release;
 label = "T_KEY";};
 
@@ -1350,7 +1350,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&kp>, <&R_link_lshift>;
-hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>;
+hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
 hold-trigger-on-release;
 label = "R_KEY";};
 
@@ -1382,7 +1382,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&kp>, <&E_link_lshift>;
-hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>;
+hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
 hold-trigger-on-release;
 label = "E_KEY";};
 
@@ -1451,7 +1451,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&mo>, <&M_link_lshift>;
-hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>;
+hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
 hold-trigger-on-release;
 label = "M_KEY";};
 
@@ -1483,7 +1483,7 @@ tapping-term-ms = <480>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&kp>, <&D_link_lshift>;
-hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>;
+hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
 hold-trigger-on-release;
 label = "D_KEY";};
 
@@ -1515,7 +1515,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&mo>, <&Y_link_lctrl>;
-hold-trigger-key-positions = <27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74>;
+hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
 hold-trigger-on-release;
 label = "Y_KEY";};
 
@@ -2250,6 +2250,8 @@ keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 
 behaviors {};
 
+
+behaviors {};
 
 behaviors {};
 
