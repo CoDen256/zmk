@@ -5,10 +5,11 @@ map:
     hold.bind: "&lnav"
     lshift: "LC(X)" 
     rshift: "RS(F2)"
+    pos: "C N"
   H:
     hold.bind: "&lswitcher"
     rshift: "RS(F3)"
-    pos: "C G"
+    pos: "C G N"
   C:
     lshift: "LC(C)"
     rctrl: "RC(F4)"
@@ -29,6 +30,7 @@ map:
   I:
     hold.bind: "&kp"
     rshift: "RS(F8)"
+    pos: "G C A N F P W"
   N:
     hold.bind: "&kp"
     lshift: "LC(S)"
@@ -39,6 +41,7 @@ map:
     hold.bind: "&mo"
     lshift: "LC(F)"
     rshift: "RS(F11)"
+    pos: "H C P N"
   U:
     hold:
       bind: "&kp"
