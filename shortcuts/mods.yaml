@@ -105,4 +105,4 @@ map:
 config:
   tapping_term: 280
   quick_tap: 175
-  prior_idle: 350
+  prior_idle: 200
