@@ -8,6 +8,7 @@ map:
   H:
     hold.bind: "&lswitcher"
     rshift: "RS(F3)"
+    pos: "26"
   C:
     lshift: "LC(C)"
     rctrl: "RC(F4)"

@@ -726,7 +726,7 @@ tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <200>;
 bindings = <&lswitcher>, <&H_link_rshift>;
-hold-trigger-key-positions = <28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74>;
+hold-trigger-key-positions = <26>;
 hold-trigger-on-release;
 label = "H_KEY";};
 
@@ -2250,6 +2250,8 @@ keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 
 behaviors {};
 
+
+behaviors {};
 
 behaviors {};
 

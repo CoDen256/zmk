@@ -37,13 +37,13 @@ class Config:
         self.prior_idle = prior_idle
 
 class HoldTap:
-    def __init__(self, config, tap, hold):
+    def __init__(self, config, tap, hold, position):
         self.tap = tap
         self.hold = hold
         self.config = config
         if hold:
 
-            self.pos = key_to_pos[tap.default]
+            self.pos = key_to_pos[tap.default] if not position else position
     def compile(self):
         root, generated = self.tap.compile()
         label = self.tap.label + "_key"
@@ -145,16 +145,14 @@ def parse(file):
     for (label, mapping) in mapdata.items():
         cfg = def_config
         hold = None
-        key = label
         if "hold" in mapping:
             hold_cfg = mapping.pop("hold")
             hold = hold_cfg.pop("bind")
             cfg = Config(**(configdata | hold_cfg))
         if "hold.bind" in mapping:
             hold = mapping.pop("hold.bind")
-        if "key" in mapping:
-            key = mapping.pop("key")
-        maps.append(HoldTap(cfg, Map(label, key, mapping), hold))
+
+        maps.append(HoldTap(cfg, Map(label, mapping.pop("key", label), mapping), hold, mapping.pop("pos", None)))
 
     return maps
 
