@@ -1,5 +1,6 @@
 import importlib
 import os
+import pathlib
 import subprocess
 import sys
 import threading
@@ -75,8 +76,9 @@ if __name__ == "__main__":
     # file_path = "../config/glove80.keymap"
     # dir = "/"
     # check_file_update(file_path, dir)
+    base = pathlib.Path(__file__).parent.parent.resolve()
+    print(f"Watching {base}")
     run_shell("C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
-    base = "C:\\dev\\zmk-config"
     run("builder",
         f"{base}\\config\\glove80.keymap",
         builder,
