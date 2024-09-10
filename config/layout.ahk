@@ -29,55 +29,36 @@ SetInputLang(Lang)
     PostMessage(0x50, 0, Lang, hWnd)
 }
 
-; F10::{
 
-;   InputLocaleID:=GetInputLocaleID()
-;   MsgBox(InputLocaleID)
-; }
 
-#HotIf GetInputLocaleID() = "68748313"
+F13::{
+    MouseMove(-20, 0, 50, "R")
+}
 
-k::Send("к")
-g::Send("г")
-h::Send("х")
-c::Send("с")
-w::Send("ш")
-v::Send("в")
-l::Send("л")
-b::Send("б")
-o::Send("о")
-a::Send("а")
-i::Send("и")
-n::Send("н")
-t::Send("т")
-r::Send("р")
-e::Send("е")
-s::Send("ц")
-j::Send("ж")
-f::Send("ф")
-u::Send("у")
-p::Send("п")
-m::Send("м")
-d::Send("д")
-y::Send("й")
-x::Send("щ")
-q::Send("ю")
-z::Send("з")
-^::Send("я")
-&::Send("&")
-$::Send("э")
-?::Send("?")
-/::Send("/")
-#::Send("#")
-:::Send(":")
-.::Send(".")
-<::Send("<")
->::Send(">")
-'::Send("ь")
-`;::Send("ы")
-@::Send("ъ")
-"::Send("`"")
+F14::{
+    MouseMove(20, 0, 50, "R")
+}
 
+F15::{
+    MouseMove(0, -20, 50, "R")
+}
+F16::{
+    MouseMove(0, 20, 50, "R")
+}
+
+F17::{
+    MouseClick()
+}
+F18::{
+    MouseClick("Right")
+}
+F19::{
+    MouseClick("WU")
+}
+
+F20::{
+    MouseClick("WD")
+}
 
 GetInputLocaleID() {
 	foregroundWindow := DllCall("GetForegroundWindow") ; docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getforegroundwindow
