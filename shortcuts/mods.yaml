@@ -119,11 +119,56 @@ config:
   quick_tap: 175
   prior_idle: 200
 
+
 combos:
   timeout: 20
-  GH: "| 100"
+  # left
+  GH: "&and_short"
+  HC: "&or_short"
+  GC: "#"
 
-# , plus space
+  GI: "&backslash"
+  HA: "/"
+  HN: "-"
+  CI: "&eq_short"
+  CA: "&slash"
+
+  AI: ":"
+  IN: "."
+  AN: "!"
+
+  AU: "+"
+  IF: "&neq_short"
+  IP: "="
+  NU: "*"
+
+  FU: "&angle"
+  UP: "&par_key 0 0"
+  FP: "_"
+
+
+  # right
+  VL: "'"
+  LB: "\""
+  VB: "~"
+
+  VR: "^"
+  LT: "`"
+  LE: "&code_block"
+  BR: "$"
+
+  TR: ","
+  RE: ";"
+  TE: "?"
+
+#  TD: ""
+  RM: "&func_arrow"
+  RY: "@"
+#  ED: ""
+
+  MD: "&curly"
+  DY: "&brackets"
+#  MY: ""
 
 
 keys:

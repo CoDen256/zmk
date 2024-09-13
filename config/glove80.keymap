@@ -2015,212 +2015,168 @@ keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 
 /*<combos-start>*/
 GH {
-bindings = <&kp PIPE>; 
-timeout-ms = <100>;
+bindings = <&and_short>; 
+timeout-ms = <20>;
 key-positions = <24 25>;};
+
+HC {
+bindings = <&or_short>; 
+timeout-ms = <20>;
+key-positions = <25 26>;};
+
+GC {
+bindings = <&kp HASH>; 
+timeout-ms = <20>;
+key-positions = <24 26>;};
+
+GI {
+bindings = <&backslash>; 
+timeout-ms = <20>;
+key-positions = <24 37>;};
+
+HA {
+bindings = <&kp SLASH>; 
+timeout-ms = <20>;
+key-positions = <25 36>;};
+
+HN {
+bindings = <&kp MINUS>; 
+timeout-ms = <20>;
+key-positions = <25 38>;};
+
+CI {
+bindings = <&eq_short>; 
+timeout-ms = <20>;
+key-positions = <26 37>;};
+
+CA {
+bindings = <&slash>; 
+timeout-ms = <20>;
+key-positions = <26 36>;};
+
+AI {
+bindings = <&kp COLON>; 
+timeout-ms = <20>;
+key-positions = <36 37>;};
+
+IN {
+bindings = <&kp PERIOD>; 
+timeout-ms = <20>;
+key-positions = <37 38>;};
+
+AN {
+bindings = <&kp EXCLAMATION>; 
+timeout-ms = <20>;
+key-positions = <36 38>;};
+
+AU {
+bindings = <&kp PLUS>; 
+timeout-ms = <20>;
+key-positions = <36 49>;};
+
+IF {
+bindings = <&neq_short>; 
+timeout-ms = <20>;
+key-positions = <37 48>;};
+
+IP {
+bindings = <&kp EQUAL>; 
+timeout-ms = <20>;
+key-positions = <37 50>;};
+
+NU {
+bindings = <&kp ASTERISK>; 
+timeout-ms = <20>;
+key-positions = <38 49>;};
+
+FU {
+bindings = <&angle>; 
+timeout-ms = <20>;
+key-positions = <48 49>;};
+
+UP {
+bindings = <&par_key 0 0>; 
+timeout-ms = <20>;
+key-positions = <49 50>;};
+
+FP {
+bindings = <&kp UNDERSCORE>; 
+timeout-ms = <20>;
+key-positions = <48 50>;};
+
+VL {
+bindings = <&kp SINGLE_QUOTE>; 
+timeout-ms = <20>;
+key-positions = <29 30>;};
+
+LB {
+bindings = <&kp DOUBLE_QUOTES>; 
+timeout-ms = <20>;
+key-positions = <30 31>;};
+
+VB {
+bindings = <&kp TILDE>; 
+timeout-ms = <20>;
+key-positions = <29 31>;};
+
+VR {
+bindings = <&kp CARET>; 
+timeout-ms = <20>;
+key-positions = <29 42>;};
+
+LT {
+bindings = <&kp GRAVE>; 
+timeout-ms = <20>;
+key-positions = <30 41>;};
+
+LE {
+bindings = <&code_block>; 
+timeout-ms = <20>;
+key-positions = <30 43>;};
+
+BR {
+bindings = <&kp DOLLAR>; 
+timeout-ms = <20>;
+key-positions = <31 42>;};
+
+TR {
+bindings = <&kp COMMA>; 
+timeout-ms = <20>;
+key-positions = <41 42>;};
+
+RE {
+bindings = <&kp SEMICOLON>; 
+timeout-ms = <20>;
+key-positions = <42 43>;};
+
+TE {
+bindings = <&kp QUESTION>; 
+timeout-ms = <20>;
+key-positions = <41 43>;};
+
+RM {
+bindings = <&func_arrow>; 
+timeout-ms = <20>;
+key-positions = <42 59>;};
+
+RY {
+bindings = <&kp AT_SIGN>; 
+timeout-ms = <20>;
+key-positions = <42 61>;};
+
+MD {
+bindings = <&curly>; 
+timeout-ms = <20>;
+key-positions = <59 60>;};
+
+DY {
+bindings = <&brackets>; 
+timeout-ms = <20>;
+key-positions = <60 61>;};
 
 
 /*<combos-end>*/
-		RT {
-			bindings = <&kp COMMA>;
-			key-positions = <41 42>;
-		
-         timeout-ms = <20>;
 
-         
-         layers = <0 1>;};
-		RE {
-			bindings = <&kp SEMI>;
-			key-positions = <42 43>;
-
-         timeout-ms = <20>;
-        };
-		IN {
-			bindings = <&kp DOT>;
-		 timeout-ms = <20>;
-                	key-positions = <37 38>;
-		
-         layers = <0 1>;};
-
-		AI {
-			bindings = <&kp COLON>;
-			key-positions = <37 36>;
- timeout-ms = <20>;
-
-		};
-
-		MD {
-			bindings = <&curly>;
-		 timeout-ms = <20>;
-                	key-positions = <59 60>;
-		};
-
-		DY {
-			bindings = <&brackets>;
-			key-positions = <60 61>; timeout-ms = <20>;
-
-		};
-
-		PU {
-			bindings = <&par_key 0 0>;
-			key-positions = <49 50>; timeout-ms = <20>;
-
-		};
-
-		FU {
-         bindings = <&angle>;
-         key-positions = <49 48>; timeout-ms = <20>;
-                                         };
-
-		LV {
-         bindings = <&kp SINGLE_QUOTE>;
-         key-positions = <30 29>; timeout-ms = <20>;
-                                         };CH {
-         bindings = <&or_short>;
-         key-positions = <25 26>; timeout-ms = <20>;
-                                         };
-		BL {
-         bindings = <&kp DOUBLE_QUOTES>;
-         key-positions = <31 30>; timeout-ms = <20>;
-                                         };
-		HG {
-			bindings = <&and_short>;
-			key-positions = <25 24>; timeout-ms = <20>;
-
-		};
-
-		MR {
-			bindings = <&func_arrow>;
-			key-positions = <59 42>; timeout-ms = <20>;
-
-		};
-
-		TD {
-			bindings = <&none>;
-			key-positions = <41 60>; timeout-ms = <20>;
-
-		};
-
-		RY {
-			bindings = <&kp AT>;
-			key-positions = <42 61>; timeout-ms = <20>;
-
-		};
-
-		DE {
-			bindings = <&none>;
-			key-positions = <60 43>; timeout-ms = <20>;
-
-		};
-
-
-		TE {
-			bindings = <&kp QUESTION>;
-		key-positions = <41 43>; timeout-ms = <20>;
-                                        };TL {
-			bindings = <&kp GRAVE>;
-		key-positions = <41 30>; timeout-ms = <20>;
-                                        };EL {
-			bindings = <&code_block>;
-		key-positions = <30 43>; timeout-ms = <20>;
-                                        };VR {
-			bindings = <&kp CARET>;
-		key-positions = <29 42>; timeout-ms = <20>;
-                                        };LE {
-			bindings = <&kp DOLLAR>;
-		key-positions = <42 31>; timeout-ms = <20>;
-                                        };IP {
-			bindings = <&kp EQUAL>;
-		key-positions = <37 50>; timeout-ms = <20>;
-                                        };UN {
-			bindings = <&kp ASTERISK>;
-		key-positions = <38 49>; timeout-ms = <20>;
-                                        };UA {
-			bindings = <&kp PLUS>;
-		key-positions = <49 36>; timeout-ms = <20>;
-                                        };FI {
-			bindings = <&neq_short>;
-		key-positions = <48 37>; timeout-ms = <20>;
-                                        };AN {
-			bindings = <&kp EXCL>;
-		key-positions = <36 38>; timeout-ms = <20>;
-                                        };NH {
-			bindings = <&kp MINUS>;
-		key-positions = <38 25>; timeout-ms = <20>;
-                                        };IC {
-			bindings = <&eq_short>;
-		key-positions = <37 26>; timeout-ms = <20>;
-                                        };
-
-		GI {
-			bindings = <&backslash>;
-		key-positions = <37 24>; timeout-ms = <20>;
-                                        };
-
-		AH {
-			bindings = <&kp SLASH>;
-		key-positions = <36 25>; timeout-ms = <20>;
-                                        };
-
-		MY {
-			bindings = <&none>;
-		key-positions = <59 61>; timeout-ms = <20>;
-                                        };
-
-		FP {
-			bindings = <&kp UNDERSCORE>; timeout-ms = <20>;
-
-		key-positions = <48 50>;};
-
-		VB {
-			bindings = <&kp TILDE>; timeout-ms = <20>;
-
-		key-positions = <29 31>;};
-
-		CG {
-			bindings = <&kp HASH>; timeout-ms = <20>;
-
-		key-positions = <26 24>;};
-
-		VE {
-			bindings = <&none>; timeout-ms = <20>;
-
-		key-positions = <29 43>;};
-
-		TB {
-			bindings = <&none>; timeout-ms = <20>;
-
-		key-positions = <31 41>;};YT {
-			bindings = <&none>; timeout-ms = <20>;
-
-		key-positions = <41 61>;};ME {
-			bindings = <&none>; timeout-ms = <20>;
-
-		key-positions = <59 43>;};
-
-
-
-
-		NG {
-			bindings = <&kp PERCENT>; timeout-ms = <20>;
-
-		key-positions = <38 24>;};
-
-		AC {
-			bindings = <&slash>; timeout-ms = <20>;
-
-		key-positions = <36 26>;};
-
-
-		PA {
-			bindings = <&none>; timeout-ms = <20>;
-
-		key-positions = <50 36>;};
-
-		FN {
-			bindings = <&none>; timeout-ms = <20>;
-
-		key-positions = <48 38>;};
 		MRIGHT {
 			bindings = <&delete_word>;
 		key-positions = <59 76>;};

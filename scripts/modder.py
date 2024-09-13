@@ -9,7 +9,7 @@ keynames = {
  "%": "PERCENT",
  "^": "CARET",
  "&": "AMPERSAND",
- "*/": "ASTERISK",
+ "*": "ASTERISK",
  "(": "LEFT_PARENTHESIS",
  ")": "RIGHT_PARENTHESIS",
  "=": "EQUAL",
@@ -23,7 +23,7 @@ keynames = {
  ";": "SEMICOLON",
  ":": "COLON",
  "'": "SINGLE_QUOTE",
- "": "DOUBLE_QUOTES",
+ "\"": "DOUBLE_QUOTES",
  ",": "COMMA",
  "<": "LESS_THAN",
  ".": "PERIOD",
@@ -249,8 +249,8 @@ def parse(file):
     default = combodata.pop("timeout")
     for (src, out) in combodata.items():
         timeout = default
-        if " " in out:
-            out, timeout = out.split(" ")
+        if "  " in out:
+            out, timeout = out.split("  ")
         combos.append(Combo(pos, src, out, ComboCfg(int(timeout))))
 
     return maps, combos

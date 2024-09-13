@@ -894,6 +894,8 @@ layers:
 combos:
 - p: [24, 25]
   k: '|'
+- p: [25, 26]
+  k: H
 - p: [41, 42]
   k: ','
   l: [main, main_upper]
