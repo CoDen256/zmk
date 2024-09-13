@@ -294,7 +294,7 @@ layers:
   - {t: ▽, type: trans}
   - KP 1
   - KP 2
-  - KP 3
+  - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}

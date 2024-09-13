@@ -2760,6 +2760,8 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
@@ -2793,12 +2795,12 @@ de {
 >;};
 num {
          bindings = <
-&trans  &trans  &trans        &trans     &trans                                                                          &trans           &trans                &trans                           &trans   &trans
-&trans  &trans  &none         &none      &trans        &trans                                                    &trans  &trans           &trans                &trans                           &trans   &trans
-&trans  &trans  &kp KP_N7        &kp KP_N8  &kp KP_N9        &trans                                                    &trans  &kp PERCENT      &kp ASTERISK          &kp SLASH                        &none    &trans
-&trans  &kp KP_N0  &kp KP_N4  &kp KP_N5     &kp KP_N6  &trans                                                    &trans  &hmr LCTRL LPAR  &hmr LSHIFT KP_EQUAL  &hmr LEFT_ALT RIGHT_PARENTHESIS  &kp DOT  &trans
-&trans  &trans  &kp KP_N1     &kp KP_N2  &kp KP_N3     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp PLUS         &kp MINUS             &kp COMMA                        &trans   &trans
-&to 3   &trans  &trans        &trans     &trans                &trans  &trans  &trans    &trans  &trans  &trans          &trans           &trans                &trans                           &trans   &to 3
+&trans  &trans     &trans     &trans     &trans                                                                          &trans           &trans                &trans                           &trans   &trans
+&trans  &trans     &none      &none      &trans        &trans                                                    &trans  &trans           &trans                &trans                           &trans   &trans
+&trans  &trans     &kp KP_N7  &kp KP_N8  &kp KP_N9     &trans                                                    &trans  &kp PERCENT      &kp ASTERISK          &kp SLASH                        &none    &trans
+&trans  &kp KP_N0  &kp KP_N4  &kp KP_N5  &kp KP_N6     &trans                                                    &trans  &hmr LCTRL LPAR  &hmr LSHIFT KP_EQUAL  &hmr LEFT_ALT RIGHT_PARENTHESIS  &kp DOT  &trans
+&trans  &trans     &kp KP_N1  &kp KP_N2  &kp NUMBER_3  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp PLUS         &kp MINUS             &kp COMMA                        &trans   &trans
+&to 3   &trans     &trans     &trans     &trans                &trans  &trans  &trans    &trans  &trans  &trans          &trans           &trans                &trans                           &trans   &to 3
 >;};
 nav {
 			bindings = <

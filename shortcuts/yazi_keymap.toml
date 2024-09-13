@@ -1,0 +1,56 @@
+[[manager.prepend_keymap]]
+on  = "i"
+run = 'leave'
+
+
+[[manager.prepend_keymap]]
+on  = "n"
+run = 'enter'
+
+[[manager.prepend_keymap]]
+on  = "u"
+run = 'arrow -1'
+
+[[manager.prepend_keymap]]
+on  = "p"
+run = 'arrow 1'
+
+[[manager.prepend_keymap]]
+on  = "<a-i>"
+run = 'back'
+
+[[manager.prepend_keymap]]
+on  = "<a-n>"
+run = 'forward'
+
+[[manager.prepend_keymap]]
+on  = "e"
+run = 'filter --smart'
+
+[[manager.prepend_keymap]]
+on  = "<a-e>"
+run = 'find --smart'
+
+[[manager.prepend_keymap]]
+on  = "t"
+run = 'find_arrow'
+
+[[manager.prepend_keymap]]
+on  = "r"
+run = 'find_arrow --previous'
+
+[[manager.prepend_keymap]]
+on  = "l"
+run = 'rename --cursor=before_ext'
+
+[[manager.prepend_keymap]]
+on  = "a"
+run = 'open'
+
+[[manager.prepend_keymap]]
+on  = "<c-f7>"
+run = 'open --interactive'
+
+[[manager.prepend_keymap]]
+on  = "<c-f7>"
+run = 'open --interactive'
