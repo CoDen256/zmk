@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "8/28/2024, 6:39:04 PM",
-	"time": 1724863144948,
+	"@time": "9/13/2024, 1:59:58 PM",
+	"time": 1726228798264,
 	"environment": {
-		"extension": "1.99.994",
+		"extension": "2.11.3",
 		"platform": "win",
-		"chromium": 128
+		"chromium": 127
 	},
 	"allBrowserUrls": true,
 	"exclusionRules": [
@@ -84,6 +84,6 @@
 		"map ya LinkHints.activateCopyLinkUrl",
 		""
 	],
-	"linkHintCharacters": "oainfupghc",
+	"linkHintCharacters": "ghcainfup",
 	"vimSync": true
 }
