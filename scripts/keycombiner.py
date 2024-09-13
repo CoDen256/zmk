@@ -9,7 +9,9 @@ modsmap = {
     "LC" : "ctrl+",
     "RC" : "ctrl+",
     "rctrl" : "ctrl+",
+    "ralt" : "ctrl+",
     "lctrl" : "ctrl+",
+    "lalt" : "ctrl+",
     "LS" : "shift+",
     "RS" : "shift+",
     "rshift" : "shift+",
@@ -30,6 +32,8 @@ def get_reserved(origin):
         v.pop("hold", None)
         v.pop("hold.bind", None)
         v.pop("config", None)
+        v.pop("pos", None)
+        v.pop("key", None)
         for (mod, key) in v.items():
             m = clear(key)
             if m in ["ctrl+s","ctrl+x","ctrl+f","ctrl+c","ctrl+a","ctrl+z","ctrl+v","ctrl+y"]:

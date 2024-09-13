@@ -1,6 +1,46 @@
 import yaml
 from pydantic import PositiveFloat
 
+keynames = {
+ "!": "EXCLAMATION",
+ "@": "AT_SIGN",
+ "#": "HASH",
+ "$": "DOLLAR",
+ "%": "PERCENT",
+ "^": "CARET",
+ "&": "AMPERSAND",
+ "*/": "ASTERISK",
+ "(": "LEFT_PARENTHESIS",
+ ")": "RIGHT_PARENTHESIS",
+ "=": "EQUAL",
+ "+": "PLUS",
+ "-": "MINUS",
+ "_": "UNDERSCORE",
+ "/": "SLASH",
+ "?": "QUESTION",
+ "\\": "BACKSLASH",
+ "|": "PIPE",
+ ";": "SEMICOLON",
+ ":": "COLON",
+ "'": "SINGLE_QUOTE",
+ "": "DOUBLE_QUOTES",
+ ",": "COMMA",
+ "<": "LESS_THAN",
+ ".": "PERIOD",
+ ">": "GREATER_THAN",
+ "[": "LEFT_BRACKET",
+ "{": "LEFT_BRACE",
+ "]": "RIGHT_BRACKET",
+ "}": "RIGHT_BRACE",
+ "`": "GRAVE",
+ "~": "TILDE",
+}
+
+def kp(key):
+    if key in keynames:
+        key = keynames[key]
+    return f"&kp {key}"
+
 modmap = {
     "lalt": "MOD_LALT",
     "ralt": "MOD_RALT",
@@ -53,6 +93,25 @@ class Positioning():
 
     def same_side(self, key):
         return self.lefts() if self.get_side(key) == "left" else self.rights()
+
+class ComboCfg:
+    def __init__(self, timeout):
+        self.timeout = timeout
+
+class Combo:
+    def __init__(self, layout, pos, out, cfg):
+        self.layout = layout
+        self.out = out if "&" in out and len(out) != 1 else kp(out)
+        self.key_names = pos
+        self.pos = " ".join([str(layout.pos(k)) for k in list(pos)])
+        self.cfg = cfg
+
+    def compile(self):
+        return f'''{self.key_names} {{
+bindings = <{self.out}>; 
+timeout-ms = <{self.cfg.timeout}>;
+key-positions = <{self.pos}>;}};
+'''
 
 
 class Config:
@@ -134,12 +193,12 @@ class Map:
     def generate(self):
         sinks = []
         links = []
-        prev = self.kp(self.default) if "&" not in self.default else self.default
+        prev = kp(self.default) if "&" not in self.default else self.default
         for (key, value) in self.mapping.items():
             mods_complement = set(modmap.keys()) - {key}
             sink = Morph(self.label, "sink",
-                         self.kp(value), mods_complement,
-                         self.kp(self.default), True, key)
+                         kp(value), mods_complement,
+                         kp(self.default), True, key)
             sinks.append(sink)
             link = Morph(self.label, "link",
                          prev, [key],
@@ -148,9 +207,6 @@ class Map:
             prev = self.gen_ref(link)
 
         return prev, links + sinks
-
-    def kp(self, key):
-        return f"&kp {key}"
 
     def gen_ref(self, morph):
         return f"&{morph.name()}"
@@ -171,6 +227,7 @@ def parse(file):
 
     # Create the list of Map objects
     mapdata = data['map']
+    combodata = data['combos']
     configdata = data['config']
     def_config = Config(**configdata)
     pos = Positioning(**data['keys'])
@@ -188,13 +245,21 @@ def parse(file):
         map = Map(label, mapping.pop("key", label), mapping)
         maps.append(HoldTap(pos, cfg, map, hold, mapping.pop("pos", None)))
 
-    return maps
+    combos = []
+    default = combodata.pop("timeout")
+    for (src, out) in combodata.items():
+        timeout = default
+        if " " in out:
+            out, timeout = out.split(" ")
+        combos.append(Combo(pos, src, out, ComboCfg(int(timeout))))
+
+    return maps, combos
 
 
-def update(target, content):
+def update(target, content, start_line, end_line):
     print(f"[modder] Start writing to {target}")
-    start = "/*<mods-start>*/"
-    end = "/*<mods-end>*/"
+    start = start_line
+    end = end_line
     new = []
     target_region = False
     with open(target, "r") as f:
@@ -219,12 +284,17 @@ def update(target, content):
 
 def run(origin, target):
     print(f"[modder] Reading {origin}")
-    mappings = parse(origin)
+    mappings, combos = parse(origin)
     print(f"[modder] Parsed {len(mappings)} mappings")
     content = ""
     for m in mappings:
         content += m.compile() + "\n"
-    update(target, content)
+    combocontent = ""
+    for c in combos:
+        combocontent += c.compile() + "\n"
+    update(target, content, "/*<mods-start>*/", "/*<mods-end>*/")
+    update(target, combocontent, "/*<combos-start>*/", "/*<combos-end>*/")
+
 # run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
 
 

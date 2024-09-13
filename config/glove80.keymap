@@ -1635,7 +1635,7 @@ par_key:par_key {
 compatible = "zmk,behavior-hold-tap";
 #binding-cells = <2>;
 flavor = "balanced";
-tapping-term-ms = <100>;
+tapping-term-ms = <280>;
 quick-tap-ms = <175>;
 require-prior-idle-ms = <0>;
 bindings = <&paren>, <&par_link_rctrl>;
@@ -2013,7 +2013,14 @@ keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 
 		// combo_mouse { timeout-ms = <18>; bindings = <&smart_mouse>; key-possitions = <24 26>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
 
+/*<combos-start>*/
+GH {
+bindings = <&kp PIPE>; 
+timeout-ms = <100>;
+key-positions = <24 25>;};
 
+
+/*<combos-end>*/
 		RT {
 			bindings = <&kp COMMA>;
 			key-positions = <41 42>;
@@ -2822,6 +2829,8 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
@@ -2842,7 +2851,7 @@ keymap {
 &trans  &trans     &kp LS(G)  &kp LS(H)  &kp LS(C)  &kp LS(W)                                                        &trans  &kp LS(V)  &kp LS(L)  &kp LS(B)  &trans     &trans
 &trans  &kp LS(O)  &kp LS(A)  &kp LS(I)  &kp LS(N)  &trans                                                           &trans  &kp LS(T)  &kp LS(R)  &kp LS(E)  &kp LS(S)  &trans
 &trans  &kp LS(J)  &kp LS(F)  &kp LS(U)  &kp LS(P)  &trans     &trans  &trans      &trans    &trans  &trans  &trans  &trans  &kp LS(M)  &kp LS(D)  &kp LS(Y)  &kp LS(X)  &trans
-&tog 1  &trans     &kp LS(Q)  &trans     &trans                &trans  &caps_word  &trans    &trans  &trans  &trans          &trans     &trans     &kp LS(Z)  &trans     &tog 1
+&tog 1  &trans     &kp LS(Q)  &trans     &trans                &trans  &caps_word  &trans    &trans  &trans  &tog 1          &trans     &trans     &kp LS(Z)  &trans     &tog 1
 >;};
 de {
          bindings = <

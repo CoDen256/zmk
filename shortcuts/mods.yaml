@@ -102,7 +102,7 @@ map:
     key: "LEFT_PARENTHESIS"
     hold:
       bind: "&paren"
-      tapping_term: 100
+      tapping_term: 280
       prior_idle: 0
     rctrl: "RIGHT_PARENTHESIS"
 
@@ -118,6 +118,12 @@ config:
   tapping_term: 280
   quick_tap: 175
   prior_idle: 200
+
+combos:
+  timeout: 20
+  GH: "| 100"
+
+# , plus space
 
 
 keys:

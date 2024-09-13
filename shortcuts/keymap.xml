@@ -358,7 +358,6 @@
   </action>
   <action id="FindNext" />
   <action id="FindPrevWordAtCaret">
-    <keyboard-shortcut first-keystroke="shift ctrl i" />
     <keyboard-shortcut first-keystroke="shift f8" />
   </action>
   <action id="FindPrevious" />
@@ -458,7 +457,9 @@
   <action id="GotoTest">
     <keyboard-shortcut first-keystroke="alt t" />
   </action>
-  <action id="GotoTypeDeclaration" />
+  <action id="GotoTypeDeclaration">
+    <keyboard-shortcut first-keystroke="shift ctrl n" />
+  </action>
   <action id="Graph.RouteEdges" />
   <action id="GuiDesigner.Duplicate" />
   <action id="GuiDesigner.QuickJavadoc" />
@@ -623,7 +624,9 @@
     <keyboard-shortcut first-keystroke="shift alt y" />
   </action>
   <action id="PCFindUsagesAction" />
-  <action id="ParameterInfo" />
+  <action id="ParameterInfo">
+    <keyboard-shortcut first-keystroke="alt g" />
+  </action>
   <action id="PasteMultiple">
     <keyboard-shortcut first-keystroke="shift alt p" />
   </action>

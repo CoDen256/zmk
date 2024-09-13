@@ -156,7 +156,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: main_upper, h: toggle, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+ Z
@@ -892,6 +892,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
+- p: [24, 25]
+  k: '|'
 - p: [41, 42]
   k: ','
   l: [main, main_upper]
