@@ -98,6 +98,14 @@ map:
     lctrl: "LC(TILDE)"
 
 
+  par:
+    key: "LEFT_PARENTHESIS"
+    hold:
+      bind: "&paren"
+      tapping_term: 100
+      prior_idle: 0
+    rctrl: "RIGHT_PARENTHESIS"
+
   c_tab:
     key: "LC(TAB)"
     lalt: "LC(TAB)"

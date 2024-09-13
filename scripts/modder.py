@@ -134,7 +134,7 @@ class Map:
     def generate(self):
         sinks = []
         links = []
-        prev = self.kp(self.default)
+        prev = self.kp(self.default) if "&" not in self.default else self.default
         for (key, value) in self.mapping.items():
             mods_complement = set(modmap.keys()) - {key}
             sink = Morph(self.label, "sink",

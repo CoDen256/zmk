@@ -13,14 +13,14 @@ layers:
   - F10
   - VOLUME DOWN
   - VOLUME UP
-  - ''
+  - '&key_repeat'
   - {t: K, s: Sft+ F1}
   - F9
   - Gui+ F10
   - Gui+ F11
   - Gui+ F12
   - '&key_repeat'
-  - ''
+  - '&key_repeat'
   - ''
   - ''
   - MUTE
@@ -907,7 +907,7 @@ combos:
 - p: [60, 61]
   k: '&brackets'
 - p: [49, 50]
-  k: '&paren'
+  k: {t: (, h: '&paren', s: )}
 - p: [49, 48]
   k: '&angle'
 - p: [30, 29]

@@ -1631,6 +1631,38 @@ keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };
 
 
+par_key:par_key {
+compatible = "zmk,behavior-hold-tap";
+#binding-cells = <2>;
+flavor = "balanced";
+tapping-term-ms = <100>;
+quick-tap-ms = <175>;
+require-prior-idle-ms = <0>;
+bindings = <&paren>, <&par_link_rctrl>;
+hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
+hold-trigger-on-release;
+label = "PAR_KEY";};
+
+
+par_link_rctrl:par_link_rctrl{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LEFT_PARENTHESIS>, <&par_sink_rctrl>;
+label = "PAR_LINK_RCTRL";
+mods = <(MOD_RCTL)>;
+
+};
+
+par_sink_rctrl:par_sink_rctrl{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp RIGHT_PARENTHESIS>, <&kp LEFT_PARENTHESIS>;
+label = "PAR_SINK_RCTRL";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
+};
+
+
 c_tab_key:c_tab_key{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
@@ -2023,7 +2055,7 @@ keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 		};
 
 		PU {
-			bindings = <&paren>;
+			bindings = <&par_key 0 0>;
 			key-positions = <49 50>; timeout-ms = <20>;
 
 		};
@@ -2786,13 +2818,17 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
 		main {
 			bindings = <
 &kp F1             &kp F2           &kp F3             &kp F4                 &kp F5                                                                                                        &kp F6          &kp F7                     &kp F8              &kp F9      &kp F10
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none              &K_key                 &kp F9          &kp LG(F10)                                                                      &kp LG(F11)  &kp LG(F12)     &key_repeat                &none               &none       &none
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &key_repeat        &K_key                 &kp F9          &kp LG(F10)                                                                      &kp LG(F11)  &kp LG(F12)     &key_repeat                &key_repeat         &none       &none
 &kp C_MUTE         &kp CARET        &G_key LCTRL 0     &H_key LEFT_ALT 0      &C_key          &W_key                                                                           &none        &V_key          &L_key                     &B_key RIGHT_ALT 0  &kp DOLLAR  &none
 &kp LEFT_WIN       &O_key           &A_key LEFT_ALT 0  &I_key LSHFT 0         &N_key LCTRL 0  &kp ESCAPE                                                                       &kp DELETE   &T_key RCTRL 0  &R_key RSHFT 0             &E_key RIGHT_ALT 0  &S_key      &kp RMETA
 &mo 5              &J_key           &F_key 4 0         &U_key LS(LA(LGUI)) 0  &P_key          &none        &kp BACKSPACE  &mo 3  &magic 9 0    &magic 9 0  &tog 3  &kp DELETE  &none        &M_key 3 0      &D_key RS(RA(LEFT_GUI)) 0  &Y_key 4 0          &X_key      &none
