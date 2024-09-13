@@ -1948,7 +1948,13 @@ keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
       
          #binding-cells = <0>;
          bindings = <&kp F20>;
-         label = "MSCROLLDOWN";};
+         label = "MSCROLLDOWN";};reloadkeymap: reloadkeymap {
+        compatible = "zmk,behavior-macro";
+      
+         #binding-cells = <0>;
+         bindings = <&kp LA(K) &kp TAB &kp TAB &kp SPACE &kp SPACE>;
+         label = "RELOADKEYMAP";
+         wait-ms = <600>;};
 	};
 	//
 	// Glove80 key positions index for positional hold-tap
@@ -2762,17 +2768,35 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
 		main {
 			bindings = <
 &kp F1             &kp F2           &kp F3             &kp F4                 &kp F5                                                                                                        &kp F6          &kp F7                     &kp F8              &kp F9      &kp F10
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none              &K_key                 &kp F9          &kp LG(F10)                                                                      &kp LG(F11)  &kp LG(F12)     &none                      &none               &none       &none
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none              &K_key                 &kp F9          &kp LG(F10)                                                                      &kp LG(F11)  &kp LG(F12)     &key_repeat                &none               &none       &none
 &kp C_MUTE         &kp CARET        &G_key LCTRL 0     &H_key LEFT_ALT 0      &C_key          &W_key                                                                           &none        &V_key          &L_key                     &B_key RIGHT_ALT 0  &kp DOLLAR  &none
 &kp LEFT_WIN       &O_key           &A_key LEFT_ALT 0  &I_key LSHFT 0         &N_key LCTRL 0  &kp ESCAPE                                                                       &kp DELETE   &T_key RCTRL 0  &R_key RSHFT 0             &E_key RIGHT_ALT 0  &S_key      &kp RMETA
 &mo 5              &J_key           &F_key 4 0         &U_key LS(LA(LGUI)) 0  &P_key          &none        &kp BACKSPACE  &mo 3  &magic 9 0    &magic 9 0  &tog 3  &kp DELETE  &none        &M_key 3 0      &D_key RS(RA(LEFT_GUI)) 0  &Y_key 4 0          &X_key      &none
-&none              &kp AT           &Q_key             &kp TAB                &kp ENTER                    &kp SPACE      &sl 2  &none         &tog 1      &tog 8  &sl 1                    &kp ENTER       &kp TAB                    &Z_key              &kp TILDE   &none
+&reloadkeymap      &kp AT           &Q_key             &kp TAB                &kp ENTER                    &kp SPACE      &sl 2  &none         &tog 1      &tog 8  &sl 1                    &kp ENTER       &kp TAB                    &Z_key              &kp TILDE   &none
 >;};
 
 		main_upper {
@@ -2795,12 +2819,12 @@ de {
 >;};
 num {
          bindings = <
-&trans  &trans     &trans     &trans     &trans                                                                          &trans           &trans                &trans                           &trans   &trans
-&trans  &trans     &none      &none      &trans        &trans                                                    &trans  &trans           &trans                &trans                           &trans   &trans
-&trans  &trans     &kp KP_N7  &kp KP_N8  &kp KP_N9     &trans                                                    &trans  &kp PERCENT      &kp ASTERISK          &kp SLASH                        &none    &trans
-&trans  &kp KP_N0  &kp KP_N4  &kp KP_N5  &kp KP_N6     &trans                                                    &trans  &hmr LCTRL LPAR  &hmr LSHIFT KP_EQUAL  &hmr LEFT_ALT RIGHT_PARENTHESIS  &kp DOT  &trans
-&trans  &trans     &kp KP_N1  &kp KP_N2  &kp NUMBER_3  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp PLUS         &kp MINUS             &kp COMMA                        &trans   &trans
-&to 3   &trans     &trans     &trans     &trans                &trans  &trans  &trans    &trans  &trans  &trans          &trans           &trans                &trans                           &trans   &to 3
+&trans  &trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9                                                                    &trans           &trans                &trans                           &trans   &trans
+&trans  &trans           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans                                                    &trans  &trans           &trans                &trans                           &trans   &trans
+&trans  &trans           &kp N7           &kp N8           &kp N9           &trans                                                    &trans  &kp PERCENT      &kp ASTERISK          &kp SLASH                        &none    &trans
+&trans  &kp NUMBER_0     &kp N4           &kp N5           &kp N6           &trans                                                    &trans  &hmr LCTRL LPAR  &hmr LSHIFT KP_EQUAL  &hmr LEFT_ALT RIGHT_PARENTHESIS  &kp DOT  &trans
+&trans  &kp KP_NUMBER_0  &kp N1           &kp N2           &kp NUMBER_3     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp PLUS         &kp MINUS             &kp COMMA                        &trans   &trans
+&to 3   &trans           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3          &trans  &trans  &trans    &trans  &trans  &trans          &trans           &trans                &trans                           &trans   &to 3
 >;};
 nav {
 			bindings = <

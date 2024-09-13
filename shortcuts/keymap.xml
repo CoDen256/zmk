@@ -15,7 +15,9 @@
   </action>
   <action id="ActivateEndpointsToolWindow" />
   <action id="ActivateEventLogToolWindow" />
-  <action id="ActivateFindToolWindow" />
+  <action id="ActivateFindToolWindow">
+    <keyboard-shortcut first-keystroke="shift meta alt f" />
+  </action>
   <action id="ActivateGradleToolWindow" />
   <action id="ActivateHierarchyToolWindow" />
   <action id="ActivateILViewerToolWindow" />
@@ -34,20 +36,21 @@
     <keyboard-shortcut first-keystroke="shift meta alt e" />
   </action>
   <action id="ActivatePythonConsoleToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta alt b" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt r" />
   </action>
   <action id="ActivateRunToolWindow">
     <keyboard-shortcut first-keystroke="shift meta alt r" />
   </action>
   <action id="ActivateServicesToolWindow" />
-  <action id="ActivateStructureToolWindow">
-    <keyboard-shortcut first-keystroke="shift meta alt f" />
-  </action>
+  <action id="ActivateStructureToolWindow" />
   <action id="ActivateTODOToolWindow" />
   <action id="ActivateTerminalToolWindow">
     <keyboard-shortcut first-keystroke="shift meta alt l" />
   </action>
   <action id="ActivateUnitTestsToolWindow" />
+  <action id="ActivateVcsChangesToolWindow">
+    <keyboard-shortcut first-keystroke="shift meta alt t" />
+  </action>
   <action id="ActivateVersionControlToolWindow">
     <keyboard-shortcut first-keystroke="shift meta alt m" />
   </action>
@@ -55,6 +58,12 @@
   <action id="Android.ChooseProfileConfiguration" />
   <action id="Arrangement.Alias.Rule.Add" />
   <action id="Arrangement.Rule.Add" />
+  <action id="Arrangement.Rule.Match.Condition.Move.Down">
+    <keyboard-shortcut first-keystroke="ctrl p" />
+  </action>
+  <action id="Arrangement.Rule.Match.Condition.Move.Up">
+    <keyboard-shortcut first-keystroke="ctrl u" />
+  </action>
   <action id="AutoIndentLines" />
   <action id="Back">
     <keyboard-shortcut first-keystroke="alt h" />
@@ -190,6 +199,9 @@
     <keyboard-shortcut first-keystroke="f2" />
   </action>
   <action id="Debugger.MarkObject" />
+  <action id="Debugger.PopFrame">
+    <keyboard-shortcut first-keystroke="alt f3" />
+  </action>
   <action id="DeviceAndSnapshotComboBox" />
   <action id="Diagram.DeselectAll" />
   <action id="Diff.ApplyLeftSide">
@@ -218,9 +230,6 @@
   <action id="EditorAddCaretPerSelectedLine">
     <keyboard-shortcut first-keystroke="shift f11" />
   </action>
-  <action id="EditorChooseLookupItemDot">
-    <keyboard-shortcut first-keystroke="f3" />
-  </action>
   <action id="EditorCloneCaretAbove">
     <keyboard-shortcut first-keystroke="shift f12" />
   </action>
@@ -239,13 +248,7 @@
   <action id="EditorCodeBlockStartWithSelection">
     <keyboard-shortcut first-keystroke="shift alt home" />
   </action>
-  <action id="EditorCutLineBackward">
-    <keyboard-shortcut first-keystroke="f4" />
-  </action>
   <action id="EditorDeleteLine" />
-  <action id="EditorDeleteToLineStart">
-    <keyboard-shortcut first-keystroke="f5" />
-  </action>
   <action id="EditorDuplicate">
     <keyboard-shortcut first-keystroke="ctrl g" />
   </action>
@@ -257,9 +260,6 @@
   </action>
   <action id="EditorJoinLines">
     <keyboard-shortcut first-keystroke="shift alt o" />
-  </action>
-  <action id="EditorKillRingSave">
-    <keyboard-shortcut first-keystroke="f8" />
   </action>
   <action id="EditorKillToWordEnd">
     <keyboard-shortcut first-keystroke="f10" />
@@ -321,7 +321,9 @@
   <action id="ExpandRegionRecursively">
     <keyboard-shortcut first-keystroke="ctrl alt add" />
   </action>
-  <action id="ExpressionTypeInfo" />
+  <action id="ExpressionTypeInfo">
+    <keyboard-shortcut first-keystroke="shift alt w" />
+  </action>
   <action id="ExternalSystem.CollapseAll">
     <keyboard-shortcut first-keystroke="ctrl subtract" />
   </action>
@@ -348,9 +350,6 @@
   <action id="FileStructurePopup">
     <keyboard-shortcut first-keystroke="alt i" />
   </action>
-  <action id="FillParagraph">
-    <keyboard-shortcut first-keystroke="f1" />
-  </action>
   <action id="Find">
     <keyboard-shortcut first-keystroke="ctrl f" />
   </action>
@@ -360,6 +359,7 @@
   <action id="FindNext" />
   <action id="FindPrevWordAtCaret">
     <keyboard-shortcut first-keystroke="shift ctrl i" />
+    <keyboard-shortcut first-keystroke="shift f8" />
   </action>
   <action id="FindPrevious" />
   <action id="FindUsages" />
@@ -367,12 +367,19 @@
     <keyboard-shortcut first-keystroke="ctrl alt n" />
   </action>
   <action id="FindWordAtCaret">
-    <keyboard-shortcut first-keystroke="shift ctrl n" />
+    <keyboard-shortcut first-keystroke="shift f9" />
   </action>
   <action id="FoldingGroup" />
   <action id="ForceOthersToFollowAction" />
-  <action id="ForceRunToCursor" />
-  <action id="ForceStepOver" />
+  <action id="ForceRunToCursor">
+    <keyboard-shortcut first-keystroke="alt f5" />
+  </action>
+  <action id="ForceStepInto">
+    <keyboard-shortcut first-keystroke="alt f9" />
+  </action>
+  <action id="ForceStepOver">
+    <keyboard-shortcut first-keystroke="alt f8" />
+  </action>
   <action id="Forward">
     <keyboard-shortcut first-keystroke="alt c" />
     <mouse-shortcut keystroke="button5" />
@@ -455,12 +462,18 @@
   <action id="Graph.RouteEdges" />
   <action id="GuiDesigner.Duplicate" />
   <action id="GuiDesigner.QuickJavadoc" />
+  <action id="GuiDesigner.SurroundPopup">
+    <keyboard-shortcut first-keystroke="shift f10" />
+  </action>
   <action id="HelpTopics" />
   <action id="HideActiveWindow">
     <keyboard-shortcut first-keystroke="shift escape" />
   </action>
   <action id="HideAllWindows" />
   <action id="HighlightUsagesInFile" />
+  <action id="Hotswap">
+    <keyboard-shortcut first-keystroke="alt f1" />
+  </action>
   <action id="Images.Editor.ZoomIn">
     <keyboard-shortcut first-keystroke="ctrl add" />
   </action>
@@ -614,7 +627,10 @@
   <action id="PasteMultiple">
     <keyboard-shortcut first-keystroke="shift alt p" />
   </action>
-  <action id="Pause" />
+  <action id="Pause">
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
+  <action id="PlantUML.Update" />
   <action id="PreviousDiff">
     <keyboard-shortcut first-keystroke="shift f3" />
   </action>
@@ -689,7 +705,9 @@
     <keyboard-shortcut first-keystroke="shift meta alt u" />
   </action>
   <action id="RestartIde" />
-  <action id="Resume" />
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
   <action id="RiderBackendAction-ExtractClass" />
   <action id="RiderCollapseToDefinitions" />
   <action id="RiderDebuggerApplyEncChagnes" />
@@ -721,7 +739,9 @@
   <action id="RunDashboard.CopyConfiguration" />
   <action id="RunInspection" />
   <action id="RunTargetAction" />
-  <action id="RunToCursor" />
+  <action id="RunToCursor">
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
   <action id="SafeDelete">
     <keyboard-shortcut first-keystroke="alt delete" />
   </action>
@@ -779,10 +799,17 @@
   <action id="SilentCodeCleanup" />
   <action id="SingleUserFollowAction" />
   <action id="SmartSelect" />
+  <action id="SmartStepInto" />
   <action id="Space.Review.CreateDiffComment" />
   <action id="Sql.EditParameter" />
-  <action id="StepInto" />
+  <action id="StepInto">
+    <keyboard-shortcut first-keystroke="f9" />
+  </action>
+  <action id="StepIntoMyCode" />
   <action id="StepOut" />
+  <action id="StepOver">
+    <keyboard-shortcut first-keystroke="f8" />
+  </action>
   <action id="Stop">
     <keyboard-shortcut first-keystroke="shift f18" />
   </action>
@@ -790,6 +817,9 @@
   <action id="StretchSplitToLeft" />
   <action id="StretchSplitToRight" />
   <action id="StretchSplitToTop" />
+  <action id="StructuralSearchPlugin.StructuralSearchAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt f" />
+  </action>
   <action id="SurroundWith">
     <keyboard-shortcut first-keystroke="shift j" />
   </action>
@@ -828,6 +858,7 @@
   <action id="ToggleFullScreen" />
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="alt d" />
+    <keyboard-shortcut first-keystroke="f7" />
   </action>
   <action id="TogglePresentationMode" />
   <action id="ToggleTemporaryLineBreakpoint" />
@@ -852,7 +883,9 @@
   <action id="Unwrap">
     <keyboard-shortcut first-keystroke="alt j" />
   </action>
-  <action id="UpdateRunningApplication" />
+  <action id="UpdateRunningApplication">
+    <keyboard-shortcut first-keystroke="f1" />
+  </action>
   <action id="UsageFiltering.Imports" />
   <action id="UsageFiltering.ReadAccess" />
   <action id="UsageFiltering.WriteAccess" />
@@ -878,6 +911,9 @@
     <keyboard-shortcut first-keystroke="ctrl m" />
   </action>
   <action id="Vcs.RefreshFileHistory" />
+  <action id="Vcs.RevertSelectedChanges">
+    <keyboard-shortcut first-keystroke="shift ctrl o" />
+  </action>
   <action id="Vcs.RollbackChangedLines">
     <keyboard-shortcut first-keystroke="shift f6" />
   </action>
