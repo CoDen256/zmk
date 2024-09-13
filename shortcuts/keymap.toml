@@ -1,0 +1,44 @@
+[manager]
+prepend_keymap = [
+    { on = "i", run = 'leave' },
+    { on = "n", run = 'enter' },
+    { on = "u", run = 'arrow -1' },
+    { on = "p", run = 'arrow 1' },
+    { on = "<a-i>", run = 'back' },
+    { on = "<a-n>", run = 'forward' },
+
+    { on = "a", run = 'open' },
+    { on = "<c-f7>", run = 'open --interactive' },
+
+    { on = "e", run = 'plugin smart-filter' },
+    { on = "<a-e>", run = 'find --smart' },
+    { on = "<c-e>", run = 'filter --smart' },
+    { on = "t", run = 'find_arrow' },
+    { on = "r", run = 'find_arrow --previous' },
+    { on = "<a-s>", run = 'search rg' },
+    { on = "<c-f20>", run = 'escape --search' },
+
+
+    { on = "l", run = 'rename --cursor=before_ext' },
+    { on = "b", run = 'create' },
+
+
+    { on = "c", run = 'yank' },
+    { on = "<a-c>", run = 'yank --cut' },
+
+    { on = "h", run = 'paste' },
+    { on = "<a-h>", run = 'paste --force' },
+
+    { on = "y", run = 'link' },
+    { on = "<a-y>", run = 'link --relative' },
+    { on = "d", run = 'hardlink' },
+
+    { on = "m", run = 'remove' },
+    { on = "f", run = 'plugin jump-to-char' },
+
+
+    { on = "Escape", run = 'close' },
+
+    { on = "o", run = 'shell "powershell.exe" --block --confirm' },
+    { on = "v", run = 'shell --interactive' },
+]
