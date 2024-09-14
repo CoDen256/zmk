@@ -2094,10 +2094,10 @@ bindings = <&angle>;
 timeout-ms = <20>;
 key-positions = <48 49>;};
 
-UP {
+PU {
 bindings = <&par_key 0 0>; 
 timeout-ms = <20>;
-key-positions = <49 50>;};
+key-positions = <50 49>;};
 
 FP {
 bindings = <&kp UNDERSCORE>; 
@@ -2124,10 +2124,10 @@ bindings = <&kp CARET>;
 timeout-ms = <20>;
 key-positions = <29 42>;};
 
-LT {
+TL {
 bindings = <&kp GRAVE>; 
 timeout-ms = <20>;
-key-positions = <30 41>;};
+key-positions = <41 30>;};
 
 LE {
 bindings = <&code_block>; 
@@ -2207,35 +2207,9 @@ key-positions = <60 61>;};
 
 		L_MIDDLEL {
 			bindings = <&none>;
-		key-positions = <67 66>;};NT {
-         bindings = <&none>;
-         key-positions = <41 38>;};IR {
-         bindings = <&none>;
-         key-positions = <37 42>;};PM {
-         bindings = <&select_line>;
-         key-positions = <50 59>;};UD {
-         bindings = <&delete_line>;
-         key-positions = <49 60>;};FY {
-         bindings = <&duplicate_line>;
-         key-positions = <48 61>;};CK {
-         bindings = <&none>;
-         key-positions = <26 13>;};V8 {
-         bindings = <&none>;
-         key-positions = <29 18>;};rt_type {
-         bindings = <&sl 1>;
-         key-positions = <41 42>;
-         timeout-ms = <20>;
-         layers = <10>;};in_typing {
-         bindings = <&kp SPACE>;
-         key-positions = <37 38>;
-         timeout-ms = <20>;
-         layers = <10>;};
+		key-positions = <67 66>;};
 
-
-
-		//  combo_grk { timeout-ms = <18>; bindings = <&sl UC>; key-fpositions = <29 31>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
-		// combo_cpgrk { timeout-ms = <18>; bindings = <&sls 0>; keyfdgdf-positions = <29 30 31>; layers = <Layer_Main Layer_NAV Layer_NUM>; require-prior-idle-ms = <150>; };
-	};
+		};
 };
 
 /* Automatically generated macro definitions */
@@ -2251,6 +2225,8 @@ key-positions = <60 61>;};
 
 behaviors {};
 
+
+behaviors {};
 
 behaviors {};
 

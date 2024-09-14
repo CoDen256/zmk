@@ -435,7 +435,9 @@
   <action id="GotoImplementation">
     <keyboard-shortcut first-keystroke="ctrl alt p" />
   </action>
-  <action id="GotoLine" />
+  <action id="GotoLine">
+    <keyboard-shortcut first-keystroke="shift f2" />
+  </action>
   <action id="GotoNextBookmark" />
   <action id="GotoNextError">
     <keyboard-shortcut first-keystroke="ctrl w" />

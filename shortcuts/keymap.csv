@@ -70,6 +70,7 @@
 "Goto Declaration","alt+n","Main","General","0",""
 "Goto File","shift+e","Main","General","0",""
 "Goto Implementation","ctrl+alt+p","Main","General","0",""
+"Goto Line","shift+g","Main","General","0",""
 "Goto Next Error","ctrl+w","Main","General","0",""
 "Goto Previous Error","shift+ctrl+w","Main","General","0",""
 "Goto Related","ctrl+alt+home","Main","General","0",""
