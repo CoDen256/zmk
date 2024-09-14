@@ -99,12 +99,12 @@ map:
 
 
   par:
-    key: "LEFT_PARENTHESIS"
+    key: "("
     hold:
       bind: "&paren"
       tapping_term: 280
       prior_idle: 0
-    rctrl: "RIGHT_PARENTHESIS"
+    rctrl: ")"
 
   c_tab:
     key: "LC(TAB)"
@@ -119,12 +119,15 @@ config:
   quick_tap: 175
   prior_idle: 200
 
+macros:
+  func: "^->"
+
 
 combos:
   timeout: 20
   # left
-  GH: "&and_short"
-  HC: "&or_short"
+  GH: "^&&"
+  HC: "^||"
   GC: "#"
 
   GI: "&backslash"

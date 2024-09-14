@@ -1,45 +1,109 @@
 import yaml
-from pydantic import PositiveFloat
 
 keynames = {
- "!": "EXCLAMATION",
- "@": "AT_SIGN",
- "#": "HASH",
- "$": "DOLLAR",
- "%": "PERCENT",
- "^": "CARET",
- "&": "AMPERSAND",
- "*": "ASTERISK",
- "(": "LEFT_PARENTHESIS",
- ")": "RIGHT_PARENTHESIS",
- "=": "EQUAL",
- "+": "PLUS",
- "-": "MINUS",
- "_": "UNDERSCORE",
- "/": "SLASH",
- "?": "QUESTION",
- "\\": "BACKSLASH",
- "|": "PIPE",
- ";": "SEMICOLON",
- ":": "COLON",
- "'": "SINGLE_QUOTE",
- "\"": "DOUBLE_QUOTES",
- ",": "COMMA",
- "<": "LESS_THAN",
- ".": "PERIOD",
- ">": "GREATER_THAN",
- "[": "LEFT_BRACKET",
- "{": "LEFT_BRACE",
- "]": "RIGHT_BRACKET",
- "}": "RIGHT_BRACE",
- "`": "GRAVE",
- "~": "TILDE",
+    "!": "EXCLAMATION",
+    "@": "AT_SIGN",
+    "#": "HASH",
+    "$": "DOLLAR",
+    "%": "PERCENT",
+    "^": "CARET",
+    "&": "AMPERSAND",
+    "*": "ASTERISK",
+    "(": "LEFT_PARENTHESIS",
+    ")": "RIGHT_PARENTHESIS",
+    "=": "EQUAL",
+    "+": "PLUS",
+    "-": "MINUS",
+    "_": "UNDERSCORE",
+    "/": "SLASH",
+    "?": "QUESTION",
+    "\\": "BACKSLASH",
+    "|": "PIPE",
+    ";": "SEMICOLON",
+    ":": "COLON",
+    "'": "SINGLE_QUOTE",
+    "\"": "DOUBLE_QUOTES",
+    ",": "COMMA",
+    "<": "LESS_THAN",
+    ".": "PERIOD",
+    ">": "GREATER_THAN",
+    "[": "LEFT_BRACKET",
+    "{": "LEFT_BRACE",
+    "]": "RIGHT_BRACKET",
+    "}": "RIGHT_BRACE",
+    "`": "GRAVE",
+    " ": "SPACE",
+    "~": "TILDE",
 }
+
 
 def kp(key):
     if key in keynames:
-        key = keynames[key]
+        return f"&kp {keynames[key]}"
     return f"&kp {key}"
+
+
+class Macro():
+
+    def __init__(self, seq, name=None):
+        self.seq = seq.removeprefix("^")
+        self._name = name
+
+    def __str__(self):
+        return f"{self.seq}"
+
+    def __repr__(self):
+        return f"{self.seq}"
+
+    def sequence_binding(self):
+        return [kp(k) for k in self.seq]
+
+    def name(self):
+        if self._name: return self._name
+        return ("_".join([k[4:].lower() for k in self.sequence_binding()]))
+
+    def node(self):
+        return "&"+ self.name()
+    def compile(self):
+        seq = " ".join(self.sequence_binding())
+        return f'''
+{self.name()}: {self.name()} {{
+compatible = "zmk,behavior-macro";
+label = "{self.name().upper()}";
+#binding-cells = <0>;
+tap-ms = <0>;
+wait-ms = <0>;
+bindings = <&macro_tap>,<{seq}>;
+}};
+'''
+
+
+class Binder():
+
+    def __init__(self, macros):
+        self._macros = {m.seq: m for m in macros}
+
+    def macros(self):
+        return self._macros.values()
+
+    def get_macros(self, seq):
+        if seq in self._macros:
+            return self._macros[seq].node()
+        macro = Macro(seq)
+        self._macros[seq] = macro
+        return macro.node()
+
+    def binding(self, key):
+        if not key: return "&none"
+        if len(key) == 1: return kp(key)
+        if key[0] == "&" and key[1].isalpha():
+            return key
+        if key[0] == "^":
+            return self.get_macros(key[1:])
+
+        # must be macros
+        return kp(key)
+
 
 modmap = {
     "lalt": "MOD_LALT",
@@ -51,21 +115,6 @@ modmap = {
     "lshift": "MOD_LSFT",
     "rshift": "MOD_RSFT",
 }
-
-positions = {
-    "left": "28 29 30 31 32 40 41 42 43 44 58 59 60 61 62 75 76 77 78 79 69 70 71 72 73 74",
-    "right": "27 26 25 24 23 39 38 37 36 35 51 50 49 48 47 68 67 66 65 64 15 14 13 12 11 10 69 70 71 72 73 74"
-}
-
-keys_pos = {
-    "left": "kghcwoainjfupq",
-    "right": "vlbtresmdyxz"
-}
-
-key_to_pos = {}
-for (pos, keys) in keys_pos.items():
-    for k in keys:
-        key_to_pos[k.upper()] = positions[pos]
 
 
 class Positioning():
@@ -94,21 +143,24 @@ class Positioning():
     def same_side(self, key):
         return self.lefts() if self.get_side(key) == "left" else self.rights()
 
+
 class ComboCfg:
     def __init__(self, timeout):
         self.timeout = timeout
 
+
 class Combo:
-    def __init__(self, layout, pos, out, cfg):
+    def __init__(self, layout, binder, pos, out, cfg):
         self.layout = layout
-        self.out = out if "&" in out and len(out) != 1 else kp(out)
+        self.out = out
+        self.binder = binder
         self.key_names = pos
         self.pos = " ".join([str(layout.pos(k)) for k in list(pos)])
         self.cfg = cfg
 
     def compile(self):
         return f'''{self.key_names} {{
-bindings = <{self.out}>; 
+bindings = <{self.binder.binding(self.out)}>; 
 timeout-ms = <{self.cfg.timeout}>;
 key-positions = <{self.pos}>;}};
 '''
@@ -128,7 +180,8 @@ class HoldTap:
         self.config = config
         self.layout = layout
         if hold:
-            self.pos = layout.opposite_side(tap.default) if not position else list(map(lambda k: layout.pos(k), position.split(" ")))
+            self.pos = layout.opposite_side(tap.default) if not position else list(
+                map(lambda k: layout.pos(k), position.split(" ")))
 
     def compile(self):
         root, generated = self.tap.compile()
@@ -185,20 +238,21 @@ mods = {mods};
 
 
 class Map:
-    def __init__(self, label, default, mapping):
+    def __init__(self, binder, label, default, mapping):
         self.label = label
         self.default = default
         self.mapping = mapping
+        self.binder = binder
 
     def generate(self):
         sinks = []
         links = []
-        prev = kp(self.default) if "&" not in self.default else self.default
+        prev = self.binder.binding(self.default)
         for (key, value) in self.mapping.items():
             mods_complement = set(modmap.keys()) - {key}
             sink = Morph(self.label, "sink",
-                         kp(value), mods_complement,
-                         kp(self.default), True, key)
+                         self.binder.binding(value), mods_complement,
+                         self.binder.binding(self.default), True, key)
             sinks.append(sink)
             link = Morph(self.label, "link",
                          prev, [key],
@@ -226,13 +280,18 @@ def parse(file):
         data = yaml.safe_load(f.read())
 
     # Create the list of Map objects
-    mapdata = data['map']
-    combodata = data['combos']
     configdata = data['config']
     def_config = Config(**configdata)
     pos = Positioning(**data['keys'])
+
+    macros = []
+    for (name, seq) in data['macros'].items():
+        macros.append(Macro(seq, name))
+
+    binder = Binder(macros)
+
     maps = []
-    for (label, mapping) in mapdata.items():
+    for (label, mapping) in data['map'].items():
         cfg = def_config
         hold = None
         if "hold" in mapping:
@@ -242,18 +301,18 @@ def parse(file):
         if "hold.bind" in mapping:
             hold = mapping.pop("hold.bind")
 
-        map = Map(label, mapping.pop("key", label), mapping)
+        map = Map(binder, label, mapping.pop("key", label), mapping)
         maps.append(HoldTap(pos, cfg, map, hold, mapping.pop("pos", None)))
 
     combos = []
-    default = combodata.pop("timeout")
-    for (src, out) in combodata.items():
+    combodef = data['combos']
+    default = combodef.pop("timeout")
+    for (src, out) in combodef.items():
         timeout = default
         if "  " in out:
             out, timeout = out.split("  ")
-        combos.append(Combo(pos, src, out, ComboCfg(int(timeout))))
-
-    return maps, combos
+        combos.append(Combo(pos, binder, src, out, ComboCfg(int(timeout))))
+    return maps, combos, binder
 
 
 def update(target, content, start_line, end_line):
@@ -282,19 +341,32 @@ def update(target, content, start_line, end_line):
     print(f"[modder] Done writing to {target}")
 
 
-def run(origin, target):
+def run0(origin, target):
     print(f"[modder] Reading {origin}")
-    mappings, combos = parse(origin)
+    mappings, combos, binder = parse(origin)
+    hardcoded_macros = len(binder.macros())
     print(f"[modder] Parsed {len(mappings)} mappings")
+    print(f"[modder] Parsed {len(combos)} combos")
+
     content = ""
     for m in mappings:
         content += m.compile() + "\n"
+
     combocontent = ""
     for c in combos:
         combocontent += c.compile() + "\n"
+
+    macros = binder.macros()  # stateful
+    print(macros)
+    print(f"[modder] Parsed {hardcoded_macros} + generated {len(macros) - hardcoded_macros} macros")
+    macroscontent = "\n".join([m.compile() for m in macros])
     update(target, content, "/*<mods-start>*/", "/*<mods-end>*/")
     update(target, combocontent, "/*<combos-start>*/", "/*<combos-end>*/")
+    update(target, macroscontent, "/*<macros-start>*/", "/*<macros-end>*/")
 
+
+def run(origin, target):
+    return run0(origin, target)
 # run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
 
 
