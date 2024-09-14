@@ -199,10 +199,10 @@ release-after-ms = <5000>;};
 			hold-trigger-on-release;
 		};
 
-		mt_home: mt_home {
+		hlctrl:hlctrl {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			bindings = <&masked_home>, <&kp>;
+			bindings = <&kp>, <&kp>;
 
 			flavor = "tap-preferred";
 			tapping-term-ms = <220>;
@@ -210,28 +210,18 @@ release-after-ms = <5000>;};
 			hold-trigger-key-positions = <0>;
 		};
 
-		mt_end: mt_end {
-			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <2>;
-			bindings = <&masked_end>, <&kp>;
-
-			flavor = "tap-preferred";
-			tapping-term-ms = <220>;
-			quick-tap-ms = <220>;
-			hold-trigger-key-positions = <0>;
-		};
 
 		masked_home: masked_home {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
-			bindings = <&kp HOME>, <&kp HOME>;
+			bindings = <&kp HOME>, <&hlctrl LC(HOME) HOME>;
 			mods = <(MOD_LCTL)>;
 		};
 
 		masked_end: masked_end {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
-			bindings = <&kp END>, <&kp END>;
+			bindings = <&kp END>, <&hlctrl LC(END) END>;
 			mods = <(MOD_LCTL)>;
 		};
 
@@ -2588,6 +2578,14 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
@@ -2632,7 +2630,7 @@ nav {
 			bindings = <
 &trans  &trans          &trans  &trans          &trans                                                                             &trans     &trans           &trans  &trans  &trans
 &trans  &trans          &trans  &kp BACKSPACE   &kp DELETE       &trans                                                    &trans  &trans     &trans           &trans  &trans  &trans
-&trans  &trans          &none   &kp HOME        &kp END          &trans                                                    &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
+&trans  &trans          &none   &masked_home    &masked_end      &trans                                                    &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
 &trans  &kp LEFT_SHIFT  &none   &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans                                                    &trans  &kp RCTRL  &kp LEFT_SHIFT   &none   &none   &trans
 &trans  &kp LCTRL       &none   &kp UP_ARROW    &kp DOWN         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
 &tog 4  &trans          &trans  &kp PG_UP       &kp PAGE_DOWN            &trans  &trans  &trans    &trans  &trans  &trans          &none      &none            &none   &trans  &to 4

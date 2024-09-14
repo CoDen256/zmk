@@ -350,8 +350,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
-  - HOME
-  - END
+  - {t: HOME, s: HOME}
+  - {t: END, s: END}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LCTRL
