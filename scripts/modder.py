@@ -34,6 +34,26 @@ keynames = {
     "`": "GRAVE",
     " ": "SPACE",
     "~": "TILDE",
+    "0": "NO",
+    "1": "N1",
+    "2": "N2",
+    "3": "N3",
+    "4": "N4",
+    "5": "N5",
+    "6": "N6",
+    "7": "N7",
+    "8": "N8",
+    "9": "N9",
+    "n0": "KP_NO",
+    "n1": "KP_N1",
+    "n2": "KP_N2",
+    "n3": "KP_N3",
+    "n4": "KP_N4",
+    "n5": "KP_N5",
+    "n6": "KP_N6",
+    "n7": "KP_N7",
+    "n8": "KP_N8",
+    "n9": "KP_N9",
 }
 
 
@@ -98,11 +118,12 @@ class Binder():
         if len(key) == 1: return kp(key)
         if key[0] == "&" and key[1].isalpha():
             return key
-        if key[0] == "^":
+        if key[0] == "^" and key[1].isalnum():
             return self.get_macros(key[1:])
-
+        if key[0].isalnum():
+            return kp(key)
         # must be macros
-        return kp(key)
+        return self.get_macros(key)
 
 
 modmap = {
@@ -185,7 +206,7 @@ class HoldTap:
 
     def compile(self):
         root, generated = self.tap.compile()
-        label = self.tap.label + "_key"
+        label = self.tap.label + "_key" if len(self.tap.label) == 1 else self.tap.label
         if not self.hold:
             return generated.replace(root[1:], label).replace(root[1:].upper(), label.upper())
         return self.gen_holdtap(label, self.hold, root, self.pos) + "\n" + generated

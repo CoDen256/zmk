@@ -106,6 +106,13 @@ map:
       prior_idle: 0
     rctrl: ")"
 
+  ang:
+    key: "<"
+    hold:
+      bind: "&angle"
+      tapping_term: 280
+      prior_idle: 0
+    rctrl: ">"
   c_tab:
     key: "LC(TAB)"
     lalt: "LC(TAB)"
@@ -120,44 +127,45 @@ config:
   prior_idle: 200
 
 macros:
-  func: "^->"
+  func: "->"
+
 
 
 combos:
   timeout: 20
   # left
-  GH: "^&&"
-  HC: "^||"
+  GH: "&&"
+  HC: "||"
   GC: "#"
 
-  GI: "&backslash"
+  GI: \\
   HA: "/"
   HN: "-"
-  CI: "&eq_short"
-  CA: "&slash"
+  CI: "=="
+  CA: "//"
 
   AI: ":"
   IN: "."
   AN: "!"
 
   AU: "+"
-  IF: "&neq_short"
+  IF: "!="
   IP: "="
   NU: "*"
 
-  FU: "&angle"
-  PU: "&par_key 0 0"
+  FU: "&ang 0 0"
+  PU: "&par 0 0"
   FP: "_"
 
 
   # right
   VL: "'"
-  LB: "\""
+  LB: '"'
   VB: "~"
 
   VR: "^"
   TL: "`"
-  LE: "&code_block"
+  LE: "```"
   BR: "$"
 
   TR: ","
@@ -165,7 +173,7 @@ combos:
   TE: "?"
 
 #  TD: ""
-  RM: "&func_arrow"
+  RM: "->"
   RY: "@"
 #  ED: ""
 

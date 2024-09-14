@@ -456,6 +456,56 @@ wait-ms = <0>;
 bindings = <&macro_tap>,<&kp PIPE &kp PIPE>;
 };
 
+
+backslash_backslash: backslash_backslash {
+compatible = "zmk,behavior-macro";
+label = "BACKSLASH_BACKSLASH";
+#binding-cells = <0>;
+tap-ms = <0>;
+wait-ms = <0>;
+bindings = <&macro_tap>,<&kp BACKSLASH &kp BACKSLASH>;
+};
+
+
+equal_equal: equal_equal {
+compatible = "zmk,behavior-macro";
+label = "EQUAL_EQUAL";
+#binding-cells = <0>;
+tap-ms = <0>;
+wait-ms = <0>;
+bindings = <&macro_tap>,<&kp EQUAL &kp EQUAL>;
+};
+
+
+slash_slash: slash_slash {
+compatible = "zmk,behavior-macro";
+label = "SLASH_SLASH";
+#binding-cells = <0>;
+tap-ms = <0>;
+wait-ms = <0>;
+bindings = <&macro_tap>,<&kp SLASH &kp SLASH>;
+};
+
+
+exclamation_equal: exclamation_equal {
+compatible = "zmk,behavior-macro";
+label = "EXCLAMATION_EQUAL";
+#binding-cells = <0>;
+tap-ms = <0>;
+wait-ms = <0>;
+bindings = <&macro_tap>,<&kp EXCLAMATION &kp EQUAL>;
+};
+
+
+grave_grave_grave: grave_grave_grave {
+compatible = "zmk,behavior-macro";
+label = "GRAVE_GRAVE_GRAVE";
+#binding-cells = <0>;
+tap-ms = <0>;
+wait-ms = <0>;
+bindings = <&macro_tap>,<&kp GRAVE &kp GRAVE &kp GRAVE>;
+};
+
 /*<macros-end>*/
 
 		win_sleep: win_sleep {
@@ -1665,7 +1715,7 @@ keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };
 
 
-par_key:par_key {
+par:par {
 compatible = "zmk,behavior-hold-tap";
 #binding-cells = <2>;
 flavor = "balanced";
@@ -1675,7 +1725,7 @@ require-prior-idle-ms = <0>;
 bindings = <&paren>, <&par_link_rctrl>;
 hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
 hold-trigger-on-release;
-label = "PAR_KEY";};
+label = "PAR";};
 
 
 par_link_rctrl:par_link_rctrl{
@@ -1697,11 +1747,43 @@ keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
 };
 
 
-c_tab_key:c_tab_key{
+ang:ang {
+compatible = "zmk,behavior-hold-tap";
+#binding-cells = <2>;
+flavor = "balanced";
+tapping-term-ms = <280>;
+quick-tap-ms = <175>;
+require-prior-idle-ms = <0>;
+bindings = <&angle>, <&ang_link_rctrl>;
+hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>;
+hold-trigger-on-release;
+label = "ANG";};
+
+
+ang_link_rctrl:ang_link_rctrl{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp LESS_THAN>, <&ang_sink_rctrl>;
+label = "ANG_LINK_RCTRL";
+mods = <(MOD_RCTL)>;
+
+};
+
+ang_sink_rctrl:ang_sink_rctrl{
+compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+bindings = <&kp GREATER_THAN>, <&kp LESS_THAN>;
+label = "ANG_SINK_RCTRL";
+mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
+keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
+};
+
+
+c_tab:c_tab{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
 bindings = <&kp LC(TAB)>, <&c_tab_sink_lalt>;
-label = "C_TAB_KEY";
+label = "C_TAB";
 mods = <(MOD_LALT)>;
 
 };
@@ -1716,11 +1798,11 @@ keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
 };
 
 
-sc_tab_key:sc_tab_key{
+sc_tab:sc_tab{
 compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
 bindings = <&kp LS(LC(TAB))>, <&sc_tab_sink_lalt>;
-label = "SC_TAB_KEY";
+label = "SC_TAB";
 mods = <(MOD_LALT)>;
 
 };
@@ -2064,7 +2146,7 @@ timeout-ms = <20>;
 key-positions = <24 26>;};
 
 GI {
-bindings = <&backslash>; 
+bindings = <&backslash_backslash>; 
 timeout-ms = <20>;
 key-positions = <24 37>;};
 
@@ -2079,12 +2161,12 @@ timeout-ms = <20>;
 key-positions = <25 38>;};
 
 CI {
-bindings = <&eq_short>; 
+bindings = <&equal_equal>; 
 timeout-ms = <20>;
 key-positions = <26 37>;};
 
 CA {
-bindings = <&slash>; 
+bindings = <&slash_slash>; 
 timeout-ms = <20>;
 key-positions = <26 36>;};
 
@@ -2109,7 +2191,7 @@ timeout-ms = <20>;
 key-positions = <36 49>;};
 
 IF {
-bindings = <&neq_short>; 
+bindings = <&exclamation_equal>; 
 timeout-ms = <20>;
 key-positions = <37 48>;};
 
@@ -2124,12 +2206,12 @@ timeout-ms = <20>;
 key-positions = <38 49>;};
 
 FU {
-bindings = <&angle>; 
+bindings = <&ang 0 0>; 
 timeout-ms = <20>;
 key-positions = <48 49>;};
 
 PU {
-bindings = <&par_key 0 0>; 
+bindings = <&par 0 0>; 
 timeout-ms = <20>;
 key-positions = <50 49>;};
 
@@ -2164,7 +2246,7 @@ timeout-ms = <20>;
 key-positions = <41 30>;};
 
 LE {
-bindings = <&code_block>; 
+bindings = <&grave_grave_grave>; 
 timeout-ms = <20>;
 key-positions = <30 43>;};
 
@@ -2189,7 +2271,7 @@ timeout-ms = <20>;
 key-positions = <41 43>;};
 
 RM {
-bindings = <&func_arrow>; 
+bindings = <&func>; 
 timeout-ms = <20>;
 key-positions = <42 59>;};
 
@@ -2861,7 +2943,7 @@ switcher {
 &trans  &trans  &trans       &trans  &trans                                                                        &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp F4       &trans  &kp ESCAPE  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LS(TAB)  &none   &kp TAB     &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F4  &sc_tab_key  &trans  &c_tab_key  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F4  &sc_tab  &trans  &c_tab  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans       &trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans       &trans  &trans              &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
 >;};

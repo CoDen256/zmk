@@ -3892,7 +3892,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 56)">
 <g transform="translate(28, 28)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 70%">&amp;and_short</tspan></text>
+<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 64%">&amp;ampersand…</tspan></text>
 </g>
 <g transform="translate(14, 86)" class="key keypos-1">
 <rect rx="6" ry="6" x="-12" y="-12" width="24" height="24" class="key"/>
@@ -4140,7 +4140,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 56)">
 <g transform="translate(28, 28)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 78%">&amp;or_short</tspan></text>
+<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 70%">&amp;pipe_pipe</tspan></text>
 </g>
 <g transform="translate(14, 86)" class="key keypos-1">
 <rect rx="6" ry="6" x="-12" y="-12" width="24" height="24" class="key"/>
@@ -4636,7 +4636,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 28)">
 <g transform="translate(28, 28)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 70%">&amp;backslash</tspan></text>
+<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 64%">&amp;backslash…</tspan></text>
 </g>
 <g transform="translate(14, 86)" class="key keypos-1">
 <rect rx="6" ry="6" x="-12" y="-12" width="24" height="24" class="key"/>
@@ -5380,7 +5380,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 28)">
 <g transform="translate(28, 28)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 78%">&amp;eq_short</tspan></text>
+<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 64%">&amp;equal_equ…</tspan></text>
 </g>
 <g transform="translate(14, 86)" class="key keypos-1">
 <rect rx="6" ry="6" x="-12" y="-12" width="24" height="24" class="key"/>
@@ -5628,7 +5628,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 28)">
 <g transform="translate(28, 28)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap">&amp;slash</text>
+<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 64%">&amp;slash_sla…</tspan></text>
 </g>
 <g transform="translate(14, 86)" class="key keypos-1">
 <rect rx="6" ry="6" x="-12" y="-12" width="24" height="24" class="key"/>
@@ -6868,7 +6868,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 28)">
 <g transform="translate(28, 28)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 70%">&amp;neq_short</tspan></text>
+<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 64%">&amp;exclamati…</tspan></text>
 </g>
 <g transform="translate(14, 86)" class="key keypos-1">
 <rect rx="6" ry="6" x="-12" y="-12" width="24" height="24" class="key"/>
@@ -7612,7 +7612,9 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 28)">
 <g transform="translate(28, 28)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap">&amp;angle</text>
+<text x="0" y="0" class="key  combo-separate tap">&lt;</text>
+<text x="0" y="24" class="key  combo-separate hold">&amp;angle</text>
+<text x="0" y="-24" class="key  combo-separate shifted">&gt;</text>
 </g>
 <g transform="translate(14, 86)" class="key keypos-1">
 <rect rx="6" ry="6" x="-12" y="-12" width="24" height="24" class="key"/>
@@ -9598,7 +9600,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 28)">
 <g transform="translate(28, 28)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 64%">&amp;code_block</tspan></text>
+<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 64%">&amp;grave_gra…</tspan></text>
 </g>
 <g transform="translate(14, 86)" class="key keypos-1">
 <rect rx="6" ry="6" x="-12" y="-12" width="24" height="24" class="key"/>
@@ -10838,7 +10840,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 28)">
 <g transform="translate(28, 28)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap"><tspan style="font-size: 64%">&amp;func_arrow</tspan></text>
+<text x="0" y="0" class="key  combo-separate tap">&amp;func</text>
 </g>
 <g transform="translate(14, 86)" class="key keypos-1">
 <rect rx="6" ry="6" x="-12" y="-12" width="24" height="24" class="key"/>

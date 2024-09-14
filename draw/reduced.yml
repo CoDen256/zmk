@@ -896,11 +896,11 @@ combos:
 - p:
   - 24
   - 25
-  k: '&and_short'
+  k: '&ampersand_ampersand'
 - p:
   - 25
   - 26
-  k: '&or_short'
+  k: '&pipe_pipe'
 - p:
   - 24
   - 26
@@ -908,7 +908,7 @@ combos:
 - p:
   - 24
   - 37
-  k: '&backslash'
+  k: '&backslash_backslash'
 - p:
   - 25
   - 36
@@ -920,11 +920,11 @@ combos:
 - p:
   - 26
   - 37
-  k: '&eq_short'
+  k: '&equal_equal'
 - p:
   - 26
   - 36
-  k: '&slash'
+  k: '&slash_slash'
 - p:
   - 36
   - 37
@@ -944,7 +944,7 @@ combos:
 - p:
   - 37
   - 48
-  k: '&neq_short'
+  k: '&exclamation_equal'
 - p:
   - 37
   - 50
@@ -956,7 +956,10 @@ combos:
 - p:
   - 48
   - 49
-  k: '&angle'
+  k:
+    t: <
+    h: '&angle'
+    s: '>'
 - p:
   - 50
   - 49
@@ -991,7 +994,7 @@ combos:
 - p:
   - 30
   - 43
-  k: '&code_block'
+  k: '&grave_grave_grave'
 - p:
   - 31
   - 42
@@ -1011,7 +1014,7 @@ combos:
 - p:
   - 42
   - 59
-  k: '&func_arrow'
+  k: '&func'
 - p:
   - 42
   - 61

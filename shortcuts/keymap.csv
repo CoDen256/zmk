@@ -1,4 +1,5 @@
 "Description","Keys","Context","Category","Conf.","Actions"
+"Activate Ant Tool Window","ctrl+par","Main","General","0",""
 "Rule Match Condition Move Down","ctrl+p","Arrangement","General","0",""
 "Rule Match Condition Move Up","ctrl+u","Arrangement","General","0",""
 "Back","alt+h","Main","General","0",""
