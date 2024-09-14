@@ -896,11 +896,17 @@ combos:
 - p:
   - 24
   - 25
-  k: '&ampersand_ampersand'
+  k:
+    t: '&'
+    h: '&ampersand_ampersand'
+    s: '&'
 - p:
   - 25
   - 26
-  k: '&pipe_pipe'
+  k:
+    t: '|'
+    h: '&pipe_pipe'
+    s: '|'
 - p:
   - 24
   - 26
@@ -908,11 +914,17 @@ combos:
 - p:
   - 24
   - 37
-  k: '&backslash_backslash'
+  k:
+    t: \
+    h: '&backslash_backslash'
+    s: \
 - p:
   - 25
   - 36
-  k: /
+  k:
+    t: /
+    h: '&slash_slash'
+    s: /
 - p:
   - 25
   - 38
@@ -922,13 +934,9 @@ combos:
   - 37
   k: '&equal_equal'
 - p:
-  - 26
-  - 36
-  k: '&slash_slash'
-- p:
   - 36
   - 37
-  k: ':'
+  k: '&colon_space'
 - p:
   - 37
   - 38
@@ -990,11 +998,10 @@ combos:
 - p:
   - 41
   - 30
-  k: '`'
-- p:
-  - 30
-  - 43
-  k: '&grave_grave_grave'
+  k:
+    t: '`'
+    h: '&grave_grave_grave'
+    s: '`'
 - p:
   - 31
   - 42
@@ -1002,11 +1009,11 @@ combos:
 - p:
   - 41
   - 42
-  k: ','
+  k: '&comma_space'
 - p:
   - 42
   - 43
-  k: ;
+  k: '&semicolon_enter'
 - p:
   - 41
   - 43

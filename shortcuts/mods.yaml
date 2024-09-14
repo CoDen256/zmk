@@ -126,25 +126,24 @@ config:
   quick_tap: 175
   prior_idle: 200
 
+
 macros:
   func: "->"
-
 
 
 combos:
   timeout: 20
   # left
-  GH: "&&"
-  HC: "||"
+  GH: "t:& h:&& c:90,175,0"
+  HC: "t:| h:|| c:90,175,0"
   GC: "#"
 
-  GI: \\
-  HA: "/"
+  GI: "t:\\ h:\\\\ c:90,175,0"
+  HA: "t:/ h:// c:120,175,0"
   HN: "-"
   CI: "=="
-  CA: "//"
 
-  AI: ":"
+  AI: ": "
   IN: "."
   AN: "!"
 
@@ -164,12 +163,12 @@ combos:
   VB: "~"
 
   VR: "^"
-  TL: "`"
-  LE: "```"
+  TL: "t:` h:``` c:120,175,0"
+#  LE: ""
   BR: "$"
 
-  TR: ","
-  RE: ";"
+  TR: ", "
+  RE: ";\n"
   TE: "?"
 
 #  TD: ""

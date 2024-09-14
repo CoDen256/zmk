@@ -1,4 +1,6 @@
 import yaml
+from pyparsing import htmlComment
+from six import print_
 
 keynames = {
     "!": "EXCLAMATION",
@@ -44,16 +46,17 @@ keynames = {
     "7": "N7",
     "8": "N8",
     "9": "N9",
-    "n0": "KP_NO",
-    "n1": "KP_N1",
-    "n2": "KP_N2",
-    "n3": "KP_N3",
-    "n4": "KP_N4",
-    "n5": "KP_N5",
-    "n6": "KP_N6",
-    "n7": "KP_N7",
-    "n8": "KP_N8",
-    "n9": "KP_N9",
+    "\0": "KP_NO",
+    "\1": "KP_N1",
+    "\2": "KP_N2",
+    "\3": "KP_N3",
+    "\4": "KP_N4",
+    "\5": "KP_N5",
+    "\6": "KP_N6",
+    "\7": "KP_N7",
+    "\8": "KP_N8",
+    "\9": "KP_N9",
+    "\n": "ENTER",
 }
 
 
@@ -100,11 +103,16 @@ bindings = <&macro_tap>,<{seq}>;
 
 class Binder():
 
-    def __init__(self, macros):
+    def __init__(self, layout, macros, cfg):
         self._macros = {m.seq: m for m in macros}
+        self._hts = {}
+        self.layout = layout
+        self.cfg = cfg
 
     def macros(self):
         return self._macros.values()
+    def hts(self):
+        return self._hts.values()
 
     def get_macros(self, seq):
         if seq in self._macros:
@@ -113,13 +121,36 @@ class Binder():
         self._macros[seq] = macro
         return macro.node()
 
+    def get_holdtap(self, tap, hold, config):
+        map = Map(self, self.name(tap), tap, {"lctrl": tap})
+        ht = HoldTap(self.layout, config, map, hold, None)
+
+        if ht.label() in self._hts:
+            return self._hts[ht.label()]
+        self._hts[ht.label()] = ht
+        return "&" + ht.label() + " 0 0"
+
+
+    def name(self, keys):
+        return ("_".join([kp(k)[4:].lower() for k in keys]))
+
     def binding(self, key):
+
         if not key: return "&none"
         if len(key) == 1: return kp(key)
         if key[0] == "&" and key[1].isalpha():
             return key
         if key[0] == "^" and key[1].isalnum():
             return self.get_macros(key[1:])
+        if key.startswith("t:") and " h:" in key:
+            cfg = self.cfg
+            print(f"we got a company{key}")
+            tap, hold = tuple(key.removeprefix("t:").split(" h:"))
+            if " c:" in hold:
+                hold, cfg = tuple(hold.split(" c:"))
+                t,q,r = tuple(cfg.split(","))
+                cfg = Config(int(t), int(q),int(r))
+            return self.get_holdtap(tap, self.binding(hold), cfg)
         if key[0].isalnum():
             return kp(key)
         # must be macros
@@ -204,9 +235,13 @@ class HoldTap:
             self.pos = layout.opposite_side(tap.default) if not position else list(
                 map(lambda k: layout.pos(k), position.split(" ")))
 
+
+    def label(self):
+        return self.tap.label + "_key" if len(self.tap.label) == 1 else self.tap.label
     def compile(self):
         root, generated = self.tap.compile()
-        label = self.tap.label + "_key" if len(self.tap.label) == 1 else self.tap.label
+        label = self.label()
+
         if not self.hold:
             return generated.replace(root[1:], label).replace(root[1:].upper(), label.upper())
         return self.gen_holdtap(label, self.hold, root, self.pos) + "\n" + generated
@@ -309,7 +344,7 @@ def parse(file):
     for (name, seq) in data['macros'].items():
         macros.append(Macro(seq, name))
 
-    binder = Binder(macros)
+    binder = Binder(pos, macros, def_config)
 
     maps = []
     for (label, mapping) in data['map'].items():
@@ -380,7 +415,12 @@ def run0(origin, target):
     macros = binder.macros()  # stateful
     print(macros)
     print(f"[modder] Parsed {hardcoded_macros} + generated {len(macros) - hardcoded_macros} macros")
+    hts = binder.hts()
+    print(f"[modder] Generated {len(hts)} holdtaps")
+    print(hts)
     macroscontent = "\n".join([m.compile() for m in macros])
+    content += "\n".join([m.compile() for m in hts])
+
     update(target, content, "/*<mods-start>*/", "/*<mods-end>*/")
     update(target, combocontent, "/*<combos-start>*/", "/*<combos-end>*/")
     update(target, macroscontent, "/*<macros-start>*/", "/*<macros-end>*/")
