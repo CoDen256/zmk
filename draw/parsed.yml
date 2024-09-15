@@ -921,9 +921,9 @@ combos:
 - p: [38, 49]
   k: '*'
 - p: [48, 49]
-  k: {t: <, h: '&angle', s: '>'}
+  k: {t: <, h: '&angle', s: <}
 - p: [50, 49]
-  k: {t: (, h: '&paren', s: )}
+  k: {t: (, h: '&paren', s: (}
 - p: [48, 50]
   k: _
 - p: [29, 30]
@@ -949,9 +949,9 @@ combos:
 - p: [42, 61]
   k: '@'
 - p: [59, 60]
-  k: '&curly'
+  k: {t: '{', h: '&curly', s: '{'}
 - p: [60, 61]
-  k: '&brackets'
+  k: {t: '[', h: '&brackets', s: '['}
 - p: [59, 76]
   k: '&delete_word'
 - p: [75, 60]

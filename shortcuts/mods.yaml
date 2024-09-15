@@ -100,19 +100,21 @@ map:
 
   par:
     key: "("
-    hold:
-      bind: "&paren"
-      tapping_term: 280
-      prior_idle: 0
     rctrl: ")"
 
   ang:
     key: "<"
-    hold:
-      bind: "&angle"
-      tapping_term: 280
-      prior_idle: 0
     rctrl: ">"
+
+  cur:
+    key: "{"
+    lctrl: "}"
+
+  bra:
+    key: "["
+    lctrl: "]"
+
+
   c_tab:
     key: "LC(TAB)"
     lalt: "LC(TAB)"
@@ -129,6 +131,7 @@ config:
 
 macros:
   func: "->"
+#  select_word: "&select_word_right>, <&select_word_left>"
 
 
 combos:
@@ -152,8 +155,8 @@ combos:
   IP: "="
   NU: "*"
 
-  FU: "&ang 0 0"
-  PU: "&par 0 0"
+  FU: "t:&ang h:&angle c:280,175,0"
+  PU: "t:&par h:&paren c:280,175,0"
   FP: "_"
 
 
@@ -176,8 +179,8 @@ combos:
   RY: "@"
 #  ED: ""
 
-  MD: "&curly"
-  DY: "&brackets"
+  MD: "t:&cur h:&curly c:280,175,0"
+  DY: "t:&bra h:&brackets c:280,175,0"
 #  MY: ""
 
 

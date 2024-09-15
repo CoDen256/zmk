@@ -967,14 +967,14 @@ combos:
   k:
     t: <
     h: '&angle'
-    s: '>'
+    s: <
 - p:
   - 50
   - 49
   k:
     t: (
     h: '&paren'
-    s: )
+    s: (
 - p:
   - 48
   - 50
@@ -1029,11 +1029,17 @@ combos:
 - p:
   - 59
   - 60
-  k: '&curly'
+  k:
+    t: '{'
+    h: '&curly'
+    s: '{'
 - p:
   - 60
   - 61
-  k: '&brackets'
+  k:
+    t: '['
+    h: '&brackets'
+    s: '['
 - p:
   - 59
   - 76
