@@ -1,3 +1,5 @@
+from cgi import print_form
+
 import yaml
 from pyparsing import htmlComment
 from six import print_
@@ -46,17 +48,19 @@ keynames = {
     "7": "N7",
     "8": "N8",
     "9": "N9",
-    "\0": "KP_NO",
-    "\1": "KP_N1",
+    "\0": "END",
+    "\1": "HOME",
     "\2": "KP_N2",
     "\3": "KP_N3",
     "\4": "KP_N4",
     "\5": "KP_N5",
     "\6": "KP_N6",
     "\7": "KP_N7",
-    "\8": "KP_N8",
-    "\9": "KP_N9",
     "\n": "ENTER",
+    "\b": "LEFT_ARROW",
+    "\f": "RIGHT_ARROW",
+    "\v": "DOWN_ARROW",
+    "\r": "UP_ARROW",
 }
 
 
@@ -131,7 +135,6 @@ class Binder():
         return ("_".join([kp(k)[4:].lower() for k in keys]))
 
     def binding(self, key):
-
         if not key: return "&none"
         if len(key) == 1: return kp(key)
         if key[0] == "&" and key[1].isalpha():
@@ -140,7 +143,6 @@ class Binder():
             return self.get_macros(key[1:])
         if key.startswith("t:") and " h:" in key:
             cfg = self.cfg
-            print(f"we got a company{key}")
             tap, hold = tuple(key.removeprefix("t:").split(" h:"))
             if " c:" in hold:
                 hold, cfg = tuple(hold.split(" c:"))
@@ -355,8 +357,8 @@ def parse(file):
     default = combodef.pop("timeout")
     for (src, out) in combodef.items():
         timeout = default
-        if "  " in out:
-            out, timeout = out.split("  ")
+        if "timeout: " in out:
+            out, timeout = out.split("timeout: ")
         combos.append(Combo(pos, binder, src, out, ComboCfg(int(timeout))))
     return maps, combos, binder
 

@@ -936,7 +936,10 @@ combos:
 - p:
   - 36
   - 37
-  k: '&colon_space'
+  k:
+    t: ':'
+    h: '&colon_space'
+    s: ':'
 - p:
   - 37
   - 38
@@ -966,14 +969,14 @@ combos:
   - 49
   k:
     t: <
-    h: '&angle'
+    h: '&left_parenthesis_right_parenthesis_left_arrow'
     s: <
 - p:
   - 50
   - 49
   k:
     t: (
-    h: '&paren'
+    h: '&less_than_greater_than_left_arrow'
     s: (
 - p:
   - 48
@@ -1013,7 +1016,10 @@ combos:
 - p:
   - 42
   - 43
-  k: '&semicolon_enter'
+  k:
+    t: ;
+    h: '&semicolon_enter'
+    s: ;
 - p:
   - 41
   - 43
@@ -1031,12 +1037,12 @@ combos:
   - 60
   k:
     t: '{'
-    h: '&curly'
+    h: '&left_brace_right_brace_left_arrow'
     s: '{'
 - p:
   - 60
   - 61
   k:
     t: '['
-    h: '&brackets'
+    h: '&left_bracket_right_bracket_left_arrow'
     s: '['

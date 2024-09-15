@@ -139,10 +139,6 @@ macros:
   ulower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_9>,<&macro_release>,<&kp LALT>"
   Uupper: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_4>,<&macro_release>,<&kp LALT>"
   eszet: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_N2 &kp KP_NUMBER_3>,<&macro_release>,<&kp LALT>"
-  paren: "<&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>"
-  brackets: "<&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>"
-  curly: "<&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>"
-  angle: "<&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>"
   mleft: "<&kp F13>"
   mright: "<&kp F14>"
   mup: "<&kp F15>"
@@ -152,7 +148,6 @@ macros:
   mscrollup: "<&kp F19>"
   mscrolldown: "<&kp F20>"
   reloadkeymap: "<&kp LA(K) &kp TAB &kp TAB &kp SPACE &kp SPACE>"
-
   cut_line: "<&select_line &kp K_CUT &kp DELETE>"
   move_down: "<&cut_line &kp DOWN &kp K_PASTE>"
   move_up: "<&cut_line &kp UP_ARROW &kp K_PASTE>"
@@ -177,7 +172,7 @@ combos:
   HN: "-"
   CI: "=="
 
-  AI: ": "
+  AI: "t:: h::  c:91,175,0"
   IN: "."
   AN: "!"
 
@@ -186,8 +181,8 @@ combos:
   IP: "="
   NU: "*"
 
-  FU: "t:&ang h:&angle c:280,175,0"
-  PU: "t:&par h:&paren c:280,175,0"
+  FU: "t:&ang h:()\b c:280,175,0"
+  PU: "t:&par h:<>\b c:280,175,0"
   FP: "_"
 
 
@@ -202,7 +197,7 @@ combos:
   BR: "$"
 
   TR: ", "
-  RE: ";\n"
+  RE: "t:; h:;\n c:90,175,0"
   TE: "?"
 
 #  TD: ""
@@ -210,8 +205,8 @@ combos:
   RY: "@"
 #  ED: ""
 
-  MD: "t:&cur h:&curly c:280,175,0"
-  DY: "t:&bra h:&brackets c:280,175,0"
+  MD: "t:&cur h:{}\b c:280,175,0"
+  DY: "t:&bra h:[]\b c:280,175,0"
 #  MY: ""
 
 

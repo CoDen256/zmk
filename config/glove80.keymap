@@ -282,26 +282,6 @@ release-after-ms = <5000>;};
             bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_N2 &kp KP_NUMBER_3>,<&macro_release>,<&kp LALT>;
         };
 
-        paren: paren { label = "PAREN"; compatible = "zmk,behavior-macro"; 
-            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
-        };
-
-        brackets: brackets { label = "BRACKETS"; compatible = "zmk,behavior-macro"; 
-            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
-        };
-
-        curly: curly { label = "CURLY"; compatible = "zmk,behavior-macro"; 
-            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
-        };
-
-        angle: angle { label = "ANGLE"; compatible = "zmk,behavior-macro"; 
-            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>;
-        };
-
         mleft: mleft { label = "MLEFT"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
             bindings = <&kp F13>;
@@ -437,6 +417,16 @@ release-after-ms = <5000>;};
             bindings = <&macro_tap>, <&kp EXCLAMATION &kp EQUAL>;
         };
 
+        left_parenthesis_right_parenthesis_left_arrow: left_parenthesis_right_parenthesis_left_arrow { label = "LEFT_PARENTHESIS_RIGHT_PARENTHESIS_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
+            bindings = <&macro_tap>, <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+        };
+
+        less_than_greater_than_left_arrow: less_than_greater_than_left_arrow { label = "LESS_THAN_GREATER_THAN_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
+            bindings = <&macro_tap>, <&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>;
+        };
+
         grave_grave_grave: grave_grave_grave { label = "GRAVE_GRAVE_GRAVE"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
             bindings = <&macro_tap>, <&kp GRAVE &kp GRAVE &kp GRAVE>;
@@ -455,6 +445,16 @@ release-after-ms = <5000>;};
         minus_greater_than: minus_greater_than { label = "MINUS_GREATER_THAN"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
             bindings = <&macro_tap>, <&kp MINUS &kp GREATER_THAN>;
+        };
+
+        left_brace_right_brace_left_arrow: left_brace_right_brace_left_arrow { label = "LEFT_BRACE_RIGHT_BRACE_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
+            bindings = <&macro_tap>, <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+        };
+
+        left_bracket_right_bracket_left_arrow: left_bracket_right_bracket_left_arrow { label = "LEFT_BRACKET_RIGHT_BRACKET_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
+            bindings = <&macro_tap>, <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
         };
 /*<macros-end>*/
 
@@ -1479,11 +1479,33 @@ release-after-ms = <5000>;};
         };
 
 
+        colon:colon { label = "COLON"; compatible = "zmk,behavior-hold-tap"; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>; hold-trigger-on-release;
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <91>; quick-tap-ms = <175>; require-prior-idle-ms = <0>;
+            bindings = <&colon_space>, <&colon_link_lctrl>;
+        };
+
+        colon_link_lctrl:colon_link_lctrl{ label = "COLON_LINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&colon_sink_lctrl>;
+            mods = <(MOD_LCTL)>;
+            
+        };
+
+        colon_sink_lctrl:colon_sink_lctrl{ label = "COLON_SINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp COLON>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+
         ampersand_a_n_g:ampersand_a_n_g { label = "AMPERSAND_A_N_G"; compatible = "zmk,behavior-hold-tap"; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>; hold-trigger-on-release;
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>;
-            bindings = <&angle>, <&ampersand_a_n_g_link_lctrl>;
+            bindings = <&left_parenthesis_right_parenthesis_left_arrow>, <&ampersand_a_n_g_link_lctrl>;
         };
 
         ampersand_a_n_g_link_lctrl:ampersand_a_n_g_link_lctrl{ label = "AMPERSAND_A_N_G_LINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
@@ -1505,7 +1527,7 @@ release-after-ms = <5000>;};
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>;
-            bindings = <&paren>, <&ampersand_p_a_r_link_lctrl>;
+            bindings = <&less_than_greater_than_left_arrow>, <&ampersand_p_a_r_link_lctrl>;
         };
 
         ampersand_p_a_r_link_lctrl:ampersand_p_a_r_link_lctrl{ label = "AMPERSAND_P_A_R_LINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
@@ -1545,11 +1567,33 @@ release-after-ms = <5000>;};
         };
 
 
+        semicolon:semicolon { label = "SEMICOLON"; compatible = "zmk,behavior-hold-tap"; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>; hold-trigger-on-release;
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <90>; quick-tap-ms = <175>; require-prior-idle-ms = <0>;
+            bindings = <&semicolon_enter>, <&semicolon_link_lctrl>;
+        };
+
+        semicolon_link_lctrl:semicolon_link_lctrl{ label = "SEMICOLON_LINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&semicolon_sink_lctrl>;
+            mods = <(MOD_LCTL)>;
+            
+        };
+
+        semicolon_sink_lctrl:semicolon_sink_lctrl{ label = "SEMICOLON_SINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&kp SEMICOLON>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+
         ampersand_c_u_r:ampersand_c_u_r { label = "AMPERSAND_C_U_R"; compatible = "zmk,behavior-hold-tap"; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 67 68 39>; hold-trigger-on-release;
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>;
-            bindings = <&curly>, <&ampersand_c_u_r_link_lctrl>;
+            bindings = <&left_brace_right_brace_left_arrow>, <&ampersand_c_u_r_link_lctrl>;
         };
 
         ampersand_c_u_r_link_lctrl:ampersand_c_u_r_link_lctrl{ label = "AMPERSAND_C_U_R_LINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
@@ -1571,7 +1615,7 @@ release-after-ms = <5000>;};
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>;
-            bindings = <&brackets>, <&ampersand_b_r_a_link_lctrl>;
+            bindings = <&left_bracket_right_bracket_left_arrow>, <&ampersand_b_r_a_link_lctrl>;
         };
 
         ampersand_b_r_a_link_lctrl:ampersand_b_r_a_link_lctrl{ label = "AMPERSAND_B_R_A_LINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
@@ -1694,7 +1738,7 @@ release-after-ms = <5000>;};
         };
 
         AI { timeout-ms = <20>; key-positions = <36 37>;
-            bindings = <&colon_space>; 
+            bindings = <&colon 0 0>; 
         };
 
         IN { timeout-ms = <20>; key-positions = <37 38>;
@@ -1762,7 +1806,7 @@ release-after-ms = <5000>;};
         };
 
         RE { timeout-ms = <20>; key-positions = <42 43>;
-            bindings = <&semicolon_enter>; 
+            bindings = <&semicolon 0 0>; 
         };
 
         TE { timeout-ms = <20>; key-positions = <41 43>;
