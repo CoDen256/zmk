@@ -361,10 +361,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT SHIFT
-  - ''
+  - '&move_selection_left'
   - LEFT ARROW
   - RIGHT ARROW
-  - {t: ▽, type: trans}
+  - '&move_selection_right'
   - {t: ▽, type: trans}
   - RCTRL
   - LEFT SHIFT
@@ -945,13 +945,13 @@ combos:
 - p: [41, 43]
   k: '?'
 - p: [41, 60]
-  k: '&move_selection_right'
+  k: ''
 - p: [42, 59]
   k: '&minus_greater_than'
 - p: [42, 61]
   k: '@'
 - p: [43, 60]
-  k: '&move_selection_left'
+  k: ''
 - p: [59, 60]
   k: {t: '{', h: '&left_brace_right_brace_left_arrow', s: '{'}
 - p: [60, 61]

@@ -1027,7 +1027,7 @@ combos:
 - p:
   - 41
   - 60
-  k: '&move_selection_right'
+  k: ''
 - p:
   - 42
   - 59
@@ -1039,7 +1039,7 @@ combos:
 - p:
   - 43
   - 60
-  k: '&move_selection_left'
+  k: ''
 - p:
   - 59
   - 60

@@ -344,7 +344,7 @@ release-after-ms = <5000>;};
 
         select_word: select_word { label = "SELECT_WORD"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&select_word_right>, <&select_word_left>;
+            bindings = <&select_word_right &select_word_left>;
         };
 
         select_line: select_line { label = "SELECT_LINE"; compatible = "zmk,behavior-macro"; 
@@ -394,77 +394,77 @@ release-after-ms = <5000>;};
 
         ampersand_ampersand: ampersand_ampersand { label = "AMPERSAND_AMPERSAND"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp AMPERSAND &kp AMPERSAND>;
+            bindings = <&macro_tap>,<&kp AMPERSAND &kp AMPERSAND>;
         };
 
         pipe_pipe: pipe_pipe { label = "PIPE_PIPE"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp PIPE &kp PIPE>;
+            bindings = <&macro_tap>,<&kp PIPE &kp PIPE>;
         };
 
         backslash_backslash: backslash_backslash { label = "BACKSLASH_BACKSLASH"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp BACKSLASH &kp BACKSLASH>;
+            bindings = <&macro_tap>,<&kp BACKSLASH &kp BACKSLASH>;
         };
 
         slash_slash: slash_slash { label = "SLASH_SLASH"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp SLASH &kp SLASH>;
+            bindings = <&macro_tap>,<&kp SLASH &kp SLASH>;
         };
 
         equal_equal: equal_equal { label = "EQUAL_EQUAL"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp EQUAL &kp EQUAL>;
+            bindings = <&macro_tap>,<&kp EQUAL &kp EQUAL>;
         };
 
         colon_space: colon_space { label = "COLON_SPACE"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp COLON &kp SPACE>;
+            bindings = <&macro_tap>,<&kp COLON &kp SPACE>;
         };
 
         exclamation_equal: exclamation_equal { label = "EXCLAMATION_EQUAL"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp EXCLAMATION &kp EQUAL>;
+            bindings = <&macro_tap>,<&kp EXCLAMATION &kp EQUAL>;
         };
 
         less_than_greater_than_left_arrow: less_than_greater_than_left_arrow { label = "LESS_THAN_GREATER_THAN_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>;
         };
 
         left_parenthesis_right_parenthesis_left_arrow: left_parenthesis_right_parenthesis_left_arrow { label = "LEFT_PARENTHESIS_RIGHT_PARENTHESIS_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
         };
 
         grave_grave_grave: grave_grave_grave { label = "GRAVE_GRAVE_GRAVE"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp GRAVE &kp GRAVE &kp GRAVE>;
+            bindings = <&macro_tap>,<&kp GRAVE &kp GRAVE &kp GRAVE>;
         };
 
         comma_space: comma_space { label = "COMMA_SPACE"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp COMMA &kp SPACE>;
+            bindings = <&macro_tap>,<&kp COMMA &kp SPACE>;
         };
 
         semicolon_enter: semicolon_enter { label = "SEMICOLON_ENTER"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp SEMICOLON &kp ENTER>;
+            bindings = <&macro_tap>,<&kp SEMICOLON &kp ENTER>;
         };
 
         minus_greater_than: minus_greater_than { label = "MINUS_GREATER_THAN"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp MINUS &kp GREATER_THAN>;
+            bindings = <&macro_tap>,<&kp MINUS &kp GREATER_THAN>;
         };
 
         left_brace_right_brace_left_arrow: left_brace_right_brace_left_arrow { label = "LEFT_BRACE_RIGHT_BRACE_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
         };
 
         left_bracket_right_bracket_left_arrow: left_bracket_right_bracket_left_arrow { label = "LEFT_BRACKET_RIGHT_BRACKET_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
         };
 /*<macros-end>*/
 
@@ -2414,6 +2414,8 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
 
@@ -2456,12 +2458,12 @@ num {
 >;};
 nav {
 			bindings = <
-&trans  &trans          &trans  &trans          &trans                                                                             &trans     &trans           &trans  &trans  &trans
-&trans  &trans          &trans  &kp BACKSPACE   &kp DELETE       &trans                                                    &trans  &trans     &trans           &trans  &trans  &trans
-&trans  &trans          &none   &masked_home    &masked_end      &trans                                                    &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
-&trans  &kp LEFT_SHIFT  &none   &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans                                                    &trans  &kp RCTRL  &kp LEFT_SHIFT   &none   &none   &trans
-&trans  &kp LCTRL       &none   &kp UP_ARROW    &kp DOWN         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
-&tog 4  &trans          &trans  &kp PG_UP       &kp PAGE_DOWN            &trans  &trans  &trans    &trans  &trans  &trans          &none      &none            &none   &trans  &to 4
+&trans  &trans          &trans                &trans          &trans                                                                                            &trans     &trans           &trans  &trans  &trans
+&trans  &trans          &trans                &kp BACKSPACE   &kp DELETE       &trans                                                                   &trans  &trans     &trans           &trans  &trans  &trans
+&trans  &trans          &none                 &masked_home    &masked_end      &trans                                                                   &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
+&trans  &kp LEFT_SHIFT  &move_selection_left  &kp LEFT_ARROW  &kp RIGHT_ARROW  &move_selection_right                                                    &trans  &kp RCTRL  &kp LEFT_SHIFT   &none   &none   &trans
+&trans  &kp LCTRL       &none                 &kp UP_ARROW    &kp DOWN         &trans                 &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LCTRL  &kp RIGHT_SHIFT  &none   &none   &trans
+&tog 4  &trans          &trans                &kp PG_UP       &kp PAGE_DOWN                           &trans  &trans  &trans    &trans  &trans  &trans          &none      &none            &none   &trans  &to 4
 >;};
 fun {
 			bindings = <
