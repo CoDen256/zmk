@@ -952,19 +952,3 @@ combos:
   k: {t: '{', h: '&curly', s: '{'}
 - p: [60, 61]
   k: {t: '[', h: '&brackets', s: '['}
-- p: [59, 76]
-  k: '&delete_word'
-- p: [75, 60]
-  k: '&select_word_right'
-- p: [49, 68]
-  k: '&select_word_left'
-- p: [67, 50]
-  k: {t: '&select_word_right', s: '&select_word_left'}
-- p: [76, 75]
-  k: ''
-- p: [77, 76]
-  k: ''
-- p: [68, 67]
-  k: ''
-- p: [67, 66]
-  k: ''

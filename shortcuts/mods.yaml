@@ -129,10 +129,41 @@ config:
   prior_idle: 200
 
 
+
 macros:
   func: "->"
-#  select_word: "&select_word_right>, <&select_word_left>"
-
+  win_sleep: "<&kp LG(X) &kp U &kp S>"
+  alower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_3 &kp KP_N2>,<&macro_release>,<&kp LALT>"
+  Aupper: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_4 &kp KP_NUMBER_2>,<&macro_release>,<&kp LALT>"
+  olower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_4 &kp KP_NUMBER_8>,<&macro_release>,<&kp LALT>"
+  Oupper: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_3>,<&macro_release>,<&kp LALT>"
+  ulower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_9>,<&macro_release>,<&kp LALT>"
+  Uupper: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_4>,<&macro_release>,<&kp LALT>"
+  eszet: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_N2 &kp KP_NUMBER_3>,<&macro_release>,<&kp LALT>"
+  paren: "<&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>"
+  brackets: "<&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>"
+  curly: "<&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>"
+  angle: "<&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>"
+  mleft: "<&kp F13>"
+  mright: "<&kp F14>"
+  mup: "<&kp F15>"
+  mdown: "<&kp F16>"
+  mlclick: "<&kp F17>"
+  mrclick: "<&kp F18>"
+  mscrollup: "<&kp F19>"
+  mscrolldown: "<&kp F20>"
+  reloadkeymap: "<&kp LA(K) &kp TAB &kp TAB &kp SPACE &kp SPACE>"
+  cut_line: "<&select_line &kp K_CUT &kp DELETE>"
+  move_down: "<&cut_line &kp DOWN &kp K_PASTE>"
+  move_up: "<&cut_line &kp UP_ARROW &kp K_PASTE>"
+  select_word: "<&select_word_right>, <&select_word_left>"
+  select_line: "<&kp HOME &kp LS(END)>"
+  delete_word: "<&select_word &kp BACKSPACE>"
+  delete_line: "<&select_line &kp BACKSPACE &kp BACKSPACE>"
+  copy_line: "<&kp HOME &kp LS(END) &kp LC(C) &kp LC(RIGHT)>"
+  select_word_right: "<&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>"
+  select_word_left: "<&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>"
+  duplicate_line: "<&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT &kp ENTER &kp LC(V)>"
 
 combos:
   timeout: 20

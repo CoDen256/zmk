@@ -79,16 +79,17 @@ class Macro():
         return f"{self.seq}"
 
     def sequence_binding(self):
-        return [kp(k) for k in self.seq]
+        return  (self.seq, True) if self.seq.startswith("<&") and self.seq.endswith(">") else ( [kp(k) for k in self.seq], False)
 
     def name(self):
         if self._name: return self._name
-        return ("_".join([k[4:].lower() for k in self.sequence_binding()]))
+        return ("_".join([k[4:].lower() for k in self.sequence_binding()[0]]))
 
     def node(self):
         return "&"+ self.name()
     def compile(self):
-        seq = " ".join(self.sequence_binding())
+        binding, custom = self.sequence_binding()
+        seq = f"<&macro_tap>, <{' '.join(binding)}>" if not custom else binding
         return f'''
 {self.name()}: {self.name()} {{
 compatible = "zmk,behavior-macro";
@@ -96,7 +97,7 @@ label = "{self.name().upper()}";
 #binding-cells = <0>;
 tap-ms = <0>;
 wait-ms = <0>;
-bindings = <&macro_tap>,<{seq}>;
+bindings = {seq};
 }};
 '''
 
