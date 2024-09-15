@@ -945,7 +945,7 @@ combos:
 - p: [41, 43]
   k: '?'
 - p: [42, 59]
-  k: '&func'
+  k: '&minus_greater_than'
 - p: [42, 61]
   k: '@'
 - p: [59, 60]

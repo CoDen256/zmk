@@ -91,15 +91,10 @@ class Macro():
         binding, custom = self.sequence_binding()
         seq = f"<&macro_tap>, <{' '.join(binding)}>" if not custom else binding
         return f'''
-{self.name()}: {self.name()} {{
-compatible = "zmk,behavior-macro";
-label = "{self.name().upper()}";
-#binding-cells = <0>;
-tap-ms = <0>;
-wait-ms = <0>;
-bindings = {seq};
-}};
-'''
+        {self.name()}: {self.name()} {{ label = "{self.name().upper()}"; compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
+            bindings = {seq};
+        }};'''
 
 
 class Binder():
@@ -212,11 +207,10 @@ class Combo:
         self.cfg = cfg
 
     def compile(self):
-        return f'''{self.key_names} {{
-bindings = <{self.binder.binding(self.out)}>; 
-timeout-ms = <{self.cfg.timeout}>;
-key-positions = <{self.pos}>;}};
-'''
+        return f'''
+        {self.key_names} {{ timeout-ms = <{self.cfg.timeout}>; key-positions = <{self.pos}>;
+            bindings = <{self.binder.binding(self.out)}>; 
+        }};'''
 
 
 class Config:
@@ -249,19 +243,16 @@ class HoldTap:
 
     def gen_holdtap(self, name, hold, tap, position):
         join = ' '.join(map(lambda x: str(x), position))
+        term = self.config.tapping_term
+        quick_tap = self.config.quick_tap
+        idle = self.config.prior_idle
         return f'''
-{name}:{name} {{
-compatible = "zmk,behavior-hold-tap";
-#binding-cells = <2>;
-flavor = "balanced";
-tapping-term-ms = <{self.config.tapping_term}>;
-quick-tap-ms = <{self.config.quick_tap}>;
-require-prior-idle-ms = <{self.config.prior_idle}>;
-bindings = <{hold}>, <{tap}>;
-hold-trigger-key-positions = <{join}>;
-hold-trigger-on-release;
-label = "{name.upper()}";}};
-'''
+        {name}:{name} {{ label = "{name.upper()}"; compatible = "zmk,behavior-hold-tap"; hold-trigger-key-positions = <{join}>; hold-trigger-on-release;
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <{term}>; quick-tap-ms = <{quick_tap}>; require-prior-idle-ms = <{idle}>;
+            bindings = <{hold}>, <{tap}>;
+        }};'''
 
 
 class Morph:
@@ -284,14 +275,12 @@ class Morph:
         mods = f"<({joined})>"
         keep_mods = f"keep-mods = {mods};" if self.keep else ""
         return f"""
-{label}:{label}{{
-compatible = "zmk,behavior-mod-morph";
-#binding-cells = <0>;
-bindings = <{self.default}>, <{self.modified}>;
-label = "{label.upper()}";
-mods = {mods};
-{keep_mods}
-}};"""
+        {label}:{label}{{ label = "{label.upper()}"; compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <{self.default}>, <{self.modified}>;
+            mods = {mods};
+            {keep_mods}
+        }};"""
 
 
 class Map:
