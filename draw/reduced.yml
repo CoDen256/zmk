@@ -969,14 +969,14 @@ combos:
   - 49
   k:
     t: <
-    h: '&left_parenthesis_right_parenthesis_left_arrow'
+    h: '&less_than_greater_than_left_arrow'
     s: <
 - p:
   - 50
   - 49
   k:
     t: (
-    h: '&less_than_greater_than_left_arrow'
+    h: '&left_parenthesis_right_parenthesis_left_arrow'
     s: (
 - p:
   - 48
@@ -1025,6 +1025,10 @@ combos:
   - 43
   k: '?'
 - p:
+  - 41
+  - 60
+  k: '&move_selection_right'
+- p:
   - 42
   - 59
   k: '&minus_greater_than'
@@ -1032,6 +1036,10 @@ combos:
   - 42
   - 61
   k: '@'
+- p:
+  - 43
+  - 60
+  k: '&move_selection_left'
 - p:
   - 59
   - 60

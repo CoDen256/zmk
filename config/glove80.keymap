@@ -382,6 +382,16 @@ release-after-ms = <5000>;};
             bindings = <&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT &kp ENTER &kp LC(V)>;
         };
 
+        move_selection_right: move_selection_right { label = "MOVE_SELECTION_RIGHT"; compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
+            bindings = <&kp LC(X) &kp RIGHT &kp LA(LC(V))>;
+        };
+
+        move_selection_left: move_selection_left { label = "MOVE_SELECTION_LEFT"; compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
+            bindings = <&kp LC(X) &kp LEFT &kp LA(LC(V))>;
+        };
+
         ampersand_ampersand: ampersand_ampersand { label = "AMPERSAND_AMPERSAND"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
             bindings = <&macro_tap>, <&kp AMPERSAND &kp AMPERSAND>;
@@ -417,14 +427,14 @@ release-after-ms = <5000>;};
             bindings = <&macro_tap>, <&kp EXCLAMATION &kp EQUAL>;
         };
 
-        left_parenthesis_right_parenthesis_left_arrow: left_parenthesis_right_parenthesis_left_arrow { label = "LEFT_PARENTHESIS_RIGHT_PARENTHESIS_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
-            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
-        };
-
         less_than_greater_than_left_arrow: less_than_greater_than_left_arrow { label = "LESS_THAN_GREATER_THAN_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
             bindings = <&macro_tap>, <&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>;
+        };
+
+        left_parenthesis_right_parenthesis_left_arrow: left_parenthesis_right_parenthesis_left_arrow { label = "LEFT_PARENTHESIS_RIGHT_PARENTHESIS_LEFT_ARROW"; compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
+            bindings = <&macro_tap>, <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
         };
 
         grave_grave_grave: grave_grave_grave { label = "GRAVE_GRAVE_GRAVE"; compatible = "zmk,behavior-macro"; 
@@ -1505,7 +1515,7 @@ release-after-ms = <5000>;};
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>;
-            bindings = <&left_parenthesis_right_parenthesis_left_arrow>, <&ampersand_a_n_g_link_lctrl>;
+            bindings = <&less_than_greater_than_left_arrow>, <&ampersand_a_n_g_link_lctrl>;
         };
 
         ampersand_a_n_g_link_lctrl:ampersand_a_n_g_link_lctrl{ label = "AMPERSAND_A_N_G_LINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
@@ -1527,7 +1537,7 @@ release-after-ms = <5000>;};
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>;
-            bindings = <&less_than_greater_than_left_arrow>, <&ampersand_p_a_r_link_lctrl>;
+            bindings = <&left_parenthesis_right_parenthesis_left_arrow>, <&ampersand_p_a_r_link_lctrl>;
         };
 
         ampersand_p_a_r_link_lctrl:ampersand_p_a_r_link_lctrl{ label = "AMPERSAND_P_A_R_LINK_LCTRL"; compatible = "zmk,behavior-mod-morph";
@@ -1813,12 +1823,20 @@ release-after-ms = <5000>;};
             bindings = <&kp QUESTION>; 
         };
 
+        TD { timeout-ms = <20>; key-positions = <41 60>;
+            bindings = <&none>; 
+        };
+
         RM { timeout-ms = <20>; key-positions = <42 59>;
             bindings = <&minus_greater_than>; 
         };
 
         RY { timeout-ms = <20>; key-positions = <42 61>;
             bindings = <&kp AT_SIGN>; 
+        };
+
+        ED { timeout-ms = <20>; key-positions = <43 60>;
+            bindings = <&none>; 
         };
 
         MD { timeout-ms = <20>; key-positions = <59 60>;

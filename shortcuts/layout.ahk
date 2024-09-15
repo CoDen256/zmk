@@ -29,7 +29,20 @@ SetInputLang(Lang)
     PostMessage(0x50, 0, Lang, hWnd)
 }
 
+^!v:: {
+	ClipSaved := A_Clipboard ; store temporärily original clipboard
+	Length := StrLen(ClipSaved)
 
+	Send("^v") ; Copy selected left character to the clipSleep 1000Sleep 1000Sleep 1000Sleep 1000Sleep 1000
+	Sleep 50
+	Send("{LShift down}")
+	Loop Length{
+		Send("{Left}")
+	}
+	
+	Send("{LShift up}")
+
+}
  
 F13::{ 
     MouseMove(-20, 0, 50, "R") 
@@ -59,49 +72,6 @@ F19::{
 F20::{ 
     MouseClick("WD") 
 }
-
-#HotIf GetInputLocaleID() = "68748313"
-
-k::Send("к")
-g::Send("г")
-h::Send("х")
-c::Send("с")
-w::Send("ш")
-v::Send("в")
-l::Send("л")
-b::Send("б")
-o::Send("о")
-a::Send("а")
-i::Send("и")
-n::Send("н")
-t::Send("т")
-r::Send("р")
-e::Send("е")
-s::Send("ц")
-j::Send("ж")
-f::Send("ф")
-u::Send("у")
-p::Send("п")
-m::Send("м")
-d::Send("д")
-y::Send("й")
-x::Send("щ")
-q::Send("ю")
-z::Send("з")
-^::Send("я")
-&::Send("&")
-$::Send("э")
-?::Send("?")
-/::Send("/")
-#::Send("#")
-:::Send(":")
-.::Send(".")
-<::Send("<")
->::Send(">")
-'::Send("ь")
-`;::Send("ы")
-@::Send("ъ")
-"::Send("`"")
 
 
 GetInputLocaleID() {

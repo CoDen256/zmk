@@ -159,6 +159,8 @@ macros:
   select_word_right: "<&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>"
   select_word_left: "<&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>"
   duplicate_line: "<&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT &kp ENTER &kp LC(V)>"
+  move_selection_right: "<&kp LC(X) &kp RIGHT &kp LA(LC(V))>"
+  move_selection_left: "<&kp LC(X) &kp LEFT &kp LA(LC(V))>"
 
 combos:
   timeout: 20
@@ -181,8 +183,8 @@ combos:
   IP: "="
   NU: "*"
 
-  FU: "t:&ang h:()\b c:280,175,0"
-  PU: "t:&par h:<>\b c:280,175,0"
+  FU: "t:&ang h:<>\b c:280,175,0"
+  PU: "t:&par h:()\b c:280,175,0"
   FP: "_"
 
 
@@ -200,10 +202,10 @@ combos:
   RE: "t:; h:;\n c:90,175,0"
   TE: "?"
 
-#  TD: ""
+  TD: ""
   RM: "->"
   RY: "@"
-#  ED: ""
+  ED: ""
 
   MD: "t:&cur h:{}\b c:280,175,0"
   DY: "t:&bra h:[]\b c:280,175,0"

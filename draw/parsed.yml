@@ -921,9 +921,9 @@ combos:
 - p: [38, 49]
   k: '*'
 - p: [48, 49]
-  k: {t: <, h: '&left_parenthesis_right_parenthesis_left_arrow', s: <}
+  k: {t: <, h: '&less_than_greater_than_left_arrow', s: <}
 - p: [50, 49]
-  k: {t: (, h: '&less_than_greater_than_left_arrow', s: (}
+  k: {t: (, h: '&left_parenthesis_right_parenthesis_left_arrow', s: (}
 - p: [48, 50]
   k: _
 - p: [29, 30]
@@ -944,10 +944,14 @@ combos:
   k: {t: ;, h: '&semicolon_enter', s: ;}
 - p: [41, 43]
   k: '?'
+- p: [41, 60]
+  k: '&move_selection_right'
 - p: [42, 59]
   k: '&minus_greater_than'
 - p: [42, 61]
   k: '@'
+- p: [43, 60]
+  k: '&move_selection_left'
 - p: [59, 60]
   k: {t: '{', h: '&left_brace_right_brace_left_arrow', s: '{'}
 - p: [60, 61]

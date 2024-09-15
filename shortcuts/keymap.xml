@@ -781,7 +781,7 @@
     <keyboard-shortcut first-keystroke="ctrl alt v" />
   </action>
   <action id="ShowNavBar">
-    <keyboard-shortcut first-keystroke="shift alt v" />
+    <keyboard-shortcut first-keystroke="shift ctrl v" />
   </action>
   <action id="ShowPopupMenu">
     <keyboard-shortcut first-keystroke="shift enter" />

@@ -135,7 +135,7 @@
 "Select Next Occurrence","shift+ctrl+q","Main","General","0",""
 "Show Discovered Tests","shift+ctrl+alt+t","Main","General","0",""
 "Show File Path","ctrl+alt+v","Main","General","0",""
-"Show Nav Bar","shift+alt+v","Main","General","0",""
+"Show Nav Bar","shift+ctrl+v","Main","General","0",""
 "Show Popup Menu","shift+enter","Main","General","0",""
 "Show Recent Tests","shift+t","Main","General","0",""
 "Step Into","f9","Main","General","0",""
