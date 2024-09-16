@@ -1,4 +1,5 @@
 from cgi import print_form
+from pickle import TUPLE
 
 import yaml
 from pyparsing import htmlComment
@@ -63,6 +64,122 @@ keynames = {
     "\r": "UP_ARROW",
 }
 
+class NodeParser:
+    def parse(self, node):
+        pass
+    def parse_inline(self, node):
+        pass
+    def is_valid(self, node):
+        return False
+    def is_valid_inline(self, node):
+        return False
+
+class MorphParser:
+    def __init__(self):
+        pass
+    def parse(self, node):
+        pass
+    def parse_inline(self, node):
+        pass
+    def is_valid(self, node):
+        return False
+    def is_valid_inline(self, node):
+        return False
+
+class MacroParser:
+    def __init__(self):
+        pass
+    def parse(self, node):
+        pass
+    def parse_inline(self, node):
+        pass
+    def is_valid(self, node):
+        return False
+    def is_valid_inline(self, node):
+        return node.startswith("{") and node.endswith("}")
+
+class HoldTapParser:
+    def __init__(self):
+        pass
+    def parse(self, node):
+        pass
+    def parse_inline(self, node):
+        pass
+    def is_valid(self, node):
+        return False
+    def is_valid_inline(self, node):
+        return False
+
+class Parser:
+    def __init__(self):
+        pass
+    def parse(self, node):
+        pass
+    def parse_inline(self, node):
+        pass
+    def is_valid(self, node):
+        return False
+    def is_valid_inline(self, node):
+        return False
+
+class KeyParser:
+    def is_valid_kp(self, key):
+        return True
+    def parse_kp(self, key):
+        key = key if key not in keynames else keynames[key]
+        return Binding(f"<&kp {key}>")
+
+class BindingParser:
+    def __init__(self):
+        pass
+    def is_valid_inline(self, node):
+        return node.startswith("<&") and node.endswith(">")
+    def parse_inline(self, node):
+        return Binding(node)
+
+class Binding:
+    def __init__(self, binding):
+        self._binding = binding
+
+    def binding(self):
+        return self._binding
+
+    def compile(self):
+        return ""
+
+class MacroC:
+    def __init__(self, bindings):
+        self.binding = bindings
+
+    def binding(self):
+        return self.bindings
+
+    def compile(self):
+        binding, custom = self.sequence_binding()
+        seq = f"<&macro_tap>, <{' '.join(binding)}>" if not custom else binding
+        return f'''
+        {self.name()}: {self.name()} {{ label = "{self.name().upper()}"; compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
+            bindings = {seq};
+        }};'''
+
+class AnonymousNodeParser:
+    def __init__(self):
+        self.binding_parser = BindingParser()
+        self.key_parser = KeyParser()
+        self.macro_parser = MacroParser()
+
+    def parse(self, node):
+        if isinstance(node, str):
+            if self.binding_parser.is_valid_inline(node):
+                return self.binding_parser.parse_inline(node)
+            if self.macro_parser.is_valid_inline(node):
+                return self.macro_parser.parse_inline(node)
+            if self.key_parser.is_valid_kp(node):
+                return self.key_parser.parse_kp(node)
+
+        if isinstance(node, list):
+            return
 
 def kp(key):
     if key in keynames:
