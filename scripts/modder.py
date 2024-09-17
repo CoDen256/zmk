@@ -1,14 +1,12 @@
-from cgi import print_form
-from lib2to3.pytree import NodePattern
-from pickle import TUPLE
-
-import yaml
-from pyparsing import htmlComment
-from six import print_
 import random
 import string
+
+import yaml
+
+
 def rnd(n: int):
-    return bytes(random.choices(string.ascii_uppercase.encode('ascii'),k=n)).decode('ascii')
+    return bytes(random.choices(string.ascii_uppercase.encode('ascii'), k=n)).decode('ascii')
+
 
 keynames = {
     "!": "EXCLAMATION",
@@ -69,97 +67,160 @@ keynames = {
     "\r": "UP_ARROW",
 }
 
+
 class NodeParser:
     def parse(self, node):
         pass
+
     def parse_inline(self, node):
         pass
+
     def is_valid(self, node):
         return False
+
     def is_valid_inline(self, node):
         return False
+
 
 class MorphParser:
     def __init__(self):
         self.anon_parser = None
-    def parse(self, node):
-        pass
+
+    def parse(self, name, node):
+        key = self.anon_parser.parse(node.pop("k"))  # add new node
+        modified = self.anon_parser.parse(node.pop("lctrl")) if "lctrl" in node else key
+        return Morph(name, key.binding(), modified.binding(), ["lctrl"], True)
+
     def parse_inline(self, node):
         name = node.pop("n", rnd(10))
-        key = self.anon_parser.parse(node.pop("k")) # add new node
+        key = self.anon_parser.parse(node.pop("k"))  # add new node
         modified = self.anon_parser.parse(node.pop("lctrl")) if "lctrl" in node else key
-        return Morph(name, key.binding(),  modified.binding(), ["lctrl"], True)
+        return Morph(name, key.binding(), modified.binding(), ["lctrl"], True)
 
-    def is_valid(self, node):
-        return False
     def is_valid_inline(self, node):
-        return "k" in node # or {key : {"lctrl" : "stuff"# }}
+        return "k" in node  # or {key : {"lctrl" : "stuff"# }}
+
 
 class HoldTapParser:
     def __init__(self):
         self.anon_parser = None
+
     def parse(self, node):
         pass
+
     def parse_inline(self, node):
         name = node.pop("n", rnd(10))
         hold = self.anon_parser.parse(node.pop("h"))
         tap = self.anon_parser.parse(node.pop("t"))
-        return HoldTap(name, hold.binding(), tap.binding(),  [0],  **node)
+        return HoldTap(name, hold.binding(), tap.binding(), [0], **node)
+
     def is_valid(self, node):
         return False
+
     def is_valid_inline(self, node):
         return "h" in node and "t" in node
+
 
 class Parser:
     def __init__(self):
         pass
+
     def parse(self, node):
         pass
+
     def parse_inline(self, node):
         pass
+
     def is_valid(self, node):
         return False
+
     def is_valid_inline(self, node):
         return False
+
 
 class KeyParser:
     def is_valid_kp(self, key):
         return key.isalnum()
-    def parse_kp(self, key):
+
+    def parse(self, key):
         key = key if key not in keynames else keynames[key]
         return Binding(bind(f"kp {key.upper()}"))
+
 
 class MacroParser:
     def __init__(self):
         self.key_parser = None
         self.anon_parser = None
-    def parse(self, node):
-        pass
+        self.binding_parser = None
+
+    def parse(self, name, node):
+        if self.is_valid_tap_list(node): return self.parse_tap_list(name, node)
+        if self.is_valid_tap_inline(node): return self.parse_object(name, node)
+        if self.is_valid_object(node): return self.parse_tap_inline(name, node)
+        if self.is_valid_binding_list(node): return self.parse_binding_list(name, node)
+
+        return self.parse_tap_inline(name, node) # assuming is tap inline by default
+
     def parse_inline(self, node):
+        if self.is_valid_tap_list(node): return self.parse_tap_list(self.get_tap_list_name(node), node)
+        if self.is_valid_tap_inline(node): return self.parse_tap_inline(self.get_tap_inline_name(node), node)
+        if self.is_valid_object(node): return self.parse_object(self.get_object_name(node), node)
+        if self.is_valid_binding_list(node): return self.parse_binding_list(self.get_binding_name(node), node)
+
+        return self.parse_tap_inline(self.get_tap_inline_name(node), node)
+
+    def get_tap_list_name(self, node): return rnd(10)
+
+    def get_tap_inline_name(self, node): return rnd(10)
+
+    def get_object_name(self, node): return node.pop("n", rnd(10))
+
+    def get_binding_name(self, node): return rnd(10)
+
+
+    def parse_tap_inline(self, name, node):
         node = node.removeprefix("{").removesuffix("}") if node.startswith("{") and node.endswith("}") else node
-        return Macro(rnd(10), ["<&macro_tap>"]+[self.key_parser.parse_kp(k).binding() for k in node])
-    def parse_list(self, ls): # or just macro_tap?
-        return Macro(rnd(10), [bind(v) for v in ls])
-    def parse_object(self, obj):
-        name = obj.pop("n", rnd(10))
+        return Macro(name, [Binding("<&macro_tap>")] + [self.key_parser.parse(k) for k in node])
+
+    def parse_binding_list(self, name, ls):
+        return Macro(name, [self.binding_parser.parse(v) for v in ls])
+
+    def parse_tap_list(self, name, ls):
+        return Macro(name, [Binding("<&macro_tap>")] + [self.key_parser.parse(k) for k in ls])
+
+    def parse_object(self, name, obj):
         macro = self.anon_parser.parse(obj.pop("m"))
-        return Macro(name,  macro.bindings, **obj)
-    def is_valid(self, node):
-        return False
-    def is_valid_object(self, obj):
-        return "m" in obj # {"m": name} or {name : {m: ""}} or {name: ""}
-    def is_valid_list(self, ls):
-        return all([l.startswith("&") for l in ls])
-    def is_valid_inline(self, node):
-        return node.startswith("{") and node.endswith("}")
+        return Macro(name, macro.bindings, **obj)
+
+    def is_valid_object(self, node):
+        return isinstance(node, dict) and "m" in node  # {"m": name} or {name : {m: ""}} or {name: ""}
+
+    def is_valid_binding_list(self, node):
+        return isinstance(node, list) and all([l.startswith("&") for l in node])
+
+    def is_valid_tap_list(self, node):
+        return isinstance(node, list) and not all([l.startswith("&") for l in node])
+
+    def is_valid_tap_inline(self, node):
+        return isinstance(node, str) and node.startswith("{") and node.endswith("}")
+
+    def is_macro(self, node):
+        return (self.is_valid_binding_list(node) or
+                self.is_valid_object(node) or
+                self.is_valid_tap_inline(node) or
+                self.is_valid_tap_list(node))
+
 
 class BindingParser:
     def __init__(self):
         pass
+
     def is_valid_inline(self, node):
         return node.startswith("<&") and node.endswith(">")
-    def parse_inline(self, node):
+
+    def parse(self, node):
         return Binding(node)
+
 
 class Binding:
     def __init__(self, binding):
@@ -171,11 +232,14 @@ class Binding:
     def compile(self):
         return ""
 
+
 def compile_cfg(**cfg):
     return " ".join([f"{k} = <{v}>;" for (k, v) in cfg.items()])
 
+
 def bind(name):
     return f"<&{name.removeprefix("&")}>"
+
 
 class Macro:
     def __init__(self, name, bindings, **cfg):
@@ -187,15 +251,16 @@ class Macro:
         return bind(self.name)
 
     def compile(self):
-        bindings = ", ".join(self.bindings)
+        bindings = ", ".join([b.binding() for b in self.bindings])
         return f'''
         {self.name}: {self.name} {{ label = "{self.name.upper()}"; compatible = "zmk,behavior-macro"; 
             {compile_cfg(**self.cfg)}
             bindings = {bindings};
         }};'''
 
+
 class AnonymousNodeParser:
-    def __init__(self, binder,  morph=MorphParser(), hold_tap=HoldTapParser(), macro=MacroParser(), key=KeyParser(),
+    def __init__(self, binder, morph=MorphParser(), hold_tap=HoldTapParser(), macro=MacroParser(), key=KeyParser(),
                  binding=BindingParser()):
         self.binding_parser = binding
         self.key_parser = key
@@ -203,26 +268,29 @@ class AnonymousNodeParser:
         macro.anon_parser = self
         macro.key_parser = key
         morph.anon_parser = self
+        macro.binding_parser = binding
         hold_tap.anon_parser = self
+
         self.hold_tap_parser = hold_tap
 
         self.morph_parser = morph
         self.binder = binder
 
-
     def parse0(self, node):
+        if self.macro_parser.is_macro(node):
+            return self.macro_parser.parse_inline(node)
         if isinstance(node, str):
             if self.binding_parser.is_valid_inline(node):
-                return self.binding_parser.parse_inline(node)
-            if self.macro_parser.is_valid_inline(node):
+                return self.binding_parser.parse(node)
+            if self.macro_parser.is_valid_tap_inline(node):
                 return self.macro_parser.parse_inline(node)
             if self.key_parser.is_valid_kp(node):
-                return self.key_parser.parse_kp(node)
+                return self.key_parser.parse(node)
             return self.macro_parser.parse_inline(node)
 
         if isinstance(node, list):
-            if self.macro_parser.is_valid_list(node):
-                return self.macro_parser.parse_list(node)
+            if self.macro_parser.is_valid_binding_list(node):
+                return self.macro_parser.parse_binding_list(node)
         if isinstance(node, dict):
             if self.macro_parser.is_valid_object(node):
                 return self.macro_parser.parse_object(node)
@@ -230,21 +298,30 @@ class AnonymousNodeParser:
                 return self.morph_parser.parse_inline(node)
             if self.hold_tap_parser.is_valid_inline(node):
                 return self.hold_tap_parser.parse_inline(node)
+
     def parse(self, node):
         node = self.parse0(node)
         self.binder.bind(node)
         return node
+
+
 class NodeBinder():
     def __init__(self):
         self.nodes = {node.binding(): node for node in []}
+
     def bind(self, node):
         self.nodes[node.binding()] = node
+
+
 b = NodeBinder()
 a = AnonymousNodeParser(b)
+
+
 def kp(key):
     if key in keynames:
         return keynames[key]
     return key
+
 
 class MacroNode():
 
@@ -259,14 +336,16 @@ class MacroNode():
         return f"{self.seq}"
 
     def sequence_binding(self):
-        return  (self.seq, True) if self.seq.startswith("<&") and self.seq.endswith(">") else ( [kp(k) for k in self.seq], False)
+        return (self.seq, True) if self.seq.startswith("<&") and self.seq.endswith(">") else (
+            [kp(k) for k in self.seq], False)
 
     def name(self):
         if self._name: return self._name
         return ("_".join([k[4:].lower() for k in self.sequence_binding()[0]]))
 
     def node(self):
-        return "&"+ self.name()
+        return "&" + self.name()
+
     def compile(self):
         binding, custom = self.sequence_binding()
         seq = f"<&macro_tap>, <{' '.join(binding)}>" if not custom else binding
@@ -287,6 +366,7 @@ class Binder():
 
     def macros(self):
         return self._macros.values()
+
     def hts(self):
         return self._hts.values()
 
@@ -306,7 +386,6 @@ class Binder():
         self._hts[ht.label()] = ht
         return "&" + ht.label() + " 0 0"
 
-
     def name(self, keys):
         return ("_".join([kp(k)[4:].lower() for k in keys]))
 
@@ -322,8 +401,8 @@ class Binder():
             tap, hold = tuple(key.removeprefix("t:").split(" h:"))
             if " c:" in hold:
                 hold, cfg = tuple(hold.split(" c:"))
-                t,q,r = tuple(cfg.split(","))
-                cfg = Config(int(t), int(q),int(r))
+                t, q, r = tuple(cfg.split(","))
+                cfg = Config(int(t), int(q), int(r))
             return self.get_holdtap(tap, self.binding(hold), cfg)
         if key[0].isalnum():
             return kp(key)
@@ -408,9 +487,9 @@ class HoldTapNode:
             self.pos = layout.opposite_side(tap.key) if not position else list(
                 map(lambda k: layout.pos(k), position.split(" ")))
 
-
     def label(self):
         return self.tap.name + "_key" if len(self.tap.name) == 1 else self.tap.name
+
     def compile(self):
         root, generated = self.tap.compile()
         label = self.label()
@@ -440,7 +519,6 @@ class HoldTap:
         self.cfg = cfg
         self.positions = positions
 
-
     def binding(self):
         return bind(self.name)
 
@@ -452,8 +530,6 @@ class HoldTap:
             {compile_cfg(**self.cfg)}
             bindings = {self.hold}, {self.tap};
         }};'''
-
-
 
 
 class Morph:
@@ -478,6 +554,7 @@ class Morph:
             mods = {compiled_mods};
             {compiled_keep_mods}
         }};"""
+
 
 class MorphNode:
     def __init__(self, label, prefix, default, mods, modified, keep=False, postfix=""):
