@@ -1,4 +1,5 @@
 from cgi import print_form
+from lib2to3.pytree import NodePattern
 from pickle import TUPLE
 
 import yaml
@@ -84,7 +85,7 @@ class MorphParser:
     def is_valid(self, node):
         return False
     def is_valid_inline(self, node):
-        return False
+        return "k" in node
 
 class MacroParser:
     def __init__(self):
@@ -93,8 +94,16 @@ class MacroParser:
         pass
     def parse_inline(self, node):
         pass
+    def parse_list(self, ls):
+        pass
+    def parse_object(self, obj):
+        pass
     def is_valid(self, node):
         return False
+    def is_valid_object(self, obj):
+        return "m" in obj
+    def is_valid_list(self, ls):
+        return all([l.startswith("&") for l in ls])
     def is_valid_inline(self, node):
         return node.startswith("{") and node.endswith("}")
 
@@ -108,7 +117,7 @@ class HoldTapParser:
     def is_valid(self, node):
         return False
     def is_valid_inline(self, node):
-        return False
+        return "h" in node and "t" in node
 
 class Parser:
     def __init__(self):
@@ -127,7 +136,7 @@ class KeyParser:
         return True
     def parse_kp(self, key):
         key = key if key not in keynames else keynames[key]
-        return Binding(f"<&kp {key}>")
+        return Binding(bind(f"kp {key}"))
 
 class BindingParser:
     def __init__(self):
@@ -147,27 +156,38 @@ class Binding:
     def compile(self):
         return ""
 
-class MacroC:
-    def __init__(self, bindings):
-        self.binding = bindings
+def compile_cfg(**cfg):
+    return " ".join([f"{k} = <{v}>;" for (k, v) in cfg])
+
+def bind(name):
+    return f"<&{name}>"
+
+class Macro:
+    def __init__(self, name, bindings, **cfg):
+        self.name = name
+        self.bindings = bindings
+        self.cfg = cfg
 
     def binding(self):
-        return self.bindings
+        return bind(self.name)
 
     def compile(self):
-        binding, custom = self.sequence_binding()
-        seq = f"<&macro_tap>, <{' '.join(binding)}>" if not custom else binding
+        bindings = ", ".join(self.bindings)
         return f'''
-        {self.name()}: {self.name()} {{ label = "{self.name().upper()}"; compatible = "zmk,behavior-macro"; 
-            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = {seq};
+        {self.name}: {self.name} {{ label = "{self.name.upper()}"; compatible = "zmk,behavior-macro"; 
+            {compile_cfg(**self.cfg)}
+            bindings = {bindings};
         }};'''
 
 class AnonymousNodeParser:
-    def __init__(self):
-        self.binding_parser = BindingParser()
-        self.key_parser = KeyParser()
-        self.macro_parser = MacroParser()
+    def __init__(self, morph=MorphParser(), hold_tap=HoldTapParser(), macro=MacroParser(), key=KeyParser(),
+                 binding=BindingParser()):
+        self.binding_parser = binding
+        self.key_parser = key
+        self.macro_parser = macro
+        self.hold_tap_parser = hold_tap
+        self.morph_parser = morph
+
 
     def parse(self, node):
         if isinstance(node, str):
@@ -179,15 +199,23 @@ class AnonymousNodeParser:
                 return self.key_parser.parse_kp(node)
 
         if isinstance(node, list):
-            return
+            if self.macro_parser.is_valid_list(node):
+                return self.macro_parser.parse_list(node)
+        if isinstance(node, dict):
+            if self.macro_parser.is_valid_object(node):
+                return self.macro_parser.parse_object(node)
+            if self.morph_parser.is_valid_inline(node):
+                return self.morph_parser.parse_inline(node)
+            if self.hold_tap_parser.is_valid_inline(node):
+                return self.hold_tap_parser.parse_inline(node)
 
 def kp(key):
     if key in keynames:
-        return f"&kp {keynames[key]}"
-    return f"&kp {key}"
+        return keynames[key]
+    return key
 
 
-class Macro():
+class MacroNode():
 
     def __init__(self, seq, name=None):
         self.seq = seq.removeprefix("^")
@@ -234,13 +262,13 @@ class Binder():
     def get_macros(self, seq):
         if seq in self._macros:
             return self._macros[seq].node()
-        macro = Macro(seq)
+        macro = MacroNode(seq)
         self._macros[seq] = macro
         return macro.node()
 
     def get_holdtap(self, tap, hold, config):
         map = Map(self, self.name(tap), tap, {"lctrl": tap})
-        ht = HoldTap(self.layout, config, map, hold, None)
+        ht = HoldTapNode(self.layout, config, map, hold, None)
 
         if ht.label() in self._hts:
             return self._hts[ht.label()]
@@ -339,19 +367,19 @@ class Config:
         self.prior_idle = prior_idle
 
 
-class HoldTap:
+class HoldTapNode:
     def __init__(self, layout, config, tap, hold, position):
         self.tap = tap
         self.hold = hold
         self.config = config
         self.layout = layout
         if hold:
-            self.pos = layout.opposite_side(tap.default) if not position else list(
+            self.pos = layout.opposite_side(tap.key) if not position else list(
                 map(lambda k: layout.pos(k), position.split(" ")))
 
 
     def label(self):
-        return self.tap.label + "_key" if len(self.tap.label) == 1 else self.tap.label
+        return self.tap.name + "_key" if len(self.tap.name) == 1 else self.tap.name
     def compile(self):
         root, generated = self.tap.compile()
         label = self.label()
@@ -366,15 +394,60 @@ class HoldTap:
         quick_tap = self.config.quick_tap
         idle = self.config.prior_idle
         return f'''
-        {name}:{name} {{ label = "{name.upper()}"; compatible = "zmk,behavior-hold-tap"; hold-trigger-key-positions = <{join}>; hold-trigger-on-release;
-            #binding-cells = <2>;
-            flavor = "balanced";
+        {name}:{name} {{ label = "{name.upper()}"; compatible = "zmk,behavior-hold-tap";  
+            flavor = "balanced"; hold-trigger-on-release; #binding-cells = <2>; hold-trigger-key-positions = <{join}>;
             tapping-term-ms = <{term}>; quick-tap-ms = <{quick_tap}>; require-prior-idle-ms = <{idle}>;
             bindings = <{hold}>, <{tap}>;
         }};'''
 
 
+class HoldTap:
+    def __init__(self, name, hold, tap, positions, **cfg):
+        self.name = name
+        self.tap = tap
+        self.hold = hold
+        self.cfg = cfg
+        self.positions = positions
+
+
+    def binding(self):
+        return bind(self.name)
+
+    def compile(self):
+        return f'''
+        {self.name}:{self.name} {{ label = "{self.name.upper()}"; compatible = "zmk,behavior-hold-tap";  
+            flavor = "balanced"; hold-trigger-on-release; #binding-cells = <2>; hold-trigger-key-positions = <{" ".join(self.positions)}>;
+            {compile_cfg(**self.cfg)}
+            bindings = {self.hold}, {self.tap};
+        }};'''
+
+
+
+
 class Morph:
+    def __init__(self, name, key, modified, mods, keep=False):
+        self.name = name
+        self.key = key
+        self.mods = mods
+        self.modified = modified
+        self.keep = keep
+
+    def binding(self):
+        return bind(self.name)
+
+    def compile(self):
+        label = self.name
+        mods = "|".join(sorted(list(map(lambda x: modmap[x], self.mods))))
+        compiled_mods = f"<({mods})>"
+        compiled_keep_mods = f"keep-mods = {compiled_mods};" if self.keep else ""
+        return f"""
+        {label}:{label}{{ label = "{label.upper()}"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = {self.key}, {self.modified};
+            mods = {compiled_mods};
+            {compiled_keep_mods}
+        }};"""
+
+class MorphNode:
     def __init__(self, label, prefix, default, mods, modified, keep=False, postfix=""):
         self.label = label
         self.prefix = prefix
@@ -415,13 +488,13 @@ class Map:
         prev = self.binder.binding(self.default)
         for (key, value) in self.mapping.items():
             mods_complement = set(modmap.keys()) - {key}
-            sink = Morph(self.label, "sink",
-                         self.binder.binding(value), mods_complement,
-                         self.binder.binding(self.default), True, key)
+            sink = MorphNode(self.label, "sink",
+                             self.binder.binding(value), mods_complement,
+                             self.binder.binding(self.default), True, key)
             sinks.append(sink)
-            link = Morph(self.label, "link",
-                         prev, [key],
-                         self.gen_ref(sink))
+            link = MorphNode(self.label, "link",
+                             prev, [key],
+                             self.gen_ref(sink))
             links.append(link)
             prev = self.gen_ref(link)
 
@@ -451,7 +524,7 @@ def parse(file):
 
     macros = []
     for (name, seq) in data['macros'].items():
-        macros.append(Macro(seq, name))
+        macros.append(MacroNode(seq, name))
 
     binder = Binder(pos, macros, def_config)
 
@@ -467,7 +540,7 @@ def parse(file):
             hold = mapping.pop("hold.bind")
 
         map = Map(binder, label, mapping.pop("key", label), mapping)
-        maps.append(HoldTap(pos, cfg, map, hold, mapping.pop("pos", None)))
+        maps.append(HoldTapNode(pos, cfg, map, hold, mapping.pop("pos", None)))
 
     combos = []
     combodef = data['combos']
