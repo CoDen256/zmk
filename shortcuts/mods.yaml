@@ -128,7 +128,53 @@ config:
   quick_tap: 175
   prior_idle: 200
 
+morph:
+  config:
+    keep: "specified" # all, invert, specified, none lctrl, rctrl...
+    exact: true # true -> A: {lctrl: B} -> ctrl+A = B, ctrl+shift+A = ctrl+shift+A; false -> any ctrl+A = B
+  A: {default: "A", lctrl: "F11", keep: "all" , exact: false, name: "Aaaa"}
+  B: {default: "B", lctrl: "F12", rctrl: "F12", keep: "specified", exact: true}
+  C: {default: "C", lctrl: "LC(F13)",  keep: "none", exact: false}
+  D: {default: "D", lctrl: "LC(F14)", keep: "invert", exact: false}
 
+  E: {default: "E", all: "C", keep: "none", exact: false} # any modifier is ignored, all = all modifiers = C
+  F: {default: "F", keep: "none", exact: false} # any modifier is ignored, empty = all modifiers = default
+  G: {} # default = key, name = G_key
+
+  H: {default: "H", lctrl: "LC(F12)", rctrl: "RC(F12)", exact: true, name: "Hmorph"}
+
+  extra: {default: "A", name: "A_key", "lctrl": "B"}
+
+
+hold-tap:
+  config:
+    flavor: "balanced"
+    hold-on-trigger-on-release: true
+    tapping-term-ms: 280
+    quick-tap-ms: 175
+    require-prior-idle-ms: 200
+    positions: "left right"
+
+  hml: {tap: ["&hello"], hold: B, require-prior-idle-ms: 900}
+  hmr:  {tap: ["LEFT", "RIGHT"], hold: "&&", hold-on-trigger-on-release: false}
+  hml2: {tap : {macro: "hi"}, hold: "{why me}", pos: "11 12 left A"}
+  main: {tap : {macro: "hi"}, hold: "&hello", pos: "O C right"}
+
+macro:
+  config:
+    wait-ms: 30
+    tap-ms: 20
+  win_sleep: "<&kp LG(X) &kp U &kp S>"
+  alower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_3 &kp KP_N2>,<&macro_release>,<&kp LALT>"
+  mleft: ["F13"]
+  reloadkeymap: ["LA(K)", "TAB", "TAB", "SPACE","SPACE", "LEFT_ALT"]
+  select_word: ["&select_left", "&select_right"]
+  amp: "&&"
+  stuff: "{hello world}"
+  hey: {m: "hello world", tap-ms: ""}
+  hey2: {macro: "223", wait-ms: 50}
+  test: ["<&macro_param_1to1>", "<&macro_press &mo MACRO_PLACEHOLDER>", "<&macro_param_2to1>", "<&macro_press &kp MACRO_PLACEHOLDER>", "<&macro_pause_for_release>", "<&macro_param_2to1>", "<&macro_release &kp MACRO_PLACEHOLDER>", "<&macro_param_1to1>", "<&macro_release &mo MACRO_PLACEHOLDER>"]
+  tes2: ["<&macro_param_1to2>", "<&macro_press &mo MACRO_PLACEHOLDER>"]
 
 macros:
   win_sleep: "<&kp LG(X) &kp U &kp S>"
@@ -210,6 +256,24 @@ combos:
   MD: "t:&cur h:{}\b c:280,175,0"
   DY: "t:&bra h:[]\b c:280,175,0"
 #  MY: ""
+
+combo:
+  config:
+    timeout: 10
+
+  CG:
+    timeout: 100
+    m: "{hello}"
+  HC:
+    macro: "{helloworld}"
+  FU: "{helloworld}"
+  GI:
+    timeout: 200
+    combo: "{hello}"
+  IN:
+    hold: "&ang"
+    tap: "A"
+
 
 
 keys:
