@@ -5,6 +5,10 @@ from pickle import TUPLE
 import yaml
 from pyparsing import htmlComment
 from six import print_
+import random
+import string
+def rnd(n: int):
+    return bytes(random.choices(string.ascii_uppercase.encode('ascii'),k=n)).decode('ascii')
 
 keynames = {
     "!": "EXCLAMATION",
@@ -87,26 +91,6 @@ class MorphParser:
     def is_valid_inline(self, node):
         return "k" in node
 
-class MacroParser:
-    def __init__(self):
-        pass
-    def parse(self, node):
-        pass
-    def parse_inline(self, node):
-        pass
-    def parse_list(self, ls):
-        pass
-    def parse_object(self, obj):
-        pass
-    def is_valid(self, node):
-        return False
-    def is_valid_object(self, obj):
-        return "m" in obj
-    def is_valid_list(self, ls):
-        return all([l.startswith("&") for l in ls])
-    def is_valid_inline(self, node):
-        return node.startswith("{") and node.endswith("}")
-
 class HoldTapParser:
     def __init__(self):
         pass
@@ -133,10 +117,34 @@ class Parser:
 
 class KeyParser:
     def is_valid_kp(self, key):
-        return True
+        return key.isalnum()
     def parse_kp(self, key):
         key = key if key not in keynames else keynames[key]
-        return Binding(bind(f"kp {key}"))
+        return Binding(bind(f"kp {key.upper()}"))
+
+class MacroParser:
+    def __init__(self):
+        self.key_parser = None
+        self.anon_parser = None
+    def parse(self, node):
+        pass
+    def parse_inline(self, node):
+        node = node.removeprefix("{").removesuffix("}") if node.startswith("{") and node.endswith("}") else node
+        return Macro(rnd(10), ["<&macro_tap>"]+[self.key_parser.parse_kp(k).binding() for k in node])
+    def parse_list(self, ls):
+        return Macro(rnd(10), [bind(v) for v in ls])
+    def parse_object(self, obj):
+        name = obj.pop("n", rnd(10))
+        macro = self.anon_parser.parse(obj.pop("m"))
+        return Macro(name,  macro.bindings, **obj)
+    def is_valid(self, node):
+        return False
+    def is_valid_object(self, obj):
+        return "m" in obj
+    def is_valid_list(self, ls):
+        return all([l.startswith("&") for l in ls])
+    def is_valid_inline(self, node):
+        return node.startswith("{") and node.endswith("}")
 
 class BindingParser:
     def __init__(self):
@@ -157,10 +165,10 @@ class Binding:
         return ""
 
 def compile_cfg(**cfg):
-    return " ".join([f"{k} = <{v}>;" for (k, v) in cfg])
+    return " ".join([f"{k} = <{v}>;" for (k, v) in cfg.items()])
 
 def bind(name):
-    return f"<&{name}>"
+    return f"<&{name.removeprefix("&")}>"
 
 class Macro:
     def __init__(self, name, bindings, **cfg):
@@ -185,6 +193,8 @@ class AnonymousNodeParser:
         self.binding_parser = binding
         self.key_parser = key
         self.macro_parser = macro
+        macro.anon_parser = self
+        macro.key_parser = key
         self.hold_tap_parser = hold_tap
         self.morph_parser = morph
 
@@ -197,6 +207,7 @@ class AnonymousNodeParser:
                 return self.macro_parser.parse_inline(node)
             if self.key_parser.is_valid_kp(node):
                 return self.key_parser.parse_kp(node)
+            return self.macro_parser.parse_inline(node)
 
         if isinstance(node, list):
             if self.macro_parser.is_valid_list(node):
@@ -208,7 +219,7 @@ class AnonymousNodeParser:
                 return self.morph_parser.parse_inline(node)
             if self.hold_tap_parser.is_valid_inline(node):
                 return self.hold_tap_parser.parse_inline(node)
-
+a = AnonymousNodeParser()
 def kp(key):
     if key in keynames:
         return keynames[key]
