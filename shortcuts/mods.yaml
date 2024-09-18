@@ -91,7 +91,7 @@ morphf:
 hold-tap:
   config:
     flavor: "balanced"
-    hold-on-trigger-on-release: true
+    hold-trigger-on-release: true
     tapping-term-ms: 280
     quick-tap-ms: 175
     require-prior-idle-ms: 200

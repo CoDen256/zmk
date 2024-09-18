@@ -127,7 +127,7 @@ class MorphParser:
         if not name and orig:
             if len(orig) <= 2 and orig.isalpha():
                 name = orig + "_key"
-            elif orig.isalnum():
+            elif re.search("[a-zA-Z0-1_]", orig):
                 name = orig
             else:
                 name = rnd(10)
@@ -395,6 +395,10 @@ class Binding:
 def compile_cfg(**cfg):
     cfg = {k: v for k, v in cfg.items() if v}
     def val(v):
+        if isinstance(v, list):
+            f = v[0]
+            if isinstance(f, int):
+                return f'<{" ".join([str(i) for i in v])}>'
         if isinstance(v, str): return f'"{v}"'
         return f"<{v}>"
     return " ".join([f"{k} = {val(v)};" if not isinstance(v, bool) else f"{k};" for (k, v) in cfg.items()])
@@ -721,7 +725,7 @@ class HoldTap:
         self.hold = hold
         self.cfg = cfg
         self.positions = positions
-        self.cfg["hold-trigger-key-positions"] = " ".join([str(p) for p in self.positions])
+        self.cfg["hold-trigger-key-positions"] = self.positions
 
     def binding(self):
         return bind(self._name + " 0 0")

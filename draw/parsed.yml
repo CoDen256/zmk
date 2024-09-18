@@ -25,32 +25,32 @@ layers:
   - ''
   - MUTE
   - ^
-  - {t: G, h: '&lnav LCTRL', s: Sft+ F2}
-  - {t: H, h: '&lswitcher LEFT_ALT', s: Sft+ F3}
-  - {t: C, s: Sft+ F4}
+  - {t: '&skrqwybcio', h: '&maxhjhrnxh', s: Sft+ F2}
+  - {t: '&qdyjukqpff', h: '&prmwtzwmia', s: Sft+ F3}
+  - {t: C, s: Ctl+ F4}
   - {t: W, s: Sft+ F5}
   - ''
   - {t: V, s: Ctl+ F14}
   - {t: L, s: Sft+ F15}
-  - {t: B, h: '&lnav RIGHT_ALT', s: Sft+ F16}
+  - {t: '&kuvtxlovtk', h: '&weknxpstgp', s: Sft+ F16}
   - $
   - ''
   - LEFT WIN
   - {t: O, s: Sft+ F6}
-  - {t: A, h: LEFT ALT, s: Sft+ F7}
-  - {t: I, h: LSHFT, s: Sft+ F8}
-  - {t: N, h: LCTRL, s: Sft+ F9}
+  - {t: '&gfelkgmtax', h: '&miwsywcjqk', s: Sft+ F7}
+  - {t: '&cehkpelqty', h: '&idnkgeytnn', s: Sft+ F8}
+  - {t: '&vqferigtue', h: '&tdnleomjpk', s: Sft+ F9}
   - ESCAPE
   - DELETE
-  - {t: T, h: RCTRL, s: Sft+ F17}
-  - {t: R, h: RSHFT, s: Sft+ F18}
-  - {t: E, h: RIGHT ALT, s: Sft+ F19}
+  - {t: '&gqykzjtypa', h: '&uiprhnnqgb', s: Sft+ F17}
+  - {t: '&peotgqykav', h: '&kmhufvpeto', s: Sft+ F18}
+  - {t: '&oabclmqknh', h: '&ytxajwbmxr', s: Sft+ F19}
   - {t: S, s: Ctl+ F20}
   - RMETA
   - fun
   - {t: J, s: Sft+ F10}
-  - {t: F, h: nav, s: Sft+ F11}
-  - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}
+  - {t: '&crwheyklzu', h: '&ybqnnnrzlu', s: Sft+ F11}
+  - {t: '&hxwpryexkv', h: '&mtluifdzbt', s: Sft+ F12}
   - {t: P, s: Sft+ F13}
   - ''
   - BACKSPACE
@@ -60,9 +60,9 @@ layers:
   - {t: num, h: toggle}
   - DELETE
   - ''
-  - {t: M, h: num, s: Sft+ F21}
-  - {t: D, h: Sft+AGr+ LEFT GUI, s: Sft+ F22}
-  - {t: Y, h: nav, s: Ctl+ F23}
+  - {t: '&cxodvakbri', h: '&bzeqxqacii', s: Sft+ F21}
+  - {t: '&sfjpugbqnc', h: '&nftilbhhxt', s: Sft+ F22}
+  - {t: '&ttzoeifmvi', h: '&glybhzofgi', s: Ctl+ F23}
   - {t: X, s: Ctl+ F24}
   - ''
   - '&reloadkeymap'
@@ -198,8 +198,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&olower', s: '&Oupper'}
-  - {t: '&alower', s: '&Aupper'}
+  - {t: '&tanrooiuyd', s: '&vxnbehniba'}
+  - {t: '&tfweohbsfy', s: '&jjhqivoird'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -207,12 +207,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&eszet'
+  - {t: '&btwkgdeglc', s: '&bzqmtfwqtz'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&ulower', s: '&Uupper'}
+  - {t: '&zqrutquucd', s: '&fjufpgvyln'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -373,7 +373,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LCTRL
-  - {type: held}
+  - ''
   - UP ARROW
   - DOWN
   - {t: ▽, type: trans}
@@ -810,149 +810,3 @@ layers:
   - ''
   - ''
   - BT CLR ALL
-  type:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-combos:
-- p: [24, 25]
-  k: {t: '&', h: '&ampersand_ampersand', s: '&'}
-- p: [25, 26]
-  k: {t: '|', h: '&pipe_pipe', s: '|'}
-- p: [24, 26]
-  k: '#'
-- p: [24, 37]
-  k: {t: \, h: '&backslash_backslash', s: \}
-- p: [25, 36]
-  k: {t: /, h: '&slash_slash', s: /}
-- p: [25, 38]
-  k: '-'
-- p: [26, 37]
-  k: '&equal_equal'
-- p: [36, 37]
-  k: {t: ':', h: '&colon_space', s: ':'}
-- p: [37, 38]
-  k: .
-- p: [36, 38]
-  k: '!'
-- p: [36, 49]
-  k: +
-- p: [37, 48]
-  k: '&exclamation_equal'
-- p: [37, 50]
-  k: '='
-- p: [38, 49]
-  k: '*'
-- p: [48, 49]
-  k: {t: <, h: '&less_than_greater_than_left_arrow', s: <}
-- p: [50, 49]
-  k: {t: (, h: '&left_parenthesis_right_parenthesis_left_arrow', s: (}
-- p: [48, 50]
-  k: _
-- p: [29, 30]
-  k: ''''
-- p: [30, 31]
-  k: '"'
-- p: [29, 31]
-  k: '~'
-- p: [29, 42]
-  k: ^
-- p: [41, 30]
-  k: {t: '`', h: '&grave_grave_grave', s: '`'}
-- p: [31, 42]
-  k: $
-- p: [41, 42]
-  k: '&comma_space'
-- p: [42, 43]
-  k: {t: ;, h: '&semicolon_enter', s: ;}
-- p: [41, 43]
-  k: '?'
-- p: [41, 60]
-  k: ''
-- p: [42, 59]
-  k: '&minus_greater_than'
-- p: [42, 61]
-  k: '@'
-- p: [43, 60]
-  k: ''
-- p: [59, 60]
-  k: {t: '{', h: '&left_brace_right_brace_left_arrow', s: '{'}
-- p: [60, 61]
-  k: {t: '[', h: '&left_bracket_right_bracket_left_arrow', s: '['}
