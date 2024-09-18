@@ -3,74 +3,47 @@ morph:
   config:
     exact: true
     keep: "all"
-  K: { rshift: "RS(F1)" }
-  G: { hold: "&lnav", pos: "C N",  lshift: "LC(X)",  rshift: "RS(F2)"  }
-  H: { hold: "&lswitcher", pos: "C G N", rshift: "RS(F3)"  }
-  C: { lshift: "LC(C)", rshift: "RS(F4)", rctrl: "RC(F4)"}
-  W: { lshift: "LC(A)", rshift: "RS(F5)"}
-  O: { lshift: "LS(F6)",  rshift: "RS(F6)"}
-  A: { hold: "LEFT_ALT", pos: "right", lshift: "LC(Z)",  rctrl: "RC(F7)",  lctrl: "LC(F7)",  rshift: "RS(F7)"  }
-  I: { hold: "LSHIFT", pos: "G C A N F P W right", lshift: "LC(Z)" ,  rshift: "RS(F8)"  }
-  N: { hold: "LCTRL", lshift: "LC(S)", rshift: "RS(F9)"}
-  J: { rshift: "RS(F10)" }
 
+  OE: { default: "ö", lshift: "Ö", exact: false, keep: "none"}
+  AE: { default: "ä", lshift: "Ä", exact: false, keep: "none"}
+  UE: { default: "ü", lshift: "Ü", exact: false, keep: "none"}
+  SS: { default: "ß", lshift: "ẞ", exact: false, keep: "none"}
 
-#  F:
-#    hold.bind: "&mo", lshift: "LC(F)" , rshift: "RS(F11)" , pos: "H C P N"
-#  U:
-#    hold:
-#      bind: "&kp"
-#      tapping_term: 480
-#    rshift: "RS(F12)"
-#  P:
-#    lshift: "LC(V)"
-#    rshift: "RS(F13)"
-#  Q:
-#    lshift: "LC(Y)"
-#    rshift: "RC(CARET)"
-#
+# left
+  K:  { rshift: "RS(F1)" }
+  G:  { hold: "&lnav LCTRL", pos: "C N",  lshift: "LC(X)",  rshift: "RS(F2)"  }
+  H:  { hold: "&lswitcher LALT", pos: "C G N", rshift: "RS(F3)"  }
+  C:  { lshift: "LC(C)", rshift: "RS(F4)", rctrl: "RC(F4)"}
+  W:  { lshift: "LC(A)", rshift: "RS(F5)"}
+
+  O:  { lshift: "LS(F6)",  rshift: "RS(F6)"}
+  A:  { hold: "LALT", pos: "right", lshift: "LC(Z)",  rctrl: "RC(F7)",  lctrl: "LC(F7)",  rshift: "RS(F7)"  }
+  I:  { hold: "LSHIFT", pos: "G C A N F P W right", lshift: "LC(Z)" ,  rshift: "RS(F8)"  }
+  N:  { hold: "LCTRL", lshift: "LC(S)", rshift: "RS(F9)"}
+
+  J:  { rshift: "RS(F10)" }
+  F: { hold: "&mo 4", pos: "H C P N right",  lshift: "LC(F)", rshift: "RS(F11)" }
+  U: { hold: "LS(LA(LGUI))", tapping-term-ms: 480,  rshift: "RS(F12)" }
+  P: { lshift: "LC(V)", rshift: "RS(F13)" }
+  Q: { lshift: "LC(Y)", rshift: "RC(CARET)" }
+
 #### right
-#  V:
-#    lshift: "LS(F14)"
-#    lctrl: "LC(F14)"
-#  L:
-#    lshift: "LS(F15)"
-#  B:
-#    hold.bind: "&lnav"
-#    lshift: "LS(F16)"
-#
-#  T:
-#    hold.bind: "&kp"
-#    lshift: "LS(F17)"
-#  R:
-#    hold.bind: "&kp"
-#    lshift: "LS(F18)"
-#  E:
-#    hold.bind: "&kp"
-#    lshift: "LS(F19)"
-#  S:
-#    lshift: "LS(F20)"
-#    lctrl: "LC(F20)"
-#
-#  M:
-#    hold.bind: "&mo"
-#    lshift: "LS(F21)"
-#  D:
-#    hold:
-#      bind: "&kp"
-#      tapping_term: 480
-#
-#    lshift: "LS(F22)"
-#  Y:
-#    hold.bind: "&mo"
-#    lshift: "LS(F23)"
-#    lctrl: "LC(F23)"
-#  X:
-#    lshift: "LS(F24)"
-#    lctrl: "LC(F24)"
-#  Z:
-#    lshift: "LS(TILDE)"
-#    lctrl: "LC(TILDE)"
+  V:  { lshift: "LS(F14)", lctrl: "LC(F14)" }
+  L:  { lshift: "LS(F15)" }
+  B:  { hold: "&lnav RALT", lshift: "LS(F16)" }
+  T:  { hold: "RCTRL",   lshift: "LS(F17)" }
+  R:  { hold: "RSHIFT",   lshift: "LS(F18)" }
+  E:  { hold: "RALT",   lshift: "LS(F19)" }
+  S:  { lshift: "LS(F20)", lctrl: "LC(F20)" }
+  M:  { hold: "&mo 3", lshift: "LS(F21)" }
+  D:  { hold: "RS(RA(RGUI))", tapping_term: 480, lshift: "LS(F22)" }
+  Y:  { hold: "&mo 4",lshift: "LS(F23)", lctrl: "LC(F23)" }
+  X:  { lshift: "LS(F24)",lctrl: "LC(F24)" }
+  Z:  { lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
+
+
+  CTRL_TAB: {default: "LC(TAB)", lalt: "LC(TAB)"}
+  SHIFT_CTRL_TAB: {default: "LS(LC(TAB))", lalt: "LS(LC(TAB))"}
 #
 #
 #  par:
@@ -90,12 +63,6 @@ morph:
 #    lctrl: "]"
 #
 #
-#  c_tab:
-#    key: "LC(TAB)"
-#    lalt: "LC(TAB)"
-#  sc_tab:
-#    key: "LS(LC(TAB))"
-#    lalt: "LS(LC(TAB))"
 
 
 config:
@@ -130,39 +97,16 @@ hold-tap:
     require-prior-idle-ms: 200
     positions: "left right"
 
-  hml: {tap: ["&hello"], hold: B, require-prior-idle-ms: 900}
-  hmr:  {tap: ["LEFT", "RIGHT"], hold: "&&", hold-on-trigger-on-release: false}
-  hml2: {tap : {macro: "hi"}, hold: "{why me}", pos: "11 12 left A"}
-  main: {tap : {macro: "hi"}, hold: "&hello", pos: "O C right"}
+#  hml: {tap: ["&hello"], hold: B, require-prior-idle-ms: 900}
+#  hmr:  {tap: ["LEFT", "RIGHT"], hold: "&&", hold-on-trigger-on-release: false}
+#  hml2: {tap : {macro: "hi"}, hold: "{why me}", pos: "11 12 left A"}
+#  main: {tap : {macro: "hi"}, hold: "&hello", pos: "O C right"}
 
 macro:
   config:
     wait-ms: 0
     tap-ms: 0
-  lnav: "<&macro_press>,<&mo 4 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 4>,<&macro_press>"
-  lswitcher: "<&macro_press>,<&mo 6 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 6>,<&macro_press>"
-
-  win_sleep: "<&kp LG(X) &kp U &kp S>"
-  alower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_3 &kp KP_N2>,<&macro_release>,<&kp LALT>"
-  mleft: ["F13"]
-  reloadkeymap: ["LA(K)", "TAB", "TAB", "SPACE","SPACE", "LEFT_ALT"]
-  select_word: ["&select_left", "&select_right"]
-  amp: "&&"
-  stuff: "{hello world}"
-  hey: {m: "hello world", tap-ms: ""}
-  hey2: {macro: "223", wait-ms: 50}
-  test: ["<&macro_param_1to1>", "<&macro_press &mo MACRO_PLACEHOLDER>", "<&macro_param_2to1>", "<&macro_press &kp MACRO_PLACEHOLDER>", "<&macro_pause_for_release>", "<&macro_param_2to1>", "<&macro_release &kp MACRO_PLACEHOLDER>", "<&macro_param_1to1>", "<&macro_release &mo MACRO_PLACEHOLDER>"]
-  tes2: ["<&macro_param_1to2>", "<&macro_press &mo MACRO_PLACEHOLDER>"]
-
-macros:
-  win_sleep: "<&kp LG(X) &kp U &kp S>"
-  alower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_3 &kp KP_N2>,<&macro_release>,<&kp LALT>"
-  Aupper: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_4 &kp KP_NUMBER_2>,<&macro_release>,<&kp LALT>"
-  olower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_4 &kp KP_NUMBER_8>,<&macro_release>,<&kp LALT>"
-  Oupper: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_3>,<&macro_release>,<&kp LALT>"
-  ulower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_9>,<&macro_release>,<&kp LALT>"
-  Uupper: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_4>,<&macro_release>,<&kp LALT>"
-  eszet: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_N2 &kp KP_NUMBER_3>,<&macro_release>,<&kp LALT>"
+  reloadkeymap: "<&kp LA(K) &kp TAB &kp TAB &kp SPACE &kp SPACE>"
   mleft: "<&kp F13>"
   mright: "<&kp F14>"
   mup: "<&kp F15>"
@@ -171,7 +115,6 @@ macros:
   mrclick: "<&kp F18>"
   mscrollup: "<&kp F19>"
   mscrolldown: "<&kp F20>"
-  reloadkeymap: "<&kp LA(K) &kp TAB &kp TAB &kp SPACE &kp SPACE>"
   cut_line: "<&select_line &kp K_CUT &kp DELETE>"
   move_down: "<&cut_line &kp DOWN &kp K_PASTE>"
   move_up: "<&cut_line &kp UP_ARROW &kp K_PASTE>"
@@ -185,6 +128,21 @@ macros:
   duplicate_line: "<&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT &kp ENTER &kp LC(V)>"
   move_selection_right: "<&kp LC(X) &kp RIGHT &kp LA(LC(V))>"
   move_selection_left: "<&kp LC(X) &kp LEFT &kp LA(LC(V))>"
+#  lnav: "<&macro_press>,<&mo 4 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 4>,<&macro_press>"
+#  lswitcher: "<&macro_press>,<&mo 6 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 6>,<&macro_press>"
+#
+#  win_sleep: "<&kp LG(X) &kp U &kp S>"
+#  alower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_3 &kp KP_N2>,<&macro_release>,<&kp LALT>"
+#  mleft: ["F13"]
+#  reloadkeymap: ["LA(K)", "TAB", "TAB", "SPACE","SPACE", "LEFT_ALT"]
+#  select_word: ["&select_left", "&select_right"]
+#  amp: "&&"
+#  stuff: "{hello world}"
+#  hey: {m: "hello world", tap-ms: ""}
+#  hey2: {macro: "223", wait-ms: 50}
+#  test: ["<&macro_param_1to1>", "<&macro_press &mo MACRO_PLACEHOLDER>", "<&macro_param_2to1>", "<&macro_press &kp MACRO_PLACEHOLDER>", "<&macro_pause_for_release>", "<&macro_param_2to1>", "<&macro_release &kp MACRO_PLACEHOLDER>", "<&macro_param_1to1>", "<&macro_release &mo MACRO_PLACEHOLDER>"]
+#  tes2: ["<&macro_param_1to2>", "<&macro_press &mo MACRO_PLACEHOLDER>"]
+
 
 combos:
   timeout: 20
@@ -239,18 +197,18 @@ combo:
   config:
     timeout: 10
 
-  CG:
-    timeout: 100
-    m: "{hello}"
-  HC:
-    macro: "{helloworld}"
-  FU: "{helloworld}"
-  GI:
-    timeout: 200
-    combo: "{hello}"
-  IN:
-    hold: "&ang"
-    tap: "A"
+#  CG:
+#    timeout: 100
+#    m: "{hello}"
+#  HC:
+#    macro: "{helloworld}"
+#  FU: "{helloworld}"
+#  GI:
+#    timeout: 200
+#    combo: "{hello}"
+#  IN:
+#    hold: "&ang"
+#    tap: "A"
 
 
 

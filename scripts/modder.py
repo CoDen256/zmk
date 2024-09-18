@@ -57,17 +57,30 @@ keynames = {
     "9": "N9",
     "\0": "END",
     "\1": "HOME",
-    "\2": "KP_N2",
-    "\3": "KP_N3",
-    "\4": "KP_N4",
-    "\5": "KP_N5",
-    "\6": "KP_N6",
-    "\7": "KP_N7",
+    "\2": "",
+    "\3": "",
+    "\4": "",
+    "\5": "",
+    "\6": "",
+    "\7": "",
     "\n": "ENTER",
     "\b": "LEFT_ARROW",
     "\f": "RIGHT_ARROW",
     "\v": "DOWN_ARROW",
     "\r": "UP_ARROW",
+}
+
+numlock={
+    "0": "KP_NUMBER_0",
+    "1": "KP_NUMBER_1",
+    "2": "KP_NUMBER_2",
+    "3": "KP_NUMBER_3",
+    "4": "KP_NUMBER_4",
+    "5": "KP_NUMBER_5",
+    "6": "KP_NUMBER_6",
+    "7": "KP_NUMBER_7",
+    "8": "KP_NUMBER_8",
+    "9": "KP_NUMBER_9",
 }
 
 
@@ -112,7 +125,7 @@ class MorphParser:
         if default: default = self.anon_parser.parse(default)
 
         if not name and orig:
-            if len(orig) == 1 and orig.isalpha():
+            if len(orig) <= 2 and orig.isalpha():
                 name = orig + "_key"
             elif orig.isalnum():
                 name = orig
@@ -122,10 +135,10 @@ class MorphParser:
             name = rnd(10)
 
         if self.hold_tap_parser.is_inline_holdtap(node):
-            default = self.hold_tap_parser.parse_inline(node)
+            default = self.anon_parser.parse(node)
 
         if self.hold_tap_parser.is_inline_holdtap(node | {"tap": orig}):
-            default = self.hold_tap_parser.parse_inline(node | {"tap": orig})
+            default = self.anon_parser.parse(node | {"tap": orig})
 
         if not default and orig:
             default = self.anon_parser.parse(orig)
@@ -149,7 +162,7 @@ class MorphParser:
             return Morph(name, morph.default, morph.modified, morph.mods, morph.keep), extra
 
         (modifier, modified) = list(mapping.items())[0]
-        return Morph(name, default, modified, list(mapping.keys()), kept_mods)
+        return Morph(name, default, modified, list(mapping.keys()), kept_mods), []
 
     def extract_mapping(self,  node):
         mapping = {}
@@ -234,7 +247,7 @@ class HoldTapParser:
 
 class KeyParser:
     def is_kp(self, key):
-        return isinstance(key, str) and re.match("[LR][SGCA]\\([A-Z0-9_]+\\)|[A-Z0-9_]+|.", key)
+        return  isinstance(key, str) and (key in keynames or re.match("[LR][SGCA]\\([A-Z0-9_]+\\)|[LR][SGCA]\\([ -~\n\t]\\)|[A-Z0-9_]+|[ -~\n\t]", key))
 
     def parse(self, key):
         key = key if key not in keynames else keynames[key]
@@ -254,6 +267,7 @@ class MacroParser:
         if self.is_valid_object(node): return self.parse_object(name, node)
         if self.is_valid_binding_list(node): return self.parse_binding_list(name, node)
         if self.is_valid_binding(node): return self.parse_binding(name, node)
+        if self.is_valid_unicode(node): return self.parse_unicode(name, node)
 
         return self.parse_tap_inline(name, node)  # assuming is tap inline by default
 
@@ -263,6 +277,7 @@ class MacroParser:
         if self.is_valid_object(node): return self.parse_object(self.get_object_name(node), node)
         if self.is_valid_binding_list(node): return self.parse_binding_list(self.get_binding_list_name(node), node)
         if self.is_valid_binding(node): return self.parse_binding(self.get_binding_name(node), node)
+        if self.is_valid_unicode(node): return self.parse_unicode(self.get_unicode_name(node), node)
 
         return self.parse_tap_inline(self.get_tap_inline_name(node), node)
 
@@ -281,8 +296,11 @@ class MacroParser:
     def get_binding_name(self, node):
         return rnd(10)
 
+    def get_unicode_name(self, node):
+        return rnd(10)
+
     def parse_binding(self, name, node):
-        return Macro(name, self.binding_parser.parse(node), 0, **self.default_cfg)
+        return Macro(name, [self.binding_parser.parse(node)], 0, **self.default_cfg)
 
     def parse_binding_list(self, name, ls):
         bindings = [self.binding_parser.parse(v) for v in ls]
@@ -292,11 +310,16 @@ class MacroParser:
 
     def parse_tap_inline(self, name, node):
         node = node.removeprefix("{").removesuffix("}") if node.startswith("{") and node.endswith("}") else node
-        return Macro(name, [self.binding_parser.parse("<&macro_tap>")] + [self.key_parser.parse(k) for k in node], 0,
+        return Macro(name, [self.binding_parser.parse("&macro_tap")] + [self.key_parser.parse(k) for k in node], 0,
                      **self.default_cfg)
 
+    def parse_unicode(self, name, node):
+        altcode = "0" + str(ord(node))
+        code = " ".join([f"&kp {numlock[n]}" for n in altcode])
+        return self.parse_binding_list(name, ["&macro_press","&kp LEFT_ALT", "&macro_tap",code, "&macro_release", "&kp LALT"])
+
     def parse_tap_list(self, name, ls):
-        return Macro(name, [self.binding_parser.parse("<&macro_tap>")] + [self.key_parser.parse(k) for k in ls], 0,
+        return Macro(name, [self.binding_parser.parse("&macro_tap")] + [self.key_parser.parse(k) for k in ls], 0,
                      **self.default_cfg)
 
     def parse_object(self, name, obj):
@@ -306,6 +329,9 @@ class MacroParser:
     def is_valid_object(self, node):
         return isinstance(node, dict) and (
                 "m" in node or "macro" in node)  # {"m": name} or {name : {m: ""}} or {name: ""}
+
+    def is_valid_unicode(self, node):
+        return isinstance(node, str) and node not in string.printable and len(node) == 1
 
     def is_valid_binding(self, node):
         return isinstance(node, str) and self.binding_parser.is_binding(node)
@@ -323,7 +349,8 @@ class MacroParser:
         return (self.is_valid_binding_list(node) or
                 self.is_valid_object(node) or
                 self.is_valid_tap_inline(node) or
-                self.is_valid_tap_list(node))
+                self.is_valid_tap_list(node) or
+                self.is_valid_unicode(node))
 
 
 class BindingParser:
@@ -334,7 +361,7 @@ class BindingParser:
         return isinstance(node, str) and (self.is_full(node) or self.is_short(node))
 
     def is_short(self, node):
-        return (node.startswith("&") and (node[1:].isalpha() or "_" in node[1:]))
+        return (node.startswith("&") and (node.split(" ")[0][1:].isalpha() or "_" in node.split(" ")[0][1:]))
 
     def is_full(self, node):
         return node.startswith("<&") and node.endswith(">")
@@ -367,7 +394,10 @@ class Binding:
 
 def compile_cfg(**cfg):
     cfg = {k: v for k, v in cfg.items() if v}
-    return " ".join([f"{k} = <{v}>;" if not isinstance(v, bool) else f"{k};" for (k, v) in cfg.items()])
+    def val(v):
+        if isinstance(v, str): return f'"{v}"'
+        return f"<{v}>"
+    return " ".join([f"{k} = {val(v)};" if not isinstance(v, bool) else f"{k};" for (k, v) in cfg.items()])
 
 
 def bind(name):
@@ -718,7 +748,7 @@ class Morph:
         self.keep = keep
 
     def map_mods(self, mods_ls):
-        return "|".join([all_mods[m] for m in mods_ls])
+        return "|".join([all_mods[m] for m in sorted(mods_ls)])
 
 
 
@@ -875,12 +905,12 @@ def parse_yaml(file):
 
     combo = ComboParser(pos, parser, **combocfg)
 
-    combos = []#[combo.parse(name, v) for (name, v) in combod.items()]
+    combos = [combo.parse(name, v) for (name, v) in combod.items()]
     print(f"[modder] Parsed {len(combos)} combos")
-    macros = []#[macro.parse(name, v) for (name, v) in macrod.items()]
+    macros = [macro.parse(name, v) for (name, v) in macrod.items()]
     print(f"[modder] Parsed {len(macros)} macros")
 
-    hts = []#[hold_tap.parse(name, v) for (name, v) in htd.items()]
+    hts = [hold_tap.parse(name, v) for (name, v) in htd.items()]
     print(f"[modder] Parsed {len(hts)} hold taps")
 
     morphspairs = [morph.parse(name, v) for (name, v) in morphd.items()]
@@ -899,7 +929,7 @@ def parse_yaml(file):
     return group.pop(Binding, []), group.pop(Combo, []), group.pop(HoldTap, []), group.pop(Morph, []), group.pop(Macro, [])
 
 def read(file):
-    with open(file, "r") as f:
+    with open(file, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f.read())
     return data
 
