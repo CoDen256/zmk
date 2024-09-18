@@ -1,126 +1,100 @@
+
 map:
-  K:
-    rshift: "RS(F1)"
-  G:
-    hold.bind: "&lnav"
-    lshift: "LC(X)" 
-    rshift: "RS(F2)"
-    pos: "C N"
-  H:
-    hold.bind: "&lswitcher"
-    rshift: "RS(F3)"
-    pos: "C G N"
-  C:
-    lshift: "LC(C)"
-    rctrl: "RC(F4)"
-    rshift: "RS(F4)"
-  W:
-    lshift: "LC(A)"
-    rshift: "RS(F5)"
+  config:
+    exact: true
+    keep: "all"
+  K: { rshift: "RS(F1)" }
+  G: { hold: "&lnav", pos: "C N",  lshift: "LC(X)",  rshift: "RS(F2)"  }
+  H: { hold: "&lswitcher", pos: "C G N", rshift: "RS(F3)"  }
+  C: { lshift: "LC(C)", rshift: "RS(F4)", rctrl: "RC(F4)"}
+  W: { lshift: "LC(A)", rshift: "RS(F5)"}
+  O: { lshift: "LS(F6)",  rshift: "RS(F6)"}
+  A: { hold: "&kp LEFT_ALT", pos: "right", lshift: "LC(Z)",  rctrl: "RC(F7)",  lctrl: "LC(F7)",  rshift: "RS(F7)"  }
+  I: { hold: "&kp LEFT_SHIFT", pos: "G C A N F P W right", lshift: "LC(Z)" ,  rshift: "RS(F8)"  }
+  N: { hold: "&kp LEFT_CTRL", lshift: "LC(S)", rshift: "RS(F9)"}
+  J: { rshift: "RS(F10)" }
 
-  O:
-    rshift: "RS(F6)"
-    lshift: "LS(F6)"
-  A:
-    hold.bind: "&kp"
-    lshift: "LC(Z)"
-    rctrl: "RC(F7)"
-    lctrl: "LC(F7)"
-    rshift: "RS(F7)"
-  I:
-    hold.bind: "&kp"
-    rshift: "RS(F8)"
-    pos: "G C A N F P W"
-  N:
-    hold.bind: "&kp"
-    lshift: "LC(S)"
-    rshift: "RS(F9)"
-  J:
-    rshift: "RS(F10)"
-  F:
-    hold.bind: "&mo"
-    lshift: "LC(F)"
-    rshift: "RS(F11)"
-    pos: "H C P N"
-  U:
-    hold:
-      bind: "&kp"
-      tapping_term: 480
-    rshift: "RS(F12)"
-  P:
-    lshift: "LC(V)"
-    rshift: "RS(F13)"
-  Q:
-    lshift: "LC(Y)"
-    rshift: "RC(CARET)"
-
-### right
-  V:
-    lshift: "LS(F14)"
-    lctrl: "LC(F14)"
-  L:
-    lshift: "LS(F15)"
-  B:
-    hold.bind: "&lnav"
-    lshift: "LS(F16)"
-
-  T:
-    hold.bind: "&kp"
-    lshift: "LS(F17)"
-  R:
-    hold.bind: "&kp"
-    lshift: "LS(F18)"
-  E:
-    hold.bind: "&kp"
-    lshift: "LS(F19)"
-  S:
-    lshift: "LS(F20)"
-    lctrl: "LC(F20)"
-
-  M:
-    hold.bind: "&mo"
-    lshift: "LS(F21)"
-  D:
-    hold:
-      bind: "&kp"
-      tapping_term: 480
-
-    lshift: "LS(F22)"
-  Y:
-    hold.bind: "&mo"
-    lshift: "LS(F23)"
-    lctrl: "LC(F23)"
-  X:
-    lshift: "LS(F24)"
-    lctrl: "LC(F24)"
-  Z:
-    lshift: "LS(TILDE)"
-    lctrl: "LC(TILDE)"
-
-
-  par:
-    key: "("
-    rctrl: ")"
-
-  ang:
-    key: "<"
-    rctrl: ">"
-
-  cur:
-    key: "{"
-    lctrl: "}"
-
-  bra:
-    key: "["
-    lctrl: "]"
-
-
-  c_tab:
-    key: "LC(TAB)"
-    lalt: "LC(TAB)"
-  sc_tab:
-    key: "LS(LC(TAB))"
-    lalt: "LS(LC(TAB))"
+#  F:
+#    hold.bind: "&mo", lshift: "LC(F)" , rshift: "RS(F11)" , pos: "H C P N"
+#  U:
+#    hold:
+#      bind: "&kp"
+#      tapping_term: 480
+#    rshift: "RS(F12)"
+#  P:
+#    lshift: "LC(V)"
+#    rshift: "RS(F13)"
+#  Q:
+#    lshift: "LC(Y)"
+#    rshift: "RC(CARET)"
+#
+#### right
+#  V:
+#    lshift: "LS(F14)"
+#    lctrl: "LC(F14)"
+#  L:
+#    lshift: "LS(F15)"
+#  B:
+#    hold.bind: "&lnav"
+#    lshift: "LS(F16)"
+#
+#  T:
+#    hold.bind: "&kp"
+#    lshift: "LS(F17)"
+#  R:
+#    hold.bind: "&kp"
+#    lshift: "LS(F18)"
+#  E:
+#    hold.bind: "&kp"
+#    lshift: "LS(F19)"
+#  S:
+#    lshift: "LS(F20)"
+#    lctrl: "LC(F20)"
+#
+#  M:
+#    hold.bind: "&mo"
+#    lshift: "LS(F21)"
+#  D:
+#    hold:
+#      bind: "&kp"
+#      tapping_term: 480
+#
+#    lshift: "LS(F22)"
+#  Y:
+#    hold.bind: "&mo"
+#    lshift: "LS(F23)"
+#    lctrl: "LC(F23)"
+#  X:
+#    lshift: "LS(F24)"
+#    lctrl: "LC(F24)"
+#  Z:
+#    lshift: "LS(TILDE)"
+#    lctrl: "LC(TILDE)"
+#
+#
+#  par:
+#    key: "("
+#    rctrl: ")"
+#
+#  ang:
+#    key: "<"
+#    rctrl: ">"
+#
+#  cur:
+#    key: "{"
+#    lctrl: "}"
+#
+#  bra:
+#    key: "["
+#    lctrl: "]"
+#
+#
+#  c_tab:
+#    key: "LC(TAB)"
+#    lalt: "LC(TAB)"
+#  sc_tab:
+#    key: "LS(LC(TAB))"
+#    lalt: "LS(LC(TAB))"
 
 
 config:
@@ -162,8 +136,11 @@ hold-tap:
 
 macro:
   config:
-    wait-ms: 30
-    tap-ms: 20
+    wait-ms: 0
+    tap-ms: 0
+  lnav: "<&macro_press>,<&mo 4 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 4>,<&macro_press>"
+  lswitcher: "<&macro_press>,<&mo 6 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 6>,<&macro_press>"
+
   win_sleep: "<&kp LG(X) &kp U &kp S>"
   alower: "<&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_1 &kp KP_NUMBER_3 &kp KP_N2>,<&macro_release>,<&kp LALT>"
   mleft: ["F13"]

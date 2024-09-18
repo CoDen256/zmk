@@ -97,6 +97,7 @@ class ComboParser:
 class MorphParser:
     def __init__(self, cfg):
         self.anon_parser = None
+        self.hold_tap_parser = None
         self.cfg = cfg
 
     def get_name(self, node):
@@ -106,6 +107,7 @@ class MorphParser:
         node = node.copy()
         name = node.pop("name", None)
         default = node.pop("default", node.pop("d", None))
+        if default: default = self.anon_parser.parse(default)
 
         if not name and orig:
             if len(orig) == 1 and orig.isalpha():
@@ -117,39 +119,46 @@ class MorphParser:
         if not name:
             name = rnd(10)
 
+        if self.hold_tap_parser.is_inline_holdtap(node):
+            default = self.hold_tap_parser.parse_inline(node)
+
+        if self.hold_tap_parser.is_inline_holdtap(node | {"tap": orig}):
+            default = self.hold_tap_parser.parse_inline(node | {"tap": orig})
+
         if not default and orig:
-            default = orig
+            default = self.anon_parser.parse(orig)
         elif not default:
-            raise Exception(f"Default not specified {node}")
+            default = self.anon_parser.parse(default)
 
         return name, default
 
     def parse(self, name, node):
         cfg = extract_cfg_and_merge(self.cfg, node)
-        name, default = self.extract_name_default(name, node)
-        default = self.anon_parser.parse(default)
-
-        mapping = self.extract_mapping(default, node)
-        kept_mods = list(self.keep_mods(set(mapping.keys()), cfg.pop("keep")))
         exact = cfg.pop("exact")
+        mapping = self.extract_mapping(node)
+        name, default = self.extract_name_default(name, node)
+
+        if not mapping: return {mod: default for mod in all_mods.keys()}
+        kept_mods = list(self.keep_mods(set(mapping.keys()), cfg.pop("keep")))
+
 
         if exact:
-            morph, extra = self.generate_exact(default, mapping)
+            morph, extra = self.generate_exact(name, default, mapping)
             return Morph(name, morph.default, morph.modified, morph.mods, morph.keep), extra
 
         (modifier, modified) = list(mapping.items())[0]
         return Morph(name, default, modified, list(mapping.keys()), kept_mods)
 
-    def extract_mapping(self, default, node):
+    def extract_mapping(self,  node):
         mapping = {}
         if "all" in node:
             filler = self.anon_parser.parse(node["all"])
             for mod in all_mods.keys(): mapping[mod] = filler
 
-        for (k, v) in node.items():
-            if k in all_mods.keys(): mapping[k] = self.anon_parser.parse(v)
+        for k in list(node.keys()):
+            if k in all_mods.keys(): mapping[k] = self.anon_parser.parse(node.pop(k))
 
-        if not mapping: return {mod: default for mod in all_mods.keys()}
+
         return mapping
 
 
@@ -167,15 +176,15 @@ class MorphParser:
                 for c in self.complement(origin): yield c
             if k in all_mods.keys(): yield k
 
-    def generate_exact(self, default, mapping):
+    def generate_exact(self, name, default, mapping):
         sinks = []
         links = []
         prev = default
         for (modifier, modified) in mapping.items():
             mods_complement = self.complement({modifier})
-            sink = Morph(default.name() + "_" + modifier + "_sink", modified, default, mods_complement, mods_complement)
+            sink = Morph(name + "_" + modifier + "_sink", modified, default, mods_complement, mods_complement)
             sinks.append(sink)
-            link = Morph(default.name() + "_" + modifier + "_link", prev, sink, [modifier], [])
+            link = Morph(name + "_" + modifier + "_link", prev, sink, [modifier], [])
             links.append(link)
             prev = link
 
@@ -218,7 +227,7 @@ class HoldTapParser:
         return rnd(10)
 
     def is_inline_holdtap(self, node):
-        return isinstance(node, dict) and (("hold" in node or "h" in node) or ("tap" in node or "t" in node))
+        return isinstance(node, dict) and (("hold" in node or "h" in node) and ("tap" in node or "t" in node))
 
 
 class KeyParser:
@@ -379,8 +388,9 @@ class Macro:
 
     def compile(self):
         bindings = ", ".join([b.binding() for b in self.bindings])
+        compatible = ["behavior-macro", "behavior-macro-one-param", "behavior-macro-two-param"][self.arity]
         return f'''
-        {self._name}: {self._name} {{ label = "{self._name.upper()}"; #binding-cells = <{self.arity}>; compatible = "zmk,behavior-macro"; 
+        {self._name}: {self._name} {{ label = "{self._name.upper()}"; #binding-cells = <{self.arity}>; compatible = "zmk,{compatible}"; 
             {compile_cfg(**self.cfg)}
             bindings = {bindings};
         }};'''
@@ -397,6 +407,7 @@ class AnonymousNodeParser:
         self.macro_parser = macro
         macro.key_parser = key_parser
         morph.anon_parser = self
+        morph.hold_tap_parser = hold_tap
         macro.binding_parser = binding
         hold_tap.anon_parser = self
 
@@ -909,7 +920,7 @@ macrocfg = macrod.pop("config")
 htd = data["hold-tap"]
 htcfg = htd.pop("config")
 
-morphd = data["morph"]
+morphd = data["map"]
 morphcfg = morphd.pop("config")
 b = NodeBinder()
 morph = MorphParser(morphcfg)
@@ -918,8 +929,6 @@ macro = MacroParser(macrocfg)
 key = KeyParser()
 binding = BindingParser()
 a = AnonymousNodeParser(b, morph, hold_tap, macro, key, binding)
-l = Layout({"C": 20, "G": 30}, {})
-c = ComboParser(l, a)
 
 c = ComboParser(pos, a, **combocfg)
 # combos = [c.parse(name, v) for (name, v) in combod.items()]
