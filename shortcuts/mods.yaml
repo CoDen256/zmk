@@ -1,5 +1,5 @@
 
-map:
+morph:
   config:
     exact: true
     keep: "all"
@@ -9,10 +9,11 @@ map:
   C: { lshift: "LC(C)", rshift: "RS(F4)", rctrl: "RC(F4)"}
   W: { lshift: "LC(A)", rshift: "RS(F5)"}
   O: { lshift: "LS(F6)",  rshift: "RS(F6)"}
-  A: { hold: "&kp LEFT_ALT", pos: "right", lshift: "LC(Z)",  rctrl: "RC(F7)",  lctrl: "LC(F7)",  rshift: "RS(F7)"  }
-  I: { hold: "&kp LEFT_SHIFT", pos: "G C A N F P W right", lshift: "LC(Z)" ,  rshift: "RS(F8)"  }
-  N: { hold: "&kp LEFT_CTRL", lshift: "LC(S)", rshift: "RS(F9)"}
+  A: { hold: "LEFT_ALT", pos: "right", lshift: "LC(Z)",  rctrl: "RC(F7)",  lctrl: "LC(F7)",  rshift: "RS(F7)"  }
+  I: { hold: "LSHIFT", pos: "G C A N F P W right", lshift: "LC(Z)" ,  rshift: "RS(F8)"  }
+  N: { hold: "LCTRL", lshift: "LC(S)", rshift: "RS(F9)"}
   J: { rshift: "RS(F10)" }
+
 
 #  F:
 #    hold.bind: "&mo", lshift: "LC(F)" , rshift: "RS(F11)" , pos: "H C P N"
@@ -102,7 +103,7 @@ config:
   quick_tap: 175
   prior_idle: 200
 
-morph:
+morphf:
   config:
     keep: "specified" # all, invert, specified, none lctrl, rctrl...
     exact: true # true -> A: {lctrl: B} -> ctrl+A = B, ctrl+shift+A = ctrl+shift+A; false -> any ctrl+A = B

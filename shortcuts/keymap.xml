@@ -106,7 +106,9 @@
   <action id="CloseActiveTab">
     <keyboard-shortcut first-keystroke="shift meta alt x" />
   </action>
-  <action id="CloseContent" />
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="shift meta alt x" />
+  </action>
   <action id="CodeCleanup" />
   <action id="CodeInspection.OnEditor" />
   <action id="CodeMenu" />
@@ -613,6 +615,7 @@
   <action id="OpenFile" />
   <action id="OpenInRightSplit">
     <mouse-shortcut keystroke="alt button1 doubleClick" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt h" />
   </action>
   <action id="OpenKeymapPanel">
     <keyboard-shortcut first-keystroke="shift meta alt k" />
@@ -691,7 +694,7 @@
     <keyboard-shortcut first-keystroke="shift alt f" />
   </action>
   <action id="Rerun">
-    <keyboard-shortcut first-keystroke="ctrl alt t" />
+    <keyboard-shortcut first-keystroke="alt r" />
   </action>
   <action id="RerunFailedTests">
     <keyboard-shortcut first-keystroke="ctrl t" />
@@ -736,7 +739,7 @@
     <keyboard-shortcut first-keystroke="ctrl r" />
   </action>
   <action id="RunAnything">
-    <keyboard-shortcut first-keystroke="alt r" />
+    <keyboard-shortcut first-keystroke="ctrl alt t" />
   </action>
   <action id="RunClass">
     <keyboard-shortcut first-keystroke="shift ctrl r" />
@@ -759,6 +762,9 @@
   </action>
   <action id="SelectIn">
     <keyboard-shortcut first-keystroke="shift meta alt s" />
+  </action>
+  <action id="SelectInProject">
+    <keyboard-shortcut first-keystroke="shift alt v" />
   </action>
   <action id="SelectInProjectView">
     <keyboard-shortcut first-keystroke="shift meta e" />
@@ -806,6 +812,9 @@
   <action id="SmartSelect" />
   <action id="SmartStepInto" />
   <action id="Space.Review.CreateDiffComment" />
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt u" />
+  </action>
   <action id="Sql.EditParameter" />
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="f9" />

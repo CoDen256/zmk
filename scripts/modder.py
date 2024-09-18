@@ -1,12 +1,14 @@
 import random
 import re
 import string
+from collections import defaultdict
+from itertools import groupby
 
 import yaml
 
 
 def rnd(n: int):
-    return bytes(random.choices(string.ascii_uppercase.encode('ascii'), k=n)).decode('ascii')
+    return bytes(random.choices(string.ascii_uppercase.encode('ascii'), k=n)).decode('ascii').lower()
 
 
 keynames = {
@@ -369,7 +371,7 @@ def compile_cfg(**cfg):
 
 
 def bind(name):
-    return f"<&{name.removeprefix("&")}>"
+    return f"<&{name.removeprefix('&')}>"
 
 
 class Macro:
@@ -716,7 +718,9 @@ class Morph:
         self.keep = keep
 
     def map_mods(self, mods_ls):
-        return [all_mods[m] for m in mods_ls]
+        return "|".join([all_mods[m] for m in mods_ls])
+
+
 
 
     def name(self):
@@ -845,6 +849,54 @@ def parse(file):
         combos.append(ComboNode(pos, binder, src, out, ComboCfg(int(timeout))))
     return maps, combos, binder
 
+def parse_yaml(file):
+    data = read(file)
+    pos = Layout(**data['keys'])
+
+    combod = data["combo"]
+    combocfg = combod.pop("config")
+
+    macrod = data["macro"]
+    macrocfg = macrod.pop("config")
+
+    htd = data["hold-tap"]
+    htcfg = htd.pop("config")
+
+    morphd = data["morph"]
+    morphcfg = morphd.pop("config")
+
+    binder = NodeBinder()
+    morph = MorphParser(morphcfg)
+    hold_tap = HoldTapParser(htcfg, pos)
+    macro = MacroParser(macrocfg)
+    key = KeyParser()
+    binding = BindingParser()
+    parser = AnonymousNodeParser(binder, morph, hold_tap, macro, key, binding)
+
+    combo = ComboParser(pos, parser, **combocfg)
+
+    combos = []#[combo.parse(name, v) for (name, v) in combod.items()]
+    print(f"[modder] Parsed {len(combos)} combos")
+    macros = []#[macro.parse(name, v) for (name, v) in macrod.items()]
+    print(f"[modder] Parsed {len(macros)} macros")
+
+    hts = []#[hold_tap.parse(name, v) for (name, v) in htd.items()]
+    print(f"[modder] Parsed {len(hts)} hold taps")
+
+    morphspairs = [morph.parse(name, v) for (name, v) in morphd.items()]
+    morphs = []
+    for (o, extra) in morphspairs:
+        morphs.append(o)
+        morphs += extra
+
+    print(f"[modder] Parsed {len(morphs)} morphs")
+
+    nodes = list(binder.nodes.values())
+    print(f"[modder] Generated {len(nodes)} nodes")
+
+    all = combos + macros + hts + morphs + nodes
+    group = {k: list(g) for k, g in groupby(sorted(all, key = lambda x: str(type(x))), lambda x: type(x))}
+    return group.pop(Binding, []), group.pop(Combo, []), group.pop(HoldTap, []), group.pop(Morph, []), group.pop(Macro, [])
 
 def read(file):
     with open(file, "r") as f:
@@ -880,65 +932,18 @@ def update(target, content, start_line, end_line):
 
 def run0(origin, target):
     print(f"[modder] Reading {origin}")
-    mappings, combos, binder = parse(origin)
-    hardcoded_macros = len(binder.macros())
-    print(f"[modder] Parsed {len(mappings)} mappings")
-    print(f"[modder] Parsed {len(combos)} combos")
+    bindings, combos, holdtaps, morphs, macros = parse_yaml(origin)
 
-    content = ""
-    for m in mappings:
-        content += m.compile() + "\n"
+    update(target, compile(holdtaps+morphs), "/*<mods-start>*/", "/*<mods-end>*/")
+    update(target, compile(combos), "/*<combos-start>*/", "/*<combos-end>*/")
+    update(target, compile(macros), "/*<macros-start>*/", "/*<macros-end>*/")
+    return bindings, combos, holdtaps, morphs, macros
 
-    combocontent = ""
-    for c in combos:
-        combocontent += c.compile() + "\n"
 
-    macros = binder.macros()  # stateful
-    print(macros)
-    print(f"[modder] Parsed {hardcoded_macros} + generated {len(macros) - hardcoded_macros} macros")
-    hts = binder.hts()
-    print(f"[modder] Generated {len(hts)} holdtaps")
-    print(hts)
-    macroscontent = "\n".join([m.compile() for m in macros])
-    content += "\n".join([m.compile() for m in hts])
-
-    update(target, content, "/*<mods-start>*/", "/*<mods-end>*/")
-    update(target, combocontent, "/*<combos-start>*/", "/*<combos-end>*/")
-    update(target, macroscontent, "/*<macros-start>*/", "/*<macros-end>*/")
-
+def compile(compilable_list):
+    return "\n".join([m.compile() for m in compilable_list])
 
 def run(origin, target):
     return run0(origin, target)
 
-
-data = read("C:\\Users\\dchernyshov\\ome\\zmk-config\\shortcuts\\mods.yaml")
-pos = Layout(**data['keys'])
-combod = data["combo"]
-combocfg = combod.pop("config")
-macrod = data["macro"]
-macrocfg = macrod.pop("config")
-htd = data["hold-tap"]
-htcfg = htd.pop("config")
-
-morphd = data["map"]
-morphcfg = morphd.pop("config")
-b = NodeBinder()
-morph = MorphParser(morphcfg)
-hold_tap = HoldTapParser(htcfg, pos)
-macro = MacroParser(macrocfg)
-key = KeyParser()
-binding = BindingParser()
-a = AnonymousNodeParser(b, morph, hold_tap, macro, key, binding)
-
-c = ComboParser(pos, a, **combocfg)
-# combos = [c.parse(name, v) for (name, v) in combod.items()]
-# macros = [macro.parse(name, v) for (name, v) in macrod.items()]
-# hts = [hold_tap.parse(name, v) for (name, v) in htd.items()]
-morphs = [morph.parse(name, v) for (name, v) in morphd.items()]
-
-# run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
-
-
-#
-# a = parse("C:\\dev\\zmk-config\\shortcuts\\mods.yaml")
-# for i in a: print(i.compile())
+bindings, combos, holdtaps, morphs, macros = run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
