@@ -811,3 +811,152 @@ layers:
   - ''
   - ''
   - ''
+combos:
+- p:
+  - 24
+  - 25
+  k:
+    t: '&sazzjwdswc'
+    h: '&kikcxabhsg'
+- p:
+  - 25
+  - 26
+  k:
+    t: '&akxwtuvive'
+    h: '&kmlhbbuehp'
+- p:
+  - 24
+  - 26
+  k: '#'
+- p:
+  - 24
+  - 37
+  k:
+    t: '&czsogjhgts'
+    h: '&chsurrriku'
+- p:
+  - 25
+  - 36
+  k:
+    t: '&txvnuvtvub'
+    h: '&uxdcdrjbit'
+- p:
+  - 25
+  - 38
+  k: '-'
+- p:
+  - 26
+  - 37
+  k: '&llhhohksad'
+- p:
+  - 36
+  - 37
+  k:
+    t: '&iodhahonrj'
+    h: '&msbbcoszcq'
+- p:
+  - 37
+  - 38
+  k: .
+- p:
+  - 36
+  - 38
+  k: '!'
+- p:
+  - 36
+  - 49
+  k: +
+- p:
+  - 37
+  - 48
+  k: '&xgledwtqbt'
+- p:
+  - 37
+  - 50
+  k: '='
+- p:
+  - 38
+  - 49
+  k: '*'
+- p:
+  - 48
+  - 49
+  k:
+    t: '&injbzerows'
+    h: '&beawstwggd'
+    s: '>'
+- p:
+  - 50
+  - 49
+  k:
+    t: '&spjltytsoe'
+    h: '&rdkzgulzpi'
+    s: )
+- p:
+  - 48
+  - 50
+  k: _
+- p:
+  - 29
+  - 30
+  k: ''''
+- p:
+  - 30
+  - 31
+  k: '"'
+- p:
+  - 29
+  - 31
+  k: '~'
+- p:
+  - 29
+  - 42
+  k: ^
+- p:
+  - 41
+  - 30
+  k:
+    t: '&raihjfqlci'
+    h: '&txenkuckwq'
+- p:
+  - 31
+  - 42
+  k: $
+- p:
+  - 41
+  - 42
+  k:
+    t: '&ccxogyevvz'
+    h: '&zlnisedfie'
+- p:
+  - 42
+  - 43
+  k:
+    t: '&pudmwopkwv'
+    h: '&qfhfzhddqs'
+- p:
+  - 41
+  - 43
+  k: '?'
+- p:
+  - 42
+  - 59
+  k: '&bpktwtavyl'
+- p:
+  - 42
+  - 61
+  k: '@'
+- p:
+  - 59
+  - 60
+  k:
+    t: '&kmcwbryieg'
+    h: '&vhkbsoyhxs'
+    s: '}'
+- p:
+  - 60
+  - 61
+  k:
+    t: '&vxtbiqdxzb'
+    h: '&hltljvvxfw'
+    s: ']'

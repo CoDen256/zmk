@@ -3,9 +3,9 @@ layers:
   main:
   - F1
   - F2
-  - F3
-  - F4
-  - F5
+  - LALT
+  - LSHFT
+  - LCTRL
   - F6
   - F7
   - F8
@@ -25,32 +25,32 @@ layers:
   - ''
   - MUTE
   - ^
-  - {t: '&skrqwybcio', h: '&maxhjhrnxh', s: Sft+ F2}
-  - {t: '&qdyjukqpff', h: '&prmwtzwmia', s: Sft+ F3}
+  - {t: '&utjdnvdltz', h: '&rdvefaaxeh', s: Sft+ F2}
+  - {t: '&stdyarrvgn', h: '&nafeogvjlu', s: Sft+ F3}
   - {t: C, s: Ctl+ F4}
   - {t: W, s: Sft+ F5}
   - ''
   - {t: V, s: Ctl+ F14}
   - {t: L, s: Sft+ F15}
-  - {t: '&kuvtxlovtk', h: '&weknxpstgp', s: Sft+ F16}
+  - {t: '&zphnnnzvzh', h: '&jjjmxcmbqd', s: Sft+ F16}
   - $
   - ''
   - LEFT WIN
   - {t: O, s: Sft+ F6}
-  - {t: '&gfelkgmtax', h: '&miwsywcjqk', s: Sft+ F7}
-  - {t: '&cehkpelqty', h: '&idnkgeytnn', s: Sft+ F8}
-  - {t: '&vqferigtue', h: '&tdnleomjpk', s: Sft+ F9}
+  - {t: '&hhzgrglwhc', h: '&jojnfrdmtf', s: Sft+ F7}
+  - {t: '&bhojvufkgs', h: '&feplddlxnd', s: Sft+ F8}
+  - {t: '&uvqxsqhxni', h: '&txaqwpduhu', s: Sft+ F9}
   - ESCAPE
   - DELETE
-  - {t: '&gqykzjtypa', h: '&uiprhnnqgb', s: Sft+ F17}
-  - {t: '&peotgqykav', h: '&kmhufvpeto', s: Sft+ F18}
-  - {t: '&oabclmqknh', h: '&ytxajwbmxr', s: Sft+ F19}
+  - {t: '&bzpypfdrcp', h: '&oxiimcfphh', s: Sft+ F17}
+  - {t: '&mcnyxuiufq', h: '&mmbmbeyfru', s: Sft+ F18}
+  - {t: '&oykmkfwvxj', h: '&ijfemmanyo', s: Sft+ F19}
   - {t: S, s: Ctl+ F20}
   - RMETA
   - fun
   - {t: J, s: Sft+ F10}
-  - {t: '&crwheyklzu', h: '&ybqnnnrzlu', s: Sft+ F11}
-  - {t: '&hxwpryexkv', h: '&mtluifdzbt', s: Sft+ F12}
+  - {t: '&ufknvziflt', h: '&qzrqboarby', s: Sft+ F11}
+  - {t: '&aqnsrmwvms', h: '&rixcwzpegh', s: Sft+ F12}
   - {t: P, s: Sft+ F13}
   - ''
   - BACKSPACE
@@ -60,9 +60,9 @@ layers:
   - {t: num, h: toggle}
   - DELETE
   - ''
-  - {t: '&cxodvakbri', h: '&bzeqxqacii', s: Sft+ F21}
-  - {t: '&sfjpugbqnc', h: '&nftilbhhxt', s: Sft+ F22}
-  - {t: '&ttzoeifmvi', h: '&glybhzofgi', s: Ctl+ F23}
+  - {t: '&lfgegnjana', h: '&tjjrdvmtct', s: Sft+ F21}
+  - {t: '&ucwwrqjhhk', h: '&inemxmgarl', s: Sft+ F22}
+  - {t: '&xkkefobfwi', h: '&vbkdpnttzj', s: Ctl+ F23}
   - {t: X, s: Ctl+ F24}
   - ''
   - '&reloadkeymap'
@@ -198,8 +198,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&tanrooiuyd', s: '&vxnbehniba'}
-  - {t: '&tfweohbsfy', s: '&jjhqivoird'}
+  - {t: '&aqtpqqwfky', s: '&xuffeljerw'}
+  - {t: '&xsojnepeca', s: '&vvebyskbsq'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -207,12 +207,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&btwkgdeglc', s: '&bzqmtfwqtz'}
+  - {t: '&hrntlkuuyg', s: '&dxaxnymjro'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&zqrutquucd', s: '&fjufpgvyln'}
+  - {t: '&xstnwofssh', s: '&pxcgdhmlon'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -810,3 +810,64 @@ layers:
   - ''
   - ''
   - BT CLR ALL
+combos:
+- p: [24, 25]
+  k: {t: '&sazzjwdswc', h: '&kikcxabhsg'}
+- p: [25, 26]
+  k: {t: '&akxwtuvive', h: '&kmlhbbuehp'}
+- p: [24, 26]
+  k: '#'
+- p: [24, 37]
+  k: {t: '&czsogjhgts', h: '&chsurrriku'}
+- p: [25, 36]
+  k: {t: '&txvnuvtvub', h: '&uxdcdrjbit'}
+- p: [25, 38]
+  k: '-'
+- p: [26, 37]
+  k: '&llhhohksad'
+- p: [36, 37]
+  k: {t: '&iodhahonrj', h: '&msbbcoszcq'}
+- p: [37, 38]
+  k: .
+- p: [36, 38]
+  k: '!'
+- p: [36, 49]
+  k: +
+- p: [37, 48]
+  k: '&xgledwtqbt'
+- p: [37, 50]
+  k: '='
+- p: [38, 49]
+  k: '*'
+- p: [48, 49]
+  k: {t: '&injbzerows', h: '&beawstwggd', s: '>'}
+- p: [50, 49]
+  k: {t: '&spjltytsoe', h: '&rdkzgulzpi', s: )}
+- p: [48, 50]
+  k: _
+- p: [29, 30]
+  k: ''''
+- p: [30, 31]
+  k: '"'
+- p: [29, 31]
+  k: '~'
+- p: [29, 42]
+  k: ^
+- p: [41, 30]
+  k: {t: '&raihjfqlci', h: '&txenkuckwq'}
+- p: [31, 42]
+  k: $
+- p: [41, 42]
+  k: {t: '&ccxogyevvz', h: '&zlnisedfie'}
+- p: [42, 43]
+  k: {t: '&pudmwopkwv', h: '&qfhfzhddqs'}
+- p: [41, 43]
+  k: '?'
+- p: [42, 59]
+  k: '&bpktwtavyl'
+- p: [42, 61]
+  k: '@'
+- p: [59, 60]
+  k: {t: '&kmcwbryieg', h: '&vhkbsoyhxs', s: '}'}
+- p: [60, 61]
+  k: {t: '&vxtbiqdxzb', h: '&hltljvvxfw', s: ']'}

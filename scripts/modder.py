@@ -7,7 +7,7 @@ from itertools import groupby
 import yaml
 
 
-def rnd(n: int):
+def rnd(n):
     return bytes(random.choices(string.ascii_uppercase.encode('ascii'), k=n)).decode('ascii').lower()
 
 
@@ -122,12 +122,10 @@ class MorphParser:
         node = node.copy()
         name = node.pop("name", None)
         default = node.pop("default", node.pop("d", None))
-        if default: default = self.anon_parser.parse(default)
-
         if not name and orig:
             if len(orig) <= 2 and orig.isalpha():
                 name = orig + "_key"
-            elif re.search("[a-zA-Z0-1_]", orig):
+            elif re.search("[a-zA-Z0-1_]", orig): # use full match
                 name = orig
             else:
                 name = rnd(10)
@@ -136,14 +134,17 @@ class MorphParser:
 
         if self.hold_tap_parser.is_inline_holdtap(node):
             default = self.anon_parser.parse(node)
-
-        if self.hold_tap_parser.is_inline_holdtap(node | {"tap": orig}):
+        elif orig and self.hold_tap_parser.is_inline_holdtap(node | {"tap": orig}):
             default = self.anon_parser.parse(node | {"tap": orig})
+        elif default and self.hold_tap_parser.is_inline_holdtap(node | {"tap": default}):
+            default = self.anon_parser.parse(node | {"tap": default})
+        elif default:
+            default = self.anon_parser.parse(default)
 
         if not default and orig:
             default = self.anon_parser.parse(orig)
         elif not default:
-            default = self.anon_parser.parse(default)
+            raise Exception(f"Cannot parse {node}: name: {name}, default: {default}")
 
         return name, default
 
@@ -211,7 +212,6 @@ class MorphParser:
     def is_inline_morph(self, node):
         return isinstance(node, dict) and ("d" in node or "default" in node)  # or {key : {"lctrl" : "stuff"# }}
 
-
 class HoldTapParser:
     def __init__(self, cfg, layout):
         self.anon_parser = None
@@ -223,9 +223,9 @@ class HoldTapParser:
         tap = self.anon_parser.parse(node.pop("t", node.pop("tap", None)))
 
         if " " in hold.binding():  # to avoid calls like &nav LEFT 1, we just pack it into macro
-            hold = self.macronize(hold)
+            hold = self.macrosize_hold(hold)
         if " " in tap.binding():
-            tap = self.macronize(tap)
+            tap = self.macrosize_tap(tap) # maybe just pass it to the binding of hold tap
         cfg = extract_cfg_and_merge(self.cfg, node)
         positions = node.pop("pos", cfg.pop("positions"))
 
@@ -235,8 +235,16 @@ class HoldTapParser:
         name = node.pop("n", node.pop("name", self.get_name(node)))
         return self.parse(name, node)
 
-    def macronize(self, node):
+    def macrosize_tap(self, node):
         return self.anon_parser.parse([node.binding()])
+
+    def macrosize_hold(self, node):
+        return self.anon_parser.parse(
+            ["<&macro_press>", node.binding(),
+             "<&macro_pause_for_release>",
+             "<&macro_release>", node.binding(),
+             ]
+        )
 
     def get_name(self, node):
         return rnd(10)
@@ -247,7 +255,12 @@ class HoldTapParser:
 
 class KeyParser:
     def is_kp(self, key):
-        return  isinstance(key, str) and (key in keynames or re.match("[LR][SGCA]\\([A-Z0-9_]+\\)|[LR][SGCA]\\([ -~\n\t]\\)|[A-Z0-9_]+|[ -~\n\t]", key))
+        if not isinstance(key, str): return False
+        mods = "[LR][SGCA]\\((.+)\\)"
+        key = re.sub(mods, r"\1", key)
+        key = re.sub(mods, r"\1", key)
+        key = re.sub(mods, r"\1", key)
+        return (key in keynames or re.fullmatch("[A-Z0-9_]+|[ -~\n\t]", key))
 
     def parse(self, key):
         key = key if key not in keynames else keynames[key]
@@ -479,108 +492,12 @@ class AnonymousNodeParser:
 
         self.binder.bind(node)
         return node
-
-
 class NodeBinder():
     def __init__(self):
         self.nodes = {node.binding(): node for node in []}
 
     def bind(self, node):
         self.nodes[node.binding()] = node
-
-
-def kp(key):
-    if key in keynames:
-        return keynames[key]
-    return key
-
-
-class MacroNode():
-
-    def __init__(self, seq, name=None):
-        self.seq = seq.removeprefix("^")
-        self._name = name
-
-    def __str__(self):
-        return f"{self.seq}"
-
-    def __repr__(self):
-        return f"{self.seq}"
-
-    def sequence_binding(self):
-        return (self.seq, True) if self.seq.startswith("<&") and self.seq.endswith(">") else (
-            [kp(k) for k in self.seq], False)
-
-    def name(self):
-        if self._name: return self._name
-        return ("_".join([k[4:].lower() for k in self.sequence_binding()[0]]))
-
-    def node(self):
-        return "&" + self.name()
-
-    def compile(self):
-        binding, custom = self.sequence_binding()
-        seq = f"<&macro_tap>, <{' '.join(binding)}>" if not custom else binding
-        return f'''
-        {self.name()}: {self.name()} {{ label = "{self.name().upper()}"; compatible = "zmk,behavior-macro"; 
-            #binding-cells = <0>; #tap-ms = <0>; #wait-ms = <0>;
-            bindings = {seq};
-        }};'''
-
-
-class Binder():
-
-    def __init__(self, layout, macros, cfg):
-        self._macros = {m.seq: m for m in macros}
-        self._hts = {}
-        self.layout = layout
-        self.cfg = cfg
-
-    def macros(self):
-        return self._macros.values()
-
-    def hts(self):
-        return self._hts.values()
-
-    def get_macros(self, seq):
-        if seq in self._macros:
-            return self._macros[seq].node()
-        macro = MacroNode(seq)
-        self._macros[seq] = macro
-        return macro.node()
-
-    def get_holdtap(self, tap, hold, config):
-        map = Map(self, self.name(tap), tap, {"lctrl": tap})
-        ht = HoldTapNode(self.layout, config, map, hold, None)
-
-        if ht.label() in self._hts:
-            return self._hts[ht.label()]
-        self._hts[ht.label()] = ht
-        return "&" + ht.label() + " 0 0"
-
-    def name(self, keys):
-        return ("_".join([kp(k)[4:].lower() for k in keys]))
-
-    def binding(self, key):
-        if not key: return "&none"
-        if len(key) == 1: return kp(key)
-        if key[0] == "&" and key[1].isalpha():
-            return key
-        if key[0] == "^" and key[1].isalnum():
-            return self.get_macros(key[1:])
-        if key.startswith("t:") and " h:" in key:
-            cfg = self.cfg
-            tap, hold = tuple(key.removeprefix("t:").split(" h:"))
-            if " c:" in hold:
-                hold, cfg = tuple(hold.split(" c:"))
-                t, q, r = tuple(cfg.split(","))
-                cfg = Config(int(t), int(q), int(r))
-            return self.get_holdtap(tap, self.binding(hold), cfg)
-        if key[0].isalnum():
-            return kp(key)
-        # must be macros
-        return self.get_macros(key)
-
 
 all_mods = {
     "lalt": "MOD_LALT",
@@ -605,7 +522,7 @@ class Layout():
 
     def parse_positions(self, positions):
         for pos in positions:
-            if len(pos) == 1 and pos.isalpha():
+            if pos in self.keys:
                 yield self.pos(pos)
             if pos.isnumeric():
                 yield int(pos)
@@ -637,11 +554,6 @@ class Layout():
         return self.lefts() if self.get_side(key) == "left" else self.rights()
 
 
-class ComboCfg:
-    def __init__(self, timeout):
-        self.timeout = timeout
-
-
 class Combo:
     def __init__(self, name, positions, binding, **cfg):
         self.name = name
@@ -659,63 +571,6 @@ class Combo:
     def __str__(self): return self.name + " = " + str(self.binding)
 
     def __repr__(self): return self.name + " = " + str(self.binding)
-
-
-class ComboNode:
-    def __init__(self, layout, binder, pos, out, cfg):
-        self.layout = layout
-        self.out = out
-        self.binder = binder
-        self.key_names = pos
-        self.pos = " ".join([str(layout.pos(k)) for k in list(pos)])
-        self.cfg = cfg
-
-    def compile(self):
-        return f'''
-        {self.key_names} {{ timeout-ms = <{self.cfg.timeout}>; key-positions = <{self.pos}>;
-            bindings = <{self.binder.binding(self.out)}>; 
-        }};'''
-
-
-class Config:
-    def __init__(self, tapping_term, quick_tap, prior_idle):
-        self.tapping_term = tapping_term
-        self.quick_tap = quick_tap
-        self.prior_idle = prior_idle
-
-
-class HoldTapNode:
-    def __init__(self, layout, config, tap, hold, position):
-        self.tap = tap
-        self.hold = hold
-        self.config = config
-        self.layout = layout
-        if hold:
-            self.pos = layout.opposite_side(tap.key) if not position else list(
-                map(lambda k: layout.pos(k), position.split(" ")))
-
-    def label(self):
-        return self.tap._name + "_key" if len(self.tap._name) == 1 else self.tap._name
-
-    def compile(self):
-        root, generated = self.tap.compile()
-        label = self.label()
-
-        if not self.hold:
-            return generated.replace(root[1:], label).replace(root[1:].upper(), label.upper())
-        return self.gen_holdtap(label, self.hold, root, self.pos) + "\n" + generated
-
-    def gen_holdtap(self, name, hold, tap, position):
-        join = ' '.join(map(lambda x: str(x), position))
-        term = self.config.tapping_term
-        quick_tap = self.config.quick_tap
-        idle = self.config.prior_idle
-        return f'''
-        {name}:{name} {{ label = "{name.upper()}"; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; #binding-cells = <2>; hold-trigger-key-positions = <{join}>;
-            tapping-term-ms = <{term}>; quick-tap-ms = <{quick_tap}>; require-prior-idle-ms = <{idle}>;
-            bindings = <{hold}>, <{tap}>;
-        }};'''
 
 
 class HoldTap:
@@ -777,111 +632,6 @@ class Morph:
     def __str__(self): return self._name + " ~ " + str(self.default) + " / " + str(self.modified)
 
     def __repr__(self): return self._name + " ~ " + str(self.default) + " / " + str(self.modified)
-
-
-class MorphNode:
-    def __init__(self, label, prefix, default, mods, modified, keep=False, postfix=""):
-        self.label = label
-        self.prefix = prefix
-        self.postfix = postfix if postfix else f"{'_'.join(mods)}"
-        self.default = default
-        self.mods = mods
-        self.modified = modified
-        self.keep = keep
-
-    def name(self):
-        return f"{self.label}_{self.prefix}_{self.postfix}"
-
-    def compile(self):
-        label = self.name()
-        m = sorted(list(map(lambda x: mods[x], self.mods)))
-        joined = "|".join(m)
-        mods = f"<({joined})>"
-        keep_mods = f"keep-mods = {mods};" if self.keep else ""
-        return f"""
-        {label}:{label}{{ label = "{label.upper()}"; compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <{self.default}>, <{self.modified}>;
-            mods = {mods};
-            {keep_mods}
-        }};"""
-
-
-class Map:
-    def __init__(self, binder, label, default, mapping):
-        self.label = label
-        self.default = default
-        self.mapping = mapping
-        self.binder = binder
-
-    def generate(self):
-        sinks = []
-        links = []
-        prev = self.binder.binding(self.default)
-        for (key, value) in self.mapping.items():
-            mods_complement = set(all_mods.keys()) - {key}
-            sink = MorphNode(self.label, "sink",
-                             self.binder.binding(value), mods_complement,
-                             self.binder.binding(self.default), True, key)
-            sinks.append(sink)
-            link = MorphNode(self.label, "link",
-                             prev, [key],
-                             self.gen_ref(sink))
-            links.append(link)
-            prev = self.gen_ref(link)
-
-        return prev, links + sinks
-
-    def gen_ref(self, morph):
-        return f"&{morph._name()}"
-
-    def compile(self):
-        c = ""
-        prev, r = self.generate()
-        for i in r:
-            c += i.compile() + "\n"
-        return prev, c
-
-
-# Function to parse the YAML content and create the list of Map objects
-def parse(file):
-    # Parse the YAML content
-    data = read(file)
-
-    # Create the list of Map objects
-    configdata = data['config']
-    def_config = Config(**configdata)
-    pos = Layout(**data['keys'])
-
-    macros = []
-    for (name, seq) in data['macros'].items():
-        macros.append(MacroNode(seq, name))
-
-    binder = Binder(pos, macros, def_config)
-
-    maps = []
-    for (label, mapping) in data['map'].items():
-        cfg = def_config
-        hold = None
-        if "hold" in mapping:
-            hold_cfg = mapping.pop("hold")
-            hold = hold_cfg.pop("bind")
-            cfg = Config(**(configdata | hold_cfg))
-        if "hold.bind" in mapping:
-            hold = mapping.pop("hold.bind")
-
-        map = Map(binder, label, mapping.pop("key", label), mapping)
-        maps.append(HoldTapNode(pos, cfg, map, hold, mapping.pop("pos", None)))
-
-    combos = []
-    combodef = data['combos']
-    default = combodef.pop("timeout")
-    for (src, out) in combodef.items():
-        timeout = default
-        if "timeout: " in out:
-            out, timeout = out.split("timeout: ")
-        combos.append(ComboNode(pos, binder, src, out, ComboCfg(int(timeout))))
-    return maps, combos, binder
 
 def parse_yaml(file):
     data = read(file)
