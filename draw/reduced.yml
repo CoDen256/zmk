@@ -816,14 +816,14 @@ combos:
   - 24
   - 25
   k:
-    t: '&sazzjwdswc'
-    h: '&kikcxabhsg'
+    t: '&ampersand'
+    h: '&tap_ampersand_ampersand'
 - p:
   - 25
   - 26
   k:
-    t: '&akxwtuvive'
-    h: '&kmlhbbuehp'
+    t: '&pipe'
+    h: '&tap_pipe_pipe'
 - p:
   - 24
   - 26
@@ -832,14 +832,14 @@ combos:
   - 24
   - 37
   k:
-    t: '&czsogjhgts'
-    h: '&chsurrriku'
+    t: '&backslash'
+    h: '&tap_backslash_backslash'
 - p:
   - 25
   - 36
   k:
-    t: '&txvnuvtvub'
-    h: '&uxdcdrjbit'
+    t: '&slash'
+    h: '&tap_slash_slash'
 - p:
   - 25
   - 38
@@ -847,13 +847,13 @@ combos:
 - p:
   - 26
   - 37
-  k: '&llhhohksad'
+  k: '&tap_equal_equal'
 - p:
   - 36
   - 37
   k:
-    t: '&iodhahonrj'
-    h: '&msbbcoszcq'
+    t: '&colon'
+    h: '&tap_colon_space'
 - p:
   - 37
   - 38
@@ -869,7 +869,7 @@ combos:
 - p:
   - 37
   - 48
-  k: '&xgledwtqbt'
+  k: '&tap_exc_equal'
 - p:
   - 37
   - 50
@@ -882,15 +882,15 @@ combos:
   - 48
   - 49
   k:
-    t: '&injbzerows'
-    h: '&beawstwggd'
+    t: '&less_than'
+    h: '&tap_less_than_gre_tha_left_arrow'
     s: '>'
 - p:
   - 50
   - 49
   k:
-    t: '&spjltytsoe'
-    h: '&rdkzgulzpi'
+    t: '&lef_par'
+    h: '&tap_lef_par_rig_par_left_arrow'
     s: )
 - p:
   - 48
@@ -916,8 +916,8 @@ combos:
   - 41
   - 30
   k:
-    t: '&raihjfqlci'
-    h: '&txenkuckwq'
+    t: '&grave'
+    h: '&tap_grave_grave_grave'
 - p:
   - 31
   - 42
@@ -926,14 +926,14 @@ combos:
   - 41
   - 42
   k:
-    t: '&ccxogyevvz'
-    h: '&zlnisedfie'
+    t: '&comma'
+    h: '&tap_comma_space'
 - p:
   - 42
   - 43
   k:
-    t: '&pudmwopkwv'
-    h: '&qfhfzhddqs'
+    t: '&semicolon'
+    h: '&tap_semicolon_enter'
 - p:
   - 41
   - 43
@@ -941,7 +941,7 @@ combos:
 - p:
   - 42
   - 59
-  k: '&bpktwtavyl'
+  k: '&tap_minus_gre_tha'
 - p:
   - 42
   - 61
@@ -950,13 +950,13 @@ combos:
   - 59
   - 60
   k:
-    t: '&kmcwbryieg'
-    h: '&vhkbsoyhxs'
-    s: '}'
+    t: '&lef_bra'
+    h: '&tap_lef_bra_rig_bra_left_arrow'
+    s: ']'
 - p:
   - 60
   - 61
   k:
-    t: '&vxtbiqdxzb'
-    h: '&hltljvvxfw'
+    t: '&lef_bra'
+    h: '&tap_lef_bra_rig_bra_left_arrow'
     s: ']'

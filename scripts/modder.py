@@ -7,9 +7,6 @@ from itertools import groupby
 import yaml
 
 
-def rnd(n):
-    return bytes(random.choices(string.ascii_uppercase.encode('ascii'), k=n)).decode('ascii').lower()
-
 
 keynames = {
     "!": "EXCLAMATION",
@@ -115,9 +112,6 @@ class MorphParser:
         self.hold_tap_parser = None
         self.cfg = cfg
 
-    def get_name(self, node):
-        return rnd(10)
-
     def extract_name_default(self, orig, node):
         node = node.copy()
         name = node.pop("name", None)
@@ -128,9 +122,9 @@ class MorphParser:
             elif re.search("[a-zA-Z0-1_]", orig): # use full match
                 name = orig
             else:
-                name = rnd(10)
+                name = None
         if not name:
-            name = rnd(10)
+            name = None
 
         if self.hold_tap_parser.is_inline_holdtap(node):
             default = self.anon_parser.parse(node)
@@ -159,7 +153,8 @@ class MorphParser:
 
 
         if exact:
-            morph, extra = self.generate_exact(name, default, mapping)
+            base_name = default.name() + "_morph" if not name else name
+            morph, extra = self.generate_exact(base_name, default, mapping)
             return Morph(name, morph.default, morph.modified, morph.mods, morph.keep), extra
 
         (modifier, modified) = list(mapping.items())[0]
@@ -247,7 +242,7 @@ class HoldTapParser:
         )
 
     def get_name(self, node):
-        return rnd(10)
+        return None
 
     def is_inline_holdtap(self, node):
         return isinstance(node, dict) and (("hold" in node or "h" in node) and ("tap" in node or "t" in node))
@@ -264,7 +259,7 @@ class KeyParser:
 
     def parse(self, key):
         key = key if key not in keynames else keynames[key]
-        return Binding(key, bind(f"kp {key.upper()}"))
+        return Binding(bind(f"kp {key.upper()}"), clean(key))
 
 
 class MacroParser:
@@ -295,22 +290,22 @@ class MacroParser:
         return self.parse_tap_inline(self.get_tap_inline_name(node), node)
 
     def get_tap_list_name(self, node):
-        return rnd(10)
+        return None
 
     def get_tap_inline_name(self, node):
-        return rnd(10)
+        return None
 
     def get_object_name(self, node):
-        return node.pop("n", rnd(10))
+        return node.pop("n", None)
 
     def get_binding_list_name(self, node):
-        return rnd(10)
+        return None
 
     def get_binding_name(self, node):
-        return rnd(10)
+        return None
 
     def get_unicode_name(self, node):
-        return rnd(10)
+        return None
 
     def parse_binding(self, name, node):
         return Macro(name, [self.binding_parser.parse(node)], 0, **self.default_cfg)
@@ -381,15 +376,38 @@ class BindingParser:
 
     def parse(self, node):
         if self.is_short(node):
-            return Binding(rnd(10), bind(node))
+            return Binding(bind(node))
 
-        return Binding(rnd(10), node)
+        return Binding(node)
 
+def deunderline(name):
+    return (name.replace("____", "_").replace("___", "_").replace("__", "_").removeprefix("_").removesuffix(
+            "_")).lower()[:40]
+
+def clean(name, backup="unknown"):
+    truncated = "_".join([r[:3] for r in name.split("_")]) if len(name) > 10 else name
+    result = deunderline(truncated)
+    result = backup if len(result) < 3 else result
+    return result
+
+
+def readable(orig):
+    mods = "[LR][SGCA]\\((.+)\\)"
+    binding = re.sub(mods, r"\1", orig)
+    binding = re.sub(mods, r"\1", binding)
+    binding = re.sub(mods, r"\1", binding)
+    binding = binding.replace("macro_pause_for_release", "")
+    binding = binding.replace("macro_release", "")
+    binding = binding.replace("macro", "")
+    nobind = re.sub("&[a-zA-Z0-1_]+ ", "",  binding)
+    nobind = re.sub("[^a-zA-Z0-1_]", "", nobind)
+    result = (nobind if len(nobind) > 2 else re.sub("&([a-zA-Z0-1_]+) ", r"\1_",  binding)).lower()
+    return clean(re.sub("[^a-zA-Z0-1_]", "", result), "")
 
 class Binding:
-    def __init__(self, name, binding):
+    def __init__(self, binding, name=None):
         self._binding = binding
-        self._name = name
+        self._name = name if name else readable(binding)
 
     def binding(self):
         return self._binding
@@ -423,11 +441,12 @@ def bind(name):
 
 class Macro:
     def __init__(self, name, bindings, arity=0, **cfg):
-        self._name = name
         self.bindings = bindings
         self.cfg = cfg
         self.arity = arity
-
+        self._name = self.gen_name(name)
+    def gen_name(self, name):
+        return name if name else deunderline("_".join([clean(b.name(), "") for b in self.bindings]))
 
     def name(self):
         return self._name
@@ -575,13 +594,15 @@ class Combo:
 
 class HoldTap:
     def __init__(self, name, hold, tap, positions, **cfg):
-        self._name = name
         self.tap = tap
         self.hold = hold
+        self._name = self.gen_name(name)
         self.cfg = cfg
         self.positions = positions
         self.cfg["hold-trigger-key-positions"] = self.positions
 
+    def gen_name(self, name):
+        return name if name else deunderline("_".join([clean(self.hold.name()), "x", clean(self.tap.name())]))
     def binding(self):
         return bind(self._name + " 0 0")
     def name(self):
@@ -600,16 +621,17 @@ class HoldTap:
 
 class Morph:
     def __init__(self, name, default, modified, mods, keep):
-        self._name = name
         self.default = default
         self.mods = mods
         self.modified = modified
+        self._name = self.gen_name(name)
         self.keep = keep
 
     def map_mods(self, mods_ls):
         return "|".join([all_mods[m] for m in sorted(mods_ls)])
 
-
+    def gen_name(self, name):
+        return name if name else deunderline("_".join([clean(self.default.name()), "or", clean(self.modified.name())]))
 
 
     def name(self):
