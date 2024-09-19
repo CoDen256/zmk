@@ -17,10 +17,10 @@ layers:
   - {t: K, s: Sft+ F1}
   - '&C5_key'
   - '&CS_key'
-  - Gui+ F11
-  - Gui+ F12
-  - '&key_repeat'
-  - '&key_repeat'
+  - '&VS_key'
+  - '&V6_key'
+  - '&L7_key'
+  - '&B8_key'
   - ''
   - ''
   - MUTE
@@ -29,11 +29,11 @@ layers:
   - {t: H, h: '&lswitcher LALT', s: Sft+ F3}
   - {t: C, s: Ctl+ F4}
   - {t: W, s: Sft+ F5}
-  - ''
+  - '&VV_key'
   - {t: V, s: Ctl+ F14}
   - {t: L, s: Sft+ F15}
   - {t: B, h: '&lnav RALT', s: Sft+ F16}
-  - $
+  - '&BB_key'
   - ''
   - '&OO_key'
   - {t: O, s: Sft+ F6}
@@ -41,13 +41,13 @@ layers:
   - {t: I, h: LSHIFT, s: Sft+ F8}
   - {t: N, h: LCTRL, s: Sft+ F9}
   - '&NN_key'
-  - DELETE
+  - '&TT_key'
   - {t: T, h: RCTRL, s: Sft+ F17}
   - {t: R, h: RSHIFT, s: Sft+ F18}
   - {t: E, h: RALT, s: Sft+ F19}
   - {t: S, s: Ctl+ F20}
-  - RMETA
-  - fun
+  - '&SS_key'
+  - '&JJ_key'
   - {t: J, s: Sft+ F10}
   - {t: F, h: nav, s: Sft+ F11}
   - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}
@@ -59,12 +59,12 @@ layers:
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: num, h: toggle}
   - DELETE
-  - ''
+  - '&MM_key'
   - {t: M, h: num, s: Sft+ F21}
   - {t: D, h: Sft+AGr+ RGUI, s: Sft+ F22}
   - {t: Y, h: nav, s: Ctl+ F23}
   - {t: X, s: Ctl+ F24}
-  - ''
+  - '&XX_key'
   - '&reloadkeymap'
   - '&JQ_key'
   - {t: Q, s: Ctl+ ^}
@@ -76,10 +76,10 @@ layers:
   - {t: main_upper, h: toggle}
   - {t: mouse, h: toggle}
   - {t: main_upper, h: sticky}
-  - ENTER
-  - TAB
+  - '&MZ_key'
+  - '&DZ_key'
   - {t: Z, s: Ctl+ ~}
-  - '~'
+  - '&XZ_key'
   - ''
   main_upper:
   - {t: ▽, type: trans}
@@ -452,7 +452,7 @@ layers:
   - RIGHT ALT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - ''
   - Ctl+ C
   - Ctl+ S

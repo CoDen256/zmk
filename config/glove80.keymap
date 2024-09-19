@@ -397,9 +397,79 @@ release-after-ms = <5000>;};
             bindings = <&macro_tap>, <&kp ENTER>;
         };
 
+        JJ_key: JJ_key { label = "JJ_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_press>, <&kp AMPERSAND>, <&kp M>, <&kp O>, <&kp SPACE>, <&kp N5>, <&macro_pause_for_release>, <&macro_release>, <&kp AMPERSAND>, <&kp M>, <&kp O>, <&kp SPACE>, <&kp N5>;
+        };
+
         JQ_key: JQ_key { label = "JQ_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
             bindings = <&macro_tap>, <&kp AT_SIGN>;
+        };
+
+        VS_key: VS_key { label = "VS_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_tap>, <&kp LG(F11)>;
+        };
+
+        V6_key: V6_key { label = "V6_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_tap>, <&kp LG(F12)>;
+        };
+
+        L7_key: L7_key { label = "L7_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&key_repeat>;
+        };
+
+        B8_key: B8_key { label = "B8_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&key_repeat>;
+        };
+
+        BB_key: BB_key { label = "BB_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_tap>, <&kp DOLLAR>;
+        };
+
+        SS_key: SS_key { label = "SS_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_press>, <&kp RGUI>, <&macro_pause_for_release>, <&macro_release>, <&kp RGUI>;
+        };
+
+        XX_key: XX_key { label = "XX_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&none>;
+        };
+
+        VV_key: VV_key { label = "VV_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&none>;
+        };
+
+        TT_key: TT_key { label = "TT_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_tap>, <&kp DELETE>;
+        };
+
+        MM_key: MM_key { label = "MM_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&none>;
+        };
+
+        MZ_key: MZ_key { label = "MZ_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_tap>, <&kp ENTER>;
+        };
+
+        DZ_key: DZ_key { label = "DZ_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_tap>, <&kp TAB>;
+        };
+
+        XZ_key: XZ_key { label = "XZ_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_tap>, <&kp TILDE>;
         };
 
         ampersand_ampersand: ampersand_ampersand { label = "AMPERSAND_AMPERSAND"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -614,62 +684,62 @@ release-after-ms = <5000>;};
 /*<mods-start>*/
 
         GH_delegate:GH_delegate { label = "GH_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&ampersand_ampersand>, <&kp>;
         };
 
         HC_delegate:HC_delegate { label = "HC_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&pipe_pipe>, <&kp>;
         };
 
         GI_delegate:GI_delegate { label = "GI_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&backslash_backslash>, <&kp>;
         };
 
         HA_delegate:HA_delegate { label = "HA_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <120>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <120>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&slash_slash>, <&kp>;
         };
 
         AI_delegate:AI_delegate { label = "AI_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&colon_space>, <&kp>;
         };
 
         FU_delegate_hold_tap:FU_delegate_hold_tap { label = "FU_DELEGATE_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&less_than_gre_tha_left_arrow>, <&kp>;
         };
 
         PU_delegate_hold_tap:PU_delegate_hold_tap { label = "PU_DELEGATE_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&lef_par_rig_par_left_arrow>, <&kp>;
         };
 
         TL_delegate:TL_delegate { label = "TL_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <120>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <120>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&grave_grave_grave>, <&kp>;
         };
 
         TR_delegate:TR_delegate { label = "TR_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&comma_space>, <&kp>;
         };
 
         RE_delegate:RE_delegate { label = "RE_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&semicolon_enter>, <&kp>;
         };
 
         MD_delegate_hold_tap:MD_delegate_hold_tap { label = "MD_DELEGATE_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&left_brace_rig_bra_left_arrow>, <&kp>;
         };
 
         DY_delegate_hold_tap:DY_delegate_hold_tap { label = "DY_DELEGATE_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&lef_bra_rig_bra_left_arrow>, <&kp>;
         };
 
@@ -684,84 +754,84 @@ release-after-ms = <5000>;};
         };
 
         A_key_hold_tap:A_key_hold_tap { label = "A_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&kp>, <&kp>;
         };
 
         I_key_hold_tap:I_key_hold_tap { label = "I_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <24 26 36 38 48 50 27 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <24 26 36 38 48 50 27 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&kp>, <&kp>;
         };
 
         N_key_hold_tap:N_key_hold_tap { label = "N_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&kp>, <&kp>;
         };
 
         F_key_hold_tap:F_key_hold_tap { label = "F_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <25 26 50 38 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <25 26 50 38 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&mo>, <&kp>;
         };
 
         U_key_hold_tap:U_key_hold_tap { label = "U_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <480>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <480>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&kp>, <&kp>;
         };
 
         B_key_hold_tap:B_key_hold_tap { label = "B_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&lnav>, <&kp>;
         };
 
         T_key_hold_tap:T_key_hold_tap { label = "T_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&kp>, <&kp>;
         };
 
         R_key_hold_tap:R_key_hold_tap { label = "R_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&kp>, <&kp>;
         };
 
         E_key_hold_tap:E_key_hold_tap { label = "E_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&kp>, <&kp>;
         };
 
         M_key_hold_tap:M_key_hold_tap { label = "M_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&mo>, <&kp>;
         };
 
         D_key_hold_tap:D_key_hold_tap { label = "D_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <480>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <480>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&kp>, <&kp>;
         };
 
         Y_key_hold_tap:Y_key_hold_tap { label = "Y_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&mo>, <&kp>;
         };
 
-        OE_key:OE_key { label = "OE_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+        OEU:OEU { label = "OEU"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&press_kp_lef_alt_0_2_4_6_kp_lalt>, <&press_kp_lef_alt_0_2_1_4_kp_lalt>;
             mods = <(MOD_LSFT)>;
             
         };
 
-        AE_key:AE_key { label = "AE_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+        AEU:AEU { label = "AEU"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&press_kp_lef_alt_0_2_2_8_kp_lalt>, <&press_kp_lef_alt_0_1_9_6_kp_lalt>;
             mods = <(MOD_LSFT)>;
             
         };
 
-        UE_key:UE_key { label = "UE_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+        UEU:UEU { label = "UEU"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&press_kp_lef_alt_0_2_5_2_kp_lalt>, <&press_kp_lef_alt_0_2_2_0_kp_lalt>;
             mods = <(MOD_LSFT)>;
             
         };
 
-        SS_key:SS_key { label = "SS_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+        SSU:SSU { label = "SSU"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&press_kp_lef_alt_0_2_2_3_kp_lalt>, <&press_kp_lef_alt_0_7_8_3_8_kp_lalt>;
             mods = <(MOD_LSFT)>;
             
@@ -1537,11 +1607,11 @@ keymap {
     main {
     			bindings = <
 &kp F1             &kp F2           &kp F3     &kp F4  &kp F5                                                                                               &kp F6       &kp F7       &kp F8       &kp F9      &kp F10
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &G3_key  &K_key     &C5_key     &CS_key                                                                       &kp LG(F11)  &kp LG(F12)  &key_repeat  &key_repeat  &none       &none
-&kp C_MUTE         &GG_key        &G_key       &H_key     &C_key     &W_key                                                                           &none        &V_key       &L_key       &B_key       &kp DOLLAR  &none
-&OO_key       &O_key           &A_key       &I_key     &N_key     &NN_key                                                                         &kp DELETE        &T_key       &R_key       &E_key       &S_key      &kp RMETA
-&mo 5              &J_key           &F_key       &U_key     &P_key     &PP_key   &kp BACKSPACE  &mo 3  &magic 9 0    &magic 9 0  &tog 3  &kp DELETE  &none  &M_key       &D_key       &Y_key       &X_key      &none
-&reloadkeymap      &JQ_key           &Q_key       &UQ_key    &PQ_key               &kp SPACE      &sl 2  &none         &tog 1      &tog 8  &sl 1                    &kp ENTER    &kp TAB      &Z_key       &kp TILDE   &none
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &G3_key  &K_key     &C5_key     &CS_key                                                                       &VS_key  &V6_key  &L7_key  &B8_key  &none       &none
+&kp C_MUTE         &GG_key        &G_key       &H_key     &C_key     &W_key                                                                           &VV_key        &V_key       &L_key       &B_key       &BB_key  &none
+&OO_key       &O_key           &A_key       &I_key     &N_key     &NN_key                                                                         &TT_key        &T_key       &R_key       &E_key       &S_key      &SS_key
+&JJ_key              &J_key           &F_key       &U_key     &P_key     &PP_key   &kp BACKSPACE  &mo 3  &magic 9 0    &magic 9 0  &tog 3  &kp DELETE  &MM_key  &M_key       &D_key       &Y_key       &X_key      &XX_key
+&reloadkeymap      &JQ_key           &Q_key       &UQ_key    &PQ_key               &kp SPACE      &sl 2  &none         &tog 1      &tog 8  &sl 1                    &MZ_key    &DZ_key      &Z_key       &XZ_key   &none
 >;};
 
 		main_upper {
@@ -1558,8 +1628,8 @@ de {
 &trans  &trans   &trans   &trans   &trans                                                                       &trans  &trans  &trans  &trans   &trans
 &trans  &trans   &trans   &trans   &trans  &trans                                                       &trans  &trans  &trans  &trans  &trans   &trans
 &trans  &trans   &trans   &trans   &trans  &trans                                                       &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &OE_key  &AE_key  &trans   &trans  &trans                                                       &trans  &trans  &trans  &trans  &SS_key  &trans
-&trans  &trans   &trans   &UE_key  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans   &trans
+&trans  &OEU  &AEU  &trans   &trans  &trans                                                       &trans  &trans  &trans  &trans  &SSU  &trans
+&trans  &trans   &trans   &UEU  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans   &trans
 &to 2   &trans   &trans   &trans   &trans          &trans  &trans  &trans    &trans  &trans  &sk LSHFT          &trans  &trans  &trans  &trans   &to 2
 >;};
 num {

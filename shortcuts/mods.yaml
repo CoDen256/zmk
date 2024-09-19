@@ -4,10 +4,10 @@ morph:
     exact: true
     keep: "all"
 
-  OE: { default: "ö", lshift: "Ö", exact: false, keep: "none"}
-  AE: { default: "ä", lshift: "Ä", exact: false, keep: "none"}
-  UE: { default: "ü", lshift: "Ü", exact: false, keep: "none"}
-  SS: { default: "ß", lshift: "ẞ", exact: false, keep: "none"}
+  OEU: { default: "ö", lshift: "Ö", exact: false, keep: "none"}
+  AEU: { default: "ä", lshift: "Ä", exact: false, keep: "none"}
+  UEU: { default: "ü", lshift: "Ü", exact: false, keep: "none"}
+  SSU: { default: "ß", lshift: "ẞ", exact: false, keep: "none"}
 
 # left
   K:  { rshift: "RS(F1)" }
@@ -82,30 +82,32 @@ macro:
   G3_key: "&none"
   C5_key: ["F9"]
   CS_key: ["LG(F10)"]
-  GG_key: "^"
 
+  GG_key: "^"
   OO_key: {press: ["LGUI"]}
   NN_key: ["ESCAPE"]
   PP_key: "&none"
 
   UQ_key: "\t"
   PQ_key: "\n"
+  JJ_key: {press: "&mo 5"}
   JQ_key: "@"
 
-#  VS_key: 16
-#  V6_key: 17
-#  L7_key: 18
-#  B8_key: 19
-#  BB_key: 32
-#
-#  SS_key: 45
-#  VV_key: 28
-#  TT_key: 40
-#  MM_key: 58
-#
-#  MZ_key: 75
-#  DZ_key: 76
-#  XZ_key: 78
+  VS_key: ["LG(F11)"]
+  V6_key: ["LG(F12)"]
+  L7_key: "&key_repeat"
+  B8_key: "&key_repeat"
+  BB_key: "$"
+
+  SS_key: {press: ["RGUI"]}
+  XX_key: "&none"
+  VV_key: "&none"
+  TT_key: ["DELETE"]
+  MM_key: "&none"
+
+  MZ_key: "\n"
+  DZ_key: "\t"
+  XZ_key: "~"
 
 combo:
   config:
@@ -185,6 +187,7 @@ keys:
 
     UQ: 67
     PQ: 68
+    JJ: 46
     JQ: 65
 
 
@@ -210,6 +213,7 @@ keys:
     BB: 32
 
     SS: 45
+    XX: 63
     VV: 28
     TT: 40
     MM: 58
