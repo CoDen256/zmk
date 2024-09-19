@@ -84,7 +84,7 @@ macro:
   CS_key: ["LG(F10)"]
   GG_key: "^"
 
-#  OO_key:
+  OO_key: {press}
 #  NN_key: 39
 #  PP_key: 51
 #

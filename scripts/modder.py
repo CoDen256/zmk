@@ -220,10 +220,10 @@ class HoldTapParser:
         hold = self.anon_parser.parse(node.pop("h", node.pop("hold", None)))
         tap = self.anon_parser.parse(node.pop("t", node.pop("tap", None)))
 
-        if " " in hold.binding():  # to avoid calls like &nav LEFT 1, we just pack it into macro
-            hold = self.macrosize_hold(hold)
-        if " " in tap.binding():
-            tap = self.macrosize_tap(tap) # maybe just pass it to the binding of hold tap
+        # if " " in hold.binding():  # to avoid calls like &nav LEFT 1, we just pack it into macro
+        #     hold = self.macrosize_hold(hold)
+        # if " " in tap.binding():
+        #     tap = self.macrosize_tap(tap) # maybe just pass it to the binding of hold tap
         cfg = extract_cfg_and_merge(self.cfg, node)
         positions = node.pop("pos", cfg.pop("positions"))
 
@@ -601,22 +601,29 @@ class HoldTap:
     def __init__(self, name, hold, tap, positions, **cfg):
         self.tap = tap
         self.hold = hold
-        self._name = self.gen_name(name)
+        self.tapbind, self.taparg = self.parse_binding_arg(tap)
+        self.holdbind, self.holdarg = self.parse_binding_arg(hold)
+        self._name = self.gen_name(name, hold, tap)
         self.cfg = cfg
         self.positions = positions
         self.cfg["hold-trigger-key-positions"] = self.positions
 
-    def gen_name(self, name):
-        return name if name else deunderline("_".join([clean(self.hold.name()), "x", clean(self.tap.name())]))
+    def parse_binding_arg(self, binding):
+        binding = binding.binding()
+        if " " not in binding: return binding, "0"
+        bind, arg = tuple(binding.split(" "))
+        return bind+">", arg.removesuffix(">")
+    def gen_name(self, name, tap, hold):
+        return name if name else deunderline("_".join([clean(hold.name()), "x", clean(tap.name())]))
     def binding(self):
-        return bind(self._name + " 0 0")
+        return bind(self._name + f" {self.holdarg} {self.taparg}")
     def name(self):
         return self._name
     def compile(self):
         return f'''
         {self._name}:{self._name} {{ label = "{self._name.upper()}"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             {compile_cfg(**self.cfg)}
-            bindings = {self.hold.binding()}, {self.tap.binding()};
+            bindings = {self.holdbind}, {self.tapbind};
         }};'''
 
     def __str__(self): return self._name + " = " + str(self.tap) + " / " + str(self.hold)

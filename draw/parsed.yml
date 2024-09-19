@@ -25,32 +25,32 @@ layers:
   - ''
   - MUTE
   - '&GG_key'
-  - {t: '&kp_g', h: '&press_lnav_lctrl_lnav_lctrl', s: Sft+ F2}
-  - {t: '&kp_h', h: '&press_lsw_lal_lsw_lal', s: Sft+ F3}
+  - {t: G, h: '&lnav LCTRL', s: Sft+ F2}
+  - {t: H, h: '&lswitcher LALT', s: Sft+ F3}
   - {t: C, s: Ctl+ F4}
   - {t: W, s: Sft+ F5}
   - ''
   - {t: V, s: Ctl+ F14}
   - {t: L, s: Sft+ F15}
-  - {t: '&kp_b', h: '&press_lnav_ralt_lnav_ralt', s: Sft+ F16}
+  - {t: B, h: '&lnav RALT', s: Sft+ F16}
   - $
   - ''
   - LEFT WIN
   - {t: O, s: Sft+ F6}
-  - {t: '&kp_a', h: '&press_kp_lalt_kp_lalt', s: Sft+ F7}
-  - {t: '&kp_i', h: '&press_kp_lshift_kp_lshift', s: Sft+ F8}
-  - {t: '&kp_n', h: '&press_kp_lctrl_kp_lctrl', s: Sft+ F9}
+  - {t: A, h: LALT, s: Sft+ F7}
+  - {t: I, h: LSHIFT, s: Sft+ F8}
+  - {t: N, h: LCTRL, s: Sft+ F9}
   - ESCAPE
   - DELETE
-  - {t: '&kp_t', h: '&press_kp_rctrl_kp_rctrl', s: Sft+ F17}
-  - {t: '&kp_r', h: '&press_kp_rshift_kp_rshift', s: Sft+ F18}
-  - {t: '&kp_e', h: '&press_kp_ralt_kp_ralt', s: Sft+ F19}
+  - {t: T, h: RCTRL, s: Sft+ F17}
+  - {t: R, h: RSHIFT, s: Sft+ F18}
+  - {t: E, h: RALT, s: Sft+ F19}
   - {t: S, s: Ctl+ F20}
   - RMETA
   - fun
   - {t: J, s: Sft+ F10}
-  - {t: '&kp_f', h: '&press_mo_4_mo_4', s: Sft+ F11}
-  - {t: '&kp_u', h: '&press_kp_lgui_kp_lgui', s: Sft+ F12}
+  - {t: F, h: nav, s: Sft+ F11}
+  - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}
   - {t: P, s: Sft+ F13}
   - ''
   - BACKSPACE
@@ -60,9 +60,9 @@ layers:
   - {t: num, h: toggle}
   - DELETE
   - ''
-  - {t: '&kp_m', h: '&press_mo_3_mo_3', s: Sft+ F21}
-  - {t: '&kp_d', h: '&press_kp_rgui_kp_rgui', s: Sft+ F22}
-  - {t: '&kp_y', h: '&press_mo_4_mo_4', s: Ctl+ F23}
+  - {t: M, h: num, s: Sft+ F21}
+  - {t: D, h: Sft+AGr+ RGUI, s: Sft+ F22}
+  - {t: Y, h: nav, s: Ctl+ F23}
   - {t: X, s: Ctl+ F24}
   - ''
   - '&reloadkeymap'
@@ -373,7 +373,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LCTRL
-  - ''
+  - {type: held}
   - UP ARROW
   - DOWN
   - {t: ▽, type: trans}
@@ -812,21 +812,21 @@ layers:
   - BT CLR ALL
 combos:
 - p: [24, 25]
-  k: {t: '&kp_amp', h: '&ampersand_ampersand'}
+  k: {t: '&', h: '&ampersand_ampersand'}
 - p: [25, 26]
-  k: {t: '&kp_pipe', h: '&pipe_pipe'}
+  k: {t: '|', h: '&pipe_pipe'}
 - p: [24, 26]
   k: '#'
 - p: [24, 37]
-  k: {t: '&kp_bac', h: '&backslash_backslash'}
+  k: {t: \, h: '&backslash_backslash'}
 - p: [25, 36]
-  k: {t: '&kp_slash', h: '&slash_slash'}
+  k: {t: /, h: '&slash_slash'}
 - p: [25, 38]
   k: '-'
 - p: [26, 37]
   k: '&equal_equal'
 - p: [36, 37]
-  k: {t: '&kp_colon', h: '&colon_space'}
+  k: {t: ':', h: '&colon_space'}
 - p: [37, 38]
   k: .
 - p: [36, 38]
@@ -840,9 +840,9 @@ combos:
 - p: [38, 49]
   k: '*'
 - p: [48, 49]
-  k: {t: '&kp_les_tha', h: '&less_than_gre_tha_left_arrow', s: '>'}
+  k: {t: <, h: '&less_than_gre_tha_left_arrow', s: '>'}
 - p: [50, 49]
-  k: {t: '&kp_lef_par', h: '&lef_par_rig_par_left_arrow', s: )}
+  k: {t: (, h: '&lef_par_rig_par_left_arrow', s: )}
 - p: [48, 50]
   k: _
 - p: [29, 30]
@@ -854,13 +854,13 @@ combos:
 - p: [29, 42]
   k: ^
 - p: [41, 30]
-  k: {t: '&kp_grave', h: '&grave_grave_grave'}
+  k: {t: '`', h: '&grave_grave_grave'}
 - p: [31, 42]
   k: $
 - p: [41, 42]
-  k: {t: '&kp_comma', h: '&comma_space'}
+  k: {t: ',', h: '&comma_space'}
 - p: [42, 43]
-  k: {t: '&kp_sem', h: '&semicolon_enter'}
+  k: {t: ;, h: '&semicolon_enter'}
 - p: [41, 43]
   k: '?'
 - p: [42, 59]
@@ -868,6 +868,6 @@ combos:
 - p: [42, 61]
   k: '@'
 - p: [59, 60]
-  k: {t: '&kp_lef_bra', h: '&left_brace_rig_bra_left_arrow', s: '}'}
+  k: {t: '{', h: '&left_brace_rig_bra_left_arrow', s: '}'}
 - p: [60, 61]
-  k: {t: '&kp_lef_bra', h: '&lef_bra_rig_bra_left_arrow', s: ']'}
+  k: {t: '[', h: '&lef_bra_rig_bra_left_arrow', s: ']'}

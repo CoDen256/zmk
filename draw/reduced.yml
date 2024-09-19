@@ -816,13 +816,13 @@ combos:
   - 24
   - 25
   k:
-    t: '&kp_amp'
+    t: '&'
     h: '&ampersand_ampersand'
 - p:
   - 25
   - 26
   k:
-    t: '&kp_pipe'
+    t: '|'
     h: '&pipe_pipe'
 - p:
   - 24
@@ -832,13 +832,13 @@ combos:
   - 24
   - 37
   k:
-    t: '&kp_bac'
+    t: \
     h: '&backslash_backslash'
 - p:
   - 25
   - 36
   k:
-    t: '&kp_slash'
+    t: /
     h: '&slash_slash'
 - p:
   - 25
@@ -852,7 +852,7 @@ combos:
   - 36
   - 37
   k:
-    t: '&kp_colon'
+    t: ':'
     h: '&colon_space'
 - p:
   - 37
@@ -882,14 +882,14 @@ combos:
   - 48
   - 49
   k:
-    t: '&kp_les_tha'
+    t: <
     h: '&less_than_gre_tha_left_arrow'
     s: '>'
 - p:
   - 50
   - 49
   k:
-    t: '&kp_lef_par'
+    t: (
     h: '&lef_par_rig_par_left_arrow'
     s: )
 - p:
@@ -916,7 +916,7 @@ combos:
   - 41
   - 30
   k:
-    t: '&kp_grave'
+    t: '`'
     h: '&grave_grave_grave'
 - p:
   - 31
@@ -926,13 +926,13 @@ combos:
   - 41
   - 42
   k:
-    t: '&kp_comma'
+    t: ','
     h: '&comma_space'
 - p:
   - 42
   - 43
   k:
-    t: '&kp_sem'
+    t: ;
     h: '&semicolon_enter'
 - p:
   - 41
@@ -950,13 +950,13 @@ combos:
   - 59
   - 60
   k:
-    t: '&kp_lef_bra'
+    t: '{'
     h: '&left_brace_rig_bra_left_arrow'
     s: '}'
 - p:
   - 60
   - 61
   k:
-    t: '&kp_lef_bra'
+    t: '['
     h: '&lef_bra_rig_bra_left_arrow'
     s: ']'
