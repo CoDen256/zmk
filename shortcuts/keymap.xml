@@ -143,6 +143,7 @@
   <action id="Compile" />
   <action id="CompileDirty" />
   <action id="CompileFile" />
+  <action id="Console.DbmsOutput" />
   <action id="Console.History.Browse" />
   <action id="Console.Jdbc.BrowseHistory" />
   <action id="Console.TableResult.CloneColumn" />
@@ -259,6 +260,7 @@
   </action>
   <action id="EditorIndentLineOrSelection">
     <keyboard-shortcut first-keystroke="ctrl tab" />
+    <keyboard-shortcut first-keystroke="tab" />
   </action>
   <action id="EditorJoinLines">
     <keyboard-shortcut first-keystroke="shift alt o" />
@@ -299,10 +301,6 @@
   <action id="EditorToggleUseSoftWraps" />
   <action id="EditorUnSelectWord">
     <keyboard-shortcut first-keystroke="shift ctrl a" />
-  </action>
-  <action id="EditorUnindentSelection">
-    <keyboard-shortcut first-keystroke="shift tab" />
-    <keyboard-shortcut first-keystroke="shift ctrl tab" />
   </action>
   <action id="EmmetNextEditPoint" />
   <action id="EmmetPreviousEditPoint" />
@@ -609,13 +607,15 @@
   <action id="NextDiff">
     <keyboard-shortcut first-keystroke="shift f4" />
   </action>
+  <action id="NextSplitter">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt c" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="shift meta alt n" />
   </action>
   <action id="OpenFile" />
   <action id="OpenInRightSplit">
     <mouse-shortcut keystroke="alt button1 doubleClick" />
-    <keyboard-shortcut first-keystroke="shift ctrl meta alt h" />
   </action>
   <action id="OpenKeymapPanel">
     <keyboard-shortcut first-keystroke="shift meta alt k" />
@@ -639,6 +639,9 @@
     <keyboard-shortcut first-keystroke="f3" />
   </action>
   <action id="PlantUML.Update" />
+  <action id="PrevSplitter">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt h" />
+  </action>
   <action id="PreviousDiff">
     <keyboard-shortcut first-keystroke="shift f3" />
   </action>
@@ -815,6 +818,9 @@
   <action id="SplitHorizontally">
     <keyboard-shortcut first-keystroke="shift ctrl meta alt u" />
   </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt g" />
+  </action>
   <action id="Sql.EditParameter" />
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="f9" />
@@ -840,6 +846,12 @@
   <action id="SwitchCoverage" />
   <action id="SwitchHeaderSource" />
   <action id="Switcher" />
+  <action id="SwitcherBackward">
+    <keyboard-shortcut first-keystroke="shift alt 2" />
+  </action>
+  <action id="SwitcherForward">
+    <keyboard-shortcut first-keystroke="alt back_quote" />
+  </action>
   <action id="Synchronize" />
   <action id="TableResult.GrowSelection" />
   <action id="TableResult.SelectColumn" />
@@ -864,6 +876,9 @@
   <action id="ToggleBookmark3" />
   <action id="ToggleBookmark9" />
   <action id="ToggleBookmarkWithMnemonic" />
+  <action id="ToggleBreakpointAction">
+    <keyboard-shortcut first-keystroke="shift f22" />
+  </action>
   <action id="ToggleBreakpointEnabled" />
   <action id="ToggleDistractionFreeMode" />
   <action id="ToggleFindInSelection">
@@ -872,7 +887,6 @@
   <action id="ToggleFullScreen" />
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="alt d" />
-    <keyboard-shortcut first-keystroke="f7" />
   </action>
   <action id="TogglePresentationMode" />
   <action id="ToggleTemporaryLineBreakpoint" />
@@ -946,18 +960,18 @@
     <keyboard-shortcut first-keystroke="shift f3" />
   </action>
   <action id="ViewBreakpoints">
-    <keyboard-shortcut first-keystroke="shift ctrl alt d" />
+    <keyboard-shortcut first-keystroke="shift alt d" second-keystroke="b" />
   </action>
   <action id="WD.UploadCurrentRemoteFileAction" />
   <action id="WelcomeScreen.Plugins">
     <keyboard-shortcut first-keystroke="shift meta alt g" />
   </action>
   <action id="XDebugger.AttachToProcess">
-    <keyboard-shortcut first-keystroke="shift alt d" />
+    <keyboard-shortcut first-keystroke="shift alt d" second-keystroke="a" />
   </action>
   <action id="XDebugger.CopyWatch" />
   <action id="XDebugger.MuteBreakpoints">
-    <keyboard-shortcut first-keystroke="shift f22" />
+    <keyboard-shortcut first-keystroke="shift alt d" second-keystroke="m" />
   </action>
   <action id="XDebugger.SetValue">
     <keyboard-shortcut first-keystroke="f2" />

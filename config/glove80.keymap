@@ -773,49 +773,64 @@ release-after-ms = <5000>;};
 
 /*<mods-start>*/
 
-        amp_amp_x_kp_amp:amp_amp_x_kp_amp { label = "AMP_AMP_X_KP_AMP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        GH_delegate:GH_delegate { label = "GH_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
             bindings = <&ampersand_ampersand>, <&kp_amp>;
         };
 
-        pipe_pipe_x_kp_pipe:pipe_pipe_x_kp_pipe { label = "PIPE_PIPE_X_KP_PIPE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        HC_delegate:HC_delegate { label = "HC_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
             bindings = <&pipe_pipe>, <&kp_pipe>;
         };
 
-        bac_bac_x_kp_bac:bac_bac_x_kp_bac { label = "BAC_BAC_X_KP_BAC"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        GI_delegate:GI_delegate { label = "GI_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
             bindings = <&backslash_backslash>, <&kp_bac>;
         };
 
-        sla_sla_x_kp_slash:sla_sla_x_kp_slash { label = "SLA_SLA_X_KP_SLASH"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        HA_delegate:HA_delegate { label = "HA_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <120>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
             bindings = <&slash_slash>, <&kp_slash>;
         };
 
-        col_spa_x_kp_colon:col_spa_x_kp_colon { label = "COL_SPA_X_KP_COLON"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        AI_delegate:AI_delegate { label = "AI_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
             bindings = <&colon_space>, <&kp_colon>;
         };
 
-        _hold_tap:_hold_tap { label = "_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        FU_delegate_hold_tap:FU_delegate_hold_tap { label = "FU_DELEGATE_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
-            bindings = <&lef_bra_rig_bra_left_arrow>, <&kp_lef_bra>;
+            bindings = <&less_than_gre_tha_left_arrow>, <&kp_les_tha>;
         };
 
-        gra_gra_gra_x_kp_grave:gra_gra_gra_x_kp_grave { label = "GRA_GRA_GRA_X_KP_GRAVE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        PU_delegate_hold_tap:PU_delegate_hold_tap { label = "PU_DELEGATE_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            bindings = <&lef_par_rig_par_left_arrow>, <&kp_lef_par>;
+        };
+
+        TL_delegate:TL_delegate { label = "TL_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <120>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
             bindings = <&grave_grave_grave>, <&kp_grave>;
         };
 
-        com_spa_x_kp_comma:com_spa_x_kp_comma { label = "COM_SPA_X_KP_COMMA"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        TR_delegate:TR_delegate { label = "TR_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
             bindings = <&comma_space>, <&kp_comma>;
         };
 
-        sem_ent_x_kp_sem:sem_ent_x_kp_sem { label = "SEM_ENT_X_KP_SEM"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        RE_delegate:RE_delegate { label = "RE_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
             bindings = <&semicolon_enter>, <&kp_sem>;
+        };
+
+        MD_delegate_hold_tap:MD_delegate_hold_tap { label = "MD_DELEGATE_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            bindings = <&left_brace_rig_bra_left_arrow>, <&kp_lef_bra>;
+        };
+
+        DY_delegate_hold_tap:DY_delegate_hold_tap { label = "DY_DELEGATE_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 28 40 58 75 76 78>;
+            bindings = <&lef_bra_rig_bra_left_arrow>, <&kp_lef_bra>;
         };
 
         G_key_hold_tap:G_key_hold_tap { label = "G_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
@@ -1440,44 +1455,26 @@ release-after-ms = <5000>;};
             keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
-        CTRL_TAB:CTRL_TAB { label = "CTRL_TAB"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LC(TAB)>, <&CTRL_TAB_lalt_sink>;
-            mods = <(MOD_LALT)>;
-            
-        };
-
-        CTRL_TAB_lalt_sink:CTRL_TAB_lalt_sink { label = "CTRL_TAB_LALT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LC(TAB)>, <&kp LC(TAB)>;
-            mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-        };
-
-        SHIFT_CTRL_TAB:SHIFT_CTRL_TAB { label = "SHIFT_CTRL_TAB"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LS(LC(TAB))>, <&SHIFT_CTRL_TAB_lalt_sink>;
-            mods = <(MOD_LALT)>;
-            
-        };
-
-        SHIFT_CTRL_TAB_lalt_sink:SHIFT_CTRL_TAB_lalt_sink { label = "SHIFT_CTRL_TAB_LALT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LS(LC(TAB))>, <&kp LS(LC(TAB))>;
-            mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-        };
-
-        hold_tap_or_gre_tha:hold_tap_or_gre_tha { label = "HOLD_TAP_OR_GRE_THA"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&_hold_tap 0 0>, <&kp GREATER_THAN>;
+        FU_delegate:FU_delegate { label = "FU_DELEGATE"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&FU_delegate_hold_tap 0 0>, <&kp GREATER_THAN>;
             mods = <(MOD_RCTL)>;
             
         };
 
-        hold_tap_or_rig_par:hold_tap_or_rig_par { label = "HOLD_TAP_OR_RIG_PAR"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&_hold_tap 0 0>, <&kp RIGHT_PARENTHESIS>;
+        PU_delegate:PU_delegate { label = "PU_DELEGATE"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&PU_delegate_hold_tap 0 0>, <&kp RIGHT_PARENTHESIS>;
             mods = <(MOD_RCTL)>;
             
         };
 
-        hold_tap_or_rig_bra:hold_tap_or_rig_bra { label = "HOLD_TAP_OR_RIG_BRA"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&_hold_tap 0 0>, <&kp RIGHT_BRACKET>;
+        MD_delegate:MD_delegate { label = "MD_DELEGATE"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&MD_delegate_hold_tap 0 0>, <&kp RIGHT_BRACE>;
+            mods = <(MOD_LCTL)>;
+            
+        };
+
+        DY_delegate:DY_delegate { label = "DY_DELEGATE"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&DY_delegate_hold_tap 0 0>, <&kp RIGHT_BRACKET>;
             mods = <(MOD_LCTL)>;
             
         };
@@ -1556,11 +1553,11 @@ release-after-ms = <5000>;};
 /*<combos-start>*/
 
         GH { timeout-ms = <10>; key-positions = <24 25>;
-            bindings = <&amp_amp_x_kp_amp 0 0>; 
+            bindings = <&GH_delegate 0 0>; 
         };
 
         HC { timeout-ms = <10>; key-positions = <25 26>;
-            bindings = <&pipe_pipe_x_kp_pipe 0 0>; 
+            bindings = <&HC_delegate 0 0>; 
         };
 
         GC { timeout-ms = <10>; key-positions = <24 26>;
@@ -1568,11 +1565,11 @@ release-after-ms = <5000>;};
         };
 
         GI { timeout-ms = <10>; key-positions = <24 37>;
-            bindings = <&bac_bac_x_kp_bac 0 0>; 
+            bindings = <&GI_delegate 0 0>; 
         };
 
         HA { timeout-ms = <10>; key-positions = <25 36>;
-            bindings = <&sla_sla_x_kp_slash 0 0>; 
+            bindings = <&HA_delegate 0 0>; 
         };
 
         HN { timeout-ms = <10>; key-positions = <25 38>;
@@ -1584,7 +1581,7 @@ release-after-ms = <5000>;};
         };
 
         AI { timeout-ms = <10>; key-positions = <36 37>;
-            bindings = <&col_spa_x_kp_colon 0 0>; 
+            bindings = <&AI_delegate 0 0>; 
         };
 
         IN { timeout-ms = <10>; key-positions = <37 38>;
@@ -1612,11 +1609,11 @@ release-after-ms = <5000>;};
         };
 
         FU { timeout-ms = <10>; key-positions = <48 49>;
-            bindings = <&hold_tap_or_gre_tha>; 
+            bindings = <&FU_delegate>; 
         };
 
         PU { timeout-ms = <10>; key-positions = <50 49>;
-            bindings = <&hold_tap_or_rig_par>; 
+            bindings = <&PU_delegate>; 
         };
 
         FP { timeout-ms = <10>; key-positions = <48 50>;
@@ -1640,7 +1637,7 @@ release-after-ms = <5000>;};
         };
 
         TL { timeout-ms = <10>; key-positions = <41 30>;
-            bindings = <&gra_gra_gra_x_kp_grave 0 0>; 
+            bindings = <&TL_delegate 0 0>; 
         };
 
         BR { timeout-ms = <10>; key-positions = <31 42>;
@@ -1648,11 +1645,11 @@ release-after-ms = <5000>;};
         };
 
         TR { timeout-ms = <10>; key-positions = <41 42>;
-            bindings = <&com_spa_x_kp_comma 0 0>; 
+            bindings = <&TR_delegate 0 0>; 
         };
 
         RE { timeout-ms = <10>; key-positions = <42 43>;
-            bindings = <&sem_ent_x_kp_sem 0 0>; 
+            bindings = <&RE_delegate 0 0>; 
         };
 
         TE { timeout-ms = <10>; key-positions = <41 43>;
@@ -1668,11 +1665,11 @@ release-after-ms = <5000>;};
         };
 
         MD { timeout-ms = <10>; key-positions = <59 60>;
-            bindings = <&hold_tap_or_rig_bra>; 
+            bindings = <&MD_delegate>; 
         };
 
         DY { timeout-ms = <10>; key-positions = <60 61>;
-            bindings = <&hold_tap_or_rig_bra>; 
+            bindings = <&DY_delegate>; 
         };
 /*<combos-end>*/
 
@@ -1758,7 +1755,7 @@ switcher {
 &trans  &trans  &trans           &trans  &trans                                                                        &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp F4           &trans  &kp ESCAPE  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LS(TAB)      &none   &kp TAB     &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F4  &SHIFT_CTRL_TAB  &trans  &CTRL_TAB   &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F4  &kp AT  &trans  &kp GRAVE   &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans           &trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans           &trans  &trans              &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
 >;};

@@ -523,9 +523,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F4
-  - {t: Sft+Ctl+ TAB, s: Sft+Ctl+ TAB}
+  - '@'
   - {t: ▽, type: trans}
-  - {t: Ctl+ TAB, s: Ctl+ TAB}
+  - '`'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -840,9 +840,9 @@ combos:
 - p: [38, 49]
   k: '*'
 - p: [48, 49]
-  k: {t: '&kp_lef_bra', h: '&lef_bra_rig_bra_left_arrow', s: '>'}
+  k: {t: '&kp_les_tha', h: '&less_than_gre_tha_left_arrow', s: '>'}
 - p: [50, 49]
-  k: {t: '&kp_lef_bra', h: '&lef_bra_rig_bra_left_arrow', s: )}
+  k: {t: '&kp_lef_par', h: '&lef_par_rig_par_left_arrow', s: )}
 - p: [48, 50]
   k: _
 - p: [29, 30]
@@ -868,6 +868,6 @@ combos:
 - p: [42, 61]
   k: '@'
 - p: [59, 60]
-  k: {t: '&kp_lef_bra', h: '&lef_bra_rig_bra_left_arrow', s: ']'}
+  k: {t: '&kp_lef_bra', h: '&left_brace_rig_bra_left_arrow', s: '}'}
 - p: [60, 61]
   k: {t: '&kp_lef_bra', h: '&lef_bra_rig_bra_left_arrow', s: ']'}

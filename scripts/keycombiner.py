@@ -6,42 +6,48 @@ import xml.etree.ElementTree as ET
 from scripts.regsetup import description
 
 modsmap = {
-    "LC" : "ctrl+",
-    "RC" : "ctrl+",
-    "rctrl" : "ctrl+",
-    "ralt" : "ctrl+",
-    "lctrl" : "ctrl+",
-    "lalt" : "ctrl+",
-    "LS" : "shift+",
-    "RS" : "shift+",
-    "rshift" : "shift+",
-    "lshift" : "shift+"
+    "LC": "ctrl+",
+    "RC": "ctrl+",
+    "rctrl": "ctrl+",
+    "ralt": "ctrl+",
+    "lctrl": "ctrl+",
+    "lalt": "ctrl+",
+    "LS": "shift+",
+    "RS": "shift+",
+    "rshift": "shift+",
+    "lshift": "shift+"
 }
+
+
 def clear(mod):
-    for (k,v) in modsmap.items():
+    for (k, v) in modsmap.items():
         if k in mod:
-            mod = mod.replace(k,v)
+            mod = mod.replace(k, v)
     return mod.lower().replace("(", "").replace(")", "").replace("tilde", "`").replace("caret", "^")
+
+
 def get_reserved(origin):
     with open(origin, "r") as f:
         data = yaml.safe_load(f.read())
 
     reserved_map = {
     }
-    for (k,v) in data["map"].items():
+    for (k, v) in data["morph"].items():
         v.pop("hold", None)
         v.pop("hold.bind", None)
         v.pop("config", None)
         v.pop("pos", None)
         v.pop("key", None)
         for (mod, key) in v.items():
+            if not "shift" in mod or not "ctrl" in mod or not "alt" in mod or not "gui" in mod: continue
             m = clear(key)
-            if m in ["ctrl+s","ctrl+x","ctrl+f","ctrl+c","ctrl+a","ctrl+z","ctrl+v","ctrl+y"]:
+            if m in ["ctrl+s", "ctrl+x", "ctrl+f", "ctrl+c", "ctrl+a", "ctrl+z", "ctrl+v", "ctrl+y"]:
                 pass
             else:
                 reserved_map[m] = modsmap[mod] + k.lower()
 
     return reserved_map
+
 
 reserved = [
     ("<win reserved action>", "meta+shift+c"),
@@ -210,5 +216,7 @@ def run(origin, target):
     # print(set(list((map(lambda x: (x[0],x[1]), data)))))
     # print(set(list(itertools.chain.from_iterable((map(lambda x: re.split("\s*(OR|\\+|>)\s*", x[1]), data))))))
     write(target, keymap)
+
+
 # base = "C:\\dev\\zmk-config"
-# run(f"{base}\\shortcuts\\keymap.xml",f"{base}\\shortcuts\\keymap.csv")
+# run(f"{base}\\shortcuts\\keymap.xml", f"{base}\\shortcuts\\keymap.csv")

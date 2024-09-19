@@ -882,15 +882,15 @@ combos:
   - 48
   - 49
   k:
-    t: '&kp_lef_bra'
-    h: '&lef_bra_rig_bra_left_arrow'
+    t: '&kp_les_tha'
+    h: '&less_than_gre_tha_left_arrow'
     s: '>'
 - p:
   - 50
   - 49
   k:
-    t: '&kp_lef_bra'
-    h: '&lef_bra_rig_bra_left_arrow'
+    t: '&kp_lef_par'
+    h: '&lef_par_rig_par_left_arrow'
     s: )
 - p:
   - 48
@@ -951,8 +951,8 @@ combos:
   - 60
   k:
     t: '&kp_lef_bra'
-    h: '&lef_bra_rig_bra_left_arrow'
-    s: ']'
+    h: '&left_brace_rig_bra_left_arrow'
+    s: '}'
 - p:
   - 60
   - 61

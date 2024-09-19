@@ -102,6 +102,8 @@ class ComboParser:
         if isinstance(node, dict):
             if "combo" in node:
                 node = node["combo"]
+            else :
+                node["name"] = name+ "_delegate"
         binding = self.anon_parser.parse(node)
         return Combo(name, pos, binding, **cfg)
 

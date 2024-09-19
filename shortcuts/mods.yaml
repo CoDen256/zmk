@@ -42,11 +42,6 @@ morph:
   X:  { lshift: "LS(F24)",lctrl: "LC(F24)" }
   Z:  { lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
 
-
-
-  CTRL_TAB: {default: "LC(TAB)", lalt: "LC(TAB)"}
-  SHIFT_CTRL_TAB: {default: "LS(LC(TAB))", lalt: "LS(LC(TAB))"}
-
 hold-tap:
   config:
     flavor: "balanced"
@@ -89,7 +84,7 @@ macro:
   CS_key: ["LG(F10)"]
   GG_key: "^"
 
-#  OO_key: ""
+#  OO_key:
 #  NN_key: 39
 #  PP_key: 51
 #
