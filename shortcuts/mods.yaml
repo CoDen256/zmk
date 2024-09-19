@@ -43,6 +43,7 @@ morph:
   Z:  { lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
 
 
+
   CTRL_TAB: {default: "LC(TAB)", lalt: "LC(TAB)"}
   SHIFT_CTRL_TAB: {default: "LS(LC(TAB))", lalt: "LS(LC(TAB))"}
 
@@ -82,6 +83,34 @@ macro:
   move_selection_right: "<&kp LC(X) &kp RIGHT &kp LA(LC(V))>"
   move_selection_left: "<&kp LC(X) &kp LEFT &kp LA(LC(V))>"
 
+    # extra
+  G3_key: "&none"
+  C5_key: ["F9"]
+  CS_key: ["LG(F10)"]
+  GG_key: "^"
+
+#  OO_key: ""
+#  NN_key: 39
+#  PP_key: 51
+#
+#  UQ_key: 67
+#  PQ_key: 68
+#  JQ_key: 65
+#
+#  VS_key: 16
+#  V6_key: 17
+#  L7_key: 18
+#  B8_key: 19
+#  BB_key: 32
+#
+#  SS_key: 45
+#  VV_key: 28
+#  TT_key: 40
+#  MM_key: 58
+#
+#  MZ_key: 75
+#  DZ_key: 76
+#  XZ_key: 78
 
 combo:
   config:
@@ -149,9 +178,21 @@ keys:
     U: 49
     P: 50
     Q: 66
-    Tab: 67
-    Enter: 68
-    Escape: 39
+
+    G3: 12
+    C5: 14
+    GG: 23
+    CS: 15
+
+    OO: 34
+    NN: 39
+    PP: 51
+
+    UQ: 67
+    PQ: 68
+    JQ: 65
+
+
   right:
     V: 29
     L: 30
@@ -165,5 +206,19 @@ keys:
     Y: 61
     X: 62
     Z: 77
-    Tab: 76
-    Enter: 75
+
+
+    VS: 16
+    V6: 17
+    L7: 18
+    B8: 19
+    BB: 32
+
+    SS: 45
+    VV: 28
+    TT: 40
+    MM: 58
+
+    MZ: 75
+    DZ: 76
+    XZ: 78

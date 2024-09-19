@@ -3,9 +3,9 @@ layers:
   main:
   - F1
   - F2
-  - LALT
-  - LSHFT
-  - LCTRL
+  - F3
+  - F4
+  - F5
   - F6
   - F7
   - F8
@@ -13,10 +13,10 @@ layers:
   - F10
   - VOLUME DOWN
   - VOLUME UP
-  - '&key_repeat'
+  - '&G3_key'
   - {t: K, s: Sft+ F1}
-  - F9
-  - Gui+ F10
+  - '&C5_key'
+  - '&CS_key'
   - Gui+ F11
   - Gui+ F12
   - '&key_repeat'
@@ -24,33 +24,33 @@ layers:
   - ''
   - ''
   - MUTE
-  - ^
-  - {t: '&kp_g', h: '&press_lctrl_lctrl', s: Sft+ F2}
-  - {t: '&kp_h', h: '&press_lalt_lalt', s: Sft+ F3}
+  - '&GG_key'
+  - {t: '&kp_g', h: '&press_lnav_lctrl_lnav_lctrl', s: Sft+ F2}
+  - {t: '&kp_h', h: '&press_lsw_lal_lsw_lal', s: Sft+ F3}
   - {t: C, s: Ctl+ F4}
   - {t: W, s: Sft+ F5}
   - ''
   - {t: V, s: Ctl+ F14}
   - {t: L, s: Sft+ F15}
-  - {t: '&kp_b', h: '&press_ralt_ralt', s: Sft+ F16}
+  - {t: '&kp_b', h: '&press_lnav_ralt_lnav_ralt', s: Sft+ F16}
   - $
   - ''
   - LEFT WIN
   - {t: O, s: Sft+ F6}
-  - {t: '&kp_a', h: '&press_lalt_lalt', s: Sft+ F7}
-  - {t: '&kp_i', h: '&press_lshift_lshift', s: Sft+ F8}
-  - {t: '&kp_n', h: '&press_lctrl_lctrl', s: Sft+ F9}
+  - {t: '&kp_a', h: '&press_kp_lalt_kp_lalt', s: Sft+ F7}
+  - {t: '&kp_i', h: '&press_kp_lshift_kp_lshift', s: Sft+ F8}
+  - {t: '&kp_n', h: '&press_kp_lctrl_kp_lctrl', s: Sft+ F9}
   - ESCAPE
   - DELETE
-  - {t: '&kp_t', h: '&press_rctrl_rctrl', s: Sft+ F17}
-  - {t: '&kp_r', h: '&press_rshift_rshift', s: Sft+ F18}
-  - {t: '&kp_e', h: '&press_ralt_ralt', s: Sft+ F19}
+  - {t: '&kp_t', h: '&press_kp_rctrl_kp_rctrl', s: Sft+ F17}
+  - {t: '&kp_r', h: '&press_kp_rshift_kp_rshift', s: Sft+ F18}
+  - {t: '&kp_e', h: '&press_kp_ralt_kp_ralt', s: Sft+ F19}
   - {t: S, s: Ctl+ F20}
   - RMETA
   - fun
   - {t: J, s: Sft+ F10}
-  - {t: '&kp_f', h: '&press', s: Sft+ F11}
-  - {t: '&kp_u', h: '&press_lgui_lgui', s: Sft+ F12}
+  - {t: '&kp_f', h: '&press_mo_4_mo_4', s: Sft+ F11}
+  - {t: '&kp_u', h: '&press_kp_lgui_kp_lgui', s: Sft+ F12}
   - {t: P, s: Sft+ F13}
   - ''
   - BACKSPACE
@@ -60,9 +60,9 @@ layers:
   - {t: num, h: toggle}
   - DELETE
   - ''
-  - {t: '&kp_m', h: '&press', s: Sft+ F21}
-  - {t: '&kp_d', h: '&press_rgui_rgui', s: Sft+ F22}
-  - {t: '&kp_y', h: '&press', s: Ctl+ F23}
+  - {t: '&kp_m', h: '&press_mo_3_mo_3', s: Sft+ F21}
+  - {t: '&kp_d', h: '&press_kp_rgui_kp_rgui', s: Sft+ F22}
+  - {t: '&kp_y', h: '&press_mo_4_mo_4', s: Ctl+ F23}
   - {t: X, s: Ctl+ F24}
   - ''
   - '&reloadkeymap'
@@ -198,8 +198,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&press_left_alt_tap_kp_num_0kp_num_kp_num', s: '&press_left_alt_tap_kp_num_0kp_num_kp_num'}
-  - {t: '&press_left_alt_tap_kp_num_0kp_num_kp_num', s: '&press_left_alt_tap_kp_num_0kp_num_1kp_nu'}
+  - {t: '&press_kp_lef_alt_0_2_4_6_kp_lalt', s: '&press_kp_lef_alt_0_2_1_4_kp_lalt'}
+  - {t: '&press_kp_lef_alt_0_2_2_8_kp_lalt', s: '&press_kp_lef_alt_0_1_9_6_kp_lalt'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -207,12 +207,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&press_left_alt_tap_kp_num_0kp_num_kp_num', s: '&press_left_alt_tap_kp_num_0kp_num_kp_num'}
+  - {t: '&press_kp_lef_alt_0_2_2_3_kp_lalt', s: '&press_kp_lef_alt_0_7_8_3_8_kp_lalt'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&press_left_alt_tap_kp_num_0kp_num_kp_num', s: '&press_left_alt_tap_kp_num_0kp_num_kp_num'}
+  - {t: '&press_kp_lef_alt_0_2_5_2_kp_lalt', s: '&press_kp_lef_alt_0_2_2_0_kp_lalt'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -812,21 +812,21 @@ layers:
   - BT CLR ALL
 combos:
 - p: [24, 25]
-  k: {t: '&ampersand', h: '&tap_ampersand_ampersand'}
+  k: {t: '&kp_amp', h: '&ampersand_ampersand'}
 - p: [25, 26]
-  k: {t: '&pipe', h: '&tap_pipe_pipe'}
+  k: {t: '&kp_pipe', h: '&pipe_pipe'}
 - p: [24, 26]
   k: '#'
 - p: [24, 37]
-  k: {t: '&backslash', h: '&tap_backslash_backslash'}
+  k: {t: '&kp_bac', h: '&backslash_backslash'}
 - p: [25, 36]
-  k: {t: '&slash', h: '&tap_slash_slash'}
+  k: {t: '&kp_slash', h: '&slash_slash'}
 - p: [25, 38]
   k: '-'
 - p: [26, 37]
-  k: '&tap_equal_equal'
+  k: '&equal_equal'
 - p: [36, 37]
-  k: {t: '&colon', h: '&tap_colon_space'}
+  k: {t: '&kp_colon', h: '&colon_space'}
 - p: [37, 38]
   k: .
 - p: [36, 38]
@@ -834,15 +834,15 @@ combos:
 - p: [36, 49]
   k: +
 - p: [37, 48]
-  k: '&tap_exc_equal'
+  k: '&exc_equal'
 - p: [37, 50]
   k: '='
 - p: [38, 49]
   k: '*'
 - p: [48, 49]
-  k: {t: '&less_than', h: '&tap_less_than_gre_tha_left_arrow', s: '>'}
+  k: {t: '&kp_lef_bra', h: '&lef_bra_rig_bra_left_arrow', s: '>'}
 - p: [50, 49]
-  k: {t: '&lef_par', h: '&tap_lef_par_rig_par_left_arrow', s: )}
+  k: {t: '&kp_lef_bra', h: '&lef_bra_rig_bra_left_arrow', s: )}
 - p: [48, 50]
   k: _
 - p: [29, 30]
@@ -854,20 +854,20 @@ combos:
 - p: [29, 42]
   k: ^
 - p: [41, 30]
-  k: {t: '&grave', h: '&tap_grave_grave_grave'}
+  k: {t: '&kp_grave', h: '&grave_grave_grave'}
 - p: [31, 42]
   k: $
 - p: [41, 42]
-  k: {t: '&comma', h: '&tap_comma_space'}
+  k: {t: '&kp_comma', h: '&comma_space'}
 - p: [42, 43]
-  k: {t: '&semicolon', h: '&tap_semicolon_enter'}
+  k: {t: '&kp_sem', h: '&semicolon_enter'}
 - p: [41, 43]
   k: '?'
 - p: [42, 59]
-  k: '&tap_minus_gre_tha'
+  k: '&minus_gre_tha'
 - p: [42, 61]
   k: '@'
 - p: [59, 60]
-  k: {t: '&lef_bra', h: '&tap_lef_bra_rig_bra_left_arrow', s: ']'}
+  k: {t: '&kp_lef_bra', h: '&lef_bra_rig_bra_left_arrow', s: ']'}
 - p: [60, 61]
-  k: {t: '&lef_bra', h: '&tap_lef_bra_rig_bra_left_arrow', s: ']'}
+  k: {t: '&kp_lef_bra', h: '&lef_bra_rig_bra_left_arrow', s: ']'}

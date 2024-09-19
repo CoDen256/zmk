@@ -126,12 +126,13 @@ class MorphParser:
         if not name:
             name = None
 
+        sub_name = ("" if not orig else orig) if not name else name
         if self.hold_tap_parser.is_inline_holdtap(node):
             default = self.anon_parser.parse(node)
         elif orig and self.hold_tap_parser.is_inline_holdtap(node | {"tap": orig}):
-            default = self.anon_parser.parse(node | {"tap": orig})
+            default = self.anon_parser.parse(node | {"tap": orig, "name": sub_name+"_hold_tap"})
         elif default and self.hold_tap_parser.is_inline_holdtap(node | {"tap": default}):
-            default = self.anon_parser.parse(node | {"tap": default})
+            default = self.anon_parser.parse(node | {"tap": default, "name": sub_name+"_hold_tap"})
         elif default:
             default = self.anon_parser.parse(default)
 
@@ -255,6 +256,7 @@ class KeyParser:
         key = re.sub(mods, r"\1", key)
         key = re.sub(mods, r"\1", key)
         key = re.sub(mods, r"\1", key)
+
         return (key in keynames or re.fullmatch("[A-Z0-9_]+|[ -~\n\t]", key))
 
     def parse(self, key):
@@ -396,13 +398,14 @@ def readable(orig):
     binding = re.sub(mods, r"\1", orig)
     binding = re.sub(mods, r"\1", binding)
     binding = re.sub(mods, r"\1", binding)
-    binding = binding.replace("macro_pause_for_release", "")
-    binding = binding.replace("macro_release", "")
-    binding = binding.replace("macro", "")
-    nobind = re.sub("&[a-zA-Z0-1_]+ ", "",  binding)
-    nobind = re.sub("[^a-zA-Z0-1_]", "", nobind)
+    binding = binding.replace("&macro_pause_for_release", "")
+    binding = binding.replace("&macro_release", "")
+    binding = binding.replace("&macro_tap", "")
+    binding = binding.replace("&macro", "")
+    binding = binding.replace("&kp KP_NUMBER_", "")
+    nobind = re.sub("[^a-zA-Z0-9_& ]", "", binding)
     result = (nobind if len(nobind) > 2 else re.sub("&([a-zA-Z0-1_]+) ", r"\1_",  binding)).lower()
-    return clean(re.sub("[^a-zA-Z0-1_]", "", result), "")
+    return clean(re.sub("[^a-zA-Z0-9_]", "", result.replace(" ", "_")), "")
 
 class Binding:
     def __init__(self, binding, name=None):
