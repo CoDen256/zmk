@@ -852,7 +852,9 @@
   <action id="SwitcherForward">
     <keyboard-shortcut first-keystroke="alt back_quote" />
   </action>
-  <action id="Synchronize" />
+  <action id="Synchronize">
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
   <action id="TableResult.GrowSelection" />
   <action id="TableResult.SelectColumn" />
   <action id="TableResult.UnselectPreviousOccurrence" />

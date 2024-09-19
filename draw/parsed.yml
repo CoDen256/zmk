@@ -35,12 +35,12 @@ layers:
   - {t: B, h: '&lnav RALT', s: Sft+ F16}
   - $
   - ''
-  - LEFT WIN
+  - '&OO_key'
   - {t: O, s: Sft+ F6}
   - {t: A, h: LALT, s: Sft+ F7}
   - {t: I, h: LSHIFT, s: Sft+ F8}
   - {t: N, h: LCTRL, s: Sft+ F9}
-  - ESCAPE
+  - '&NN_key'
   - DELETE
   - {t: T, h: RCTRL, s: Sft+ F17}
   - {t: R, h: RSHIFT, s: Sft+ F18}
@@ -52,7 +52,7 @@ layers:
   - {t: F, h: nav, s: Sft+ F11}
   - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}
   - {t: P, s: Sft+ F13}
-  - ''
+  - '&PP_key'
   - BACKSPACE
   - num
   - {t: '&rgb_ug_status_macro', h: magic}
@@ -66,10 +66,10 @@ layers:
   - {t: X, s: Ctl+ F24}
   - ''
   - '&reloadkeymap'
-  - '@'
+  - '&JQ_key'
   - {t: Q, s: Ctl+ ^}
-  - TAB
-  - ENTER
+  - '&UQ_key'
+  - '&PQ_key'
   - SPACE
   - {t: de, h: sticky}
   - ''

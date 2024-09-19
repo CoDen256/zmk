@@ -1,7 +1,5 @@
-import random
 import re
 import string
-from collections import defaultdict
 from itertools import groupby
 
 import yaml
@@ -62,6 +60,7 @@ keynames = {
     "\7": "",
     "\n": "ENTER",
     "\b": "LEFT_ARROW",
+    "\t": "TAB",
     "\f": "RIGHT_ARROW",
     "\v": "DOWN_ARROW",
     "\r": "UP_ARROW",
@@ -280,36 +279,20 @@ class MacroParser:
         if self.is_valid_binding_list(node): return self.parse_binding_list(name, node)
         if self.is_valid_binding(node): return self.parse_binding(name, node)
         if self.is_valid_unicode(node): return self.parse_unicode(name, node)
+        if self.is_valid_press(node): return self.parse_press(name, node)
 
         return self.parse_tap_inline(name, node)  # assuming is tap inline by default
 
     def parse_inline(self, node):
-        if self.is_valid_tap_list(node): return self.parse_tap_list(self.get_tap_list_name(node), node)
-        if self.is_valid_tap_inline(node): return self.parse_tap_inline(self.get_tap_inline_name(node), node)
-        if self.is_valid_object(node): return self.parse_object(self.get_object_name(node), node)
-        if self.is_valid_binding_list(node): return self.parse_binding_list(self.get_binding_list_name(node), node)
-        if self.is_valid_binding(node): return self.parse_binding(self.get_binding_name(node), node)
-        if self.is_valid_unicode(node): return self.parse_unicode(self.get_unicode_name(node), node)
+        if self.is_valid_tap_list(node): return self.parse_tap_list(None, node)
+        if self.is_valid_tap_inline(node): return self.parse_tap_inline(None, node)
+        if self.is_valid_object(node): return self.parse_object(node.pop("n", None), node)
+        if self.is_valid_binding_list(node): return self.parse_binding_list(None, node)
+        if self.is_valid_binding(node): return self.parse_binding(None, node)
+        if self.is_valid_unicode(node): return self.parse_unicode(None, node)
+        if self.is_valid_press(node): return self.parse_press(None, node)
 
-        return self.parse_tap_inline(self.get_tap_inline_name(node), node)
-
-    def get_tap_list_name(self, node):
-        return None
-
-    def get_tap_inline_name(self, node):
-        return None
-
-    def get_object_name(self, node):
-        return node.pop("n", None)
-
-    def get_binding_list_name(self, node):
-        return None
-
-    def get_binding_name(self, node):
-        return None
-
-    def get_unicode_name(self, node):
-        return None
+        return self.parse_tap_inline(None, node)
 
     def parse_binding(self, name, node):
         return Macro(name, [self.binding_parser.parse(node)], 0, **self.default_cfg)
@@ -324,6 +307,27 @@ class MacroParser:
         node = node.removeprefix("{").removesuffix("}") if node.startswith("{") and node.endswith("}") else node
         return Macro(name, [self.binding_parser.parse("&macro_tap")] + [self.key_parser.parse(k) for k in node], 0,
                      **self.default_cfg)
+
+    def parse_press(self, name, node):
+        target = node.pop("press", node.pop("p", None))
+        if isinstance(target, list):
+            return self.parse_press_list(name, target)
+        return self.parse_press_inline(name, target)
+
+    def parse_press_list(self, name, ls):
+        keys = [self.key_parser.parse(k) for k in ls]
+        press = self.binding_parser.parse("&macro_press")
+        pause = self.binding_parser.parse("&macro_pause_for_release")
+        release = self.binding_parser.parse("&macro_release")
+        return Macro(name, [press, *keys, pause, release, *keys], 0, **self.default_cfg)
+
+    def parse_press_inline(self, name, node):
+        keys = [self.key_parser.parse(k) for k in node]
+        press = self.binding_parser.parse("&macro_press")
+        pause = self.binding_parser.parse("&macro_pause_for_release")
+        release = self.binding_parser.parse("&macro_release")
+        return Macro(name, [press, *keys, pause, release, *keys], 0, **self.default_cfg)
+
 
     def parse_unicode(self, name, node):
         altcode = "0" + str(ord(node))
@@ -341,6 +345,12 @@ class MacroParser:
     def is_valid_object(self, node):
         return isinstance(node, dict) and (
                 "m" in node or "macro" in node)  # {"m": name} or {name : {m: ""}} or {name: ""}
+
+
+    def is_valid_press(self, node):
+        return isinstance(node, dict) and (
+                "p" in node or "press" in node)  # {"m": name} or {name : {m: ""}} or {name: ""}
+
 
     def is_valid_unicode(self, node):
         return isinstance(node, str) and node not in string.printable and len(node) == 1
