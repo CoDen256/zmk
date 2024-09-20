@@ -35,7 +35,7 @@
 "Editor Code Block Start With Selection","shift+alt+home","Main","General","0",""
 "Editor Duplicate","ctrl+g","Main","General","0",""
 "Editor Duplicate Lines","shift+ctrl+g","Main","General","0",""
-"Editor Indent Line Or Selection","ctrl+tab OR tab","Main","General","0",""
+"Editor Indent Line Or Selection","ctrl+tab","Main","General","0",""
 "Editor Join Lines","shift+alt+o","Main","General","0",""
 "Editor Kill To Word End","f10","Main","General","0",""
 "Editor Match Brace","ctrl+j","Main","General","0",""

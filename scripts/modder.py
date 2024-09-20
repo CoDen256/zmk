@@ -295,7 +295,9 @@ class MacroParser:
         return self.parse_tap_inline(None, node)
 
     def parse_binding(self, name, node):
-        return Macro(name, [self.binding_parser.parse(node)], 0, **self.default_cfg)
+        b = self.binding_parser.parse(node)
+        arity = 0 + ("macro_param_1" in b.binding()) + ("macro_param_2" in b.binding())
+        return Macro(name, [b], arity, **self.default_cfg)
 
     def parse_binding_list(self, name, ls):
         bindings = [self.binding_parser.parse(v) for v in ls]
