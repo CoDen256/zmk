@@ -94,7 +94,7 @@ morph:
 
   THUMBL0: "&sl 1"
   THUMBL1: "DELETE"
-  THUMBL2: "F9"
+  THUMBL2: "LC(LS(LA(F24)))"
 
   THUMBR0: "SPACE"
   THUMBR1: { default: "&sl 2", hold: "LG(F12)" }
@@ -149,6 +149,7 @@ macro:
   move_selection_right: "<&kp LC(X) &kp RIGHT &kp LA(LC(V))>"
   move_selection_left: "<&kp LC(X) &kp LEFT &kp LA(LC(V))>"
   monavl: "<&macro_press>,<&mo 4 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 4>,<&macro_press>"
+
   monavr: "<&macro_press>,<&mo 6 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 6>,<&macro_press>"
   moswitcher: "<&macro_press>,<&mo 8 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 8>,<&macro_press>"
 
