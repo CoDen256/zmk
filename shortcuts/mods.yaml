@@ -100,7 +100,7 @@ macro:
 
   GG_key: "^"
   OO_key: "LGUI"
-  NN_key: "\n"
+  NN_key: "\t"
   PP_key: "&none"
 
   UQ_key: "\t"
@@ -116,7 +116,7 @@ macro:
 
   SS_key: "RGUI"
   XX_key: "&none"
-  TT_key: "\t"
+  TT_key: "\n"
   MM_key: "&none"
 
   MZ_key: "\n"
@@ -130,6 +130,14 @@ macro:
   NAVPUP: "PAGE_UP"
   NAVPGDOWN: "PAGE_DOWN"
 
+  # thumbs
+  THUMBR0: "SPACE"
+  THUMBR1: { press: "&sl 2" }
+  THUMBR2: "BACKSPACE"
+
+  THUMBL0: { press: "&sl 1" }
+  THUMBL1: "DELETE"
+  THUMBL2: "F9"
 
 
 combo:

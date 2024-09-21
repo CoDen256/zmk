@@ -327,12 +327,17 @@ class MacroParser:
 
     def parse_press(self, name, node):
         target = node.pop("press", node.pop("p", None))
+        if self.is_valid_binding(target):
+            return self.parse_press_list(name, [target])
         if isinstance(target, list):
             return self.parse_press_list(name, target)
         return self.parse_press_inline(name, target)
 
     def parse_press_list(self, name, ls):
-        keys = [self.key_parser.parse(k) for k in ls]
+        keys = [self.key_parser.parse(k)
+                if not self.binding_parser.is_binding(k)
+                else self.binding_parser.parse(k)
+                for k in ls]
         press = self.binding_parser.parse("&macro_press")
         pause = self.binding_parser.parse("&macro_pause_for_release")
         release = self.binding_parser.parse("&macro_release")
@@ -455,7 +460,7 @@ class Binding:
 
 
 def compile_cfg(**cfg):
-    cfg = {k: v for k, v in cfg.items() if v}
+    cfg = {k: v for k, v in cfg.items() if v or v == 0}
     def val(v):
         if isinstance(v, list):
             f = v[0]
