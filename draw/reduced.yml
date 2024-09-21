@@ -166,3 +166,72 @@ layers:
   - t: $
     s: $
   - ''
+combos:
+- p:
+  - 24
+  - 25
+  k:
+    t: +
+    h: '&plus_equal'
+- p:
+  - 25
+  - 26
+  k: '-'
+- p:
+  - 24
+  - 26
+  k: '*'
+- p:
+  - 36
+  - 37
+  k:
+    t: ':'
+    h: '&colon_space'
+- p:
+  - 37
+  - 38
+  k: .
+- p:
+  - 36
+  - 38
+  k: '!'
+- p:
+  - 50
+  - 49
+  k: '%'
+- p:
+  - 29
+  - 30
+  k:
+    t: '|'
+    h: '&pipe_pipe'
+- p:
+  - 30
+  - 31
+  k:
+    t: '&'
+    h: '&ampersand_ampersand'
+- p:
+  - 29
+  - 31
+  k: '&equal_equal'
+- p:
+  - 41
+  - 42
+  k:
+    t: ','
+    h: '&comma_space'
+- p:
+  - 42
+  - 43
+  k:
+    t: ;
+    h: '&semicolon_enter'
+- p:
+  - 41
+  - 43
+  k: '?'
+- p:
+  - 59
+  - 60
+  k: '&minus_gre_tha'

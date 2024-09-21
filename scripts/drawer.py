@@ -32,12 +32,13 @@ def run(base):
     origin = load(parsed)
     layout = {"layout": {"qmk_keyboard": "glove80"}}
 
-    layers = origin["layers"]
-    removelayers(layers)
-    save(reduced, layout | {"layers": layers})
-
     combosd = origin["combos"]
     save(combosfile, layout| {"combos": combosd, "layers": {"main": ['']*80}})
+
+    layers = origin["layers"]
+    removelayers(layers)
+    save(reduced, layout | {"layers": layers, "combos": origin["combos"]})
+
 
     print("[drawer] Drawing")
 
