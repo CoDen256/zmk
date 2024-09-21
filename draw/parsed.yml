@@ -17,10 +17,10 @@ layers:
   - {t: K, s: Sft+ F1}
   - ''
   - {t: Gui+ F10, s: Gui+ F10}
-  - {t: Gui+ F11, s: Gui+ F11}
-  - {t: Gui+ F12, s: Gui+ F12}
-  - {t: '&key_repeat', s: '&key_repeat'}
-  - {t: '&key_repeat', s: '&key_repeat'}
+  - {t: '&exc_equal', s: '&exc_equal'}
+  - {t: <, s: <}
+  - {t: '=', s: '='}
+  - {t: '>', s: '>'}
   - ''
   - ''
   - MUTE
@@ -52,14 +52,14 @@ layers:
   - {t: F, h: navl, s: Sft+ F11}
   - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}
   - {t: P, h: numr, s: Sft+ F13}
-  - {t: '!', s: '!'}
+  - {t: '"', s: '"'}
   - {t: BACKSPACE, s: BACKSPACE}
   - numl
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: numl, h: toggle}
   - {t: F9, s: F9}
-  - {t: '?', s: '?'}
+  - {t: '''', s: ''''}
   - {t: M, h: numl, s: Sft+ F21}
   - {t: D, h: Sft+AGr+ RGUI, s: Sft+ F22}
   - {t: Y, h: navr, s: Ctl+ F23}
@@ -68,15 +68,15 @@ layers:
   - '&reloadkeymap'
   - {t: '@', s: '@'}
   - {t: Q, s: Ctl+ ^}
-  - {t: TAB, s: TAB}
-  - {t: ENTER, s: ENTER}
+  - {t: '[', h: '&lef_bra_rig_bra_left_arrow', s: '['}
+  - {t: (, h: '&lef_par_rig_par_left_arrow', s: (}
   - {t: SPACE, s: SPACE}
   - {t: de, h: Gui+ F12, s: de}
   - {t: switcher, h: toggle}
   - {t: main_upper, h: toggle}
   - {t: DELETE, s: DELETE}
   - {t: main_upper, h: sticky, s: main_upper}
-  - {t: ENTER, s: ENTER}
+  - {t: '{', h: '&left_brace_rig_bra_left_arrow', s: '{'}
   - {t: TAB, s: TAB}
   - {t: Z, s: Ctl+ ~}
   - {t: '~', s: '~'}
@@ -149,15 +149,15 @@ layers:
   - {t: main_upper, h: toggle}
   - {t: ▽, type: trans}
   - Sft+ Q
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ']'
+  - )
   - {t: ▽, type: trans}
   - '&caps_word'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: main_upper, h: toggle, type: held}
-  - {t: ▽, type: trans}
+  - '}'
   - {t: ▽, type: trans}
   - Sft+ Z
   - {t: ▽, type: trans}
@@ -973,10 +973,6 @@ layers:
   - ''
   - BT CLR ALL
 combos:
-- p: [24, 25]
-  k: {t: '&', h: '&ampersand_ampersand'}
-- p: [25, 26]
-  k: {t: '|', h: '&pipe_pipe'}
 - p: [24, 26]
   k: '#'
 - p: [24, 37]
@@ -985,8 +981,6 @@ combos:
   k: {t: /, h: '&slash_slash'}
 - p: [25, 38]
   k: '-'
-- p: [26, 37]
-  k: '&equal_equal'
 - p: [36, 37]
   k: {t: ':', h: '&colon_space'}
 - p: [37, 38]
@@ -995,22 +989,14 @@ combos:
   k: '!'
 - p: [36, 49]
   k: +
-- p: [37, 48]
-  k: '&exc_equal'
-- p: [37, 50]
-  k: '='
 - p: [38, 49]
   k: '*'
-- p: [48, 49]
-  k: {t: <, h: '&less_than_gre_tha_left_arrow', s: '>'}
-- p: [50, 49]
-  k: {t: (, h: '&lef_par_rig_par_left_arrow', s: )}
 - p: [29, 30]
-  k: ''''
+  k: {t: '|', h: '&pipe_pipe'}
 - p: [30, 31]
-  k: '"'
+  k: {t: '&', h: '&ampersand_ampersand'}
 - p: [29, 31]
-  k: '~'
+  k: '&equal_equal'
 - p: [29, 42]
   k: ^
 - p: [41, 30]
@@ -1027,7 +1013,3 @@ combos:
   k: '&minus_gre_tha'
 - p: [42, 61]
   k: '@'
-- p: [59, 60]
-  k: {t: '{', h: '&left_brace_rig_bra_left_arrow', s: '}'}
-- p: [60, 61]
-  k: {t: '[', h: '&lef_bra_rig_bra_left_arrow', s: ']'}

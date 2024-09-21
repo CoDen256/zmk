@@ -3,18 +3,6 @@ layout:
 combos:
 - p:
   - 24
-  - 25
-  k:
-    t: '&'
-    h: '&ampersand_ampersand'
-- p:
-  - 25
-  - 26
-  k:
-    t: '|'
-    h: '&pipe_pipe'
-- p:
-  - 24
   - 26
   k: '#'
 - p:
@@ -34,10 +22,6 @@ combos:
   - 38
   k: '-'
 - p:
-  - 26
-  - 37
-  k: '&equal_equal'
-- p:
   - 36
   - 37
   k:
@@ -56,43 +40,25 @@ combos:
   - 49
   k: +
 - p:
-  - 37
-  - 48
-  k: '&exc_equal'
-- p:
-  - 37
-  - 50
-  k: '='
-- p:
   - 38
   - 49
   k: '*'
 - p:
-  - 48
-  - 49
-  k:
-    t: <
-    h: '&less_than_gre_tha_left_arrow'
-    s: '>'
-- p:
-  - 50
-  - 49
-  k:
-    t: (
-    h: '&lef_par_rig_par_left_arrow'
-    s: )
-- p:
   - 29
   - 30
-  k: ''''
+  k:
+    t: '|'
+    h: '&pipe_pipe'
 - p:
   - 30
   - 31
-  k: '"'
+  k:
+    t: '&'
+    h: '&ampersand_ampersand'
 - p:
   - 29
   - 31
-  k: '~'
+  k: '&equal_equal'
 - p:
   - 29
   - 42
@@ -131,17 +97,3 @@ combos:
   - 42
   - 61
   k: '@'
-- p:
-  - 59
-  - 60
-  k:
-    t: '{'
-    h: '&left_brace_rig_bra_left_arrow'
-    s: '}'
-- p:
-  - 60
-  - 61
-  k:
-    t: '['
-    h: '&lef_bra_rig_bra_left_arrow'
-    s: ']'

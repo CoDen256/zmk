@@ -39,7 +39,7 @@ morph:
   GG: "^"
   OO: "LGUI"
   NN: "\t"
-  PP: "!"
+  PP: '"'
 
   # down
   J: {                                                          rshift: "RS(F10)" }
@@ -48,17 +48,17 @@ morph:
   P: { hold: "&mo 5", lshift: "LC(V)",                          rshift: "RS(F13)" }
   Q: { lshift: "LC(Y)",                                         rshift: "RC(CARET)" }
 
-  UQ: "\t"
-  PQ: "\n"
+  UQ: {default: "[", hold: "[]\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  PQ: {default: "(", hold: "()\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
   JJ: "&mo 5"
   JQ: "@"
 
 #### right
   # up
-  VS: "LG(F11)"
-  V6: "LG(F12)"
-  L7: "&key_repeat"
-  B8: "&key_repeat"
+  VS: "!="
+  V6: "<"
+  L7: "="
+  B8: ">"
   BB: "$"
 
   VV: { default: "ESCAPE", rshift: "LC(A)"}
@@ -75,7 +75,8 @@ morph:
   SS: "RGUI"
   XX: "&none"
   TT: "\n"
-  MM: "?"
+  MM: "'"
+
 
   # down
   M:  { hold: "&mo 3", rshift: "LC(V)",                           lshift: "LS(F21)" }
@@ -84,7 +85,7 @@ morph:
   X:  {                                                           lshift: "LS(F24)", lctrl: "LC(F24)" }
   Z:  { rshift: "LC(Y)",                                          lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
 
-  MZ: "\n"
+  MZ: {default: "{", hold: "{}\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
   DZ: "\t"
   XZ: "~"
 
@@ -150,35 +151,35 @@ macro:
 
 combo:
   config:
-    timeout-ms: 20
+    timeout-ms: 30
   # left
-  GH: {tap: "&",  hold: "&&", tapping-term-ms: 90, require-prior-idle-ms: 0}
-  HC: {tap: "|", hold: "||", tapping-term-ms: 90, require-prior-idle-ms: 0}
+#  GH:
+#  HC:
   GC: "#"
 
   GI: {tap: \, hold: \\, tapping-term-ms: 90, require-prior-idle-ms: 0}
   HA: {tap: /, hold: //, tapping-term-ms: 120, require-prior-idle-ms: 0}
   HN: "-"
-  CI: "=="
+#  CI: ""
 
   AI: {tap: ":", hold: ": ", tapping-term-ms: 90, require-prior-idle-ms: 0}
   IN: "."
   AN: "!"
 
   AU: "+"
-  IF: "!="
-  IP: "="
+#  IF: ""
+#  IP: ""
   NU: "*"
 
-  FU: {default: "<", hold: "<>\b", rctrl: ">", exact: false, keep: "none",  tapping-term-ms: 280, require-prior-idle-ms: 0}
-  PU: {default: "(", hold: "()\b", rctrl: ")", exact: false, keep: "none",  tapping-term-ms: 280, require-prior-idle-ms: 0}
+#  FU: "
+#  PU:
 #  FP: "_"
 
 
   # right
-  VL: "'"
-  LB: '"'
-  VB: "~"
+  VL: {tap: "|", hold: "||", tapping-term-ms: 90, require-prior-idle-ms: 0}
+  LB: {tap: "&",  hold: "&&", tapping-term-ms: 90, require-prior-idle-ms: 0}
+  VB: {combo: "==", timeout-ms: 100 }
 
   VR: "^"
   TL: {tap: "`", hold: "```", tapping-term-ms: 120, require-prior-idle-ms: 0}
@@ -194,8 +195,8 @@ combo:
   RY: "@"
 #  ED: ""
 
-  MD: {default: "{", hold: "{}\b", lctrl: "}",  exact: false, keep: "none",  tapping-term-ms: 280, require-prior-idle-ms: 0}
-  DY: {default: "[", hold: "[]\b", lctrl: "]",  exact: false, keep: "none",  tapping-term-ms: 280, require-prior-idle-ms: 0}
+#  MD:
+#  DY:
 #  MY: ""
 
 keys:

@@ -20,14 +20,14 @@ layers:
   - ''
   - t: Gui+ F10
     s: Gui+ F10
-  - t: Gui+ F11
-    s: Gui+ F11
-  - t: Gui+ F12
-    s: Gui+ F12
-  - t: '&key_repeat'
-    s: '&key_repeat'
-  - t: '&key_repeat'
-    s: '&key_repeat'
+  - t: '&exc_equal'
+    s: '&exc_equal'
+  - t: <
+    s: <
+  - t: '='
+    s: '='
+  - t: '>'
+    s: '>'
   - ''
   - ''
   - MUTE
@@ -99,8 +99,8 @@ layers:
   - t: P
     h: numr
     s: Sft+ F13
-  - t: '!'
-    s: '!'
+  - t: '"'
+    s: '"'
   - t: BACKSPACE
     s: BACKSPACE
   - numl
@@ -112,8 +112,8 @@ layers:
     h: toggle
   - t: F9
     s: F9
-  - t: '?'
-    s: '?'
+  - t: ''''
+    s: ''''
   - t: M
     h: numl
     s: Sft+ F21
@@ -131,10 +131,12 @@ layers:
     s: '@'
   - t: Q
     s: Ctl+ ^
-  - t: TAB
-    s: TAB
-  - t: ENTER
-    s: ENTER
+  - t: '['
+    h: '&lef_bra_rig_bra_left_arrow'
+    s: '['
+  - t: (
+    h: '&lef_par_rig_par_left_arrow'
+    s: (
   - t: SPACE
     s: SPACE
   - t: de
@@ -149,8 +151,9 @@ layers:
   - t: main_upper
     h: sticky
     s: main_upper
-  - t: ENTER
-    s: ENTER
+  - t: '{'
+    h: '&left_brace_rig_bra_left_arrow'
+    s: '{'
   - t: TAB
     s: TAB
   - t: Z
