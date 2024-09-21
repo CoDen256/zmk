@@ -20,7 +20,7 @@ morph:
 
 # left
   K:  {                                                         rshift: "RS(F1)" }
-  G:  { hold: "&monavl LCTRL", pos: "C N",  lshift: "LC(X)",    rshift: "RS(F2)"  }
+  G:  { hold: "&mo 6", lshift: "LC(X)",    rshift: "RS(F2)"  }
   H:  { hold: "&moswitcher LALT", pos: "C G N",                 rshift: "RS(F3)"  }
   C:  { lshift: "LC(C)",                                        rshift: "RS(F4)", rctrl: "RC(F4)"}
   W:  { lshift: "LC(A)",                                        rshift: "RS(F5)"  }
@@ -38,10 +38,10 @@ morph:
 
 
 #### right
-  VV: { default: ["ESCAPE"], rshift: "LC(A)"}
+  VV: { default: "ESCAPE", rshift: "LC(A)"}
   V:  { rshift: "LC(C)",                                          lshift: "LS(F14)", lctrl: "LC(F14)" }
   L:  { hold: "&moswitcher LALT",                                 lshift: "LS(F15)" }
-  B:  { hold: "&monavr RCTRL", rshift: "LC(X)",                   lshift: "LS(F16)" }
+  B:  { hold: "&mo 4", rshift: "LC(X)",                           lshift: "LS(F16)" }
 
   T:  { hold: "RCTRL",  rshift: "LC(S)",                          lshift: "LS(F17)" }
   R:  { hold: "RSHIFT",  pos: "B V VV E T Y M Z left",            lshift: "LS(F18)" }
@@ -95,21 +95,21 @@ macro:
   moswitcher: "<&macro_press>,<&mo 8 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 8>,<&macro_press>"
   # extra
   G3_key: "&none"
-  C5_key: ["F9"]
-  CS_key: ["LG(F10)"]
+  C5_key: "F9"
+  CS_key: "LG(F10)"
 
   GG_key: "^"
-  OO_key: { press: ["LGUI"]}
-  NN_key: { press: "\n" }
+  OO_key: "LGUI"
+  NN_key: "\n"
   PP_key: "&none"
 
-  UQ_key: { press: "\t" }
-  PQ_key: { press: "\n" }
+  UQ_key: "\t"
+  PQ_key: "\n"
   JJ_key: { press: "&mo 5"}
   JQ_key: "@"
 
-  VS_key: ["LG(F11)"]
-  V6_key: ["LG(F12)"]
+  VS_key: "LG(F11)"
+  V6_key: "LG(F12)"
   L7_key: "&key_repeat"
   B8_key: "&key_repeat"
   BB_key: "$"
@@ -129,10 +129,6 @@ macro:
   NAVFULLRIGHT: "&move_selection_right"
   NAVPUP: "PAGE_UP"
   NAVPGDOWN: "PAGE_DOWN"
-
-
-
-
 
 
 

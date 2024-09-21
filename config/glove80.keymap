@@ -613,11 +613,6 @@ release-after-ms = <5000>;};
             
             bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_3>, <&macro_release>, <&kp LALT>;
         };
-
-        press_escape_escape: press_escape_escape { label = "PRESS_ESCAPE_ESCAPE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
-            
-            bindings = <&macro_press>, <&kp ESCAPE>, <&macro_pause_for_release>, <&macro_release>, <&kp ESCAPE>;
-        };
 /*<macros-end>*/
 
 
@@ -695,8 +690,8 @@ release-after-ms = <5000>;};
         };
 
         G_key_hold_tap:G_key_hold_tap { label = "G_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <26 38>;
-            bindings = <&monavl>, <&kp>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
+            bindings = <&mo>, <&kp>;
         };
 
         H_key_hold_tap:H_key_hold_tap { label = "H_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
@@ -741,7 +736,7 @@ release-after-ms = <5000>;};
 
         B_key_hold_tap:B_key_hold_tap { label = "B_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
-            bindings = <&monavr>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
 
         T_key_hold_tap:T_key_hold_tap { label = "T_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
@@ -961,19 +956,19 @@ release-after-ms = <5000>;};
         };
 
         G_key_lshift_link:G_key_lshift_link { label = "G_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&G_key_hold_tap LCTRL G>, <&G_key_lshift_sink>;
+            bindings = <&G_key_hold_tap 6 G>, <&G_key_lshift_sink>;
             mods = <(MOD_LSFT)>;
             
         };
 
         G_key_lshift_sink:G_key_lshift_sink { label = "G_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LC(X)>, <&G_key_hold_tap LCTRL G>;
+            bindings = <&kp LC(X)>, <&G_key_hold_tap 6 G>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
         G_key_rshift_sink:G_key_rshift_sink { label = "G_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp RS(F2)>, <&G_key_hold_tap LCTRL G>;
+            bindings = <&kp RS(F2)>, <&G_key_hold_tap 6 G>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
@@ -1255,13 +1250,13 @@ release-after-ms = <5000>;};
         };
 
         VV_key:VV_key { label = "VV_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&press_escape_escape>, <&VV_key_rshift_sink>;
+            bindings = <&kp ESCAPE>, <&VV_key_rshift_sink>;
             mods = <(MOD_RSFT)>;
             
         };
 
         VV_key_rshift_sink:VV_key_rshift_sink { label = "VV_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LC(A)>, <&press_escape_escape>;
+            bindings = <&kp LC(A)>, <&kp ESCAPE>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
@@ -1321,19 +1316,19 @@ release-after-ms = <5000>;};
         };
 
         B_key_rshift_link:B_key_rshift_link { label = "B_KEY_RSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&B_key_hold_tap RCTRL B>, <&B_key_rshift_sink>;
+            bindings = <&B_key_hold_tap 4 B>, <&B_key_rshift_sink>;
             mods = <(MOD_RSFT)>;
             
         };
 
         B_key_rshift_sink:B_key_rshift_sink { label = "B_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LC(X)>, <&B_key_hold_tap RCTRL B>;
+            bindings = <&kp LC(X)>, <&B_key_hold_tap 4 B>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         B_key_lshift_sink:B_key_lshift_sink { label = "B_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LS(F16)>, <&B_key_hold_tap RCTRL B>;
+            bindings = <&kp LS(F16)>, <&B_key_hold_tap 4 B>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -1772,8 +1767,8 @@ keymap {
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &G3_key  &K_key     &C5_key     &CS_key                                                                       &VS_key  &V6_key  &L7_key  &B8_key  &none       &none
 &kp C_MUTE         &GG_key        &G_key       &H_key     &C_key     &W_key                                                                           &VV_key        &V_key       &L_key       &B_key       &BB_key  &none
 &OO_key       &O_key           &A_key       &I_key     &N_key     &NN_key                                                                         &TT_key        &T_key       &R_key       &E_key       &S_key      &SS_key
-&JJ_key              &J_key           &F_key       &U_key     &P_key     &PP_key   &kp BACKSPACE  &mo 3  &magic 11 0    &magic 11 0  &tog 3  &kp DELETE  &MM_key  &M_key       &D_key       &Y_key       &X_key      &XX_key
-&reloadkeymap      &JQ_key           &Q_key       &UQ_key    &PQ_key               &kp SPACE      &sl 2  &none         &tog 1      &tog 8  &sl 1                    &MZ_key    &DZ_key      &Z_key       &XZ_key   &none
+&JJ_key              &J_key           &F_key       &U_key     &P_key     &PP_key   &kp BACKSPACE  &mo 3  &magic 11 0    &magic 11 0  &tog 3  &tog 8  &MM_key  &M_key       &D_key       &Y_key       &X_key      &XX_key
+&reloadkeymap      &JQ_key           &Q_key       &UQ_key    &PQ_key               &kp SPACE      &sl 2  &none         &tog 1      &kp DELETE  &sl 1                    &MZ_key    &DZ_key      &Z_key       &XZ_key   &none
 >;};
 
 		main_upper {
