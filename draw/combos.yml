@@ -3,26 +3,20 @@ layout:
 combos:
 - p:
   - 24
+  - 25
+  k:
+    t: +
+    h: '&plus_equal'
+- p:
+  - 25
   - 26
-  k: '#'
-- p:
-  - 24
-  - 37
-  k:
-    t: \
-    h: '&backslash_backslash'
-- p:
-  - 25
-  - 36
-  k:
-    t: /
-    h: '&slash_slash'
-- p:
-  - 25
-  - 38
   k: '-'
 - p:
-  - 36
+  - 24
+  - 26
+  k: '*'
+- p:
+  - 42
   - 37
   k:
     t: ':'
@@ -36,13 +30,9 @@ combos:
   - 38
   k: '!'
 - p:
-  - 36
+  - 50
   - 49
-  k: +
-- p:
-  - 38
-  - 49
-  k: '*'
+  k: '%'
 - p:
   - 29
   - 30
@@ -60,28 +50,14 @@ combos:
   - 31
   k: '&equal_equal'
 - p:
-  - 29
-  - 42
-  k: ^
-- p:
-  - 41
-  - 30
-  k:
-    t: '`'
-    h: '&grave_grave_grave'
-- p:
-  - 31
-  - 42
-  k: $
-- p:
   - 41
   - 42
   k:
     t: ','
     h: '&comma_space'
 - p:
-  - 42
-  - 43
+  - 41
+  - 38
   k:
     t: ;
     h: '&semicolon_enter'
@@ -90,10 +66,6 @@ combos:
   - 43
   k: '?'
 - p:
-  - 42
   - 59
+  - 60
   k: '&minus_gre_tha'
-- p:
-  - 42
-  - 61
-  k: '@'

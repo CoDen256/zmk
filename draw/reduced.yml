@@ -14,10 +14,14 @@ layers:
   - F10
   - VOLUME DOWN
   - VOLUME UP
-  - ''
+  - t: \
+    h: '&backslash_backslash'
+    s: \
   - t: K
     s: Sft+ F1
-  - ''
+  - t: /
+    h: '&slash_slash'
+    s: /
   - t: Gui+ F10
     s: Gui+ F10
   - t: '&exc_equal'
@@ -31,8 +35,8 @@ layers:
   - ''
   - ''
   - MUTE
-  - t: ^
-    s: ^
+  - t: '#'
+    s: '#'
   - t: G
     h: navr
     s: Sft+ F2
@@ -53,8 +57,8 @@ layers:
   - t: B
     h: navl
     s: Sft+ F16
-  - t: $
-    s: $
+  - t: '~'
+    s: '~'
   - ''
   - t: LGUI
     s: LGUI
@@ -84,10 +88,12 @@ layers:
     s: Sft+ F19
   - t: S
     s: Ctl+ F20
-  - t: RGUI
-    s: RGUI
-  - t: numr
-    s: numr
+  - t: '`'
+    h: RGUI
+    s: '`'
+  - t: '@'
+    h: RGUI
+    s: '@'
   - t: J
     s: Sft+ F10
   - t: F
@@ -99,8 +105,8 @@ layers:
   - t: P
     h: numr
     s: Sft+ F13
-  - t: '"'
-    s: '"'
+  - t: ''''
+    s: ''''
   - t: BACKSPACE
     s: BACKSPACE
   - numl
@@ -112,8 +118,8 @@ layers:
     h: toggle
   - t: F9
     s: F9
-  - t: ''''
-    s: ''''
+  - t: '"'
+    s: '"'
   - t: M
     h: numl
     s: Sft+ F21
@@ -127,8 +133,8 @@ layers:
     s: Ctl+ F24
   - ''
   - '&reloadkeymap'
-  - t: '@'
-    s: '@'
+  - t: ^
+    s: ^
   - t: Q
     s: Ctl+ ^
   - t: '['
@@ -154,10 +160,10 @@ layers:
   - t: '{'
     h: '&left_brace_rig_bra_left_arrow'
     s: '{'
-  - t: TAB
-    s: TAB
+  - t: _
+    s: _
   - t: Z
     s: Ctl+ ~
-  - t: '~'
-    s: '~'
+  - t: $
+    s: $
   - ''

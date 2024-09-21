@@ -5,12 +5,12 @@ morph:
     keep: "all"
 
 # nav layer
-  NAVBACK: {default: "HOME", ctrl: {hold: "LC(HOME)", tap: "HOME"}}
-  NAVFORWARD: {default: "END", ctrl: {hold: "LC(END)", tap: "END"}}
-  NAVLEFT: {default: "LC(LEFT)", ctrl: "LEFT"}
-  NAVRIGHT: {default: "LC(RIGHT)",ctrl: "RIGHT"}
-  NAVUP: {default: "UP", ctrl: "LC(UP)"}
-  NAVDOWN: {default: "DOWN", ctrl: "LC(DOWN)"}
+  NAVBACK:    { default: "HOME", ctrl: {hold: "LC(HOME)", tap: "HOME"}}
+  NAVFORWARD: { default: "END", ctrl: {hold: "LC(END)", tap: "END"}}
+  NAVLEFT:    { default: "LC(LEFT)", ctrl: "LEFT"}
+  NAVRIGHT:   { default: "LC(RIGHT)",ctrl: "RIGHT"}
+  NAVUP:      { default: "UP", ctrl: "LC(UP)"}
+  NAVDOWN:    { default: "DOWN", ctrl: "LC(DOWN)"}
 
 
   OEU: { default: "ö", lshift: "Ö", exact: false, keep: "none"}
@@ -20,8 +20,8 @@ morph:
 
 # left
   # up
-  G3: "&none"
-  C5: "&none"
+  G3: { tap: \, hold: \\, tapping-term-ms: 90, require-prior-idle-ms: 0}
+  C5: { tap: /, hold: //, tapping-term-ms: 250, require-prior-idle-ms: 0}
   CS: "LG(F10)"
 
   K:  {                                                         rshift: "RS(F1)" }
@@ -36,10 +36,10 @@ morph:
   I:  { hold: "LSHIFT", pos: "G C A N F P W right",             rshift: "RS(F8)"  }
   N:  { hold: "LCTRL", lshift: "LC(S)",                         rshift: "RS(F9)"  }
 
-  GG: "^"
+  GG: "#"
   OO: "LGUI"
   NN: "\t"
-  PP: '"'
+  PP: "'"
 
   # down
   J: {                                                          rshift: "RS(F10)" }
@@ -48,10 +48,10 @@ morph:
   P: { hold: "&mo 5", lshift: "LC(V)",                          rshift: "RS(F13)" }
   Q: { lshift: "LC(Y)",                                         rshift: "RC(CARET)" }
 
-  UQ: {default: "[", hold: "[]\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
-  PQ: {default: "(", hold: "()\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
-  JJ: "&mo 5"
-  JQ: "@"
+  UQ: { default: "[", hold: "[]\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  PQ: { default: "(", hold: "()\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  JJ: { default: "@", hold: "RGUI", pos: "right"}
+  JQ: "^"
 
 #### right
   # up
@@ -59,7 +59,7 @@ morph:
   V6: "<"
   L7: "="
   B8: ">"
-  BB: "$"
+  BB: "~"
 
   VV: { default: "ESCAPE", rshift: "LC(A)"}
   V:  { rshift: "LC(C)",                                          lshift: "LS(F14)", lctrl: "LC(F14)" }
@@ -72,10 +72,10 @@ morph:
   E:  { hold: "RALT", pos: "left", rshift: "LC(Z)",               lshift: "LS(F19)" }
   S:  {                                                           lshift: "LS(F20)", lctrl: "LC(F20)"}
 
-  SS: "RGUI"
+  SS: { default: "`" , hold: "RGUI", pos: "left"}
   XX: "&none"
   TT: "\n"
-  MM: "'"
+  MM: '"'
 
 
   # down
@@ -85,9 +85,9 @@ morph:
   X:  {                                                           lshift: "LS(F24)", lctrl: "LC(F24)" }
   Z:  { rshift: "LC(Y)",                                          lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
 
-  MZ: {default: "{", hold: "{}\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
-  DZ: "\t"
-  XZ: "~"
+  MZ: { default: "{", hold: "{}\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  DZ: "_"
+  XZ: "$"
 
 
   # thumbs
@@ -153,27 +153,27 @@ combo:
   config:
     timeout-ms: 30
   # left
-#  GH:
-#  HC:
-  GC: "#"
+  GH: { tap: "+", hold: "+=", tapping-term-ms: 250, require-prior-idle-ms: 0 }
+  HC: "-"
+  GC: "*"
 
-  GI: {tap: \, hold: \\, tapping-term-ms: 90, require-prior-idle-ms: 0}
-  HA: {tap: /, hold: //, tapping-term-ms: 120, require-prior-idle-ms: 0}
-  HN: "-"
+#  GI: ""
+#  HA: ""
+#  HN: ""
 #  CI: ""
 
-  AI: {tap: ":", hold: ": ", tapping-term-ms: 90, require-prior-idle-ms: 0}
+  RI: {tap: ":", hold: ": ", tapping-term-ms: 90, require-prior-idle-ms: 0}
   IN: "."
   AN: "!"
 
-  AU: "+"
+#  AU: ""
 #  IF: ""
 #  IP: ""
-  NU: "*"
+#  NU: ""
 
-#  FU: "
-#  PU:
-#  FP: "_"
+#  FU:
+  PU: "%"
+#  FP: ""
 
 
   # right
@@ -181,21 +181,21 @@ combo:
   LB: {tap: "&",  hold: "&&", tapping-term-ms: 90, require-prior-idle-ms: 0}
   VB: {combo: "==", timeout-ms: 100 }
 
-  VR: "^"
-  TL: {tap: "`", hold: "```", tapping-term-ms: 120, require-prior-idle-ms: 0}
-  #  LE: ""
-  BR: "$"
+#  VR: ""
+#  TL: "
+#  LE: ""
+#  BR: ""
 
   TR: {tap: ",", hold: ", ", tapping-term-ms: 90, require-prior-idle-ms: 0}
-  RE: {tap: ";", hold: ";\n", tapping-term-ms: 90, require-prior-idle-ms: 0}
+  TN: {tap: ";", hold: ";\n", tapping-term-ms: 200, require-prior-idle-ms: 0}
   TE: "?"
 
 #  TD: ""
-  RM: "->"
-  RY: "@"
+#  RM: ""
+#  RY: ""
 #  ED: ""
 
-#  MD:
+  MD: "->"
 #  DY:
 #  MY: ""
 

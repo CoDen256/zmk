@@ -13,9 +13,9 @@ layers:
   - F10
   - VOLUME DOWN
   - VOLUME UP
-  - ''
+  - {t: \, h: '&backslash_backslash', s: \}
   - {t: K, s: Sft+ F1}
-  - ''
+  - {t: /, h: '&slash_slash', s: /}
   - {t: Gui+ F10, s: Gui+ F10}
   - {t: '&exc_equal', s: '&exc_equal'}
   - {t: <, s: <}
@@ -24,7 +24,7 @@ layers:
   - ''
   - ''
   - MUTE
-  - {t: ^, s: ^}
+  - {t: '#', s: '#'}
   - {t: G, h: navr, s: Sft+ F2}
   - {t: H, h: '&moswitcher LALT', s: Sft+ F3}
   - {t: C, s: Ctl+ F4}
@@ -33,7 +33,7 @@ layers:
   - {t: V, s: Ctl+ F14}
   - {t: L, h: '&moswitcher LALT', s: Sft+ F15}
   - {t: B, h: navl, s: Sft+ F16}
-  - {t: $, s: $}
+  - {t: '~', s: '~'}
   - ''
   - {t: LGUI, s: LGUI}
   - {t: O, s: Sft+ F6}
@@ -46,27 +46,27 @@ layers:
   - {t: R, h: RSHIFT, s: Sft+ F18}
   - {t: E, h: RALT, s: Sft+ F19}
   - {t: S, s: Ctl+ F20}
-  - {t: RGUI, s: RGUI}
-  - {t: numr, s: numr}
+  - {t: '`', h: RGUI, s: '`'}
+  - {t: '@', h: RGUI, s: '@'}
   - {t: J, s: Sft+ F10}
   - {t: F, h: navl, s: Sft+ F11}
   - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}
   - {t: P, h: numr, s: Sft+ F13}
-  - {t: '"', s: '"'}
+  - {t: '''', s: ''''}
   - {t: BACKSPACE, s: BACKSPACE}
   - numl
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: '&rgb_ug_status_macro', h: magic}
   - {t: numl, h: toggle}
   - {t: F9, s: F9}
-  - {t: '''', s: ''''}
+  - {t: '"', s: '"'}
   - {t: M, h: numl, s: Sft+ F21}
   - {t: D, h: Sft+AGr+ RGUI, s: Sft+ F22}
   - {t: Y, h: navr, s: Ctl+ F23}
   - {t: X, s: Ctl+ F24}
   - ''
   - '&reloadkeymap'
-  - {t: '@', s: '@'}
+  - {t: ^, s: ^}
   - {t: Q, s: Ctl+ ^}
   - {t: '[', h: '&lef_bra_rig_bra_left_arrow', s: '['}
   - {t: (, h: '&lef_par_rig_par_left_arrow', s: (}
@@ -77,9 +77,9 @@ layers:
   - {t: DELETE, s: DELETE}
   - {t: main_upper, h: sticky, s: main_upper}
   - {t: '{', h: '&left_brace_rig_bra_left_arrow', s: '{'}
-  - {t: TAB, s: TAB}
+  - {t: _, s: _}
   - {t: Z, s: Ctl+ ~}
-  - {t: '~', s: '~'}
+  - {t: $, s: $}
   - ''
   main_upper:
   - {t: ▽, type: trans}
@@ -452,11 +452,11 @@ layers:
   - '6'
   - '0'
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ','
   - '-'
-  - +
+  - {t: +, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -973,43 +973,31 @@ layers:
   - ''
   - BT CLR ALL
 combos:
-- p: [24, 26]
-  k: '#'
-- p: [24, 37]
-  k: {t: \, h: '&backslash_backslash'}
-- p: [25, 36]
-  k: {t: /, h: '&slash_slash'}
-- p: [25, 38]
+- p: [24, 25]
+  k: {t: +, h: '&plus_equal'}
+- p: [25, 26]
   k: '-'
-- p: [36, 37]
+- p: [24, 26]
+  k: '*'
+- p: [42, 37]
   k: {t: ':', h: '&colon_space'}
 - p: [37, 38]
   k: .
 - p: [36, 38]
   k: '!'
-- p: [36, 49]
-  k: +
-- p: [38, 49]
-  k: '*'
+- p: [50, 49]
+  k: '%'
 - p: [29, 30]
   k: {t: '|', h: '&pipe_pipe'}
 - p: [30, 31]
   k: {t: '&', h: '&ampersand_ampersand'}
 - p: [29, 31]
   k: '&equal_equal'
-- p: [29, 42]
-  k: ^
-- p: [41, 30]
-  k: {t: '`', h: '&grave_grave_grave'}
-- p: [31, 42]
-  k: $
 - p: [41, 42]
   k: {t: ',', h: '&comma_space'}
-- p: [42, 43]
+- p: [41, 38]
   k: {t: ;, h: '&semicolon_enter'}
 - p: [41, 43]
   k: '?'
-- p: [42, 59]
+- p: [59, 60]
   k: '&minus_gre_tha'
-- p: [42, 61]
-  k: '@'
