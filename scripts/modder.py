@@ -148,11 +148,15 @@ class MorphParser:
 
     def parse(self, name, node):
         cfg = extract_cfg_and_merge(self.cfg, node)
+        if isinstance(node, str): return self.parse(name, {"default": node})
         exact = cfg.pop("exact")
         mapping = self.extract_mapping(node)
         name, default = self.extract_name_default(name, node)
 
-        if not mapping: return {mod: default for mod in all_mods.keys()}
+        if not mapping:
+            mapping = {mod: default for mod in all_mods.keys()}
+            exact = False
+            cfg["keep"] = "all"
         kept_mods = list(self.keep_mods(set(mapping.keys()), cfg.pop("keep")))
 
 

@@ -1055,10 +1055,6 @@ combos:
     h: '&lef_par_rig_par_left_arrow'
     s: )
 - p:
-  - 48
-  - 50
-  k: _
-- p:
   - 29
   - 30
   k: ''''

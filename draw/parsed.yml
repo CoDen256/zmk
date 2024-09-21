@@ -13,10 +13,10 @@ layers:
   - F10
   - VOLUME DOWN
   - VOLUME UP
-  - '&G3_key'
+  - ''
   - {t: K, s: Sft+ F1}
-  - '&C5_key'
-  - '&CS_key'
+  - {t: F9, s: F9}
+  - {t: Gui+ F10, s: Gui+ F10}
   - '&VS_key'
   - '&V6_key'
   - '&L7_key'
@@ -24,7 +24,7 @@ layers:
   - ''
   - ''
   - MUTE
-  - '&GG_key'
+  - {t: ^, s: ^}
   - {t: G, h: navr, s: Sft+ F2}
   - {t: H, h: '&moswitcher LALT', s: Sft+ F3}
   - {t: C, s: Ctl+ F4}
@@ -35,12 +35,12 @@ layers:
   - {t: B, h: navl, s: Sft+ F16}
   - '&BB_key'
   - ''
-  - '&OO_key'
+  - {t: LGUI, s: LGUI}
   - {t: O, s: Sft+ F6}
   - {t: A, h: LALT, s: Ctl+ F7}
   - {t: I, h: LSHIFT, s: Sft+ F8}
   - {t: N, h: LCTRL, s: Sft+ F9}
-  - '&NN_key'
+  - {t: TAB, s: TAB}
   - '&TT_key'
   - {t: T, h: RCTRL, s: Sft+ F17}
   - {t: R, h: RSHIFT, s: Sft+ F18}
@@ -52,7 +52,7 @@ layers:
   - {t: F, h: navl, s: Sft+ F11}
   - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}
   - {t: P, h: numr, s: Sft+ F13}
-  - '&PP_key'
+  - {t: '!', s: '!'}
   - '&THUMBR2'
   - numl
   - {t: '&rgb_ug_status_macro', h: magic}
@@ -1005,8 +1005,6 @@ combos:
   k: {t: <, h: '&less_than_gre_tha_left_arrow', s: '>'}
 - p: [50, 49]
   k: {t: (, h: '&lef_par_rig_par_left_arrow', s: )}
-- p: [48, 50]
-  k: _
 - p: [29, 30]
   k: ''''
 - p: [30, 31]
