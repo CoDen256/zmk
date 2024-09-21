@@ -120,7 +120,7 @@ class MorphParser:
         name = node.pop("name", None)
         default = node.pop("default", node.pop("d", None))
         if not name and orig:
-            if len(orig) <= 2 and orig.isalpha():
+            if len(orig) <= 2 and orig.isalnum():
                 name = orig + "_key"
             elif re.search("[a-zA-Z0-1_]", orig): # use full match
                 name = orig
