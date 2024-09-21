@@ -37,7 +37,7 @@ def run(base):
     save(reduced, layout | {"layers": layers})
 
     combosd = origin["combos"]
-    save(combosfile, layout| {"combos": combosd})
+    save(combosfile, layout| {"combos": combosd, "layers": {"main": ['']*80}})
 
     print("[drawer] Drawing")
 

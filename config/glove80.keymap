@@ -474,7 +474,7 @@ release-after-ms = <5000>;};
             bindings = <&plus_equal>, <&kp>;
         };
 
-        RI_delegate:RI_delegate { label = "RI_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        AI_delegate:AI_delegate { label = "AI_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&colon_space>, <&kp>;
         };
@@ -494,7 +494,7 @@ release-after-ms = <5000>;};
             bindings = <&comma_space>, <&kp>;
         };
 
-        TN_delegate:TN_delegate { label = "TN_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+        RE_delegate:RE_delegate { label = "RE_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <200>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&semicolon_enter>, <&kp>;
         };
@@ -1677,8 +1677,8 @@ release-after-ms = <5000>;};
             bindings = <&kp ASTERISK>; 
         };
 
-        RI { timeout-ms = <30>; key-positions = <42 37>;
-            bindings = <&RI_delegate 0 COLON>; 
+        AI { timeout-ms = <30>; key-positions = <36 37>;
+            bindings = <&AI_delegate 0 COLON>; 
         };
 
         IN { timeout-ms = <30>; key-positions = <37 38>;
@@ -1709,8 +1709,8 @@ release-after-ms = <5000>;};
             bindings = <&TR_delegate 0 COMMA>; 
         };
 
-        TN { timeout-ms = <30>; key-positions = <41 38>;
-            bindings = <&TN_delegate 0 SEMICOLON>; 
+        RE { timeout-ms = <30>; key-positions = <42 43>;
+            bindings = <&RE_delegate 0 SEMICOLON>; 
         };
 
         TE { timeout-ms = <30>; key-positions = <41 43>;
