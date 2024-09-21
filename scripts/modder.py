@@ -166,12 +166,18 @@ class MorphParser:
 
     def extract_mapping(self,  node):
         mapping = {}
+
         if "all" in node:
             filler = self.anon_parser.parse(node["all"])
             for mod in all_mods.keys(): mapping[mod] = filler
 
         for k in list(node.keys()):
-            if k in all_mods.keys(): mapping[k] = self.anon_parser.parse(node.pop(k))
+            if k in all_mods.keys():
+                mapping[k] = self.anon_parser.parse(node.pop(k))
+            if k in wildmods:
+                parsed = self.anon_parser.parse(node.pop(k))
+                for m in wildmods[k]:
+                    mapping[m] = parsed
 
 
         return mapping
@@ -552,6 +558,13 @@ all_mods = {
     "rgui": "MOD_RGUI",
     "lshift": "MOD_LSFT",
     "rshift": "MOD_RSFT",
+}
+
+wildmods = {
+    "ctrl": ["lctrl", "rctrl"],
+    "alt": ["ralt", "ralt"],
+    "shift": ["lshift", "rshift"],
+    "gui": ["lgui", "rgui"],
 }
 
 

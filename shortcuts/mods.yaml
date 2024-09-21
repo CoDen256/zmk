@@ -5,12 +5,12 @@ morph:
     keep: "all"
 
 # nav layer
-  NAVBACK: {default: "HOME", lctrl: {hold: "LC(HOME)", tap: "HOME"}}
-  NAVFORWARD: {default: "END", lctrl: {hold: "LC(END)", tap: "END"}}
-  NAVLEFT: {default: "LC(LEFT)", lctrl: "LEFT"}
-  NAVRIGHT: {default: "LC(RIGHT)", lctrl: "RIGHT"}
-  NAVUP: {default: "UP", lctrl: "LC(UP)"}
-  NAVDOWN: {default: "DOWN", lctrl: "LC(DOWN)"}
+  NAVBACK: {default: "HOME", ctrl: {hold: "LC(HOME)", tap: "HOME"}}
+  NAVFORWARD: {default: "END", ctrl: {hold: "LC(END)", tap: "END"}}
+  NAVLEFT: {default: "LC(LEFT)", ctrl: "LEFT"}
+  NAVRIGHT: {default: "LC(RIGHT)",ctrl: "RIGHT"}
+  NAVUP: {default: "UP", ctrl: "LC(UP)"}
+  NAVDOWN: {default: "DOWN", ctrl: "LC(DOWN)"}
 
 
   OEU: { default: "ö", lshift: "Ö", exact: false, keep: "none"}
@@ -129,6 +129,12 @@ macro:
   NAVFULLRIGHT: "&move_selection_right"
   NAVPUP: "PAGE_UP"
   NAVPGDOWN: "PAGE_DOWN"
+
+
+
+
+
+
 
 combo:
   config:

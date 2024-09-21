@@ -338,8 +338,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BACKSPACE
-  - DELETE
+  - '&NAV0'
+  - '&NAV1'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -361,10 +361,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT SHIFT
-  - '&move_selection_left'
-  - LEFT ARROW
-  - RIGHT ARROW
-  - '&move_selection_right'
+  - '&NAVFULLLEFT'
+  - {t: Ctl+ LEFT, s: LEFT}
+  - {t: Ctl+ RIGHT, s: RIGHT}
+  - '&NAVFULLRIGHT'
   - {t: ▽, type: trans}
   - RCTRL
   - LEFT SHIFT
@@ -374,8 +374,8 @@ layers:
   - {t: ▽, type: trans}
   - LCTRL
   - {type: held}
-  - UP ARROW
-  - DOWN
+  - {t: UP, s: Ctl+ UP}
+  - {t: DOWN, s: Ctl+ DOWN}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -392,8 +392,8 @@ layers:
   - {t: navl, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - PG UP
-  - PAGE DOWN
+  - '&NAVPUP'
+  - '&NAVPGDOWN'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -504,8 +504,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RIGHT
-  - DELETE
+  - '&NAV0'
+  - '&NAV1'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -515,7 +515,7 @@ layers:
   - RIGHT SHIFT
   - LCTRL
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
   - {t: HOME, s: HOME}
   - {t: END, s: END}
   - {t: ▽, type: trans}
@@ -527,10 +527,10 @@ layers:
   - LEFT SHIFT
   - RCTRL
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LEFT ARROW
-  - RIGHT ARROW
-  - {t: ▽, type: trans}
+  - '&NAVFULLLEFT'
+  - {t: Ctl+ LEFT, s: LEFT}
+  - {t: Ctl+ RIGHT, s: RIGHT}
+  - '&NAVFULLRIGHT'
   - LEFT SHIFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -545,9 +545,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - UP ARROW
-  - DOWN
+  - ''
+  - {t: UP, s: Ctl+ UP}
+  - {t: DOWN, s: Ctl+ DOWN}
   - {type: held}
   - LCTRL
   - {t: ▽, type: trans}
@@ -562,8 +562,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - PG UP
-  - PAGE DOWN
+  - '&NAVPUP'
+  - '&NAVPGDOWN'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: navr, h: toggle}
