@@ -9,7 +9,7 @@ layers:
   - F6
   - F7
   - F8
-  - F9
+  - {t: debug, h: toggle}
   - F10
   - VOLUME DOWN
   - VOLUME UP
@@ -62,7 +62,7 @@ layers:
   - {t: '"', s: '"'}
   - {t: M, h: numl, s: Sft+ F21}
   - {t: D, h: Sft+AGr+ RGUI, s: Sft+ F22}
-  - {t: Y, h: navr, s: Ctl+ F23}
+  - {t: Y, h: navr, s: Ctl+ D}
   - {t: X, s: Ctl+ F24}
   - ''
   - '&reloadkeymap'
@@ -567,87 +567,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: navr, h: toggle}
-  fun:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F10
-  - F11
-  - F12
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - Ctl+ Y
-  - Ctl+ Z
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - F7
-  - F8
-  - F9
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - Ctl+ X
-  - Ctl+ V
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - LCTRL
-  - RSHFT
-  - RIGHT ALT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - Ctl+ C
-  - Ctl+ S
-  - ''
-  - ''
-  - Ctl+Alt+ DELETE
-  - Gui+Ctl+Sft+ A
-  - Gui+Sft+Ctl+ Q
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Gui+ X
-  - {t: ▽, type: trans}
-  - F1
-  - F2
-  - F3
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - Ctl+ F
-  - Ctl+ A
-  - ''
-  - F9
-  - Sft+ F6
-  - ''
-  - ''
-  - ''
-  - Gui+ B
-  - F4
-  - F5
-  - F6
-  - ''
-  - ''
   switcher:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -889,6 +808,87 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  debug:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: main, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F17
+  - F18
+  - F19
+  - F21
+  - F21
+  - F17
+  - F18
+  - F19
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F7
+  - F8
+  - F9
+  - F16
+  - F16
+  - F7
+  - F8
+  - F9
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F10
+  - {t: F4, h: LALT}
+  - {t: F5, h: LSFT}
+  - {t: F6, h: LCTRL}
+  - F15
+  - F17
+  - {t: F4, h: LALT}
+  - {t: F5, h: LSFT}
+  - {t: F6, h: LCTRL}
+  - F10
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F20
+  - F1
+  - F2
+  - F3
+  - F14
+  - F23
+  - {t: main, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: main, h: toggle}
+  - F23
+  - F14
+  - F1
+  - F2
+  - F3
+  - F20
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F11
+  - F12
+  - F13
+  - F22
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F22
+  - F11
+  - F12
+  - F13
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   magic:

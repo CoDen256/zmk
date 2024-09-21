@@ -80,8 +80,8 @@ morph:
 
   # down
   M:  { hold: "&mo 3", rshift: "LC(V)",                           lshift: "LS(F21)" }
-  D:  { hold: "RS(RA(RGUI))", tapping-term-ms: 480,               lshift: "LS(F22)" }
-  Y:  { hold: "&mo 6", pos: "V L T R M D left",  rshift: "LC(F)", lshift: "LS(F23)", lctrl: "LC(F23)" }
+  D:  { hold: "RS(RA(RGUI))", tapping-term-ms: 480,               lshift: "LS(F22)", "" }
+  Y:  { hold: "&mo 6", pos: "V L T R M D left",  rshift: "LC(F)", lshift: "LS(F23)", lctrl: "LC(D)" }
   X:  {                                                           lshift: "LS(F24)", lctrl: "LC(F24)" }
   Z:  { rshift: "LC(Y)",                                          lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
 
@@ -99,6 +99,10 @@ morph:
   THUMBR0: "SPACE"
   THUMBR1: { default: "&sl 2", hold: "LG(F12)" }
   THUMBR2: "BACKSPACE"
+
+
+  # debug
+
 
 
   # nav
