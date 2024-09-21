@@ -480,12 +480,12 @@ release-after-ms = <5000>;};
         };
 
         VL_delegate:VL_delegate { label = "VL_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <150>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&pipe_pipe>, <&kp>;
         };
 
         LB_delegate:LB_delegate { label = "LB_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <150>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&ampersand_ampersand>, <&kp>;
         };
 
@@ -544,6 +544,11 @@ release-after-ms = <5000>;};
             bindings = <&kp>, <&kp>;
         };
 
+        OO_key_hold_tap:OO_key_hold_tap { label = "OO_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
+            bindings = <&kp>, <&kp>;
+        };
+
         F_key_hold_tap:F_key_hold_tap { label = "F_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <25 26 50 38 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&mo>, <&kp>;
@@ -567,11 +572,6 @@ release-after-ms = <5000>;};
         PQ_key_hold_tap:PQ_key_hold_tap { label = "PQ_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&lef_par_rig_par_left_arrow>, <&kp>;
-        };
-
-        JJ_key_hold_tap:JJ_key_hold_tap { label = "JJ_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
-            bindings = <&kp>, <&kp>;
         };
 
         L_key_hold_tap:L_key_hold_tap { label = "L_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
@@ -1038,7 +1038,7 @@ release-after-ms = <5000>;};
         };
 
         OO_key:OO_key { label = "OO_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LGUI>, <&kp LGUI>;
+            bindings = <&OO_key_hold_tap RGUI AT_SIGN>, <&OO_key_hold_tap RGUI AT_SIGN>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -1164,7 +1164,7 @@ release-after-ms = <5000>;};
         };
 
         JJ_key:JJ_key { label = "JJ_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&JJ_key_hold_tap RGUI AT_SIGN>, <&JJ_key_hold_tap RGUI AT_SIGN>;
+            bindings = <&none>, <&none>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };

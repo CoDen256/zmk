@@ -37,7 +37,7 @@ morph:
   N:  { hold: "LCTRL", lshift: "LC(S)",                         rshift: "RS(F9)"  }
 
   GG: "#"
-  OO: "LGUI"
+  OO: { default: "@", hold: "RGUI", pos: "right"}
   NN: "\t"
   PP: "'"
 
@@ -50,7 +50,7 @@ morph:
 
   UQ: { default: "[", hold: "[]\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
   PQ: { default: "(", hold: "()\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
-  JJ: { default: "@", hold: "RGUI", pos: "right"}
+  JJ: "&none"
   JQ: "^"
 
 #### right
@@ -162,13 +162,13 @@ combo:
 #  HN: ""
 #  CI: ""
 
-  RI: {tap: ":", hold: ": ", tapping-term-ms: 90, require-prior-idle-ms: 0}
+  AI: {tap: ":", hold: ": ", tapping-term-ms: 90, require-prior-idle-ms: 0}
   IN: "."
   AN: "!"
 
 #  AU: ""
 #  IF: ""
-#  IP: ""
+#  IP: "" ;:ir
 #  NU: ""
 
 #  FU:
@@ -177,8 +177,8 @@ combo:
 
 
   # right
-  VL: {tap: "|", hold: "||", tapping-term-ms: 90, require-prior-idle-ms: 0}
-  LB: {tap: "&",  hold: "&&", tapping-term-ms: 90, require-prior-idle-ms: 0}
+  VL: {tap: "|", hold: "||", tapping-term-ms: 150, require-prior-idle-ms: 0}
+  LB: {tap: "&",  hold: "&&", tapping-term-ms: 150, require-prior-idle-ms: 0}
   VB: {combo: "==", timeout-ms: 100 }
 
 #  VR: ""
@@ -187,7 +187,7 @@ combo:
 #  BR: ""
 
   TR: {tap: ",", hold: ", ", tapping-term-ms: 90, require-prior-idle-ms: 0}
-  TN: {tap: ";", hold: ";\n", tapping-term-ms: 200, require-prior-idle-ms: 0}
+  RE: {tap: ";", hold: ";\n", tapping-term-ms: 200, require-prior-idle-ms: 0}
   TE: "?"
 
 #  TD: ""

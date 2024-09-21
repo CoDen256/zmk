@@ -35,7 +35,7 @@ layers:
   - {t: B, h: navl, s: Sft+ F16}
   - {t: '~', s: '~'}
   - ''
-  - {t: LGUI, s: LGUI}
+  - {t: '@', h: RGUI, s: '@'}
   - {t: O, s: Sft+ F6}
   - {t: A, h: LALT, s: Ctl+ F7}
   - {t: I, h: LSHIFT, s: Sft+ F8}
@@ -47,7 +47,7 @@ layers:
   - {t: E, h: RALT, s: Sft+ F19}
   - {t: S, s: Ctl+ F20}
   - {t: '`', h: RGUI, s: '`'}
-  - {t: '@', h: RGUI, s: '@'}
+  - ''
   - {t: J, s: Sft+ F10}
   - {t: F, h: navl, s: Sft+ F11}
   - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}

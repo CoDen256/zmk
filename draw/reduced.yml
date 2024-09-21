@@ -60,8 +60,9 @@ layers:
   - t: '~'
     s: '~'
   - ''
-  - t: LGUI
-    s: LGUI
+  - t: '@'
+    h: RGUI
+    s: '@'
   - t: O
     s: Sft+ F6
   - t: A
@@ -91,9 +92,7 @@ layers:
   - t: '`'
     h: RGUI
     s: '`'
-  - t: '@'
-    h: RGUI
-    s: '@'
+  - ''
   - t: J
     s: Sft+ F10
   - t: F
