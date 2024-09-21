@@ -172,7 +172,6 @@ combos:
   - 25
   k:
     t: +
-    h: '&plus_equal'
 - p:
   - 25
   - 26
@@ -186,7 +185,6 @@ combos:
   - 37
   k:
     t: ':'
-    h: '&colon_space'
 - p:
   - 37
   - 38
@@ -204,13 +202,11 @@ combos:
   - 30
   k:
     t: '|'
-    h: '&pipe_pipe'
 - p:
   - 30
   - 31
   k:
     t: '&'
-    h: '&ampersand_ampersand'
 - p:
   - 29
   - 31
@@ -220,13 +216,11 @@ combos:
   - 42
   k:
     t: ','
-    h: '&comma_space'
 - p:
   - 42
   - 43
   k:
     t: ;
-    h: '&semicolon_enter'
 - p:
   - 41
   - 43

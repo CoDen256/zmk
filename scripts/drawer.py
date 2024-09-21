@@ -37,7 +37,7 @@ def run(base):
 
     layers = origin["layers"]
     removelayers(layers)
-    save(reduced, layout | {"layers": layers, "combos": origin["combos"]})
+    # save(reduced, layout | {"layers": layers, "combos": origin["combos"]})
 
 
     print("[drawer] Drawing")
