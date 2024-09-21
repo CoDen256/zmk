@@ -47,7 +47,7 @@ layers:
   - {t: E, h: RALT, s: Sft+ F19}
   - {t: S, s: Ctl+ F20}
   - {t: RGUI, s: RGUI}
-  - {t: '&press_mo_5_mo_5', s: '&press_mo_5_mo_5'}
+  - {t: numr, s: numr}
   - {t: J, s: Sft+ F10}
   - {t: F, h: navl, s: Sft+ F11}
   - {t: U, h: Sft+Alt+ LGUI, s: Sft+ F12}
@@ -71,11 +71,11 @@ layers:
   - {t: TAB, s: TAB}
   - {t: ENTER, s: ENTER}
   - {t: SPACE, s: SPACE}
-  - {t: '&press_sl_2_sl_2', s: '&press_sl_2_sl_2'}
+  - {t: de, h: Gui+ F12, s: de}
   - {t: switcher, h: toggle}
   - {t: main_upper, h: toggle}
   - {t: DELETE, s: DELETE}
-  - {t: '&press_sl_1_sl_1', s: '&press_sl_1_sl_1'}
+  - {t: main_upper, h: sticky, s: main_upper}
   - {t: ENTER, s: ENTER}
   - {t: TAB, s: TAB}
   - {t: Z, s: Ctl+ ~}
@@ -156,7 +156,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: main_upper, h: toggle}
+  - {t: main_upper, h: toggle, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+ Z
@@ -233,7 +233,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -452,11 +452,11 @@ layers:
   - '6'
   - '0'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - ','
   - '-'
-  - {t: +, type: held}
+  - +
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

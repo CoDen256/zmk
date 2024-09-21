@@ -132,10 +132,10 @@ class MorphParser:
         sub_name = ("" if not orig else orig) if not name else name
         if self.hold_tap_parser.is_inline_holdtap(node):
             default = self.anon_parser.parse(node)
-        elif orig and self.hold_tap_parser.is_inline_holdtap(node | {"tap": orig}):
-            default = self.anon_parser.parse(node | {"tap": orig, "name": sub_name+"_hold_tap"})
         elif default and self.hold_tap_parser.is_inline_holdtap(node | {"tap": default}):
             default = self.anon_parser.parse(node | {"tap": default, "name": sub_name+"_hold_tap"})
+        elif orig and self.hold_tap_parser.is_inline_holdtap(node | {"tap": orig}):
+            default = self.anon_parser.parse(node | {"tap": orig, "name": sub_name+"_hold_tap"})
         elif default:
             default = self.anon_parser.parse(default)
 

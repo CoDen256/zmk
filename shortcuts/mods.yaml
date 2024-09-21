@@ -50,7 +50,7 @@ morph:
 
   UQ: "\t"
   PQ: "\n"
-  JJ: { default: { press: "&mo 5"} }
+  JJ: "&mo 5"
   JQ: "@"
 
 #### right
@@ -88,6 +88,18 @@ morph:
   DZ: "\t"
   XZ: "~"
 
+
+  # thumbs
+
+  THUMBL0: "&sl 1"
+  THUMBL1: "DELETE"
+  THUMBL2: "F9"
+
+  THUMBR0: "SPACE"
+  THUMBR1: { default: "&sl 2", hold: "LG(F12)" }
+  THUMBR2: "BACKSPACE"
+
+
   # nav
   NAV0: "BACKSPACE"
   NAV1: "DELETE"
@@ -95,15 +107,6 @@ morph:
   NAVFULLRIGHT: "&move_selection_right"
   NAVPUP: "PAGE_UP"
   NAVPGDOWN: "PAGE_DOWN"
-
-  # thumbs
-  THUMBR0: "SPACE"
-  THUMBR1: { default:  { press: "&sl 2" } }
-  THUMBR2: "BACKSPACE"
-
-  THUMBL0: { default:  { press: "&sl 1" } }
-  THUMBL1: "DELETE"
-  THUMBL2: "F9"
 
 hold-tap:
   config:

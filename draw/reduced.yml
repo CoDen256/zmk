@@ -86,8 +86,8 @@ layers:
     s: Ctl+ F20
   - t: RGUI
     s: RGUI
-  - t: '&press_mo_5_mo_5'
-    s: '&press_mo_5_mo_5'
+  - t: numr
+    s: numr
   - t: J
     s: Sft+ F10
   - t: F
@@ -137,16 +137,18 @@ layers:
     s: ENTER
   - t: SPACE
     s: SPACE
-  - t: '&press_sl_2_sl_2'
-    s: '&press_sl_2_sl_2'
+  - t: de
+    h: Gui+ F12
+    s: de
   - t: switcher
     h: toggle
   - t: main_upper
     h: toggle
   - t: DELETE
     s: DELETE
-  - t: '&press_sl_1_sl_1'
-    s: '&press_sl_1_sl_1'
+  - t: main_upper
+    h: sticky
+    s: main_upper
   - t: ENTER
     s: ENTER
   - t: TAB
