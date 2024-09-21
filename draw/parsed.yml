@@ -29,7 +29,7 @@ layers:
   - {t: H, h: '&moswitcher LALT', s: Sft+ F3}
   - {t: C, s: Ctl+ F4}
   - {t: W, s: Sft+ F5}
-  - {t: '&escape', s: Ctl+ A}
+  - {t: '&press_escape_escape', s: Ctl+ A}
   - {t: V, s: Ctl+ F14}
   - {t: L, h: '&moswitcher LALT', s: Sft+ F15}
   - {t: B, h: '&monavr RCTRL', s: Sft+ F16}
@@ -504,7 +504,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BACKSPACE
+  - RIGHT
   - DELETE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

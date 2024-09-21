@@ -3,10 +3,7 @@ import string
 from itertools import groupby
 
 import yaml
-
-
-
-keynames = {
+keychars = {
     "!": "EXCLAMATION",
     "@": "AT_SIGN",
     "#": "HASH",
@@ -52,8 +49,8 @@ keynames = {
     "9": "N9",
     "\0": "END",
     "\1": "HOME",
-    "\2": "",
-    "\3": "",
+    "\2": "PAGE_UP",
+    "\3": "PAGE_DOWN",
     "\4": "",
     "\5": "",
     "\6": "",
@@ -65,6 +62,11 @@ keynames = {
     "\v": "DOWN_ARROW",
     "\r": "UP_ARROW",
 }
+
+keys = {k for k in keychars.values()}
+keys |= {f"F{n}" for n in range(25)}
+keys |= {f"{m}{k}" for m in ["L", "R", "LEFT_", "RIGHT_"] for k in ["SHIFT", "GUI", "CTRL", "ALT"]}
+keys |= {f"{m}{k}" for m in ["", "LEFT_", "RIGHT_"] for k in ["LEFT", "RIGHT", "DOWN", "UP"]}
 
 numlock={
     "0": "KP_NUMBER_0",
@@ -253,16 +255,19 @@ class HoldTapParser:
 class KeyParser:
     def is_kp(self, key):
         if not isinstance(key, str): return False
-        mods = "[LR][SGCA]\\((.+)\\)"
-        key = re.sub(mods, r"\1", key)
-        key = re.sub(mods, r"\1", key)
-        key = re.sub(mods, r"\1", key)
-
-        return (key in keynames or re.fullmatch("[A-Z0-9_]+|[ -~\n\t]", key))
+        key = rm_mods(key)
+        return (key in keychars or key in keys or re.fullmatch("[A-Z0-9_]+|[ -~\n\t]", key))
 
     def parse(self, key):
-        key = key if key not in keynames else keynames[key]
+        key = key if key not in keychars else keychars[key]
         return Binding(bind(f"kp {key.upper()}"), clean(key))
+
+def rm_mods(key):
+    mods = "[LR][SGCA]\\((.+)\\)"
+    key = re.sub(mods, r"\1", key)
+    key = re.sub(mods, r"\1", key)
+    key = re.sub(mods, r"\1", key)
+    return key
 
 
 class MacroParser:
@@ -307,6 +312,10 @@ class MacroParser:
 
     def parse_tap_inline(self, name, node):
         node = node.removeprefix("{").removesuffix("}") if node.startswith("{") and node.endswith("}") else node
+        if len(node) == 1:
+            return self.parse_press_inline(name, node)
+        if self.key_parser.is_kp(node):
+            return self.parse_press_list(name, [node])
         return Macro(name, [self.binding_parser.parse("&macro_tap")] + [self.key_parser.parse(k) for k in node], 0,
                      **self.default_cfg)
 
@@ -337,6 +346,7 @@ class MacroParser:
         return self.parse_binding_list(name, ["&macro_press","&kp LEFT_ALT", "&macro_tap",code, "&macro_release", "&kp LALT"])
 
     def parse_tap_list(self, name, ls):
+        if len(ls) == 1: return self.parse_press_list(name, ls)
         return Macro(name, [self.binding_parser.parse("&macro_tap")] + [self.key_parser.parse(k) for k in ls], 0,
                      **self.default_cfg)
 
@@ -401,6 +411,7 @@ def deunderline(name):
             "_")).lower()[:40]
 
 def clean(name, backup="unknown"):
+    name = rm_mods(name)
     truncated = "_".join([r[:3] for r in name.split("_")]) if len(name) > 10 else name
     result = deunderline(truncated)
     result = backup if len(result) < 3 else result
@@ -408,10 +419,7 @@ def clean(name, backup="unknown"):
 
 
 def readable(orig):
-    mods = "[LR][SGCA]\\((.+)\\)"
-    binding = re.sub(mods, r"\1", orig)
-    binding = re.sub(mods, r"\1", binding)
-    binding = re.sub(mods, r"\1", binding)
+    binding = rm_mods(orig)
     binding = binding.replace("&macro_pause_for_release", "")
     binding = binding.replace("&macro_release", "")
     binding = binding.replace("&macro_tap", "")

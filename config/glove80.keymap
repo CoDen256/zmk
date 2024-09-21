@@ -211,19 +211,6 @@ release-after-ms = <5000>;};
 		};
 
 
-		masked_home: masked_home {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp HOME>, <&hlctrl LC(HOME) HOME>;
-			mods = <(MOD_LCTL)>;
-		};
-
-		masked_end: masked_end {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp END>, <&hlctrl LC(END) END>;
-			mods = <(MOD_LCTL)>;
-		};
 
 		swapper: swapper {
 			compatible = "zmk,behavior-tri-state";
@@ -362,9 +349,8 @@ release-after-ms = <5000>;};
             bindings = <&macro_press>,<&mo 6 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 6>,<&macro_press>;
         };
 
-        moswitcher: moswitcher { label = "MOSWITCHER"; #binding-cells = <1>; compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
+        moswitcher: moswitcher { label = "MOSWITCHER"; #binding-cells = <1>; compatible = "zmk,behavior-macro-one-param"; 
+            
             bindings = <&macro_press>,<&mo 8 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 8>,<&macro_press>;
         };
 
@@ -375,17 +361,17 @@ release-after-ms = <5000>;};
 
         C5_key: C5_key { label = "C5_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
-            bindings = <&macro_tap>, <&kp F9>;
+            bindings = <&macro_press>, <&kp F9>, <&macro_pause_for_release>, <&macro_release>, <&kp F9>;
         };
 
         CS_key: CS_key { label = "CS_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
-            bindings = <&macro_tap>, <&kp LG(F10)>;
+            bindings = <&macro_press>, <&kp LG(F10)>, <&macro_pause_for_release>, <&macro_release>, <&kp LG(F10)>;
         };
 
         GG_key: GG_key { label = "GG_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
-            bindings = <&macro_tap>, <&kp CARET>;
+            bindings = <&macro_press>, <&kp CARET>, <&macro_pause_for_release>, <&macro_release>, <&kp CARET>;
         };
 
         OO_key: OO_key { label = "OO_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -420,17 +406,17 @@ release-after-ms = <5000>;};
 
         JQ_key: JQ_key { label = "JQ_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
-            bindings = <&macro_tap>, <&kp AT_SIGN>;
+            bindings = <&macro_press>, <&kp AT_SIGN>, <&macro_pause_for_release>, <&macro_release>, <&kp AT_SIGN>;
         };
 
         VS_key: VS_key { label = "VS_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
-            bindings = <&macro_tap>, <&kp LG(F11)>;
+            bindings = <&macro_press>, <&kp LG(F11)>, <&macro_pause_for_release>, <&macro_release>, <&kp LG(F11)>;
         };
 
         V6_key: V6_key { label = "V6_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
-            bindings = <&macro_tap>, <&kp LG(F12)>;
+            bindings = <&macro_press>, <&kp LG(F12)>, <&macro_pause_for_release>, <&macro_release>, <&kp LG(F12)>;
         };
 
         L7_key: L7_key { label = "L7_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -445,7 +431,7 @@ release-after-ms = <5000>;};
 
         BB_key: BB_key { label = "BB_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
-            bindings = <&macro_tap>, <&kp DOLLAR>;
+            bindings = <&macro_press>, <&kp DOLLAR>, <&macro_pause_for_release>, <&macro_release>, <&kp DOLLAR>;
         };
 
         SS_key: SS_key { label = "SS_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -480,7 +466,37 @@ release-after-ms = <5000>;};
 
         XZ_key: XZ_key { label = "XZ_KEY"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
-            bindings = <&macro_tap>, <&kp TILDE>;
+            bindings = <&macro_press>, <&kp TILDE>, <&macro_pause_for_release>, <&macro_release>, <&kp TILDE>;
+        };
+
+        NAV0: NAV0 { label = "NAV0"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_press>, <&kp BACKSPACE>, <&macro_pause_for_release>, <&macro_release>, <&kp BACKSPACE>;
+        };
+
+        NAV1: NAV1 { label = "NAV1"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_press>, <&kp DELETE>, <&macro_pause_for_release>, <&macro_release>, <&kp DELETE>;
+        };
+
+        NAVFULLLEFT: NAVFULLLEFT { label = "NAVFULLLEFT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&move_selection_left>;
+        };
+
+        NAVFULLRIGHT: NAVFULLRIGHT { label = "NAVFULLRIGHT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&move_selection_right>;
+        };
+
+        NAVPUP: NAVPUP { label = "NAVPUP"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_press>, <&kp PAGE_UP>, <&macro_pause_for_release>, <&macro_release>, <&kp PAGE_UP>;
+        };
+
+        NAVPGDOWN: NAVPGDOWN { label = "NAVPGDOWN"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            
+            bindings = <&macro_press>, <&kp PAGE_DOWN>, <&macro_pause_for_release>, <&macro_release>, <&kp PAGE_DOWN>;
         };
 
         ampersand_ampersand: ampersand_ampersand { label = "AMPERSAND_AMPERSAND"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -598,9 +614,9 @@ release-after-ms = <5000>;};
             bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_3>, <&macro_release>, <&kp LALT>;
         };
 
-        escape: escape { label = "ESCAPE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+        press_escape_escape: press_escape_escape { label = "PRESS_ESCAPE_ESCAPE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             
-            bindings = <&macro_tap>, <&kp ESCAPE>;
+            bindings = <&macro_press>, <&kp ESCAPE>, <&macro_pause_for_release>, <&macro_release>, <&kp ESCAPE>;
         };
 /*<macros-end>*/
 
@@ -666,6 +682,16 @@ release-after-ms = <5000>;};
         DY_delegate_hold_tap:DY_delegate_hold_tap { label = "DY_DELEGATE_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&lef_bra_rig_bra_left_arrow>, <&kp>;
+        };
+
+        home_x_home:home_x_home { label = "HOME_X_HOME"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        end_x_end:end_x_end { label = "END_X_END"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
+            bindings = <&kp>, <&kp>;
         };
 
         G_key_hold_tap:G_key_hold_tap { label = "G_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
@@ -746,6 +772,78 @@ release-after-ms = <5000>;};
         Y_key_hold_tap:Y_key_hold_tap { label = "Y_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <29 30 41 42 59 60 13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65>;
             bindings = <&mo>, <&kp>;
+        };
+
+        NAVBACK:NAVBACK { label = "NAVBACK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp HOME>, <&NAVBACK_lctrl_sink>;
+            mods = <(MOD_LCTL)>;
+            
+        };
+
+        NAVBACK_lctrl_sink:NAVBACK_lctrl_sink { label = "NAVBACK_LCTRL_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&home_x_home LC(HOME) HOME>, <&kp HOME>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        NAVFORWARD:NAVFORWARD { label = "NAVFORWARD"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp END>, <&NAVFORWARD_lctrl_sink>;
+            mods = <(MOD_LCTL)>;
+            
+        };
+
+        NAVFORWARD_lctrl_sink:NAVFORWARD_lctrl_sink { label = "NAVFORWARD_LCTRL_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&end_x_end LC(END) END>, <&kp END>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        NAVLEFT:NAVLEFT { label = "NAVLEFT"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LC(LEFT)>, <&NAVLEFT_lctrl_sink>;
+            mods = <(MOD_LCTL)>;
+            
+        };
+
+        NAVLEFT_lctrl_sink:NAVLEFT_lctrl_sink { label = "NAVLEFT_LCTRL_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp LC(LEFT)>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        NAVRIGHT:NAVRIGHT { label = "NAVRIGHT"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LC(RIGHT)>, <&NAVRIGHT_lctrl_sink>;
+            mods = <(MOD_LCTL)>;
+            
+        };
+
+        NAVRIGHT_lctrl_sink:NAVRIGHT_lctrl_sink { label = "NAVRIGHT_LCTRL_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp LC(RIGHT)>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        NAVUP:NAVUP { label = "NAVUP"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp UP>, <&NAVUP_lctrl_sink>;
+            mods = <(MOD_LCTL)>;
+            
+        };
+
+        NAVUP_lctrl_sink:NAVUP_lctrl_sink { label = "NAVUP_LCTRL_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LC(UP)>, <&kp UP>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        NAVDOWN:NAVDOWN { label = "NAVDOWN"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp DOWN>, <&NAVDOWN_lctrl_sink>;
+            mods = <(MOD_LCTL)>;
+            
+        };
+
+        NAVDOWN_lctrl_sink:NAVDOWN_lctrl_sink { label = "NAVDOWN_LCTRL_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LC(DOWN)>, <&kp DOWN>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
         OEU:OEU { label = "OEU"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
@@ -1085,13 +1183,13 @@ release-after-ms = <5000>;};
         };
 
         VV_key:VV_key { label = "VV_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&escape>, <&VV_key_rshift_sink>;
+            bindings = <&press_escape_escape>, <&VV_key_rshift_sink>;
             mods = <(MOD_RSFT)>;
             
         };
 
         VV_key_rshift_sink:VV_key_rshift_sink { label = "VV_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LC(A)>, <&escape>;
+            bindings = <&kp LC(A)>, <&press_escape_escape>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
@@ -1636,11 +1734,11 @@ numl {
 navl {
 			bindings = <
 &trans  &trans          &trans                &trans          &trans                                                                                            &trans     &trans           &trans  &trans  &trans
-&trans  &trans          &trans                &kp BACKSPACE   &kp DELETE       &trans                                                                   &trans  &trans     &trans           &trans  &trans  &trans
-&trans  &trans          &none                 &masked_home    &masked_end      &trans                                                                   &trans  &kp LCTRL  &kp RIGHT_SHIFT  &kp RIGHT_ALT   &none   &trans
-&trans  &kp LEFT_SHIFT  &move_selection_left  &kp LEFT_ARROW  &kp RIGHT_ARROW  &move_selection_right                                                    &trans  &kp RCTRL  &kp LEFT_SHIFT   &kp RIGHT_ALT   &none   &trans
-&trans  &kp LCTRL       &none                 &kp UP_ARROW    &kp DOWN         &trans                 &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LCTRL  &kp RIGHT_SHIFT  &kp RIGHT_ALT   &none   &trans
-&tog 4  &trans          &trans                &kp PG_UP       &kp PAGE_DOWN                           &trans  &trans  &trans    &trans  &trans  &trans          &none      &none            &none   &trans  &to 4
+&trans  &trans          &trans                &NAV0         &NAV1           &trans                                                                   &trans  &trans     &trans           &trans  &trans  &trans
+&trans  &trans          &none                 &NAVBACK      &NAVFORWARD     &trans                                                                   &trans  &kp LCTRL  &kp RIGHT_SHIFT  &kp RIGHT_ALT   &none   &trans
+&trans  &kp LEFT_SHIFT  &NAVFULLLEFT          &NAVLEFT      &NAVRIGHT       &NAVFULLRIGHT                                                    &trans  &kp RCTRL  &kp LEFT_SHIFT   &kp RIGHT_ALT   &none   &trans
+&trans  &kp LCTRL       &none                 &NAVUP        &NAVDOWN        &trans                 &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LCTRL  &kp RIGHT_SHIFT  &kp RIGHT_ALT   &none   &trans
+&tog 4  &trans          &trans                &NAVPUP       &NAVPGDOWN                           &trans  &trans  &trans    &trans  &trans  &trans          &none      &none            &none   &trans  &to 4
 >;};
 numr {
          bindings = <
@@ -1653,12 +1751,12 @@ numr {
 >;};
 navr {
 			bindings = <
-&trans  &trans  &trans          &trans          &trans                                                                                  &trans          &trans           &trans      &trans                 &trans
-&trans  &trans  &trans          &trans          &trans     &trans                                                       &trans          &kp BACKSPACE   &kp DELETE       &trans      &trans                 &trans
-&trans  &none   &kp RIGHT_ALT   &kp RIGHT_SHIFT &kp LCTRL  &trans                                                       &trans          &masked_home    &masked_end      &trans      &trans                 &trans
-&trans  &none   &kp RIGHT_ALT   &kp LEFT_SHIFT  &kp RCTRL  &trans                                                       &trans          &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans      &kp LEFT_SHIFT         &trans
-&trans  &none   &kp RIGHT_ALT   &kp RIGHT_SHIFT &kp LCTRL  &trans    &trans  &trans  &trans    &trans  &trans  &trans   &trans          &kp UP_ARROW    &kp DOWN         &trans      &kp LCTRL              &trans
-&tog 6  &trans  &none           &none           &none                &trans  &trans  &trans    &trans  &trans  &trans                    &kp PG_UP       &kp PAGE_DOWN    &trans      &trans                 &to 6
+&trans  &trans  &trans          &trans          &trans                                                                  &trans                &trans        &trans                          &trans                 &trans
+&trans  &trans  &trans          &trans          &trans     &trans                                                       &trans                &NAV0         &NAV1           &trans            &trans                 &trans
+&trans  &none   &kp RIGHT_ALT   &kp RIGHT_SHIFT &kp LCTRL  &trans                                                       &none                 &NAVBACK      &NAVFORWARD     &trans            &trans                 &trans
+&trans  &none   &kp RIGHT_ALT   &kp LEFT_SHIFT  &kp RCTRL  &trans                                                       &NAVFULLLEFT          &NAVLEFT      &NAVRIGHT       &NAVFULLRIGHT     &kp LEFT_SHIFT         &trans
+&trans  &none   &kp RIGHT_ALT   &kp RIGHT_SHIFT &kp LCTRL  &trans    &trans  &trans  &trans    &trans  &trans  &trans   &none                 &NAVUP        &NAVDOWN        &trans            &kp LCTRL              &trans
+&tog 6  &trans  &none           &none           &none                &trans  &trans  &trans    &trans  &trans  &trans                         &NAVPUP       &NAVPGDOWN       &trans           &trans                 &to 6
 >;};
 fun {
 			bindings = <

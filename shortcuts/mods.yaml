@@ -4,6 +4,15 @@ morph:
     exact: true
     keep: "all"
 
+# nav layer
+  NAVBACK: {default: "HOME", lctrl: {hold: "LC(HOME)", tap: "HOME"}}
+  NAVFORWARD: {default: "END", lctrl: {hold: "LC(END)", tap: "END"}}
+  NAVLEFT: {default: "LC(LEFT)", lctrl: "LEFT"}
+  NAVRIGHT: {default: "LC(RIGHT)", lctrl: "RIGHT"}
+  NAVUP: {default: "UP", lctrl: "LC(UP)"}
+  NAVDOWN: {default: "DOWN", lctrl: "LC(DOWN)"}
+
+
   OEU: { default: "ö", lshift: "Ö", exact: false, keep: "none"}
   AEU: { default: "ä", lshift: "Ä", exact: false, keep: "none"}
   UEU: { default: "ü", lshift: "Ü", exact: false, keep: "none"}
@@ -44,6 +53,7 @@ morph:
   Y:  { hold: "&mo 6", pos: "V L T R M D left",  rshift: "LC(F)", lshift: "LS(F23)", lctrl: "LC(F23)" }
   X:  {                                                           lshift: "LS(F24)", lctrl: "LC(F24)" }
   Z:  { rshift: "LC(Y)",                                          lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
+
 
 hold-tap:
   config:
@@ -104,14 +114,21 @@ macro:
   B8_key: "&key_repeat"
   BB_key: "$"
 
-  SS_key: { press: ["RGUI"]}
+  SS_key: "RGUI"
   XX_key: "&none"
-  TT_key: { press: "\t" }
+  TT_key: "\t"
   MM_key: "&none"
 
-  MZ_key: { press: "\n" }
-  DZ_key: { press: "\t" }
+  MZ_key: "\n"
+  DZ_key: "\t"
   XZ_key: "~"
+
+  NAV0: "BACKSPACE"
+  NAV1: "DELETE"
+  NAVFULLLEFT: "&move_selection_left"
+  NAVFULLRIGHT: "&move_selection_right"
+  NAVPUP: "PAGE_UP"
+  NAVPGDOWN: "PAGE_DOWN"
 
 combo:
   config:

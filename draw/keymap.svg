@@ -253,7 +253,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(700, 140)" class="key keypos-28">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">&amp;escape</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;press_esc…</tspan></text>
 <text x="0" y="-24" class="key shifted">Ctl+ A</text>
 </g>
 <g transform="translate(756, 140)" class="key keypos-29">
@@ -2354,7 +2354,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(756, 84)" class="key keypos-17">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 78%">BACKSPACE</tspan></text>
+<text x="0" y="0" class="key tap">RIGHT</text>
 </g>
 <g transform="translate(812, 84)" class="key keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
