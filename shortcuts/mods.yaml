@@ -21,7 +21,7 @@ morph:
 # left
   # up
   G3: "&none"
-  C5: "F9"
+  C5: "&none"
   CS: "LG(F10)"
 
   K:  {                                                         rshift: "RS(F1)" }

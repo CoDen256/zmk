@@ -15,7 +15,7 @@ layers:
   - VOLUME UP
   - ''
   - {t: K, s: Sft+ F1}
-  - {t: F9, s: F9}
+  - ''
   - {t: Gui+ F10, s: Gui+ F10}
   - {t: Gui+ F11, s: Gui+ F11}
   - {t: Gui+ F12, s: Gui+ F12}
