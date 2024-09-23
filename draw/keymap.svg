@@ -456,7 +456,7 @@ path.combo { stroke: #7f7f7f; }
 <text x="0" y="0" class="key tap">Y</text>
 <a href="#navr">
 <text x="0" y="24" class="key hold layer-activator">navr</text>
-</a><text x="0" y="-24" class="key shifted">Ctl+ D</text>
+</a><text x="0" y="-24" class="key shifted"><tspan style="font-size: 88%">Sft+ F23</tspan></text>
 </g>
 <g transform="translate(924, 280)" class="key keypos-62">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -577,6 +577,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -1030,6 +1031,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -1433,6 +1435,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -1855,6 +1858,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -2280,6 +2284,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -2703,6 +2708,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -3128,6 +3134,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -3525,6 +3532,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -3922,6 +3930,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -4329,6 +4338,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>
@@ -4722,6 +4732,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>

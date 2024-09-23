@@ -62,7 +62,7 @@ layers:
   - {t: '"', s: '"'}
   - {t: M, h: numl, s: Sft+ F21}
   - {t: D, h: Sft+AGr+ RGUI, s: Sft+ F22}
-  - {t: Y, h: navr, s: Ctl+ D}
+  - {t: Y, h: navr, s: Sft+ F23}
   - {t: X, s: Ctl+ F24}
   - ''
   - '&reloadkeymap'
@@ -901,7 +901,7 @@ combos:
 - p: [36, 37]
   k: {t: ':', h: '&colon_space'}
 - p: [37, 38]
-  k: .
+  k: {t: ., h: '&period_period'}
 - p: [36, 38]
   k: '!'
 - p: [50, 49]

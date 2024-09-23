@@ -393,6 +393,7 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="215" y="188" width="18" height="16" class="combo"/>
 <text x="224" y="196" class="combo tap">.</text>
+<text x="224" y="202" class="combo hold"><tspan style="font-size: 64%">&amp;period_pe…</tspan></text>
 </g>
 <g class="combo combopos-5">
 <path d="M196,196 l-37,0" class="combo"/>

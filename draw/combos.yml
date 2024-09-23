@@ -24,7 +24,9 @@ combos:
 - p:
   - 37
   - 38
-  k: .
+  k:
+    t: .
+    h: '&period_period'
 - p:
   - 36
   - 38

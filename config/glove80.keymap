@@ -291,7 +291,7 @@ release-after-ms = <5000>;};
 
         select_word: select_word { label = "SELECT_WORD"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&select_word_right &select_word_left>;
+            bindings = <&select_word_right>, <&select_word_left>;
         };
 
         select_line: select_line { label = "SELECT_LINE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -356,112 +356,112 @@ release-after-ms = <5000>;};
 
         plus_equal: plus_equal { label = "PLUS_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp PLUS &kp EQUAL>;
+            bindings = <&macro_tap>, <&kp PLUS>, <&kp EQUAL>;
         };
 
         colon_space: colon_space { label = "COLON_SPACE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp COLON &kp SPACE>;
+            bindings = <&macro_tap>, <&kp COLON>, <&kp SPACE>;
         };
 
         pipe_pipe: pipe_pipe { label = "PIPE_PIPE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp PIPE &kp PIPE>;
+            bindings = <&macro_tap>, <&kp PIPE>, <&kp PIPE>;
         };
 
         ampersand_ampersand: ampersand_ampersand { label = "AMPERSAND_AMPERSAND"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp AMPERSAND &kp AMPERSAND>;
+            bindings = <&macro_tap>, <&kp AMPERSAND>, <&kp AMPERSAND>;
         };
 
         equal_equal: equal_equal { label = "EQUAL_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp EQUAL &kp EQUAL>;
-        };
-
-        comma_space: comma_space { label = "COMMA_SPACE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
-            wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp COMMA &kp SPACE>;
+            bindings = <&macro_tap>, <&kp EQUAL>, <&kp EQUAL>;
         };
 
         semicolon_enter: semicolon_enter { label = "SEMICOLON_ENTER"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp SEMICOLON &kp ENTER>;
+            bindings = <&macro_tap>, <&kp SEMICOLON>, <&kp ENTER>;
         };
 
         minus_gre_tha: minus_gre_tha { label = "MINUS_GRE_THA"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp MINUS &kp GREATER_THAN>;
+            bindings = <&macro_tap>, <&kp MINUS>, <&kp GREATER_THAN>;
         };
 
         press_kp_lef_alt_0_2_1_4_kp_lalt: press_kp_lef_alt_0_2_1_4_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_1_4_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_1 &kp KP_NUMBER_4>,<&macro_release>,<&kp LALT>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_1 &kp KP_NUMBER_4>, <&macro_release>, <&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_4_6_kp_lalt: press_kp_lef_alt_0_2_4_6_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_4_6_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_6>,<&macro_release>,<&kp LALT>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_6>, <&macro_release>, <&kp LALT>;
         };
 
         press_kp_lef_alt_0_1_9_6_kp_lalt: press_kp_lef_alt_0_1_9_6_kp_lalt { label = "PRESS_KP_LEF_ALT_0_1_9_6_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_9 &kp KP_NUMBER_6>,<&macro_release>,<&kp LALT>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_9 &kp KP_NUMBER_6>, <&macro_release>, <&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_2_8_kp_lalt: press_kp_lef_alt_0_2_2_8_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_2_8_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_8>,<&macro_release>,<&kp LALT>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_8>, <&macro_release>, <&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_2_0_kp_lalt: press_kp_lef_alt_0_2_2_0_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_2_0_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_0>,<&macro_release>,<&kp LALT>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_0>, <&macro_release>, <&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_5_2_kp_lalt: press_kp_lef_alt_0_2_5_2_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_5_2_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_5 &kp KP_NUMBER_2>,<&macro_release>,<&kp LALT>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_5 &kp KP_NUMBER_2>, <&macro_release>, <&kp LALT>;
         };
 
         press_kp_lef_alt_0_7_8_3_8_kp_lalt: press_kp_lef_alt_0_7_8_3_8_kp_lalt { label = "PRESS_KP_LEF_ALT_0_7_8_3_8_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_3 &kp KP_NUMBER_8>,<&macro_release>,<&kp LALT>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_3 &kp KP_NUMBER_8>, <&macro_release>, <&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_2_3_kp_lalt: press_kp_lef_alt_0_2_2_3_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_2_3_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_3>,<&macro_release>,<&kp LALT>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_3>, <&macro_release>, <&kp LALT>;
         };
 
         backslash_backslash: backslash_backslash { label = "BACKSLASH_BACKSLASH"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp BACKSLASH &kp BACKSLASH>;
+            bindings = <&macro_tap>, <&kp BACKSLASH>, <&kp BACKSLASH>;
         };
 
         slash_slash: slash_slash { label = "SLASH_SLASH"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp SLASH &kp SLASH>;
+            bindings = <&macro_tap>, <&kp SLASH>, <&kp SLASH>;
         };
 
         lef_bra_rig_bra_left_arrow: lef_bra_rig_bra_left_arrow { label = "LEF_BRA_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
+            bindings = <&macro_tap>, <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>, <&kp LEFT_ARROW>;
         };
 
         lef_par_rig_par_left_arrow: lef_par_rig_par_left_arrow { label = "LEF_PAR_RIG_PAR_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+            bindings = <&macro_tap>, <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT_ARROW>;
         };
 
         exc_equal: exc_equal { label = "EXC_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp EXCLAMATION &kp EQUAL>;
+            bindings = <&macro_tap>, <&kp EXCLAMATION>, <&kp EQUAL>;
+        };
+
+        comma_space: comma_space { label = "COMMA_SPACE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
+            wait-ms = <0>; tap-ms = <0>;
+            bindings = <&macro_tap>, <&kp COMMA>, <&kp SPACE>;
         };
 
         left_brace_rig_bra_left_arrow: left_brace_rig_bra_left_arrow { label = "LEFT_BRACE_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+            bindings = <&macro_tap>, <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>, <&kp LEFT_ARROW>;
         };
 /*<macros-end>*/
 
@@ -487,11 +487,6 @@ release-after-ms = <5000>;};
         LB_delegate:LB_delegate { label = "LB_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <150>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
             bindings = <&ampersand_ampersand>, <&kp>;
-        };
-
-        TR_delegate:TR_delegate { label = "TR_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
-            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
-            bindings = <&comma_space>, <&kp>;
         };
 
         RE_delegate:RE_delegate { label = "RE_DELEGATE"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
@@ -602,6 +597,11 @@ release-after-ms = <5000>;};
         SS_key_hold_tap:SS_key_hold_tap { label = "SS_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65>;
             bindings = <&kp>, <&kp>;
+        };
+
+        comma_x_com_spa:comma_x_com_spa { label = "COMMA_X_COM_SPA"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <90>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <13 24 25 26 27 35 36 37 38 47 48 49 50 66 12 14 23 15 34 39 51 67 68 46 65 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 19 32 45 63 28 40 58 75 76 78>;
+            bindings = <&comma_space>, <&kp>;
         };
 
         M_key_hold_tap:M_key_hold_tap { label = "M_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
@@ -1050,7 +1050,7 @@ release-after-ms = <5000>;};
         };
 
         PP_key:PP_key { label = "PP_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp SINGLE_QUOTE>, <&kp SINGLE_QUOTE>;
+            bindings = <&kp PERIOD>, <&kp PERIOD>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -1392,7 +1392,7 @@ release-after-ms = <5000>;};
         };
 
         MM_key:MM_key { label = "MM_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp DOUBLE_QUOTES>, <&kp DOUBLE_QUOTES>;
+            bindings = <&comma_x_com_spa 0 COMMA>, <&comma_x_com_spa 0 COMMA>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -1434,20 +1434,14 @@ release-after-ms = <5000>;};
         };
 
         Y_key:Y_key { label = "Y_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&Y_key_lshift_link>, <&Y_key_lctrl_sink>;
-            mods = <(MOD_LCTL)>;
+            bindings = <&Y_key_rshift_link>, <&Y_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
             
         };
 
         Y_key_rshift_link:Y_key_rshift_link { label = "Y_KEY_RSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&Y_key_hold_tap 6 Y>, <&Y_key_rshift_sink>;
             mods = <(MOD_RSFT)>;
-            
-        };
-
-        Y_key_lshift_link:Y_key_lshift_link { label = "Y_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&Y_key_rshift_link>, <&Y_key_lshift_sink>;
-            mods = <(MOD_LSFT)>;
             
         };
 
@@ -1461,12 +1455,6 @@ release-after-ms = <5000>;};
             bindings = <&kp LS(F23)>, <&Y_key_hold_tap 6 Y>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-        };
-
-        Y_key_lctrl_sink:Y_key_lctrl_sink { label = "Y_KEY_LCTRL_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LC(D)>, <&Y_key_hold_tap 6 Y>;
-            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
         X_key:X_key { label = "X_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
@@ -1682,7 +1670,7 @@ release-after-ms = <5000>;};
         };
 
         IN { timeout-ms = <30>; key-positions = <37 38>;
-            bindings = <&kp PERIOD>; 
+            bindings = <&kp SINGLE_QUOTE>; 
         };
 
         AN { timeout-ms = <30>; key-positions = <36 38>;
@@ -1706,7 +1694,7 @@ release-after-ms = <5000>;};
         };
 
         TR { timeout-ms = <30>; key-positions = <41 42>;
-            bindings = <&TR_delegate 0 COMMA>; 
+            bindings = <&kp DOUBLE_QUOTES>; 
         };
 
         RE { timeout-ms = <30>; key-positions = <42 43>;

@@ -58,6 +58,7 @@
   <action id="Android.ChooseProfileConfiguration" />
   <action id="Arrangement.Alias.Rule.Add" />
   <action id="Arrangement.Rule.Add" />
+  <action id="Arrangement.Rule.Edit" />
   <action id="Arrangement.Rule.Match.Condition.Move.Down">
     <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
@@ -151,7 +152,16 @@
   <action id="Console.TableResult.CompareCells" />
   <action id="Console.TableResult.DeleteRows" />
   <action id="Console.TableResult.EditFilterCriteria" />
+  <action id="Console.TableResult.EditValue">
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
   <action id="Console.TableResult.EditValueMaximized" />
+  <action id="Console.TableResult.GotoReferencedResult">
+    <mouse-shortcut keystroke="button1 doubleClick" />
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
   <action id="Console.TableResult.GotoReferencingResult" />
   <action id="Console.TableResult.HideEditMaximized" />
   <action id="Console.TableResult.MaximizeEditingCell" />
@@ -193,17 +203,21 @@
   <action id="DatabaseView.Tools.RevertChanges" />
   <action id="Debug">
     <keyboard-shortcut first-keystroke="ctrl d" />
+    <keyboard-shortcut first-keystroke="f16" />
   </action>
   <action id="DebugClass">
     <keyboard-shortcut first-keystroke="shift ctrl d" />
+    <keyboard-shortcut first-keystroke="alt f16" />
   </action>
   <action id="Debugger.AddToWatch" />
-  <action id="Debugger.EditArrayFilter">
-    <keyboard-shortcut first-keystroke="f2" />
-  </action>
+  <action id="Debugger.EditArrayFilter" />
+  <action id="Debugger.EditCustomField" />
   <action id="Debugger.MarkObject" />
   <action id="Debugger.PopFrame">
-    <keyboard-shortcut first-keystroke="alt f3" />
+    <keyboard-shortcut first-keystroke="alt f8" />
+  </action>
+  <action id="Debugger.StepOutOfBlock">
+    <keyboard-shortcut first-keystroke="alt f9" />
   </action>
   <action id="DeviceAndSnapshotComboBox" />
   <action id="Diagram.DeselectAll" />
@@ -303,7 +317,9 @@
   </action>
   <action id="EmmetNextEditPoint" />
   <action id="EmmetPreviousEditPoint" />
-  <action id="EvaluateExpression" />
+  <action id="EvaluateExpression">
+    <keyboard-shortcut first-keystroke="f15" />
+  </action>
   <action id="ExecuteInPyConsoleAction" />
   <action id="ExpandAll">
     <keyboard-shortcut first-keystroke="ctrl add" />
@@ -370,13 +386,13 @@
   <action id="FoldingGroup" />
   <action id="ForceOthersToFollowAction" />
   <action id="ForceRunToCursor">
-    <keyboard-shortcut first-keystroke="alt f5" />
+    <keyboard-shortcut first-keystroke="alt f3" />
   </action>
   <action id="ForceStepInto">
-    <keyboard-shortcut first-keystroke="alt f9" />
+    <keyboard-shortcut first-keystroke="alt f5" />
   </action>
   <action id="ForceStepOver">
-    <keyboard-shortcut first-keystroke="alt f8" />
+    <keyboard-shortcut first-keystroke="alt f6" />
   </action>
   <action id="Forward">
     <keyboard-shortcut first-keystroke="alt c" />
@@ -401,9 +417,11 @@
   </action>
   <action id="Git.New.Branch.In.Log" />
   <action id="Git.Pull" />
+  <action id="Git.Rename.Local.Branch" />
   <action id="Git.Reset">
     <keyboard-shortcut first-keystroke="ctrl alt o" />
   </action>
+  <action id="Git.Reword.Commit" />
   <action id="Git.Stage.Add" />
   <action id="GitLab.Merge.Request.List.Refresh" />
   <action id="GitLab.Merge.Request.Refresh" />
@@ -463,6 +481,8 @@
   </action>
   <action id="Graph.RouteEdges" />
   <action id="GuiDesigner.Duplicate" />
+  <action id="GuiDesigner.EditComponent" />
+  <action id="GuiDesigner.EditGroup" />
   <action id="GuiDesigner.QuickJavadoc" />
   <action id="GuiDesigner.SurroundPopup">
     <keyboard-shortcut first-keystroke="shift f10" />
@@ -474,7 +494,7 @@
   <action id="HideAllWindows" />
   <action id="HighlightUsagesInFile" />
   <action id="Hotswap">
-    <keyboard-shortcut first-keystroke="alt f1" />
+    <keyboard-shortcut first-keystroke="ctrl f18" />
   </action>
   <action id="Images.Editor.ZoomIn">
     <keyboard-shortcut first-keystroke="ctrl add" />
@@ -635,7 +655,7 @@
     <keyboard-shortcut first-keystroke="shift alt p" />
   </action>
   <action id="Pause">
-    <keyboard-shortcut first-keystroke="f3" />
+    <keyboard-shortcut first-keystroke="f8" />
   </action>
   <action id="PlantUML.Update" />
   <action id="PrevSplitter">
@@ -653,7 +673,7 @@
   </action>
   <action id="QuickChangeScheme" />
   <action id="QuickEvaluateExpression">
-    <mouse-shortcut keystroke="alt button1" />
+    <keyboard-shortcut first-keystroke="alt f15" />
   </action>
   <action id="QuickImplementations">
     <keyboard-shortcut first-keystroke="shift alt i" />
@@ -715,9 +735,6 @@
     <keyboard-shortcut first-keystroke="shift meta alt u" />
   </action>
   <action id="RestartIde" />
-  <action id="Resume">
-    <keyboard-shortcut first-keystroke="f3" />
-  </action>
   <action id="RiderBackendAction-ExtractClass" />
   <action id="RiderCollapseToDefinitions" />
   <action id="RiderDebuggerApplyEncChagnes" />
@@ -750,7 +767,7 @@
   <action id="RunInspection" />
   <action id="RunTargetAction" />
   <action id="RunToCursor">
-    <keyboard-shortcut first-keystroke="f5" />
+    <keyboard-shortcut first-keystroke="f3" />
   </action>
   <action id="SafeDelete">
     <keyboard-shortcut first-keystroke="alt delete" />
@@ -784,7 +801,9 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt t" />
   </action>
   <action id="ShowErrorDescription" />
-  <action id="ShowExecutionPoint" />
+  <action id="ShowExecutionPoint">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
   <action id="ShowFilePath">
     <keyboard-shortcut first-keystroke="ctrl alt v" />
   </action>
@@ -812,7 +831,9 @@
   <action id="SilentCodeCleanup" />
   <action id="SingleUserFollowAction" />
   <action id="SmartSelect" />
-  <action id="SmartStepInto" />
+  <action id="SmartStepInto">
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
   <action id="Space.Review.CreateDiffComment" />
   <action id="SplitHorizontally">
     <keyboard-shortcut first-keystroke="shift ctrl meta alt u" />
@@ -821,16 +842,18 @@
     <keyboard-shortcut first-keystroke="shift ctrl meta alt g" />
   </action>
   <action id="Sql.EditParameter" />
-  <action id="StepInto">
+  <action id="StepInto" />
+  <action id="StepIntoMyCode" />
+  <action id="StepOut">
     <keyboard-shortcut first-keystroke="f9" />
   </action>
-  <action id="StepIntoMyCode" />
-  <action id="StepOut" />
   <action id="StepOver">
-    <keyboard-shortcut first-keystroke="f8" />
+    <keyboard-shortcut first-keystroke="f6" />
+    <keyboard-shortcut first-keystroke="n" />
   </action>
   <action id="Stop">
     <keyboard-shortcut first-keystroke="shift f18" />
+    <keyboard-shortcut first-keystroke="f22" />
   </action>
   <action id="StretchSplitToBottom" />
   <action id="StretchSplitToLeft" />
@@ -854,6 +877,7 @@
   <action id="Synchronize">
     <keyboard-shortcut first-keystroke="ctrl k" />
   </action>
+  <action id="Table-startEditing" />
   <action id="TableResult.GrowSelection" />
   <action id="TableResult.SelectColumn" />
   <action id="TableResult.UnselectPreviousOccurrence" />
@@ -880,7 +904,9 @@
   <action id="ToggleBreakpointAction">
     <keyboard-shortcut first-keystroke="shift f22" />
   </action>
-  <action id="ToggleBreakpointEnabled" />
+  <action id="ToggleBreakpointEnabled">
+    <keyboard-shortcut first-keystroke="alt f2" />
+  </action>
   <action id="ToggleDistractionFreeMode" />
   <action id="ToggleFindInSelection">
     <keyboard-shortcut first-keystroke="ctrl f" />
@@ -888,9 +914,12 @@
   <action id="ToggleFullScreen" />
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="alt d" />
+    <keyboard-shortcut first-keystroke="f2" />
   </action>
   <action id="TogglePresentationMode" />
-  <action id="ToggleTemporaryLineBreakpoint" />
+  <action id="ToggleTemporaryLineBreakpoint">
+    <keyboard-shortcut first-keystroke="ctrl f2" />
+  </action>
   <action id="ToggleZenMode" />
   <action id="ToolWindowsGroup" />
   <action id="TouchBarDebug" />
@@ -913,7 +942,7 @@
     <keyboard-shortcut first-keystroke="alt j" />
   </action>
   <action id="UpdateRunningApplication">
-    <keyboard-shortcut first-keystroke="f1" />
+    <keyboard-shortcut first-keystroke="f18" />
   </action>
   <action id="UsageFiltering.Imports" />
   <action id="UsageFiltering.ReadAccess" />
@@ -962,8 +991,10 @@
   </action>
   <action id="ViewBreakpoints">
     <keyboard-shortcut first-keystroke="shift alt d" second-keystroke="b" />
+    <keyboard-shortcut first-keystroke="ctrl alt f2" />
   </action>
   <action id="WD.UploadCurrentRemoteFileAction" />
+  <action id="WebOpenInAction" />
   <action id="WelcomeScreen.Plugins">
     <keyboard-shortcut first-keystroke="shift meta alt g" />
   </action>
@@ -971,11 +1002,17 @@
     <keyboard-shortcut first-keystroke="shift alt d" second-keystroke="a" />
   </action>
   <action id="XDebugger.CopyWatch" />
+  <action id="XDebugger.EditWatch" />
+  <action id="XDebugger.JumpToSource">
+    <keyboard-shortcut first-keystroke="alt c" />
+    <keyboard-shortcut first-keystroke="f19" />
+  </action>
   <action id="XDebugger.MuteBreakpoints">
     <keyboard-shortcut first-keystroke="shift alt d" second-keystroke="m" />
+    <keyboard-shortcut first-keystroke="f1" />
   </action>
   <action id="XDebugger.SetValue">
-    <keyboard-shortcut first-keystroke="f2" />
+    <keyboard-shortcut first-keystroke="f7" />
   </action>
   <action id="XPathView.Actions.ShowPath" />
   <action id="android.deploy.ApplyChanges" />
