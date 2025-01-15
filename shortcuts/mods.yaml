@@ -5,27 +5,35 @@ morph:
     keep: "all"
 
 # nav layer
-  NAVBACK:    { default: "HOME", ctrl: {hold: "LC(HOME)", tap: "HOME"}}
-  NAVFORWARD: { default: "END", ctrl: {hold: "LC(END)", tap: "END"}}
+  NAVBACK:    { default: "HOME", ctrl: "LC(HOME)"}
+  NAVFORWARD: { default: "END", ctrl: "LC(END)"}
   NAVLEFT:    { default: "LC(LEFT)", ctrl: "LEFT"}
   NAVRIGHT:   { default: "LC(RIGHT)",ctrl: "RIGHT"}
   NAVUP:      { default: "UP", ctrl: "LC(UP)"}
   NAVDOWN:    { default: "DOWN", ctrl: "LC(DOWN)"}
 
+### LEFT SIDE
+  # UPPER LEFT
+  F1: "F1"
+  F2: "F2"
+  F3: "F3"
+  F4: "F4"
+  F5: "F5"
 
-  OEU: { default: "ö", lshift: "Ö", exact: false, keep: "none"}
-  AEU: { default: "ä", lshift: "Ä", exact: false, keep: "none"}
-  UEU: { default: "ü", lshift: "Ü", exact: false, keep: "none"}
-  SSU: { default: "ß", lshift: "ẞ", exact: false, keep: "none"}
+  # LEFT APPENDIX
+  K1: "&none"
+  K2: "&none"
+  K3: { tap: \, hold: \\, tapping-term-ms: 250, require-prior-idle-ms: 0}
+  G1: "&none"
+  G2: "#"
+  O1: { default: "@", hold: "RGUI", pos: "right" }
+  J1: "&none"
 
-# left
+
+  # LEFT MAIN
   # up
-  G3: { tap: \, hold: \\, tapping-term-ms: 90, require-prior-idle-ms: 0}
-  C5: { tap: /, hold: //, tapping-term-ms: 250, require-prior-idle-ms: 0}
-  CS: "LG(F10)"
-
   K:  {                                                         rshift: "RS(F1)" }
-  G:  { hold: "&mo 6", lshift: "LC(X)",    rshift: "RS(F2)"  }
+  G:  { hold: "&mo 5", lshift: "LC(X)",    rshift: "RS(F2)"  }
   H:  { hold: "&moswitcher LALT", pos: "C G N",                 rshift: "RS(F3)"  }
   C:  { lshift: "LC(C)",                                        rshift: "RS(F4)", rctrl: "RC(F4)"}
   W:  { lshift: "LC(A)",                                        rshift: "RS(F5)"  }
@@ -36,35 +44,38 @@ morph:
   I:  { hold: "LSHIFT", pos: "G C A N F P W right",             rshift: "RS(F8)"  }
   N:  { hold: "LCTRL", lshift: "LC(S)",                         rshift: "RS(F9)"  }
 
-  GG: "#"
-  OO: { default: "@", hold: "RGUI", pos: "right"}
-  NN: "\t"
-  PP: "."
-
   # down
   J: {                                                          rshift: "RS(F10)" }
-  F: { hold: "&mo 4", pos: "H C P N right",  lshift: "LC(F)",   rshift: "RS(F11)" }
+  F: { hold: "&mo 3", pos: "H C P N right",  lshift: "LC(F)",   rshift: "RS(F11)" }
   U: { hold: "LS(LA(LGUI))", tapping-term-ms: 480,              rshift: "RS(F12)" }
-  P: { hold: "&mo 5", lshift: "LC(V)",                          rshift: "RS(F13)" }
+  P: { hold: "&mo 4", lshift: "LC(V)",                          rshift: "RS(F13)" }
   Q: { lshift: "LC(Y)",                                         rshift: "RC(CARET)" }
 
-  UQ: { default: "[", hold: "[]\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
-  PQ: { default: "(", hold: "()\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
-  JJ: "&none"
-  JQ: "^"
+  # LEFT CENTER APPENDIX
+  K5: { tap: /, hold: //, tapping-term-ms: 250, require-prior-idle-ms: 0}
+  K6: "&none"
+  N6: "\t"
+  P6: "."
+
+  # LEFT LOWER
+  Q1: "&none"
+  Q2: "^"
+  Q4: { default: "[", hold: "[]\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  Q5: { default: "(", hold: "()\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
 
 #### right
-  # up
-  VS: "!="
-  V6: "<"
-  L7: "="
-  B8: ">"
-  BB: "~"
+  # UPPER RIGHT
+  F6: "F6"
+  F7: "F7"
+  F8: "F8"
+  F9: "F9"
+  F0: "F10"
 
-  VV: { default: "ESCAPE", rshift: "LC(A)"}
+  # MAIN RIGHT
+  # up
   V:  { rshift: "LC(C)",                                          lshift: "LS(F14)", lctrl: "LC(F14)" }
   L:  { hold: "&moswitcher LALT",                                 lshift: "LS(F15)" }
-  B:  { hold: "&mo 4", rshift: "LC(X)",                           lshift: "LS(F16)" }
+  B:  { hold: "&mo 3", rshift: "LC(X)",                           lshift: "LS(F16)" }
 
   # middle
   T:  { hold: "RCTRL",  rshift: "LC(S)",                          lshift: "LS(F17)" }
@@ -72,38 +83,51 @@ morph:
   E:  { hold: "RALT", pos: "left", rshift: "LC(Z)",               lshift: "LS(F19)" }
   S:  {                                                           lshift: "LS(F20)", lctrl: "LC(F20)"}
 
-  SS: { default: "`" , hold: "RGUI", pos: "left"}
-  XX: "&none"
-  TT: "\n"
-  MM: {tap: ",", hold: ", ", tapping-term-ms: 90, require-prior-idle-ms: 0}
-
-
   # down
-  M:  { hold: "&mo 3", rshift: "LC(V)",                           lshift: "LS(F21)" }
+  M:  { hold: "&mo 2", rshift: "LC(V)",                           lshift: "LS(F21)" }
   D:  { hold: "RS(RA(RGUI))", tapping-term-ms: 480,               lshift: "LS(F22)",  }
-  Y:  { hold: "&mo 6", pos: "V L T R M D left",  rshift: "LC(F)", lshift: "LS(F23)",  }
+  Y:  { hold: "&mo 5", pos: "V L T R M D left",  rshift: "LC(F)", lshift: "LS(F23)",  }
   X:  {                                                           lshift: "LS(F24)", lctrl: "LC(F24)" }
   Z:  { rshift: "LC(Y)",                                          lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
 
-  MZ: { default: "{", hold: "{}\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
-  DZ: "_"
-  XZ: "$"
+  # RIGHT CENTER
+  W5: "!="
+  W6: "<"
+  W7: "="
+  V5: { default: "ESCAPE", rshift: "LC(A)" }
+  T5: "\n"
+  M5: ","
+
+  # RIGHT APPENDIX
+  W8: ">"
+  W9: "&none"
+  W0: "&none"
+  B9: "~"
+  B0: "&none"
+  S0: { default: "`" , hold: "RGUI", pos: "left" }
+  X0: "&none"
 
 
-  # thumbs
+  # RIGHT LOWER
+  Z6: { default: "{", hold: "{}\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  Z7: "_"
+  Z9: "$"
+  Z0: "&none"
 
-  THUMBL0: "&sl 1"
-  THUMBL1: "DELETE"
-  THUMBL2: "LC(LS(LA(F24)))"
+##### thumbs
+  TL1: "SPACE"
+  TL2: "BACKSPACE"
+  TL3: "&none"
+  TL4: "&none"
+  TL5: "&none"
+  TL6: "&magic 7 0"
 
-  THUMBR0: "SPACE"
-  THUMBR1: { default: "&sl 2", hold: "LG(F12)" }
-  THUMBR2: "BACKSPACE"
-
-
-  # debug
-
-
+  TR1: "&sl 1"
+  TR2: "LC(LS(LA(F24)))"
+  TR3: "DELETE"
+  TR4: "&none"
+  TR5: "&none"
+  TR6: "&magic 7 0"
 
   # nav
   NAV0: "BACKSPACE"
@@ -148,17 +172,17 @@ macro:
   duplicate_line: "<&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT &kp ENTER &kp LC(V)>"
   move_selection_right: "<&kp LC(X) &kp RIGHT &kp LA(LC(V))>"
   move_selection_left: "<&kp LC(X) &kp LEFT &kp LA(LC(V))>"
-  monavl: "<&macro_press>,<&mo 4 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 4>,<&macro_press>"
+  monavl: "<&macro_press>,<&mo 3 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 3>,<&macro_press>"
 
-  monavr: "<&macro_press>,<&mo 6 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 6>,<&macro_press>"
-  moswitcher: "<&macro_press>,<&mo 7 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 7>,<&macro_press>"
+  monavr: "<&macro_press>,<&mo 5 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 5>,<&macro_press>"
+  moswitcher: "<&macro_press>,<&mo 6 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 6>,<&macro_press>"
 
 
 combo:
   config:
     timeout-ms: 30
   # left
-  GH: { tap: "+", hold: "+=", tapping-term-ms: 250, require-prior-idle-ms: 0 }
+  GH: "+"
   HC: "-"
   GC: "*"
 
@@ -167,7 +191,7 @@ combo:
 #  HN: ""
 #  CI: ""
 
-  AI: {tap: ":", hold: ": ", tapping-term-ms: 90, require-prior-idle-ms: 0}
+  AI: ":"
   IN: "'"
   AN: "!"
 
@@ -182,8 +206,8 @@ combo:
 
 
   # right
-  VL: {tap: "|", hold: "||", tapping-term-ms: 150, require-prior-idle-ms: 0}
-  LB: {tap: "&",  hold: "&&", tapping-term-ms: 150, require-prior-idle-ms: 0}
+  VL: "|"
+  LB: "&"
   VB: {combo: "==", timeout-ms: 100 }
 
 #  VR: ""
@@ -193,7 +217,7 @@ combo:
 
 
   TR: '"'
-  RE: {tap: ";", hold: ";\n", tapping-term-ms: 200, require-prior-idle-ms: 0}
+  RE: ";"
   TE: "?"
 
 #  TD: ""
@@ -207,6 +231,23 @@ combo:
 
 keys:
   left:
+    # UPPER LEFT
+    F1: 0
+    F2: 1
+    F3: 2
+    F4: 3
+    F5: 4
+
+    # LEFT APPENDIX
+    K1: 10
+    K2: 11
+    K3: 12
+    G1: 22
+    G2: 23
+    O1: 34
+    J1: 46
+
+    # MAIN
     K: 13
     G: 24
     H: 25
@@ -222,22 +263,37 @@ keys:
     P: 50
     Q: 66
 
-    G3: 12
-    C5: 14
-    GG: 23
-    CS: 15
+    # LEFT CENTER APPENDIX
+    K5: 14
+    K6: 15
+    N6: 39
+    P6: 51
 
-    OO: 34
-    NN: 39
-    PP: 51
-
-    UQ: 67
-    PQ: 68
-    JJ: 46
-    JQ: 65
+    # LEFT LOWER
+    Q1: 64
+    Q2: 65
+    Q4: 67
+    Q5: 68
 
 
   right:
+    # UPPER RIGHT
+    F6: 5
+    F7: 6
+    F8: 7
+    F9: 8
+    F0: 9
+
+    # RIGHT APPENDIX
+    W8: 19
+    W9: 20
+    W0: 21
+    B9: 32
+    B0: 33
+    S0: 45
+    X0: 63
+
+    # MAIN RIGHT
     V: 29
     L: 30
     B: 31
@@ -251,19 +307,16 @@ keys:
     X: 62
     Z: 77
 
+    # RIGHT CENTER APPENDIX
+    W5: 16
+    W6: 17
+    W7: 18
+    V5: 28
+    T5: 40
+    M5: 58
 
-    VS: 16
-    V6: 17
-    L7: 18
-    B8: 19
-    BB: 32
-
-    SS: 45
-    XX: 63
-    VV: 28
-    TT: 40
-    MM: 58
-
-    MZ: 75
-    DZ: 76
-    XZ: 78
+    # RIGHT LOWER
+    Z6: 75
+    Z7: 76
+    Z9: 79
+    Z0: 80

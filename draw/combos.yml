@@ -4,9 +4,7 @@ combos:
 - p:
   - 24
   - 25
-  k:
-    t: +
-    h: '&plus_equal'
+  k: +
 - p:
   - 25
   - 26
@@ -18,15 +16,11 @@ combos:
 - p:
   - 36
   - 37
-  k:
-    t: ':'
-    h: '&colon_space'
+  k: ':'
 - p:
   - 37
   - 38
-  k:
-    t: .
-    h: '&period_period'
+  k: ''''
 - p:
   - 36
   - 38
@@ -38,15 +32,11 @@ combos:
 - p:
   - 29
   - 30
-  k:
-    t: '|'
-    h: '&pipe_pipe'
+  k: '|'
 - p:
   - 30
   - 31
-  k:
-    t: '&'
-    h: '&ampersand_ampersand'
+  k: '&'
 - p:
   - 29
   - 31
@@ -54,15 +44,11 @@ combos:
 - p:
   - 41
   - 42
-  k:
-    t: ','
-    h: '&comma_space'
+  k: '"'
 - p:
   - 42
   - 43
-  k:
-    t: ;
-    h: '&semicolon_enter'
+  k: ;
 - p:
   - 41
   - 43

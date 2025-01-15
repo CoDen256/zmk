@@ -10,8 +10,6 @@ from pathlib import Path
 import builder
 import drawer
 import deployer
-import keycombiner
-import updater
 import modder
 
 
@@ -105,22 +103,22 @@ if __name__ == "__main__":
         'E:\\',
     )
 
-    run(
-        "keycombiner",
-        f"{base}\\shortcuts\\keymap.xml",
-        keycombiner,
-        f"{base}\\shortcuts\\keymap.xml",
-        f"{base}\\shortcuts\\keymap.csv",
-    )
+    # run(
+    #     "keycombiner",
+    #     f"{base}\\shortcuts\\keymap.xml",
+    #     keycombiner,
+    #     f"{base}\\shortcuts\\keymap.xml",
+    #     f"{base}\\shortcuts\\keymap.csv",
+    # )
 
-    run(
-        "keycombiner-updater",
-        f"{base}\\shortcuts\\keymap.csv",
-        updater,
-        f"{base}\\shortcuts\\keymap.csv",
-        f"{base}\\scripts\\pass",
-        33922
-    )
+    # run(
+    #     "keycombiner-updater",
+    #     f"{base}\\shortcuts\\keymap.csv",
+    #     updater,
+    #     f"{base}\\shortcuts\\keymap.csv",
+    #     f"{base}\\scripts\\pass",
+    #     33922
+    # )
 
     run(
         "modder",

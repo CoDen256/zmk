@@ -806,4 +806,4 @@ def compile(compilable_list):
 def run(origin, target):
     return run0(origin, target)
 
-bindings, combos, holdtaps, morphs, macros = run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")
+# bindings, combos, holdtaps, morphs, macros = run("C:\\dev\\zmk-config\\shortcuts\\mods.yaml", "C:\\dev\\zmk-config\\config\\glove80.keymap")

@@ -51,4 +51,4 @@ def run(base):
                     creationflags=subprocess.CREATE_NO_WINDOW)
     print("[drawer] Done")
 
-run("C:\\dev\\zmk-config")
+# run("C:\\dev\\zmk-config")
