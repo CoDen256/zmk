@@ -307,7 +307,7 @@
     <keyboard-shortcut first-keystroke="ctrl q" />
   </action>
   <action id="EditorToggleCase">
-    <keyboard-shortcut first-keystroke="ctrl f6" />
+    <keyboard-shortcut first-keystroke="alt a" />
   </action>
   <action id="EditorToggleColumnMode" />
   <action id="EditorToggleShowLineNumbers" />
@@ -349,7 +349,9 @@
   <action id="ExternalSystem.ProjectRefreshAction">
     <keyboard-shortcut first-keystroke="ctrl k" />
   </action>
-  <action id="ExtractFunction" />
+  <action id="ExtractFunction">
+    <keyboard-shortcut first-keystroke="ctrl b" />
+  </action>
   <action id="ExtractFunctionToScope" />
   <action id="ExtractInterface" />
   <action id="ExtractMethod">
@@ -376,7 +378,9 @@
     <keyboard-shortcut first-keystroke="shift f8" />
   </action>
   <action id="FindPrevious" />
-  <action id="FindUsages" />
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="alt slash" />
+  </action>
   <action id="FindUsagesInFile">
     <keyboard-shortcut first-keystroke="ctrl alt n" />
   </action>
@@ -406,6 +410,9 @@
   </action>
   <action id="Git.Branches">
     <keyboard-shortcut first-keystroke="shift f21" />
+  </action>
+  <action id="Git.Clone">
+    <keyboard-shortcut first-keystroke="shift alt open_bracket" />
   </action>
   <action id="Git.Commit.And.Push.Executor" />
   <action id="Git.Commit.Stage">
@@ -521,7 +528,9 @@
   <action id="IntroduceParameter">
     <keyboard-shortcut first-keystroke="shift f16" />
   </action>
-  <action id="IntroduceProperty" />
+  <action id="IntroduceProperty">
+    <keyboard-shortcut first-keystroke="shift alt b" />
+  </action>
   <action id="IntroduceVariable">
     <keyboard-shortcut first-keystroke="alt b" />
   </action>
@@ -555,9 +564,13 @@
   </action>
   <action id="LocateInSolutionView" />
   <action id="Log.JumpToSource" />
+  <action id="MainMenuButton.ShowMenu" />
   <action id="Markdown.Styling.CreateLink" />
   <action id="Maven.CollapseAll">
     <keyboard-shortcut first-keystroke="ctrl subtract" />
+  </action>
+  <action id="Maven.DownloadAllSources">
+    <keyboard-shortcut first-keystroke="shift ctrl alt v" />
   </action>
   <action id="Maven.ExpandAll">
     <keyboard-shortcut first-keystroke="ctrl add" />
@@ -768,6 +781,7 @@
   <action id="RunTargetAction" />
   <action id="RunToCursor">
     <keyboard-shortcut first-keystroke="f3" />
+    <mouse-shortcut keystroke="button1 doubleClick" />
   </action>
   <action id="SafeDelete">
     <keyboard-shortcut first-keystroke="alt delete" />
@@ -841,6 +855,9 @@
   <action id="SplitVertically">
     <keyboard-shortcut first-keystroke="shift ctrl meta alt g" />
   </action>
+  <action id="Spring.Beans.Generate.Action">
+    <keyboard-shortcut first-keystroke="shift ctrl alt y" />
+  </action>
   <action id="Sql.EditParameter" />
   <action id="StepInto" />
   <action id="StepIntoMyCode" />
@@ -849,7 +866,7 @@
   </action>
   <action id="StepOver">
     <keyboard-shortcut first-keystroke="f6" />
-    <keyboard-shortcut first-keystroke="n" />
+    <keyboard-shortcut first-keystroke="shift back_quote" />
   </action>
   <action id="Stop">
     <keyboard-shortcut first-keystroke="shift f18" />
@@ -875,7 +892,7 @@
     <keyboard-shortcut first-keystroke="alt back_quote" />
   </action>
   <action id="Synchronize">
-    <keyboard-shortcut first-keystroke="ctrl k" />
+    <keyboard-shortcut first-keystroke="alt back_slash" />
   </action>
   <action id="Table-startEditing" />
   <action id="TableResult.GrowSelection" />
@@ -915,6 +932,7 @@
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="alt d" />
     <keyboard-shortcut first-keystroke="f2" />
+    <mouse-shortcut keystroke="button3 doubleClick" />
   </action>
   <action id="TogglePresentationMode" />
   <action id="ToggleTemporaryLineBreakpoint">
@@ -1015,8 +1033,12 @@
     <keyboard-shortcut first-keystroke="f7" />
   </action>
   <action id="XPathView.Actions.ShowPath" />
-  <action id="android.deploy.ApplyChanges" />
-  <action id="android.deploy.CodeSwap" />
+  <action id="android.deploy.ApplyChanges">
+    <keyboard-shortcut first-keystroke="ctrl f10" />
+  </action>
+  <action id="android.deploy.CodeSwap">
+    <keyboard-shortcut first-keystroke="ctrl alt f10" />
+  </action>
   <action id="build" />
   <action id="com.github.jk1.ytplugin.commands.OpenCommandWindowAction" />
   <action id="com.github.jk1.ytplugin.issues.actions.EditorCreateIssueAction" />
