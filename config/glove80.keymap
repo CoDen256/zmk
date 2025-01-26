@@ -291,7 +291,7 @@ release-after-ms = <5000>;};
 
         select_word: select_word { label = "SELECT_WORD"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&select_word_right>, <&select_word_left>;
+            bindings = <&select_word_right &select_word_left>;
         };
 
         select_line: select_line { label = "SELECT_LINE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -356,112 +356,112 @@ release-after-ms = <5000>;};
 
         plus_equal: plus_equal { label = "PLUS_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp PLUS>, <&kp EQUAL>;
+            bindings = <&macro_tap>,<&kp PLUS &kp EQUAL>;
         };
 
         colon_space: colon_space { label = "COLON_SPACE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp COLON>, <&kp SPACE>;
+            bindings = <&macro_tap>,<&kp COLON &kp SPACE>;
         };
 
         pipe_pipe: pipe_pipe { label = "PIPE_PIPE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp PIPE>, <&kp PIPE>;
+            bindings = <&macro_tap>,<&kp PIPE &kp PIPE>;
         };
 
         ampersand_ampersand: ampersand_ampersand { label = "AMPERSAND_AMPERSAND"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp AMPERSAND>, <&kp AMPERSAND>;
+            bindings = <&macro_tap>,<&kp AMPERSAND &kp AMPERSAND>;
         };
 
         equal_equal: equal_equal { label = "EQUAL_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp EQUAL>, <&kp EQUAL>;
+            bindings = <&macro_tap>,<&kp EQUAL &kp EQUAL>;
         };
 
         semicolon_enter: semicolon_enter { label = "SEMICOLON_ENTER"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp SEMICOLON>, <&kp ENTER>;
+            bindings = <&macro_tap>,<&kp SEMICOLON &kp ENTER>;
         };
 
         minus_gre_tha: minus_gre_tha { label = "MINUS_GRE_THA"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp MINUS>, <&kp GREATER_THAN>;
+            bindings = <&macro_tap>,<&kp MINUS &kp GREATER_THAN>;
         };
 
         press_kp_lef_alt_0_2_1_4_kp_lalt: press_kp_lef_alt_0_2_1_4_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_1_4_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_1 &kp KP_NUMBER_4>, <&macro_release>, <&kp LALT>;
+            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_1 &kp KP_NUMBER_4>,<&macro_release>,<&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_4_6_kp_lalt: press_kp_lef_alt_0_2_4_6_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_4_6_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_6>, <&macro_release>, <&kp LALT>;
+            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_6>,<&macro_release>,<&kp LALT>;
         };
 
         press_kp_lef_alt_0_1_9_6_kp_lalt: press_kp_lef_alt_0_1_9_6_kp_lalt { label = "PRESS_KP_LEF_ALT_0_1_9_6_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_9 &kp KP_NUMBER_6>, <&macro_release>, <&kp LALT>;
+            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_9 &kp KP_NUMBER_6>,<&macro_release>,<&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_2_8_kp_lalt: press_kp_lef_alt_0_2_2_8_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_2_8_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_8>, <&macro_release>, <&kp LALT>;
+            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_8>,<&macro_release>,<&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_2_0_kp_lalt: press_kp_lef_alt_0_2_2_0_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_2_0_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_0>, <&macro_release>, <&kp LALT>;
+            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_0>,<&macro_release>,<&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_5_2_kp_lalt: press_kp_lef_alt_0_2_5_2_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_5_2_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_5 &kp KP_NUMBER_2>, <&macro_release>, <&kp LALT>;
+            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_5 &kp KP_NUMBER_2>,<&macro_release>,<&kp LALT>;
         };
 
         press_kp_lef_alt_0_7_8_3_8_kp_lalt: press_kp_lef_alt_0_7_8_3_8_kp_lalt { label = "PRESS_KP_LEF_ALT_0_7_8_3_8_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_3 &kp KP_NUMBER_8>, <&macro_release>, <&kp LALT>;
+            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_3 &kp KP_NUMBER_8>,<&macro_release>,<&kp LALT>;
         };
 
         press_kp_lef_alt_0_2_2_3_kp_lalt: press_kp_lef_alt_0_2_2_3_kp_lalt { label = "PRESS_KP_LEF_ALT_0_2_2_3_KP_LALT"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_3>, <&macro_release>, <&kp LALT>;
+            bindings = <&macro_press>,<&kp LEFT_ALT>,<&macro_tap>,<&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_3>,<&macro_release>,<&kp LALT>;
         };
 
         backslash_backslash: backslash_backslash { label = "BACKSLASH_BACKSLASH"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp BACKSLASH>, <&kp BACKSLASH>;
+            bindings = <&macro_tap>,<&kp BACKSLASH &kp BACKSLASH>;
         };
 
         slash_slash: slash_slash { label = "SLASH_SLASH"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp SLASH>, <&kp SLASH>;
+            bindings = <&macro_tap>,<&kp SLASH &kp SLASH>;
         };
 
         lef_bra_rig_bra_left_arrow: lef_bra_rig_bra_left_arrow { label = "LEF_BRA_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
         };
 
         lef_par_rig_par_left_arrow: lef_par_rig_par_left_arrow { label = "LEF_PAR_RIG_PAR_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
         };
 
         exc_equal: exc_equal { label = "EXC_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp EXCLAMATION>, <&kp EQUAL>;
+            bindings = <&macro_tap>,<&kp EXCLAMATION &kp EQUAL>;
         };
 
         comma_space: comma_space { label = "COMMA_SPACE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp COMMA>, <&kp SPACE>;
+            bindings = <&macro_tap>,<&kp COMMA &kp SPACE>;
         };
 
         left_brace_rig_bra_left_arrow: left_brace_rig_bra_left_arrow { label = "LEFT_BRACE_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
         };
 /*<macros-end>*/
 
@@ -1735,15 +1735,19 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
     main {
     			bindings = <
-&kp F1             &kp F2           &kp F3   &kp F4   &kp F5                                                                                         &kp F6   &kp F7   &kp F8   &tog 9  &kp F10
+&kp F1             &kp F2           &kp F3   &kp F4   &kp F5                                                                                         &kp F6   &kp F7   &kp F8   &tog 9   &to 10
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &G3_key  &K_key   &C5_key  &CS_key                                                                      &VS_key  &V6_key  &L7_key  &B8_key  &none    &none
 &kp C_MUTE         &GG_key          &G_key   &H_key   &C_key   &W_key                                                                       &VV_key  &V_key   &L_key   &B_key   &BB_key  &none
 &OO_key            &O_key           &A_key   &I_key   &N_key   &NN_key                                                                      &TT_key  &T_key   &R_key   &E_key   &S_key   &SS_key
-&JJ_key            &J_key           &F_key   &U_key   &P_key   &PP_key  &THUMBR2  &mo 3     &magic 10 0    &magic 10 0  &tog 3    &THUMBL2  &MM_key  &M_key   &D_key   &Y_key   &X_key   &XX_key
+&JJ_key            &J_key           &F_key   &U_key   &P_key   &PP_key  &THUMBR2  &mo 3     &magic 11 0    &magic 11 0  &tog 3    &THUMBL2  &MM_key  &M_key   &D_key   &Y_key   &X_key   &XX_key
 &reloadkeymap      &JQ_key          &Q_key   &UQ_key  &PQ_key           &THUMBR0  &THUMBR1  &tog 8         &tog 1       &THUMBL1  &THUMBL0           &MZ_key  &DZ_key  &Z_key   &XZ_key  &none
 >;};
 main_upper {
@@ -1800,7 +1804,6 @@ navr {
 &trans  &none   &kp RIGHT_ALT  &kp RIGHT_SHIFT  &kp LCTRL  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &none         &NAVUP    &NAVDOWN     &trans         &kp LCTRL       &trans
 &tog 6  &trans  &none          &none            &none              &trans  &trans  &trans    &trans  &trans  &trans                &NAVPUP   &NAVPGDOWN   &trans         &trans          &to 6
 >;};
-
 switcher {
          bindings = <
 &trans  &trans  &trans       &trans  &trans                                                                        &trans       &trans  &trans      &trans  &trans
@@ -1827,6 +1830,15 @@ debug {
 &trans  &kp F10  &hml LALT F4  &hml LSFT F5  &hml LCTRL F6  &kp F15                                                       &kp F17  &hmr LALT F4  &hmr LSFT F5  &hmr LCTRL F6  &kp F10  &trans
 &trans  &kp F20  &kp F1        &kp F2        &kp F3         &kp F14  &kp F23  &to 0    &trans    &trans  &to 0   &kp F23  &kp F14  &kp F1        &kp F2        &kp F3         &kp F20  &trans
 &trans  &trans   &kp F11       &kp F12       &kp F13                 &kp F22  &kp F24  &trans    &trans  &trans  &kp F22           &kp F11       &kp F12       &kp F13        &trans   &trans
+>;};
+layer_11 {
+         bindings = <
+&trans  &trans     &kp F5  &kp F6  &kp F9                                                                       &trans  &trans  &trans  &trans  &to 0
+&trans  &trans     &kp N1  &kp N2  &kp N3  &kp N4                                                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp ESC    &kp Q   &kp W   &kp E   &kp R                                                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LSHFT  &kp A   &kp S   &kp D   &kp F                                                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp LALT   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &kp T   &kp G   &kp B           &kp SPACE  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
 >;};
 magic {
 			bindings = <

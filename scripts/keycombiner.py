@@ -3,8 +3,6 @@ import csv
 import re
 import xml.etree.ElementTree as ET
 
-from scripts.regsetup import description
-
 modsmap = {
     "LC": "ctrl+",
     "RC": "ctrl+",

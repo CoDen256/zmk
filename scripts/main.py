@@ -78,57 +78,57 @@ if __name__ == "__main__":
     # check_file_update(file_path, dir)
     base = pathlib.Path(__file__).parent.parent.resolve()
     print(f"Watching {base}")
-    run_shell("C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
+    #run_shell("C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
     run("builder",
         f"{base}\\config\\glove80.keymap",
         builder,
         base,
         )
-    run("drawer",
-        f"{base}\\glove80.uf2",
-        drawer,
-        base,
-        )
+    # run("drawer",
+    #     f"{base}\\glove80.uf2",
+    #     drawer,
+    #     base,
+    #     )
     run(
         "deployer-D",
-        'D:\\',
+        '/media/coden/GLV80LHBOOT',
         deployer,
         base,
-        'D:\\',
+        '/media/coden/GLV80LHBOOT',
     )
 
     run(
         "deployer-2",
-        'E:\\',
+        '/media/coden/GLV80LHBOOT',
         deployer,
         base,
-        'E:\\',
+        '/media/coden/GLV80LHBOOT',
     )
 
-    run(
-        "keycombiner",
-        f"{base}\\shortcuts\\keymap.xml",
-        keycombiner,
-        f"{base}\\shortcuts\\keymap.xml",
-        f"{base}\\shortcuts\\keymap.csv",
-    )
-
-    run(
-        "keycombiner-updater",
-        f"{base}\\shortcuts\\keymap.csv",
-        updater,
-        f"{base}\\shortcuts\\keymap.csv",
-        f"{base}\\scripts\\pass",
-        33922
-    )
-
-    run(
-        "modder",
-        f"{base}\\shortcuts\\mods.yaml",
-        modder,
-        f"{base}\\shortcuts\\mods.yaml",
-        f"{base}\\config\\glove80.keymap",
-    )
+    # run(
+    #     "keycombiner",
+    #     f"{base}\\shortcuts\\keymap.xml",
+    #     keycombiner,
+    #     f"{base}\\shortcuts\\keymap.xml",
+    #     f"{base}\\shortcuts\\keymap.csv",
+    # )
+    #
+    # run(
+    #     "keycombiner-updater",
+    #     f"{base}\\shortcuts\\keymap.csv",
+    #     updater,
+    #     f"{base}\\shortcuts\\keymap.csv",
+    #     f"{base}\\scripts\\pass",
+    #     33922
+    # )
+    #
+    # run(
+    #     "modder",
+    #     f"{base}\\shortcuts\\mods.yaml",
+    #     modder,
+    #     f"{base}\\shortcuts\\mods.yaml",
+    #     f"{base}\\config\\glove80.keymap",
+    # )
 
     # Keep the main thread running
     input()
