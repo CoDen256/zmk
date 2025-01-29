@@ -10,12 +10,22 @@ morph:
   DE_SET: "LG(F12)"
 
 # nav layer
-  NAVBACK:    { default: "HOME", ctrl: "LC(HOME)"}
-  NAVFORWARD: { default: "END", ctrl: "LC(END)"}
-  NAVLEFT:    { default: "LC(LEFT)", ctrl: "LEFT"}
-  NAVRIGHT:   { default: "LC(RIGHT)",ctrl: "RIGHT"}
-  NAVUP:      { default: "UP", ctrl: "LC(UP)"}
-  NAVDOWN:    { default: "DOWN", ctrl: "LC(DOWN)"}
+  NAVK:  "LEFT"
+  NAVK5: "RIGHT"
+
+  NAVH: { default: "HOME", ctrl: "LC(HOME)"}
+  NAVC: { default: "END", ctrl: "LC(END)"}
+
+  NAVI: { default: "LC(LEFT)" }
+  NAVN: { default: "LC(RIGHT)" }
+
+  NAVU: "UP"
+  NAVP: "DOWN"
+
+  NAVA: "&select_line"
+  NAVW5: "&select_word"
+  NAVQ4: "PAGE_UP"
+  NAVQ5: "PAGE_DOWN"
 
 ### LEFT SIDE
   # UPPER LEFT
@@ -31,14 +41,14 @@ morph:
   K3: { tap: \, hold: \\, tapping-term-ms: 250, require-prior-idle-ms: 0}
   G1: "&none"
   G2: "#"
-  O1: { default: "@", hold: "RGUI", pos: "right" }
+  O1: "@"
   J1: "&none"
 
 
   # LEFT MAIN
   # up
   K:  {                                                         rshift: "RS(F1)" }
-  G:  { hold: "&mo 5", lshift: "LC(X)",    rshift: "RS(F2)"  }
+  G:  { lshift: "LC(X)",                                        rshift: "RS(F2)"  }
   H:  { hold: "&moswitcher LALT", pos: "C G N",                 rshift: "RS(F3)"  }
   C:  { lshift: "LC(C)",                                        rshift: "RS(F4)", rctrl: "RC(F4)"}
   W:  { lshift: "LC(A)",                                        rshift: "RS(F5)"  }
@@ -51,9 +61,9 @@ morph:
 
   # down
   J: {                                                          rshift: "RS(F10)" }
-  F: { hold: "&mo 3", pos: "H C P N right",  lshift: "LC(F)",   rshift: "RS(F11)" }
-  U: { hold: "LS(LA(LGUI))", tapping-term-ms: 480,              rshift: "RS(F12)" }
-  P: { hold: "&mo 4", lshift: "LC(V)",                          rshift: "RS(F13)" }
+  F: { hold: "&mo @nav", pos: "H C P N right",  lshift: "LC(F)",   rshift: "RS(F11)" }
+  U: {                                                          rshift: "RS(F12)" }
+  P: { lshift: "LC(V)",                                         rshift: "RS(F13)" }
   Q: { lshift: "LC(Y)",                                         rshift: "RC(CARET)" }
 
   # LEFT CENTER APPENDIX
@@ -78,9 +88,9 @@ morph:
 
   # MAIN RIGHT
   # up
-  V:  { rshift: "LC(C)",                                          lshift: "LS(F14)", lctrl: "LC(F14)" }
-  L:  { hold: "&moswitcher LALT",                                 lshift: "LS(F15)" }
-  B:  { hold: "&mo 3", rshift: "LC(X)",                           lshift: "LS(F16)" }
+  V:  {                                                           lshift: "LS(F14)", lctrl: "LC(F14)" }
+  L:  {                                                           lshift: "LS(F15)" }
+  B:  {                                                           lshift: "LS(F16)" }
 
   # middle
   T:  { hold: "RCTRL",  rshift: "LC(S)",                          lshift: "LS(F17)" }
@@ -89,17 +99,17 @@ morph:
   S:  {                                                           lshift: "LS(F20)", lctrl: "LC(F20)"}
 
   # down
-  M:  { hold: "&mo 2", rshift: "LC(V)",                           lshift: "LS(F21)" }
-  D:  { hold: "RS(RA(RGUI))", tapping-term-ms: 480,               lshift: "LS(F22)",  }
-  Y:  { hold: "&mo 5", pos: "V L T R M D left",  rshift: "LC(F)", lshift: "LS(F23)",  }
+  M:  {                                                           lshift: "LS(F21)" }
+  D:  {                                                           lshift: "LS(F22)",  }
+  Y:  {                                                           lshift: "LS(F23)",  }
   X:  {                                                           lshift: "LS(F24)", lctrl: "LC(F24)" }
-  Z:  { rshift: "LC(Y)",                                          lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
+  Z:  {                                                           lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
 
   # RIGHT CENTER
   W5: "!="
   W6: "<"
   W7: "="
-  V5: { default: "ESCAPE", rshift: "LC(A)" }
+  V5: "ESCAPE"
   T5: "\n"
   M5: ","
 
@@ -109,7 +119,7 @@ morph:
   W0: "&none"
   B9: "~"
   B0: "&none"
-  S0: { default: "`" , hold: "RGUI", pos: "left" }
+  S0: "`"
   X0: "&none"
 
 
@@ -121,26 +131,18 @@ morph:
 
 ##### thumbs
   TL1: "SPACE"
-  TL2: "BACKSPACE"
-  TL3: "&none"
-  TL4: "&none"
-  TL5: "&none"
-  TL6: "&magic 8 0"
+  TL2: "&sl @num"
+  TL3: "BACKSPACE"
+  TL4: "RS(RA(RGUI))"
+  TL5: "LGUI"
+  TL6: "&magic @magic 0"
 
-  TR1: "&sl 1"
+  TR1: "&sl @upper"
   TR2: "LC(LS(LA(F24)))"
   TR3: "DELETE"
-  TR4: "&none"
-  TR5: "&none"
-  TR6: "&magic 8 0"
-
-  # nav
-  NAV0: "BACKSPACE"
-  NAV1: "DELETE"
-  NAVFULLLEFT: "&move_selection_left"
-  NAVFULLRIGHT: "&move_selection_right"
-  NAVPUP: "PAGE_UP"
-  NAVPGDOWN: "PAGE_DOWN"
+  TR4: "RS(RA(RGUI))"
+  TR5: "RGUI"
+  TR6: "&magic @magic 0"
 
 hold-tap:
   config:
@@ -175,13 +177,7 @@ macro:
   select_word_right: "<&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>"
   select_word_left: "<&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>"
   duplicate_line: "<&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT &kp ENTER &kp LC(V)>"
-  move_selection_right: "<&kp LC(X) &kp RIGHT &kp LA(LC(V))>"
-  move_selection_left: "<&kp LC(X) &kp LEFT &kp LA(LC(V))>"
-  monavl: "<&macro_press>,<&mo 3 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 3>,<&macro_press>"
-
-  monavr: "<&macro_press>,<&mo 5 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 5>,<&macro_press>"
-  moswitcher: "<&macro_press>,<&mo 6 &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo 6>,<&macro_press>"
-
+  moswitcher: "<&macro_press>,<&mo @switcher &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo @switcher>,<&macro_press>"
 
 combo:
   config:
@@ -234,6 +230,15 @@ combo:
   MD: "->"
 #  DY:
 #  MY: ""
+
+layers:
+  - main
+  - upper
+  - nav
+  - num
+  - switcher
+  - gaming
+  - magic
 
 keys:
   left:

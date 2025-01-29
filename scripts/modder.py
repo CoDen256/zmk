@@ -282,13 +282,16 @@ def rm_mods(key):
 
 
 class MacroParser:
-    def __init__(self, cfg):
+    def __init__(self, layout, cfg):
+        self.layout = layout
         self.key_parser = None
         self.binding_parser = None
         self.default_cfg = cfg
 
     # not delegating to anon_parser to forbid assigning hold tap or morph to macro
     def parse(self, name, node):
+        node = self.layout.preprocess(node)
+
         if self.is_valid_tap_list(node): return self.parse_tap_list(name, node)
         if self.is_valid_tap_inline(node): return self.parse_tap_inline(name, node)
         if self.is_valid_object(node): return self.parse_object(name, node)
@@ -510,7 +513,7 @@ class Macro:
 
 
 class AnonymousNodeParser:
-    def __init__(self, binder, morph, hold_tap, macro, key_parser, binding):
+    def __init__(self, layout, binder, morph, hold_tap, macro, key_parser, binding):
         self.binding_parser = binding
         self.key_parser = key_parser
         self.macro_parser = macro
@@ -524,8 +527,11 @@ class AnonymousNodeParser:
 
         self.morph_parser = morph
         self.binder = binder
+        self.layout = layout
 
     def parse0(self, node):
+        node = self.layout.preprocess(node)
+
         if self.macro_parser.is_inline_macro(node):
             return self.macro_parser.parse_inline(node)
 
@@ -577,12 +583,13 @@ wildmods = {
     "gui": ["lgui", "rgui"],
 }
 
-
 class Layout():
-    def __init__(self, left, right):
+    def __init__(self, layers, left, right):
         self.left = left
         self.right = right
         self.keys = left | right
+        self.layers = { "@"+str(l): i for (i,l) in enumerate(layers) }
+        print(self.layers)
 
     def parse(self, positions):
         return list(self.parse_positions(positions.split(" ")))
@@ -599,6 +606,17 @@ class Layout():
             if "right" in pos:
                 for v in self.rights():
                     yield v
+
+    def get_layer(self, name):
+        return self.layers[name]
+    def preprocess(self, node):
+        if isinstance(node, str):
+            for (layer, index) in self.layers.items():
+                if layer in node:
+                    new = node.replace(layer, str(index))
+                    print(f"Layout preprocessing: replaced {node} with {new}")
+                    node = new
+        return node
 
     def lefts(self):
         return self.left.values()
@@ -714,7 +732,7 @@ class Morph:
 
 def parse_yaml(file):
     data = read(file)
-    pos = Layout(**data['keys'])
+    pos = Layout(data["layers"], **data['keys'])
 
     combod = data["combo"]
     combocfg = combod.pop("config")
@@ -731,10 +749,10 @@ def parse_yaml(file):
     binder = NodeBinder()
     morph = MorphParser(morphcfg)
     hold_tap = HoldTapParser(htcfg, pos)
-    macro = MacroParser(macrocfg)
+    macro = MacroParser(pos, macrocfg)
     key = KeyParser()
     binding = BindingParser()
-    parser = AnonymousNodeParser(binder, morph, hold_tap, macro, key, binding)
+    parser = AnonymousNodeParser(pos, binder, morph, hold_tap, macro, key, binding)
 
     combo = ComboParser(pos, parser, **combocfg)
 
