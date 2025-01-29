@@ -1,7 +1,10 @@
+import pathlib
+
 import docker
 
 
 def run(dir):
+    print(f"Building in {dir}")
     client = docker.from_env()
     container = client.containers.run("glove80",  detach=True, auto_remove=True,
                                       volumes=[f"{dir}:/config"],
@@ -32,3 +35,4 @@ def run(dir):
         print("\n\033[1;92mSUCCESS:\033[0m glove80.uf2 is built!")
 
 
+run(pathlib.Path(__file__).parent.parent.resolve())
