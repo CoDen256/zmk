@@ -19,7 +19,7 @@ layers:
   - ''
   - {t: '&exc_equal', s: '&exc_equal'}
   - {t: <, s: <}
-  - {t: '=', s: '='}
+  - {t: W, s: W}
   - {t: '>', s: '>'}
   - ''
   - ''
@@ -28,7 +28,7 @@ layers:
   - {t: G, s: Sft+ F2}
   - {t: H, h: '&moswitcher LALT', s: Sft+ F3}
   - {t: C, s: Ctl+ F4}
-  - {t: W, s: Sft+ F5}
+  - {t: '=', s: Sft+ F5}
   - {t: ESCAPE, s: ESCAPE}
   - {t: V, s: Ctl+ F14}
   - {t: L, s: Sft+ F15}
@@ -53,7 +53,7 @@ layers:
   - {t: U, s: Sft+ F12}
   - {t: P, s: Sft+ F13}
   - {t: ., s: .}
-  - {t: BACKSPACE, s: BACKSPACE}
+  - {t: num, h: sticky, s: num}
   - {t: Sft+AGr+ RGUI, s: Sft+AGr+ RGUI}
   - {t: '&rgb_ug_status_macro', h: magic, s: '&rgb_ug_status_macro'}
   - {t: '&rgb_ug_status_macro', h: magic, s: '&rgb_ug_status_macro'}
@@ -71,7 +71,7 @@ layers:
   - {t: '[', h: '&lef_bra_rig_bra_left_arrow', s: '['}
   - {t: (, h: '&lef_par_rig_par_left_arrow', s: (}
   - {t: SPACE, s: SPACE}
-  - {t: num, h: sticky, s: num}
+  - {t: BACKSPACE, s: BACKSPACE}
   - {t: LGUI, s: LGUI}
   - {t: RGUI, s: RGUI}
   - {t: DELETE, s: DELETE}
@@ -100,7 +100,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Sft+ W
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -109,7 +109,7 @@ layers:
   - Sft+ G
   - Sft+ H
   - Sft+ C
-  - Sft+ W
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+ V
   - Sft+ L
@@ -296,7 +296,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: num, h: toggle}
+  - {t: num, h: toggle, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -314,7 +314,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

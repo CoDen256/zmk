@@ -51,7 +51,6 @@ morph:
   G:  { lshift: "LC(X)",                                        rshift: "RS(F2)"  }
   H:  { hold: "&moswitcher LALT", pos: "C G N",                 rshift: "RS(F3)"  }
   C:  { lshift: "LC(C)",                                        rshift: "RS(F4)", rctrl: "RC(F4)"}
-  W:  { lshift: "LC(A)",                                        rshift: "RS(F5)"  }
 
   # middle
   O:  { lshift: "LS(F6)",  rshift: "RS(F6)"}
@@ -61,7 +60,7 @@ morph:
 
   # down
   J: {                                                          rshift: "RS(F10)" }
-  F: { hold: "&mo @nav", pos: "H C P N right",  lshift: "LC(F)",   rshift: "RS(F11)" }
+  F: { hold: "&mo @nav", pos: "H C P N right",  lshift: "LC(F)",rshift: "RS(F11)" }
   U: {                                                          rshift: "RS(F12)" }
   P: { lshift: "LC(V)",                                         rshift: "RS(F13)" }
   Q: { lshift: "LC(Y)",                                         rshift: "RC(CARET)" }
@@ -69,6 +68,7 @@ morph:
   # LEFT CENTER APPENDIX
   K5: { tap: /, hold: //, tapping-term-ms: 250, require-prior-idle-ms: 0}
   K6: "&none"
+  C6: { default: "=",                           lshift: "LC(A)",rshift: "RS(F5)"  }
   N6: "\t"
   P6: "."
 
@@ -88,6 +88,7 @@ morph:
 
   # MAIN RIGHT
   # up
+  W: "W"
   V:  {                                                           lshift: "LS(F14)", lctrl: "LC(F14)" }
   L:  {                                                           lshift: "LS(F15)" }
   B:  {                                                           lshift: "LS(F16)" }
@@ -108,7 +109,6 @@ morph:
   # RIGHT CENTER
   W5: "!="
   W6: "<"
-  W7: "="
   V5: "ESCAPE"
   T5: "\n"
   M5: ","
@@ -263,7 +263,6 @@ keys:
     G: 24
     H: 25
     C: 26
-    W: 27
     O: 35
     A: 36
     I: 37
@@ -277,6 +276,7 @@ keys:
     # LEFT CENTER APPENDIX
     K5: 14
     K6: 15
+    C6: 27
     N6: 39
     P6: 51
 
@@ -305,6 +305,7 @@ keys:
     X0: 63
 
     # MAIN RIGHT
+    W: 18
     V: 29
     L: 30
     B: 31
@@ -321,7 +322,6 @@ keys:
     # RIGHT CENTER APPENDIX
     W5: 16
     W6: 17
-    W7: 18
     V5: 28
     T5: 40
     M5: 58
