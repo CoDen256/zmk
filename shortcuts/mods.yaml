@@ -4,6 +4,11 @@ morph:
     exact: true
     keep: "all"
 
+# lang layout
+  EN_SET: "LG(F10)"
+  RU_SET: "LG(F11)"
+  DE_SET: "LG(F12)"
+
 # nav layer
   NAVBACK:    { default: "HOME", ctrl: "LC(HOME)"}
   NAVFORWARD: { default: "END", ctrl: "LC(END)"}

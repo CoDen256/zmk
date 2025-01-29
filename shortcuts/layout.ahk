@@ -14,7 +14,7 @@ $#F11:: {
     SetInputLang(0x0419) ; 67699721
 }
 
-$#F12:: {
+$#F12:: { ; win F12
     SetInputLang(0x0407) ; de-de
 }
 
@@ -43,36 +43,6 @@ SetInputLang(Lang)
 	Send("{LShift up}")
 
 }
- 
-F13::{ 
-    MouseMove(-20, 0, 50, "R") 
-} 
- 
-F14::{ 
-    MouseMove(20, 0, 50, "R") 
-} 
- 
-F15::{ 
-    MouseMove(0, -20, 50, "R") 
-} 
-F16::{ 
-    MouseMove(0, 20, 50, "R") 
-} 
- 
-F17::{ 
-    MouseClick() 
-} 
-F18::{ 
-    MouseClick("Right") 
-} 
-F19::{ 
-    MouseClick("WU") 
-} 
- 
-F20::{ 
-    MouseClick("WD") 
-}
-
 
 GetInputLocaleID() {
 	foregroundWindow := DllCall("GetForegroundWindow") ; docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getforegroundwindow

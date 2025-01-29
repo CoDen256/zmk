@@ -33,7 +33,7 @@ def run(base):
     layout = {"layout": {"qmk_keyboard": "glove80"}}
 
     combosd = origin["combos"]
-    save(combosfile, layout| {"combos": combosd, "layers": {"main": ['']*80}})
+    save(combosfile, layout| {"combos": combosd, "layers": {"main": ['']*80,"main_upper": ['']*80}})
 
     layers = origin["layers"]
     removelayers(layers)

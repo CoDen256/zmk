@@ -721,9 +721,9 @@ layers:
   - '&bt_0'
   - '&bt_1'
   - OUT USB
-  - ''
-  - ''
-  - ''
+  - {t: Gui+ F10, s: Gui+ F10}
+  - {t: Gui+ F11, s: Gui+ F11}
+  - {t: Gui+ F12, s: Gui+ F12}
   - ''
   - ''
   - ''

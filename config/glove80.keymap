@@ -514,6 +514,24 @@ release-after-ms = <5000>;};
             bindings = <&left_brace_rig_bra_left_arrow>, <&kp>;
         };
 
+        EN_SET:EN_SET { label = "EN_SET"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LG(F10)>, <&kp LG(F10)>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        RU_SET:RU_SET { label = "RU_SET"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LG(F11)>, <&kp LG(F11)>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        DE_SET:DE_SET { label = "DE_SET"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LG(F12)>, <&kp LG(F12)>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
         NAVBACK:NAVBACK { label = "NAVBACK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&NAVBACK_lctrl_link>, <&NAVBACK_rctrl_sink>;
             mods = <(MOD_RCTL)>;
@@ -1823,7 +1841,7 @@ magic { // 8
 &none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                 &none  &none   &none   &none   &none   &none
 &none       &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                 &none  &none   &none   &none   &none   &none
 &sys_reset  &none            &none            &none            &none            &none            &bt_2  &bootloader  &none           &none  &bootloader  &none  &none  &none   &none   &none   &none   &sys_reset
-&none       &none            &none            &none            &bt BT_CLR                        &bt_0  &bt_1        &out OUT_USB    &none  &none        &none         &none   &none   &none   &none   &bt BT_CLR_ALL
+&none       &none            &none            &none            &bt BT_CLR                        &bt_0  &bt_1        &out OUT_USB    &EN_SET  &RU_SET  &DE_SET         &none   &none   &none   &none   &bt BT_CLR_ALL
 >;
 		};
 	};
