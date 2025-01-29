@@ -74,11 +74,11 @@ def run(watched_folder, target_disk):
     # Step 3: Check for a .zip file in the watched folder
     file = wait_for_file(watched_folder, '.uf2')
     file_path = os.path.join(watched_folder, file)
-    print(f"[deployer-{target_disk[0]}] Found .uf2: {file_path}")
+    print(f"[deployer-{target_disk}] Found .uf2: {file_path}")
 
 
     # Copy the file to the device
     copy(file_path,  target_disk)
-    print(f"[deployer-{target_disk[0]}] Done")
+    print(f"[deployer-{target_disk}] Done")
 
 

@@ -67,16 +67,16 @@ morph:
 
   # LEFT CENTER APPENDIX
   K5: { tap: /, hold: //, tapping-term-ms: 250, require-prior-idle-ms: 0}
-  K6: "&none"
-  C6: { default: "=",                           lshift: "LC(A)",rshift: "RS(F5)"  }
-  N6: "\t"
+  K6: "~"
+  C6: { default: "ESCAPE",                           lshift: "LC(A)",rshift: "RS(F5)"  }
+  N6: "\n"
   P6: "."
 
   # LEFT LOWER
   Q1: "&none"
   Q2: "^"
-  Q4: { default: "[", hold: "[]\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
-  Q5: { default: "(", hold: "()\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  Q4: { default: "[", hold: "[]\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q5: { default: "(", hold: "()\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
 
 #### right
   # UPPER RIGHT
@@ -107,10 +107,10 @@ morph:
   Z:  {                                                           lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
 
   # RIGHT CENTER
-  W5: "!="
+  W5: "#"
   W6: "<"
-  V5: "ESCAPE"
-  T5: "\n"
+  V5: { tap: "=", hold: "==", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  T5: "\t"
   M5: ","
 
   # RIGHT APPENDIX
@@ -131,16 +131,16 @@ morph:
 
 ##### thumbs
   TL1: "SPACE"
-  TL2: "&sl @num"
-  TL3: "BACKSPACE"
+  TL2: "BACKSPACE"
+  TL3: "&sl @num"
   TL4: "RS(RA(RGUI))"
   TL5: "LGUI"
   TL6: "&magic @magic 0"
 
   TR1: "&sl @upper"
-  TR2: "LC(LS(LA(F24)))"
-  TR3: "DELETE"
-  TR4: "RS(RA(RGUI))"
+  TR2: "DELETE"
+  TR3: "&sl @num"
+  TR4: "LC(LS(LA(F24)))"
   TR5: "RGUI"
   TR6: "&magic @magic 0"
 
@@ -178,6 +178,7 @@ macro:
   select_word_left: "<&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>"
   duplicate_line: "<&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT &kp ENTER &kp LC(V)>"
   moswitcher: "<&macro_press>,<&mo @switcher &macro_param_1to1>,<&macro_press>,<&kp MACRO_PLACEHOLDER>,<&macro_pause_for_release>,<&macro_param_1to1>,<&macro_release>,<&kp MACRO_PLACEHOLDER>,<&macro_release>,<&mo @switcher>,<&macro_press>"
+  exc_equal: "!="
 
 combo:
   config:
@@ -193,8 +194,8 @@ combo:
 #  HN: ""
 #  CI: ""
 
-  AI: ":"
-  IN: "'"
+  AI: "'"
+  IN: '"'
   AN: "!"
 
 #  AU: ""
@@ -208,9 +209,9 @@ combo:
 
 
   # right
-  VL: "|"
-  LB: "&"
-  VB: {combo: "==", timeout-ms: 100 }
+  #VL: "|"
+  #LB: "&"
+  # VB: {combo: "==", timeout-ms: 100 }
 
 #  VR: ""
 #  TL: "
@@ -218,8 +219,8 @@ combo:
 #  BR: ""
 
 
-  TR: '"'
-  RE: ";"
+  TR: { tap: "|", hold: "||", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  RE: { tap: "&", hold: "&&", tapping-term-ms: 250, require-prior-idle-ms: 0}
   TE: "?"
 
 #  TD: ""
