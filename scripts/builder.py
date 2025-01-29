@@ -35,4 +35,4 @@ def run(dir):
         print("\n\033[1;92mSUCCESS:\033[0m glove80.uf2 is built!")
 
 
-run(pathlib.Path(__file__).parent.parent.resolve())
+# run(pathlib.Path(__file__).parent.parent.resolve())

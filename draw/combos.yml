@@ -5,58 +5,100 @@ combos:
   - 24
   - 25
   k: +
+  l:
+  - main
+  - main_upper
 - p:
   - 25
   - 26
   k: '-'
+  l:
+  - main
+  - main_upper
 - p:
   - 24
   - 26
   k: '*'
+  l:
+  - main
+  - main_upper
 - p:
   - 36
   - 37
   k: ':'
+  l:
+  - main
+  - main_upper
 - p:
   - 37
   - 38
   k: ''''
+  l:
+  - main
+  - main_upper
 - p:
   - 36
   - 38
   k: '!'
+  l:
+  - main
+  - main_upper
 - p:
   - 50
   - 49
   k: '%'
+  l:
+  - main
+  - main_upper
 - p:
   - 29
   - 30
   k: '|'
+  l:
+  - main
+  - main_upper
 - p:
   - 30
   - 31
   k: '&'
+  l:
+  - main
+  - main_upper
 - p:
   - 29
   - 31
   k: '&equal_equal'
+  l:
+  - main
+  - main_upper
 - p:
   - 41
   - 42
   k: '"'
+  l:
+  - main
+  - main_upper
 - p:
   - 42
   - 43
   k: ;
+  l:
+  - main
+  - main_upper
 - p:
   - 41
   - 43
   k: '?'
+  l:
+  - main
+  - main_upper
 - p:
   - 59
   - 60
   k: '&minus_gre_tha'
+  l:
+  - main
+  - main_upper
 layers:
   main:
   - ''

@@ -120,14 +120,14 @@ morph:
   TL3: "&none"
   TL4: "&none"
   TL5: "&none"
-  TL6: "&magic 7 0"
+  TL6: "&magic 8 0"
 
   TR1: "&sl 1"
   TR2: "LC(LS(LA(F24)))"
   TR3: "DELETE"
   TR4: "&none"
   TR5: "&none"
-  TR6: "&magic 7 0"
+  TR6: "&magic 8 0"
 
   # nav
   NAV0: "BACKSPACE"
@@ -181,6 +181,7 @@ macro:
 combo:
   config:
     timeout-ms: 30
+    layers: [0, 1]
   # left
   GH: "+"
   HC: "-"

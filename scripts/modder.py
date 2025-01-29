@@ -100,13 +100,14 @@ class ComboParser:
     def parse(self, name, node):
         pos = [str(self.layout.pos(k)) for k in list(name)]
         cfg = extract_cfg_and_merge(self.default_cfg, node)
+        layers = [int(l) for l in cfg.pop("layers", [])]
         if isinstance(node, dict):
             if "combo" in node:
                 node = node["combo"]
             else :
                 node["name"] = name+ "_delegate"
         binding = self.anon_parser.parse(node)
-        return Combo(name, pos, binding, **cfg)
+        return Combo(name, pos, binding, layers, **cfg)
 
 
 class MorphParser:
@@ -621,16 +622,18 @@ class Layout():
 
 
 class Combo:
-    def __init__(self, name, positions, binding, **cfg):
+    def __init__(self, name, positions, binding, layers, **cfg):
         self.name = name
         self.positions = positions
         self.binding = binding
+        self.layers = layers
         self.cfg = cfg
 
     def compile(self):
         pos = " ".join([p for p in self.positions])
+        lay = " ".join([str(l) for l in self.layers])
         return f'''
-        {self.name} {{ {compile_cfg(**self.cfg)} key-positions = <{pos}>;
+        {self.name} {{ {compile_cfg(**self.cfg)} key-positions = <{pos}>; layers = <{lay}>;
             bindings = {self.binding.binding()}; 
         }};'''
 

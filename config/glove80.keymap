@@ -291,7 +291,7 @@ release-after-ms = <5000>;};
 
         select_word: select_word { label = "SELECT_WORD"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&select_word_right &select_word_left>;
+            bindings = <&select_word_right>, <&select_word_left>;
         };
 
         select_line: select_line { label = "SELECT_LINE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -356,42 +356,42 @@ release-after-ms = <5000>;};
 
         equal_equal: equal_equal { label = "EQUAL_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp EQUAL &kp EQUAL>;
+            bindings = <&macro_tap>, <&kp EQUAL>, <&kp EQUAL>;
         };
 
         minus_gre_tha: minus_gre_tha { label = "MINUS_GRE_THA"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp MINUS &kp GREATER_THAN>;
+            bindings = <&macro_tap>, <&kp MINUS>, <&kp GREATER_THAN>;
         };
 
         backslash_backslash: backslash_backslash { label = "BACKSLASH_BACKSLASH"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp BACKSLASH &kp BACKSLASH>;
+            bindings = <&macro_tap>, <&kp BACKSLASH>, <&kp BACKSLASH>;
         };
 
         slash_slash: slash_slash { label = "SLASH_SLASH"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp SLASH &kp SLASH>;
+            bindings = <&macro_tap>, <&kp SLASH>, <&kp SLASH>;
         };
 
         lef_bra_rig_bra_left_arrow: lef_bra_rig_bra_left_arrow { label = "LEF_BRA_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
+            bindings = <&macro_tap>, <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>, <&kp LEFT_ARROW>;
         };
 
         lef_par_rig_par_left_arrow: lef_par_rig_par_left_arrow { label = "LEF_PAR_RIG_PAR_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+            bindings = <&macro_tap>, <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT_ARROW>;
         };
 
         exc_equal: exc_equal { label = "EXC_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp EXCLAMATION &kp EQUAL>;
+            bindings = <&macro_tap>, <&kp EXCLAMATION>, <&kp EQUAL>;
         };
 
         left_brace_rig_bra_left_arrow: left_brace_rig_bra_left_arrow { label = "LEFT_BRACE_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>,<&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+            bindings = <&macro_tap>, <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>, <&kp LEFT_ARROW>;
         };
 /*<macros-end>*/
 
@@ -404,7 +404,7 @@ release-after-ms = <5000>;};
             bindings = <&backslash_backslash>, <&kp>;
         };
 
-        O1_key_hold_tap:O1_key_hold_tap { label = "O1_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+        O1_key_hold_tap:O1_key_hold_tap { label = "O1_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <5 6 7 8 9 19 20 21 32 33 45 63 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 28 40 58 75 76 79 80>;
             bindings = <&kp>, <&kp>;
         };
@@ -449,17 +449,17 @@ release-after-ms = <5000>;};
             bindings = <&mo>, <&kp>;
         };
 
-        slash_x_sla_sla:slash_x_sla_sla { label = "SLASH_X_SLA_SLA"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+        slash_x_sla_sla:slash_x_sla_sla { label = "SLASH_X_SLA_SLA"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <250>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 27 35 36 37 38 47 48 49 50 66 14 15 39 51 64 65 67 68 5 6 7 8 9 19 20 21 32 33 45 63 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 28 40 58 75 76 79 80>;
             bindings = <&slash_slash>, <&kp>;
         };
 
-        Q4_key_hold_tap:Q4_key_hold_tap { label = "Q4_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+        Q4_key_hold_tap:Q4_key_hold_tap { label = "Q4_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 27 35 36 37 38 47 48 49 50 66 14 15 39 51 64 65 67 68 5 6 7 8 9 19 20 21 32 33 45 63 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 28 40 58 75 76 79 80>;
             bindings = <&lef_bra_rig_bra_left_arrow>, <&kp>;
         };
 
-        Q5_key_hold_tap:Q5_key_hold_tap { label = "Q5_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+        Q5_key_hold_tap:Q5_key_hold_tap { label = "Q5_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 27 35 36 37 38 47 48 49 50 66 14 15 39 51 64 65 67 68 5 6 7 8 9 19 20 21 32 33 45 63 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 28 40 58 75 76 79 80>;
             bindings = <&lef_par_rig_par_left_arrow>, <&kp>;
         };
@@ -504,12 +504,12 @@ release-after-ms = <5000>;};
             bindings = <&mo>, <&kp>;
         };
 
-        S0_key_hold_tap:S0_key_hold_tap { label = "S0_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+        S0_key_hold_tap:S0_key_hold_tap { label = "S0_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <200>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 27 35 36 37 38 47 48 49 50 66 14 15 39 51 64 65 67 68>;
             bindings = <&kp>, <&kp>;
         };
 
-        Z6_key_hold_tap:Z6_key_hold_tap { label = "Z6_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+        Z6_key_hold_tap:Z6_key_hold_tap { label = "Z6_KEY_HOLD_TAP"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <280>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 27 35 36 37 38 47 48 49 50 66 14 15 39 51 64 65 67 68 5 6 7 8 9 19 20 21 32 33 45 63 29 30 31 41 42 43 44 59 60 61 62 77 16 17 18 28 40 58 75 76 79 80>;
             bindings = <&left_brace_rig_bra_left_arrow>, <&kp>;
         };
@@ -1417,7 +1417,7 @@ release-after-ms = <5000>;};
         V5_key:V5_key { label = "V5_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&kp ESCAPE>, <&V5_key_rshift_sink>;
             mods = <(MOD_RSFT)>;
-
+            
         };
 
         V5_key_rshift_sink:V5_key_rshift_sink { label = "V5_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
@@ -1535,7 +1535,7 @@ release-after-ms = <5000>;};
         };
 
         TL6:TL6 { label = "TL6"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&magic 7 0>, <&magic 7 0>;
+            bindings = <&magic 8 0>, <&magic 8 0>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -1571,7 +1571,7 @@ release-after-ms = <5000>;};
         };
 
         TR6:TR6 { label = "TR6"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&magic 7 0>, <&magic 7 0>;
+            bindings = <&magic 8 0>, <&magic 8 0>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -1658,59 +1658,59 @@ release-after-ms = <5000>;};
 		compatible = "zmk,combos";
 /*<combos-start>*/
 
-        GH { timeout-ms = <30>; key-positions = <24 25>;
-            bindings = <&kp PLUS>;
+        GH { timeout-ms = <30>; key-positions = <24 25>; layers = <0 1>;
+            bindings = <&kp PLUS>; 
         };
 
-        HC { timeout-ms = <30>; key-positions = <25 26>;
+        HC { timeout-ms = <30>; key-positions = <25 26>; layers = <0 1>;
             bindings = <&kp MINUS>; 
         };
 
-        GC { timeout-ms = <30>; key-positions = <24 26>;
+        GC { timeout-ms = <30>; key-positions = <24 26>; layers = <0 1>;
             bindings = <&kp ASTERISK>; 
         };
 
-        AI { timeout-ms = <30>; key-positions = <36 37>;
-            bindings = <&kp COLON>;
+        AI { timeout-ms = <30>; key-positions = <36 37>; layers = <0 1>;
+            bindings = <&kp COLON>; 
         };
 
-        IN { timeout-ms = <30>; key-positions = <37 38>;
+        IN { timeout-ms = <30>; key-positions = <37 38>; layers = <0 1>;
             bindings = <&kp SINGLE_QUOTE>; 
         };
 
-        AN { timeout-ms = <30>; key-positions = <36 38>;
+        AN { timeout-ms = <30>; key-positions = <36 38>; layers = <0 1>;
             bindings = <&kp EXCLAMATION>; 
         };
 
-        PU { timeout-ms = <30>; key-positions = <50 49>;
+        PU { timeout-ms = <30>; key-positions = <50 49>; layers = <0 1>;
             bindings = <&kp PERCENT>; 
         };
 
-        VL { timeout-ms = <30>; key-positions = <29 30>;
-            bindings = <&kp PIPE>;
+        VL { timeout-ms = <30>; key-positions = <29 30>; layers = <0 1>;
+            bindings = <&kp PIPE>; 
         };
 
-        LB { timeout-ms = <30>; key-positions = <30 31>;
-            bindings = <&kp AMPERSAND>;
+        LB { timeout-ms = <30>; key-positions = <30 31>; layers = <0 1>;
+            bindings = <&kp AMPERSAND>; 
         };
 
-        VB { timeout-ms = <100>; key-positions = <29 31>;
+        VB { timeout-ms = <100>; key-positions = <29 31>; layers = <0 1>;
             bindings = <&equal_equal>; 
         };
 
-        TR { timeout-ms = <30>; key-positions = <41 42>;
+        TR { timeout-ms = <30>; key-positions = <41 42>; layers = <0 1>;
             bindings = <&kp DOUBLE_QUOTES>; 
         };
 
-        RE { timeout-ms = <30>; key-positions = <42 43>;
-            bindings = <&kp SEMICOLON>;
+        RE { timeout-ms = <30>; key-positions = <42 43>; layers = <0 1>;
+            bindings = <&kp SEMICOLON>; 
         };
 
-        TE { timeout-ms = <30>; key-positions = <41 43>;
+        TE { timeout-ms = <30>; key-positions = <41 43>; layers = <0 1>;
             bindings = <&kp QUESTION>; 
         };
 
-        MD { timeout-ms = <30>; key-positions = <59 60>;
+        MD { timeout-ms = <30>; key-positions = <59 60>; layers = <0 1>;
             bindings = <&minus_gre_tha>; 
         };
 /*<combos-end>*/
@@ -1742,7 +1742,7 @@ behaviors {};
 behaviors {};
 keymap {
 		compatible = "zmk,keymap";
-    main {
+    main { // 0
     			bindings = <
 &F1_key            &F2_key          &F3_key  &F4_key  &F5_key                                                                 &F6_key  &F7_key  &F8_key  &F9_key  &F0_key
 &K1_key            &K2_key          &K3_key  &K_key   &K5_key  &K6_key                                               &W5_key  &W6_key  &W7_key  &W8_key  &W9_key  &W0_key
@@ -1751,7 +1751,7 @@ keymap {
 &J1_key            &J_key           &F_key   &U_key   &P_key   &P6_key    &TL2  &TL4    &TL6     &TR6  &TR4  &TR2    &M5_key  &M_key   &D_key   &Y_key   &X_key   &X0_key
 &Q1_key            &Q2_key          &Q_key   &Q4_key  &Q5_key             &TL1  &TL3    &TL5     &TR5  &TR3  &TR1             &Z6_key  &Z7_key  &Z_key   &Z9_key  &Z0_key
 >;};
-main_upper {
+main_upper { // 1
 			bindings = <
 &trans  &trans     &trans     &trans             &trans                                                                                          &trans           &trans     &trans     &trans     &trans
 &trans  &trans     &trans     &kp LS(K)          &trans                 &trans                                                           &trans  &trans           &trans     &trans     &trans     &trans
@@ -1761,7 +1761,7 @@ main_upper {
 &tog 1  &trans     &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 1          &kp RIGHT_BRACE  &trans     &kp LS(Z)  &trans     &tog 1
 >;};
 
-numl {
+numl { // 2
          bindings = <
 &trans  &trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9                                                                    &trans           &trans                &trans                           &trans   &trans
 &trans  &trans           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans                                                    &trans  &trans           &trans                &trans                           &trans   &trans
@@ -1770,7 +1770,7 @@ numl {
 &trans  &kp KP_NUMBER_0  &kp N1           &kp N2           &kp NUMBER_3     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp PLUS         &kp MINUS             &kp COMMA                        &trans   &trans
 &to 3   &trans           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3          &trans  &trans  &trans    &trans  &trans  &trans          &trans           &trans                &trans                           &trans   &to 3
 >;};
-navl {
+navl { // 3
 			bindings = <
 &trans  &trans          &trans        &trans    &trans                                                                                &trans     &trans           &trans         &trans  &trans
 &trans  &trans          &trans        &NAV0     &NAV1        &trans                                                           &trans  &trans     &trans           &trans         &trans  &trans
@@ -1779,7 +1779,7 @@ navl {
 &trans  &kp LCTRL       &none         &NAVUP    &NAVDOWN     &trans         &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LCTRL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &none   &trans
 &tog 4  &trans          &trans        &NAVPUP   &NAVPGDOWN                  &trans  &trans  &trans    &trans  &trans  &trans          &none      &none            &none          &trans  &to 4
 >;};
-numr {
+numr { // 4
          bindings = <
 &trans  &trans   &trans                           &trans                &trans                                                                             &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans           &trans
 &trans  &trans   &trans                           &trans                &trans           &trans                                                    &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans           &trans
@@ -1788,7 +1788,7 @@ numr {
 &trans  &trans   &kp COMMA                        &kp MINUS             &kp PLUS         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp N1           &kp N2           &kp NUMBER_3     &kp KP_NUMBER_0  &trans
 &to 5   &trans   &trans                           &trans                &trans                   &trans  &trans  &trans    &trans  &trans  &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans           &to 5
 >;};
-navr {
+navr { // 5
 			bindings = <
 &trans  &trans  &trans         &trans           &trans                                                                             &trans    &trans       &trans         &trans          &trans
 &trans  &trans  &trans         &trans           &trans     &trans                                                    &trans        &NAV0     &NAV1        &trans         &trans          &trans
@@ -1797,7 +1797,7 @@ navr {
 &trans  &none   &kp RIGHT_ALT  &kp RIGHT_SHIFT  &kp LCTRL  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &none         &NAVUP    &NAVDOWN     &trans         &kp LCTRL       &trans
 &tog 6  &trans  &none          &none            &none              &trans  &trans  &trans    &trans  &trans  &trans                &NAVPUP   &NAVPGDOWN   &trans         &trans          &to 6
 >;};
-switcher {
+switcher { // 6
          bindings = <
 &trans  &trans  &trans       &trans  &trans                                                                        &trans       &trans  &trans      &trans  &trans
 &trans  &trans  &kp F4       &trans  &kp ESCAPE  &trans                                                    &trans  &kp F4       &trans  &kp ESCAPE  &trans  &trans
@@ -1806,7 +1806,7 @@ switcher {
 &trans  &trans  &trans       &trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans       &trans  &trans      &trans  &trans
 &trans  &trans  &trans       &trans  &trans              &trans  &trans  &trans    &trans  &trans  &trans          &trans       &trans  &trans      &trans  &trans
 >;};
-layer_11 {
+gaming { // 7
          bindings = <
 &trans  &trans     &kp F5  &kp F6  &kp F9                                                                       &trans  &trans  &trans  &trans  &to 0
 &trans  &trans     &kp N1  &kp N2  &kp N3  &kp N4                                                       &trans  &trans  &trans  &trans  &trans  &trans
@@ -1816,10 +1816,10 @@ layer_11 {
 &trans  &trans     &kp T   &kp G   &kp B           &kp SPACE  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
 >;};
 
-magic {
+magic { // 8
 			bindings = <
 &trans      &trans           &trans           &trans           &trans                                                                                                  &trans  &trans  &trans  &trans  &trans
-&to 0       &to 1            &to 2            &to 3            &to 4            &to 5                                                                           &to 6  &none   &none   &none   &none   &none
+&to 0       &to 1            &to 2            &to 3            &to 4            &to 5                                                                           &to 6  &to 7   &none   &none   &none   &none
 &none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                 &none  &none   &none   &none   &none   &none
 &none       &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                 &none  &none   &none   &none   &none   &none
 &sys_reset  &none            &none            &none            &none            &none            &bt_2  &bootloader  &none           &none  &bootloader  &none  &none  &none   &none   &none   &none   &sys_reset

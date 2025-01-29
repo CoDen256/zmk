@@ -63,7 +63,7 @@ def run(name, file_path, script, *args):
                      args=(name, file_path, script.run, *args)).start()
 
 
-def rund(*args):
+def n(*args):
     pass
 
 
@@ -84,51 +84,51 @@ if __name__ == "__main__":
         builder,
         base,
         )
-    # run("drawer",
-    #     f"{base}\\glove80.uf2",
-    #     drawer,
-    #     base,
-    #     )
+    run("drawer",
+        f"{base}\\glove80.uf2",
+        drawer,
+        base,
+        )
     run(
-        "deployer-D",
-        '/media/coden/GLV80LHBOOT',
+        "deployer-1",
+        'D:\\',
         deployer,
         base,
-        '/media/coden/GLV80LHBOOT',
+        'D:\\',
     )
 
-    run(
+    n(
         "deployer-2",
-        '/media/coden/GLV80LHBOOT',
+        'D:\\',
         deployer,
         base,
-        '/media/coden/GLV80LHBOOT',
+        'D:\\',
     )
 
-    # run(
-    #     "keycombiner",
-    #     f"{base}\\shortcuts\\keymap.xml",
-    #     keycombiner,
-    #     f"{base}\\shortcuts\\keymap.xml",
-    #     f"{base}\\shortcuts\\keymap.csv",
-    # )
-    #
-    # run(
-    #     "keycombiner-updater",
-    #     f"{base}\\shortcuts\\keymap.csv",
-    #     updater,
-    #     f"{base}\\shortcuts\\keymap.csv",
-    #     f"{base}\\scripts\\pass",
-    #     33922
-    # )
-    #
-    # run(
-    #     "modder",
-    #     f"{base}\\shortcuts\\mods.yaml",
-    #     modder,
-    #     f"{base}\\shortcuts\\mods.yaml",
-    #     f"{base}\\config\\glove80.keymap",
-    # )
+    n(
+        "keycombiner",
+        f"{base}\\shortcuts\\keymap.xml",
+        keycombiner,
+        f"{base}\\shortcuts\\keymap.xml",
+        f"{base}\\shortcuts\\keymap.csv",
+    )
+
+    n(
+        "keycombiner-updater",
+        f"{base}\\shortcuts\\keymap.csv",
+        updater,
+        f"{base}\\shortcuts\\keymap.csv",
+        f"{base}\\scripts\\pass",
+        33922
+    )
+
+    run(
+        "modder",
+        f"{base}\\shortcuts\\mods.yaml",
+        modder,
+        f"{base}\\shortcuts\\mods.yaml",
+        f"{base}\\config\\glove80.keymap",
+    )
 
     # Keep the main thread running
     input()
