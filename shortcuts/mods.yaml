@@ -36,13 +36,13 @@ morph:
   F5: "F5"
 
   # LEFT APPENDIX
-  K1: "&none"
-  K2: "&none"
+  K1: "F11"
+  K2: "F12"
   K3: { tap: \, hold: \\, tapping-term-ms: 250, require-prior-idle-ms: 0}
-  G1: "&none"
+  G1: "@"
   G2: "#"
-  O1: "@"
-  J1: "&none"
+  O1: "!"
+  J1: { tap: "`", hold: "```", tapping-term-ms: 250, require-prior-idle-ms: 0}
 
 
   # LEFT MAIN
@@ -66,14 +66,14 @@ morph:
   Q: { lshift: "LC(Y)",                                         rshift: "RC(CARET)" }
 
   # LEFT CENTER APPENDIX
-  K5: { tap: /, hold: //, tapping-term-ms: 250, require-prior-idle-ms: 0}
+  K5: /
   K6: "~"
   C6: { default: "ESCAPE",                           lshift: "LC(A)",rshift: "RS(F5)"  }
   N6: "\n"
   P6: "."
 
   # LEFT LOWER
-  Q1: "&none"
+  Q1: "F15"
   Q2: "^"
   Q4: { default: "[", hold: "[]\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
   Q5: { default: "(", hold: "()\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
@@ -107,27 +107,27 @@ morph:
   Z:  {                                                           lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
 
   # RIGHT CENTER
-  W5: "#"
-  W6: "<"
+  W5: "*"
+  W6: "-"
   V5: { tap: "=", hold: "==", tapping-term-ms: 250, require-prior-idle-ms: 0}
   T5: "\t"
   M5: ","
 
   # RIGHT APPENDIX
-  W8: ">"
-  W9: "&none"
-  W0: "&none"
-  B9: "~"
-  B0: "&none"
-  S0: "`"
-  X0: "&none"
+  W8: "+"
+  W9: "F13"
+  W0: "F14"
+  B9: { default: "<", hold: "<>\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  B0: ">"
+  S0: "?"
+  X0: "%"
 
 
   # RIGHT LOWER
   Z6: { default: "{", hold: "{}\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
   Z7: "_"
   Z9: "$"
-  Z0: "&none"
+  Z0: "F16"
 
 ##### thumbs
   TL1: "SPACE"
@@ -185,9 +185,9 @@ combo:
     timeout-ms: 30
     layers: [0, 1]
   # left
-  GH: "+"
-  HC: "-"
-  GC: "*"
+  #GH: "+"
+  #HC: "-"
+  #GC: "*"
 
 #  GI: ""
 #  HA: ""
@@ -196,15 +196,15 @@ combo:
 
   AI: "'"
   IN: '"'
-  AN: "!"
+  #AN: "!"
 
 #  AU: ""
 #  IF: ""
-#  IP: "" ;:ir
+#  IP: ""
 #  NU: ""
 
 #  FU:
-  PU: "%"
+  PU: "./"
 #  FP: ""
 
 
@@ -221,7 +221,7 @@ combo:
 
   TR: { tap: "|", hold: "||", tapping-term-ms: 250, require-prior-idle-ms: 0}
   RE: { tap: "&", hold: "&&", tapping-term-ms: 250, require-prior-idle-ms: 0}
-  TE: "?"
+  #TE: "|"
 
 #  TD: ""
 #  RM: ""

@@ -1,5 +1,5 @@
 <img src="./draw/keymap.svg">
 
 
-aei
-((mtmtmtmt(mt())))
+aei|||||r&&&rt|||||rt||||rtrt|||&&&
+((mtmtmtmt(mt())))~>><<=<=<=<=<=<<>~/~~/~/~/~/~/~~~~~~~~~~~/
