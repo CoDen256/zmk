@@ -1,3 +1,4 @@
+import pathlib
 import yaml
 import subprocess
 import keymap_drawer
@@ -16,19 +17,21 @@ def removelayers(origin):
         if layer not in layers:
             del origin[layer]
 def run(base):
-    config = f"{base}/draw/config.yaml"
-    keymap = f"{base}/config/glove80.keymap"
-    parsed = f"{base}/draw/parsed.yml"
+    root = "/zmk"
+    config = f"{root}/draw/config.yaml"
+    keymap = f"{root}/config/glove80.keymap"
+    parsed = f"{root}/draw/parsed.yml"
 
-    combosfile = f"{base}/draw/combos.yml"
-    reduced = f"{base}/draw/reduced.yml"
-    out_combos = f"{base}/draw/keymap-combos.svg"
-    out_reduced = f"{base}/draw/keymap-reduced.svg"
-    out_origin = f"{base}/draw/keymap.svg"
-    
+    combosfile = f"{root}/draw/combos.yml"
+    out_combos = f"{root}/draw/keymap-combos.svg"
+    out_origin = f"{root}/draw/keymap.svg"
+
+    cmd = f"{base}/scripts/keymap_drawer"
+    args = {}#{"creationflags": subprocess.CREATE_NO_WINDOW}
+
     print("[drawer] Parsing")
-    subprocess.call(f"keymap.exe -c {config} parse -z {keymap} -o {parsed}",
-                    creationflags=subprocess.CREATE_NO_WINDOW)
+    subprocess.call(f"{cmd} -c {config} parse -z {keymap} -o {parsed}", **args)
+
     origin = load(parsed)
     layout = {"layout": {"qmk_keyboard": "glove80"}}
 
@@ -43,12 +46,9 @@ def run(base):
     print("[drawer] Drawing")
 
 
-    subprocess.call(f"keymap.exe -c {config} draw {parsed} -o {out_origin}",
-                    creationflags=subprocess.CREATE_NO_WINDOW)
-    subprocess.call(f"keymap.exe -c {config} draw {combosfile} -o {out_combos}",
-                    creationflags=subprocess.CREATE_NO_WINDOW)
-    subprocess.call(f"keymap.exe -c {config} draw {reduced} -o {out_reduced}",
-                    creationflags=subprocess.CREATE_NO_WINDOW)
+    subprocess.call(f"{cmd} -c {config} draw {parsed} -o {out_origin}", **args)
+    subprocess.call(f"{cmd} -c {config} draw {combosfile} -o {out_combos}", **args)
     print("[drawer] Done")
 
-#run("C:\\dev\\zmk-config")
+if __name__ == '__main__':
+    run(pathlib.Path(__file__).parent.parent.resolve())

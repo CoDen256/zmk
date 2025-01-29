@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+docker run -ti --rm -v --entrypoint=keymap codingfragments/keymap_drawer "$@"

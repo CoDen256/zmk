@@ -33,7 +33,7 @@ def check_file_update(name, file_path, script, *args):
                 current_modified_time = last_modified_time = None
             # print(f"{name} {last_modified_time} -> {current_modified_time}")
             # If the modification time has changed, run the PowerShell script
-            if current_modified_time and current_modified_time != last_modified_time:
+            if current_modified_time is not None and current_modified_time != last_modified_time:
                 print(f"[{name}] File {file_path} has been updated")
                 script(*args)
                 # Update the last modification time
@@ -73,61 +73,59 @@ def run_shell(script):
 
 
 if __name__ == "__main__":
-    # file_path = "../config/glove80.keymap"
-    # dir = "/"
-    # check_file_update(file_path, dir)
     base = pathlib.Path(__file__).parent.parent.resolve()
     print(f"Watching {base}")
-    #run_shell("C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
     run("builder",
-        f"{base}\\config\\glove80.keymap",
+        f"{base}/config/glove80.keymap",
         builder,
         base,
         )
-    run("drawer",
-        f"{base}\\glove80.uf2",
+    n("drawer",
+        f"{base}/glove80.uf2",
         drawer,
         base,
         )
+    driveL = '/run/media/coden/GLV80LHBOOT'
+    driveR = '/run/media/coden/GLV80RHBOOT'
+
     run(
         "deployer-1",
-        'D:\\',
+        driveL,
         deployer,
         base,
-        'D:\\',
+        driveL,
     )
-
-    n(
+    run(
         "deployer-2",
-        'D:\\',
+        driveR,
         deployer,
         base,
-        'D:\\',
+        driveR,
     )
 
     n(
         "keycombiner",
-        f"{base}\\shortcuts\\keymap.xml",
+        f"{base}/shortcuts/keymap.xml",
         keycombiner,
-        f"{base}\\shortcuts\\keymap.xml",
-        f"{base}\\shortcuts\\keymap.csv",
+        f"{base}/shortcuts/keymap.xml",
+        f"{base}/shortcuts/keymap.csv",
     )
 
     n(
         "keycombiner-updater",
-        f"{base}\\shortcuts\\keymap.csv",
+        f"{base}/shortcuts/keymap.csv",
         updater,
-        f"{base}\\shortcuts\\keymap.csv",
-        f"{base}\\scripts\\pass",
+        f"{base}/shortcuts/keymap.csv",
+        f"{base}/scripts/pass",
         33922
     )
 
     run(
         "modder",
-        f"{base}\\shortcuts\\mods.yaml",
+        f"{base}/shortcuts/mods.yaml",
         modder,
-        f"{base}\\shortcuts\\mods.yaml",
-        f"{base}\\config\\glove80.keymap",
+        f"{base}/shortcuts/mods.yaml",
+        f"{base}/config/glove80.keymap",
     )
 
     # Keep the main thread running

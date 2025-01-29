@@ -65,7 +65,7 @@ def copy(path, target_disk):
 
 def run(watched_folder, target_disk):
     # Step 1: Wait for the first device connection
-    print(f"[deployer-{target_disk[0]}] Waiting for device connection at {target_disk}...")
+    print(f"[deployer-{target_disk}] Waiting for device connection at {target_disk}...")
     wait_for_device(target_disk)
 
     # Step 2: Download latest artifact

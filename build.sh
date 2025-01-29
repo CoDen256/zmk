@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -euo pipefail
-
-IMAGE=glove80-zmk-config-docker
+IMAGE=coden256/glove80-zmk-config-linux
 BRANCH="${1:-main}"
 
-docker build -t "$IMAGE" .
 docker run --rm -v "$PWD:/config" -e UID="$(id -u)" -e GID="$(id -g)" -e BRANCH="$BRANCH" "$IMAGE"
