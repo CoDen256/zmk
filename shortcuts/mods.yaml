@@ -69,7 +69,7 @@ morph:
   K5: /
   K6: "~"
   C6: { default: "ESCAPE",                           lshift: "LC(A)",rshift: "RS(F5)"  }
-  N6: "\n"
+  N6: { default: "\n",                               lshift: "LC(ENTER)", lctrl: "RS(ENTER)"  }
   P6: "."
 
   # LEFT LOWER
