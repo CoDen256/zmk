@@ -18,5 +18,5 @@ let
   ]);
 in
 pkgs.mkShell {
-  nativeBuildInputs = [ pythonWithPackages ];
+  nativeBuildInputs = [ pythonWithPackages pkgs.which ];
 }

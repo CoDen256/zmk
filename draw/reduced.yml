@@ -2,67 +2,80 @@ layout:
   qmk_keyboard: glove80
 layers:
   main:
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
-  - VOLUME DOWN
-  - VOLUME UP
+  - t: F1
+    s: F1
+  - t: F2
+    s: F2
+  - t: F3
+    s: F3
+  - t: F4
+    s: F4
+  - t: F5
+    s: F5
+  - t: F6
+    s: F6
+  - t: F7
+    s: F7
+  - t: F8
+    s: F8
+  - t: F9
+    s: F9
+  - t: F10
+    s: F10
+  - t: ''''
+    s: ''''
+  - t: '"'
+    s: '"'
   - t: \
     h: '&backslash_backslash'
     s: \
   - t: K
     s: Sft+ F1
   - t: /
-    h: '&slash_slash'
     s: /
-  - t: Gui+ F10
-    s: Gui+ F10
-  - t: '&exc_equal'
-    s: '&exc_equal'
-  - t: <
-    s: <
-  - t: '='
-    s: '='
-  - t: '>'
-    s: '>'
-  - ''
-  - ''
-  - MUTE
+  - t: '~'
+    s: '~'
+  - t: '*'
+    s: '*'
+  - t: '-'
+    s: '-'
+  - t: W
+    s: W
+  - t: +
+    s: +
+  - t: '|'
+    s: '|'
+  - t: '&'
+    s: '&'
+  - t: '@'
+    s: '@'
   - t: '#'
     s: '#'
   - t: G
-    h: navr
     s: Sft+ F2
   - t: H
     h: '&moswitcher LALT'
     s: Sft+ F3
   - t: C
     s: Ctl+ F4
-  - t: W
-    s: Sft+ F5
   - t: ESCAPE
-    s: Ctl+ A
+    s: Sft+ F5
+  - t: '='
+    h: '&equal_equal'
+    s: '='
   - t: V
     s: Ctl+ F14
   - t: L
-    h: '&moswitcher LALT'
     s: Sft+ F15
   - t: B
-    h: navl
     s: Sft+ F16
-  - t: '~'
-    s: '~'
-  - ''
-  - t: '@'
-    h: RGUI
-    s: '@'
+  - t: <
+    h: '&less_than_gre_tha_left_arrow'
+    s: <
+  - t: '>'
+    s: '>'
+  - t: '!'
+    s: '!'
   - t: O
     s: Sft+ F6
   - t: A
@@ -74,10 +87,10 @@ layers:
   - t: N
     h: LCTRL
     s: Sft+ F9
+  - t: ENTER
+    s: Sft+ ENTER
   - t: TAB
     s: TAB
-  - t: ENTER
-    s: ENTER
   - t: T
     h: RCTRL
     s: Sft+ F17
@@ -89,49 +102,50 @@ layers:
     s: Sft+ F19
   - t: S
     s: Ctl+ F20
+  - t: '?'
+    s: '?'
   - t: '`'
-    h: RGUI
+    h: '&grave_grave_grave'
     s: '`'
-  - ''
   - t: J
     s: Sft+ F10
   - t: F
-    h: navl
+    h: nav
     s: Sft+ F11
   - t: U
-    h: Sft+Alt+ LGUI
     s: Sft+ F12
   - t: P
-    h: numr
     s: Sft+ F13
-  - t: ''''
-    s: ''''
+  - t: .
+    s: .
   - t: BACKSPACE
     s: BACKSPACE
-  - numl
+  - t: Sft+AGr+ RGUI
+    s: Sft+AGr+ RGUI
   - t: '&rgb_ug_status_macro'
     h: magic
+    s: '&rgb_ug_status_macro'
   - t: '&rgb_ug_status_macro'
     h: magic
-  - t: numl
-    h: toggle
-  - t: F9
-    s: F9
-  - t: '"'
-    s: '"'
+    s: '&rgb_ug_status_macro'
+  - t: Meh+ F24
+    s: Meh+ F24
+  - t: DELETE
+    s: DELETE
+  - t: ','
+    s: ','
   - t: M
-    h: numl
     s: Sft+ F21
   - t: D
-    h: Sft+AGr+ RGUI
     s: Sft+ F22
   - t: Y
-    h: navr
-    s: Ctl+ F23
+    s: Sft+ F23
   - t: X
     s: Ctl+ F24
-  - ''
-  - '&reloadkeymap'
+  - t: '%'
+    s: '%'
+  - t: ':'
+    s: ':'
   - t: ^
     s: ^
   - t: Q
@@ -144,18 +158,19 @@ layers:
     s: (
   - t: SPACE
     s: SPACE
-  - t: de
-    h: Gui+ F12
-    s: de
-  - t: switcher
-    h: toggle
-  - t: main_upper
-    h: toggle
-  - t: DELETE
-    s: DELETE
-  - t: main_upper
+  - t: num
     h: sticky
-    s: main_upper
+    s: num
+  - t: LGUI
+    s: LGUI
+  - t: RGUI
+    s: RGUI
+  - t: num
+    h: sticky
+    s: num
+  - t: upper
+    h: sticky
+    s: upper
   - t: '{'
     h: '&left_brace_rig_bra_left_arrow'
     s: '{'
@@ -165,67 +180,52 @@ layers:
     s: Ctl+ ~
   - t: $
     s: $
-  - ''
+  - t: ;
+    s: ;
 combos:
 - p:
-  - 24
-  - 25
-  k:
-    t: +
-- p:
-  - 25
-  - 26
-  k: '-'
-- p:
-  - 24
-  - 26
-  k: '*'
-- p:
   - 36
   - 37
-  k:
-    t: ':'
+  k: ''''
+  l:
+  - main
+  - upper
 - p:
   - 37
   - 38
-  k: .
-- p:
-  - 36
-  - 38
-  k: '!'
+  k: '"'
+  l:
+  - main
+  - upper
 - p:
   - 50
   - 49
-  k: '%'
+  k: '&period_slash'
+  l:
+  - main
+  - upper
 - p:
-  - 29
-  - 30
+  - 41
+  - 42
   k:
     t: '|'
+    h: '&pipe_pipe'
+  l:
+  - main
+  - upper
 - p:
-  - 30
-  - 31
+  - 42
+  - 43
   k:
     t: '&'
-- p:
-  - 29
-  - 31
-  k: '&equal_equal'
-- p:
-  - 41
-  - 42
-  k:
-    t: ','
-- p:
-  - 42
-  - 43
-  k:
-    t: ;
-- p:
-  - 41
-  - 43
-  k: '?'
+    h: '&ampersand_ampersand'
+  l:
+  - main
+  - upper
 - p:
   - 59
   - 60
   k: '&minus_gre_tha'
+  l:
+  - main
+  - upper

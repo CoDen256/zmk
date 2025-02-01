@@ -8,7 +8,6 @@ import time
 from pathlib import Path
 
 import builder
-import drawer
 import deployer
 import keycombiner
 import updater
@@ -78,11 +77,6 @@ if __name__ == "__main__":
     run("builder",
         f"{base}/config/glove80.keymap",
         builder,
-        base,
-        )
-    n("drawer",
-        f"{base}/glove80.uf2",
-        drawer,
         base,
         )
     driveL = '/run/media/coden/GLV80LHBOOT'

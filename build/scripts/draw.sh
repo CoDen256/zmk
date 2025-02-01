@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-echo "hello u"
-keymap -v
+
+echo "Running keymap drawer: $(keymap -v): $(which keymap)"
+python /config/draw/drawer.py $(which keymap)

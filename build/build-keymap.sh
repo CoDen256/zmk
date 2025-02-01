@@ -10,5 +10,6 @@ docker run --rm \
     -e UID="$(id -u)" \
     -e GID="$(id -g)" \
     -e BRANCH="$BRANCH" \
-    --entrypoint /build/scripts/entrypoint.sh \
-    "$IMAGE"
+    --entrypoint nix-shell\
+    "$IMAGE"\
+    --run /build/scripts/entrypoint.sh

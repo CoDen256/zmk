@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "hello"
 /build/scripts/draw.sh
 exit 1
 : "${BRANCH:=main}"

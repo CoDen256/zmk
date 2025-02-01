@@ -42,10 +42,10 @@ COPY --chmod=755 <<EOF /bin/entrypoint.sh
 EOF
 
 # prepopulate dependencies for keymap-drawer
-ADD build/static/drawer-shell.nix /drawer-shell.nix
+ADD build/static/shell.nix /shell.nix
 ADD build/static/drawer-deps.nix /drawer-deps.nix
 RUN <<EOF
-    nix-shell /drawer-shell.nix
+    nix-shell /shell.nix
 EOF
 
 ENTRYPOINT ["/bin/entrypoint.sh"]
