@@ -47,8 +47,9 @@ layers:
     s: F19
   - t: F20
     s: F20
-  - t: '@'
-    s: '@'
+  - t: '`'
+    h: '&grave_grave_grave'
+    s: '`'
   - t: '#'
     s: '#'
   - t: G
@@ -74,8 +75,8 @@ layers:
     s: <
   - t: '>'
     s: '>'
-  - t: '!'
-    s: '!'
+  - t: '"'
+    s: '"'
   - t: O
     s: Sft+ F6
   - t: A
@@ -104,9 +105,8 @@ layers:
     s: Ctl+ F20
   - t: '?'
     s: '?'
-  - t: '`'
-    h: '&grave_grave_grave'
-    s: '`'
+  - t: ''''
+    s: ''''
   - t: J
     s: Sft+ F10
   - t: F
@@ -120,8 +120,9 @@ layers:
     s: .
   - t: BACKSPACE
     s: BACKSPACE
-  - t: Sft+AGr+ RGUI
-    s: Sft+AGr+ RGUI
+  - t: num
+    h: sticky
+    s: num
   - t: '&rgb_ug_status_macro'
     h: magic
     s: '&rgb_ug_status_macro'
@@ -142,12 +143,13 @@ layers:
     s: Sft+ F23
   - t: X
     s: Ctl+ F24
-  - t: '%'
-    s: '%'
+  - t: '!'
+    s: '!'
   - t: ':'
     s: ':'
-  - t: ^
-    s: ^
+  - t: '&'
+    h: '&ampersand_ampersand'
+    s: '&'
   - t: Q
     s: Ctl+ ^
   - t: '['
@@ -158,9 +160,8 @@ layers:
     s: (
   - t: SPACE
     s: SPACE
-  - t: num
-    h: sticky
-    s: num
+  - t: Sft+AGr+ RGUI
+    s: Sft+AGr+ RGUI
   - t: LGUI
     s: LGUI
   - t: RGUI
@@ -178,22 +179,23 @@ layers:
     s: _
   - t: Z
     s: Ctl+ ~
-  - t: $
-    s: $
+  - t: '|'
+    h: '&pipe_pipe'
+    s: '|'
   - t: ;
     s: ;
 combos:
 - p:
   - 36
   - 37
-  k: ''''
+  k: '@'
   l:
   - main
   - upper
 - p:
   - 37
   - 38
-  k: '"'
+  k: '%'
   l:
   - main
   - upper
@@ -207,18 +209,14 @@ combos:
 - p:
   - 41
   - 42
-  k:
-    t: '|'
-    h: '&pipe_pipe'
+  k: ^
   l:
   - main
   - upper
 - p:
   - 42
   - 43
-  k:
-    t: '&'
-    h: '&ampersand_ampersand'
+  k: $
   l:
   - main
   - upper

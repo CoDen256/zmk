@@ -23,7 +23,7 @@ layers:
   - {t: +, s: +}
   - {t: F19, s: F19}
   - {t: F20, s: F20}
-  - {t: '@', s: '@'}
+  - {t: '`', h: '&grave_grave_grave', s: '`'}
   - {t: '#', s: '#'}
   - {t: G, s: Sft+ F2}
   - {t: H, h: '&moswitcher LALT', s: Sft+ F3}
@@ -35,7 +35,7 @@ layers:
   - {t: B, s: Sft+ F16}
   - {t: <, h: '&less_than_gre_tha_left_arrow', s: <}
   - {t: '>', s: '>'}
-  - {t: '!', s: '!'}
+  - {t: '"', s: '"'}
   - {t: O, s: Sft+ F6}
   - {t: A, h: LALT, s: Ctl+ F7}
   - {t: I, h: LSHIFT, s: Sft+ F8}
@@ -47,14 +47,14 @@ layers:
   - {t: E, h: RALT, s: Sft+ F19}
   - {t: S, s: Ctl+ F20}
   - {t: '?', s: '?'}
-  - {t: '`', h: '&grave_grave_grave', s: '`'}
+  - {t: '''', s: ''''}
   - {t: J, s: Sft+ F10}
   - {t: F, h: nav, s: Sft+ F11}
   - {t: U, s: Sft+ F12}
   - {t: P, s: Sft+ F13}
   - {t: ., s: .}
   - {t: BACKSPACE, s: BACKSPACE}
-  - {t: Sft+AGr+ RGUI, s: Sft+AGr+ RGUI}
+  - {t: num, h: sticky, s: num}
   - {t: '&rgb_ug_status_macro', h: magic, s: '&rgb_ug_status_macro'}
   - {t: '&rgb_ug_status_macro', h: magic, s: '&rgb_ug_status_macro'}
   - {t: Meh+ F24, s: Meh+ F24}
@@ -64,14 +64,14 @@ layers:
   - {t: D, s: Sft+ F22}
   - {t: Y, s: Sft+ F23}
   - {t: X, s: Ctl+ F24}
-  - {t: '%', s: '%'}
+  - {t: '!', s: '!'}
   - {t: ':', s: ':'}
-  - {t: ^, s: ^}
+  - {t: '&', h: '&ampersand_ampersand', s: '&'}
   - {t: Q, s: Ctl+ ^}
   - {t: '[', h: '&lef_bra_rig_bra_left_arrow', s: '['}
   - {t: (, h: '&lef_par_rig_par_left_arrow', s: (}
   - {t: SPACE, s: SPACE}
-  - {t: num, h: sticky, s: num}
+  - {t: Sft+AGr+ RGUI, s: Sft+AGr+ RGUI}
   - {t: LGUI, s: LGUI}
   - {t: RGUI, s: RGUI}
   - {t: num, h: sticky, s: num}
@@ -79,7 +79,7 @@ layers:
   - {t: '{', h: '&left_brace_rig_bra_left_arrow', s: '{'}
   - {t: _, s: _}
   - {t: Z, s: Ctl+ ~}
-  - {t: $, s: $}
+  - {t: '|', h: '&pipe_pipe', s: '|'}
   - {t: ;, s: ;}
   upper:
   - {t: ▽, type: trans}
@@ -297,7 +297,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -314,7 +314,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: num, h: toggle, type: held}
+  - {t: num, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: num, h: toggle}
@@ -569,19 +569,19 @@ layers:
   - BT CLR ALL
 combos:
 - p: [36, 37]
-  k: ''''
+  k: '@'
   l: [main, upper]
 - p: [37, 38]
-  k: '"'
+  k: '%'
   l: [main, upper]
 - p: [50, 49]
   k: '&period_slash'
   l: [main, upper]
 - p: [41, 42]
-  k: {t: '|', h: '&pipe_pipe'}
+  k: ^
   l: [main, upper]
 - p: [42, 43]
-  k: {t: '&', h: '&ampersand_ampersand'}
+  k: $
   l: [main, upper]
 - p: [59, 60]
   k: '&minus_gre_tha'

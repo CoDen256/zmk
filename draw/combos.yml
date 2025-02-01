@@ -4,14 +4,14 @@ combos:
 - p:
   - 36
   - 37
-  k: ''''
+  k: '@'
   l:
   - main
   - upper
 - p:
   - 37
   - 38
-  k: '"'
+  k: '%'
   l:
   - main
   - upper
@@ -25,18 +25,14 @@ combos:
 - p:
   - 41
   - 42
-  k:
-    t: '|'
-    h: '&pipe_pipe'
+  k: ^
   l:
   - main
   - upper
 - p:
   - 42
   - 43
-  k:
-    t: '&'
-    h: '&ampersand_ampersand'
+  k: $
   l:
   - main
   - upper
