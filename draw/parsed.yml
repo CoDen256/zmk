@@ -11,8 +11,8 @@ layers:
   - {t: F8, s: F8}
   - {t: F9, s: F9}
   - {t: F10, s: F10}
-  - {t: '''', s: ''''}
-  - {t: '"', s: '"'}
+  - {t: F11, s: F11}
+  - {t: F12, s: F12}
   - {t: \, h: '&backslash_backslash', s: \}
   - {t: K, s: Sft+ F1}
   - {t: /, s: /}
@@ -21,8 +21,8 @@ layers:
   - {t: '-', s: '-'}
   - {t: W, s: W}
   - {t: +, s: +}
-  - {t: '|', s: '|'}
-  - {t: '&', s: '&'}
+  - {t: F19, s: F19}
+  - {t: F20, s: F20}
   - {t: '@', s: '@'}
   - {t: '#', s: '#'}
   - {t: G, s: Sft+ F2}
@@ -175,11 +175,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: LEFT, s: LEFT}
-  - {t: RIGHT, s: RIGHT}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - {t: PAGE UP, s: PAGE UP}
+  - {t: PAGE DOWN, s: PAGE DOWN}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -188,29 +186,31 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
   - {t: HOME, s: Ctl+ HOME}
   - {t: END, s: Ctl+ END}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
-  - {t: '&select_line', s: '&select_line'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: LCTRL, s: LCTRL}
+  - {t: '&select_word_left', s: '&select_word_left'}
   - {t: Ctl+ LEFT, s: Ctl+ LEFT}
   - {t: Ctl+ RIGHT, s: Ctl+ RIGHT}
-  - {t: '&select_word', s: '&select_word'}
+  - {t: TAB, s: TAB}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
+  - RCTRL
+  - RSHFT
+  - RIGHT ALT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LSHFT
+  - {t: LSHIFT, s: LSHIFT}
   - {type: held}
   - {t: UP, s: UP}
   - {t: DOWN, s: DOWN}
@@ -222,16 +222,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: PAGE UP, s: PAGE UP}
-  - {t: PAGE DOWN, s: PAGE DOWN}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: LEFT, s: LEFT}
+  - {t: RIGHT, s: RIGHT}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -260,7 +260,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '*'
+  - '%'
   - '-'
   - /
   - +
@@ -276,13 +276,13 @@ layers:
   - '7'
   - '8'
   - '9'
-  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BACKSPACE
+  - SPACE
   - {t: ▽, type: trans}
   - '*'
   - '4'
@@ -302,11 +302,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '%'
+  - ','
   - '1'
   - '2'
   - '3'
-  - ''
+  - '%'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

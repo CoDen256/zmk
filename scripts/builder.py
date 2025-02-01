@@ -7,14 +7,16 @@ def run(dir):
     print(f"Building in {dir}")
     client = docker.from_env()
     container = client.containers.run("coden256/glove80-zmk-config-linux",  detach=True, auto_remove=True,
-                                      volumes=[f"{dir}:/config"],
+                                      volumes=[f"{dir}:/config", f"{dir}/build:/build"],
                                       environment={
                                           "BRANCH": "main",
                                           # region Description
                                           "UID": "1000",
                                           # endregion
                                           "GID": "1000",
-                                      }
+                                      },
+                                      entrypoint="nix-shell",
+                                      command=["--run", "/build/scripts/entrypoint.sh"]
                                       )
 
     logs = []

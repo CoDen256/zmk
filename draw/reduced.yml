@@ -22,10 +22,10 @@ layers:
     s: F9
   - t: F10
     s: F10
-  - t: ''''
-    s: ''''
-  - t: '"'
-    s: '"'
+  - t: F11
+    s: F11
+  - t: F12
+    s: F12
   - t: \
     h: '&backslash_backslash'
     s: \
@@ -43,10 +43,10 @@ layers:
     s: W
   - t: +
     s: +
-  - t: '|'
-    s: '|'
-  - t: '&'
-    s: '&'
+  - t: F19
+    s: F19
+  - t: F20
+    s: F20
   - t: '@'
     s: '@'
   - t: '#'

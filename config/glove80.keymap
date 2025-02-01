@@ -502,14 +502,26 @@ release-after-ms = <5000>;};
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
+        NAVK3:NAVK3 { label = "NAVK3"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&none>, <&none>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
         NAVK:NAVK { label = "NAVK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LEFT>, <&kp LEFT>;
+            bindings = <&kp PAGE_UP>, <&kp PAGE_UP>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
         NAVK5:NAVK5 { label = "NAVK5"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp RIGHT>, <&kp RIGHT>;
+            bindings = <&kp PAGE_DOWN>, <&kp PAGE_DOWN>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        NAVG:NAVG { label = "NAVG"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&none>, <&none>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -562,6 +574,18 @@ release-after-ms = <5000>;};
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
         };
 
+        NAVO:NAVO { label = "NAVO"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp LCTRL>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        NAVA:NAVA { label = "NAVA"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&select_word_left>, <&select_word_left>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
         NAVI:NAVI { label = "NAVI"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&kp LC(LEFT)>, <&kp LC(LEFT)>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
@@ -570,6 +594,18 @@ release-after-ms = <5000>;};
 
         NAVN:NAVN { label = "NAVN"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&kp LC(RIGHT)>, <&kp LC(RIGHT)>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        NAVN6:NAVN6 { label = "NAVN6"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp TAB>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        NAVJ:NAVJ { label = "NAVJ"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LSHIFT>, <&kp LSHIFT>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -586,26 +622,14 @@ release-after-ms = <5000>;};
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
-        NAVA:NAVA { label = "NAVA"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&select_line>, <&select_line>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-        };
-
-        NAVW5:NAVW5 { label = "NAVW5"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&select_word>, <&select_word>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-        };
-
         NAVQ4:NAVQ4 { label = "NAVQ4"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp PAGE_UP>, <&kp PAGE_UP>;
+            bindings = <&kp LEFT>, <&kp LEFT>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
         NAVQ5:NAVQ5 { label = "NAVQ5"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp PAGE_DOWN>, <&kp PAGE_DOWN>;
+            bindings = <&kp RIGHT>, <&kp RIGHT>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -641,13 +665,13 @@ release-after-ms = <5000>;};
         };
 
         K1_key:K1_key { label = "K1_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp SINGLE_QUOTE>, <&kp SINGLE_QUOTE>;
+            bindings = <&kp F11>, <&kp F11>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
         K2_key:K2_key { label = "K2_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp DOUBLE_QUOTES>, <&kp DOUBLE_QUOTES>;
+            bindings = <&kp F12>, <&kp F12>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -1349,13 +1373,13 @@ release-after-ms = <5000>;};
         };
 
         W9_key:W9_key { label = "W9_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp PIPE>, <&kp PIPE>;
+            bindings = <&kp F19>, <&kp F19>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
         W0_key:W0_key { label = "W0_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp AMPERSAND>, <&kp AMPERSAND>;
+            bindings = <&kp F20>, <&kp F20>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -1606,6 +1630,16 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
     main { // 0
@@ -1629,21 +1663,21 @@ upper { // 1
 
 nav { // 2
 			bindings = <
-&trans  &trans     &trans  &trans  &trans                                                                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &NAVK   &NAVK5  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &NAVH   &NAVC   &trans                                                    &trans  &none   &none   &none   &trans  &trans
-&trans  &kp LCTRL  &NAVA   &NAVI   &NAVN   &NAVW5                                                    &trans  &none   &none   &none   &trans  &trans
-&trans  &kp LSHFT  &trans  &NAVU   &NAVP   &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &none   &none   &none   &trans  &trans
-&trans  &trans     &trans  &NAVQ4  &NAVQ5          &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans  &trans                                                                    &trans     &trans     &trans         &trans  &trans
+&trans  &trans     &NAVK3  &NAVK   &NAVK5  &trans                                                   &trans  &trans     &trans     &trans         &trans  &trans
+&trans  &trans     &NAVG   &NAVH   &NAVC   &trans                                                  &trans  &trans     &trans     &trans         &trans  &trans
+&trans  &NAVO      &NAVA   &NAVI   &NAVN   &NAVN6                                                    &trans  &kp RCTRL  &kp RSHFT  &kp RIGHT_ALT  &trans  &trans
+&trans  &NAVJ      &trans  &NAVU   &NAVP   &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans     &trans     &trans         &trans  &trans
+&trans  &trans     &trans  &NAVQ4  &NAVQ5          &trans  &trans  &trans    &trans  &trans  &trans          &trans     &trans     &trans         &trans  &trans
 >;};
 num { // 3
          bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                          &trans                &trans     &trans                 &trans      &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &kp ASTERISK  &kp MINUS             &kp SLASH  &kp PLUS               &trans      &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &kp EQUAL     &kp N7                &kp N8     &kp N9                 &none       &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &kp ASTERISK  &kp N4                &kp N5     &kp N6                 &kp PERIOD  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &kp PERCENT   &kp N1                &kp N2     &kp NUMBER_3           &none       &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &tog 3  &trans    &trans  &tog 3  &trans                &kp LEFT_PARENTHESIS  &kp N0     &kp RIGHT_PARENTHESIS  &trans      &trans
+&trans  &trans  &trans  &trans         &trans                                                                             &trans                &trans     &trans                 &trans       &trans
+&trans  &trans  &trans  &trans         &trans     &trans                                                    &kp PRCNT     &kp MINUS             &kp SLASH  &kp PLUS               &trans       &trans
+&trans  &trans  &trans  &trans         &trans     &trans                                                    &kp EQUAL     &kp N7                &kp N8     &kp N9                 &trans       &trans
+&trans  &trans  &trans  &kp BACKSPACE  &kp SPACE  &trans                                                    &kp ASTERISK  &kp N4                &kp N5     &kp N6                 &kp PERIOD   &trans
+&trans  &trans  &trans  &trans         &trans     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &kp COMMA     &kp N1                &kp N2     &kp NUMBER_3           &kp PERCENT  &trans
+&trans  &trans  &trans  &trans         &trans             &trans  &tog 3  &trans    &trans  &tog 3  &trans                &kp LEFT_PARENTHESIS  &kp N0     &kp RIGHT_PARENTHESIS  &trans       &trans
 >;};
 
 switcher { // 4
