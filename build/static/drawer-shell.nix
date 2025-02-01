@@ -1,6 +1,6 @@
 { pkgs ? ( import /src/nix/pinned-nixpkgs.nix {})}:
 let
-  packageOverrides = pkgs.callPackage ./python-packages.nix { };
+  packageOverrides = pkgs.callPackage ./drawer-deps.nix { };
   python = pkgs.python3.override { inherit packageOverrides; };
   pythonWithPackages = python.withPackages (ps: [
   ps.keymap-drawer

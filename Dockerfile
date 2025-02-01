@@ -2,10 +2,6 @@ FROM nixpkgs/nix:nixos-23.11
 
 ENV PATH=/root/.nix-profile/bin:/usr/bin:/bin
 
-
-ADD config/shell.nix /keymap/
-ADD config/python-packages.nix /keymap/
-
 RUN <<EOF
     set -euo pipefail
     nix-env -iA cachix -f https://cachix.org/api/v1/install
@@ -17,9 +13,6 @@ RUN <<EOF
     GIT_DIR=/zmk git worktree add --detach /src
 EOF
 
-RUN <<EOF
-    nix-shell /keymap/shell.nix
-EOF
 
 # Prepopulate the container's nix store with the build dependencies for the main
 # branch and the most recent three tags
@@ -46,8 +39,13 @@ COPY --chmod=755 <<EOF /bin/entrypoint.sh
     cd /config
     nix-build ./config --arg firmware 'import /src/default.nix {}' -j2 -o /tmp/combined --show-trace
     install -o "\$UID" -g "\$GID" /tmp/combined/glove80.uf2 ./glove80.uf2
+EOF
 
-    nix-shell /keymap/shell.nix --command keymap -v
+# prepopulate dependencies for keymap-drawer
+ADD build/static/drawer-shell.nix /drawer-shell.nix
+ADD build/static/drawer-deps.nix /drawer-deps.nix
+RUN <<EOF
+    nix-shell /drawer-shell.nix
 EOF
 
 ENTRYPOINT ["/bin/entrypoint.sh"]
