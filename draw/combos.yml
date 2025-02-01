@@ -2,16 +2,11 @@ layout:
   qmk_keyboard: glove80
 combos:
 - p:
-  - 36
-  - 37
-  k: '@'
-  l:
-  - main
-  - upper
-- p:
   - 37
   - 38
-  k: '%'
+  k:
+    t: '`'
+    h: '&grave_grave_grave'
   l:
   - main
   - upper
@@ -26,13 +21,6 @@ combos:
   - 41
   - 42
   k: ^
-  l:
-  - main
-  - upper
-- p:
-  - 42
-  - 43
-  k: $
   l:
   - main
   - upper

@@ -39,49 +39,48 @@ morph:
   F3: "F3"
   F4: "F4"
   F5: "F5"
-
-  # LEFT APPENDIX
   K1: "F11"
   K2: "F12"
-  K3: { tap: \, hold: \\, tapping-term-ms: 250, require-prior-idle-ms: 0}
-  G1: { tap: "`", hold: "```", tapping-term-ms: 250, require-prior-idle-ms: 0}
+
+  # LEFT APPENDIX
+  G1: "$"
   G2: "#"
   O1: '"'
   J1: "'"
 
-
   # LEFT MAIN
   # up
-  K:  {                                                         rshift: "RS(F1)" }
-  G:  { lshift: "LC(X)",                                        rshift: "RS(F2)"  }
-  H:  { hold: "&moswitcher LALT", pos: "C G N",                 rshift: "RS(F3)"  }
-  C:  { lshift: "LC(C)",                                        rshift: "RS(F4)", rctrl: "RC(F4)"}
+  K:  {                                                             rshift: "RS(F1)"  }
+  G:  {                                           lshift: "LC(X)",  rshift: "RS(F2)"  }
+  H:  { hold: "&moswitcher LALT", pos: "C G N",                     rshift: "RS(F3)"  }
+  C:  {                                           lshift: "LC(C)",  rshift: "RS(F4)",  rctrl: "RC(F4)"}                   # override ctrl+c
 
   # middle
-  O:  { lshift: "LS(F6)",  rshift: "RS(F6)"}
-  A:  { hold: "LALT", pos: "right", lshift: "LC(Z)",            rshift: "RS(F7)", rctrl: "RC(F7)",  lctrl: "LC(F7)"}
-  I:  { hold: "LSHIFT", pos: "G C A N F P W right",             rshift: "RS(F8)"  }
-  N:  { hold: "LCTRL", lshift: "LC(S)",                         rshift: "RS(F9)"  }
+  O:  {                                           lshift: "LS(F6)", rshift: "RS(F6)"  }
+  A:  { hold: "LALT",  pos: "right",              lshift: "LC(Z)",  rshift: "RS(F7)",  rctrl: "RC(F7)",  lctrl: "LC(F7)"} # override ctrl+a
+  I:  { hold: "LSHIFT",pos: "G C A N F P W right",                  rshift: "RS(F8)"  }
+  N:  { hold: "LCTRL",                            lshift: "LC(S)",  rshift: "RS(F9)"  }
 
   # down
-  J: {                                                          rshift: "RS(F10)" }
-  F: { hold: "&mo @nav", pos: "H C P N right",  lshift: "LC(F)",rshift: "RS(F11)" }
-  U: {                                                          rshift: "RS(F12)" }
-  P: { lshift: "LC(V)",                                         rshift: "RS(F13)" }
-  Q: { lshift: "LC(Y)",                                         rshift: "RC(CARET)" }
+  J: {                                                              rshift: "RS(F10)" }
+  F: { hold: "&mo @nav", pos: "H C P N right",     lshift: "LC(F)", rshift: "RS(F11)" }
+  U: {                                                              rshift: "RS(F12)" }
+  P: {                                             lshift: "LC(V)", rshift: "RS(F13)" }
+  Q: {                                             lshift: "LC(Y)", rshift: "RS(INS)" }                                   # use INSERT since, there is no other F key or symbol that could be combined with SHIFT
 
   # LEFT CENTER APPENDIX
+  K3: { tap: \, hold: \\, tapping-term-ms: 250, require-prior-idle-ms: 0}
   K5: /
   K6: "~"
-  C6: { default: "ESCAPE",                           lshift: "LC(A)",rshift: "RS(F5)"  }
-  N6: { default: "\n",                               lshift: "LC(ENTER)", lctrl: "RS(ENTER)"  }
+  C6: { default: "ESCAPE",                         lshift: "LC(A)" }
+  N6: { default: "\n",                             lshift: "LC(ENTER)",                                 lctrl: "RS(ENTER)"}#swap to allow for easy ctrl+enter
   P6: "."
 
   # LEFT LOWER
   Q1: ":"
   Q2: { tap: "&", hold: "&&", tapping-term-ms: 250, require-prior-idle-ms: 0}
-  Q4: { default: "[", hold: "[]\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
-  Q5: { default: "(", hold: "()\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q4: { tap: "[", hold: "[]\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q5: { tap: "(", hold: "()\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
 
 #### right
   # UPPER RIGHT
@@ -90,49 +89,49 @@ morph:
   F8: "F8"
   F9: "F9"
   F0: "F10"
+  W9: "F19"
+  W0: "F20"
 
   # MAIN RIGHT
   # up
-  W: "W"
-  V:  {                                                           lshift: "LS(F14)", lctrl: "LC(F14)" }
-  L:  {                                                           lshift: "LS(F15)" }
-  B:  {                                                           lshift: "LS(F16)" }
+  W:  {                                                lshift: "LS(F5)"  }                                            # for now F5, then will change
+  V:  {                                                lshift: "LS(F14)",                     lctrl: "LC(F14)" }      # override ctrl+v
+  L:  {                                                lshift: "LS(F15)" }
+  B:  {                                                lshift: "LS(F16)" }
 
   # middle
-  T:  { hold: "RCTRL",  rshift: "LC(S)",                          lshift: "LS(F17)" }
-  R:  { hold: "RSHIFT",  pos: "B V VV E T Y M Z left",            lshift: "LS(F18)" }
-  E:  { hold: "RALT", pos: "left", rshift: "LC(Z)",               lshift: "LS(F19)" }
-  S:  {                                                           lshift: "LS(F20)", lctrl: "LC(F20)"}
+  T:  { hold: "RCTRL",  rshift: "LC(S)",               lshift: "LS(F17)" }
+  R:  { hold: "RSHIFT",  pos: "B V VV E T Y M Z left", lshift: "LS(F18)" }
+  E:  { hold: "RALT", pos: "left", rshift: "LC(Z)",    lshift: "LS(F19)" }
+  S:  {                                                lshift: "LS(F20)",                     lctrl: "LC(F20)"}       # override ctrl+s
 
   # down
-  M:  {                                                           lshift: "LS(F21)" }
-  D:  {                                                           lshift: "LS(F22)",  }
-  Y:  {                                                           lshift: "LS(F23)",  }
-  X:  {                                                           lshift: "LS(F24)", lctrl: "LC(F24)" }
-  Z:  {                                                           lshift: "LS(TILDE)",lctrl: "LC(TILDE)" }
+  M:  {                                                lshift: "LS(F21)" }
+  D:  {                                                lshift: "LS(F22)",  }
+  Y:  {                                                lshift: "LS(F23)",                     lctrl: "LC(F20)" }      # override ctrl+y
+  X:  {                                                lshift: "LS(F24)",                     lctrl: "LC(F24)" }      # override ctrl+x
+  Z:  {                                                lshift: "LS(KP_NUM)",                  lctrl: "LC(KP_NUM)" }   # override ctrl+z, use KP_NUM since no other key is available to produce distinct shift+smth, see also "Q"
 
   # RIGHT CENTER
-  W5: "*"
-  W6: "-"
+  W5: "%"
   V5: { tap: "=", hold: "==", tapping-term-ms: 250, require-prior-idle-ms: 0}
   T5: "\t"
   M5: ","
 
   # RIGHT APPENDIX
+  W6: "-"
   W8: "+"
-  W9: "F19"
-  W0: "F20"
-  B9: { default: "<", hold: "<>\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  B9: { tap: "<", hold: "<>\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
   B0: ">"
   S0: "?"
-  X0: "!"
+  X0: "_"
 
 
   # RIGHT LOWER
   Z6: { default: "{", hold: "{}\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
-  Z7: "_"
+  Z7: "!"
   Z9: { tap: "|", hold: "||", tapping-term-ms: 250, require-prior-idle-ms: 0}
-  Z0: ";"
+  Z0: "@"
 
 ##### thumbs
   TL1: "SPACE"
@@ -199,8 +198,8 @@ combo:
 #  HN: ""
 #  CI: ""
 
-  AI: "@"
-  IN: '%'
+  #AI: "@"
+  IN: { tap: "`", hold: "```", tapping-term-ms: 250, require-prior-idle-ms: 0}
   #AN: "!"
 
 #  AU: ""
@@ -225,7 +224,7 @@ combo:
 
 
   TR: "^"
-  RE: "$"
+  #RE: "$"
   #TE: "|"
 
 #  TD: ""

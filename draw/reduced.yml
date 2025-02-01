@@ -35,21 +35,20 @@ layers:
     s: /
   - t: '~'
     s: '~'
-  - t: '*'
-    s: '*'
+  - t: '%'
+    s: '%'
   - t: '-'
     s: '-'
   - t: W
-    s: W
+    s: Sft+ F5
   - t: +
     s: +
   - t: F19
     s: F19
   - t: F20
     s: F20
-  - t: '`'
-    h: '&grave_grave_grave'
-    s: '`'
+  - t: $
+    s: $
   - t: '#'
     s: '#'
   - t: G
@@ -60,7 +59,7 @@ layers:
   - t: C
     s: Ctl+ F4
   - t: ESCAPE
-    s: Sft+ F5
+    s: Ctl+ A
   - t: '='
     h: '&equal_equal'
     s: '='
@@ -140,18 +139,18 @@ layers:
   - t: D
     s: Sft+ F22
   - t: Y
-    s: Sft+ F23
+    s: Ctl+ F20
   - t: X
     s: Ctl+ F24
-  - t: '!'
-    s: '!'
+  - t: _
+    s: _
   - t: ':'
     s: ':'
   - t: '&'
     h: '&ampersand_ampersand'
     s: '&'
   - t: Q
-    s: Ctl+ ^
+    s: Sft+ INS
   - t: '['
     h: '&lef_bra_rig_bra_left_arrow'
     s: '['
@@ -175,27 +174,22 @@ layers:
   - t: '{'
     h: '&left_brace_rig_bra_left_arrow'
     s: '{'
-  - t: _
-    s: _
+  - t: '!'
+    s: '!'
   - t: Z
-    s: Ctl+ ~
+    s: Ctl+ KP NUM
   - t: '|'
     h: '&pipe_pipe'
     s: '|'
-  - t: ;
-    s: ;
+  - t: '@'
+    s: '@'
 combos:
-- p:
-  - 36
-  - 37
-  k: '@'
-  l:
-  - main
-  - upper
 - p:
   - 37
   - 38
-  k: '%'
+  k:
+    t: '`'
+    h: '&grave_grave_grave'
   l:
   - main
   - upper
@@ -210,13 +204,6 @@ combos:
   - 41
   - 42
   k: ^
-  l:
-  - main
-  - upper
-- p:
-  - 42
-  - 43
-  k: $
   l:
   - main
   - upper
