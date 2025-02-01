@@ -2,7 +2,7 @@
 set -euo pipefail
 
 /build/scripts/draw.sh
-exit 1
+
 : "${BRANCH:=main}"
 
 echo "Checking out $BRANCH from moergo-sc/zmk" >&2
