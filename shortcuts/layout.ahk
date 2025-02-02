@@ -7,6 +7,18 @@ global imm := DllCall("GetModuleHandle", "Str","Imm32", "Ptr") ; better performa
 global immGetDefaultIMEWnd := DllCall("GetProcAddress", "Ptr",imm, "AStr","ImmGetDefaultIMEWnd", "Ptr") ; docs.microsoft.com/en-us/windows/win32/api/imm/nf-imm-immgetdefaultimewnd
 
 
+; https://stackoverflow.com/questions/71547669/use-multi-modifier-key-combination-in-autohotkey-to-replace-alt-tab
+; using custom since its working, requires uninstalling copilot to disable win+shift+c or smth like that
+; still sometimes tries to open some https link i dont now what it is
+#+!c::{
+    Send("{Shift Up}") ; allow circle forward(c) after circling back(g)
+    Send("{Alt Down}{Tab}")
+}
+
+#+!g::{
+    Send("{Alt Down}{Shift Down}{Tab}")
+}
+
 ; add us english-us keyboard
 ; add russian keyboard
 ; add german-us keyboard

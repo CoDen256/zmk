@@ -54,7 +54,7 @@ layers:
   - t: G
     s: Sft+ F2
   - t: H
-    h: '&moswitcher LALT'
+    h: '&mo_ui LS(LA(LGUI))'
     s: Sft+ F3
   - t: C
     s: Ctl+ F4

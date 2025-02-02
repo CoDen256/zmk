@@ -26,7 +26,7 @@ layers:
   - {t: $, s: $}
   - {t: '#', s: '#'}
   - {t: G, s: Sft+ F2}
-  - {t: H, h: '&moswitcher LALT', s: Sft+ F3}
+  - {t: H, h: '&mo_ui LS(LA(LGUI))', s: Sft+ F3}
   - {t: C, s: Ctl+ F4}
   - {t: ESCAPE, s: Ctl+ A}
   - {t: '=', h: '&equal_equal', s: '='}
@@ -324,52 +324,7 @@ layers:
   - )
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  switcher:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F4
-  - {t: ▽, type: trans}
-  - ESCAPE
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F4
-  - {t: ▽, type: trans}
-  - ESCAPE
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Sft+ TAB
-  - ''
-  - TAB
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Sft+ TAB
-  - ''
-  - TAB
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F4
-  - '@'
-  - {t: ▽, type: trans}
-  - '`'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '@'
-  - {t: ▽, type: trans}
-  - '`'
-  - F4
+  ui:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -395,6 +350,51 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -501,7 +501,7 @@ layers:
   - {t: upper, h: toggle}
   - {t: nav, h: toggle}
   - {t: num, h: toggle}
-  - {t: switcher, h: toggle}
+  - {t: ui, h: toggle}
   - {t: gaming, h: toggle}
   - {t: magic, h: toggle}
   - ''
