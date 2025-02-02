@@ -57,7 +57,7 @@ layers:
   - {t: num, h: sticky, s: num}
   - {t: '&rgb_ug_status_macro', h: magic, s: '&rgb_ug_status_macro'}
   - {t: '&rgb_ug_status_macro', h: magic, s: '&rgb_ug_status_macro'}
-  - {t: Meh+ F24, s: Meh+ F24}
+  - ''
   - {t: DELETE, s: DELETE}
   - {t: ',', s: ','}
   - {t: M, s: Sft+ F21}
@@ -71,7 +71,7 @@ layers:
   - {t: '[', h: '&lef_bra_rig_bra_left_arrow', s: '['}
   - {t: (, h: '&lef_par_rig_par_left_arrow', s: (}
   - {t: SPACE, s: SPACE}
-  - {t: Sft+AGr+ RGUI, s: Sft+AGr+ RGUI}
+  - {t: Sft+Alt+Gui+ H, s: Sft+Alt+Gui+ H}
   - {t: LGUI, s: LGUI}
   - {t: RGUI, s: RGUI}
   - {t: num, h: sticky, s: num}

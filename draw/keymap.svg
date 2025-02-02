@@ -439,10 +439,6 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(588, 350) rotate(-45.0)" class="key keypos-56">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.0em">Meh+</tspan><tspan x="0" dy="1.2em">F24</tspan>
-</text>
-<text x="0" y="-24" class="key shifted"><tspan style="font-size: 88%">Meh+ F24</tspan></text>
 </g>
 <g transform="translate(637, 312) rotate(-30.0)" class="key keypos-57">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -515,9 +511,9 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(369, 379) rotate(40.0)" class="key keypos-70">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">Sft+AGr</tspan><tspan x="0" dy="1.2em">+</tspan><tspan x="0" dy="1.2em">RGUI</tspan>
+<tspan x="0" dy="-1.2em">Sft+Alt</tspan><tspan x="0" dy="1.2em">+Gui+</tspan><tspan x="0" dy="1.2em">H</tspan>
 </text>
-<text x="0" y="-24" class="key shifted"><tspan style="font-size: 64%">Sft+AGr+ R…</tspan></text>
+<text x="0" y="-24" class="key shifted"><tspan style="font-size: 64%">Sft+Alt+Gu…</tspan></text>
 </g>
 <g transform="translate(410, 427) rotate(60.0)" class="key keypos-71">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

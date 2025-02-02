@@ -128,8 +128,7 @@ layers:
   - t: '&rgb_ug_status_macro'
     h: magic
     s: '&rgb_ug_status_macro'
-  - t: Meh+ F24
-    s: Meh+ F24
+  - ''
   - t: DELETE
     s: DELETE
   - t: ','
@@ -159,8 +158,8 @@ layers:
     s: (
   - t: SPACE
     s: SPACE
-  - t: Sft+AGr+ RGUI
-    s: Sft+AGr+ RGUI
+  - t: Sft+Alt+Gui+ H
+    s: Sft+Alt+Gui+ H
   - t: LGUI
     s: LGUI
   - t: RGUI

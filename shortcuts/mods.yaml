@@ -136,7 +136,7 @@ morph:
 ##### thumbs
   TL1: "SPACE"
   TL2: "BACKSPACE"
-  TL3: "RS(RA(RGUI))"
+  TL3: "LS(LA(LG(H)))"  # extra key for quick use by mo_ui layer
   TL4: "&sl @num"
   TL5: "LGUI"
   TL6: "&magic @magic 0"
@@ -144,7 +144,7 @@ morph:
   TR1: "&sl @upper"
   TR2: "DELETE"
   TR3: "&sl @num"
-  TR4: "LC(LS(LA(F24)))"
+  TR4: "&none"
   TR5: "RGUI"
   TR6: "&magic @magic 0"
 
