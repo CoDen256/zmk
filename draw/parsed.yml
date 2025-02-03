@@ -104,8 +104,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ^
   - {t: ▽, type: trans}
+  - '`'
   - Sft+ G
   - Sft+ H
   - Sft+ C
@@ -147,7 +147,7 @@ layers:
   - Sft+ X
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LCTRL
   - Sft+ Q
   - ']'
   - )
@@ -160,7 +160,7 @@ layers:
   - '}'
   - {t: ▽, type: trans}
   - Sft+ Z
-  - {t: ▽, type: trans}
+  - $
   - {t: ▽, type: trans}
   nav:
   - {t: ▽, type: trans}

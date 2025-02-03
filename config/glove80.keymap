@@ -251,7 +251,7 @@ release-after-ms = <5000>;};
 
         select_word: select_word { label = "SELECT_WORD"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&select_word_right>, <&select_word_left>;
+            bindings = <&select_word_right &select_word_left>;
         };
 
         select_line: select_line { label = "SELECT_LINE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -296,62 +296,62 @@ release-after-ms = <5000>;};
 
         exc_equal: exc_equal { label = "EXC_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp EXCLAMATION>, <&kp EQUAL>;
+            bindings = <&macro_tap>,<&kp EXCLAMATION &kp EQUAL>;
         };
 
         grave_grave_grave: grave_grave_grave { label = "GRAVE_GRAVE_GRAVE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>;
+            bindings = <&macro_tap>,<&kp GRAVE &kp GRAVE &kp GRAVE>;
         };
 
         period_slash: period_slash { label = "PERIOD_SLASH"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp PERIOD>, <&kp SLASH>;
+            bindings = <&macro_tap>,<&kp PERIOD &kp SLASH>;
         };
 
         minus_gre_tha: minus_gre_tha { label = "MINUS_GRE_THA"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp MINUS>, <&kp GREATER_THAN>;
+            bindings = <&macro_tap>,<&kp MINUS &kp GREATER_THAN>;
         };
 
         backslash_backslash: backslash_backslash { label = "BACKSLASH_BACKSLASH"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp BACKSLASH>, <&kp BACKSLASH>;
+            bindings = <&macro_tap>,<&kp BACKSLASH &kp BACKSLASH>;
         };
 
         ampersand_ampersand: ampersand_ampersand { label = "AMPERSAND_AMPERSAND"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp AMPERSAND>, <&kp AMPERSAND>;
+            bindings = <&macro_tap>,<&kp AMPERSAND &kp AMPERSAND>;
         };
 
         lef_bra_rig_bra_left_arrow: lef_bra_rig_bra_left_arrow { label = "LEF_BRA_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
         };
 
         lef_par_rig_par_left_arrow: lef_par_rig_par_left_arrow { label = "LEF_PAR_RIG_PAR_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
         };
 
         equal_equal: equal_equal { label = "EQUAL_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp EQUAL>, <&kp EQUAL>;
+            bindings = <&macro_tap>,<&kp EQUAL &kp EQUAL>;
         };
 
         less_than_gre_tha_left_arrow: less_than_gre_tha_left_arrow { label = "LESS_THAN_GRE_THA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LESS_THAN>, <&kp GREATER_THAN>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>;
         };
 
         left_brace_rig_bra_left_arrow: left_brace_rig_bra_left_arrow { label = "LEFT_BRACE_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
         };
 
         pipe_pipe: pipe_pipe { label = "PIPE_PIPE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp PIPE>, <&kp PIPE>;
+            bindings = <&macro_tap>,<&kp PIPE &kp PIPE>;
         };
 /*<macros-end>*/
 
@@ -1620,6 +1620,12 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
     main { // 0
@@ -1633,12 +1639,12 @@ keymap {
 >;};
 upper { // 1
 			bindings = <
-&trans     &trans     &trans     &trans             &trans                                                                                             &trans           &trans     &trans     &trans     &trans
-&trans     &trans     &trans     &kp LS(K)          &trans                 &trans                                                       &trans         &trans           &kp LS(W)  &trans     &trans     &trans
-&kp CARET  &trans     &kp LS(G)  &kp LS(H)          &kp LS(C)              &trans                                                       &exc_equal     &kp LS(V)        &kp LS(L)  &kp LS(B)  &kp GT     &trans
-&trans     &kp LS(O)  &kp LS(A)  &kp LS(I)          &kp LS(N)              &trans                                                       &kp LS(TAB)    &kp LS(T)        &kp LS(R)  &kp LS(E)  &kp LS(S)  &trans
-&trans     &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)  &trans
-&trans     &trans     &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 1                 &kp RIGHT_BRACE  &trans     &kp LS(Z)  &trans     &trans
+&trans  &trans     &trans     &trans             &trans                                                                                             &trans           &trans     &trans     &trans      &trans
+&trans  &trans     &trans     &kp LS(K)          &trans                 &trans                                                       &trans         &trans           &kp LS(W)  &trans     &trans      &trans
+&trans  &kp GRAVE  &kp LS(G)  &kp LS(H)          &kp LS(C)              &trans                                                       &exc_equal     &kp LS(V)        &kp LS(L)  &kp LS(B)  &kp GT      &trans
+&trans  &kp LS(O)  &kp LS(A)  &kp LS(I)          &kp LS(N)              &trans                                                       &kp LS(TAB)    &kp LS(T)        &kp LS(R)  &kp LS(E)  &kp LS(S)   &trans
+&trans  &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)   &trans
+&trans  &kp LCTRL  &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 1                 &kp RIGHT_BRACE  &trans     &kp LS(Z)  &kp DOLLAR  &trans
 >;};
 
 nav { // 2
