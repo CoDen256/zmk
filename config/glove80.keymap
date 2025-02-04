@@ -1644,7 +1644,7 @@ upper { // 1
 &trans  &kp GRAVE  &kp LS(G)  &kp LS(H)          &kp LS(C)              &trans                                                       &exc_equal     &kp LS(V)        &kp LS(L)  &kp LS(B)  &kp GT      &trans
 &trans  &kp LS(O)  &kp LS(A)  &kp LS(I)          &kp LS(N)              &trans                                                       &kp LS(TAB)    &kp LS(T)        &kp LS(R)  &kp LS(E)  &kp LS(S)   &trans
 &trans  &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)   &trans
-&trans  &kp LCTRL  &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 1                 &kp RIGHT_BRACE  &trans     &kp LS(Z)  &kp DOLLAR  &trans
+&trans  &kp CARET  &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 1                 &kp RIGHT_BRACE  &trans     &kp LS(Z)  &kp DOLLAR  &trans
 >;};
 
 nav { // 2

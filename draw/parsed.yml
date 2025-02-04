@@ -147,7 +147,7 @@ layers:
   - Sft+ X
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
+  - ^
   - Sft+ Q
   - ']'
   - )
