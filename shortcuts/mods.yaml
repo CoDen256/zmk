@@ -1,4 +1,7 @@
-
+# affects
+# - win de-simple.klc, ru-phon.klc, xkb symbols de-simple ru-phonetic
+# - jetbrains keymap zmk.xml -> keymap.csv for the key combiner
+# - layout.ahk windows
 morph:
   config:
     exact: true
