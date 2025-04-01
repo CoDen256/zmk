@@ -1634,6 +1634,14 @@ behaviors {};
 behaviors {};
 
 behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
+
+behaviors {};
 keymap {
 		compatible = "zmk,keymap";
     main { // 0
@@ -1647,12 +1655,12 @@ keymap {
 >;};
 upper { // 1
 			bindings = <
-&trans  &trans     &trans     &trans             &trans                                                                                             &trans           &trans     &trans     &trans      &trans
-&trans  &trans     &trans     &kp LS(K)          &trans                 &trans                                                       &trans         &trans           &kp LS(W)  &trans     &trans      &trans
-&trans  &kp GRAVE  &kp LS(G)  &kp LS(H)          &kp LS(C)              &trans                                                       &exc_equal     &kp LS(V)        &kp LS(L)  &kp LS(B)  &kp GT      &trans
-&trans  &kp LS(O)  &kp LS(A)  &kp LS(I)          &kp LS(N)              &trans                                                       &kp LS(TAB)    &kp LS(T)        &kp LS(R)  &kp LS(E)  &kp LS(S)   &trans
-&trans  &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)   &trans
-&trans  &kp CARET  &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 1                 &kp RIGHT_BRACE  &trans     &kp LS(Z)  &kp DOLLAR  &trans
+&trans  &trans     &trans     &trans             &trans                                                                                             &trans           &trans     &trans     &trans     &trans
+&trans  &trans     &trans     &kp LS(K)          &trans                 &trans                                                       &trans         &trans           &kp LS(W)  &trans     &trans     &trans
+&trans  &trans     &kp LS(G)  &kp LS(H)          &kp LS(C)              &trans                                                       &exc_equal     &kp LS(V)        &kp LS(L)  &kp LS(B)  &trans     &trans
+&trans  &kp LS(O)  &kp LS(A)  &kp LS(I)          &kp LS(N)              &trans                                                       &kp ASTERISK   &kp LS(T)        &kp LS(R)  &kp LS(E)  &kp LS(S)  &trans
+&trans  &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)  &trans
+&trans  &trans     &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 1                 &kp RIGHT_BRACE  &trans     &kp LS(Z)  &trans     &trans
 >;};
 
 nav { // 2
@@ -1666,12 +1674,12 @@ nav { // 2
 >;};
 num { // 3
          bindings = <
-&trans  &trans  &trans  &trans         &trans                                                                             &trans                &trans     &trans                 &trans       &trans
-&trans  &trans  &trans  &trans         &trans     &trans                                                    &kp PRCNT     &kp MINUS             &kp SLASH  &kp PLUS               &trans       &trans
-&trans  &trans  &trans  &trans         &trans     &trans                                                    &kp EQUAL     &kp N7                &kp N8     &kp N9                 &trans       &trans
-&trans  &trans  &trans  &kp BACKSPACE  &kp SPACE  &trans                                                    &kp ASTERISK  &kp N4                &kp N5     &kp N6                 &kp PERIOD   &trans
-&trans  &trans  &trans  &trans         &trans     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &kp COMMA     &kp N1                &kp N2     &kp NUMBER_3           &kp PERCENT  &trans
-&trans  &trans  &trans  &trans         &trans             &trans  &tog 3  &trans    &trans  &tog 3  &trans                &kp LEFT_PARENTHESIS  &kp N0     &kp RIGHT_PARENTHESIS  &trans       &trans
+&trans  &trans  &trans  &trans  &trans                                                                                 &trans                &trans      &trans                 &trans  &trans
+&trans  &trans  &NAVK3  &NAVK   &NAVK5  &trans                                                           &kp PRCNT     &kp MINUS             &kp SLASH   &kp PLUS               &trans  &trans
+&trans  &trans  &NAVG   &NAVH   &NAVC   &kp BACKSPACE                                                    &kp EQUAL     &kp N7                &kp N8      &kp N9                 &trans  &trans
+&trans  &NAVO   &NAVA   &NAVI   &NAVN   &kp ENTER                                                        &kp ASTERISK  &kp N4                &kp N5      &kp N6                 &kp N0  &trans
+&trans  &NAVJ   &trans  &NAVU   &NAVP   &kp SPACE      &trans  &tog 3  &trans    &trans  &trans  &trans  &kp COMMA     &kp N1                &kp N2      &kp NUMBER_3           &trans  &trans
+&trans  &trans  &trans  &NAVQ4  &NAVQ5                 &trans  &trans  &trans    &trans  &tog 3  &trans                &kp LEFT_PARENTHESIS  &kp PERIOD  &kp RIGHT_PARENTHESIS  &trans  &trans
 >;};
 
 ui { // 4
@@ -1685,12 +1693,12 @@ ui { // 4
 >;};
 gaming { // 5
          bindings = <
-&kp F1  &kp F2     &kp F3  &kp F4  &kp F5                                                                                           &kp F6          &kp F7        &kp F8     &kp F9     &kp F10
-&kp N9  &kp N0     &kp N1  &kp N2  &kp N3  &kp N4                                                                          &kp F11  &kp F12         &kp F13       &kp F14    &kp MINUS  &kp EQUAL
-&kp N8  &kp TAB    &kp Q   &kp W   &kp E   &kp R                                                                           &kp U    &kp I           &kp O         &kp P      &kp LBKT   &kp RBKT
-&kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F                                                                           &kp H    &kp J           &kp K         &kp L      &kp SEMI   &kp APOS
-&kp N6  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp ENTER  &kp ESC   &trans      &trans   &kp HOME      &kp END         &kp N    &kp M           &kp UP_ARROW  &kp GRAVE  &kp COMMA  &kp DOT
-&kp N5  &kp Y      &kp T   &kp G   &kp B           &kp SPACE  &kp LALT  &kp BSPC    &kp INS  &kp UP_ARROW  &kp DOWN_ARROW           &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp BSLH   &kp FSLH
+&kp F1  &kp F2     &kp F3  &kp F4  &kp F5                                                                                                      &kp F6          &kp F7        &kp F8     &kp F9     &kp F10
+&kp N9  &kp N0     &kp N1  &kp N2  &kp N3  &kp N4                                                                                     &kp F11  &kp F12         &kp F13       &kp F14    &kp MINUS  &kp EQUAL
+&kp N8  &kp TAB    &kp Q   &kp W   &kp E   &kp R                                                                                      &kp U    &kp I           &kp O         &kp P      &kp COMMA  &kp PERIOD
+&kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F                                                                                      &kp H    &kp J           &kp K         &kp L      &kp SEMI   &kp APOS
+&kp N6  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp ENTER  &kp ESC   &trans      &trans   &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp N    &kp M           &kp UP_ARROW  &kp GRAVE  &kp HOME   &kp END
+&kp N5  &kp Y      &kp T   &kp G   &kp B           &kp SPACE  &kp LALT  &kp BSPC    &kp INS  &kp NON_US_BACKSLASH  &kp SLASH                   &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp PG_UP  &kp PAGE_DOWN
 >;};
 
 magic { // 6

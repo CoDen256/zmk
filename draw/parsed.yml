@@ -105,7 +105,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '`'
+  - {t: ▽, type: trans}
   - Sft+ G
   - Sft+ H
   - Sft+ C
@@ -114,7 +114,7 @@ layers:
   - Sft+ V
   - Sft+ L
   - Sft+ B
-  - '>'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+ O
@@ -122,7 +122,7 @@ layers:
   - Sft+ I
   - Sft+ N
   - {t: ▽, type: trans}
-  - Sft+ TAB
+  - '*'
   - Sft+ T
   - Sft+ R
   - Sft+ E
@@ -147,7 +147,7 @@ layers:
   - Sft+ X
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ^
+  - {t: ▽, type: trans}
   - Sft+ Q
   - ']'
   - )
@@ -160,7 +160,7 @@ layers:
   - '}'
   - {t: ▽, type: trans}
   - Sft+ Z
-  - $
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   nav:
   - {t: ▽, type: trans}
@@ -256,9 +256,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - {t: PAGE UP, s: PAGE UP}
+  - {t: PAGE DOWN, s: PAGE DOWN}
   - {t: ▽, type: trans}
   - '%'
   - '-'
@@ -268,10 +268,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - {t: HOME, s: Ctl+ HOME}
+  - {t: END, s: Ctl+ END}
+  - BACKSPACE
   - '='
   - '7'
   - '8'
@@ -279,25 +279,25 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - BACKSPACE
-  - SPACE
-  - {t: ▽, type: trans}
+  - {t: LCTRL, s: LCTRL}
+  - {t: '&select_word_left', s: '&select_word_left'}
+  - {t: Ctl+ LEFT, s: Ctl+ LEFT}
+  - {t: Ctl+ RIGHT, s: Ctl+ RIGHT}
+  - ENTER
   - '*'
   - '4'
   - '5'
   - '6'
-  - .
+  - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: LSHIFT, s: LSHIFT}
   - {t: ▽, type: trans}
+  - {t: UP, s: UP}
+  - {t: DOWN, s: DOWN}
+  - SPACE
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
+  - {t: num, h: toggle, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -306,21 +306,21 @@ layers:
   - '1'
   - '2'
   - '3'
-  - '%'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: LEFT, s: LEFT}
+  - {t: RIGHT, s: RIGHT}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: num, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: num, h: toggle}
   - {t: ▽, type: trans}
   - (
-  - '0'
+  - .
   - )
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -438,8 +438,8 @@ layers:
   - I
   - O
   - P
-  - '['
-  - ']'
+  - ','
+  - .
   - '7'
   - LSHFT
   - A
@@ -462,14 +462,14 @@ layers:
   - ESC
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
-  - END
+  - '['
+  - ']'
   - N
   - M
   - UP ARROW
   - '`'
-  - ','
-  - .
+  - HOME
+  - END
   - '5'
   - Y
   - T
@@ -479,13 +479,13 @@ layers:
   - LALT
   - BSPC
   - INS
-  - UP ARROW
-  - DOWN ARROW
+  - \
+  - /
   - LEFT ARROW
   - DOWN
   - RIGHT
-  - \
-  - /
+  - PG UP
+  - PAGE DOWN
   magic:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

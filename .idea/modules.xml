@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/scripts/scripts.iml" filepath="$PROJECT_DIR$/scripts/scripts.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/zmk-config.iml" filepath="$PROJECT_DIR$/.idea/zmk-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zmk.iml" filepath="$PROJECT_DIR$/zmk.iml" />
     </modules>
   </component>
 </project>
