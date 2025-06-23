@@ -1653,14 +1653,15 @@ keymap {
 &J1_key  &J_key   &F_key   &U_key   &P_key   &P6_key  &TL2  &TL4  &TL6    &TR6  &TR4  &TR2  &M5_key  &M_key   &D_key   &Y_key   &X_key   &X0_key
 &Q1_key  &Q2_key  &Q_key   &Q4_key  &Q5_key           &TL1  &TL3  &TL5    &TR5  &TR3  &TR1           &Z6_key  &Z7_key  &Z_key   &Z9_key  &Z0_key
 >;};
+
 upper { // 1
 			bindings = <
-&trans  &trans     &trans     &trans             &trans                                                                                             &trans           &trans     &trans     &trans     &trans
-&trans  &trans     &trans     &kp LS(K)          &trans                 &trans                                                       &trans         &trans           &kp LS(W)  &trans     &trans     &trans
-&trans  &trans     &kp LS(G)  &kp LS(H)          &kp LS(C)              &trans                                                       &exc_equal     &kp LS(V)        &kp LS(L)  &kp LS(B)  &trans     &trans
-&trans  &kp LS(O)  &kp LS(A)  &kp LS(I)          &kp LS(N)              &trans                                                       &kp ASTERISK   &kp LS(T)        &kp LS(R)  &kp LS(E)  &kp LS(S)  &trans
-&trans  &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)  &trans
-&trans  &trans     &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 1                 &kp RIGHT_BRACE  &trans     &kp LS(Z)  &trans     &trans
+&trans  &trans     &trans     &trans             &trans                                                                                             &trans           &trans     &trans     &trans      &trans
+&trans  &trans     &trans     &kp LS(K)          &trans                 &trans                                                       &trans         &trans           &kp LS(W)  &trans     &trans      &trans
+&trans  &kp GRAVE  &kp LS(G)  &kp LS(H)          &kp LS(C)              &trans                                                       &exc_equal     &kp LS(V)        &kp LS(L)  &kp LS(B)  &kp GT      &trans
+&trans  &kp LS(O)  &kp LS(A)  &kp LS(I)          &kp LS(N)              &trans                                                       &kp ASTERISK   &kp LS(T)        &kp LS(R)  &kp LS(E)  &kp LS(S)   &trans
+&trans  &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)   &trans
+&trans  &kp CARET  &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 1                 &kp RIGHT_BRACE  &trans     &kp LS(Z)  &kp DOLLAR  &trans
 >;};
 
 nav { // 2
@@ -1672,6 +1673,7 @@ nav { // 2
 &trans  &NAVJ   &trans  &NAVU   &NAVP   &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans     &trans     &trans         &trans  &trans
 &trans  &trans  &trans  &NAVQ4  &NAVQ5          &trans  &trans  &trans    &trans  &trans  &trans          &trans     &trans     &trans         &trans  &trans
 >;};
+
 num { // 3
          bindings = <
 &trans  &trans  &trans  &trans  &trans                                                                                 &trans                &trans      &trans                 &trans  &trans
