@@ -497,30 +497,30 @@ layers:
   - F8
   - F9
   - F10
-  - '9'
+  - '5'
   - '0'
   - '1'
   - '2'
   - '3'
   - '4'
-  - F11
-  - F12
-  - F13
-  - F14
   - '-'
   - '='
-  - '8'
+  - '['
+  - ']'
+  - F11
+  - F12
+  - '6'
   - TAB
   - Q
   - W
   - E
   - R
+  - Y
   - U
   - I
   - O
   - P
-  - ','
-  - .
+  - \
   - '7'
   - LSHFT
   - A
@@ -533,7 +533,7 @@ layers:
   - L
   - ;
   - ''''
-  - '6'
+  - '8'
   - LCTRL
   - Z
   - X
@@ -543,25 +543,25 @@ layers:
   - ESC
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '['
-  - ']'
+  - RIGHT GUI
+  - INSERT
   - N
   - M
   - UP ARROW
-  - '`'
+  - /
   - HOME
   - END
-  - '5'
-  - Y
+  - '9'
+  - BACKSPACE
   - T
   - G
   - B
   - SPACE
   - LALT
-  - BSPC
-  - INS
-  - \
-  - /
+  - DELETE
+  - '`'
+  - ','
+  - .
   - LEFT ARROW
   - DOWN
   - RIGHT

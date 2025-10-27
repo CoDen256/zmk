@@ -251,7 +251,7 @@ release-after-ms = <5000>;};
 
         select_word: select_word { label = "SELECT_WORD"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&select_word_right>, <&select_word_left>;
+            bindings = <&select_word_right &select_word_left>;
         };
 
         select_line: select_line { label = "SELECT_LINE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
@@ -296,47 +296,47 @@ release-after-ms = <5000>;};
 
         exc_equal: exc_equal { label = "EXC_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp EXCLAMATION>, <&kp EQUAL>;
+            bindings = <&macro_tap>,<&kp EXCLAMATION &kp EQUAL>;
         };
 
         minus_gre_tha: minus_gre_tha { label = "MINUS_GRE_THA"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp MINUS>, <&kp GREATER_THAN>;
+            bindings = <&macro_tap>,<&kp MINUS &kp GREATER_THAN>;
         };
 
         backslash_backslash: backslash_backslash { label = "BACKSLASH_BACKSLASH"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp BACKSLASH>, <&kp BACKSLASH>;
+            bindings = <&macro_tap>,<&kp BACKSLASH &kp BACKSLASH>;
         };
 
         grave_grave_grave: grave_grave_grave { label = "GRAVE_GRAVE_GRAVE"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>;
+            bindings = <&macro_tap>,<&kp GRAVE &kp GRAVE &kp GRAVE>;
         };
 
         lef_bra_rig_bra_left_arrow: lef_bra_rig_bra_left_arrow { label = "LEF_BRA_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
         };
 
         lef_par_rig_par_left_arrow: lef_par_rig_par_left_arrow { label = "LEF_PAR_RIG_PAR_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
         };
 
         equal_equal: equal_equal { label = "EQUAL_EQUAL"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp EQUAL>, <&kp EQUAL>;
+            bindings = <&macro_tap>,<&kp EQUAL &kp EQUAL>;
         };
 
         less_than_gre_tha_left_arrow: less_than_gre_tha_left_arrow { label = "LESS_THAN_GRE_THA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LESS_THAN>, <&kp GREATER_THAN>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>;
         };
 
         left_brace_rig_bra_left_arrow: left_brace_rig_bra_left_arrow { label = "LEFT_BRACE_RIG_BRA_LEFT_ARROW"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; 
             wait-ms = <0>; tap-ms = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>, <&kp LEFT_ARROW>;
+            bindings = <&macro_tap>,<&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
         };
 /*<macros-end>*/
 
@@ -1663,12 +1663,12 @@ ui { // 4
 >;};
 gaming { // 5
          bindings = <
-&kp F1  &kp F2     &kp F3  &kp F4  &kp F5                                                                                                      &kp F6          &kp F7        &kp F8     &kp F9     &kp F10
-&kp N9  &kp N0     &kp N1  &kp N2  &kp N3  &kp N4                                                                                     &kp F11  &kp F12         &kp F13       &kp F14    &kp MINUS  &kp EQUAL
-&kp N8  &kp TAB    &kp Q   &kp W   &kp E   &kp R                                                                                      &kp U    &kp I           &kp O         &kp P      &kp COMMA  &kp PERIOD
-&kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F                                                                                      &kp H    &kp J           &kp K         &kp L      &kp SEMI   &kp APOS
-&kp N6  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp ENTER  &kp ESC   &trans      &trans   &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp N    &kp M           &kp UP_ARROW  &kp GRAVE  &kp HOME   &kp END
-&kp N5  &kp Y      &kp T   &kp G   &kp B           &kp SPACE  &kp LALT  &kp BSPC    &kp INS  &kp NON_US_BACKSLASH  &kp SLASH                   &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp PG_UP  &kp PAGE_DOWN
+&kp F1        &kp F2         &kp F3  &kp F4  &kp F5                                                                                              &kp F6          &kp F7            &kp F8             &kp F9     &kp F10
+&kp N5        &kp N0         &kp N1  &kp N2  &kp N3  &kp N4                                                                           &kp MINUS  &kp EQUAL       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp F11    &kp F12
+&kp N6        &kp TAB        &kp Q   &kp W   &kp E   &kp R                                                                            &kp Y      &kp U           &kp I             &kp O              &kp P      &kp BSLH
+&kp N7        &kp LSHFT      &kp A   &kp S   &kp D   &kp F                                                                            &kp H      &kp J           &kp K             &kp L              &kp SEMI   &kp APOS
+&kp NUMBER_8  &kp LCTRL      &kp Z   &kp X   &kp C   &kp V   &kp ENTER  &kp ESC   &trans        &trans     &kp RIGHT_GUI  &kp INSERT  &kp N      &kp M           &kp UP_ARROW      &kp FSLH           &kp HOME   &kp END
+&kp NUMBER_9  &kp BACKSPACE  &kp T   &kp G   &kp B           &kp SPACE  &kp LALT  &kp DELETE    &kp GRAVE  &kp COMMA      &kp DOT                &kp LEFT_ARROW  &kp DOWN          &kp RIGHT          &kp PG_UP  &kp PAGE_DOWN
 >;};
 magic { // 6
 			bindings = <
