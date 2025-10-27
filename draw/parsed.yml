@@ -81,6 +81,87 @@ layers:
   - {t: Z, s: Ctl+ KP NUM}
   - {t: '|', s: '|'}
   - {t: '@', s: '@'}
+  typing:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - K
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - W
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - G
+  - H
+  - C
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - V
+  - L
+  - B
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - O
+  - A
+  - I
+  - N
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - T
+  - R
+  - E
+  - S
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - J
+  - F
+  - U
+  - P
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LCTRL
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - M
+  - D
+  - Y
+  - X
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Q
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Z
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   upper:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -207,7 +288,7 @@ layers:
   - RCTRL
   - RSHFT
   - RIGHT ALT
-  - {t: ▽, type: trans}
+  - RIGHT GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: LSHIFT, s: LSHIFT}
@@ -498,12 +579,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: main, h: toggle}
+  - {t: typing, h: toggle}
   - {t: upper, h: toggle}
   - {t: nav, h: toggle}
   - {t: num, h: toggle}
   - {t: ui, h: toggle}
-  - {t: gaming, h: toggle}
-  - {t: magic, h: toggle}
+  - ''
   - ''
   - ''
   - ''
@@ -515,9 +596,9 @@ layers:
   - RGB HUI
   - RGB BRI
   - RGB TOG
-  - ''
-  - ''
-  - ''
+  - {t: Gui+ F10, s: Gui+ F10}
+  - {t: Gui+ F11, s: Gui+ F11}
+  - {t: Gui+ F12, s: Gui+ F12}
   - ''
   - ''
   - ''
@@ -527,10 +608,10 @@ layers:
   - RGB HUD
   - RGB BRD
   - RGB EFF
-  - ''
-  - {t: Gui+ F10, s: Gui+ F10}
-  - {t: Gui+ F11, s: Gui+ F11}
-  - {t: Gui+ F12, s: Gui+ F12}
+  - {t: main, h: toggle}
+  - {t: typing, h: toggle}
+  - {t: gaming, h: toggle}
+  - {t: magic, h: toggle}
   - ''
   - ''
   - '&sys_reset'
