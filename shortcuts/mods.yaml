@@ -80,8 +80,8 @@ morph:
   P6: "."
 
   # LEFT LOWER
-  Q1: ":"
-  Q2: { tap: "&", hold: "&&", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q1: { tap: "`", hold: "```", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q2: "&"
   Q4: { tap: "[", hold: "[]\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
   Q5: { tap: "(", hold: "()\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
 
@@ -133,7 +133,7 @@ morph:
   # RIGHT LOWER
   Z6: { default: "{", hold: "{}\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
   Z7: "!"
-  Z9: { tap: "|", hold: "||", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Z9: "|"
   Z0: "@"
 
 ##### thumbs
@@ -194,7 +194,7 @@ combo:
 #  CI: ""
 
   #AI: "@"
-  IN: { tap: "`", hold: "```", tapping-term-ms: 250, require-prior-idle-ms: 0}
+#  IN: { tap: "`", hold: "```", tapping-term-ms: 250, require-prior-idle-ms: 0}
   #AN: "!"
 
 #  AU: ""
@@ -203,7 +203,7 @@ combo:
 #  NU: ""
 
 #  FU:
-  PU: "./"
+#  PU: "./"
 #  FP: ""
 
 
@@ -218,7 +218,7 @@ combo:
 #  BR: ""
 
 
-  TR: "^"
+#  TR: "^"
   #RE: "$"
   #TE: "|"
 

@@ -143,10 +143,10 @@ layers:
     s: Ctl+ F24
   - t: _
     s: _
-  - t: ':'
-    s: ':'
+  - t: '`'
+    h: '&grave_grave_grave'
+    s: '`'
   - t: '&'
-    h: '&ampersand_ampersand'
     s: '&'
   - t: Q
     s: Sft+ INS
@@ -178,34 +178,10 @@ layers:
   - t: Z
     s: Ctl+ KP NUM
   - t: '|'
-    h: '&pipe_pipe'
     s: '|'
   - t: '@'
     s: '@'
 combos:
-- p:
-  - 37
-  - 38
-  k:
-    t: '`'
-    h: '&grave_grave_grave'
-  l:
-  - main
-  - upper
-- p:
-  - 50
-  - 49
-  k: '&period_slash'
-  l:
-  - main
-  - upper
-- p:
-  - 41
-  - 42
-  k: ^
-  l:
-  - main
-  - upper
 - p:
   - 59
   - 60

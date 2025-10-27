@@ -2,29 +2,6 @@ layout:
   qmk_keyboard: glove80
 combos:
 - p:
-  - 37
-  - 38
-  k:
-    t: '`'
-    h: '&grave_grave_grave'
-  l:
-  - main
-  - upper
-- p:
-  - 50
-  - 49
-  k: '&period_slash'
-  l:
-  - main
-  - upper
-- p:
-  - 41
-  - 42
-  k: ^
-  l:
-  - main
-  - upper
-- p:
   - 59
   - 60
   k: '&minus_gre_tha'
