@@ -138,7 +138,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
+  - nav
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - M
@@ -146,13 +146,13 @@ layers:
   - Y
   - X
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '`', h: LSHFT, s: '`'}
+  - {t: '&', h: LCTRL, s: '&'}
   - Q
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LSHFT
+  - LALT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -287,8 +287,8 @@ layers:
   - {t: ▽, type: trans}
   - RCTRL
   - RSHFT
-  - RIGHT ALT
-  - RIGHT GUI
+  - RALT
+  - RGUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: LSHIFT, s: LSHIFT}
@@ -497,19 +497,19 @@ layers:
   - F8
   - F9
   - F10
-  - '5'
-  - '0'
+  - '6'
   - '1'
   - '2'
   - '3'
   - '4'
+  - '5'
   - '-'
   - '='
   - '['
   - ']'
   - F11
   - F12
-  - '6'
+  - '7'
   - TAB
   - Q
   - W
@@ -521,7 +521,7 @@ layers:
   - O
   - P
   - \
-  - '7'
+  - '8'
   - LSHFT
   - A
   - S
@@ -533,51 +533,51 @@ layers:
   - L
   - ;
   - ''''
-  - '8'
+  - '9'
   - LCTRL
   - Z
   - X
   - C
   - V
-  - ENTER
+  - BACKSPACE
   - ESC
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RIGHT GUI
   - INSERT
+  - DELETE
   - N
   - M
-  - UP ARROW
+  - UP
   - /
   - HOME
   - END
-  - '9'
-  - BACKSPACE
+  - '0'
+  - ENTER
   - T
   - G
   - B
   - SPACE
   - LALT
-  - DELETE
+  - LGUI
   - '`'
   - ','
   - .
-  - LEFT ARROW
+  - LEFT
   - DOWN
   - RIGHT
   - PG UP
   - PAGE DOWN
   magic:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {t: main, h: toggle}
   - {t: typing, h: toggle}
   - {t: upper, h: toggle}
@@ -590,12 +590,12 @@ layers:
   - ''
   - ''
   - ''
+  - {t: gaming, h: toggle}
+  - {t: magic, h: toggle}
   - ''
-  - RGB SPI
-  - RGB SAI
-  - RGB HUI
-  - RGB BRI
-  - RGB TOG
+  - {t: Gui+ F12, s: Gui+ F12}
+  - {t: Gui+ F11, s: Gui+ F11}
+  - {t: Gui+ F10, s: Gui+ F10}
   - {t: Gui+ F10, s: Gui+ F10}
   - {t: Gui+ F11, s: Gui+ F11}
   - {t: Gui+ F12, s: Gui+ F12}
@@ -603,24 +603,24 @@ layers:
   - ''
   - ''
   - ''
-  - RGB SPD
-  - RGB SAD
-  - RGB HUD
-  - RGB BRD
-  - RGB EFF
+  - ''
+  - ''
+  - {t: gaming, h: toggle}
+  - {t: typing, h: toggle}
+  - {t: main, h: toggle}
   - {t: main, h: toggle}
   - {t: typing, h: toggle}
   - {t: gaming, h: toggle}
-  - {t: magic, h: toggle}
+  - ''
   - ''
   - ''
   - '&sys_reset'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - RGB SPI
+  - RGB SAI
+  - RGB HUI
+  - RGB BRI
+  - RGB EFF
+  - RGB TOG
   - '&bootloader'
   - {type: held}
   - ''
@@ -632,17 +632,17 @@ layers:
   - ''
   - ''
   - '&sys_reset'
+  - BT CLR
+  - RGB SPD
+  - RGB SAD
+  - RGB HUD
+  - RGB BRD
   - '&bt_0'
   - '&bt_1'
-  - '&bt_2'
-  - BT CLR
   - OUT USB
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - '&bt_3'
+  - '&bt_2'
   - ''
   - ''
   - ''
