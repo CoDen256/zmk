@@ -1696,7 +1696,7 @@ magic { // 7
 		bindings = <
 &none       &none            &none            &none            &none                                                                                                                 &none   &none   &none  &none  &none
 &to 0       &to 1            &to 2            &to 3            &to 4            &to 5                                                                                       &none    &none   &none   &none  &none  &none
-&to 6       &to 7            &none            &DE_SET          &RU_SET          &ЕN_SET                                                                                     &ЕN_SET  &RU_SET &DE_SET &none  &none  &none
+&to 6       &to 7            &none            &DE_SET          &RU_SET          &EN_SET                                                                                     &EN_SET  &RU_SET &DE_SET &none  &none  &none
 &none       &none            &none            &to 6            &to 1            &to 0                                                                                       &to 0    &to 1   &to 6   &none  &none  &none
 &sys_reset  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG &bootloader  &none            &none  &bootloader  &none   &none    &none   &none   &none  &none  &sys_reset
 &bt BT_CLR  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD                    &bt_0           &bt_1        &out OUT_USB     &none  &bt_3        &bt_2            &none   &none   &none  &none  &bt BT_CLR_ALL
