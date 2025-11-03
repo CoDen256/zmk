@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/scripts/scripts.iml" filepath="$PROJECT_DIR$/scripts/scripts.iml" />
       <module fileurl="file://$PROJECT_DIR$/zmk.iml" filepath="$PROJECT_DIR$/zmk.iml" />
     </modules>
   </component>

@@ -379,6 +379,16 @@ release-after-ms = <5000>;};
             bindings = <&grave_grave_grave>, <&kp>;
         };
 
+        amp_ctrl:amp_ctrl { label = "amp_ctrl"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <250>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 35 36 37 38 47 48 49 50 66 14 15 27 39 51 64 65 67 68 5 6 7 8 9 19 20 21 32 33 45 63 18 29 30 31 41 42 43 44 59 60 61 62 77 16 17 28 40 58 75 76 79 80>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        grave_shft:grave_shft { label = "grave_shft"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <250>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 35 36 37 38 47 48 49 50 66 14 15 27 39 51 64 65 67 68 5 6 7 8 9 19 20 21 32 33 45 63 18 29 30 31 41 42 43 44 59 60 61 62 77 16 17 28 40 58 75 76 79 80>;
+            bindings = <&kp>, <&kp>;
+        };
+
         lef_bra_x_lef_bra_rig_bra_lef_arr:lef_bra_x_lef_bra_rig_bra_lef_arr { label = "LEF_BRA_X_LEF_BRA_RIG_BRA_LEF_ARR"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";  
             flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <250>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 35 36 37 38 47 48 49 50 66 14 15 27 39 51 64 65 67 68 5 6 7 8 9 19 20 21 32 33 45 63 18 29 30 31 41 42 43 44 59 60 61 62 77 16 17 28 40 58 75 76 79 80>;
             bindings = <&lef_bra_rig_bra_left_arrow>, <&kp>;
@@ -989,8 +999,20 @@ release-after-ms = <5000>;};
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
+        Q1_key_typing:Q1_key_typing { label = "Q1_key_typing"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&grave_shft LSHFT GRAVE>, <&grave_shft LSHFT GRAVE>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
         Q2_key:Q2_key { label = "Q2_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&kp AMPERSAND>, <&kp AMPERSAND>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        Q2_key_typing:Q2_key_typing { label = "Q2_key_typing"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&amp_ctrl LCTRL AMPERSAND>, <&amp_ctrl LCTRL AMPERSAND>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
@@ -1616,16 +1638,16 @@ keymap {
 &J1_key  &J_key   &F_key   &U_key   &P_key   &P6_key  &TL2  &TL4  &TL6    &TR6  &TR4  &TR2  &M5_key  &M_key   &D_key   &Y_key   &X_key   &X0_key
 &Q1_key  &Q2_key  &Q_key   &Q4_key  &Q5_key           &TL1  &TL3  &TL5    &TR5  &TR3  &TR1           &Z6_key  &Z7_key  &Z_key   &Z9_key  &Z0_key
 >;};
-typing {
+typing { // 1
          bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                          &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp K   &trans  &trans                                                          &trans  &trans  &kp W   &trans  &trans  &trans
-&trans  &trans  &kp G   &kp H   &kp C   &trans                                                          &trans  &kp V   &kp L   &kp B   &trans  &trans
-&trans  &kp O   &kp A   &kp I   &kp N   &trans                                                          &trans  &kp T   &kp R   &kp E   &kp S   &trans
-&trans  &kp J   &kp F   &kp U   &kp P   &trans  &trans  &trans     &trans    &trans  &kp LCTRL  &trans  &trans  &kp M   &kp D   &kp Y   &kp X   &trans
-&trans  &trans  &kp Q   &trans  &trans          &trans  &kp LSHFT  &trans    &trans  &trans     &trans          &trans  &trans  &kp Z   &trans  &trans
+&trans          &trans          &trans  &trans  &trans                                                                    &trans  &trans  &trans  &trans  &trans
+&trans          &trans          &trans  &kp K   &trans  &trans                                                    &trans  &trans  &kp W   &trans  &trans  &trans
+&trans          &trans          &kp G   &kp H   &kp C   &trans                                                    &trans  &kp V   &kp L   &kp B   &trans  &trans
+&trans          &kp O           &kp A   &kp I   &kp N   &trans                                                    &trans  &kp T   &kp R   &kp E   &kp S   &trans
+&trans          &kp J           &kp F   &kp U   &kp P   &trans  &trans  &trans   &trans &trans  &mo 3   &trans    &trans  &kp M   &kp D   &kp Y   &kp X   &trans
+&Q1_key_typing  &Q2_key_typing  &kp Q   &trans  &trans          &trans  &kp LALT &trans &trans  &trans  &trans            &trans  &trans  &kp Z   &trans  &trans
 >;};
-upper { // 1
+upper { // 2
 			bindings = <
 &trans  &trans     &trans     &trans             &trans                                                                                             &trans           &trans     &trans     &trans     &trans
 &trans  &trans     &trans     &kp LS(K)          &trans                 &trans                                                       &trans         &trans           &kp LS(W)  &trans     &trans     &trans
@@ -1634,25 +1656,25 @@ upper { // 1
 &trans  &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)  &trans
 &trans  &trans     &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 2                 &kp RIGHT_BRACE  &kp CARET  &kp LS(Z)  &trans     &trans
 >;};
-nav { // 2
+nav { // 3
 			bindings = <
 &trans  &trans  &trans  &trans  &trans                                                                    &trans     &trans     &trans         &trans         &trans
 &trans  &trans  &NAVK3  &NAVK   &NAVK5  &trans                                                    &trans  &trans     &trans     &trans         &trans         &trans
 &trans  &trans  &NAVG   &NAVH   &NAVC   &trans                                                    &trans  &trans     &trans     &trans         &trans         &trans
-&trans  &NAVO   &NAVA   &NAVI   &NAVN   &NAVN6                                                    &trans  &kp RCTRL  &kp RSHFT  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+&trans  &NAVO   &NAVA   &NAVI   &NAVN   &NAVN6                                                    &trans  &kp RCTRL  &kp RSHFT  &kp RALT       &kp RGUI       &trans
 &trans  &NAVJ   &trans  &NAVU   &NAVP   &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans     &trans     &trans         &trans         &trans
 &trans  &trans  &trans  &NAVQ4  &NAVQ5          &trans  &trans  &trans    &trans  &trans  &trans          &trans     &trans     &trans         &trans         &trans
 >;};
-num { // 3
+num { // 4
          bindings = <
 &trans  &trans  &trans  &trans  &trans                                                                                 &trans                &trans      &trans                 &trans  &trans
 &trans  &trans  &NAVK3  &NAVK   &NAVK5  &trans                                                           &kp PRCNT     &kp MINUS             &kp SLASH   &kp PLUS               &trans  &trans
 &trans  &trans  &NAVG   &NAVH   &NAVC   &kp BACKSPACE                                                    &kp EQUAL     &kp N7                &kp N8      &kp N9                 &trans  &trans
 &trans  &NAVO   &NAVA   &NAVI   &NAVN   &kp ENTER                                                        &kp ASTERISK  &kp N4                &kp N5      &kp N6                 &kp N0  &trans
-&trans  &NAVJ   &trans  &NAVU   &NAVP   &kp SPACE      &trans  &tog 4  &trans    &trans  &trans  &trans  &kp COMMA     &kp N1                &kp N2      &kp NUMBER_3           &trans  &trans
+&trans  &NAVJ   &trans  &NAVU   &NAVP   &kp SPACE      &trans  &tog 4  &trans    &trans  &trans  &trans  &kp COMMA     &kp N1                &kp N2      &kp N3                 &trans  &trans
 &trans  &trans  &trans  &NAVQ4  &NAVQ5                 &trans  &trans  &trans    &trans  &tog 4  &trans                &kp LEFT_PARENTHESIS  &kp PERIOD  &kp RIGHT_PARENTHESIS  &trans  &trans
 >;};
-ui { // 4
+ui { // 5
          bindings = <
 &trans  &trans  &trans  &trans  &trans                                                                       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                                       &trans  &trans  &trans  &trans  &trans  &trans
@@ -1661,24 +1683,23 @@ ui { // 4
 &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans          &kp LCTRL  &trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
 >;};
-gaming { // 5
+gaming { // 6
          bindings = <
-&kp F1        &kp F2         &kp F3  &kp F4  &kp F5                                                                                              &kp F6          &kp F7            &kp F8             &kp F9     &kp F10
-&kp N5        &kp N0         &kp N1  &kp N2  &kp N3  &kp N4                                                                           &kp MINUS  &kp EQUAL       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp F11    &kp F12
-&kp N6        &kp TAB        &kp Q   &kp W   &kp E   &kp R                                                                            &kp Y      &kp U           &kp I             &kp O              &kp P      &kp BSLH
-&kp N7        &kp LSHFT      &kp A   &kp S   &kp D   &kp F                                                                            &kp H      &kp J           &kp K             &kp L              &kp SEMI   &kp APOS
-&kp NUMBER_8  &kp LCTRL      &kp Z   &kp X   &kp C   &kp V   &kp ENTER  &kp ESC   &trans        &trans     &kp RIGHT_GUI  &kp INSERT  &kp N      &kp M           &kp UP_ARROW      &kp FSLH           &kp HOME   &kp END
-&kp NUMBER_9  &kp BACKSPACE  &kp T   &kp G   &kp B           &kp SPACE  &kp LALT  &kp DELETE    &kp GRAVE  &kp COMMA      &kp DOT                &kp LEFT_ARROW  &kp DOWN          &kp RIGHT          &kp PG_UP  &kp PAGE_DOWN
+&kp F1        &kp F2         &kp F3  &kp F4  &kp F5                                                                                          &kp F6    &kp F7            &kp F8             &kp F9            &kp F10
+&kp N6        &kp N1         &kp N2  &kp N3  &kp N4  &kp N5                                                                       &kp MINUS  &kp EQUAL &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp F11           &kp F12
+&kp N7        &kp TAB        &kp Q   &kp W   &kp E   &kp R                                                                        &kp Y      &kp U     &kp I             &kp O              &kp P             &kp BSLH
+&kp N8        &kp LSHFT      &kp A   &kp S   &kp D   &kp F                                                                        &kp H      &kp J     &kp K             &kp L              &kp SEMI          &kp APOS
+&kp N9        &kp LCTRL      &kp Z   &kp X   &kp C   &kp V   &kp BACKSPACE &kp ESC  &trans     &trans    &kp INSERT &kp DELETE    &kp N      &kp M     &kp UP            &kp FSLH           &kp HOME          &kp END
+&kp N0        &kp ENTER      &kp T   &kp G   &kp B           &kp SPACE     &kp LALT &kp LGUI   &kp GRAVE &kp COMMA  &kp DOT                  &kp LEFT  &kp DOWN          &kp RIGHT          &kp PG_UP         &kp PAGE_DOWN
 >;};
-magic { // 6
-			bindings = <
-&trans      &trans           &trans           &trans           &trans                                                                                             &trans   &trans   &trans  &trans  &trans
-&to 0       &to 1            &to 2            &to 3            &to 4            &to 5                                                                    &none    &none    &none    &none   &none   &none
-&none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                          &EN_SET  &RU_SET  &DE_SET  &none   &none   &none
-&none       &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                          &to 0    &to 1    &to 6    &to 7   &none   &none
-&sys_reset  &none            &none            &none            &none            &none            &none  &bootloader  &none    &none  &bootloader  &none  &none    &none    &none    &none   &none   &sys_reset
-&bt_0       &bt_1            &bt_2            &bt BT_CLR       &out OUT_USB                      &none  &none        &none    &none  &none        &none           &none    &none    &none   &none   &bt BT_CLR_ALL
->;
-		};
+magic { // 7
+		bindings = <
+&none       &none            &none            &none            &none                                                                                                                 &none   &none   &none  &none  &none
+&to 0       &to 1            &to 2            &to 3            &to 4            &to 5                                                                                       &none    &none   &none   &none  &none  &none
+&to 6       &to 7            &none            &DE_SET          &RU_SET          &ЕN_SET                                                                                     &ЕN_SET  &RU_SET &DE_SET &none  &none  &none
+&none       &none            &none            &to 6            &to 1            &to 0                                                                                       &to 0    &to 1   &to 6   &none  &none  &none
+&sys_reset  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG &bootloader  &none            &none  &bootloader  &none   &none    &none   &none   &none  &none  &sys_reset
+&bt BT_CLR  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD                    &bt_0           &bt_1        &out OUT_USB     &none  &bt_3        &bt_2            &none   &none   &none  &none  &bt BT_CLR_ALL
+>;};
 	};
 };
