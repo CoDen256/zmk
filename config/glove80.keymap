@@ -1637,12 +1637,12 @@ typing { // 1
 >;};
 upper { // 2
 			bindings = <
-&trans  &trans     &trans     &trans             &trans                                                                                             &trans           &trans     &trans     &trans     &trans
-&trans  &trans     &trans     &kp LS(K)          &trans                 &trans                                                       &trans         &trans           &kp LS(W)  &trans     &trans     &trans
-&trans  &trans     &kp LS(G)  &kp LS(H)          &kp LS(C)              &trans                                                       &exc_equal     &kp LS(V)        &kp LS(L)  &kp LS(B)  &trans     &trans
-&trans  &kp LS(O)  &kp LS(A)  &kp LS(I)          &kp LS(N)              &trans                                                       &kp ASTERISK   &kp LS(T)        &kp LS(R)  &kp LS(E)  &kp LS(S)  &trans
-&trans  &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)  &trans
-&trans  &trans     &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 2                 &kp RIGHT_BRACE  &kp CARET  &kp LS(Z)  &trans     &trans
+&trans  &trans     &trans     &trans             &trans                                                                                             &trans           &trans     &trans     &trans      &trans
+&trans  &trans     &trans     &kp LS(K)          &trans                 &trans                                                       &trans         &trans           &kp LS(W)  &trans     &trans      &trans
+&trans  &kp GRAVE  &kp LS(G)  &kp LS(H)          &kp LS(C)              &trans                                                       &exc_equal     &kp LS(V)        &kp LS(L)  &kp LS(B)  &trans      &trans
+&trans  &kp LS(O)  &kp LS(A)  &kp LS(I)          &kp LS(N)              &trans                                                       &kp ASTERISK   &kp LS(T)        &kp LS(R)  &kp LS(E)  &kp LS(S)   &trans
+&trans  &kp LS(J)  &kp LS(F)  &kp LS(U)          &kp LS(P)              &kp COLON  &trans  &trans  &trans    &trans  &trans  &trans  &kp SEMICOLON  &kp LS(M)        &kp LS(D)  &kp LS(Y)  &kp LS(X)   &trans
+&trans  &kp CARET  &kp LS(Q)  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS             &trans  &trans  &trans    &trans  &trans  &tog 2                 &kp RIGHT_BRACE  &kp CARET  &kp LS(Z)  &kp DOLLAR  &trans
 >;};
 nav { // 3
 			bindings = <
@@ -1682,12 +1682,12 @@ gaming { // 6
 >;};
 magic { // 7
 		bindings = <
-&none       &none            &none            &none            &none                                                                                                                 &none   &none   &none  &none  &none
-&to 0       &to 1            &to 2            &to 3            &to 4            &to 5                                                                                       &none    &none   &none   &none  &none  &none
-&to 6       &to 7            &none            &DE_SET          &RU_SET          &EN_SET                                                                                     &EN_SET  &RU_SET &DE_SET &none  &none  &none
-&none       &none            &none            &to 6            &to 1            &to 0                                                                                       &to 0    &to 1   &to 6   &none  &none  &none
-&sys_reset  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG &bootloader  &none            &none  &bootloader  &none   &none    &none   &none   &none  &none  &sys_reset
-&bt BT_CLR  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD                    &bt_0           &bt_1        &out OUT_USB     &none  &bt_3        &bt_2            &none   &none   &none  &none  &bt BT_CLR_ALL
+&none       &none            &none            &none            &none                                                                                                                 &none   &none   &none   &none  &none
+&to 0       &to 1            &to 2            &to 3            &to 4            &to 5                                                                                       &none    &none   &none   &none   &none  &none
+&to 6       &to 7            &NO_SET          &DE_SET          &RU_SET          &EN_SET                                                                                     &EN_SET  &RU_SET &DE_SET &NO_SET &none  &none
+&none       &none            &none            &to 6            &to 1            &to 0                                                                                       &to 0    &to 1   &to 6   &none   &none  &none
+&sys_reset  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG &bootloader  &none            &none  &bootloader  &none   &none    &none   &none   &none   &none  &sys_reset
+&bt BT_CLR  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD                    &bt_0           &bt_1        &out OUT_USB     &none  &bt_3        &bt_2            &none   &none   &none   &none  &bt BT_CLR_ALL
 >;};
 	};
 };

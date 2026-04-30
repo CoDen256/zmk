@@ -11,6 +11,7 @@ morph:
   EN_SET: "LG(F10)"
   RU_SET: "LG(F11)"
   DE_SET: "LG(F12)"
+  NO_SET: "LG(F13)"
 
 # nav layer
   NAVK3: "&none"
