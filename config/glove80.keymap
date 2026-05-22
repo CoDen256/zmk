@@ -226,6 +226,16 @@ release-after-ms = <5000>;};
 			bindings = <&kp LC(INS)>, <&kp LC(X)>;
 		};
 
+		amp_ctrl:amp_ctrl { label = "amp_ctrl"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <150>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 35 36 37 38 47 48 49 50 66 14 15 27 39 51 64 65 67 68 5 6 7 8 9 19 20 21 32 33 45 63 18 29 30 31 41 42 43 44 59 60 61 62 77 16 17 28 40 58 75 76 79 80>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        grave_shft:grave_shft { label = "grave_shft"; #binding-cells = <2>; compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced"; hold-trigger-on-release; tapping-term-ms = <150>; quick-tap-ms = <175>; require-prior-idle-ms = <0>; hold-trigger-key-positions = <0 1 2 3 4 10 11 12 22 23 34 46 13 24 25 26 35 36 37 38 47 48 49 50 66 14 15 27 39 51 64 65 67 68 5 6 7 8 9 19 20 21 32 33 45 63 18 29 30 31 41 42 43 44 59 60 61 62 77 16 17 28 40 58 75 76 79 80>;
+            bindings = <&kp>, <&kp>;
+        };
+
 
 /*<macros-start>*/
 
