@@ -10,8 +10,8 @@ from pathlib import Path
 import builder
 import deployer
 import keycombiner
-import updater
 import modder
+import updater
 
 
 def check_file_update(name, file_path, script, *args):
@@ -82,14 +82,14 @@ if __name__ == "__main__":
     driveL = '/run/media/coden/GLV80LHBOOT'
     driveR = '/run/media/coden/GLV80RHBOOT'
 
-    run(
+    n(
         "deployer-1",
         driveL,
         deployer,
         base,
         driveL,
     )
-    run(
+    n(
         "deployer-2",
         driveR,
         deployer,

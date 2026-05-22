@@ -48,7 +48,7 @@ morph:
 
   # LEFT APPENDIX
   G1: "$"
-  G2: "#"
+  G2: { default: "#",                            lshift: "LS(LANG1)", rshift: "RS(LANG1)" } # because shift + # = #
   O1: '"'
   J1: "'"
 
@@ -66,16 +66,16 @@ morph:
   N:  { hold: "LCTRL",                            lshift: "LC(S)",  rshift: "RS(F9)"  }
 
   # down
-  J: {                                                              rshift: "RS(F10)" }
-  F: { hold: "&mo @nav", pos: "H C P N right",     lshift: "LC(F)", rshift: "RS(F11)" }
+  J: {                                            lshift: "LS(F10)", rshift: "RS(F10)" }
+  F: { hold: "&mo @nav", pos: "H C P N right",    lshift: "LC(F)",  rshift: "RS(F11)" }
   U: {                                                              rshift: "RS(F12)" }
-  P: {                                             lshift: "LC(V)", rshift: "RS(F13)" }
-  Q: {                                             lshift: "LC(Y)", rshift: "RS(INS)" }                                   # use INSERT since, there is no other F key or symbol that could be combined with SHIFT
+  P: {                                            lshift: "LC(V)",  rshift: "RS(F13)" }
+  Q: {                                            lshift: "LC(Y)",  rshift: "RS(INS)" }                                   # use INSERT since, there is no other F key or symbol that could be combined with SHIFT
 
   # LEFT CENTER APPENDIX
-  K3: { tap: \, hold: \\, tapping-term-ms: 250, require-prior-idle-ms: 0}
+  K3: { tap: \, hold: \\, tapping-term-ms: 250, require-prior-idle-ms: 0,         lshift: "LS(LANG2)", rshift: "RS(LANG2)"} # because shift + \ = \
   K5: /
-  K6: "~"
+  K6: { default: "~",                                                             lshift: "LS(LANG3)", rshift: "RS(LANG3)" } # because shift + ~ = ~
   C6: { default: "ESCAPE",                         lshift: "LC(A)" }
   N6: { default: "\n",                             lshift: "LC(ENTER)",                                 lctrl: "RS(ENTER)"}#swap to allow for easy ctrl+enter
   P6: "."
@@ -84,7 +84,7 @@ morph:
   Q1: { tap: "`", hold: "```", tapping-term-ms: 250, require-prior-idle-ms: 0}
   Q2: "&"
   Q4: { tap: "[", hold: "[]\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
-  Q5: { tap: "(", hold: "()\b", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q5: { tap: "(", hold: "()\b", tapping-term-ms: 250, require-prior-idle-ms: 0, lshift: "LS(PAUSE_BREAK)", rshift: "RS(PAUSE_BREAK)" } # shift + ( = (
 
 #### right
   # UPPER RIGHT
@@ -98,7 +98,7 @@ morph:
 
   # MAIN RIGHT
   # up
-  W:  {                                                lshift: "LS(F5)"  }                                            # for now F5, then will change
+  W:  {                                                lshift: "LS(F5)"  }                                            # for now F5(historically was on the left), then will change
   V:  {                                                lshift: "LS(F14)",                     lctrl: "LC(F14)" }      # override ctrl+v
   L:  {                                                lshift: "LS(F15)" }
   B:  {                                                lshift: "LS(F16)" }
@@ -111,7 +111,7 @@ morph:
 
   # down
   M:  {                                                lshift: "LS(F21)" }
-  D:  {                                                lshift: "LS(F22)",  }
+  D:  {                                                lshift: "LS(F22)" }
   Y:  {                                                lshift: "LS(F23)",                     lctrl: "LC(F20)" }      # override ctrl+y
   X:  {                                                lshift: "LS(F24)",                     lctrl: "LC(F24)" }      # override ctrl+x
   Z:  {                                                lshift: "LS(KP_NUM)",                  lctrl: "LC(KP_NUM)" }   # override ctrl+z, use KP_NUM since no other key is available to produce distinct shift+smth, see also "Q"
@@ -123,23 +123,23 @@ morph:
   M5: ","
 
   # RIGHT APPENDIX
-  W6: "-"
-  W8: "+"
-  B9: { tap: "<", hold: "<>\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  W6: { default: "-",                                                           lshift: "LS(LANG4)", rshift: "RS(LANG4)" } # because shift + - = -
+  W8: { default: "+",                                                           lshift: "LS(LANG5)", rshift: "RS(LANG5)" } # because shift + + = +
+  B9: { tap: "<", hold: "<>\b", tapping-term-ms: 280, require-prior-idle-ms: 0, lshift: "LS(LANG6)", rshift: "RS(LANG6)" } # because shift + < = <
   B0: ">"
   S0: "?"
   X0: "_"
 
 
   # RIGHT LOWER
-  Z6: { default: "{", hold: "{}\b", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  Z6: { tap: "{", hold: "{}\b",   tapping-term-ms: 280, require-prior-idle-ms: 0, lshift: "LS(SLCK)", rshift: "RS(SLCK)" } # because shift + { = {
   Z7: "!"
   Z9: "|"
   Z0: "@"
 
 ##### thumbs
   TL1: "SPACE"
-  TL2: "BACKSPACE"
+  TL2: { default: "BACKSPACE", lalt: "DELETE", ralt: "DELETE" } # move delete to left side as well
   TL3: "LS(LA(LG(H)))"  # extra key for quick use by mo_ui layer
   TL4: "&sl @num"
   TL5: "LGUI"
