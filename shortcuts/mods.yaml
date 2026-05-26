@@ -54,23 +54,23 @@ morph:
 
   # LEFT MAIN
   # up
-  K:  {                             lshift: "LS(F1)", rshift: "RS(F1)"  }
-  G:  {                             lshift: "LC(X)",  rshift: "RS(F2)"  }                                                  # CTRL+X
-  H:  { hold: "&mo_ui LS(LA(LGUI))",lshift: "LS(F3)", rshift: "RS(F3)",                                   pos: "C G N"}    # UI
+  K:  {                             lshift: "LS(F1)", rshift: "RS(F1)", lctrl: "LC(F1)"}
+  G:  {                             lshift: "LC(X)",  rshift: "RS(F2)", lctrl: "LC(F2)"}                                   # CTRL+X
+  H:  { hold: "&mo_ui LS(LA(LGUI))",lshift: "LS(F3)", rshift: "RS(F3)", lctrl: "LC(F3)", pos: "C G N"}                     # UI
   C:  {                             lshift: "LC(C)",  rshift: "RS(F4)", lctrl: "LC(F4)", rctrl: "RC(F4)" }                 # CTRL+C / disabled ctrl+c
 
   # middle
-  O:  {                             lshift: "LS(F6)", rshift: "RS(F6)"  }
+  O:  {                             lshift: "LS(F6)", rshift: "RS(F6)", lctrl: "LC(F6)" }
   A:  { hold: "LALT",               lshift: "LC(Z)",  rshift: "RS(F7)", lctrl: "LC(F7)", rctrl: "RC(F7)",  pos: "right"}   # CTRL+Z / disabled ctrl+a
-  I:  { hold: "LSHIFT",             lshift: "LS(F8)", rshift: "RS(F8)",                                    pos: "G C A N F P W right"  }
-  N:  { hold: "LCTRL",              lshift: "LC(S)",  rshift: "RS(F9)"  }                                                  # CTRL+S
+  I:  { hold: "LSHIFT",             lshift: "LS(F8)", rshift: "RS(F8)", lctrl: "LC(F8)", pos: "G C A N F P W right"  }
+  N:  { hold: "LCTRL",              lshift: "LC(S)",  rshift: "RS(F9)", lctrl: "LC(F9)" }                                  # CTRL+S
 
   # down
-  J: {                              lshift: "LS(F10)",rshift: "RS(F10)" }
-  F: { hold: "&mo @nav",            lshift: "LC(F)",  rshift: "RS(F11)",lctrl: "LC(F11)", rctrl: "RC(F11)", pos: "H C P N right" } # NAV / CTRL+F / disabled ctrl+f
-  U: {                              lshift: "LS(F12)",rshift: "RS(F12)" }
-  P: {                              lshift: "LC(V)",  rshift: "RS(F13)" }                                                # CTRL+V
-  Q: {                              lshift: "LC(Y)",  rshift: "RS(INS)" }                                                # CTRL+Y
+  J: {                              lshift: "LS(F10)",rshift: "RS(F10)", lctrl: "LC(F10)" }
+  F: { hold: "&mo @nav",            lshift: "LC(F)",  rshift: "RS(F11)", lctrl: "LC(F11)", rctrl: "RC(F11)", pos: "H C P N right" } # NAV / CTRL+F / disabled ctrl+f
+  U: {                              lshift: "LS(F12)",rshift: "RS(F12)", lctrl: "LC(F12)" }
+  P: {                              lshift: "LC(V)",  rshift: "RS(F13)", lctrl: "LC(F13)" }                                         # CTRL+V
+  Q: {                              lshift: "LC(Y)",  rshift: "RS(INS)", lctrl: "LC(INS)" }                                         # CTRL+Y
 
   # LEFT CENTER APPENDIX
   K3: '\'
