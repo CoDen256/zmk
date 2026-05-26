@@ -104,9 +104,9 @@ morph:
   B:  {                                                lshift: "LS(F16)" }
 
   # middle
-  T:  { hold: "RCTRL",  rshift: "LC(S)",               lshift: "LS(F17)" }
-  R:  { hold: "RSHIFT",  pos: "B V VV E T Y M Z left", lshift: "LS(F18)" }
-  E:  { hold: "RALT", pos: "left", rshift: "LC(Z)",    lshift: "LS(F19)" }
+  T:  {                                                lshift: "LS(F17)" }
+  R:  {                                                lshift: "LS(F18)" }
+  E:  {                                                lshift: "LS(F19)" }
   S:  {                                                lshift: "LS(F20)",                     lctrl: "LC(F20)"}       # override ctrl+s
 
   # down
