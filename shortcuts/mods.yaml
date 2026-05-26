@@ -81,10 +81,10 @@ morph:
   P6: "."
 
   # LEFT LOWER
-  Q1: { tap: "`", hold: "```",  tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q1: { tap: "`", hold: "```",     tapping-term-ms: 250, require-prior-idle-ms: 0}
   Q2: "&"
-  Q4: { tap: "[", hold: "]", tapping-term-ms: 250, require-prior-idle-ms: 0}
-  Q5: { tap: "(", hold: ")", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q4: { tap: "[", hold: "]",       tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q5: { tap: "(", hold: ")",       lshift: "LC(KP_NUM)",  rshift: "RS(KP_NUM)", tapping-term-ms: 250, require-prior-idle-ms: 0}
 
 #### right
   # UPPER RIGHT
@@ -132,7 +132,7 @@ morph:
 
 
   # RIGHT LOWER
-  Z6: { tap: "{", hold: "}", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  Z6: { tap: "{", hold: "}", lshift: "LC(SLCK)",  rshift: "RS(SLCK)", tapping-term-ms: 280, require-prior-idle-ms: 0}
   Z7: "!"
   Z9: "|"
   Z0: "@"
