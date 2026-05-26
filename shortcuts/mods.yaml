@@ -112,7 +112,7 @@ morph:
   # down
   M:  {                     lshift: "LS(F21)", rshift: "RS(F21)" }
   D:  {                     lshift: "LS(F22)", rshift: "RS(F22)" }
-  Y:  {                     lshift: "LS(F23)", rshift: "RS(F23)" }
+  Y:  {                     lshift: "LS(F23)", rshift: "RS(F23)", lctrl: "LC(F23)", rctrl: "RC(F23)" }  # disable ctrl+y
   X:  {                     lshift: "LS(F24)", rshift: "RS(F24)" }
   Z:  {                     lshift: "LS(PAUSE_BREAK)", rshift: "RS(PAUSE_BREAK)", lctrl: "LC(PAUSE_BREAK)", rctrl: "RC(PAUSE_BREAK)"}   # disable ctrl+z
 

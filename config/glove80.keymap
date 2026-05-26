@@ -1420,14 +1420,26 @@ release-after-ms = <5000>;};
         };
 
         Y_key:Y_key { label = "Y_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&Y_key_lshift_link>, <&Y_key_rshift_sink>;
-            mods = <(MOD_RSFT)>;
+            bindings = <&Y_key_lctrl_link>, <&Y_key_rctrl_sink>;
+            mods = <(MOD_RCTL)>;
             
         };
 
         Y_key_lshift_link:Y_key_lshift_link { label = "Y_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
             bindings = <&kp Y>, <&Y_key_lshift_sink>;
             mods = <(MOD_LSFT)>;
+            
+        };
+
+        Y_key_rshift_link:Y_key_rshift_link { label = "Y_KEY_RSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&Y_key_lshift_link>, <&Y_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        Y_key_lctrl_link:Y_key_lctrl_link { label = "Y_KEY_LCTRL_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&Y_key_rshift_link>, <&Y_key_lctrl_sink>;
+            mods = <(MOD_LCTL)>;
             
         };
 
@@ -1441,6 +1453,18 @@ release-after-ms = <5000>;};
             bindings = <&kp RS(F23)>, <&kp Y>;
             mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
             keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+        };
+
+        Y_key_lctrl_sink:Y_key_lctrl_sink { label = "Y_KEY_LCTRL_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LC(F23)>, <&kp Y>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        Y_key_rctrl_sink:Y_key_rctrl_sink { label = "Y_KEY_RCTRL_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RC(F23)>, <&kp Y>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RGUI|MOD_RSFT)>;
         };
 
         X_key:X_key { label = "X_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
