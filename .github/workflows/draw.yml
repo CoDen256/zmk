@@ -1,0 +1,40 @@
+name: Draw Keymap
+
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install keymap-drawer
+        run: pip install keymap-drawer==0.20.0
+
+      - name: Parse keymap
+        run: |
+          keymap -c draw/config.yaml parse \
+            -z config/glove80.keymap \
+            -o draw/parsed.yml
+
+      - name: Draw SVG
+        run: |
+          keymap -c draw/config.yaml draw \
+            draw/parsed.yml \
+            -o draw/keymap.svg
+
+      - name: Commit updated SVG
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add draw/keymap.svg
+          git diff --cached --quiet || git commit -m "chore: update keymap SVG"
+          git push
