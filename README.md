@@ -1,1 +1,1 @@
-<img src="./draw/keymap.svg">
+<img src="config/keymap.svg">

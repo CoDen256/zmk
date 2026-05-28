@@ -74,51 +74,11 @@ def run_shell(script):
 if __name__ == "__main__":
     base = pathlib.Path(__file__).parent.parent.resolve()
     print(f"Watching {base}")
-    run("builder",
-        f"{base}/config/glove80.keymap",
-        builder,
-        base,
-        )
-    driveL = '/run/media/coden/GLV80LHBOOT'
-    driveR = '/run/media/coden/GLV80RHBOOT'
-
-    n(
-        "deployer-1",
-        driveL,
-        deployer,
-        base,
-        driveL,
-    )
-    n(
-        "deployer-2",
-        driveR,
-        deployer,
-        base,
-        driveR,
-    )
-
-    n(
-        "keycombiner",
-        f"{base}/shortcuts/keymap.xml",
-        keycombiner,
-        f"{base}/shortcuts/keymap.xml",
-        f"{base}/shortcuts/keymap.csv",
-    )
-
-    n(
-        "keycombiner-updater",
-        f"{base}/shortcuts/keymap.csv",
-        updater,
-        f"{base}/shortcuts/keymap.csv",
-        f"{base}/scripts/pass",
-        33922
-    )
-
     run(
         "modder",
-        f"{base}/shortcuts/mods.yaml",
+        f"{base}/config/keymap.yaml",
         modder,
-        f"{base}/shortcuts/mods.yaml",
+        f"{base}/config/keymap.yaml",
         f"{base}/config/glove80.keymap",
     )
 

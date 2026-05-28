@@ -21,20 +21,20 @@ jobs:
 
       - name: Parse keymap
         run: |
-          keymap -c draw/config.yaml parse \
+          keymap -c config/draw.yaml parse \
             -z config/glove80.keymap \
-            -o draw/parsed.yml
+            -o config/parsed.yml
 
       - name: Draw SVG
         run: |
-          keymap -c draw/config.yaml draw \
-            draw/parsed.yml \
-            -o draw/keymap.svg
+          keymap -c config/draw.yaml draw \
+            config/parsed.yml \
+            -o config/keymap.svg
 
-      - name: Commit updated SVG
+      - name: Commit updated files
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add draw/keymap.svg
-          git diff --cached --quiet || git commit -m "chore: update keymap SVG"
+          git add config/keymap.svg
+          git diff --cached --quiet || git commit -m "ZMK Build: update keymap SVG and firmware"
           git push
