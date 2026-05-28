@@ -19,20 +19,20 @@ morph:
   NAVK5: "PAGE_DOWN"
 
   NAVG: "&none"
-  NAVH: { default: "HOME", ctrl: "LC(HOME)"}
-  NAVC: { default: "END", ctrl: "LC(END)"}
+  NAVH: "HOME"
+  NAVC: "END"
 
-  NAVO: "LCTRL"
-  NAVA: "&select_word_left"
-  NAVI: { default: "LC(LEFT)" }
-  NAVN: { default: "LC(RIGHT)" }
+  NAVO: "LSHIFT"
+  NAVA: "&none"
+  NAVI: "LC(LEFT)"
+  NAVN: "LC(RIGHT)"
   NAVN6: "\t"
 
-  NAVJ: "LSHIFT"
+  NAVJ: "LCTRL"
   NAVU: "UP"
   NAVP: "DOWN"
 
-
+  NAVQ2: "DELETE"
   NAVQ4: "LEFT"
   NAVQ5: "RIGHT"
 
@@ -70,7 +70,7 @@ morph:
   F: { hold: "&mo @nav",            lshift: "LC(F)",  rshift: "RS(F11)", lctrl: "LC(F11)", rctrl: "RC(F11)", pos: "H C P N right" } # NAV / CTRL+F / disabled ctrl+f
   U: {                              lshift: "LS(F12)",rshift: "RS(F12)", lctrl: "LC(F12)" }
   P: {                              lshift: "LC(V)",  rshift: "RS(F13)", lctrl: "LC(F13)" }                                         # CTRL+V
-  Q: {                              lshift: "LC(Y)",  rshift: "RS(INS)", lctrl: "LC(INS)" }                                         # CTRL+Y
+  Q: {                              lshift: "LC(Y)",  rshift: "RS(PAUSE_BREAK)", lctrl: "LC(PAUSE_BREAK)" }                                         # CTRL+Y
 
   # LEFT CENTER APPENDIX
   K3: '\'
@@ -84,7 +84,7 @@ morph:
   Q1: { tap: "`", hold: "```",     tapping-term-ms: 250, require-prior-idle-ms: 0}
   Q2: "&"
   Q4: { tap: "[", hold: "]",       tapping-term-ms: 250, require-prior-idle-ms: 0}
-  Q5: { tap: "(", hold: ")",       lshift: "LC(KP_NUM)",  rshift: "RS(KP_NUM)", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  Q5: { tap: "(", hold: ")",       lshift: "RS(KP_NUM)",  rshift: "RS(KP_NUM)", tapping-term-ms: 250, require-prior-idle-ms: 0}
 
 #### right
   # UPPER RIGHT
@@ -114,16 +114,16 @@ morph:
   D:  {                     lshift: "LS(F22)", rshift: "RS(F22)" }
   Y:  {                     lshift: "LS(F23)", rshift: "RS(F23)", lctrl: "LC(F23)", rctrl: "RC(F23)" }  # disable ctrl+y
   X:  {                     lshift: "LS(F24)", rshift: "RS(F24)", lctrl: "LC(F24)", rctrl: "RC(F24)" }  # disable ctrl+x
-  Z:  {                     lshift: "LS(PAUSE_BREAK)", rshift: "RS(PAUSE_BREAK)", lctrl: "LC(PAUSE_BREAK)", rctrl: "RC(PAUSE_BREAK)"}   # disable ctrl+z
+  Z:  {                     lshift: "LS(INS)", rshift: "RS(INS)", lctrl: "LC(INS)", rctrl: "RC(INS)"}   # disable ctrl+z
 
   # RIGHT CENTER
   W5: "%"
-  V5: { tap: "=", hold: "==", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  V5: "="
   T5: "\t"
   M5: ","
 
   # RIGHT APPENDIX
-  W6: { tap: "-", hold: "->", tapping-term-ms: 250, require-prior-idle-ms: 0}
+  W6: "-"
   W8: "+"
   B9: "<"
   B0: ">"
@@ -132,14 +132,14 @@ morph:
 
 
   # RIGHT LOWER
-  Z6: { tap: "{", hold: "}", lshift: "LC(SLCK)",  rshift: "RS(SLCK)", tapping-term-ms: 280, require-prior-idle-ms: 0}
+  Z6: { tap: "{", hold: "}", lshift: "RS(SLCK)",  rshift: "RS(SLCK)", tapping-term-ms: 280, require-prior-idle-ms: 0}
   Z7: "!"
   Z9: "|"
   Z0: "@"
 
 ##### thumbs
   TL1: "SPACE"
-  TL2: { default: "BACKSPACE", lalt: "DELETE", ralt: "DELETE" } # move delete to left side as well
+  TL2: { default: "BACKSPACE", lshift: "DELETE" } # move delete to left side as well
   TL3: "LS(LA(LG(H)))"  # extra key for quick use by mo_ui layer
   TL4: "&sl @num"
   TL5: "LGUI"
