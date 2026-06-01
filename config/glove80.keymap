@@ -548,27 +548,99 @@ release-after-ms = <5000>;};
         };
 
         G1_key:G1_key { label = "G1_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp DOLLAR>, <&kp DOLLAR>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&G1_key_lshift_link>, <&G1_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        G1_key_lshift_link:G1_key_lshift_link { label = "G1_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp DOLLAR>, <&G1_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        G1_key_lshift_sink:G1_key_lshift_sink { label = "G1_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F1)>, <&kp DOLLAR>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        G1_key_rshift_sink:G1_key_rshift_sink { label = "G1_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F1)>, <&kp DOLLAR>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         G2_key:G2_key { label = "G2_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp HASH>, <&kp HASH>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&G2_key_lshift_link>, <&G2_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        G2_key_lshift_link:G2_key_lshift_link { label = "G2_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp HASH>, <&G2_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        G2_key_lshift_sink:G2_key_lshift_sink { label = "G2_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F2)>, <&kp HASH>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        G2_key_rshift_sink:G2_key_rshift_sink { label = "G2_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F2)>, <&kp HASH>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         O1_key:O1_key { label = "O1_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp DOUBLE_QUOTES>, <&kp DOUBLE_QUOTES>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&O1_key_lshift_link>, <&O1_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        O1_key_lshift_link:O1_key_lshift_link { label = "O1_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp DOUBLE_QUOTES>, <&O1_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        O1_key_lshift_sink:O1_key_lshift_sink { label = "O1_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F3)>, <&kp DOUBLE_QUOTES>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        O1_key_rshift_sink:O1_key_rshift_sink { label = "O1_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F3)>, <&kp DOUBLE_QUOTES>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         J1_key:J1_key { label = "J1_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp SINGLE_QUOTE>, <&kp SINGLE_QUOTE>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&J1_key_lshift_link>, <&J1_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        J1_key_lshift_link:J1_key_lshift_link { label = "J1_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE>, <&J1_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        J1_key_lshift_sink:J1_key_lshift_sink { label = "J1_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F4)>, <&kp SINGLE_QUOTE>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        J1_key_rshift_sink:J1_key_rshift_sink { label = "J1_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F4)>, <&kp SINGLE_QUOTE>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         K_key:K_key { label = "K_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
@@ -1076,21 +1148,75 @@ release-after-ms = <5000>;};
         };
 
         K3_key:K3_key { label = "K3_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp BACKSLASH>, <&kp BACKSLASH>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&K3_key_lshift_link>, <&K3_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        K3_key_lshift_link:K3_key_lshift_link { label = "K3_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp BACKSLASH>, <&K3_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        K3_key_lshift_sink:K3_key_lshift_sink { label = "K3_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F5)>, <&kp BACKSLASH>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        K3_key_rshift_sink:K3_key_rshift_sink { label = "K3_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F5)>, <&kp BACKSLASH>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         K5_key:K5_key { label = "K5_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp SLASH>, <&kp SLASH>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&K5_key_lshift_link>, <&K5_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        K5_key_lshift_link:K5_key_lshift_link { label = "K5_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&K5_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        K5_key_lshift_sink:K5_key_lshift_sink { label = "K5_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F6)>, <&kp SLASH>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        K5_key_rshift_sink:K5_key_rshift_sink { label = "K5_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F6)>, <&kp SLASH>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         K6_key:K6_key { label = "K6_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp TILDE>, <&kp TILDE>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&K6_key_lshift_link>, <&K6_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        K6_key_lshift_link:K6_key_lshift_link { label = "K6_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp TILDE>, <&K6_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        K6_key_lshift_sink:K6_key_lshift_sink { label = "K6_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F7)>, <&kp TILDE>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        K6_key_rshift_sink:K6_key_rshift_sink { label = "K6_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F7)>, <&kp TILDE>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         C6_key:C6_key { label = "C6_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
@@ -1106,15 +1232,51 @@ release-after-ms = <5000>;};
         };
 
         N6_key:N6_key { label = "N6_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp ENTER>, <&kp ENTER>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&N6_key_lshift_link>, <&N6_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        N6_key_lshift_link:N6_key_lshift_link { label = "N6_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp ENTER>, <&N6_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        N6_key_lshift_sink:N6_key_lshift_sink { label = "N6_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F8)>, <&kp ENTER>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        N6_key_rshift_sink:N6_key_rshift_sink { label = "N6_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F8)>, <&kp ENTER>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         P6_key:P6_key { label = "P6_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp PERIOD>, <&kp PERIOD>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&P6_key_lshift_link>, <&P6_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        P6_key_lshift_link:P6_key_lshift_link { label = "P6_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&P6_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        P6_key_lshift_sink:P6_key_lshift_sink { label = "P6_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F9)>, <&kp PERIOD>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        P6_key_rshift_sink:P6_key_rshift_sink { label = "P6_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F9)>, <&kp PERIOD>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         Q1_key:Q1_key { label = "Q1_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
@@ -1124,9 +1286,27 @@ release-after-ms = <5000>;};
         };
 
         Q2_key:Q2_key { label = "Q2_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp AMPERSAND>, <&kp AMPERSAND>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            bindings = <&Q2_key_lshift_link>, <&Q2_key_rshift_sink>;
+            mods = <(MOD_RSFT)>;
+            
+        };
+
+        Q2_key_lshift_link:Q2_key_lshift_link { label = "Q2_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp AMPERSAND>, <&Q2_key_lshift_sink>;
+            mods = <(MOD_LSFT)>;
+            
+        };
+
+        Q2_key_lshift_sink:Q2_key_lshift_sink { label = "Q2_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp LA(F10)>, <&kp AMPERSAND>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+        };
+
+        Q2_key_rshift_sink:Q2_key_rshift_sink { label = "Q2_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp RA(F10)>, <&kp AMPERSAND>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
         };
 
         Q4_key:Q4_key { label = "Q4_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
