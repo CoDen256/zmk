@@ -246,8 +246,8 @@
     <header>
         <div class="logo">Glove<b>80</b> · IntelliJ</div>
         <div class="chips">
-            <button class="chip on"  data-mod="plain" >PLAIN</button>
-            <button class="chip"     data-mod="lshift">L-SHIFT<sub style="opacity:.4"> I</sub></button>
+            <button class="chip on"  data-mod="lshift">L-SHIFT<sub style="opacity:.4"> I</sub></button>
+            <button class="chip"     data-mod="plain" >PLAIN</button>
             <button class="chip"     data-mod="rshift">R-SHIFT<sub style="opacity:.4"> R</sub></button>
             <button class="chip"     data-mod="lctrl" >L-CTRL<sub style="opacity:.4"> N</sub></button>
             <button class="chip"     data-mod="rctrl" >R-CTRL<sub style="opacity:.4"> T</sub></button>
@@ -256,7 +256,8 @@
             <button class="chip"     data-mod="nav"   >NAV<sub style="opacity:.4"> F</sub></button>
         </div>
         <div class="vbar"></div>
-        <button class="convert-btn" id="convert-btn" onclick="toggleConvert()">⚡ Show IntelliJ Actions</button>
+        <button class="convert-btn" id="convert-btn" onclick="toggleConvert()" title="Upload zmk.xml to enable">⚡ Show IntelliJ Actions</button>
+        <span id="xml-badge" style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);display:none">no xml</span>
         <button class="reload-btn" onclick="resetApp()">↩ Upload new files</button>
     </header>
 
@@ -479,7 +480,7 @@
         'BACK_SLASH':'back_slash',
         // Literal symbol characters (from yaml default/tap values)
         '\\':'back_slash', '/':'slash',  '.':'period',  ',':'comma',
-        '-':'minus',  '=':'equals', '`':'back_quote', "'":'quote',
+        '-':'minus',  '=':'equals', '+':'equals', '`':'back_quote', "'":'quote',
         '[':'open_bracket', ']':'close_bracket',
         '\n':'enter', '\t':'tab',
     };
@@ -579,7 +580,13 @@
         'W','V','L','B','T','R','E','S','M','D','Y','X','Z']);
 
     function buildKeyData(yamlData, ijMapIn, svgKeys) {
-        ijMap = ijMapIn;
+        // Merge caller-supplied map with IntelliJ built-in defaults that are rarely
+        // listed in custom keymap XMLs (XML always wins if present).
+        const IJ_DEFAULTS = {
+            'ctrl s': ['SaveAll'],
+            'ctrl x': ['$Cut'],
+        };
+        ijMap = { ...IJ_DEFAULTS, ...ijMapIn };  // ijMapIn always wins
         keyData = {};
 
         const morph   = yamlData.morph || {};
@@ -713,7 +720,9 @@
     // ACTION NAME FORMATTER
     // ═══════════════════════════════════════════════════════════════════════════
     const ACT_NAMES = {
+        '$Cut':'Cut', 'SaveAll':'Save All',
         '$Copy':'Copy','$Paste':'Paste','$Undo':'Undo','$Redo':'Redo',
+        '$Cut':'Cut','$SaveAll':'Save All','$SelectAll':'Select All',
         'Editor Redo':'Redo','runShellFileAction':'Run Shell File',
         'XDebugger.MuteBreakpoints':'Mute Breakpoints',
         'XDebugger.JumpToSource':'Jump to Source',
@@ -802,7 +811,7 @@
     // ═══════════════════════════════════════════════════════════════════════════
     // UPDATE (highlight keys for active modifier)
     // ═══════════════════════════════════════════════════════════════════════════
-    let activeMod = 'plain';
+    let activeMod = 'lshift';
 
     function update() {
         for (const [pos, key] of Object.entries(keyData)) {
@@ -876,6 +885,11 @@
         const btn = document.getElementById('convert-btn');
         btn.classList.toggle('active', convertMode);
         btn.textContent = convertMode ? '✅ Showing IntelliJ Actions' : '⚡ Show IntelliJ Actions';
+        if (convertMode && activeMod === 'plain') {
+            activeMod = 'lshift';
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+            document.querySelector('[data-mod=lshift]').classList.add('on');
+        }
         update();
     }
 
@@ -963,17 +977,23 @@
             initChips();
 
             // Reset state
-            activeMod = 'plain';
+            activeMod = 'lshift';
             convertMode = false;
             document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
-            document.querySelector('[data-mod=plain]').classList.add('on');
+            document.querySelector('[data-mod=lshift]').classList.add('on');
             const cb = document.getElementById('convert-btn');
             cb.classList.remove('active');
             cb.textContent = '⚡ Show IntelliJ Actions';
             cb.disabled = !files.xml;
-            cb.title = files.xml ? '' : 'Upload zmk.xml to enable IntelliJ action mapping';
+            cb.title = files.xml ? '' : 'Upload zmk.xml to enable';
             cb.style.opacity = files.xml ? '' : '0.35';
             cb.style.cursor = files.xml ? '' : 'not-allowed';
+            const badge = document.getElementById('xml-badge');
+            if (badge) {
+                badge.style.display = files.xml ? 'none' : '';
+                badge.textContent = files.xml ? '' : '⚠ zmk.xml not loaded';
+                badge.style.color = 'var(--rshift)';
+            }
 
             update();
 
@@ -997,6 +1017,7 @@
         document.getElementById('load-btn').disabled = true;
         document.getElementById('load-err').textContent = '';
         const ui = document.getElementById('url-input'); if(ui) ui.value = '';
+        const badge = document.getElementById('xml-badge'); if(badge) badge.style.display='none';
         document.getElementById('upload-screen').style.display = '';
         document.getElementById('app').classList.remove('visible');
     }

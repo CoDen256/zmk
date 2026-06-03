@@ -47,10 +47,10 @@ morph:
   K2: "F12"
 
   # LEFT APPENDIX
-  G1: { default: "$",               lshift: "LA(F1)", rshift: "RA(F1)" }
-  G2: { default: "#",               lshift: "LA(F2)", rshift: "RA(F2)" }
-  O1: { default: '"',               lshift: "LA(F3)", rshift: "RA(F3)" }
-  J1: { default: "'",               lshift: "LA(F4)", rshift: "RA(F4)" }
+  G1: { default: "$",               lshift: "LA(F13)", rshift: "RA(F13)" }
+  G2: { default: "#",               lshift: "LA(F14)", rshift: "RA(F14)" }
+  O1: { default: '"',               lshift: "LA(F15)", rshift: "RA(F15)" }
+  J1: { default: "'",               lshift: "LA(F16)", rshift: "RA(F16)" }
 
   # LEFT MAIN
   # up
@@ -73,16 +73,16 @@ morph:
   Q: {                              lshift: "LC(Y)",  rshift: "RS(PAUSE_BREAK)", lctrl: "LC(PAUSE_BREAK)" }                                         # CTRL+Y
 
   # LEFT CENTER APPENDIX
-  K3: { default: '\',               lshift: "LA(F5)", rshift: "RA(F5)" }
-  K5: { default: '/',               lshift: "LA(F6)", rshift: "RA(F6)" }
-  K6: { default: "~",               lshift: "LA(F7)", rshift: "RA(F7)" }
+  K3: { default: '\',               lshift: "LA(F17)", rshift: "RA(F17)" }
+  K5: { default: '/',               lshift: "LA(F18)", rshift: "RA(F18)" }
+  K6: { default: "~",               lshift: "LA(F19)", rshift: "RA(F19)" }
   C6: { default: "ESCAPE",          lshift: "LC(A)" }                                                                    # CTRL+A
   N6: { default: "\n",              }
-  P6: { default: ".",               lshift: "LA(F9)", rshift: "RA(F9)" }
+  P6: { default: ".",               lshift: "LA(F20)", rshift: "RA(F20)" }
 
   # LEFT LOWER
   Q1: { tap: "`", hold: "```",     tapping-term-ms: 250, require-prior-idle-ms: 0}
-  Q2: { default: "&",              lshift: "LA(F10)", rshift: "RA(F10)" }
+  Q2: { default: "&",              lshift: "LA(F21)", rshift: "RA(F21)" }
   Q4: { tap: "[", hold: "]",       tapping-term-ms: 250, require-prior-idle-ms: 0}
   Q5: { tap: "(", hold: ")",       lshift: "RS(KP_NUM)",  rshift: "RS(KP_NUM)", tapping-term-ms: 250, require-prior-idle-ms: 0}
 
