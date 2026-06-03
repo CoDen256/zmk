@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glove80 · IntelliJ Keymap</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+
+        :root {
+            --bg:    #0d0f17; --surf:  #13151f; --surf2: #1a1d2e;
+            --brd:   #252840; --txt:   #c5c8e0; --dim:   #4e5278; --mute:  #252840;
+            --key:   #161928; --keyb:  #282c44; --keyh:  #1e2235;
+
+            --plain:  #7aa2f7; --plain-a: rgba(122,162,247,.14);
+            --lshift: #e0af68; --lshift-a:rgba(224,175,104,.14);
+            --rshift: #ff9e64; --rshift-a:rgba(255,158,100,.14);
+            --lctrl:  #9ece6a; --lctrl-a: rgba(158,206,106,.14);
+            --rctrl:  #73daca; --rctrl-a: rgba(115,218,202,.14);
+            --alt:    #bb9af7; --alt-a:   rgba(187,154,247,.14);
+            --hyper:  #f7768e; --hyper-a: rgba(247,118,142,.14);
+            --nav:    #2ac3de; --nav-a:   rgba(42,195,222,.14);
+        }
+
+        * { box-sizing:border-box; margin:0; padding:0 }
+        body { background:var(--bg); color:var(--txt); font-family:'IBM Plex Sans',sans-serif;
+            min-height:100vh; display:flex; flex-direction:column; }
+
+        /* ── Upload screen ── */
+        #upload-screen {
+            flex:1; display:flex; flex-direction:column;
+            align-items:center; justify-content:center; gap:28px; padding:40px;
+        }
+        #upload-screen h1 {
+            font-family:'JetBrains Mono',monospace; font-size:18px; font-weight:600;
+            color:var(--txt); letter-spacing:.05em;
+        }
+        #upload-screen h1 b { color:var(--plain) }
+        .upload-subtitle { font-size:13px; color:var(--dim); text-align:center; max-width:500px; line-height:1.6 }
+        .upload-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; width:100%; max-width:620px }
+        .drop-zone {
+            border:1.5px dashed var(--brd); border-radius:10px;
+            background:var(--surf); padding:22px 16px;
+            display:flex; flex-direction:column; align-items:center; gap:8px;
+            cursor:pointer; transition:border-color .15s, background .15s;
+            position:relative;
+        }
+        .drop-zone:hover, .drop-zone.over { border-color:var(--dim); background:var(--surf2) }
+        .drop-zone.ok { border-color:var(--lctrl); border-style:solid }
+        .drop-zone input[type=file] {
+            position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%;
+        }
+        .dz-icon { font-size:22px; opacity:.5 }
+        .dz-name {
+            font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600;
+            color:var(--dim); letter-spacing:.06em;
+        }
+        .dz-status { font-size:10px; color:var(--dim); text-align:center }
+        .drop-zone.ok .dz-status { color:var(--lctrl) }
+        .drop-zone.ok .dz-icon { opacity:1 }
+        .load-btn {
+            padding:10px 32px; border-radius:8px; border:none;
+            background:var(--plain); color:#0d0f17;
+            font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700;
+            cursor:pointer; transition:opacity .15s; letter-spacing:.06em;
+            opacity:.4;
+        }
+        .load-btn:not(:disabled) { opacity:1 }
+        .load-btn:not(:disabled):hover { opacity:.85 }
+        .load-err { font-size:11px; color:var(--rshift); font-family:'JetBrains Mono',monospace }
+
+        .url-row { display:flex; gap:8px; width:100%; max-width:620px }
+        .url-input {
+            flex:1; padding:8px 12px; border-radius:6px;
+            border:1px solid var(--brd); background:var(--surf); color:var(--txt);
+            font-family:'JetBrains Mono',monospace; font-size:11px;
+            outline:none; transition:border-color .15s;
+        }
+        .url-input:focus { border-color:var(--plain) }
+        .url-input::placeholder { color:var(--dim) }
+        .url-btn {
+            padding:8px 16px; border-radius:6px; border:1px solid var(--brd);
+            background:var(--surf); color:var(--dim);
+            font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600;
+            cursor:pointer; transition:all .15s; white-space:nowrap;
+        }
+        .url-btn:hover { border-color:var(--plain); color:var(--plain) }
+
+        /* Global drag-over highlight */
+        body.dragging-over #upload-screen { outline:2px dashed var(--plain); outline-offset:-4px }
+
+        /* ── Main app (hidden until loaded) ── */
+        #app { display:none; flex:1; flex-direction:column; overflow:hidden }
+        #app.visible { display:flex }
+
+        /* ── Header ── */
+        header {
+            padding:7px 14px; border-bottom:1px solid var(--brd);
+            display:flex; align-items:center; gap:10px; flex-wrap:wrap; flex-shrink:0;
+        }
+        .logo { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600;
+            color:var(--dim); letter-spacing:.1em; text-transform:uppercase; white-space:nowrap }
+        .logo b { color:var(--plain) }
+
+        .chips { display:flex; gap:3px; flex-wrap:wrap }
+        .chip {
+            padding:3px 9px; border-radius:20px; border:1px solid var(--brd);
+            background:var(--surf); color:var(--dim);
+            font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:600;
+            cursor:pointer; transition:all .12s; user-select:none; letter-spacing:.05em;
+        }
+        .chip:hover { border-color:var(--txt); color:var(--txt) }
+        .chip.on { background:var(--chip-a); border-color:var(--chip-c); color:var(--chip-c) }
+        [data-mod=plain] { --chip-c:var(--plain);  --chip-a:var(--plain-a) }
+        [data-mod=lshift]{ --chip-c:var(--lshift); --chip-a:var(--lshift-a) }
+        [data-mod=rshift]{ --chip-c:var(--rshift); --chip-a:var(--rshift-a) }
+        [data-mod=lctrl] { --chip-c:var(--lctrl);  --chip-a:var(--lctrl-a) }
+        [data-mod=rctrl] { --chip-c:var(--rctrl);  --chip-a:var(--rctrl-a) }
+        [data-mod=alt]   { --chip-c:var(--alt);    --chip-a:var(--alt-a) }
+        [data-mod=hyper] { --chip-c:var(--hyper);  --chip-a:var(--hyper-a) }
+        [data-mod=nav]   { --chip-c:var(--nav);    --chip-a:var(--nav-a) }
+
+        .vbar { width:1px; height:18px; background:var(--brd); flex-shrink:0 }
+
+        .convert-btn {
+            padding:3px 11px; border-radius:6px; border:1px solid var(--brd);
+            background:var(--surf); color:var(--dim);
+            font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:600;
+            cursor:pointer; transition:all .15s; letter-spacing:.05em; white-space:nowrap;
+        }
+        .convert-btn:hover { border-color:var(--hyper); color:var(--hyper) }
+        .convert-btn.active { background:var(--hyper-a); border-color:var(--hyper); color:var(--hyper) }
+
+        .reload-btn {
+            margin-left:auto; padding:3px 9px; border-radius:6px; border:1px solid var(--brd);
+            background:transparent; color:var(--dim);
+            font-family:'JetBrains Mono',monospace; font-size:8px; cursor:pointer;
+            transition:all .12s; letter-spacing:.05em;
+        }
+        .reload-btn:hover { border-color:var(--txt); color:var(--txt) }
+
+        /* ── Keyboard ── */
+        .kbd-wrap {
+            flex:1; display:flex; align-items:center; justify-content:center;
+            padding:10px 14px; overflow:hidden; min-height:0;
+        }
+        .kbd-scroll { width:100%; max-width:1060px }
+        svg#kbd { width:100%; height:auto; display:block; overflow:visible }
+
+        /* SVG key styles */
+        .kg rect { fill:var(--key); stroke:var(--keyb); stroke-width:1; transition:fill .1s, stroke .1s }
+        .kg:hover rect { fill:var(--keyh) }
+        .kl { fill:var(--dim); font-family:'JetBrains Mono',monospace;
+            font-size:9px; font-weight:500; text-anchor:middle; dominant-baseline:middle;
+            pointer-events:none; transition:fill .1s }
+        .al { font-family:'IBM Plex Sans',sans-serif; font-size:6.5px; font-weight:500;
+            text-anchor:middle; dominant-baseline:hanging; pointer-events:none }
+        .nl { font-family:'JetBrains Mono',monospace; font-size:6.5px;
+            text-anchor:middle; dominant-baseline:hanging; pointer-events:none }
+        .half-div { stroke:var(--mute); stroke-width:1; stroke-dasharray:3 5 }
+
+        /* Lit states */
+        .kg.lit rect { stroke-width:1.5 }
+        .kg.lit-plain  rect { fill:var(--plain-a);  stroke:var(--plain)  }  .kg.lit-plain  .kl { fill:var(--plain)  }
+        .kg.lit-lshift rect { fill:var(--lshift-a); stroke:var(--lshift) }  .kg.lit-lshift .kl { fill:var(--lshift) }
+        .kg.lit-rshift rect { fill:var(--rshift-a); stroke:var(--rshift) }  .kg.lit-rshift .kl { fill:var(--rshift) }
+        .kg.lit-lctrl  rect { fill:var(--lctrl-a);  stroke:var(--lctrl)  }  .kg.lit-lctrl  .kl { fill:var(--lctrl)  }
+        .kg.lit-rctrl  rect { fill:var(--rctrl-a);  stroke:var(--rctrl)  }  .kg.lit-rctrl  .kl { fill:var(--rctrl)  }
+        .kg.lit-alt    rect { fill:var(--alt-a);    stroke:var(--alt)    }  .kg.lit-alt    .kl { fill:var(--alt)    }
+        .kg.lit-hyper  rect { fill:var(--hyper-a);  stroke:var(--hyper)  }  .kg.lit-hyper  .kl { fill:var(--hyper)  }
+        .kg.lit-nav    rect { fill:var(--nav-a);    stroke:var(--nav)    }  .kg.lit-nav    .kl { fill:var(--nav)    }
+
+        /* Tooltip */
+        #tip { position:fixed; background:var(--surf2); border:1px solid var(--brd);
+            border-radius:8px; padding:9px 12px; pointer-events:none;
+            opacity:0; transition:opacity .1s; z-index:99;
+            max-width:300px; min-width:150px; box-shadow:0 10px 40px rgba(0,0,0,.65) }
+        #tip.show { opacity:1 }
+        .tk { font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:600;
+            color:var(--txt); margin-bottom:6px }
+        .tr { display:flex; align-items:flex-start; gap:6px; margin-bottom:3px }
+        .tc { font-family:'JetBrains Mono',monospace; font-size:7.5px; font-weight:700;
+            padding:1px 5px; border-radius:3px; white-space:nowrap; flex-shrink:0;
+            margin-top:1px; border:1px solid }
+        .tc-plain  { color:var(--plain);  background:var(--plain-a);  border-color:var(--plain)  }
+        .tc-lshift { color:var(--lshift); background:var(--lshift-a); border-color:var(--lshift) }
+        .tc-rshift { color:var(--rshift); background:var(--rshift-a); border-color:var(--rshift) }
+        .tc-lctrl  { color:var(--lctrl);  background:var(--lctrl-a);  border-color:var(--lctrl)  }
+        .tc-rctrl  { color:var(--rctrl);  background:var(--rctrl-a);  border-color:var(--rctrl)  }
+        .tc-alt    { color:var(--alt);    background:var(--alt-a);    border-color:var(--alt)    }
+        .tc-hyper  { color:var(--hyper);  background:var(--hyper-a);  border-color:var(--hyper)  }
+        .tc-nav    { color:var(--nav);    background:var(--nav-a);    border-color:var(--nav)    }
+        .ta { font-size:10.5px; color:var(--txt); line-height:1.5 }
+        .tj { font-family:'JetBrains Mono',monospace; font-size:8px; color:var(--dim); margin-top:1px }
+        .tsep { border:none; border-top:1px solid var(--brd); margin:4px 0 }
+        .tnone { font-size:10px; color:var(--dim) }
+
+        footer { padding:4px 14px; border-top:1px solid var(--brd);
+            font-size:8px; color:var(--dim); font-family:'JetBrains Mono',monospace;
+            display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap }
+        footer span { color:var(--mute) }
+    </style>
+</head>
+<body>
+
+<!-- ══ UPLOAD SCREEN ══════════════════════════════════════════════════════════ -->
+<div id="upload-screen">
+    <h1>Glove<b>80</b> · IntelliJ Keymap Visualizer</h1>
+    <p class="upload-subtitle">Drop your files anywhere on this page, paste a GitHub URL, or click each slot to browse.</p>
+
+    <div class="upload-grid">
+        <div class="drop-zone" id="dz-yaml" ondragover="dzOver(event,'yaml')" ondragleave="dzLeave('yaml')" ondrop="dzDrop(event,'yaml')">
+            <span class="dz-icon">📄</span>
+            <span class="dz-name">keymap.yaml</span>
+            <span class="dz-status" id="st-yaml">ZMK key definitions</span>
+            <input type="file" accept=".yaml,.yml" onchange="handleFile('yaml',this)">
+        </div>
+        <div class="drop-zone" id="dz-xml" ondragover="dzOver(event,'xml')" ondragleave="dzLeave('xml')" ondrop="dzDrop(event,'xml')">
+            <span class="dz-icon">⌨️</span>
+            <span class="dz-name">zmk.xml <span style="font-weight:300;opacity:.5">(optional)</span></span>
+            <span class="dz-status" id="st-xml">IntelliJ keymap</span>
+            <input type="file" accept=".xml" onchange="handleFile('xml',this)">
+        </div>
+        <div class="drop-zone" id="dz-svg" ondragover="dzOver(event,'svg')" ondragleave="dzLeave('svg')" ondrop="dzDrop(event,'svg')">
+            <span class="dz-icon">🗺️</span>
+            <span class="dz-name">keymap.svg</span>
+            <span class="dz-status" id="st-svg">Glove80 layout SVG</span>
+            <input type="file" accept=".svg" onchange="handleFile('svg',this)">
+        </div>
+    </div>
+
+    <div class="url-row">
+        <input type="text" id="url-input" class="url-input"
+               placeholder="Or paste a raw file URL (GitHub, Gist…) and press Load"
+               onkeydown="if(event.key==='Enter') loadFromUrl()">
+        <button class="url-btn" onclick="loadFromUrl()">Load URL</button>
+    </div>
+
+    <button class="load-btn" id="load-btn" disabled onclick="buildApp()">Generate Keymap</button>
+    <div class="load-err" id="load-err"></div>
+</div>
+
+<!-- ══ MAIN APP ══════════════════════════════════════════════════════════════ -->
+<div id="app">
+    <header>
+        <div class="logo">Glove<b>80</b> · IntelliJ</div>
+        <div class="chips">
+            <button class="chip on"  data-mod="plain" >PLAIN</button>
+            <button class="chip"     data-mod="lshift">L-SHIFT<sub style="opacity:.4"> I</sub></button>
+            <button class="chip"     data-mod="rshift">R-SHIFT<sub style="opacity:.4"> R</sub></button>
+            <button class="chip"     data-mod="lctrl" >L-CTRL<sub style="opacity:.4"> N</sub></button>
+            <button class="chip"     data-mod="rctrl" >R-CTRL<sub style="opacity:.4"> T</sub></button>
+            <button class="chip"     data-mod="alt"   >ALT<sub style="opacity:.4"> A/E</sub></button>
+            <button class="chip"     data-mod="hyper" >HYPER<sub style="opacity:.4"> H</sub></button>
+            <button class="chip"     data-mod="nav"   >NAV<sub style="opacity:.4"> F</sub></button>
+        </div>
+        <div class="vbar"></div>
+        <button class="convert-btn" id="convert-btn" onclick="toggleConvert()">⚡ Show IntelliJ Actions</button>
+        <button class="reload-btn" onclick="resetApp()">↩ Upload new files</button>
+    </header>
+
+    <div class="kbd-wrap">
+        <div class="kbd-scroll">
+            <svg id="kbd" viewBox="-10 -5 1020 450" xmlns="http://www.w3.org/2000/svg">
+                <line class="half-div" x1="504" y1="-5" x2="504" y2="445"/>
+            </svg>
+        </div>
+    </div>
+
+    <div id="tip"></div>
+
+    <footer>
+        <span>I=L-Shift · R=R-Shift · N=L-Ctrl · T=R-Ctrl · A/E=Alt · H=Hyper(⌘⌥⇧) · F=Nav</span>
+        · hover key for all shortcuts
+    </footer>
+</div>
+
+<script>
+    // ═══════════════════════════════════════════════════════════════════════════
+    // FILE STATE & LOADING
+    // ═══════════════════════════════════════════════════════════════════════════
+    const files = { yaml: null, xml: null, svg: null };
+
+    // Detect file type from name
+    function detectType(name) {
+        const n = name.toLowerCase();
+        if (n.endsWith('.yaml') || n.endsWith('.yml')) return 'yaml';
+        if (n.endsWith('.xml'))  return 'xml';
+        if (n.endsWith('.svg'))  return 'svg';
+        return null;
+    }
+
+    function setFile(type, content, name) {
+        files[type] = content;
+        const dz = document.getElementById('dz-' + type);
+        const st = document.getElementById('st-' + type);
+        dz.classList.add('ok');
+        dz.querySelector('.dz-icon').textContent = '✅';
+        st.textContent = name;
+        checkReady();
+    }
+
+    function handleFile(type, input) {
+        const file = input.files[0];
+        if (!file) return;
+        readFileObject(file, type);
+    }
+
+    function readFileObject(file, typeHint) {
+        const type = typeHint || detectType(file.name);
+        if (!type) return;
+        const reader = new FileReader();
+        reader.onload = e => setFile(type, e.target.result, file.name);
+        reader.readAsText(file);
+    }
+
+    // ── Drag and drop ─────────────────────────────────────────────────────────
+    function dzOver(e, type) {
+        e.preventDefault();
+        document.getElementById('dz-' + type).classList.add('over');
+    }
+    function dzLeave(type) {
+        document.getElementById('dz-' + type).classList.remove('over');
+    }
+    function dzDrop(e, type) {
+        e.preventDefault();
+        dzLeave(type);
+        const file = e.dataTransfer.files[0];
+        if (file) readFileObject(file, type);
+    }
+
+    // Global drop anywhere on the page — auto-detect file type
+    document.addEventListener('dragover', e => {
+        e.preventDefault();
+        document.body.classList.add('dragging-over');
+    });
+    document.addEventListener('dragleave', e => {
+        if (e.relatedTarget === null) document.body.classList.remove('dragging-over');
+    });
+    document.addEventListener('drop', e => {
+        e.preventDefault();
+        document.body.classList.remove('dragging-over');
+        for (const file of e.dataTransfer.files) {
+            const type = detectType(file.name);
+            if (type) readFileObject(file, type);
+        }
+    });
+
+    // ── URL loading ───────────────────────────────────────────────────────────
+    async function loadFromUrl() {
+        const errEl = document.getElementById('load-err');
+        errEl.textContent = '';
+        let url = document.getElementById('url-input').value.trim();
+        if (!url) return;
+        // Convert GitHub blob URLs to raw
+        url = url
+            .replace('github.com', 'raw.githubusercontent.com')
+            .replace('/blob/', '/');
+        const type = detectType(url.split('?')[0].split('/').pop());
+        if (!type) {
+            errEl.textContent = '⚠ Cannot detect file type from URL (need .yaml, .xml or .svg)';
+            return;
+        }
+        try {
+            errEl.textContent = '⏳ Fetching…';
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const text = await res.text();
+            const name = url.split('/').pop().split('?')[0];
+            setFile(type, text, name);
+            document.getElementById('url-input').value = '';
+            errEl.textContent = '';
+        } catch(e) {
+            errEl.textContent = '⚠ Failed to load: ' + e.message;
+        }
+    }
+
+    function checkReady() {
+        const ready = files.yaml && files.svg;
+        document.getElementById('load-btn').disabled = !ready;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // YAML PARSER (handles the specific structure of keymap.yaml)
+    // ═══════════════════════════════════════════════════════════════════════════
+    function parseYaml(text) {
+        // Use js-yaml library (loaded from CDN)
+        return jsyaml.load(text);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // XML PARSER — builds shortcut_string → [action_id, ...]
+    // ═══════════════════════════════════════════════════════════════════════════
+    function parseXml(text) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'application/xml');
+        const ijMap = {}; // "ctrl c" -> ["$Copy", ...]
+        for (const action of doc.querySelectorAll('action')) {
+            const id = action.getAttribute('id');
+            for (const sc of action.querySelectorAll('keyboard-shortcut')) {
+                const ks = sc.getAttribute('first-keystroke');
+                if (ks) {
+                    if (!ijMap[ks]) ijMap[ks] = [];
+                    ijMap[ks].push(id);
+                }
+            }
+        }
+        return ijMap;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // SVG PARSER — extracts key positions from main layer only
+    // ═══════════════════════════════════════════════════════════════════════════
+    function parseSvg(text) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'image/svg+xml');
+        // Find the main layer group
+        const mainG = doc.querySelector('g.layer-main') || (() => {
+            // fallback: first g with id="main" or label "main"
+            for (const g of doc.querySelectorAll('g')) {
+                const lbl = g.querySelector('text.label');
+                if (lbl && lbl.textContent.trim().startsWith('main')) return g;
+            }
+            return doc.querySelector('svg > g');
+        })();
+
+        const svgKeys = {}; // pos -> {x, y, rot, label}
+        if (!mainG) return svgKeys;
+
+        const keyGroups = mainG.querySelectorAll('g[class*="keypos-"]');
+        for (const g of keyGroups) {
+            const cls = g.getAttribute('class') || '';
+            const m = cls.match(/keypos-(\d+)/);
+            if (!m) continue;
+            const pos = parseInt(m[1]);
+
+            // Parse transform="translate(x, y) rotate(r)"
+            const tr = g.getAttribute('transform') || '';
+            const tMatch = tr.match(/translate\(\s*([\d.]+)\s*,\s*([\d.]+)\s*\)/);
+            const rMatch = tr.match(/rotate\(\s*(-?[\d.]+)\s*\)/);
+            if (!tMatch) continue;
+
+            // Get tap label (text.key.tap or first text child)
+            let label = '';
+            for (const t of g.querySelectorAll('text')) {
+                const tc = t.getAttribute('class') || '';
+                if (tc.includes('tap')) {
+                    label = t.textContent.trim();
+                    break;
+                }
+            }
+            if (!label) {
+                const firstText = g.querySelector('text');
+                if (firstText) label = firstText.textContent.trim();
+            }
+
+            svgKeys[pos] = {
+                x: parseFloat(tMatch[1]),
+                y: parseFloat(tMatch[2]),
+                rot: rMatch ? parseFloat(rMatch[1]) : 0,
+                label
+            };
+        }
+        return svgKeys;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // ZMK KEYCODE → IntelliJ shortcut string
+    // ═══════════════════════════════════════════════════════════════════════════
+    const ZMK_KEY_MAP = {
+        // ZMK keycode names
+        'SPACE':'space','ENTER':'enter','BACKSPACE':'back_space','DELETE':'delete',
+        'ESCAPE':'escape','TAB':'tab','HOME':'home','END':'end',
+        'PAGE_UP':'page_up','PAGE_DOWN':'page_down',
+        'UP':'up','DOWN':'down','LEFT':'left','RIGHT':'right',
+        'INS':'insert','PAUSE_BREAK':'pause',
+        'SUBTRACT':'subtract','ADD':'add',
+        'BACK_SLASH':'back_slash',
+        // Literal symbol characters (from yaml default/tap values)
+        '\\':'back_slash', '/':'slash',  '.':'period',  ',':'comma',
+        '-':'minus',  '=':'equals', '`':'back_quote', "'":'quote',
+        '[':'open_bracket', ']':'close_bracket',
+        '\n':'enter', '\t':'tab',
+    };
+    const MOD_ORDER_IJ = ['shift','ctrl','meta','alt'];
+
+    function zmkToIj(code) {
+        if (!code) return null;
+        const s = String(code).trim();
+        // Skip non-keycode values
+        if (s.startsWith('&') || s === '' || s.includes(' ') ||
+            ['LSHIFT','RSHIFT','LCTRL','RCTRL','LALT','RALT','LGUI','RGUI'].includes(s)) return null;
+
+        const mods = [];
+        let inner = s;
+        const modMap = {
+            'LS':'shift','RS':'shift','LC':'ctrl','RC':'ctrl',
+            'LA':'alt','RA':'alt','LG':'meta','RG':'meta'
+        };
+        let changed = true;
+        while (changed) {
+            changed = false;
+            for (const [zm, ij] of Object.entries(modMap)) {
+                if (inner.startsWith(zm + '(') && inner.endsWith(')')) {
+                    if (!mods.includes(ij)) mods.push(ij);
+                    inner = inner.slice(zm.length + 1, -1);
+                    changed = true;
+                    break;
+                }
+            }
+        }
+
+        const k = inner.toUpperCase();
+        let key;
+        if (ZMK_KEY_MAP[k]) {
+            key = ZMK_KEY_MAP[k];          // matched by uppercase ZMK name (e.g. BACK_SLASH)
+        } else if (ZMK_KEY_MAP[inner]) {
+            key = ZMK_KEY_MAP[inner];      // matched by literal char (e.g. '\', '/')
+        } else if (/^F\d+$/.test(k)) {
+            key = k.toLowerCase();
+        } else {
+            key = inner.toLowerCase();
+        }
+
+        const sortedMods = mods.slice().sort((a,b) =>
+            MOD_ORDER_IJ.indexOf(a) - MOD_ORDER_IJ.indexOf(b));
+        return [...sortedMods, key].join(' ');
+    }
+
+    // Human-readable label for a ZMK code (no IJ conversion, just clean display)
+    function zmkLabel(code) {
+        if (!code) return '';
+        const s = String(code).trim();
+        if (s.startsWith('&')) return s.replace(/^&(sl|mo|magic)\s*@?\w*/,'').trim() || s;
+        // Strip modifiers and show as "MOD+key"
+        const modSymbols = { 'LS':'⇧','RS':'⇧','LC':'⌃','RC':'⌃','LA':'⌥','RA':'⌥','LG':'⌘','RG':'⌘' };
+        const prefixes = [];
+        let inner = s;
+        let changed = true;
+        while (changed) {
+            changed = false;
+            for (const [zm, sym] of Object.entries(modSymbols)) {
+                if (inner.startsWith(zm + '(') && inner.endsWith(')')) {
+                    prefixes.push(sym);
+                    inner = inner.slice(zm.length + 1, -1);
+                    changed = true; break;
+                }
+            }
+        }
+        const keyLabel = ZMK_KEY_MAP[inner.toUpperCase()] || ZMK_KEY_MAP[inner] || inner;
+        return prefixes.join('') + (prefixes.length ? '+' : '') + keyLabel;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // BUILD KEY DATA
+    // ═══════════════════════════════════════════════════════════════════════════
+    // keyData[pos] = {
+    //   label: string,         // from SVG
+    //   mods: {
+    //     plain:  { zmk, ij, actions },
+    //     lshift: { zmk, ij, actions },
+    //     rshift: { zmk, ij, actions },
+    //     lctrl:  { zmk, ij, actions },
+    //     rctrl:  { zmk, ij, actions },
+    //     alt:    { zmk, ij, actions },   // A-hold or E-hold (same IJ shortcuts)
+    //     hyper:  { zmk, ij, actions },   // H-hold = meta+alt+shift + letter
+    //     nav:    { zmk, ij, actions },   // NAV layer override
+    //   }
+    // }
+
+    let keyData = {};   // built by buildKeyData()
+    let ijMap   = {};   // shortcut string → [action_id]
+    let convertMode = false;
+
+    const LETTER_KEYS = new Set('KGHCOAINFJUPQWVLBTRESMDYX Z'.split('').filter(c => /[A-Z]/.test(c)));
+    // Actually let's be precise:
+    const LETTER_SET = new Set(['K','G','H','C','O','A','I','N','J','F','U','P','Q',
+        'W','V','L','B','T','R','E','S','M','D','Y','X','Z']);
+
+    function buildKeyData(yamlData, ijMapIn, svgKeys) {
+        ijMap = ijMapIn;
+        keyData = {};
+
+        const morph   = yamlData.morph || {};
+        const keysL   = (yamlData.keys || {}).left  || {};
+        const keysR   = (yamlData.keys || {}).right || {};
+        const allKeys = { ...keysL, ...keysR };
+
+        // Nav layer: NAV-prefixed entries in morph
+        const navLayer = {}; // pos → zmk code string
+        for (const [k, v] of Object.entries(morph)) {
+            if (!k.startsWith('NAV')) continue;
+            const baseName = k.slice(3);
+            const pos = allKeys[baseName];
+            if (pos == null) continue;
+            const s = String(v);
+            if (s && s !== '&none' && s !== 'null') navLayer[pos] = s;
+        }
+
+        // Base key code (what key sends when tapped alone)
+        function baseCode(keyName, mv) {
+            if (typeof mv === 'string') {
+                // Simple value — that IS the base
+                if (mv.startsWith('&') || ['LSHIFT','RSHIFT','LCTRL','RCTRL','LALT','RALT','LGUI','RGUI'].includes(mv))
+                    return null;
+                return mv;
+            }
+            if (typeof mv === 'object' && mv !== null) {
+                const d = mv.default || mv.tap;
+                if (d != null) return String(d);
+            }
+            // Single-letter key name with no default → the letter itself
+            if (keyName.length === 1 && /[A-Z]/.test(keyName)) return keyName;
+            return null;
+        }
+
+        function makeMod(zmkCode) {
+            if (!zmkCode) return null;
+            const s = String(zmkCode);
+            if (s.startsWith('&')) return { zmk: s, ij: null, actions: null };
+            const ij = zmkToIj(s);
+            const actions = (ij && ijMap[ij]) ? ijMap[ij] : null;
+            return { zmk: s, ij, actions };
+        }
+
+        for (const [keyName, pos] of Object.entries(allKeys)) {
+            const sp = svgKeys[pos];
+            if (!sp) continue;
+            const mv = morph[keyName];
+            if (mv == null) continue;
+
+            const mods = {};
+
+            // plain
+            const bc = baseCode(keyName, mv);
+            if (bc) {
+                const m = makeMod(bc);
+                if (m) mods.plain = m;
+            }
+
+            // explicit modifier entries (lshift, rshift, lctrl, rctrl)
+            if (typeof mv === 'object' && mv !== null) {
+                for (const ymKey of ['lshift','rshift','lctrl','rctrl']) {
+                    const code = mv[ymKey];
+                    if (code != null) {
+                        const m = makeMod(String(code));
+                        if (m) mods[ymKey] = m;
+                    }
+                }
+            }
+
+            // implicit ctrl layer: if a key has NO explicit lctrl/rctrl entry, holding N or T
+            // acts as a plain LCTRL/RCTRL modifier, so the OS sees ctrl + the key's base code.
+            if (bc) {
+                const ctrlZmk = 'LC(' + bc + ')';
+                const ctrlIj  = zmkToIj(ctrlZmk);
+                if (ctrlIj) {
+                    if (!mods.lctrl) {
+                        mods.lctrl = { zmk: ctrlZmk,              ij: ctrlIj, actions: ijMap[ctrlIj] || null };
+                    }
+                    if (!mods.rctrl) {
+                        mods.rctrl = { zmk: 'RC(' + bc + ')',     ij: ctrlIj, actions: ijMap[ctrlIj] || null };
+                    }
+                }
+            }
+
+            // alt layer: A=LALT hold, E=RALT hold → key sends its base code
+            // Use zmkToIj for consistent key name mapping (handles symbols too)
+            if (bc) {
+                const altZmk = 'LA(' + bc + ')';
+                const altIj  = zmkToIj(altZmk);
+                if (altIj) {
+                    const actions = ijMap[altIj] || null;
+                    mods.alt = { zmk: altZmk, ij: altIj, actions };
+                }
+            }
+
+            // hyper: H-hold sends LS(LA(LG(key))) — works for any key with a base code
+            // zmkToIj handles the full modifier+key conversion including symbol keys
+            if (bc) {
+                const hyperZmk = 'LS(LA(LG(' + bc + ')))';
+                const hyperIj  = zmkToIj(hyperZmk);
+                if (hyperIj) {
+                    const actions = ijMap[hyperIj] || null;
+                    mods.hyper = { zmk: hyperZmk, ij: hyperIj, actions };
+                }
+            }
+
+            // nav layer
+            if (pos in navLayer) {
+                const m = makeMod(navLayer[pos]);
+                if (m) mods.nav = m;
+            }
+
+            keyData[String(pos)] = {
+                label: sp.label || keyName,
+                x: sp.x, y: sp.y, rot: sp.rot,
+                mods
+            };
+        }
+
+        // Also add thumb keys that are in svgKeys but not in yaml allKeys
+        // (TL/TR keys — just show their labels)
+        for (const [pos, sp] of Object.entries(svgKeys)) {
+            if (!keyData[pos]) {
+                keyData[pos] = { label: sp.label, x: sp.x, y: sp.y, rot: sp.rot, mods: {} };
+            }
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // ACTION NAME FORMATTER
+    // ═══════════════════════════════════════════════════════════════════════════
+    const ACT_NAMES = {
+        '$Copy':'Copy','$Paste':'Paste','$Undo':'Undo','$Redo':'Redo',
+        'Editor Redo':'Redo','runShellFileAction':'Run Shell File',
+        'XDebugger.MuteBreakpoints':'Mute Breakpoints',
+        'XDebugger.JumpToSource':'Jump to Source',
+        'android.deploy.ApplyChanges':'Apply Changes',
+        'editRunConfigurations':'Edit Run Configs',
+        'GuiDesigner.SurroundPopup':'GUI Surround',
+        'Vcs.RevertSelectedChanges':'Revert Changes','Vcs.RollbackChangedLines':'Rollback Lines',
+        'Vcs.ShowHistoryForBlock':'Block History','Vcs.Push':'Push',
+        'Vcs.QuickListPopupAction':'VCS Quick List',
+        'VcsShowNextChangeMarker':'Next Change','VcsShowPrevChangeMarker':'Prev Change',
+        'ExternalSystem.ProjectRefreshAction':'Refresh Project',
+        'Maven.ReimportProject':'Reimport Maven','ChangesView.Revert':'Revert (VCS)',
+        'ToggleFindInSelection':'Find in Selection',
+        'EditorSwapSelectionBoundaries':'Swap Selection Ends',
+        'EditorSelectWordAtCurrentCaret':'Select Word',
+        'Terminal.CopySelectedText':'Copy (Terminal)',
+        'LocalHistory.ShowHistory':'Local History',
+        'IntroduceField':'Introduce Field','IntroduceProperty':'Introduce Property',
+        'IncrementWindowHeight':'Incr Window H',
+    };
+    function fmtAction(id) {
+        if (ACT_NAMES[id]) return ACT_NAMES[id];
+        return id
+            .replace(/^(Editor|Vcs\.|ChangesView\.|XDebugger\.|ExternalSystem\.)/,'')
+            .replace(/([A-Z][a-z])/g,' $1').replace(/([a-z])([A-Z])/g,'$1 $2')
+            .replace(/\./g,' ').replace(/\s+/g,' ').trim();
+    }
+    function shortAction(id, maxLen=14) {
+        const s = fmtAction(id);
+        return s.length > maxLen ? s.slice(0, maxLen-1) + '…' : s;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // SVG KEYBOARD RENDER
+    // ═══════════════════════════════════════════════════════════════════════════
+    const KW = 52, KH = 52, KR = 5;
+    let keyEls = {}; // pos → {g, kl, al, nl}
+
+    function renderKeyboard() {
+        const svg = document.getElementById('kbd');
+        // Remove all key groups (keep the divider line)
+        svg.querySelectorAll('.kg').forEach(g => g.remove());
+        keyEls = {};
+
+        const ns = 'http://www.w3.org/2000/svg';
+
+        for (const [pos, key] of Object.entries(keyData)) {
+            const g = document.createElementNS(ns, 'g');
+            g.setAttribute('class', 'kg');
+            g.setAttribute('id', 'k' + pos);
+            let tr = `translate(${key.x},${key.y})`;
+            if (key.rot) tr += ` rotate(${key.rot})`;
+            g.setAttribute('transform', tr);
+
+            const rect = document.createElementNS(ns, 'rect');
+            rect.setAttribute('x', -KW/2); rect.setAttribute('y', -KH/2);
+            rect.setAttribute('width', KW); rect.setAttribute('height', KH);
+            rect.setAttribute('rx', KR); rect.setAttribute('ry', KR);
+            g.appendChild(rect);
+
+            const kl = document.createElementNS(ns, 'text');
+            kl.setAttribute('class', 'kl'); kl.setAttribute('x', '0'); kl.setAttribute('y', '1');
+            kl.textContent = key.label;
+            g.appendChild(kl);
+
+            const al = document.createElementNS(ns, 'text');
+            al.setAttribute('class', 'al'); al.setAttribute('x', '0'); al.setAttribute('y', '10');
+            al.style.display = 'none';
+            g.appendChild(al);
+
+            const nl = document.createElementNS(ns, 'text');
+            nl.setAttribute('class', 'nl'); nl.setAttribute('x', '0');
+            nl.setAttribute('y', String(-KH/2 + 4));
+            nl.style.display = 'none';
+            g.appendChild(nl);
+
+            svg.appendChild(g);
+            keyEls[pos] = { g, kl, al, nl };
+
+            g.addEventListener('mouseenter', e => showTip(e, pos));
+            g.addEventListener('mousemove',  e => moveTip(e));
+            g.addEventListener('mouseleave', () => hideTip());
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // UPDATE (highlight keys for active modifier)
+    // ═══════════════════════════════════════════════════════════════════════════
+    let activeMod = 'plain';
+
+    function update() {
+        for (const [pos, key] of Object.entries(keyData)) {
+            const el = keyEls[pos];
+            if (!el) continue;
+            const { g, kl, al, nl } = el;
+
+            // ── RESET EVERYTHING ──────────────────────────────────────────────────
+            // Setting className replaces ALL classes, removing any lingering lit-* class
+            g.setAttribute('class', 'kg');
+            al.textContent = '';
+            al.style.display = 'none';
+            nl.textContent = '';
+            nl.style.display = 'none';
+            kl.setAttribute('y', '1');
+            // Remove any inline fill set previously
+            al.removeAttribute('fill');
+            nl.removeAttribute('fill');
+
+            // ── APPLY ACTIVE MOD ──────────────────────────────────────────────────
+            const mv = key.mods[activeMod];
+            if (!mv) continue;
+
+            if (activeMod === 'nav') {
+                const navLabel = mv.zmk || '';
+                if (!navLabel || navLabel === '&none') continue;
+                g.setAttribute('class', 'kg lit lit-nav');
+                nl.textContent = navLabel;
+                nl.setAttribute('fill', 'var(--nav)');
+                nl.style.display = '';
+                kl.setAttribute('y', '9');
+            } else {
+                // Decide what label to show
+                let displayText = '';
+                if (convertMode) {
+                    // IntelliJ mode: only highlight keys that have a mapped action
+                    if (!mv.actions || mv.actions.length === 0) continue;
+                    displayText = shortAction(mv.actions[0]);
+                } else {
+                    // ZMK mode: highlight any key that has a zmk binding
+                    if (!mv.zmk) continue;
+                    displayText = zmkLabel(mv.zmk);
+                    if (!displayText) continue;
+                }
+
+                g.setAttribute('class', 'kg lit lit-' + activeMod);
+                al.textContent = displayText;
+                al.setAttribute('fill', 'var(--' + activeMod + ')');
+                al.style.display = '';
+                kl.setAttribute('y', '-5');
+            }
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // CHIPS & CONVERT BUTTON
+    // ═══════════════════════════════════════════════════════════════════════════
+    function initChips() {
+        document.querySelectorAll('.chip').forEach(c => {
+            c.addEventListener('click', () => {
+                activeMod = c.dataset.mod;
+                document.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
+                c.classList.add('on');
+                update();
+            });
+        });
+    }
+
+    function toggleConvert() {
+        convertMode = !convertMode;
+        const btn = document.getElementById('convert-btn');
+        btn.classList.toggle('active', convertMode);
+        btn.textContent = convertMode ? '✅ Showing IntelliJ Actions' : '⚡ Show IntelliJ Actions';
+        update();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // TOOLTIP
+    // ═══════════════════════════════════════════════════════════════════════════
+    const MOD_LABELS = {
+        plain:'plain', lshift:'L-Shift (I hold)', rshift:'R-Shift (R hold)',
+        lctrl:'L-Ctrl (N hold)', rctrl:'R-Ctrl (T hold)',
+        alt:'Alt (A or E hold)', hyper:'Hyper (H hold)', nav:'Nav (F hold)'
+    };
+    const MOD_DISPLAY_ORDER = ['plain','lshift','rshift','lctrl','rctrl','alt','hyper','nav'];
+
+    function showTip(e, pos) {
+        const key = keyData[pos];
+        if (!key) return;
+        const mods = key.mods || {};
+        const rows = [];
+
+        for (const m of MOD_DISPLAY_ORDER) {
+            const mv = mods[m];
+            if (!mv) continue;
+            if (m === 'nav') {
+                const navLabel = mv.zmk || '';
+                if (!navLabel || navLabel === '&none') continue;
+                rows.push(`<div class="tr"><span class="tc tc-nav">${MOD_LABELS[m]}</span>
+        <div><div class="ta">${navLabel}</div></div></div>`);
+            } else {
+                // Always show ZMK, optionally show actions too
+                const zmkDisplay = zmkLabel(mv.zmk || '');
+                const actDisplay = (mv.actions && mv.actions.length)
+                    ? mv.actions.map(fmtAction).join('<br>') : null;
+
+                let inner = '';
+                if (convertMode && actDisplay) {
+                    inner = `<div class="ta">${actDisplay}</div><div class="tj">${mv.ij || ''}</div>`;
+                } else {
+                    inner = `<div class="ta">${zmkDisplay}</div>`;
+                    if (actDisplay) inner += `<div class="tj">${actDisplay}</div>`;
+                }
+                if (!zmkDisplay && !actDisplay) continue;
+                rows.push(`<div class="tr"><span class="tc tc-${m}">${MOD_LABELS[m]}</span>
+        <div>${inner}</div></div>`);
+            }
+        }
+
+        const tip = document.getElementById('tip');
+        tip.innerHTML = rows.length
+            ? `<div class="tk">${key.label || pos}</div><hr class="tsep">${rows.join('')}`
+            : `<div class="tk">${key.label || pos}</div><div class="tnone">no mappings</div>`;
+        tip.classList.add('show');
+        moveTip(e);
+    }
+
+    function moveTip(e) {
+        const tip = document.getElementById('tip');
+        const tw = tip.offsetWidth, th = tip.offsetHeight;
+        let x = e.clientX + 14, y = e.clientY + 14;
+        if (x + tw > window.innerWidth  - 8) x = e.clientX - tw - 8;
+        if (y + th > window.innerHeight - 8) y = e.clientY - th - 8;
+        tip.style.left = x + 'px'; tip.style.top = y + 'px';
+    }
+
+    function hideTip() {
+        document.getElementById('tip').classList.remove('show');
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // BUILD APP
+    // ═══════════════════════════════════════════════════════════════════════════
+    function buildApp() {
+        const errEl = document.getElementById('load-err');
+        errEl.textContent = '';
+        try {
+            const yamlData = parseYaml(files.yaml);
+            const ijMapData = files.xml ? parseXml(files.xml) : {};
+            const svgKeys   = parseSvg(files.svg);
+
+            if (!yamlData || !yamlData.morph) throw new Error('keymap.yaml: missing morph section');
+            if (!yamlData.keys) throw new Error('keymap.yaml: missing keys section');
+            if (Object.keys(svgKeys).length === 0) throw new Error('keymap.svg: no key positions found');
+
+            buildKeyData(yamlData, ijMapData, svgKeys);
+            renderKeyboard();
+            initChips();
+
+            // Reset state
+            activeMod = 'plain';
+            convertMode = false;
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+            document.querySelector('[data-mod=plain]').classList.add('on');
+            const cb = document.getElementById('convert-btn');
+            cb.classList.remove('active');
+            cb.textContent = '⚡ Show IntelliJ Actions';
+            cb.disabled = !files.xml;
+            cb.title = files.xml ? '' : 'Upload zmk.xml to enable IntelliJ action mapping';
+            cb.style.opacity = files.xml ? '' : '0.35';
+            cb.style.cursor = files.xml ? '' : 'not-allowed';
+
+            update();
+
+            document.getElementById('upload-screen').style.display = 'none';
+            document.getElementById('app').classList.add('visible');
+        } catch(err) {
+            errEl.textContent = '⚠ ' + err.message;
+            console.error(err);
+        }
+    }
+
+    function resetApp() {
+        files.yaml = files.xml = files.svg = null;
+        ['yaml','xml','svg'].forEach(t => {
+            document.getElementById('dz-' + t).classList.remove('ok');
+            document.getElementById('dz-' + t).querySelector('.dz-icon').textContent =
+                t === 'yaml' ? '📄' : t === 'xml' ? '⌨️' : '🗺️';
+            document.getElementById('st-' + t).textContent =
+                t === 'yaml' ? 'ZMK key definitions' : t === 'xml' ? 'IntelliJ keymap' : 'Glove80 layout SVG';
+        });
+        document.getElementById('load-btn').disabled = true;
+        document.getElementById('load-err').textContent = '';
+        const ui = document.getElementById('url-input'); if(ui) ui.value = '';
+        document.getElementById('upload-screen').style.display = '';
+        document.getElementById('app').classList.remove('visible');
+    }
+</script>
+</body>
+</html>
