@@ -475,7 +475,7 @@
         'ESCAPE':'escape','TAB':'tab','HOME':'home','END':'end',
         'PAGE_UP':'page_up','PAGE_DOWN':'page_down',
         'UP':'up','DOWN':'down','LEFT':'left','RIGHT':'right',
-        'INS':'insert','PAUSE_BREAK':'pause',
+        'INS':'insert','PAUSE_BREAK':'pause','KP_NUM':'num_lock','SLCK':'scroll_lock',
         'SUBTRACT':'subtract','ADD':'add',
         'BACK_SLASH':'back_slash',
         // Literal symbol characters (from yaml default/tap values)
@@ -585,6 +585,7 @@
         const IJ_DEFAULTS = {
             'ctrl s': ['SaveAll'],
             'ctrl x': ['$Cut'],
+            'ctrl a': ['Select All'],
         };
         ijMap = { ...IJ_DEFAULTS, ...ijMapIn };  // ijMapIn always wins
         keyData = {};
@@ -667,6 +668,21 @@
                 }
             }
 
+            // implicit shift layer: keys with no explicit lshift/rshift entry still receive
+            // the shift modifier when I (lshift) or R (rshift) is held — OS sees shift + base.
+            if (bc) {
+                const shiftZmk = 'LS(' + bc + ')';
+                const shiftIj  = zmkToIj(shiftZmk);
+                if (shiftIj) {
+                    if (!mods.lshift) {
+                        mods.lshift = { zmk: shiftZmk,             ij: shiftIj, actions: ijMap[shiftIj] || null };
+                    }
+                    if (!mods.rshift) {
+                        mods.rshift = { zmk: 'RS(' + bc + ')',     ij: shiftIj, actions: ijMap[shiftIj] || null };
+                    }
+                }
+            }
+
             // implicit ctrl layer: if a key has NO explicit lctrl/rctrl entry, holding N or T
             // acts as a plain LCTRL/RCTRL modifier, so the OS sees ctrl + the key's base code.
             if (bc) {
@@ -718,6 +734,19 @@
         }
 
         // (thumb keys now processed via allKeys above)
+        // DEBUG
+        const ijSize = Object.keys(ijMap).length;
+        const kdSize = Object.keys(keyData).length;
+        const withActions = Object.values(keyData).filter(k => k.mods && Object.values(k.mods).some(m => m.actions)).length;
+        console.log('[buildKeyData] ijMap='+ijSize+' keyData='+kdSize+' keysWithActions='+withActions);
+        if (ijSize === 0) console.warn('[buildKeyData] WARNING: ijMap is EMPTY - XML not parsed correctly');
+        // Sample a few lshift entries
+        for (const [pos, key] of Object.entries(keyData)) {
+            if (key.mods && key.mods.lshift) {
+                console.log('[buildKeyData] sample lshift pos='+pos+' label='+key.label+' ij='+key.mods.lshift.ij+' actions='+JSON.stringify(key.mods.lshift.actions));
+                break;
+            }
+        }
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -894,6 +923,12 @@
             document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
             document.querySelector('[data-mod=lshift]').classList.add('on');
         }
+        // DEBUG
+        console.log('[toggleConvert] convertMode='+convertMode+' activeMod='+activeMod);
+        console.log('[toggleConvert] ijMap size='+Object.keys(ijMap).length);
+        console.log('[toggleConvert] keyData size='+Object.keys(keyData).length);
+        const sample = Object.entries(keyData).find(([p,k]) => k.mods && k.mods.lshift && k.mods.lshift.actions);
+        console.log('[toggleConvert] sample key with lshift actions:', sample ? sample[0]+' '+JSON.stringify(sample[1].mods.lshift) : 'NONE FOUND');
         update();
     }
 
