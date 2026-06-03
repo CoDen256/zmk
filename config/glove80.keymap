@@ -1232,27 +1232,9 @@ release-after-ms = <5000>;};
         };
 
         N6_key:N6_key { label = "N6_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&N6_key_lshift_link>, <&N6_key_rshift_sink>;
-            mods = <(MOD_RSFT)>;
-            
-        };
-
-        N6_key_lshift_link:N6_key_lshift_link { label = "N6_KEY_LSHIFT_LINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp ENTER>, <&N6_key_lshift_sink>;
-            mods = <(MOD_LSFT)>;
-            
-        };
-
-        N6_key_lshift_sink:N6_key_lshift_sink { label = "N6_KEY_LSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp LA(F8)>, <&kp ENTER>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
-        };
-
-        N6_key_rshift_sink:N6_key_rshift_sink { label = "N6_KEY_RSHIFT_SINK"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
-            bindings = <&kp RA(F8)>, <&kp ENTER>;
-            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI)>;
+            bindings = <&kp ENTER>, <&kp ENTER>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_RALT|MOD_RCTL|MOD_RGUI|MOD_RSFT)>;
         };
 
         P6_key:P6_key { label = "P6_KEY"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;

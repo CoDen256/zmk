@@ -77,7 +77,7 @@ morph:
   K5: { default: '/',               lshift: "LA(F6)", rshift: "RA(F6)" }
   K6: { default: "~",               lshift: "LA(F7)", rshift: "RA(F7)" }
   C6: { default: "ESCAPE",          lshift: "LC(A)" }                                                                    # CTRL+A
-  N6: { default: "\n",              lshift: "LA(F8)", rshift: "RA(F8)" }
+  N6: { default: "\n",              }
   P6: { default: ".",               lshift: "LA(F9)", rshift: "RA(F9)" }
 
   # LEFT LOWER
