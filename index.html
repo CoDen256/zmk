@@ -594,6 +594,16 @@
         const keysR   = (yamlData.keys || {}).right || {};
         const allKeys = { ...keysL, ...keysR };
 
+        // Thumb keys: TL1-TL6 / TR1-TR6 are in morph but not in yaml keys section.
+        // Their SVG positions are fixed by the Glove80 layout.
+        const THUMB_POS = {
+            TL1:69, TL2:52, TL3:70, TL4:53, TL5:71, TL6:54,
+            TR1:74, TR2:57, TR3:73, TR4:56, TR5:72, TR6:55,
+        };
+        for (const [kn, pos] of Object.entries(THUMB_POS)) {
+            allKeys[kn] = pos;
+        }
+
         // Nav layer: NAV-prefixed entries in morph
         const navLayer = {}; // pos → zmk code string
         for (const [k, v] of Object.entries(morph)) {
@@ -707,13 +717,7 @@
             };
         }
 
-        // Also add thumb keys that are in svgKeys but not in yaml allKeys
-        // (TL/TR keys — just show their labels)
-        for (const [pos, sp] of Object.entries(svgKeys)) {
-            if (!keyData[pos]) {
-                keyData[pos] = { label: sp.label, x: sp.x, y: sp.y, rot: sp.rot, mods: {} };
-            }
-        }
+        // (thumb keys now processed via allKeys above)
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
